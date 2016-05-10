@@ -170,31 +170,33 @@ h1 span{
     font-style: normal;
 }
 .a-btn{
-    -webkit-border-radius:10px;
-    -moz-border-radius:10px;
-    border-radius:10px;
-    padding:10px 30px 10px 70px;
+    background:#a9db80;
+    background:-webkit-gradient(linear,left top,left bottom,color-stop(#a9db80,0),color-stop(#96c56f,1));
+    background:-webkit-linear-gradient(top, #a9db80 0%, #96c56f 100%);
+    background:-moz-linear-gradient(top, #a9db80 0%, #96c56f 100%);
+    background:-o-linear-gradient(top, #a9db80 0%, #96c56f 100%);
+    background:linear-gradient(top, #a9db80 0%, #96c56f 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=0 );
+    padding-left:90px;
+    padding-right:105px;
+    height:90px;
+    display:inline-block;
     position:relative;
+    border:1px solid #80ab5d;
+    -webkit-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+    box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
     float:left;
-    display:block;
+    clear:both;
+    margin:10px 0px;
     overflow:hidden;
-    margin:10px;
-    background:#9cedef;
-    background:-webkit-gradient(linear,left top,left bottom,color-stop(#b7f2f4,0),color-stop(#7ce7ea,1));
-    background:-webkit-linear-gradient(top, #b7f2f4 0%, #7ce7ea 100%);
-    background:-moz-linear-gradient(top, #b7f2f4 0%, #7ce7ea 100%);
-    background:-o-linear-gradient(top, #b7f2f4 0%, #7ce7ea 100%);
-    background:linear-gradient(top, #b7f2f4 0%, #7ce7ea 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7f2f4', endColorstr='#7ce7ea',GradientType=0 );
-    border:1px solid #90c6c8;
-    border-color:#90c6c8 #78bdc0 #65b6ba;
-    -webkit-box-shadow:0px -5px 0px 0px #458a8c, 0 1px 1px #d5d5d5, inset 0 1px 0 rgba(255,255,255,0.8);
-    -moz-box-shadow:0px -5px 0px 0px #458a8c, 0 1px 1px #d5d5d5, inset 0 1px 0 rgba(255,255,255,0.8);
-    box-shadow:0px -5px 0px 0px #458a8c, 0 1px 1px #d5d5d5, inset 0 1px 0 rgba(255,255,255,0.8);
-    -webkit-transition:all 0.2s linear;
-    -moz-transition:all 0.2s linear;
-    -o-transition:all 0.2s linear;
-    transition:all 0.2s linear;
+    -webkit-transition:box-shadow 0.3s ease-in-out;
+    -moz-transition:box-shadow 0.3s ease-in-out;
+    -o-transition:box-shadow 0.3s ease-in-out;
+    transition:box-shadow 0.3s ease-in-out;
 }
 .a-btn-symbol{
     font-family:'WebSymbolsRegular', cursive;
