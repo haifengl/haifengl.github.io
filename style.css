@@ -195,7 +195,10 @@ h1 span{
     -o-transition:box-shadow 0.3s ease-in-out;
     transition:box-shadow 0.3s ease-in-out;
 }
-
+.a-btn a{
+    color: #fff;
+    text-decoration: none;
+}
 .a-btn .a-btn-icon{
     position:absolute;
     top:18px;
