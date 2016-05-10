@@ -195,7 +195,7 @@ h1 span{
     -o-transition:box-shadow 0.3s ease-in-out;
     transition:box-shadow 0.3s ease-in-out;
 }
-.a-btn a{
+a.a-btn {
     color: #fff;
     text-decoration: none;
 }
