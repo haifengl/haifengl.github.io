@@ -215,16 +215,12 @@ h1 span{
 }
 .a-btn .a-btn-icon{
     position:absolute;
-    font-size:36px;
     top:18px;
     left:18px;
-    color:#6d954e;
-    opacity:0;
-    text-shadow:0px 1px 1px rgba(255,255,255,0.4);
-    -webkit-transition:opacity 0.2s ease-in-out;
-    -moz-transition:opacity 0.2s ease-in-out;
-    -o-transition:opacity 0.2s ease-in-out;
-    transition:opacity 0.2s ease-in-out;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
 }
 .a-btn-text{
     font-size:32px;
