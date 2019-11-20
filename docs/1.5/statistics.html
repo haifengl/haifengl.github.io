@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+     Smile - Statistical Machine Intelligence and Learning Engine
+  </title>
+  
+  <meta name="description" content="Smile is a fast and general machine learning engine for big data processing, with built-in modules for classification, regression, clustering, association rule mining, feature selection, manifold learning, genetic algorithm, missing value imputation, efficient nearest neighbor search, MDS, NLP, linear algebra, hypothesis tests, random number generators, interpolation, wavelet, plot, etc.">
+
+  <!-- prettify js and CSS -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=scala"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/cerulean.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" type="text/css" />
+
+
+  <!-- table of contents auto generator -->
+  <script src="js/toc.js" type="text/javascript"></script>
+
+  <!-- styles for pager and table of contents -->
+  <link rel="stylesheet" href="css/pager.css" type="text/css" />
+  <link rel="stylesheet" href="css/toc.css" type="text/css" />
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-52181830-5', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5721843955514300",
+    enable_page_level_ads: true
+  });
+  </script>
+
+  <!-- Load static page by jQuery AJAX -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // scroll/follow sidebar
+      // #sidebar is defined in the content snippet
+      // This script has to be executed after the snippet loaded.
+      $.getScript("js/follow-sidebar.js");
+
+      $("#testimonial-slider").owlCarousel({
+        items: 1,
+        singleItem: true,
+        pagination: true,
+        navigation: false,
+        loop: true,
+        autoPlay: 10000,
+        stopOnHover: true,
+        transitionStyle: "backSlide",
+        touchDrag: true
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="container" style="max-width: 1200px;">
+<header>
+<div class="masthead">
+  <p class="lead">
+    <a href="index.html">
+    <img src="images/smile.jpg" style="height:100px; width:auto; vertical-align: bottom; margin-top: 20px;">
+    <span class="tagline">Smile - Statistical Machine Intelligence and Learning Engine</span>
+    </a>
+  </p>
+</div>
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="quickstart.html">Quick Start</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="overview.html">Overview</a></li>
+          <li><a href="shell.html">Shell</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="visualization.html">Visualization</a></li>
+          <li class="divider"></li>
+          <li><a href="classification.html">Classification</a></li>
+          <li><a href="regression.html">Regression</a></li>
+          <li><a href="feature.html">Features</a></li>
+          <li><a href="validation.html">Model Validation</a></li>
+          <li><a href="missing-value-imputation.html">Missing Value Imputation</a></li>
+          <li class="divider"></li>
+          <li><a href="clustering.html">Clustering</a></li>
+          <li><a href="vector-quantization.html">Vector Quantization</a></li>
+          <li><a href="association-rule.html">Association Rule Mining</a></li>
+          <li><a href="mds.html">Multi-Dimensional Scaling</a></li>
+          <li><a href="manifold.html">Manifold Learning</a></li>
+          <li class="divider"></li>
+          <li><a href="linear-algebra.html">Linear Algebra</a></li>
+          <li><a href="statistics.html">Statistics</a></li>
+          <li><a href="wavelet.html">Wavelet</a></li>
+          <li><a href="interpolation.html">Interpolation</a></li>
+          <li><a href="graph.html">Graph</a></li>
+          <li class="divider"></li>
+          <li><a href="nlp.html">Natural Language Processing</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Docs <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="api/java/index.html">Java</a></li>
+          <li><a href="api/scala/index.html">Scala</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="https://github.com/haifengl/smile/graphs/contributors">Project Contributors</a></li>
+          <li><a href="https://github.com/haifengl/smile/issues">Issue Tracker</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+  <!-- /.navbar-collapse -->
+</nav>
+</header>
+
+<div id="content" class="row">
+  <div class="col-md-3 col-md-push-9 hidden-xs hidden-sm">
+    <div id="sidebar">
+        <div class="sidebar-toc" style="margin-bottom: 20px;">
+            <p class="toc-header">Contents</p>
+            <div id="toc"></div>
+        </div>
+
+        <div id="search">
+            <script>
+                (function() {
+                    var cx = '010264411143030149390:ajvee_ckdzs';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                            '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+            <gcse:searchbox-only></gcse:searchbox-only>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-9 col-md-pull-3">
+
+    <h1 id="statistics-top" class="title">Statistics</h1>
+
+    <p>In Smile, there are many statistical functions to describe and analyze data.</p>
+
+    <h2 id="basic" class="title">Basic Statistic Functions</h2>
+
+    <p>Use the following functions to calculate the descriptive statistics for your data:
+        <code>sum</code>, <code>mean</code>,
+        <code>median</code>, <code>q1</code>, <code>q3</code>,
+        <code>variance</code>, <code>sd</code>, <code>mad</code> (median absolute deviation),
+        <code>min</code>, <code>max</code>, <code>whichMin</code>, <code>whichMax</code>, etc.</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; mean(Array(1.0, 2.0, 3.0, 4.0))
+    res10: Double = 2.5
+
+    smile&gt; sd(Array(1.0, 2.0, 3.0, 4.0))
+    res11: Double = 1.2909944487358054
+    </code></pre>
+
+    <h2 id="distribution" class="title">Distributions</h2>
+
+    <p>Probability distributions are theoretical distributions based on assumptions
+        about a source population. The distributions assign probability to the event
+        that a random variable has a specific, discrete value, or falls within a
+        specified range of continuous values.</p>
+
+    <p>All univariate distributions in Smile implements the interface <code>smile.math.stat.distribution.Distribution</code>.
+        We support Bernoulli, beta, binomial, &chi;<sup>2</sup>, exponential, F, gamma, Gaussian, geometric,
+        hyper geometric, logistic, log normal, negative binomial, Possion, shift geometric, t, and Weibull distribution.
+        In additional, multivariate Gaussian distribution is supported. In fact, we also support finite mixture models
+        and can estimate the exponential family mixture models from data.</p>
+
+    <p>A <code>Distribution</code> object can be created with given parameters. Meanwhile they can be created by estimating parameters
+        from a given data set. With a <code>Distribution</code> object, we may access its distribution parameter(s), mean,
+        variance, standard deviation, entropy, generates a random number following the distribution,
+        call its probability density function (the method <code>p</code> or cumulative distribution function (<code>cdf</code>).
+        The reserve function of <code>cdf</code> is <code>quantile</code>. We can also calculate the likelihood or
+        log likelihood of a sample set.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; val e = new ExponentialDistribution(1.0)
+    e: smile.stat.distribution.ExponentialDistribution = Exponential Distribution(1.0000)
+
+    smile&gt; e.mean
+    res3: Double = 1.0
+
+    smile&gt; e.`var`
+    res4: Double = 1.0
+
+    smile&gt; e.sd
+    res5: Double = 1.0
+
+    smile&gt; e.entropy
+    res6: Double = 1.0
+
+    // generate a random number
+    smile&gt; e.rand
+    res7: Double = 0.3155668608029686
+
+    // PDF
+    smile&gt; e.p(2.0)
+    res8: Double = 0.1353352832366127
+
+    smile&gt; e.cdf(2.0)
+    res9: Double = 0.8646647167633873
+
+    smile&gt; e.quantile(0.1)
+    res10: Double = 0.10536051565782628
+
+    smile&gt; e.logLikelihood(Array(1.0, 1.1, 0.9, 1.5))
+    res12: Double = -4.5
+
+    // estimate a distribution from data
+    smile&gt; val e = new ExponentialDistribution(Array(1.0, 1.1, 0.9, 1.5, 1.8, 1.9, 2.0, 0.5))
+    e: smile.stat.distribution.ExponentialDistribution = Exponential Distribution(0.7477)
+    </code></pre>
+
+    <p>Note that <code>var</code> is a keyword in Scala. So we have to use <code>`var`</code> to access the variance
+        method.</p>
+
+    <p>The below is a more advanced example of estimating a mixture model of Gaussian, exponential and gamma distribution.
+        The result is quite accurate for this complicated case.</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; val gaussian = new GaussianDistribution(-2.0, 1.0)
+    smile&gt; val exp = new ExponentialDistribution(0.8)
+    smile&gt; val gamma = new GammaDistribution(2.0, 3.0)
+
+    // generate the samples
+    smile&gt; val data = Array.fill(500)(gaussian.rand()) ++ Array.fill(500)(exp.rand()) ++ Array.fill(1000)(gamma.rand())
+
+    // define the initial guess of the components in the mixture model
+    smile&gt; val a = new Mixture.Component(0.3, new GaussianDistribution(0.0, 1.0))
+    smile&gt; val b = new Mixture.Component(0.3, new ExponentialDistribution(1.0))
+    smile&gt; val c = new Mixture.Component(0.4, new GammaDistribution(1.0, 2.0))
+
+    smile&gt; import collection.JavaConverters._
+
+    // estimate the model
+    smile&gt; val mixture = new ExponentialFamilyMixture(List(a, b, c).asJava, data)
+    mixture: smile.stat.distribution.ExponentialFamilyMixture = Mixture[3]:{ (Gaussian Distribution(-2.0135, 0.9953):0.2478) (Exponential Distribution(0.7676):0.2882) (Gamma Distribution(2.7008, 2.4051):0.4640)}
+    </code></pre>
+
+    <p>If the distribution family is not known, nonparametric methods such as
+        kernel density estimation can be used. Kernel density estimation
+        is a fundamental data smoothing problem where inferences about the population
+        are made, based on a finite data sample. It is also known as the
+        Parzen window method.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; val k = new KernelDensity(data)
+    k: smile.stat.distribution.KernelDensity = smile.stat.distribution.KernelDensity@69724abb
+
+    smile&gt; k.p(1.0)
+    res2: Double = 0.11397721599552492
+
+    smile&gt; mixture.p(1.0)
+    res3: Double = 0.1272572973513569
+    </code></pre>
+
+    <h2 id="test" class="title">Hypothesis Test</h2>
+
+    <p>A statistical hypothesis test is a method of making decisions using data,
+        whether from a controlled experiment or an observational study (not controlled).
+        In statistics, a result is called statistically significant if it is unlikely
+        to have occurred by chance alone, according to a pre-determined threshold
+        probability, the significance level.</p>
+
+    <h3 id="chisq-test" class="title">&chi;<sup>2</sup> Test</h3>
+
+    <h4 class="title">One-Sample Test</h4>
+    <p>Given the array x containing the observed numbers of events,
+        and an array prob containing the expected probabilities of events, and given
+        the number of constraints (normally one), a small value of p-value
+        indicates a significant difference between the distributions.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    def chisqtest(x: Array[Int], prob: Array[Double], constraints: Int = 1): ChiSqTest
+    </code></pre>
+
+    <h4 class="title">Two-Sample Test</h4>
+    <p>Two-sample chisq test. Given the arrays x and y, containing two
+        sets of binned data, and given one constraint, a small value of
+        p-value indicates a significant difference between two distributions.</p>
+    <pre class="prettyprint lang-scala"><code>
+    def chisqtest2(x: Array[Int], y: Array[Int], constraints: Int = 1): ChiSqTest
+    </code></pre>
+
+    <h4 class="title">Independence Test</h4>
+
+    <p>Independence test on a two-dimensional contingency table in the form of an array of
+        integers. The rows of contingency table
+        are labels by the values of one nominal variable, the columns are labels
+        by the values of the other nominal variable, and whose entries are
+        non-negative integers giving the number of observed events for each
+        combination of row and column. Continuity correction
+        will be applied when computing the test statistic for 2x2 tables: one half
+        is subtracted from all |O-E| differences. The correlation coefficient is
+        calculated as Cramer's V.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+        def chisqtest(table: Array[Array[Int]]): CorTest
+    </code></pre>
+
+    <h3 id="f-test" class="title">F Test</h3>
+
+    <p>Test if the arrays x and y have significantly different variances.
+        Small values of p-value indicate that the two arrays have significantly
+        different variances.</p>
+    <pre class="prettyprint lang-scala"><code>
+    def ftest(x: Array[Double], y: Array[Double]): FTest
+    </code></pre>
+
+    <h3 id="t-test" class="title">t Test</h3>
+
+    <h4 class="title">One-Sample Test</h4>
+    <p>Independent one-sample t-test whether the mean of a normally distributed
+        population has a value specified in a null hypothesis. Small values of
+        p-value indicate that the array has significantly different mean.</p>
+    <pre class="prettyprint lang-scala"><code>
+    def ttest(x: Array[Double], mean: Double): TTest
+    </code></pre>
+
+    <h4 class="title">Paired Two-Sample Test</h4>
+    <p>Given the paired arrays x and y, test if they have significantly
+        different means. Small values of p-value indicate that the two arrays
+        have significantly different means.</p>
+    <pre class="prettyprint lang-scala"><code>
+    def ttest(x: Array[Double], y: Array[Double]): TTest
+    </code></pre>
+
+    <h4 class="title">Independent (Unpaired) Two-Sample Test</h4>
+    <p>Test if the arrays x and y have significantly different means. Small
+     values of p-value indicate that the two arrays have significantly
+      different means. If the parameter equalVariance is true, the data arrays are assumed to be
+      drawn from populations with the same true variance. Otherwise, The data
+      arrays are allowed to be drawn from populations with unequal variances.</p>
+    <pre class="prettyprint lang-scala"><code>
+    def ttest2(x: Array[Double], y: Array[Double], equalVariance: Boolean = false): TTest
+    </code></pre>
+
+    <h3 id="ks-test" class="title">Kolmogorov–Smirnov Test</h3>
+
+    <h4 class="title">One-Sample Test</h4>
+    <p>The one-sample K-S test for the null hypothesis that the data set x
+        is drawn from the given distribution. Small values of p-value show that
+        the cumulative distribution function of x is significantly different from
+        the given distribution. The array x is modified by being sorted into
+        ascending order.</p>
+    <pre class="prettyprint lang-scala"><code>
+    def kstest(x: Array[Double], y: Distribution): KSTest
+    </code></pre>
+
+    <h4 class="title">One-Sample Test</h4>
+    <p>The two-sample K–S for the null hypothesis that the data sets
+        are drawn from the same distribution. Small values of p-value show that
+        the cumulative distribution function of x is significantly different from
+        that of y. The arrays x and y are modified by being sorted into
+        ascending order.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    def kstest(x: Array[Double], y: Array[Double]): KSTest
+    </code></pre>
+
+    <h3 id="correlation-test" class="title">Correlation Test</h3>
+
+    <h4 class="title">Pearson Correlation</h4>
+
+    <p>The t-test is used to establish if the correlation coefficient is
+        significantly different from zero, and, hence that there is evidence
+        of an association between the two variables. There is then the
+        underlying assumption that the data is from a normal distribution
+        sampled randomly. If this is not true, then it is better to use
+        Spearman's coefficient of rank correlation (for non-parametric variables).</p>
+    <pre class="prettyprint lang-scala"><code>
+    def pearsontest(x: Array[Double], y: Array[Double]): CorTest
+    </code></pre>
+
+    <h4 id="spearman-test" class="title">Spearman Rank Correlation</h4>
+
+    <p>The Spearman Rank Correlation
+        Coefficient is a form of the Pearson coefficient with the data converted
+        to rankings (i.e. when variables are ordinal). It can be used when there
+        is non-parametric data and hence Pearson cannot be used.</p>
+
+    <p>The raw scores are converted to ranks and the differences between
+        the ranks of each observation on the two variables are calculated.</p>
+
+    <p>The p-value is calculated by approximation, which is good for n &gt; 10.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    def spearmantest(x: Array[Double], y: Array[Double]): CorTest
+    </code></pre>
+
+    <h4 id="kendall-test" class="title">Kendall Rank Correlation</h4>
+
+    <p>The Kendall Tau Rank Correlation
+        Coefficient is used to measure the degree of correspondence
+        between sets of rankings where the measures are not equidistant.
+        It is used with non-parametric data. The p-value is calculated by
+        approximation, which is good for n &gt; 10.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    def kendalltest(x: Array[Double], y: Array[Double]): CorTest
+    </code></pre>
+
+    <div id="btnv">
+        <span class="btn-arrow-left">&larr; &nbsp;</span>
+        <a class="btn-prev-text" href="linear-algebra.html" title="Previous Section: Linear Algebra"><span>Linear Algebra</span></a>
+        <a class="btn-next-text" href="wavelet.html" title="Next Section: Wavelet"><span>Wavelet</span></a>
+        <span class="btn-arrow-right">&nbsp;&rarr;</span>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+</script>
+
+</div>
+</div>
+
+<a href=https://github.com/haifengl/smile><img style="position: fixed; top: 0; right: 0; border: 0" src=https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png alt="Fork me on GitHub"></a>
+
+<!-- Place this tag right after the last button or just before your close body tag. -->
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
