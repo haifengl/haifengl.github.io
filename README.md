@@ -13,5 +13,5 @@ manifold learning, multidimensional scaling, genetic algorithms,
 missing value imputation, efficient nearest neighbor search, etc.
 
 Smile is well documented and please check out the
-[project website](http://haifengl.github.io/smile/)
+[project website](http://haifengl.github.io/)
 for programming guides and more information.
