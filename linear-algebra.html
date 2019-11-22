@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+     Smile - Statistical Machine Intelligence and Learning Engine
+  </title>
+  
+  <meta name="description" content="Smile is a fast and general machine learning engine for big data processing, with built-in modules for classification, regression, clustering, association rule mining, feature selection, manifold learning, genetic algorithm, missing value imputation, efficient nearest neighbor search, MDS, NLP, linear algebra, hypothesis tests, random number generators, interpolation, wavelet, plot, etc.">
+
+  <!-- prettify js and CSS -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=scala"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/cerulean.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" type="text/css" />
+
+
+  <!-- table of contents auto generator -->
+  <script src="js/toc.js" type="text/javascript"></script>
+
+  <!-- styles for pager and table of contents -->
+  <link rel="stylesheet" href="css/pager.css" type="text/css" />
+  <link rel="stylesheet" href="css/toc.css" type="text/css" />
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-52181830-5', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5721843955514300",
+    enable_page_level_ads: true
+  });
+  </script>
+
+  <!-- Load static page by jQuery AJAX -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // scroll/follow sidebar
+      // #sidebar is defined in the content snippet
+      // This script has to be executed after the snippet loaded.
+      $.getScript("js/follow-sidebar.js");
+
+      $("#testimonial-slider").owlCarousel({
+        items: 1,
+        singleItem: true,
+        pagination: true,
+        navigation: false,
+        loop: true,
+        autoPlay: 10000,
+        stopOnHover: true,
+        transitionStyle: "backSlide",
+        touchDrag: true
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="container" style="max-width: 1200px;">
+<header>
+<div class="masthead">
+  <p class="lead">
+    <a href="index.html">
+    <img src="images/smile.jpg" style="height:100px; width:auto; vertical-align: bottom; margin-top: 20px;">
+    <span class="tagline">Smile - Statistical Machine Intelligence and Learning Engine</span>
+    </a>
+  </p>
+</div>
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="quickstart.html">Quick Start</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="overview.html">Machine Learning</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="visualization.html">Visualization</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Supervised Learning <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="classification.html">Classification</a></li>
+          <li><a href="regression.html">Regression</a></li>
+          <li><a href="feature.html">Features</a></li>
+          <li><a href="validation.html">Model Validation</a></li>
+          <li><a href="missing-value-imputation.html">Missing Value Imputation</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unsupervised Learning <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="clustering.html">Clustering</a></li>
+          <li><a href="vector-quantization.html">Vector Quantization</a></li>
+          <li><a href="association-rule.html">Association Rule Mining</a></li>
+          <li><a href="mds.html">Multi-Dimensional Scaling</a></li>
+          <li><a href="manifold.html">Manifold Learning</a></li>
+        </ul>
+      </li>
+      <li><a href="nlp.html">NLP</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Math <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="linear-algebra.html">Linear Algebra</a></li>
+          <li><a href="statistics.html">Statistics</a></li>
+          <li><a href="wavelet.html">Wavelet</a></li>
+          <li><a href="interpolation.html">Interpolation</a></li>
+          <li><a href="graph.html">Graph</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Docs <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="api/java/index.html">Java</a></li>
+          <li><a href="api/scala/index.html">Scala</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+  <!-- /.navbar-collapse -->
+</nav>
+</header>
+
+<div id="content" class="row">
+  <div class="col-md-3 col-md-push-9 hidden-xs hidden-sm">
+    <div id="sidebar">
+        <div class="sidebar-toc" style="margin-bottom: 20px;">
+            <p class="toc-header">Contents</p>
+            <div id="toc"></div>
+        </div>
+
+        <div id="search">
+            <script>
+                (function() {
+                    var cx = '010264411143030149390:ajvee_ckdzs';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                            '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+            <gcse:searchbox-only></gcse:searchbox-only>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-9 col-md-pull-3">
+
+    <h1 id="linear-algebra-top" class="title">Linear Algebra</h1>
+
+    <p>Smile Shell provides an MATLAB like environment.
+        In the simplest case, you can use it as a calculator.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; "Hello, World"
+    res0: String = Hello, World
+
+    smile&gt; 2
+    res1: Int = 2
+
+    smile&gt; 2+3
+    res2: Int = 5
+    </code></pre>
+
+    <h2 id="functions" class="title">Math Functions</h2>
+
+    <p>Besides <code>java.lang.Math</code> functions, Smile provides many other
+        important mathematical functions such as <code>logistic</code>,
+        <code>factorial</code>, <code>choose</code>, etc.</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; logistic(3.0)
+    res7: Double = 0.9525741268224334
+
+    smile&gt; choose(10, 3)
+    res8: Double = 120.0
+    </code></pre>
+
+    <h2 id="special" class="title">Special Functions</h2>
+
+    <p>Special mathematical functions including <code>beta</code>,
+        <code>erf</code>, <code>gamma</code> and their related functions. Special
+        functions are particular mathematical functions which have more or less
+        established names and notations due to their importance in mathematical
+        analysis, functional analysis, physics, or other applications.
+        Many special functions appear as solutions of differential equations or
+        integrals of elementary functions. For example, the error function
+        <code>erf</code> (also called the Gauss error function) is a special
+        function of sigmoid shape which occurs in probability, statistics, materials
+        science, and partial differential equations. The complementary error function,
+        denoted <code>erfc</code>, is defined as <code>erfc(x) = 1 - erf(x)</code>.
+        The error function and complementary error function are special cases of the
+        incomplete gamma function.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; erf(1.0)
+    res0: Double = 0.8427007929497149
+
+    smile&gt; digamma(1.0)
+    res11: Double = -0.5772156649015328
+    </code></pre>
+
+    <h2 id="vector" class="title">Vector Operations</h2>
+
+    <p>Common arithmetic operations on vectors and scalars are similar as in R and Matlab.</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; val x = c(1.0, 2.0, 3.0, 4.0)
+    smile&gt; val y = c(4.0, 3.0, 2.0, 1.0)
+
+    smile&gt; x + y
+    res22: smile.math.VectorAddVector = Array(5.0, 5.0, 5.0, 5.0)
+
+    smile&gt; 1.5 * x - 3.0 * y
+    res24: smile.math.VectorSubVector = Array(-10.5, -6.0, -1.5, 3.0)
+    </code></pre>
+
+    <p>Note that these operations are lazy. The computation is only performed when
+        the results are needed, e.g. when the expression is used where a vector is expected.
+        In the Shell, the expression is immediately performed because the Shell
+        always prints out the results.</p>
+
+    <p>For a vector, there are multiple functions to calculate its norm such as <code>norm</code> (L2 norm), <code>norm1</code> (L1 norm),
+        <code>norm2</code> (L2 norm), <code>normInf</code> (infinity norm), <code>normFro</code> (Frobenius norm).
+        We can also <code>standardize</code> a vector to mean 0 and variance 1,
+        <code>unitize</code> it so that L2 norm be 1,
+        or <code>unitize1</code> it so that L1 norm be 1.</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; norm(x)
+    res13: Double = 5.477225575051661
+
+    smile&gt; unitize(y)
+    smile&gt; y
+    res14: Array[Double] = Array(0.7302967433402214, 0.5477225575051661, 0.3651483716701107, 0.18257418583505536)
+    </code></pre>
+
+    <p>For a pair of vectors, we can calculate the dot product, distance, divergence, covariance,
+        and correlations with <code>dot</code>, <code>distance</code>, <code>kld</code> (Kullback-Leibler Divergence),
+        <code>jsd</code> (Jensen-Shannon Divergence), <code>cov</code>, <code>cor</code> (Pearson Correlation),
+        <code>spearman</code> (Spearman Rank Correlation Coefficient), <code>kendall</code> (Kendall Tau Rank Correlation Coefficient).</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; dot(x, y)
+    res16: Double = 20.0
+
+    smile&gt; cov(x, y)
+    res17: Double = -1.6666666666666667
+    </code></pre>
+
+    <h2 id="matrix" class="title">Matrix Operations</h2>
+
+    <p>Like Matlab, we can use <code>eye</code>, <code>zeros</code> and <code>ones</code>
+        to create identity, zero, or all-ones matrix, respectively.
+        To create a matrix from 2-dimensional array, we can use the constructor <code>matrix</code>
+        or the <code>~</code> operator.
+        The <code>~</code> operator can be applied to 1-dimensional array too, which creates
+        a single column matrix.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    val a = matrix(
+        c(0.7220180, 0.07121225, 0.6881997),
+        c(-0.2648886, -0.89044952, 0.3700456),
+        c(-0.6391588, 0.44947578, 0.6240573)
+    )
+    val b = matrix(
+        c(0.6881997, -0.07121225, 0.7220180),
+        c(0.3700456, 0.89044952, -0.2648886),
+        c(0.6240573, -0.44947578, -0.6391588)
+    )
+    val C = Array(
+        Array(0.9527204, -0.2973347, 0.06257778),
+        Array(-0.2808735, -0.9403636, -0.19190231),
+        Array(0.1159052, 0.1652528, -0.97941688)
+    )
+
+    val c = ~C // or val c = matrix(C)
+    </code></pre>
+
+    <p>Matrix-vector operations are just like in math formula.</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; a * x + y * 1.5
+    res26: smile.math.VectorAddVector = Array(4.024486715010331, -0.11406700374225098, 2.6796872175051663)
+    </code></pre>
+
+    <p>Similarly for matrix-matrix operations:</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; a + b
+    res27: smile.math.MatrixAddMatrix =
+        1.4102    0.0000    1.4102
+        0.1052    0.0000    0.1052
+       -0.0151    0.0000   -0.0151
+    </code></pre>
+
+    <p>Note that <code>a * b</code> are element-wise:</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; a * b
+    res28: smile.math.MatrixMulMatrix =
+        0.4969   -0.0051    0.4969
+       -0.0980   -0.7929   -0.0980
+       -0.3989   -0.2020   -0.3989
+    </code></pre>
+
+    <p>For matrix multiplication, the operator is <code>%*%</code>, same as in R</p>
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; a %*% b %*% c
+    [main] INFO smile.math.MatrixOrderOptimization - The minimum cost of matrix multiplication chain: 54
+    res29: smile.math.MatrixExpression =
+        0.9984    0.0067    0.0554
+       -0.0257    0.9361    0.3508
+       -0.0495   -0.3517    0.9348
+    </code></pre>
+
+    <p>The method <code>DenseMatrix.transpose</code> returns the transpose of matrix,
+        which executes immediately. However, the method <code>t</code> is preferred
+        on <code>MatrixExpression</code> as it is lazy.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; a %*% b.t %*% c
+    [main] INFO smile.math.MatrixOrderOptimization - The minimum cost of matrix multiplication chain: 54
+    res30: smile.math.MatrixExpression =
+        0.8978   -0.4369    0.0543
+        0.4189    0.8856    0.2006
+       -0.1357   -0.1574    0.9782
+    </code></pre>
+
+    <p>Smile has runtime optimization for matrix multiplication chain, which can greatly
+        improve the performance. In the below we generate several random matrices and multiply
+        them together.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    val a = randn( 300,  900)
+    val b = randn( 900,  150)
+    val c = randn( 150, 1800)
+    val d = randn(1800,   30)
+
+    time("matrix multiplication") {(a %*% b %*% c %*% d).toMatrix}
+    </code></pre>
+
+    <p>where <code>randn()</code> creates a matrix of normally distributed
+        random numbers. The shell will try to load machine optimized
+        BLAS/LAPACK native libraries for most matrix computation.
+        If BLAS/LAPACK is not available, smile will fall back to pure Java
+        implementation.</p>
+
+    <h2 id="decomposition" class="title">Matrix Decomposition</h2>
+
+    <p>In linear algebra, a matrix decomposition or matrix factorization
+        is a factorization of a matrix into a product of matrices.
+        There are many different matrix decompositions. In Smile, we provide
+        LU, QR, Cholesky, eigen, and SVD decomposition by functions
+        <code>lu</code>, <code>qr</code>, <code>cholesky</code>,
+        <code>eigen</code>, and <code>svd</code>, respectively.</p>
+
+    <p>With these decompositions, many important linear algebra operations
+        can be performed such as calculating matrix rank, determinant, solving
+        linear systems, computing inverse matrix, etc.
+        In fact, Smile has functions <code>det</code>,
+        <code>rank</code>, <code>inv</code> and operator <code>\</code>
+        for these common computation.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    smile&gt; val x = Array(1.0, 2.0, 3.0)
+    x: Array[Double] = Array(1.0, 2.0, 3.0)
+
+    smile&gt; a \ x
+    res14: Array[Double] = Array(-1.7252356779053744, -0.3612592362819077, 3.3004624918302046)
+
+    smile&gt; inv(a)
+    res19: smile.math.matrix.DenseMatrix =
+      0.7220   -0.2649   -0.6392
+      0.0712   -0.8904    0.4495
+      0.6882    0.3700    0.6241
+      smile&gt; inv(a) %*% a
+
+    res21: smile.math.MatrixExpression =
+      1.0000    0.0000    0.0000
+     -0.0000    1.0000    0.0000
+     -0.0000    0.0000    1.0000
+    </code></pre>
+
+    <div id="btnv">
+        <span class="btn-arrow-left">&larr; &nbsp;</span>
+        <a class="btn-prev-text" href="manifold.html" title="Previous Section: Manifold Learning"><span>Manifold Learning</span></a>
+        <a class="btn-next-text" href="statistics.html" title="Next Section: Statistics"><span>Statistics</span></a>
+        <span class="btn-arrow-right">&nbsp;&rarr;</span>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+</script>
+
+</div>
+</div>
+
+<a href=https://github.com/haifengl/smile><img style="position: fixed; top: 0; right: 0; border: 0" src=https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png alt="Fork me on GitHub"></a>
+
+<!-- Place this tag right after the last button or just before your close body tag. -->
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

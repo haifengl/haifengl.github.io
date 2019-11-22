@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+     Smile - Statistical Machine Intelligence and Learning Engine
+  </title>
+  
+  <meta name="description" content="Smile is a fast and general machine learning engine for big data processing, with built-in modules for classification, regression, clustering, association rule mining, feature selection, manifold learning, genetic algorithm, missing value imputation, efficient nearest neighbor search, MDS, NLP, linear algebra, hypothesis tests, random number generators, interpolation, wavelet, plot, etc.">
+
+  <!-- prettify js and CSS -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=scala"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/cerulean.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" type="text/css" />
+
+
+  <!-- table of contents auto generator -->
+  <script src="js/toc.js" type="text/javascript"></script>
+
+  <!-- styles for pager and table of contents -->
+  <link rel="stylesheet" href="css/pager.css" type="text/css" />
+  <link rel="stylesheet" href="css/toc.css" type="text/css" />
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-52181830-5', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5721843955514300",
+    enable_page_level_ads: true
+  });
+  </script>
+
+  <!-- Load static page by jQuery AJAX -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // scroll/follow sidebar
+      // #sidebar is defined in the content snippet
+      // This script has to be executed after the snippet loaded.
+      $.getScript("js/follow-sidebar.js");
+
+      $("#testimonial-slider").owlCarousel({
+        items: 1,
+        singleItem: true,
+        pagination: true,
+        navigation: false,
+        loop: true,
+        autoPlay: 10000,
+        stopOnHover: true,
+        transitionStyle: "backSlide",
+        touchDrag: true
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="container" style="max-width: 1200px;">
+<header>
+<div class="masthead">
+  <p class="lead">
+    <a href="index.html">
+    <img src="images/smile.jpg" style="height:100px; width:auto; vertical-align: bottom; margin-top: 20px;">
+    <span class="tagline">Smile - Statistical Machine Intelligence and Learning Engine</span>
+    </a>
+  </p>
+</div>
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="quickstart.html">Quick Start</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="overview.html">Machine Learning</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="visualization.html">Visualization</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Supervised Learning <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="classification.html">Classification</a></li>
+          <li><a href="regression.html">Regression</a></li>
+          <li><a href="feature.html">Features</a></li>
+          <li><a href="validation.html">Model Validation</a></li>
+          <li><a href="missing-value-imputation.html">Missing Value Imputation</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unsupervised Learning <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="clustering.html">Clustering</a></li>
+          <li><a href="vector-quantization.html">Vector Quantization</a></li>
+          <li><a href="association-rule.html">Association Rule Mining</a></li>
+          <li><a href="mds.html">Multi-Dimensional Scaling</a></li>
+          <li><a href="manifold.html">Manifold Learning</a></li>
+        </ul>
+      </li>
+      <li><a href="nlp.html">NLP</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Math <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="linear-algebra.html">Linear Algebra</a></li>
+          <li><a href="statistics.html">Statistics</a></li>
+          <li><a href="wavelet.html">Wavelet</a></li>
+          <li><a href="interpolation.html">Interpolation</a></li>
+          <li><a href="graph.html">Graph</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Docs <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="api/java/index.html">Java</a></li>
+          <li><a href="api/scala/index.html">Scala</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </div>
+  <!-- /.navbar-collapse -->
+</nav>
+</header>
+
+<div id="content" class="row">
+  <div class="col-md-3 col-md-push-9 hidden-xs hidden-sm">
+    <div id="sidebar">
+        <div class="sidebar-toc" style="margin-bottom: 20px;">
+            <p class="toc-header">Contents</p>
+            <div id="toc"></div>
+        </div>
+
+        <div id="search">
+            <script>
+                (function() {
+                    var cx = '010264411143030149390:ajvee_ckdzs';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                            '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+            <gcse:searchbox-only></gcse:searchbox-only>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-9 col-md-pull-3">
+    <h1 id="faq-top" class="title">FAQ</h1>
+
+    <h2 class="question" id="link-with-smile">Link with Smile</h2>
+    <p class="answer">
+        Smile artifacts are hosted in <a href="https://oss.sonatype.org/#nexus-search;quick~smile-core">Sonatype Nexus</a>.
+        You can add the following dependency into your pom.xml:</p>
+
+    <pre><code>
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
+      &lt;artifactId&gt;smile-core&lt;/artifactId&gt;
+      &lt;version&gt;2.0.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    </code></pre>
+
+    <p>If you're using SBT, add the following line into your build file:</p>
+
+    <pre><code>
+    libraryDependencies += "com.github.haifengl" % "smile-core" % "2.0.0"
+    </code></pre>
+
+    <p>For Scala API,</p>
+
+    <pre><code>
+    libraryDependencies += "com.github.haifengl" %% "smile-scala" % "2.0.0"
+    </code></pre>
+
+    <p>To enable machine optimised matrix computation, the users should add
+        the dependency of smile-netlib:</p>
+    <pre><code>
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
+      &lt;artifactId&gt;smile-netlib&lt;/artifactId&gt;
+      &lt;version&gt;2.0.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    </code></pre>
+    <p>and also make their machine-optimised libblas3 (CBLAS) and liblapack3 (Fortran)
+        available as shared libraries at runtime. This module employs the highly efficient
+        <a href="https://github.com/fommil/netlib-java#netlib-java">netlib-java</a>
+        library.</p>
+
+    <h3>OS X</h3>
+    <p>Apple OS X requires no further setup as it ships with the veclib framework.</p>
+
+    <h3>Linux</h3>
+    <p>Generically-tuned ATLAS and OpenBLAS are available with most distributions
+        and must be enabled explicitly using the package-manager. For example,</p>
+
+    <pre><code>
+    sudo apt-get install libatlas3-base libopenblas-base
+    sudo update-alternatives --config libblas.so
+    sudo update-alternatives --config libblas.so.3
+    sudo update-alternatives --config liblapack.so
+    sudo update-alternatives --config liblapack.so.3
+    </code></pre>
+
+    <p>However, these are only generic pre-tuned builds. If you have an Intel MKL licence,
+    you could also create symbolic links from libblas.so.3 and liblapack.so.3 to libmkl_rt.so
+    or use Debian's alternatives system.</p>
+
+    <h3>Windows</h3>
+    <p>The native_system builds expect to find libblas3.dll and liblapack3.dll
+        on the %PATH% (or current working directory). Besides vendor-supplied
+        implementations, OpenBLAS provide generically tuned binaries, and it
+        is possible to build ATLAS.</p>
+
+    <h2 class="question" id="model-serialization">Model serialization</h2>
+    <p class="answer">To serialize a model, you may use</p>
+    <pre class="prettyprint lang-scala"><code>
+    write(model, file)
+    </code></pre>
+    <p>This method is in the Scala API <code>smile.write</code> object and serialize the model to Java
+    serialization format. This is handy if you want to use a model in Spark.</p>
+
+    <p>Alternatively, you can also use</p>
+    <pre class="prettyprint lang-scala"><code>
+    write.xstream(model, file)
+    </code></pre>
+
+    <p>which uses XStream library to serialize the model (actually any objects) to XML file.</p>
+
+    <p>To read the model back, you can use <code>read(file)</code> or <code>read.xstream(file)</code>, correspondingly.</p>
+
+    <h2 class="question" id="data-format">Data Format</h2>
+    <p class="answer">
+        Most Smile algorithms take simple <code>double[]</code> as input. So you can use your favorite methods
+        or library to import the data as long as the samples are in double arrays. Meanwhile, Smile provides
+        a couple of parsers for popular data formats, such as Weka's ARFF files, LibSVM's file format,
+        delimited text files, and binary sparse data. These classes are in the package <code>smile.data.parser</code>
+        and <code>smile.io</code> provides high level operators on top of these parsers. The package
+        <code>smile.data.parser.microarray</code> also provides several parsers for microarray gene expression datasets,
+        including GCT, PCL, RES, and TXT files.</p>
+
+    <h2 class="question" id="pom">Cannot build Smile with maven</h2>
+    <p class="answer">
+        We have moved to SBT to build packages. The maven pom.xml files were deprecated and were removed in v1.2.0.
+    </p>
+
+    <h2 class="question" id="headless-plot">Headless Plot</h2>
+    <p class="answer">
+        In case that your environment does not have a display or you need to generate and save
+        a lot of plots without showing them on the screen, you may run Smile in headless model.
+    </p>
+
+    <pre class="prettyprint lang-bash"><code>
+    bin/smile -Djava.awt.headless=true
+    </code></pre>
+
+    <p>The following example shows how to save a plot in the headless mode.</p>
+
+    <pre class="prettyprint lang-scala"><code>
+    val toy = read.csv("data/classification/toy/toy-train.txt", delimiter='\t', header=false)
+    val x = toy.select(1, 2).toArray
+    val y = toy.column(0).toIntArray
+
+    val canvas = ScatterPlot.plot(x, y, '*', Array(RED, BLUE))
+
+    val headless = new Headless(canvas);
+    headless.pack();
+    headless.setVisible(true);
+
+    canvas.save(new java.io.File("headless.png"))
+    </code></pre>
+
+    <h2 class="question" id="seed">How can I set the random number generator seed for random forest?</h2>
+    <p class="answer">
+        This is a common question for stochastic algorithms like random forest.
+        In general, this is discouraged because people often choose bad seed due to the lack
+        of sufficient knowledge of random number generation. However, one may want the repeatable
+        result for testing purpose. In this case, call <code>smile.math.MathEx.setSeed</code> before
+        training the model.
+    </p>
+
+    <p>
+        Note that we don't provide a method to set the seed for a particular algorithm.
+        Many algorithms are multithreaded and each thread has their own random number
+        generator. We choose this design because each random number generator maintains
+        an internal state so that it is not multithread-safe. If multithreads share a
+        random number generator, we have to use locks, which significant reduce the
+        performance.
+    </p>
+
+    <p>
+        A method <code>setSeed()</code> in the algorithm is also troublesome.
+        For algorithms like random forest, it is not right to initialize every thread
+        with the same seed. Otherwise, same decision trees will be created
+        and we lose the randomness of "random" forest. It is also complicated
+        to pass a sequence of random numbers because it is not clear
+        how many random number generators are needed for many algorithms. Even worse, it breaks
+        the encapsulation as the caller has to know the details of algorithms.
+    </p>
+
+</div>
+
+<script type="text/javascript">
+    $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
+</script>
+
+</div>
+</div>
+
+<a href=https://github.com/haifengl/smile><img style="position: fixed; top: 0; right: 0; border: 0" src=https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png alt="Fork me on GitHub"></a>
+
+<!-- Place this tag right after the last button or just before your close body tag. -->
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
