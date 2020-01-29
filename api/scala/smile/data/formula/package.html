@@ -1,0 +1,674 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>formula - Smile - Statistical Machine Intelligence and Learning Engine - smile.data.formula</title>
+          <meta name="description" content="formula - Smile - Statistical Machine Intelligence and Learning Engine - smile.data.formula" />
+          <meta name="keywords" content="formula Smile Statistical Machine Intelligence and Learning Engine smile.data.formula" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'smile.data.formula.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="smile">smile</a>.<a href="../package.html" class="extype" name="smile.data">data</a></p>
+        <h1>formula</h1><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">formula</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Formula DSL.</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="smile.data.formula"><span>formula</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="smile.data.formula.FormulaBuilder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FormulaBuilderextendsProductwithSerializable"></a>
+      <a id="FormulaBuilder:FormulaBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="FormulaBuilder.html"><span class="name">FormulaBuilder</span></a><span class="params">(<span name="y">y: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="smile.data.formula.Term">Term</span>]</span>, <span name="x">x: <span class="extype" name="scala.collection.mutable.ListBuffer">ListBuffer</span>[<span class="extype" name="smile.data.formula.HyperTerm">HyperTerm</span>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@FormulaBuilderextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">DSL to build a formula in R style.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="smile.data.formula#abs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="abs(x:String):smile.data.formula.Term"></a>
+      <a id="abs(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">abs</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@abs(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#acos" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="acos(x:String):smile.data.formula.Term"></a>
+      <a id="acos(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">acos</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@acos(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#asin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="asin(x:String):smile.data.formula.Term"></a>
+      <a id="asin(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asin</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@asin(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#atan" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="atan(x:String):smile.data.formula.Term"></a>
+      <a id="atan(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">atan</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@atan(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#buildFactorCrossing" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="buildFactorCrossing(x:smile.data.formula.FactorCrossingBuilder):smile.data.formula.FactorCrossing"></a>
+      <a id="buildFactorCrossing(FactorCrossingBuilder):FactorCrossing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">buildFactorCrossing</span><span class="params">(<span name="x">x: <span class="extype" name="smile.data.formula.FactorCrossingBuilder">FactorCrossingBuilder</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.FactorCrossing">FactorCrossing</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@buildFactorCrossing(x:smile.data.formula.FactorCrossingBuilder):smile.data.formula.FactorCrossing" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#buildFactorInteraction" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="buildFactorInteraction(x:smile.data.formula.FactorInteractionBuilder):smile.data.formula.FactorInteraction"></a>
+      <a id="buildFactorInteraction(FactorInteractionBuilder):FactorInteraction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">buildFactorInteraction</span><span class="params">(<span name="x">x: <span class="extype" name="smile.data.formula.FactorInteractionBuilder">FactorInteractionBuilder</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.FactorInteraction">FactorInteraction</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@buildFactorInteraction(x:smile.data.formula.FactorInteractionBuilder):smile.data.formula.FactorInteraction" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#buildFormula" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="buildFormula(x:smile.data.formula.FormulaBuilder):smile.data.formula.Formula"></a>
+      <a id="buildFormula(FormulaBuilder):Formula"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">buildFormula</span><span class="params">(<span name="x">x: <a href="FormulaBuilder.html" class="extype" name="smile.data.formula.FormulaBuilder">FormulaBuilder</a></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Formula">Formula</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@buildFormula(x:smile.data.formula.FormulaBuilder):smile.data.formula.Formula" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#cbrt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cbrt(x:String):smile.data.formula.Term"></a>
+      <a id="cbrt(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cbrt</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@cbrt(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#ceil" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ceil(x:String):smile.data.formula.Term"></a>
+      <a id="ceil(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ceil</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@ceil(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#cos" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cos(x:String):smile.data.formula.Term"></a>
+      <a id="cos(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cos</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@cos(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#cosh" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cosh(x:String):smile.data.formula.Term"></a>
+      <a id="cosh(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cosh</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@cosh(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#exp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="exp(x:String):smile.data.formula.Term"></a>
+      <a id="exp(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exp</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@exp(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#expm1" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="expm1(x:String):smile.data.formula.Term"></a>
+      <a id="expm1(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">expm1</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@expm1(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#floor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="floor(x:String):smile.data.formula.Term"></a>
+      <a id="floor(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">floor</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@floor(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#log" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="log(x:String):smile.data.formula.Term"></a>
+      <a id="log(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@log(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#log10" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="log10(x:String):smile.data.formula.Term"></a>
+      <a id="log10(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log10</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@log10(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#log1p" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="log1p(x:String):smile.data.formula.Term"></a>
+      <a id="log1p(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log1p</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@log1p(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#log2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="log2(x:String):smile.data.formula.Term"></a>
+      <a id="log2(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log2</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@log2(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#pimpFormulaString" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="pimpFormulaString(x:String):smile.data.formula.PimpedFormulaString"></a>
+      <a id="pimpFormulaString(String):PimpedFormulaString"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pimpFormulaString</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.PimpedFormulaString">PimpedFormulaString</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@pimpFormulaString(x:String):smile.data.formula.PimpedFormulaString" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#pimpHyperTerm" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="pimpHyperTerm(x:smile.data.formula.HyperTerm):smile.data.formula.PimpedHyperTerm"></a>
+      <a id="pimpHyperTerm(HyperTerm):PimpedHyperTerm"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pimpHyperTerm</span><span class="params">(<span name="x">x: <span class="extype" name="smile.data.formula.HyperTerm">HyperTerm</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.PimpedHyperTerm">PimpedHyperTerm</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@pimpHyperTerm(x:smile.data.formula.HyperTerm):smile.data.formula.PimpedHyperTerm" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#pimpTerm" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="pimpTerm(x:smile.data.formula.Term):smile.data.formula.PimpedTerm"></a>
+      <a id="pimpTerm(Term):PimpedTerm"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pimpTerm</span><span class="params">(<span name="x">x: <span class="extype" name="smile.data.formula.Term">Term</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.PimpedTerm">PimpedTerm</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@pimpTerm(x:smile.data.formula.Term):smile.data.formula.PimpedTerm" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#rint" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rint(x:String):smile.data.formula.Term"></a>
+      <a id="rint(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rint</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@rint(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#round" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="round(x:String):smile.data.formula.Term"></a>
+      <a id="round(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">round</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@round(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#sign" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sign(x:String):smile.data.formula.Term"></a>
+      <a id="sign(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sign</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@sign(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#signum" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="signum(x:String):smile.data.formula.Term"></a>
+      <a id="signum(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">signum</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@signum(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#sin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sin(x:String):smile.data.formula.Term"></a>
+      <a id="sin(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sin</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@sin(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#sinh" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sinh(x:String):smile.data.formula.Term"></a>
+      <a id="sinh(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sinh</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@sinh(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#sqrt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sqrt(x:String):smile.data.formula.Term"></a>
+      <a id="sqrt(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sqrt</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@sqrt(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#tan" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="tan(x:String):smile.data.formula.Term"></a>
+      <a id="tan(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tan</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@tan(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#tanh" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="tanh(x:String):smile.data.formula.Term"></a>
+      <a id="tanh(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tanh</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@tanh(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="smile.data.formula#ulp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ulp(x:String):smile.data.formula.Term"></a>
+      <a id="ulp(String):Term"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ulp</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="smile.data.formula.Term">Term</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#smile.data.formula.package@ulp(x:String):smile.data.formula.Term" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
