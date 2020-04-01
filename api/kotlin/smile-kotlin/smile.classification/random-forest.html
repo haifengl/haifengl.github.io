@@ -15,14 +15,15 @@ that consists of many decision trees and outputs the majority vote of
 individual trees. The method combines bagging idea and the random
 selection of features.</p>
 <p>Each tree is constructed using the following algorithm:</p>
-<p>i. If the number of cases in the training set is N, randomly sample N cases
+<ol><li>If the number of cases in the training set is N, randomly sample N cases
 with replacement from the original data. This sample will
-be the training set for growing the tree.
-i. If there are M input variables, a number m &amp;lt;&amp;lt; M is specified such
+be the training set for growing the tree.</li>
+<li>If there are M input variables, a number m &amp;lt;&amp;lt; M is specified such
 that at each node, m variables are selected at random out of the M and
 the best split on these m is used to split the node. The value of m is
-held constant during the forest growing.
-i. Each tree is grown to the largest extent possible. There is no pruning.</p>
+held constant during the forest growing.</li>
+<li>Each tree is grown to the largest extent possible. There is no pruning.</li>
+</ol>
 <p>The advantages of random forest are:</p>
 <ul><li>For many data sets, it produces a highly accurate classifier.</li>
 <li>It runs efficiently on large data sets.</li>
