@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>kmeans - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.clustering</a>&nbsp;/&nbsp;<a href="./kmeans.html">kmeans</a><br/>
+<br/>
+<h1>kmeans</h1>
+<a name="smile.clustering$kmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">kmeans</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$kmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$kmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$kmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Int)/maxIter">maxIter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;100<span class="symbol">, </span><span class="identifier" id="smile.clustering$kmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Int)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1E-4<span class="symbol">, </span><span class="identifier" id="smile.clustering$kmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Int)/runs">runs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;16<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/KMeans.html"><span class="identifier">KMeans</span></a></code>
+<p>K-Means clustering. The algorithm partitions n observations into k clusters in which
+each observation belongs to the cluster with the nearest mean.
+Although finding an exact solution to the k-means problem for arbitrary
+input is NP-hard, the standard approach to finding an approximate solution
+(often called Lloyd's algorithm or the k-means algorithm) is used widely
+and frequently finds reasonable solutions quickly.</p>
+<p>However, the k-means algorithm has at least two major theoretic shortcomings:</p>
+<ul><li>First, it has been shown that the worst case running time of the
+algorithm is super-polynomial in the input size.</li>
+<li>Second, the approximation found can be arbitrarily bad with respect
+to the objective function compared to the optimal learn.</li>
+</ul>
+<p>In this implementation, we use k-means++ which addresses the second of these
+obstacles by specifying a procedure to initialize the cluster centers before
+proceeding with the standard k-means optimization iterations. With the
+k-means++ initialization, the algorithm is guaranteed to find a solution
+that is O(log k) competitive to the optimal k-means solution.</p>
+<p>We also use k-d trees to speed up each k-means step as described in the filter
+algorithm by Kanungo, et al.</p>
+<p>K-means is a hard clustering method, i.e. each sample is assigned to
+a specific cluster. In contrast, soft clustering, e.g. the
+Expectation-Maximization algorithm for Gaussian mixtures, assign samples
+to different clusters with different probabilities.</p>
+<p>====References:====</p>
+<ul><li>Tapas Kanungo, David M. Mount, Nathan S. Netanyahu, Christine D. Piatko, Ruth Silverman, and Angela Y. Wu. An Efficient k-Means Clustering Algorithm: Analysis and Implementation. IEEE TRANS. PAMI, 2002.</li>
+<li>D. Arthur and S. Vassilvitskii. "K-means++: the advantages of careful seeding". ACM-SIAM symposium on Discrete algorithms, 1027-1035, 2007.</li>
+<li>Anna D. Peterson, Arka P. Ghosh and Ranjan Maitra. A systematic evaluation of different methods for initializing the K-means clustering algorithm. 2010.</li>
+</ul>
+<p>This method runs the algorithm for given times and return the best one with smallest distortion.</p>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters.</p>
+<p><a name="maxIter"></a>
+<code>maxIter</code> - the maximum number of iterations for each running.</p>
+<p><a name="tol"></a>
+<code>tol</code> - tol the tolerance of convergence test.</p>
+<p><a name="runs"></a>
+<code>runs</code> - the number of runs of K-Means algorithm.</p>
+</BODY>
+</HTML>

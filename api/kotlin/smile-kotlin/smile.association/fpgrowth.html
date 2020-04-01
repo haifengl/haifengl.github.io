@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>fpgrowth - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.association</a>&nbsp;/&nbsp;<a href="./fpgrowth.html">fpgrowth</a><br/>
+<br/>
+<h1>fpgrowth</h1>
+<a name="smile.association$fpgrowth(kotlin.Int, kotlin.Array((kotlin.IntArray)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">fpgrowth</span><span class="symbol">(</span><span class="identifier" id="smile.association$fpgrowth(kotlin.Int, kotlin.Array((kotlin.IntArray)))/minSupport">minSupport</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.association$fpgrowth(kotlin.Int, kotlin.Array((kotlin.IntArray)))/itemsets">itemsets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Stream</span><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/association/ItemSet.html"><span class="identifier">ItemSet</span></a><span class="symbol">&gt;</span></code>
+<p>Frequent item set mining based on the FP-growth (frequent pattern growth)
+algorithm, which employs an extended prefix-tree (FP-tree) structure to
+store the database in a compressed form. The FP-growth algorithm is
+currently one of the fastest approaches to discover frequent item sets.
+FP-growth adopts a divide-and-conquer approach to decompose both the mining
+tasks and the databases. It uses a pattern fragment growth method to avoid
+the costly process of candidate generation and testing used by Apriori.</p>
+<p>The basic idea of the FP-growth algorithm can be described as a
+recursive elimination scheme: in a preprocessing step delete
+all items from the transactions that are not frequent individually,
+i.e., do not appear in a user-specified minimum
+number of transactions. Then select all transactions that
+contain the least frequent item (least frequent among those
+that are frequent) and delete this item from them. Recurse
+to process the obtained reduced (also known as projected)
+database, remembering that the item sets found in the recursion
+share the deleted item as a prefix. On return, remove
+the processed item from the database of all transactions
+and start over, i.e., process the second frequent item etc. In
+these processing steps the prefix tree, which is enhanced by
+links between the branches, is exploited to quickly find the
+transactions containing a given item and also to remove this
+item from the transactions after it has been processed.</p>
+<h3>Parameters</h3>
+<p><a name="itemsets"></a>
+<code>itemsets</code> - the item set database. Each row is a item set, which
+    may have different length. The item identifiers have to be in [0, n),
+    where n is the number of items. Item set should NOT contain duplicated
+    items. Note that it is reordered after the call.</p>
+<p><a name="minSupport"></a>
+<code>minSupport</code> - the required minimum support of item sets in terms
+    of frequency.</p>
+<p><strong>Return</strong><br/>
+the stream of frequent item sets.</p>
+<a name="smile.association$fpgrowth(smile.association.FPTree)"></a>
+<code><span class="keyword">fun </span><span class="identifier">fpgrowth</span><span class="symbol">(</span><span class="identifier" id="smile.association$fpgrowth(smile.association.FPTree)/tree">tree</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/association/FPTree.html"><span class="identifier">FPTree</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Stream</span><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/association/ItemSet.html"><span class="identifier">ItemSet</span></a><span class="symbol">&gt;</span></code>
+<p>Frequent item set mining based on the FP-growth (frequent pattern growth)
+algorithm, which employs an extended prefix-tree (FP-tree) structure to
+store the database in a compressed form. The FP-growth algorithm is
+currently one of the fastest approaches to discover frequent item sets.
+FP-growth adopts a divide-and-conquer approach to decompose both the mining
+tasks and the databases. It uses a pattern fragment growth method to avoid
+the costly process of candidate generation and testing used by Apriori.</p>
+<p>The basic idea of the FP-growth algorithm can be described as a
+recursive elimination scheme: in a preprocessing step delete
+all items from the transactions that are not frequent individually,
+i.e., do not appear in a user-specified minimum
+number of transactions. Then select all transactions that
+contain the least frequent item (least frequent among those
+that are frequent) and delete this item from them. Recurse
+to process the obtained reduced (also known as projected)
+database, remembering that the item sets found in the recursion
+share the deleted item as a prefix. On return, remove
+the processed item from the database of all transactions
+and start over, i.e., process the second frequent item etc. In
+these processing steps the prefix tree, which is enhanced by
+links between the branches, is exploited to quickly find the
+transactions containing a given item and also to remove this
+item from the transactions after it has been processed.</p>
+<h3>Parameters</h3>
+<p><a name="tree"></a>
+<code>tree</code> - the FP-tree of item set database.</p>
+<p><strong>Return</strong><br/>
+the stream of frequent item sets.</p>
+</BODY>
+</HTML>

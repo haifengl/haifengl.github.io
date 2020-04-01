@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>sib - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.clustering</a>&nbsp;/&nbsp;<a href="./sib.html">sib</a><br/>
+<br/>
+<h1>sib</h1>
+<a name="smile.clustering$sib(kotlin.Array((smile.util.SparseArray)), kotlin.Int, kotlin.Int, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">sib</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$sib(kotlin.Array((smile.util.SparseArray)), kotlin.Int, kotlin.Int, kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/util/SparseArray.html"><span class="identifier">SparseArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$sib(kotlin.Array((smile.util.SparseArray)), kotlin.Int, kotlin.Int, kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$sib(kotlin.Array((smile.util.SparseArray)), kotlin.Int, kotlin.Int, kotlin.Int)/maxIter">maxIter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;100<span class="symbol">, </span><span class="identifier" id="smile.clustering$sib(kotlin.Array((smile.util.SparseArray)), kotlin.Int, kotlin.Int, kotlin.Int)/runs">runs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;8<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/SIB.html"><span class="identifier">SIB</span></a></code>
+<p>The Sequential Information Bottleneck algorithm. SIB clusters co-occurrence
+data such as text documents vs words. SIB is guaranteed to converge to a local
+maximum of the information. Moreover, the time and space complexity are
+significantly improved in contrast to the agglomerative IB algorithm.</p>
+<p>In analogy to K-Means, SIB's update formulas are essentially same as the
+EM algorithm for estimating finite Gaussian mixture model by replacing
+regular Euclidean distance with Kullback-Leibler divergence, which is
+clearly a better dissimilarity measure for co-occurrence data. However,
+the common batch updating rule (assigning all instances to nearest centroids
+and then updating centroids) of K-Means won't work in SIB, which has
+to work in a sequential way (reassigning (if better) each instance then
+immediately update related centroids). It might be because K-L divergence
+is very sensitive and the centroids may be significantly changed in each
+iteration in batch updating rule.</p>
+<p>Note that this implementation has a little difference from the original
+paper, in which a weighted Jensen-Shannon divergence is employed as a
+criterion to assign a randomly-picked sample to a different cluster.
+However, this doesn't work well in some cases as we experienced probably
+because the weighted JS divergence gives too much weight to clusters which
+is much larger than a single sample. In this implementation, we instead
+use the regular/unweighted Jensen-Shannon divergence.</p>
+<p>====References:====</p>
+<ul><li>N. Tishby, F.C. Pereira, and W. Bialek. The information bottleneck method. 1999.</li>
+<li>N. Slonim, N. Friedman, and N. Tishby. Unsupervised document classification using sequential information maximization. ACM SIGIR, 2002.</li>
+<li>Jaakko Peltonen, Janne Sinkkonen, and Samuel Kaski. Sequential information bottleneck for finite data. ICML, 2004.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters.</p>
+<p><a name="maxIter"></a>
+<code>maxIter</code> - the maximum number of iterations.</p>
+<p><a name="runs"></a>
+<code>runs</code> - the number of runs of SIB algorithm.</p>
+</BODY>
+</HTML>

@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>cart - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./cart.html">cart</a><br/>
+<br/>
+<h1>cart</h1>
+<a name="smile.classification$cart(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.SplitRule, kotlin.Int, kotlin.Int, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">cart</span><span class="symbol">(</span><span class="identifier" id="smile.classification$cart(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.SplitRule, kotlin.Int, kotlin.Int, kotlin.Int)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$cart(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.SplitRule, kotlin.Int, kotlin.Int, kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$cart(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.SplitRule, kotlin.Int, kotlin.Int, kotlin.Int)/splitRule">splitRule</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/base/cart/SplitRule.html"><span class="identifier">SplitRule</span></a>&nbsp;<span class="symbol">=</span>&nbsp;SplitRule.GINI<span class="symbol">, </span><span class="identifier" id="smile.classification$cart(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.SplitRule, kotlin.Int, kotlin.Int, kotlin.Int)/maxDepth">maxDepth</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;20<span class="symbol">, </span><span class="identifier" id="smile.classification$cart(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.SplitRule, kotlin.Int, kotlin.Int, kotlin.Int)/maxNodes">maxNodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="smile.classification$cart(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.SplitRule, kotlin.Int, kotlin.Int, kotlin.Int)/nodeSize">nodeSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;5<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/DecisionTree.html"><span class="identifier">DecisionTree</span></a></code>
+<p>Decision tree. A decision tree can be learned by
+splitting the training set into subsets based on an attribute value
+test. This process is repeated on each derived subset in a recursive
+manner called recursive partitioning. The recursion is completed when
+the subset at a node all has the same value of the target variable,
+or when splitting no longer adds value to the predictions.</p>
+<p>The algorithms that are used for constructing decision trees usually
+work top-down by choosing a variable at each step that is the next best
+variable to use in splitting the set of items. "Best" is defined by how
+well the variable splits the set into homogeneous subsets that have
+the same value of the target variable. Different algorithms use different
+formulae for measuring "best". Used by the CART algorithm, Gini impurity
+is a measure of how often a randomly chosen element from the set would
+be incorrectly labeled if it were randomly labeled according to the
+distribution of labels in the subset. Gini impurity can be computed by
+summing the probability of each item being chosen times the probability
+of a mistake in categorizing that item. It reaches its minimum (zero) when
+all cases in the node fall into a single target category. Information gain
+is another popular measure, used by the ID3, C4.5 and C5.0 algorithms.
+Information gain is based on the concept of entropy used in information
+theory. For categorical variables with different number of levels, however,
+information gain are biased in favor of those attributes with more levels.
+Instead, one may employ the information gain ratio, which solves the drawback
+of information gain.</p>
+<p>Classification and Regression Tree techniques have a number of advantages
+over many of those alternative techniques.</p>
+<ul><li>'''Simple to understand and interpret:'''
+In most cases, the interpretation of results summarized in a tree is
+very simple. This simplicity is useful not only for purposes of rapid
+classification of new observations, but can also often yield a much simpler
+"model" for explaining why observations are classified or predicted in a
+particular manner.</li>
+<li>'''Able to handle both numerical and categorical data:'''
+Other techniques are usually specialized in analyzing datasets that
+have only one type of variable.</li>
+<li>'''Nonparametric and nonlinear:'''
+The final results of using tree methods for classification or regression
+can be summarized in a series of (usually few) logical if-then conditions
+(tree nodes). Therefore, there is no implicit assumption that the underlying
+relationships between the predictor variables and the dependent variable
+are linear, follow some specific non-linear link function, or that they
+are even monotonic in nature. Thus, tree methods are particularly well
+suited for data mining tasks, where there is often little a priori
+knowledge nor any coherent set of theories or predictions regarding which
+variables are related and how. In those types of data analytics, tree
+methods can often reveal simple relationships between just a few variables
+that could have easily gone unnoticed using other analytic techniques.</li>
+</ul>
+<p>One major problem with classification and regression trees is their high
+variance. Often a small change in the data can result in a very different
+series of splits, making interpretation somewhat precarious. Besides,
+decision-tree learners can create over-complex trees that cause over-fitting.
+Mechanisms such as pruning are necessary to avoid this problem.
+Another limitation of trees is the lack of smoothness of the prediction
+surface.</p>
+<p>Some techniques such as bagging, boosting, and random forest use more than
+one decision tree for their analysis.</p>
+<h3>Parameters</h3>
+<p><a name="formula"></a>
+<code>formula</code> - a symbolic description of the model to be fitted.</p>
+<p><a name="data"></a>
+<code>data</code> - the data frame of the explanatory and response variables.</p>
+<p><a name="maxDepth"></a>
+<code>maxDepth</code> - the maximum depth of the tree.</p>
+<p><a name="maxNodes"></a>
+<code>maxNodes</code> - the maximum number of leaf nodes in the tree.</p>
+<p><a name="nodeSize"></a>
+<code>nodeSize</code> - the minimum size of leaf nodes.</p>
+<p><a name="splitRule"></a>
+<code>splitRule</code> - the splitting rule.</p>
+<p><strong>Return</strong><br/>
+Decision tree model.</p>
+</BODY>
+</HTML>

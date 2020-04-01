@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>qda - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./qda.html">qda</a><br/>
+<br/>
+<h1>qda</h1>
+<a name="smile.classification$qda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">qda</span><span class="symbol">(</span><span class="identifier" id="smile.classification$qda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$qda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$qda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)/priori">priori</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="smile.classification$qda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.0001<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/QDA.html"><span class="identifier">QDA</span></a></code>
+<p>Quadratic discriminant analysis. QDA is closely related to linear discriminant
+analysis (LDA). Like LDA, QDA models the conditional probability density
+functions as a Gaussian distribution, then uses the posterior distributions
+to estimate the class for a given test data. Unlike LDA, however,
+in QDA there is no assumption that the covariance of each of the classes
+is identical. Therefore, the resulting separating surface between
+the classes is quadratic.</p>
+<p>The Gaussian parameters for each class can be estimated from training data
+with maximum likelihood (ML) estimation. However, when the number of
+training instances is small compared to the dimension of input space,
+the ML covariance estimation can be ill-posed. One approach to resolve
+the ill-posed estimation is to regularize the covariance estimation.
+One of these regularization methods is {@link rda regularized discriminant analysis}.</p>
+<h3>Parameters</h3>
+<p><a name="x"></a>
+<code>x</code> - training samples.</p>
+<p><a name="y"></a>
+<code>y</code> - training labels in [0, k), where k is the number of classes.</p>
+<p><a name="priori"></a>
+<code>priori</code> - the priori probability of each class. If null, it will be
+    estimated from the training data.</p>
+<p><a name="tol"></a>
+<code>tol</code> - a tolerance to decide if a covariance matrix is singular; it
+    will reject variables whose variance is less than tol2.</p>
+<p><strong>Return</strong><br/>
+Quadratic discriminant analysis model.</p>
+</BODY>
+</HTML>

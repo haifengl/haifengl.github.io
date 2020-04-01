@@ -1,0 +1,12 @@
+$dokka.format:html
+$dokka.linkExtension:html
+
+smile
+smile.association
+smile.classification
+smile.clustering
+smile.manifold
+smile.mds
+smile.projection
+smile.regression
+smile.wavelet

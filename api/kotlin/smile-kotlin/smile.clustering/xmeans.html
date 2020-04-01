@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>xmeans - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.clustering</a>&nbsp;/&nbsp;<a href="./xmeans.html">xmeans</a><br/>
+<br/>
+<h1>xmeans</h1>
+<a name="smile.clustering$xmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">xmeans</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$xmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$xmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;100<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/XMeans.html"><span class="identifier">XMeans</span></a></code>
+<p>X-Means clustering algorithm, an extended K-Means which tries to
+automatically determine the number of clusters based on BIC scores.
+Starting with only one cluster, the X-Means algorithm goes into action
+after each run of K-Means, making local decisions about which subset of the
+current centroids should split themselves in order to better fit the data.
+The splitting decision is done by computing the Bayesian Information
+Criterion (BIC).</p>
+<p>====References:====</p>
+<ul><li>Dan Pelleg and Andrew Moore. X-means: Extending K-means with Efficient Estimation of the Number of Clusters. ICML, 2000.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="k"></a>
+<code>k</code> - the maximum number of clusters.</p>
+</BODY>
+</HTML>

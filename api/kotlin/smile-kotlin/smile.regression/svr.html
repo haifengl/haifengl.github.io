@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>svr - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.regression</a>&nbsp;/&nbsp;<a href="./svr.html">svr</a><br/>
+<br/>
+<h1>svr</h1>
+<a name="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">svr</span><span class="symbol">(</span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/kernel">kernel</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/kernel/MercerKernel.html"><span class="identifier">MercerKernel</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/eps">eps</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/C">C</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1E-3<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/KernelMachine.html"><span class="identifier">KernelMachine</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Support vector regression. Like SVM for classification, the model produced
+by SVR depends only on a subset of the training data, because the cost
+function ignores any training data close to the model prediction (within
+a threshold).</p>
+<h3>Parameters</h3>
+<p><a name="x"></a>
+<code>x</code> - training data.</p>
+<p><a name="y"></a>
+<code>y</code> - response variable.</p>
+<p><a name="kernel"></a>
+<code>kernel</code> - the kernel function.</p>
+<p><a name="eps"></a>
+<code>eps</code> - the loss function error threshold.</p>
+<p><a name="C"></a>
+<code>C</code> - the soft margin penalty parameter.</p>
+<p><a name="tol"></a>
+<code>tol</code> - the tolerance of convergence test.</p>
+<p><strong>Tparam</strong><br/>
+T the data type</p>
+<p><strong>Return</strong><br/>
+SVR model.</p>
+</BODY>
+</HTML>

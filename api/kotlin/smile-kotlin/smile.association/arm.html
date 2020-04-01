@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>arm - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.association</a>&nbsp;/&nbsp;<a href="./arm.html">arm</a><br/>
+<br/>
+<h1>arm</h1>
+<a name="smile.association$arm(kotlin.Int, kotlin.Double, kotlin.Array((kotlin.IntArray)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">arm</span><span class="symbol">(</span><span class="identifier" id="smile.association$arm(kotlin.Int, kotlin.Double, kotlin.Array((kotlin.IntArray)))/minSupport">minSupport</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.association$arm(kotlin.Int, kotlin.Double, kotlin.Array((kotlin.IntArray)))/confidence">confidence</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.association$arm(kotlin.Int, kotlin.Double, kotlin.Array((kotlin.IntArray)))/itemsets">itemsets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Stream</span><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/association/AssociationRule.html"><span class="identifier">AssociationRule</span></a><span class="symbol">&gt;</span></code>
+<p>Association Rule Mining.
+Let I = {i1, i2,..., in} be a set of n
+binary attributes called items. Let D = {t1, t2,..., tm}
+be a set of transactions called the database. Each transaction in D has a
+unique transaction ID and contains a subset of the items in I.
+An association rule is defined as an implication of the form X &rArr; Y
+where X, Y &sube; I and X &cap; Y = &Oslash;. The item sets X and Y are called
+antecedent (left-hand-side or LHS) and consequent (right-hand-side or RHS)
+of the rule, respectively. The support supp(X) of an item set X is defined as
+the proportion of transactions in the database which contain the item set.
+Note that the support of an association rule X &rArr; Y is supp(X &cup; Y).
+The confidence of a rule is defined conf(X &rArr; Y) = supp(X &cup; Y) / supp(X).
+Confidence can be interpreted as an estimate of the probability P(Y | X),
+the probability of finding the RHS of the rule in transactions under the
+condition that these transactions also contain the LHS.
+Association rules are usually required to satisfy a user-specified minimum
+support and a user-specified minimum confidence at the same time.</p>
+<h3>Parameters</h3>
+<p><a name="itemsets"></a>
+<code>itemsets</code> - the item set database. Each row is a item set, which
+    may have different length. The item identifiers have to be in [0, n),
+    where n is the number of items. Item set should NOT contain duplicated
+    items. Note that it is reordered after the call.</p>
+<p><a name="minSupport"></a>
+<code>minSupport</code> - the required minimum support of item sets in terms
+    of frequency.</p>
+<p><a name="confidence"></a>
+<code>confidence</code> - the confidence threshold for association rules.</p>
+<p><strong>Return</strong><br/>
+the stream of discovered association rules.</p>
+<a name="smile.association$arm(kotlin.Double, smile.association.FPTree)"></a>
+<code><span class="keyword">fun </span><span class="identifier">arm</span><span class="symbol">(</span><span class="identifier" id="smile.association$arm(kotlin.Double, smile.association.FPTree)/confidence">confidence</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.association$arm(kotlin.Double, smile.association.FPTree)/tree">tree</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/association/FPTree.html"><span class="identifier">FPTree</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Stream</span><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/association/AssociationRule.html"><span class="identifier">AssociationRule</span></a><span class="symbol">&gt;</span></code>
+<p>Association Rule Mining.
+Let I = {i1, i2,..., in} be a set of n
+binary attributes called items. Let D = {t1, t2,..., tm}
+be a set of transactions called the database. Each transaction in D has a
+unique transaction ID and contains a subset of the items in I.
+An association rule is defined as an implication of the form X &rArr; Y
+where X, Y &sube; I and X &cap; Y = &Oslash;. The item sets X and Y are called
+antecedent (left-hand-side or LHS) and consequent (right-hand-side or RHS)
+of the rule, respectively. The support supp(X) of an item set X is defined as
+the proportion of transactions in the database which contain the item set.
+Note that the support of an association rule X &rArr; Y is supp(X &cup; Y).
+The confidence of a rule is defined conf(X &rArr; Y) = supp(X &cup; Y) / supp(X).
+Confidence can be interpreted as an estimate of the probability P(Y | X),
+the probability of finding the RHS of the rule in transactions under the
+condition that these transactions also contain the LHS.
+Association rules are usually required to satisfy a user-specified minimum
+support and a user-specified minimum confidence at the same time.</p>
+<h3>Parameters</h3>
+<p><a name="tree"></a>
+<code>tree</code> - the FP-tree of item set database.</p>
+<p><a name="confidence"></a>
+<code>confidence</code> - the confidence threshold for association rules.</p>
+<p><strong>Return</strong><br/>
+the stream of discovered association rules.</p>
+</BODY>
+</HTML>

@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>adaboost - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./adaboost.html">adaboost</a><br/>
+<br/>
+<h1>adaboost</h1>
+<a name="smile.classification$adaboost(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">adaboost</span><span class="symbol">(</span><span class="identifier" id="smile.classification$adaboost(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$adaboost(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$adaboost(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)/ntrees">ntrees</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;500<span class="symbol">, </span><span class="identifier" id="smile.classification$adaboost(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)/maxDepth">maxDepth</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;20<span class="symbol">, </span><span class="identifier" id="smile.classification$adaboost(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)/maxNodes">maxNodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;6<span class="symbol">, </span><span class="identifier" id="smile.classification$adaboost(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)/nodeSize">nodeSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/AdaBoost.html"><span class="identifier">AdaBoost</span></a></code>
+<p>AdaBoost (Adaptive Boosting) classifier with decision trees. In principle,
+AdaBoost is a meta-algorithm, and can be used in conjunction with many other
+learning algorithms to improve their performance. In practice, AdaBoost with
+decision trees is probably the most popular combination. AdaBoost is adaptive
+in the sense that subsequent classifiers built are tweaked in favor of those
+instances misclassified by previous classifiers. AdaBoost is sensitive to
+noisy data and outliers. However in some problems it can be less susceptible
+to the over-fitting problem than most learning algorithms.</p>
+<p>AdaBoost calls a weak classifier repeatedly in a series of rounds from
+total T classifiers. For each call a distribution of weights is updated
+that indicates the importance of examples in the data set for the
+classification. On each round, the weights of each incorrectly classified
+example are increased (or alternatively, the weights of each correctly
+classified example are decreased), so that the new classifier focuses more
+on those examples.</p>
+<p>The basic AdaBoost algorithm is only for binary classification problem.
+For multi-class classification, a common approach is reducing the
+multi-class classification problem to multiple two-class problems.
+This implementation is a multi-class AdaBoost without such reductions.</p>
+<p>====References:====</p>
+<ul><li>Yoav Freund, Robert E. Schapire. A Decision-Theoretic Generalization of on-Line Learning and an Application to Boosting, 1995.</li>
+<li>Ji Zhu, Hui Zhou, Saharon Rosset and Trevor Hastie. Multi-class Adaboost, 2009.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="formula"></a>
+<code>formula</code> - a symbolic description of the model to be fitted.</p>
+<p><a name="data"></a>
+<code>data</code> - the data frame of the explanatory and response variables.</p>
+<p><a name="ntrees"></a>
+<code>ntrees</code> - the number of trees.</p>
+<p><a name="maxDepth"></a>
+<code>maxDepth</code> - the maximum depth of the tree.</p>
+<p><a name="maxNodes"></a>
+<code>maxNodes</code> - the maximum number of leaf nodes in the tree.</p>
+<p><a name="nodeSize"></a>
+<code>nodeSize</code> - the minimum size of leaf nodes.</p>
+<p><strong>Return</strong><br/>
+AdaBoost model.</p>
+</BODY>
+</HTML>

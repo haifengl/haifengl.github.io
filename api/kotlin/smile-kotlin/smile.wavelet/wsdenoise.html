@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>wsdenoise - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.wavelet</a>&nbsp;/&nbsp;<a href="./wsdenoise.html">wsdenoise</a><br/>
+<br/>
+<h1>wsdenoise</h1>
+<a name="smile.wavelet$wsdenoise(kotlin.DoubleArray, kotlin.String, kotlin.Boolean)"></a>
+<code><span class="keyword">fun </span><span class="identifier">wsdenoise</span><span class="symbol">(</span><span class="identifier" id="smile.wavelet$wsdenoise(kotlin.DoubleArray, kotlin.String, kotlin.Boolean)/t">t</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.wavelet$wsdenoise(kotlin.DoubleArray, kotlin.String, kotlin.Boolean)/filter">filter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="smile.wavelet$wsdenoise(kotlin.DoubleArray, kotlin.String, kotlin.Boolean)/soft">soft</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The wavelet shrinkage is a signal denoising technique based on the idea of
+thresholding the wavelet coefficients. Wavelet coefficients having small
+absolute value are considered to encode mostly noise and very fine details
+of the signal. In contrast, the important information is encoded by the
+coefficients having large absolute value. Removing the small absolute value
+coefficients and then reconstructing the signal should produce signal with
+lesser amount of noise. The wavelet shrinkage approach can be summarized as
+follows:</p>
+<ul><li>Apply the wavelet transform to the signal.</li>
+<li>Estimate a threshold value.</li>
+<li>The so-called hard thresholding method zeros the coefficients that are
+    smaller than the threshold and leaves the other ones unchanged. In contrast,
+    the soft thresholding scales the remaining coefficients in order to form a
+    continuous distribution of the coefficients centered on zero.</li>
+<li>Reconstruct the signal (apply the inverse wavelet transform).</li>
+</ul>
+<p>The biggest challenge in the wavelet shrinkage approach is finding an
+appropriate threshold value. In this method, we use the universal threshold
+T = &sigma; sqrt(2*log(N)), where N is the length of time series
+and &sigma; is the estimate of standard deviation of the noise by the
+so-called scaled median absolute deviation (MAD) computed from the high-pass
+wavelet coefficients of the first level of the transform.</p>
+<h3>Parameters</h3>
+<p><a name="t"></a>
+<code>t</code> - the time series array. The size should be a power of 2. For time
+    series of size no power of 2, 0 padding can be applied.</p>
+<p><a name="filter"></a>
+<code>filter</code> - the wavelet filter to transform the time series.</p>
+<p><a name="soft"></a>
+<code>soft</code> - true if apply soft thresholding.</p>
+</BODY>
+</HTML>

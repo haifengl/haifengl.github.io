@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ovr - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./ovr.html">ovr</a><br/>
+<br/>
+<h1>ovr</h1>
+<a name="smile.classification$ovr(kotlin.Array((smile.classification.ovr.T)), kotlin.IntArray, kotlin.Function2((kotlin.Array((smile.classification.ovr.T)), kotlin.IntArray, smile.classification.Classifier(()))))"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">ovr</span><span class="symbol">(</span><span class="identifier" id="smile.classification$ovr(kotlin.Array((smile.classification.ovr.T)), kotlin.IntArray, kotlin.Function2((kotlin.Array((smile.classification.ovr.T)), kotlin.IntArray, smile.classification.Classifier(()))))/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$ovr(kotlin.Array((smile.classification.ovr.T)), kotlin.IntArray, kotlin.Function2((kotlin.Array((smile.classification.ovr.T)), kotlin.IntArray, smile.classification.Classifier(()))))/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$ovr(kotlin.Array((smile.classification.ovr.T)), kotlin.IntArray, kotlin.Function2((kotlin.Array((smile.classification.ovr.T)), kotlin.IntArray, smile.classification.Classifier(()))))/trainer">trainer</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/classification/Classifier.html"><span class="identifier">Classifier</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/OneVersusRest.html"><span class="identifier">OneVersusRest</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>One-vs-rest (or one-vs-all) strategy for reducing the problem of
+multiclass classification to multiple binary classification problems.
+It involves training a single classifier per class, with the samples
+of that class as positive samples and all other samples as negatives.
+This strategy requires the base classifiers to produce a real-valued
+confidence score for its decision, rather than just a class label;
+discrete class labels alone can lead to ambiguities, where multiple
+classes are predicted for a single sample.</p>
+</BODY>
+</HTML>

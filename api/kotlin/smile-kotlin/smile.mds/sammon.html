@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>sammon - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.mds</a>&nbsp;/&nbsp;<a href="./sammon.html">sammon</a><br/>
+<br/>
+<h1>sammon</h1>
+<a name="smile.mds$sammon(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Double, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">sammon</span><span class="symbol">(</span><span class="identifier" id="smile.mds$sammon(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Double, kotlin.Int)/proximity">proximity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.mds$sammon(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Double, kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.mds$sammon(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Double, kotlin.Int)/lambda">lambda</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.2<span class="symbol">, </span><span class="identifier" id="smile.mds$sammon(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Double, kotlin.Int)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.0001<span class="symbol">, </span><span class="identifier" id="smile.mds$sammon(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Double, kotlin.Int)/stepTol">stepTol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.001<span class="symbol">, </span><span class="identifier" id="smile.mds$sammon(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Double, kotlin.Int)/maxIter">maxIter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;100<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/mds/SammonMapping.html"><span class="identifier">SammonMapping</span></a></code>
+<p>The Sammon's mapping is an iterative technique for making interpoint
+distances in the low-dimensional projection as close as possible to the
+interpoint distances in the high-dimensional object. Two points close
+together in the high-dimensional space should appear close together in the
+projection, while two points far apart in the high dimensional space should
+appear far apart in the projection. The Sammon's mapping is a special case of
+metric least-square multidimensional scaling.</p>
+<p>Ideally when we project from a high dimensional space to a low dimensional
+space the image would be geometrically congruent to the original figure.
+This is called an isometric projection. Unfortunately it is rarely possible
+to isometrically project objects down into lower dimensional spaces. Instead of
+trying to achieve equality between corresponding inter-point distances we
+can minimize the difference between corresponding inter-point distances.
+This is one goal of the Sammon's mapping algorithm. A second goal of the Sammon's
+mapping algorithm is to preserve the topology as best as possible by giving
+greater emphasize to smaller interpoint distances. The Sammon's mapping
+algorithm has the advantage that whenever it is possible to isometrically
+project an object into a lower dimensional space it will be isometrically
+projected into the lower dimensional space. But whenever an object cannot
+be projected down isometrically the Sammon's mapping projects it down to reduce
+the distortion in interpoint distances and to limit the change in the
+topology of the object.</p>
+<p>The projection cannot be solved in a closed form and may be found by an
+iterative algorithm such as gradient descent suggested by Sammon. Kohonen
+also provides a heuristic that is simple and works reasonably well.</p>
+<h3>Parameters</h3>
+<p><a name="proximity"></a>
+<code>proximity</code> - the nonnegative proximity matrix of dissimilarities. The
+    diagonal should be zero and all other elements should be positive and symmetric.</p>
+<p><a name="k"></a>
+<code>k</code> - the dimension of the projection.</p>
+<p><a name="lambda"></a>
+<code>lambda</code> - initial value of the step size constant in diagonal Newton method.</p>
+<p><a name="tol"></a>
+<code>tol</code> - tolerance for stopping iterations.</p>
+<p><a name="stepTol"></a>
+<code>stepTol</code> - tolerance on step size.</p>
+<p><a name="maxIter"></a>
+<code>maxIter</code> - maximum number of iterations.</p>
+</BODY>
+</HTML>

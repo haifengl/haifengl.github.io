@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ovo - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./ovo.html">ovo</a><br/>
+<br/>
+<h1>ovo</h1>
+<a name="smile.classification$ovo(kotlin.Array((smile.classification.ovo.T)), kotlin.IntArray, kotlin.Function2((kotlin.Array((smile.classification.ovo.T)), kotlin.IntArray, smile.classification.Classifier(()))))"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">ovo</span><span class="symbol">(</span><span class="identifier" id="smile.classification$ovo(kotlin.Array((smile.classification.ovo.T)), kotlin.IntArray, kotlin.Function2((kotlin.Array((smile.classification.ovo.T)), kotlin.IntArray, smile.classification.Classifier(()))))/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$ovo(kotlin.Array((smile.classification.ovo.T)), kotlin.IntArray, kotlin.Function2((kotlin.Array((smile.classification.ovo.T)), kotlin.IntArray, smile.classification.Classifier(()))))/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$ovo(kotlin.Array((smile.classification.ovo.T)), kotlin.IntArray, kotlin.Function2((kotlin.Array((smile.classification.ovo.T)), kotlin.IntArray, smile.classification.Classifier(()))))/trainer">trainer</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/classification/Classifier.html"><span class="identifier">Classifier</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/OneVersusOne.html"><span class="identifier">OneVersusOne</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>One-vs-one strategy for reducing the problem of
+multiclass classification to multiple binary classification problems.
+This approach trains K (K − 1) / 2 binary classifiers for a
+K-way multiclass problem; each receives the samples of a pair of
+classes from the original training set, and must learn to distinguish
+these two classes. At prediction time, a voting scheme is applied:
+all K (K − 1) / 2 classifiers are applied to an unseen sample and the
+class that got the highest number of positive predictions gets predicted
+by the combined classifier.
+Like One-vs-rest, one-vs-one suffers from ambiguities in that some
+regions of its input space may receive the same number of votes.</p>
+</BODY>
+</HTML>

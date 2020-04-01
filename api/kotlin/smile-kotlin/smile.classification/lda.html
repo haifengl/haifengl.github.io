@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>lda - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./lda.html">lda</a><br/>
+<br/>
+<h1>lda</h1>
+<a name="smile.classification$lda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">lda</span><span class="symbol">(</span><span class="identifier" id="smile.classification$lda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$lda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$lda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)/priori">priori</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="smile.classification$lda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.DoubleArray, kotlin.Double)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.0001<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/LDA.html"><span class="identifier">LDA</span></a></code>
+<p>Linear discriminant analysis. LDA is based on the Bayes decision theory
+and assumes that the conditional probability density functions are normally
+distributed. LDA also makes the simplifying homoscedastic assumption (i.e.
+that the class covariances are identical) and that the covariances have full
+rank. With these assumptions, the discriminant function of an input being
+in a class is purely a function of this linear combination of independent
+variables.</p>
+<p>LDA is closely related to ANOVA (analysis of variance) and linear regression
+analysis, which also attempt to express one dependent variable as a
+linear combination of other features or measurements. In the other two
+methods, however, the dependent variable is a numerical quantity, while
+for LDA it is a categorical variable (i.e. the class label). Logistic
+regression and probit regression are more similar to LDA, as they also
+explain a categorical variable. These other methods are preferable in
+applications where it is not reasonable to assume that the independent
+variables are normally distributed, which is a fundamental assumption
+of the LDA method.</p>
+<p>One complication in applying LDA (and Fisher's discriminant) to real data
+occurs when the number of variables/features does not exceed
+the number of samples. In this case, the covariance estimates do not have
+full rank, and so cannot be inverted. This is known as small sample size
+problem.</p>
+<h3>Parameters</h3>
+<p><a name="x"></a>
+<code>x</code> - training samples.</p>
+<p><a name="y"></a>
+<code>y</code> - training labels in [0, k), where k is the number of classes.</p>
+<p><a name="priori"></a>
+<code>priori</code> - the priori probability of each class. If null, it will be
+    estimated from the training data.</p>
+<p><a name="tol"></a>
+<code>tol</code> - a tolerance to decide if a covariance matrix is singular; it
+    will reject variables whose variance is less than tol2.</p>
+<p><strong>Return</strong><br/>
+linear discriminant analysis model.</p>
+</BODY>
+</HTML>

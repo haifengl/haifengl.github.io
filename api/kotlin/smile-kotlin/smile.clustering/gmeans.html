@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>gmeans - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.clustering</a>&nbsp;/&nbsp;<a href="./gmeans.html">gmeans</a><br/>
+<br/>
+<h1>gmeans</h1>
+<a name="smile.clustering$gmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">gmeans</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$gmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$gmeans(kotlin.Array((kotlin.DoubleArray)), kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;100<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/GMeans.html"><span class="identifier">GMeans</span></a></code>
+<p>G-Means clustering algorithm, an extended K-Means which tries to
+automatically determine the number of clusters by normality test.
+The G-means algorithm is based on a statistical test for the hypothesis
+that a subset of data follows a Gaussian distribution. G-means runs
+k-means with increasing k in a hierarchical fashion until the test accepts
+the hypothesis that the data assigned to each k-means center are Gaussian.</p>
+<p>====References:====</p>
+<ul><li>G. Hamerly and C. Elkan. Learning the k in k-means. NIPS, 2003.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="k"></a>
+<code>k</code> - the maximum number of clusters.</p>
+</BODY>
+</HTML>

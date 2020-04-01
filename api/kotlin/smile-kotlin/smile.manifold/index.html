@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>smile.manifold - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="./index.html">smile.manifold</a><br/>
+<br/>
+<h2>Package smile.manifold</h2>
+<p>Manifold learning finds a low-dimensional basis for describing
+high-dimensional data. </p>
+<p>Manifold learning is a popular approach to nonlinear
+dimensionality reduction. Algorithms for this task are based on the idea
+that the dimensionality of many data sets is only artificially high; though
+each data point consists of perhaps thousands of features, it may be
+described as a function of only a few underlying parameters. That is, the
+data points are actually samples from a low-dimensional manifold that is
+embedded in a high-dimensional space. Manifold learning algorithms attempt
+to uncover these parameters in order to find a low-dimensional representation
+of the data.</p>
+<p>Some prominent approaches are locally linear embedding
+(LLE), Hessian LLE, Laplacian eigenmaps, and LTSA. These techniques
+construct a low-dimensional data representation using a cost function
+that retains local properties of the data, and can be viewed as defining
+a graph-based kernel for Kernel PCA. More recently, techniques have been
+proposed that, instead of defining a fixed kernel, try to learn the kernel
+using semidefinite programming. The most prominent example of such a
+technique is maximum variance unfolding (MVU). The central idea of MVU
+is to exactly preserve all pairwise distances between nearest neighbors
+(in the inner product space), while maximizing the distances between points
+that are not nearest neighbors.</p>
+<p>An alternative approach to neighborhood preservation is through the
+minimization of a cost function that measures differences between
+distances in the input and output spaces. Important examples of such
+techniques include classical multidimensional scaling (which is identical
+to PCA), Isomap (which uses geodesic distances in the data space), diffusion
+maps (which uses diffusion distances in the data space), t-SNE (which
+minimizes the divergence between distributions over pairs of points),
+and curvilinear component analysis.</p>
+  
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="isomap.html">isomap</a></h4>
+</td>
+<td>
+<p>Isometric feature mapping. Isomap is a widely used low-dimensional embedding methods,
+where geodesic distances on a weighted graph are incorporated with the
+classical multidimensional scaling. Isomap is used for computing a
+quasi-isometric, low-dimensional embedding of a set of high-dimensional
+data points. Isomap is highly efficient and generally applicable to a broad
+range of data sources and dimensionalities.</p>
+<code><span class="keyword">fun </span><span class="identifier">isomap</span><span class="symbol">(</span><span class="identifier" id="smile.manifold$isomap(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Boolean)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.manifold$isomap(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Boolean)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.manifold$isomap(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Boolean)/d">d</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;2<span class="symbol">, </span><span class="identifier" id="smile.manifold$isomap(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Boolean)/CIsomap">CIsomap</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/manifold/IsoMap.html"><span class="identifier">IsoMap</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="laplacian.html">laplacian</a></h4>
+</td>
+<td>
+<p>Laplacian Eigenmap. Using the notion of the Laplacian of the nearest
+neighbor adjacency graph, Laplacian Eigenmap compute a low dimensional
+representation of the dataset that optimally preserves local neighborhood
+information in a certain sense. The representation map generated by the
+algorithm may be viewed as a discrete approximation to a continuous map
+that naturally arises from the geometry of the manifold.</p>
+<code><span class="keyword">fun </span><span class="identifier">laplacian</span><span class="symbol">(</span><span class="identifier" id="smile.manifold$laplacian(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.manifold$laplacian(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.manifold$laplacian(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double)/d">d</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;2<span class="symbol">, </span><span class="identifier" id="smile.manifold$laplacian(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double)/t">t</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;-1.0<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/manifold/LaplacianEigenmap.html"><span class="identifier">LaplacianEigenmap</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="lle.html">lle</a></h4>
+</td>
+<td>
+<p>Locally Linear Embedding. It has several advantages over Isomap, including
+faster optimization when implemented to take advantage of sparse matrix
+algorithms, and better results with many problems. LLE also begins by
+finding a set of the nearest neighbors of each point. It then computes
+a set of weights for each point that best describe the point as a linear
+combination of its neighbors. Finally, it uses an eigenvector-based
+optimization technique to find the low-dimensional embedding of points,
+such that each point is still described with the same linear combination
+of its neighbors. LLE tends to handle non-uniform sample densities poorly
+because there is no fixed unit to prevent the weights from drifting as
+various regions differ in sample densities.</p>
+<code><span class="keyword">fun </span><span class="identifier">lle</span><span class="symbol">(</span><span class="identifier" id="smile.manifold$lle(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.manifold$lle(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.manifold$lle(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int)/d">d</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;2<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/manifold/LLE.html"><span class="identifier">LLE</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="tsne.html">tsne</a></h4>
+</td>
+<td>
+<p>t-distributed stochastic neighbor embedding. t-SNE is a nonlinear
+dimensionality reduction technique that is particularly well suited
+for embedding high-dimensional data into a space of two or three
+dimensions, which can then be visualized in a scatter plot. Specifically,
+it models each high-dimensional object by a two- or three-dimensional
+point in such a way that similar objects are modeled by nearby points
+and dissimilar objects are modeled by distant points.</p>
+<code><span class="keyword">fun </span><span class="identifier">tsne</span><span class="symbol">(</span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/X">X</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/d">d</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;2<span class="symbol">, </span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/perplexity">perplexity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;20.0<span class="symbol">, </span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/eta">eta</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;200.0<span class="symbol">, </span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/iterations">iterations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1000<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/manifold/TSNE.html"><span class="identifier">TSNE</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

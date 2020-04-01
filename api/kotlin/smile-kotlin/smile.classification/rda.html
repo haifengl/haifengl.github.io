@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>rda - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./rda.html">rda</a><br/>
+<br/>
+<h1>rda</h1>
+<a name="smile.classification$rda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Double, kotlin.DoubleArray, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">rda</span><span class="symbol">(</span><span class="identifier" id="smile.classification$rda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Double, kotlin.DoubleArray, kotlin.Double)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$rda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Double, kotlin.DoubleArray, kotlin.Double)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$rda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Double, kotlin.DoubleArray, kotlin.Double)/alpha">alpha</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$rda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Double, kotlin.DoubleArray, kotlin.Double)/priori">priori</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="smile.classification$rda(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Double, kotlin.DoubleArray, kotlin.Double)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.0001<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/RDA.html"><span class="identifier">RDA</span></a></code>
+<p>Regularized discriminant analysis. RDA is a compromise between LDA and QDA,
+which allows one to shrink the separate covariances of QDA toward a common
+variance as in LDA. This method is very similar in flavor to ridge regression.
+The regularized covariance matrices of each class is
+&Sigma;k(&alpha;) = &alpha; &Sigma;k + (1 - &alpha;) &Sigma;.
+The quadratic discriminant function is defined using the shrunken covariance
+matrices &Sigma;k(&alpha;). The parameter &alpha; in <code>[0, 1]</code>
+controls the complexity of the model. When &alpha; is one, RDA becomes QDA.
+While &alpha; is zero, RDA is equivalent to LDA. Therefore, the
+regularization factor &alpha; allows a continuum of models between LDA and QDA.</p>
+<h3>Parameters</h3>
+<p><a name="x"></a>
+<code>x</code> - training samples.</p>
+<p><a name="y"></a>
+<code>y</code> - training labels in <code>[0, k)</code>, where k is the number of classes.</p>
+<p><a name="alpha"></a>
+<code>alpha</code> - regularization factor in <code>[0, 1]</code> allows a continuum of models
+    between LDA and QDA.</p>
+<p><a name="priori"></a>
+<code>priori</code> - the priori probability of each class.</p>
+<p><a name="tol"></a>
+<code>tol</code> - tolerance to decide if a covariance matrix is singular; it
+    will reject variables whose variance is less than tol2.</p>
+<p><strong>Return</strong><br/>
+Regularized discriminant analysis model.</p>
+</BODY>
+</HTML>

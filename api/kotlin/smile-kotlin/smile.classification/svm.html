@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>svm - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./svm.html">svm</a><br/>
+<br/>
+<h1>svm</h1>
+<a name="smile.classification$svm(kotlin.Array((smile.classification.svm.T)), kotlin.IntArray, smile.math.kernel.MercerKernel((smile.classification.svm.T)), kotlin.Double, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">svm</span><span class="symbol">(</span><span class="identifier" id="smile.classification$svm(kotlin.Array((smile.classification.svm.T)), kotlin.IntArray, smile.math.kernel.MercerKernel((smile.classification.svm.T)), kotlin.Double, kotlin.Double)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$svm(kotlin.Array((smile.classification.svm.T)), kotlin.IntArray, smile.math.kernel.MercerKernel((smile.classification.svm.T)), kotlin.Double, kotlin.Double)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$svm(kotlin.Array((smile.classification.svm.T)), kotlin.IntArray, smile.math.kernel.MercerKernel((smile.classification.svm.T)), kotlin.Double, kotlin.Double)/kernel">kernel</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/kernel/MercerKernel.html"><span class="identifier">MercerKernel</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$svm(kotlin.Array((smile.classification.svm.T)), kotlin.IntArray, smile.math.kernel.MercerKernel((smile.classification.svm.T)), kotlin.Double, kotlin.Double)/C">C</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$svm(kotlin.Array((smile.classification.svm.T)), kotlin.IntArray, smile.math.kernel.MercerKernel((smile.classification.svm.T)), kotlin.Double, kotlin.Double)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1E-3<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/SVM.html"><span class="identifier">SVM</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Support vector machines for classification. The basic support vector machine
+is a binary linear classifier which chooses the hyperplane that represents
+the largest separation, or margin, between the two classes. If such a
+hyperplane exists, it is known as the maximum-margin hyperplane and the
+linear classifier it defines is known as a maximum margin classifier.</p>
+<p>If there exists no hyperplane that can perfectly split the positive and
+negative instances, the soft margin method will choose a hyperplane
+that splits the instances as cleanly as possible, while still maximizing
+the distance to the nearest cleanly split instances.</p>
+<p>The nonlinear SVMs are created by applying the kernel trick to
+maximum-margin hyperplanes. The resulting algorithm is formally similar,
+except that every dot product is replaced by a nonlinear kernel function.
+This allows the algorithm to fit the maximum-margin hyperplane in a
+transformed feature space. The transformation may be nonlinear and
+the transformed space be high dimensional. For example, the feature space
+corresponding Gaussian kernel is a Hilbert space of infinite dimension.
+Thus though the classifier is a hyperplane in the high-dimensional feature
+space, it may be nonlinear in the original input space. Maximum margin
+classifiers are well regularized, so the infinite dimension does not spoil
+the results.</p>
+<p>The effectiveness of SVM depends on the selection of kernel, the kernel's
+parameters, and soft margin parameter C. Given a kernel, best combination
+of C and kernel's parameters is often selected by a grid-search with
+cross validation.</p>
+<p>The dominant approach for creating multi-class SVMs is to reduce the
+single multi-class problem into multiple binary classification problems.
+Common methods for such reduction is to build binary classifiers which
+distinguish between (i) one of the labels to the rest (one-versus-all)
+or (ii) between every pair of classes (one-versus-one). Classification
+of new instances for one-versus-all case is done by a winner-takes-all
+strategy, in which the classifier with the highest output function assigns
+the class. For the one-versus-one approach, classification
+is done by a max-wins voting strategy, in which every classifier assigns
+the instance to one of the two classes, then the vote for the assigned
+class is increased by one vote, and finally the class with most votes
+determines the instance classification.</p>
+<h3>Parameters</h3>
+<p><a name="x"></a>
+<code>x</code> - training data</p>
+<p><a name="y"></a>
+<code>y</code> - training labels</p>
+<p><a name="kernel"></a>
+<code>kernel</code> - Mercer kernel</p>
+<p><a name="C"></a>
+<code>C</code> - the regularization parameter</p>
+<p><a name="tol"></a>
+<code>tol</code> - the tolerance of convergence test.</p>
+<p><strong>Tparam</strong><br/>
+T the data type</p>
+<p><strong>Return</strong><br/>
+SVM model.</p>
+</BODY>
+</HTML>

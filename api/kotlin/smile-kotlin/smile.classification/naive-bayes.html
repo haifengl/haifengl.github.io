@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>naiveBayes - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./naive-bayes.html">naiveBayes</a><br/>
+<br/>
+<h1>naiveBayes</h1>
+<a name="smile.classification$naiveBayes(kotlin.Array((kotlin.IntArray)), kotlin.IntArray, smile.classification.DiscreteNaiveBayes.Model, kotlin.DoubleArray, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">naiveBayes</span><span class="symbol">(</span><span class="identifier" id="smile.classification$naiveBayes(kotlin.Array((kotlin.IntArray)), kotlin.IntArray, smile.classification.DiscreteNaiveBayes.Model, kotlin.DoubleArray, kotlin.Double)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$naiveBayes(kotlin.Array((kotlin.IntArray)), kotlin.IntArray, smile.classification.DiscreteNaiveBayes.Model, kotlin.DoubleArray, kotlin.Double)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$naiveBayes(kotlin.Array((kotlin.IntArray)), kotlin.IntArray, smile.classification.DiscreteNaiveBayes.Model, kotlin.DoubleArray, kotlin.Double)/model">model</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/classification/DiscreteNaiveBayes/Model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$naiveBayes(kotlin.Array((kotlin.IntArray)), kotlin.IntArray, smile.classification.DiscreteNaiveBayes.Model, kotlin.DoubleArray, kotlin.Double)/priori">priori</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="smile.classification$naiveBayes(kotlin.Array((kotlin.IntArray)), kotlin.IntArray, smile.classification.DiscreteNaiveBayes.Model, kotlin.DoubleArray, kotlin.Double)/sigma">sigma</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1.0<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/DiscreteNaiveBayes.html"><span class="identifier">DiscreteNaiveBayes</span></a></code>
+<p>Creates a naive Bayes classifier for document classification.
+Add-k smoothing.</p>
+<h3>Parameters</h3>
+<p><a name="x"></a>
+<code>x</code> - training samples.</p>
+<p><a name="y"></a>
+<code>y</code> - training labels in <code>[0, k)</code>, where k is the number of classes.</p>
+<p><a name="model"></a>
+<code>model</code> - the generation model of naive Bayes classifier.</p>
+<p><a name="priori"></a>
+<code>priori</code> - the priori probability of each class. If null, equal probability is assume for each class.</p>
+<p><a name="sigma"></a>
+<code>sigma</code> - the prior count of add-k smoothing of evidence.</p>
+<a name="smile.classification$naiveBayes(kotlin.DoubleArray, kotlin.Array((kotlin.Array((smile.stat.distribution.Distribution)))))"></a>
+<code><span class="keyword">fun </span><span class="identifier">naiveBayes</span><span class="symbol">(</span><span class="identifier" id="smile.classification$naiveBayes(kotlin.DoubleArray, kotlin.Array((kotlin.Array((smile.stat.distribution.Distribution)))))/priori">priori</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$naiveBayes(kotlin.DoubleArray, kotlin.Array((kotlin.Array((smile.stat.distribution.Distribution)))))/condprob">condprob</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/stat/distribution/Distribution.html"><span class="identifier">Distribution</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/NaiveBayes.html"><span class="identifier">NaiveBayes</span></a></code>
+<p>Creates a general naive Bayes classifier.</p>
+<h3>Parameters</h3>
+<p><a name="priori"></a>
+<code>priori</code> - the priori probability of each class.</p>
+<p><a name="condprob"></a>
+<code>condprob</code> - the conditional distribution of each variable in
+    each class. In particular, <code>condprob[i][j]</code> is the conditional
+    distribution P(xj | class i).</p>
+</BODY>
+</HTML>

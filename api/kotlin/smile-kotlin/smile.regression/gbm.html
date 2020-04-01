@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>gbm - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.regression</a>&nbsp;/&nbsp;<a href="./gbm.html">gbm</a><br/>
+<br/>
+<h1>gbm</h1>
+<a name="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">gbm</span><span class="symbol">(</span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/loss">loss</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/base/cart/Loss.html"><span class="identifier">Loss</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Loss.lad()<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/ntrees">ntrees</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;500<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/maxDepth">maxDepth</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;20<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/maxNodes">maxNodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;6<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/nodeSize">nodeSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;5<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/shrinkage">shrinkage</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.05<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/subsample">subsample</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.7<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/GradientTreeBoost.html"><span class="identifier">GradientTreeBoost</span></a></code>
+<p>Gradient boosted regression trees.</p>
+<p>Generic gradient boosting at the t-th step would fit a regression tree to
+pseudo-residuals. Let J be the number of its leaves. The tree partitions
+the input space into J disjoint regions and predicts a constant value in
+each region. The parameter J controls the maximum allowed
+level of interaction between variables in the model. With J = 2 (decision
+stumps), no interaction between variables is allowed. With J = 3 the model
+may include effects of the interaction between up to two variables, and
+so on. Hastie et al. comment that typically 4 &le; J &le; 8 work well
+for boosting and results are fairly insensitive to the choice of in
+this range, J = 2 is insufficient for many applications, and J &gt; 10 is
+unlikely to be required.</p>
+<p>Fitting the training set too closely can lead to degradation of the model's
+generalization ability. Several so-called regularization techniques reduce
+this over-fitting effect by constraining the fitting procedure.
+One natural regularization parameter is the number of gradient boosting
+iterations T (i.e. the number of trees in the model when the base learner
+is a decision tree). Increasing T reduces the error on training set,
+but setting it too high may lead to over-fitting. An optimal value of T
+is often selected by monitoring prediction error on a separate validation
+data set.</p>
+<p>Another regularization approach is the shrinkage which times a parameter
+&eta; (called the "learning rate") to update term.
+Empirically it has been found that using small learning rates (such as
+&eta; &lt; 0.1) yields dramatic improvements in model's generalization ability
+over gradient boosting without shrinking (&eta; = 1). However, it comes at
+the price of increasing computational time both during training and
+prediction: lower learning rate requires more iterations.</p>
+<p>Soon after the introduction of gradient boosting Friedman proposed a
+minor modification to the algorithm, motivated by Breiman's bagging method.
+Specifically, he proposed that at each iteration of the algorithm, a base
+learner should be fit on a subsample of the training set drawn at random
+without replacement. Friedman observed a substantial improvement in
+gradient boosting's accuracy with this modification.</p>
+<p>Subsample size is some constant fraction f of the size of the training set.
+When f = 1, the algorithm is deterministic and identical to the one
+described above. Smaller values of f introduce randomness into the
+algorithm and help prevent over-fitting, acting as a kind of regularization.
+The algorithm also becomes faster, because regression trees have to be fit
+to smaller datasets at each iteration. Typically, f is set to 0.5, meaning
+that one half of the training set is used to build each base learner.</p>
+<p>Also, like in bagging, sub-sampling allows one to define an out-of-bag
+estimate of the prediction performance improvement by evaluating predictions
+on those observations which were not used in the building of the next
+base learner. Out-of-bag estimates help avoid the need for an independent
+validation dataset, but often underestimate actual performance improvement
+and the optimal number of iterations.</p>
+<p>Gradient tree boosting implementations often also use regularization by
+limiting the minimum number of observations in trees' terminal nodes.
+It's used in the tree building process by ignoring any splits that lead
+to nodes containing fewer than this number of training set instances.
+Imposing this limit helps to reduce variance in predictions at leaves.</p>
+<p>====References:====</p>
+<ul><li>J. H. Friedman. Greedy Function Approximation: A Gradient Boosting Machine, 1999.</li>
+<li>J. H. Friedman. Stochastic Gradient Boosting, 1999.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="formula"></a>
+<code>formula</code> - a symbolic description of the model to be fitted.</p>
+<p><a name="data"></a>
+<code>data</code> - the data frame of the explanatory and response variables.</p>
+<p><a name="loss"></a>
+<code>loss</code> - loss function for regression. By default, least absolute
+    deviation is employed for robust regression.</p>
+<p><a name="ntrees"></a>
+<code>ntrees</code> - the number of iterations (trees).</p>
+<p><a name="maxDepth"></a>
+<code>maxDepth</code> - the maximum depth of the tree.</p>
+<p><a name="maxNodes"></a>
+<code>maxNodes</code> - the maximum number of leaf nodes in the tree.</p>
+<p><a name="nodeSize"></a>
+<code>nodeSize</code> - the minimum size of leaf nodes.</p>
+<p><a name="shrinkage"></a>
+<code>shrinkage</code> - the shrinkage parameter in (0, 1] controls the learning rate of procedure.</p>
+<p><a name="subsample"></a>
+<code>subsample</code> - the sampling fraction for stochastic tree boosting.</p>
+<p><strong>Return</strong><br/>
+Gradient boosted trees.</p>
+</BODY>
+</HTML>

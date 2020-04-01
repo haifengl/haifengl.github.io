@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>mec - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.clustering</a>&nbsp;/&nbsp;<a href="./mec.html">mec</a><br/>
+<br/>
+<h1>mec</h1>
+<a name="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Distance((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">mec</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Distance((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Distance((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)/distance">distance</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/distance/Distance.html"><span class="identifier">Distance</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Distance((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Distance((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)/radius">radius</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/MEC.html"><span class="identifier">MEC</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Nonparametric Minimum Conditional Entropy Clustering. This method performs
+very well especially when the exact number of clusters is unknown.
+The method can also correctly reveal the structure of data and effectively
+identify outliers simultaneously.</p>
+<p>The clustering criterion is based on the conditional entropy H(C | x), where
+C is the cluster label and x is an observation. According to Fano's
+inequality, we can estimate C with a low probability of error only if the
+conditional entropy H(C | X) is small. MEC also generalizes the criterion
+by replacing Shannon's entropy with Havrda-Charvat's structural
+&alpha;-entropy. Interestingly, the minimum entropy criterion based
+on structural &alpha;-entropy is equal to the probability error of the
+nearest neighbor method when &alpha;= 2. To estimate p(C | x), MEC employs
+Parzen density estimation, a nonparametric approach.</p>
+<p>MEC is an iterative algorithm starting with an initial partition given by
+any other clustering methods, e.g. k-means, CLARNAS, hierarchical clustering,
+etc. Note that a random initialization is NOT appropriate.</p>
+<p>====References:====</p>
+<ul><li>Haifeng Li. All rights reserved., Keshu Zhang, and Tao Jiang. Minimum Entropy Clustering and Applications to Gene Expression Analysis. CSB, 2004.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="distance"></a>
+<code>distance</code> - the distance measure for neighborhood search.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters. Note that this is just a hint. The final
+    number of clusters may be less.</p>
+<p><a name="radius"></a>
+<code>radius</code> - the neighborhood radius.</p>
+<a name="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Metric((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">mec</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Metric((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Metric((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)/distance">distance</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/distance/Metric.html"><span class="identifier">Metric</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Metric((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.math.distance.Metric((smile.clustering.mec.T)), kotlin.Int, kotlin.Double)/radius">radius</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/MEC.html"><span class="identifier">MEC</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Nonparametric Minimum Conditional Entropy Clustering.</p>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="distance"></a>
+<code>distance</code> - the distance measure for neighborhood search.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters. Note that this is just a hint. The final
+    number of clusters may be less.</p>
+<p><a name="radius"></a>
+<code>radius</code> - the neighborhood radius.</p>
+<a name="smile.clustering$mec(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">mec</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$mec(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/radius">radius</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/MEC.html"><span class="identifier">MEC</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span></code>
+<p>Nonparametric Minimum Conditional Entropy Clustering. Assume Euclidean distance.</p>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters. Note that this is just a hint. The final
+    number of clusters may be less.</p>
+<p><a name="radius"></a>
+<code>radius</code> - the neighborhood radius.</p>
+<a name="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.neighbor.RNNSearch((smile.clustering.mec.T, )), kotlin.Int, kotlin.Double, kotlin.IntArray, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">mec</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.neighbor.RNNSearch((smile.clustering.mec.T, )), kotlin.Int, kotlin.Double, kotlin.IntArray, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.neighbor.RNNSearch((smile.clustering.mec.T, )), kotlin.Int, kotlin.Double, kotlin.IntArray, kotlin.Double)/nns">nns</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/neighbor/RNNSearch.html"><span class="identifier">RNNSearch</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.neighbor.RNNSearch((smile.clustering.mec.T, )), kotlin.Int, kotlin.Double, kotlin.IntArray, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.neighbor.RNNSearch((smile.clustering.mec.T, )), kotlin.Int, kotlin.Double, kotlin.IntArray, kotlin.Double)/radius">radius</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.neighbor.RNNSearch((smile.clustering.mec.T, )), kotlin.Int, kotlin.Double, kotlin.IntArray, kotlin.Double)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$mec(kotlin.Array((smile.clustering.mec.T)), smile.neighbor.RNNSearch((smile.clustering.mec.T, )), kotlin.Int, kotlin.Double, kotlin.IntArray, kotlin.Double)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1E-4<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/MEC.html"><span class="identifier">MEC</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Nonparametric Minimum Conditional Entropy Clustering.</p>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="nns"></a>
+<code>nns</code> - the data structure for neighborhood search.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters. Note that this is just a hint. The final
+    number of clusters may be less.</p>
+<p><a name="radius"></a>
+<code>radius</code> - the neighborhood radius.</p>
+<p><a name="tol"></a>
+<code>tol</code> - the tolerance of convergence test.</p>
+</BODY>
+</HTML>

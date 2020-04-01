@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>clarans - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.clustering</a>&nbsp;/&nbsp;<a href="./clarans.html">clarans</a><br/>
+<br/>
+<h1>clarans</h1>
+<a name="smile.clustering$clarans(kotlin.Array((smile.clustering.clarans.T)), smile.math.distance.Distance((smile.clustering.clarans.T)), kotlin.Int, kotlin.Int, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">clarans</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$clarans(kotlin.Array((smile.clustering.clarans.T)), smile.math.distance.Distance((smile.clustering.clarans.T)), kotlin.Int, kotlin.Int, kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$clarans(kotlin.Array((smile.clustering.clarans.T)), smile.math.distance.Distance((smile.clustering.clarans.T)), kotlin.Int, kotlin.Int, kotlin.Int)/distance">distance</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/distance/Distance.html"><span class="identifier">Distance</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$clarans(kotlin.Array((smile.clustering.clarans.T)), smile.math.distance.Distance((smile.clustering.clarans.T)), kotlin.Int, kotlin.Int, kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$clarans(kotlin.Array((smile.clustering.clarans.T)), smile.math.distance.Distance((smile.clustering.clarans.T)), kotlin.Int, kotlin.Int, kotlin.Int)/maxNeighbor">maxNeighbor</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$clarans(kotlin.Array((smile.clustering.clarans.T)), smile.math.distance.Distance((smile.clustering.clarans.T)), kotlin.Int, kotlin.Int, kotlin.Int)/numLocal">numLocal</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;16<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/CLARANS.html"><span class="identifier">CLARANS</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Clustering Large Applications based upon RANdomized Search. CLARANS is an
+efficient medoid-based clustering algorithm. The k-medoids algorithm is an
+adaptation of the k-means algorithm. Rather than calculate the mean of the
+items in each cluster, a representative item, or medoid, is chosen for each
+cluster at each iteration. In CLARANS, the process of finding k medoids from
+n objects is viewed abstractly as searching through a certain graph. In the
+graph, a node is represented by a set of k objects as selected medoids. Two
+nodes are neighbors if their sets differ by only one object. In each iteration,
+CLARANS considers a set of randomly chosen neighbor nodes as candidate
+of new medoids. We will move to the neighbor node if the neighbor
+is a better choice for medoids. Otherwise, a local optima is discovered. The
+entire process is repeated multiple time to find better.</p>
+<p>CLARANS has two parameters: the maximum number of neighbors examined
+(maxNeighbor) and the number of local minima obtained (numLocal). The
+higher the value of maxNeighbor, the closer is CLARANS to PAM, and the
+longer is each search of a local minima. But the quality of such a local
+minima is higher and fewer local minima needs to be obtained.</p>
+<p>====References:====</p>
+<ul><li>R. Ng and J. Han. CLARANS: A Method for Clustering Objects for Spatial Data Mining. IEEE TRANS. KNOWLEDGE AND DATA ENGINEERING, 2002.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="distance"></a>
+<code>distance</code> - the distance/dissimilarity measure.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters.</p>
+<p><a name="maxNeighbor"></a>
+<code>maxNeighbor</code> - the maximum number of neighbors examined during a random search of local minima.</p>
+<p><a name="numLocal"></a>
+<code>numLocal</code> - the number of local minima to search for.</p>
+</BODY>
+</HTML>

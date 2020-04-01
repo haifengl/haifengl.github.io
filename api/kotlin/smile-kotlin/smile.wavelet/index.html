@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>smile.wavelet - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="./index.html">smile.wavelet</a><br/>
+<br/>
+<h2>Package smile.wavelet</h2>
+<p>Wavelet analysis.</p>
+<p>A wavelet is a wave-like oscillation with an amplitude that starts out at
+zero, increases, and then decreases back to zero. Like the fast Fourier
+transform (FFT), the discrete wavelet transform (DWT) is a fast, linear
+operation that operates on a data vector whose length is an integer power
+of 2, transforming it into a numerically different vector of the same length.
+The wavelet transform is invertible and in fact orthogonal. Both FFT and DWT
+can be viewed as a rotation in function space.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="dwt.html">dwt</a></h4>
+</td>
+<td>
+<p>Discrete wavelet transform.</p>
+<code><span class="keyword">fun </span><span class="identifier">dwt</span><span class="symbol">(</span><span class="identifier" id="smile.wavelet$dwt(kotlin.DoubleArray, kotlin.String)/t">t</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.wavelet$dwt(kotlin.DoubleArray, kotlin.String)/filter">filter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="idwt.html">idwt</a></h4>
+</td>
+<td>
+<p>Inverse discrete wavelet transform.</p>
+<code><span class="keyword">fun </span><span class="identifier">idwt</span><span class="symbol">(</span><span class="identifier" id="smile.wavelet$idwt(kotlin.DoubleArray, kotlin.String)/wt">wt</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.wavelet$idwt(kotlin.DoubleArray, kotlin.String)/filter">filter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="wavelet.html">wavelet</a></h4>
+</td>
+<td>
+<p>Crerates a wavelet filter. The filter name is derived from one of four classes of wavelet transform filters:
+Daubechies, Least Asymetric, Best Localized and Coiflet. The prefixes for filters of these classes are
+d, la, bl and c, respectively. Following the prefix, the filter name consists of an integer indicating length.
+Supported lengths are as follows:</p>
+<code><span class="keyword">fun </span><span class="identifier">wavelet</span><span class="symbol">(</span><span class="identifier" id="smile.wavelet$wavelet(kotlin.String)/filter">filter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/wavelet/Wavelet.html"><span class="identifier">Wavelet</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="wsdenoise.html">wsdenoise</a></h4>
+</td>
+<td>
+<p>The wavelet shrinkage is a signal denoising technique based on the idea of
+thresholding the wavelet coefficients. Wavelet coefficients having small
+absolute value are considered to encode mostly noise and very fine details
+of the signal. In contrast, the important information is encoded by the
+coefficients having large absolute value. Removing the small absolute value
+coefficients and then reconstructing the signal should produce signal with
+lesser amount of noise. The wavelet shrinkage approach can be summarized as
+follows:</p>
+<code><span class="keyword">fun </span><span class="identifier">wsdenoise</span><span class="symbol">(</span><span class="identifier" id="smile.wavelet$wsdenoise(kotlin.DoubleArray, kotlin.String, kotlin.Boolean)/t">t</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.wavelet$wsdenoise(kotlin.DoubleArray, kotlin.String, kotlin.Boolean)/filter">filter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="smile.wavelet$wsdenoise(kotlin.DoubleArray, kotlin.String, kotlin.Boolean)/soft">soft</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

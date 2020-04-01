@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>lle - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.manifold</a>&nbsp;/&nbsp;<a href="./lle.html">lle</a><br/>
+<br/>
+<h1>lle</h1>
+<a name="smile.manifold$lle(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">lle</span><span class="symbol">(</span><span class="identifier" id="smile.manifold$lle(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.manifold$lle(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.manifold$lle(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int)/d">d</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;2<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/manifold/LLE.html"><span class="identifier">LLE</span></a></code>
+<p>Locally Linear Embedding. It has several advantages over Isomap, including
+faster optimization when implemented to take advantage of sparse matrix
+algorithms, and better results with many problems. LLE also begins by
+finding a set of the nearest neighbors of each point. It then computes
+a set of weights for each point that best describe the point as a linear
+combination of its neighbors. Finally, it uses an eigenvector-based
+optimization technique to find the low-dimensional embedding of points,
+such that each point is still described with the same linear combination
+of its neighbors. LLE tends to handle non-uniform sample densities poorly
+because there is no fixed unit to prevent the weights from drifting as
+various regions differ in sample densities.</p>
+<p>====References:====</p>
+<ul><li>Sam T. Roweis and Lawrence K. Saul. Nonlinear Dimensionality Reduction by Locally Linear Embedding. Science 290(5500):2323-2326, 2000.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="d"></a>
+<code>d</code> - the dimension of the manifold.</p>
+<p><a name="k"></a>
+<code>k</code> - k-nearest neighbor.</p>
+</BODY>
+</HTML>

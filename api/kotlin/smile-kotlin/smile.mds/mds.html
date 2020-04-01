@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>mds - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.mds</a>&nbsp;/&nbsp;<a href="./mds.html">mds</a><br/>
+<br/>
+<h1>mds</h1>
+<a name="smile.mds$mds(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Boolean)"></a>
+<code><span class="keyword">fun </span><span class="identifier">mds</span><span class="symbol">(</span><span class="identifier" id="smile.mds$mds(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Boolean)/proximity">proximity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.mds$mds(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Boolean)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.mds$mds(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Boolean)/positive">positive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/mds/MDS.html"><span class="identifier">MDS</span></a></code>
+<p>Classical multidimensional scaling, also known as principal coordinates
+analysis. Given a matrix of dissimilarities (e.g. pairwise distances), MDS
+finds a set of points in low dimensional space that well-approximates the
+dissimilarities in A. We are not restricted to using a Euclidean
+distance metric. However, when Euclidean distances are used MDS is
+equivalent to PCA.</p>
+<h3>Parameters</h3>
+<p><a name="proximity"></a>
+<code>proximity</code> - the nonnegative proximity matrix of dissimilarities. The
+    diagonal should be zero and all other elements should be positive and
+    symmetric. For pairwise distances matrix, it should be just the plain
+    distance, not squared.</p>
+<p><a name="k"></a>
+<code>k</code> - the dimension of the projection.</p>
+<p><a name="positive"></a>
+<code>positive</code> - if true, estimate an appropriate constant to be added
+    to all the dissimilarities, apart from the self-dissimilarities, that
+    makes the learning matrix positive semi-definite. The other formulation of
+    the additive constant problem is as follows. If the proximity is
+    measured in an interval scale, where there is no natural origin, then there
+    is not a sympathy of the dissimilarities to the distances in the Euclidean
+    space used to represent the objects. In this case, we can estimate a constant c
+    such that proximity + c may be taken as ratio data, and also possibly
+    to minimize the dimensionality of the Euclidean space required for
+    representing the objects.</p>
+</BODY>
+</HTML>

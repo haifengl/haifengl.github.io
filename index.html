@@ -12,7 +12,7 @@
   <meta name="description" content="Smile is a fast and general machine learning engine for big data processing, with built-in modules for classification, regression, clustering, association rule mining, feature selection, manifold learning, genetic algorithm, missing value imputation, efficient nearest neighbor search, MDS, NLP, linear algebra, hypothesis tests, random number generators, interpolation, wavelet, plot, etc.">
 
   <!-- prettify js and CSS -->
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=scala"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=scala&lang=kotlin&lang=clj"></script>
 
   <!-- Bootstrap core CSS -->
   <link href="css/cerulean.min.css" rel="stylesheet">
@@ -158,6 +158,8 @@
         <ul class="dropdown-menu">
           <li><a href="api/java/index.html">Java</a></li>
           <li><a href="api/scala/index.html">Scala</a></li>
+          <li><a href="api/kotlin/smile-kotlin/index.html">Kotlin</a></li>
+          <li><a href="api/clojure/index.html">Clojure</a></li>
           <li><a href="api/json/index.html">JSON</a></li>
           <li><a href="api/cas/index.html">CAS</a></li>
         </ul>
@@ -174,8 +176,8 @@
   <div class="news" style="margin-bottom: 20px;">
     <h5>Latest News</h5>
     <ul class="list-unstyled">
-      <li><a href="https://github.com/haifengl/smile/releases/tag/v2.2.0">Smile 2.2.0 Released!</a>
-        <span class="small">(Feb 28, 2020)</span></li>
+      <li><a href="https://github.com/haifengl/smile/releases/tag/v2.3.0">Smile 2.3.0 Released!</a>
+        <span class="small">(Apr 1st, 2020)</span></li>
 
       <li><a href="https://www.youtube.com/watch?v=aqT_0qFOBUI">Dex Machine Learning with SMILE ML</a>
         <span class="small">(Mar 28, 2018, by Patrick Martin)</span></li>
@@ -195,6 +197,16 @@
   </div>
 
   <div>
+    <!--
+    <div align="center">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="XKU5BZX7XHPQ6" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+    </form>
+    </div>
+    -->
     <a href="https://github.com/haifengl/smile/releases" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 30px;">
       Download
     </a>
@@ -573,6 +585,8 @@
       <ul class="nav nav-tabs">
         <li class="active"><a href="#scala_1" data-toggle="tab">Scala</a></li>
         <li><a href="#java_1" data-toggle="tab">Java</a></li>
+        <li><a href="#kotlin_1" data-toggle="tab">Kotlin</a></li>
+        <li><a href="#clojure_1" data-toggle="tab">Clojure</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="scala_1">
@@ -593,6 +607,29 @@ println(s"OOB error = ${rf.error}")
 DataFrame iris = Read.arff("iris.arff");
 RandomForest rf = RandomForest.fit(Formula.lhs("class"), iris);
 System.out.format("OOB error = %.2f%n", rf.error());
+          </code></pre>
+          </div>
+          <div class="caption">Random Forest</div>
+        </div>
+        <div class="tab-pane" id="kotlin_1">
+          <div class="code" style="text-align: left;">
+          <pre class="prettyprint lang-kotlin"><code>
+val iris = read.arff("iris.arff")
+val rf = randomForest(Formula.lhs("class"), iris)
+println("OOB error = ${rf.error()}")
+
+          </code></pre>
+          </div>
+          <div class="caption">Random Forest</div>
+        </div>
+        <div class="tab-pane" id="clojure_1">
+          <div class="code" style="text-align: left;">
+          <pre class="prettyprint lang-clj"><code>
+(let [iris (read-arff
+            "data/weka/iris.arff")
+      model (random-forest
+             (Formula/lhs "class") iris)]
+  (.error model))
           </code></pre>
           </div>
           <div class="caption">Random Forest</div>

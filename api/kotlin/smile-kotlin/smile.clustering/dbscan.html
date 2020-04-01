@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>dbscan - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.clustering</a>&nbsp;/&nbsp;<a href="./dbscan.html">dbscan</a><br/>
+<br/>
+<h1>dbscan</h1>
+<a name="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.neighbor.RNNSearch((smile.clustering.dbscan.T, )), kotlin.Int, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">dbscan</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.neighbor.RNNSearch((smile.clustering.dbscan.T, )), kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.neighbor.RNNSearch((smile.clustering.dbscan.T, )), kotlin.Int, kotlin.Double)/nns">nns</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/neighbor/RNNSearch.html"><span class="identifier">RNNSearch</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.neighbor.RNNSearch((smile.clustering.dbscan.T, )), kotlin.Int, kotlin.Double)/minPts">minPts</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.neighbor.RNNSearch((smile.clustering.dbscan.T, )), kotlin.Int, kotlin.Double)/radius">radius</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/DBSCAN.html"><span class="identifier">DBSCAN</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Density-Based Spatial Clustering of Applications with Noise.
+DBSCAN finds a number of clusters starting from the estimated density
+distribution of corresponding nodes.</p>
+<p>DBSCAN requires two parameters: radius (i.e. neighborhood radius) and the
+number of minimum points required to form a cluster (minPts). It starts
+with an arbitrary starting point that has not been visited. This point's
+neighborhood is retrieved, and if it contains sufficient number of points,
+a cluster is started. Otherwise, the point is labeled as noise. Note that
+this point might later be found in a sufficiently sized radius-environment
+of a different point and hence be made part of a cluster.</p>
+<p>If a point is found to be part of a cluster, its neighborhood is also
+part of that cluster. Hence, all points that are found within the
+neighborhood are added, as is their own neighborhood. This process
+continues until the cluster is completely found. Then, a new unvisited point
+is retrieved and processed, leading to the discovery of a further cluster
+of noise.</p>
+<p>DBSCAN visits each point of the database, possibly multiple times (e.g.,
+as candidates to different clusters). For practical considerations, however,
+the time complexity is mostly governed by the number of nearest neighbor
+queries. DBSCAN executes exactly one such query for each point, and if
+an indexing structure is used that executes such a neighborhood query
+in O(log n), an overall runtime complexity of O(n log n) is obtained.</p>
+<p>DBSCAN has many advantages such as</p>
+<ul><li>DBSCAN does not need to know the number of clusters in the data
+    a priori, as opposed to k-means.</li>
+<li>DBSCAN can find arbitrarily shaped clusters. It can even find clusters
+    completely surrounded by (but not connected to) a different cluster.
+    Due to the MinPts parameter, the so-called single-link effect
+    (different clusters being connected by a thin line of points) is reduced.</li>
+<li>DBSCAN has a notion of noise.</li>
+<li>DBSCAN requires just two parameters and is mostly insensitive to the
+    ordering of the points in the database. (Only points sitting on the
+    edge of two different clusters might swap cluster membership if the
+    ordering of the points is changed, and the cluster assignment is unique
+    only up to isomorphism.)</li>
+</ul>
+<p>On the other hand, DBSCAN has the disadvantages of</p>
+<ul><li>In high dimensional space, the data are sparse everywhere
+    because of the curse of dimensionality. Therefore, DBSCAN doesn't
+    work well on high-dimensional data in general.</li>
+<li>DBSCAN does not respond well to data sets with varying densities.</li>
+</ul>
+<p>====References:====</p>
+<ul><li>Martin Ester, Hans-Peter Kriegel, Jorg Sander, Xiaowei Xu (1996-). A density-based algorithm for discovering clusters in large spatial databases with noise". KDD, 1996.</li>
+<li>Jorg Sander, Martin Ester, Hans-Peter  Kriegel, Xiaowei Xu. (1998). Density-Based Clustering in Spatial Databases: The Algorithm GDBSCAN and Its Applications. 1998.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="nns"></a>
+<code>nns</code> - the data structure for neighborhood search.</p>
+<p><a name="minPts"></a>
+<code>minPts</code> - the minimum number of neighbors for a core data point.</p>
+<p><a name="radius"></a>
+<code>radius</code> - the neighborhood radius.</p>
+<a name="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.math.distance.Distance((smile.clustering.dbscan.T)), kotlin.Int, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">dbscan</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.math.distance.Distance((smile.clustering.dbscan.T)), kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.math.distance.Distance((smile.clustering.dbscan.T)), kotlin.Int, kotlin.Double)/distance">distance</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/distance/Distance.html"><span class="identifier">Distance</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.math.distance.Distance((smile.clustering.dbscan.T)), kotlin.Int, kotlin.Double)/minPts">minPts</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((smile.clustering.dbscan.T)), smile.math.distance.Distance((smile.clustering.dbscan.T)), kotlin.Int, kotlin.Double)/radius">radius</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/DBSCAN.html"><span class="identifier">DBSCAN</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Density-Based Spatial Clustering of Applications with Noise.
+DBSCAN finds a number of clusters starting from the estimated density
+distribution of corresponding nodes.</p>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="distance"></a>
+<code>distance</code> - the distance metric.</p>
+<p><a name="minPts"></a>
+<code>minPts</code> - the minimum number of neighbors for a core data point.</p>
+<p><a name="radius"></a>
+<code>radius</code> - the neighborhood radius.</p>
+<a name="smile.clustering$dbscan(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">dbscan</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/minPts">minPts</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$dbscan(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/radius">radius</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/DBSCAN.html"><span class="identifier">DBSCAN</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span></code>
+<p>DBSCAN with Euclidean distance.
+DBSCAN finds a number of clusters starting from the estimated density
+distribution of corresponding nodes.</p>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="minPts"></a>
+<code>minPts</code> - the minimum number of neighbors for a core data point.</p>
+<p><a name="radius"></a>
+<code>radius</code> - the neighborhood radius.</p>
+</BODY>
+</HTML>

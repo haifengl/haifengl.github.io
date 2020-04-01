@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>write - smile-kotlin</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="../index.html">smile</a>&nbsp;/&nbsp;<a href="./index.html">write</a><br/>
+<br/>
+<h1>write</h1>
+<code><span class="keyword">object </span><span class="identifier">write</span></code>
+<p>Data saving utilities.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="arff.html">arff</a></h4>
+</td>
+<td>
+<p>Writes a data frame to an ARFF file.</p>
+<code><span class="keyword">fun </span><span class="identifier">arff</span><span class="symbol">(</span><span class="identifier" id="smile.write$arff(smile.data.DataFrame, kotlin.String, kotlin.String)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.write$arff(smile.data.DataFrame, kotlin.String, kotlin.String)/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="smile.write$arff(smile.data.DataFrame, kotlin.String, kotlin.String)/relation">relation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">arff</span><span class="symbol">(</span><span class="identifier" id="smile.write$arff(smile.data.DataFrame, java.nio.file.Path, kotlin.String)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.write$arff(smile.data.DataFrame, java.nio.file.Path, kotlin.String)/file">file</span><span class="symbol">:</span>&nbsp;<span class="identifier">Path</span><span class="symbol">, </span><span class="identifier" id="smile.write$arff(smile.data.DataFrame, java.nio.file.Path, kotlin.String)/relation">relation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="arrow.html">arrow</a></h4>
+</td>
+<td>
+<p>Writes a data frame to an Apache Arrow file.</p>
+<code><span class="keyword">fun </span><span class="identifier">arrow</span><span class="symbol">(</span><span class="identifier" id="smile.write$arrow(smile.data.DataFrame, kotlin.String)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.write$arrow(smile.data.DataFrame, kotlin.String)/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">arrow</span><span class="symbol">(</span><span class="identifier" id="smile.write$arrow(smile.data.DataFrame, java.nio.file.Path)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.write$arrow(smile.data.DataFrame, java.nio.file.Path)/file">file</span><span class="symbol">:</span>&nbsp;<span class="identifier">Path</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="csv.html">csv</a></h4>
+</td>
+<td>
+<p>Writes a DataFrame to a delimited text file.</p>
+<code><span class="keyword">fun </span><span class="identifier">csv</span><span class="symbol">(</span><span class="identifier" id="smile.write$csv(smile.data.DataFrame, kotlin.String, kotlin.Char)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.write$csv(smile.data.DataFrame, kotlin.String, kotlin.Char)/file">file</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="smile.write$csv(smile.data.DataFrame, kotlin.String, kotlin.Char)/delimiter">delimiter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char/index.html"><span class="identifier">Char</span></a>&nbsp;<span class="symbol">=</span>&nbsp;','<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">csv</span><span class="symbol">(</span><span class="identifier" id="smile.write$csv(smile.data.DataFrame, java.nio.file.Path, kotlin.Char)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.write$csv(smile.data.DataFrame, java.nio.file.Path, kotlin.Char)/file">file</span><span class="symbol">:</span>&nbsp;<span class="identifier">Path</span><span class="symbol">, </span><span class="identifier" id="smile.write$csv(smile.data.DataFrame, java.nio.file.Path, kotlin.Char)/delimiter">delimiter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char/index.html"><span class="identifier">Char</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>kpca - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.projection</a>&nbsp;/&nbsp;<a href="./kpca.html">kpca</a><br/>
+<br/>
+<h1>kpca</h1>
+<a name="smile.projection$kpca(kotlin.Array((smile.projection.kpca.T)), smile.math.kernel.MercerKernel((smile.projection.kpca.T)), kotlin.Int, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">kpca</span><span class="symbol">(</span><span class="identifier" id="smile.projection$kpca(kotlin.Array((smile.projection.kpca.T)), smile.math.kernel.MercerKernel((smile.projection.kpca.T)), kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.projection$kpca(kotlin.Array((smile.projection.kpca.T)), smile.math.kernel.MercerKernel((smile.projection.kpca.T)), kotlin.Int, kotlin.Double)/kernel">kernel</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/kernel/MercerKernel.html"><span class="identifier">MercerKernel</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.projection$kpca(kotlin.Array((smile.projection.kpca.T)), smile.math.kernel.MercerKernel((smile.projection.kpca.T)), kotlin.Int, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.projection$kpca(kotlin.Array((smile.projection.kpca.T)), smile.math.kernel.MercerKernel((smile.projection.kpca.T)), kotlin.Int, kotlin.Double)/threshold">threshold</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.0001<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/projection/KPCA.html"><span class="identifier">KPCA</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Kernel principal component analysis. Kernel PCA is an extension of
+principal component analysis (PCA) using techniques of kernel methods.
+Using a kernel, the originally linear operations of PCA are done in a
+reproducing kernel Hilbert space with a non-linear mapping.</p>
+<p>In practice, a large data set leads to a large Kernel/Gram matrix K, and
+storing K may become a problem. One way to deal with this is to perform
+clustering on your large dataset, and populate the kernel with the means
+of those clusters. Since even this method may yield a relatively large K,
+it is common to compute only the top P eigenvalues and eigenvectors of K.</p>
+<p>Kernel PCA with an isotropic kernel function is closely related to metric MDS.
+Carrying out metric MDS on the kernel matrix K produces an equivalent configuration
+of points as the distance (2(1 - K(xi, xj)))1/2
+computed in feature space.</p>
+<p>Kernel PCA also has close connections with Isomap, LLE, and Laplacian eigenmaps.</p>
+<p>====References:====</p>
+<ul><li>Bernhard Scholkopf, Alexander Smola, and Klaus-Robert Muller. Nonlinear Component Analysis as a Kernel Eigenvalue Problem. Neural Computation, 1998.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - training data.</p>
+<p><a name="kernel"></a>
+<code>kernel</code> - Mercer kernel to compute kernel matrix.</p>
+<p><a name="k"></a>
+<code>k</code> - choose top k principal components used for projection.</p>
+<p><a name="threshold"></a>
+<code>threshold</code> - only principal components with eigenvalues larger than
+    the given threshold will be kept.</p>
+</BODY>
+</HTML>

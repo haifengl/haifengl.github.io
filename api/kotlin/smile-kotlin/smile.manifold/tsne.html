@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>tsne - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.manifold</a>&nbsp;/&nbsp;<a href="./tsne.html">tsne</a><br/>
+<br/>
+<h1>tsne</h1>
+<a name="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">tsne</span><span class="symbol">(</span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/X">X</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/d">d</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;2<span class="symbol">, </span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/perplexity">perplexity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;20.0<span class="symbol">, </span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/eta">eta</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;200.0<span class="symbol">, </span><span class="identifier" id="smile.manifold$tsne(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Double, kotlin.Int)/iterations">iterations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1000<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/manifold/TSNE.html"><span class="identifier">TSNE</span></a></code>
+<p>t-distributed stochastic neighbor embedding. t-SNE is a nonlinear
+dimensionality reduction technique that is particularly well suited
+for embedding high-dimensional data into a space of two or three
+dimensions, which can then be visualized in a scatter plot. Specifically,
+it models each high-dimensional object by a two- or three-dimensional
+point in such a way that similar objects are modeled by nearby points
+and dissimilar objects are modeled by distant points.</p>
+<p>====References:====</p>
+<ul><li>L.J.P. van der Maaten. Accelerating t-SNE using Tree-Based Algorithms. Journal of Machine Learning Research 15(Oct):3221-3245, 2014.</li>
+<li>L.J.P. van der Maaten and G.E. Hinton. Visualizing Non-Metric Similarities in Multiple Maps. Machine Learning 87(1):33-55, 2012.</li>
+<li>L.J.P. van der Maaten. Learning a Parametric Embedding by Preserving Local Structure. In Proceedings of the Twelfth International Conference on Artificial Intelligence &amp; Statistics (AI-STATS), JMLR W&CP 5:384-391, 2009.</li>
+<li>L.J.P. van der Maaten and G.E. Hinton. Visualizing High-Dimensional Data Using t-SNE. Journal of Machine Learning Research 9(Nov):2579-2605, 2008.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="X"></a>
+<code>X</code> - input data. If X is a square matrix, it is assumed to be the squared distance/dissimilarity matrix.</p>
+<p><a name="d"></a>
+<code>d</code> - the dimension of the manifold.</p>
+<p><a name="perplexity"></a>
+<code>perplexity</code> - the perplexity of the conditional distribution.</p>
+<p><a name="eta"></a>
+<code>eta</code> - the learning rate.</p>
+<p><a name="iterations"></a>
+<code>iterations</code> - the number of iterations.</p>
+</BODY>
+</HTML>

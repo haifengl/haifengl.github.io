@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>specc - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.clustering</a>&nbsp;/&nbsp;<a href="./specc.html">specc</a><br/>
+<br/>
+<h1>specc</h1>
+<a name="smile.clustering$specc(smile.math.matrix.DenseMatrix, kotlin.Int)"></a>
+<code><span class="keyword">fun </span><span class="identifier">specc</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$specc(smile.math.matrix.DenseMatrix, kotlin.Int)/W">W</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/matrix/DenseMatrix.html"><span class="identifier">DenseMatrix</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$specc(smile.math.matrix.DenseMatrix, kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/SpectralClustering.html"><span class="identifier">SpectralClustering</span></a></code>
+<p>Spectral Clustering. Given a set of data points, the similarity matrix may
+be defined as a matrix S where Sij represents a measure of the
+similarity between points. Spectral clustering techniques make use of the
+spectrum of the similarity matrix of the data to perform dimensionality
+reduction for clustering in fewer dimensions. Then the clustering will
+be performed in the dimension-reduce space, in which clusters of non-convex
+shape may become tight. There are some intriguing similarities between
+spectral clustering methods and kernel PCA, which has been empirically
+observed to perform clustering.</p>
+<p>====References:====</p>
+<ul><li>A.Y. Ng, M.I. Jordan, and Y. Weiss. On Spectral Clustering: Analysis and an algorithm. NIPS, 2001.</li>
+<li>Marina Maila and Jianbo Shi. Learning segmentation by random walks. NIPS, 2000.</li>
+<li>Deepak Verma and Marina Meila. A Comparison of Spectral Clustering Algorithms. 2003.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="W"></a>
+<code>W</code> - the adjacency matrix of graph.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters.</p>
+<a name="smile.clustering$specc(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">specc</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$specc(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$specc(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$specc(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/sigma">sigma</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/SpectralClustering.html"><span class="identifier">SpectralClustering</span></a></code>
+<p>Spectral clustering.</p>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the dataset for clustering.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters.</p>
+<p><a name="sigma"></a>
+<code>sigma</code> - the smooth/width parameter of Gaussian kernel, which
+    is a somewhat sensitive parameter. To search for the best setting,
+    one may pick the value that gives the tightest clusters (smallest
+    distortion, see { @link #distortion()}) in feature space.</p>
+<a name="smile.clustering$specc(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">specc</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$specc(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$specc(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$specc(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double)/l">l</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$specc(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Int, kotlin.Double)/sigma">sigma</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/SpectralClustering.html"><span class="identifier">SpectralClustering</span></a></code>
+<p>Spectral clustering with Nystrom approximation.</p>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the dataset for clustering.</p>
+<p><a name="k"></a>
+<code>k</code> - the number of clusters.</p>
+<p><a name="l"></a>
+<code>l</code> - the number of random samples for Nystrom approximation.</p>
+<p><a name="sigma"></a>
+<code>sigma</code> - the smooth/width parameter of Gaussian kernel, which
+    is a somewhat sensitive parameter. To search for the best setting,
+    one may pick the value that gives the tightest clusters (smallest
+    distortion, see { @link #distortion()}) in feature space.</p>
+</BODY>
+</HTML>

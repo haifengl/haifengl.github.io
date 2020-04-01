@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>dac - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.clustering</a>&nbsp;/&nbsp;<a href="./dac.html">dac</a><br/>
+<br/>
+<h1>dac</h1>
+<a name="smile.clustering$dac(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double)"></a>
+<code><span class="keyword">fun </span><span class="identifier">dac</span><span class="symbol">(</span><span class="identifier" id="smile.clustering$dac(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.clustering$dac(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.clustering$dac(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double)/alpha">alpha</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.9<span class="symbol">, </span><span class="identifier" id="smile.clustering$dac(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double)/maxIter">maxIter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;100<span class="symbol">, </span><span class="identifier" id="smile.clustering$dac(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1E-4<span class="symbol">, </span><span class="identifier" id="smile.clustering$dac(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double)/splitTol">splitTol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1E-2<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/clustering/DeterministicAnnealing.html"><span class="identifier">DeterministicAnnealing</span></a></code>
+<p>Deterministic annealing clustering. Deterministic annealing extends
+soft-clustering to an annealing process.
+For each temperature value, the algorithm iterates between the calculation
+of all posteriori probabilities and the update of the centroids vectors,
+until convergence is reached. The annealing starts with a high temperature.
+Here, all centroids vectors converge to the center of the pattern
+distribution (independent of their initial positions). Below a critical
+temperature the vectors start to split. Further decreasing the temperature
+leads to more splittings until all centroids vectors are separate. The
+annealing can therefore avoid (if it is sufficiently slow) the convergence
+to local minima.</p>
+<p>====References:====</p>
+<ul><li>Kenneth Rose. Deterministic Annealing for Clustering, Compression, Classification, Regression, and Speech Recognition.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="data"></a>
+<code>data</code> - the data set.</p>
+<p><a name="k"></a>
+<code>k</code> - the maximum number of clusters.</p>
+<p><a name="alpha"></a>
+<code>alpha</code> - the temperature T is decreasing as T = T * alpha. alpha has
+    to be in (0, 1).</p>
+<p><a name="tol"></a>
+<code>tol</code> - the tolerance of convergence test.</p>
+<p><a name="splitTol"></a>
+<code>splitTol</code> - the tolerance to split a cluster.</p>
+</BODY>
+</HTML>

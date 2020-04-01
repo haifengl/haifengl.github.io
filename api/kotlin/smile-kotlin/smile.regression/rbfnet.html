@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>rbfnet - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.regression</a>&nbsp;/&nbsp;<a href="./rbfnet.html">rbfnet</a><br/>
+<br/>
+<h1>rbfnet</h1>
+<a name="smile.regression$rbfnet(kotlin.Array((smile.regression.rbfnet.T)), kotlin.DoubleArray, kotlin.Array((smile.base.rbf.RBF((smile.regression.rbfnet.T)))), kotlin.Boolean)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">rbfnet</span><span class="symbol">(</span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((smile.regression.rbfnet.T)), kotlin.DoubleArray, kotlin.Array((smile.base.rbf.RBF((smile.regression.rbfnet.T)))), kotlin.Boolean)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((smile.regression.rbfnet.T)), kotlin.DoubleArray, kotlin.Array((smile.base.rbf.RBF((smile.regression.rbfnet.T)))), kotlin.Boolean)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((smile.regression.rbfnet.T)), kotlin.DoubleArray, kotlin.Array((smile.base.rbf.RBF((smile.regression.rbfnet.T)))), kotlin.Boolean)/neurons">neurons</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/base/rbf/RBF.html"><span class="identifier">RBF</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((smile.regression.rbfnet.T)), kotlin.DoubleArray, kotlin.Array((smile.base.rbf.RBF((smile.regression.rbfnet.T)))), kotlin.Boolean)/normalized">normalized</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/RBFNetwork.html"><span class="identifier">RBFNetwork</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Radial basis function networks. A radial basis function network is an
+artificial neural network that uses radial basis functions as activation
+functions. It is a linear combination of radial basis functions. They are
+used in function approximation, time series prediction, and control.</p>
+<p>In its basic form, radial basis function network is in the form</p>
+<p>y(x) = &Sigma; wi &phi;(||x-ci||)</p>
+<p>where the approximating function y(x) is represented as a sum of N radial
+basis functions &phi;, each associated with a different center ci,
+and weighted by an appropriate coefficient wi. For distance,
+one usually chooses Euclidean distance. The weights wi can
+be estimated using the matrix methods of linear least squares, because
+the approximating function is linear in the weights.</p>
+<p>The centers ci can be randomly selected from training data,
+or learned by some clustering method (e.g. k-means), or learned together
+with weight parameters undergo a supervised learning processing
+(e.g. error-correction learning).</p>
+<p>The popular choices for &phi; comprise the Gaussian function and the so
+called thin plate splines. The advantage of the thin plate splines is that
+their conditioning is invariant under scalings. Gaussian, multi-quadric
+and inverse multi-quadric are infinitely smooth and and involve a scale
+or shape parameter, r0 &gt; 0. Decreasing
+r0 tends to flatten the basis function. For a
+given function, the quality of approximation may strongly depend on this
+parameter. In particular, increasing r0 has the
+effect of better conditioning (the separation distance of the scaled points
+increases).</p>
+<p>A variant on RBF networks is normalized radial basis function (NRBF)
+networks, in which we require the sum of the basis functions to be unity.
+NRBF arises more naturally from a Bayesian statistical perspective. However,
+there is no evidence that either the NRBF method is consistently superior
+to the RBF method, or vice versa.</p>
+<p>SVMs with Gaussian kernel have similar structure as RBF networks with
+Gaussian radial basis functions. However, the SVM approach "automatically"
+solves the network complexity problem since the size of the hidden layer
+is obtained as the result of the QP procedure. Hidden neurons and
+support vectors correspond to each other, so the center problems of
+the RBF network is also solved, as the support vectors serve as the
+basis function centers. It was reported that with similar number of support
+vectors/centers, SVM shows better generalization performance than RBF
+network when the training data size is relatively small. On the other hand,
+RBF network gives better generalization performance than SVM on large
+training data.</p>
+<p>====References:====</p>
+<ul><li>Simon Haykin. Neural Networks: A Comprehensive Foundation (2nd edition). 1999.</li>
+<li>T. Poggio and F. Girosi. Networks for approximation and learning. Proc. IEEE 78(9):1484-1487, 1990.</li>
+<li>Nabil Benoudjit and Michel Verleysen. On the kernel widths in radial-basis function networks. Neural Process, 2003.</li>
+</ul>
+<h3>Parameters</h3>
+<p><a name="x"></a>
+<code>x</code> - training samples.</p>
+<p><a name="y"></a>
+<code>y</code> - response variable.</p>
+<p><a name="neurons"></a>
+<code>neurons</code> - the radial basis functions.</p>
+<p><a name="normalized"></a>
+<code>normalized</code> - train a normalized RBF network or not.</p>
+<a name="smile.regression$rbfnet(kotlin.Array((kotlin.DoubleArray)), kotlin.DoubleArray, kotlin.Int, kotlin.Boolean)"></a>
+<code><span class="keyword">fun </span><span class="identifier">rbfnet</span><span class="symbol">(</span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((kotlin.DoubleArray)), kotlin.DoubleArray, kotlin.Int, kotlin.Boolean)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((kotlin.DoubleArray)), kotlin.DoubleArray, kotlin.Int, kotlin.Boolean)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((kotlin.DoubleArray)), kotlin.DoubleArray, kotlin.Int, kotlin.Boolean)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((kotlin.DoubleArray)), kotlin.DoubleArray, kotlin.Int, kotlin.Boolean)/normalized">normalized</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/RBFNetwork.html"><span class="identifier">RBFNetwork</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span></code>
+<p>Trains a Gaussian RBF network with k-means.</p>
+</BODY>
+</HTML>
