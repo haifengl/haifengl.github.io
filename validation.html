@@ -123,7 +123,7 @@
           <li><a href="overview.html">What's Machine Learning</a></li>
           <li><a href="data.html">Data</a></li>
           <li><a href="visualization.html">Data Visualization</a></li>
-          <li><a href="vegalite.html">Declarative Data Visualization</a></li>
+          <li><a href="vegalite.html">Declarative Visualization</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
@@ -160,7 +160,7 @@
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Docs <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="api/java/index.html">Java</a></li>
           <li><a href="api/scala/index.html">Scala</a></li>
@@ -169,7 +169,7 @@
           <li><a href="api/json/index.html">JSON</a></li>
         </ul>
       </li>
-      <li><a href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fnotebook%2Findex.ipynb">Notebook</a></li>
+      <li><a href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fnotebook%2Findex.ipynb">Try It Online</a></li>
     </ul>
   </div>
   <!-- /.navbar-collapse -->
@@ -990,6 +990,37 @@
         some algorithms already run in parallel (e.g. random forest, logistic
         regression, etc.). In those cases, we should NOT use parallel stream
         to avoid potential deadlock.</p>
+
+    <h2 id="model-selection">Model Selection Criteria</h2>
+    <p>Model selection is the task of selecting a statistical model from
+        a set of candidate models, given data. In the simplest cases,
+        a pre-existing set of data is considered. Given candidate models
+        of similar predictive or explanatory power, the simplest model is
+        most likely to be the best choice (Occam's razor).</p>
+ 
+    <p>A good model selection technique will balance goodness of fit with
+        simplicity. More complex models will be better able to adapt their
+        shape to fit the data, but the additional parameters may not represent
+        anything useful. Goodness of fit is generally determined using
+        a likelihood ratio approach, or an approximation of this, leading
+        to a chi-squared test. The complexity is generally measured by
+        counting the number of parameters in the model.</p>
+ 
+    <p>The most commonly used criteria are the Akaike information criterion
+        and the Bayesian information criterion, which are implemented in
+        <code>ModelSelection</code>. The formula for BIC is similar
+        to the formula for AIC, but with a different penalty for the number of
+        parameters. With AIC the penalty is <code>2k</code>, whereas with BIC
+        the penalty is <code>log(n) * k</code>.</p>
+ 
+    <p>AIC and BIC are both approximately correct according to a different goal
+        and a different set of asymptotic assumptions. Both sets of assumptions
+        have been criticized as unrealistic.</p>
+ 
+    <p>AIC is better in situations when a false negative finding would be
+        considered more misleading than a false positive, and BIC is better
+        in situations where a false positive is as misleading as, or more
+        misleading than, a false negative.</p>
 
     <div id="btnv">
         <span class="btn-arrow-left">&larr; &nbsp;</span>
