@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>vectorize - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.nlp</a>&nbsp;/&nbsp;<a href="./vectorize.html">vectorize</a><br/>
+<br/>
+<h1>vectorize</h1>
+<a name="smile.nlp$vectorize(kotlin.Array((kotlin.String)), kotlin.collections.Map((kotlin.String, kotlin.Int)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">vectorize</span><span class="symbol">(</span><span class="identifier" id="smile.nlp$vectorize(kotlin.Array((kotlin.String)), kotlin.collections.Map((kotlin.String, kotlin.Int)))/terms">terms</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.nlp$vectorize(kotlin.Array((kotlin.String)), kotlin.collections.Map((kotlin.String, kotlin.Int)))/bag">bag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a></code>
+<p>Converts a bag of words to a feature vector.</p>
+<h3>Parameters</h3>
+<p><a name="terms"></a>
+<code>terms</code> - the token list used as features.</p>
+<p><a name="bag"></a>
+<code>bag</code> - the bag of words.</p>
+<p><strong>Return</strong><br/>
+a vector of frequency of feature tokens in the bag.</p>
+<a name="smile.nlp$vectorize(kotlin.collections.List((kotlin.String)), kotlin.collections.Set((kotlin.String)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">vectorize</span><span class="symbol">(</span><span class="identifier" id="smile.nlp$vectorize(kotlin.collections.List((kotlin.String)), kotlin.collections.Set((kotlin.String)))/terms">terms</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.nlp$vectorize(kotlin.collections.List((kotlin.String)), kotlin.collections.Set((kotlin.String)))/bag">bag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><span class="identifier">Set</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a></code>
+<p>Converts a binary bag of words to a sparse feature vector.</p>
+<h3>Parameters</h3>
+<p><a name="terms"></a>
+<code>terms</code> - the token list used as features.</p>
+<p><a name="bag"></a>
+<code>bag</code> - the bag of words.</p>
+<p><strong>Return</strong><br/>
+an integer vector, which elements are the indices of presented
+    feature tokens in ascending order.</p>
+</BODY>
+</HTML>

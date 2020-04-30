@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>porter - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.nlp</a>&nbsp;/&nbsp;<a href="./porter.html">porter</a><br/>
+<br/>
+<h1>porter</h1>
+<a name="smile.nlp$porter(kotlin.String)"></a>
+<code><span class="keyword">fun </span><span class="identifier">porter</span><span class="symbol">(</span><span class="identifier" id="smile.nlp$porter(kotlin.String)/word">word</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Porter's stemming algorithm. The stemmer is based on the idea that the
+suffixes in the English language are mostly made up of a combination of
+smaller and simpler suffixes. This is a linear step stemmer.
+Specifically it has five steps applying rules within each step. Within
+each step, if a suffix rule matched to a word, then the conditions
+attached to that rule are tested on what would be the resulting stem,
+if that suffix was removed, in the way defined by the rule. Once a Rule
+passes its conditions and is accepted the rule fires and the suffix is
+removed and control moves to the next step. If the rule is not accepted
+then the next rule in the step is tested, until either a rule from that
+step fires and control passes to the next step or there are no more rules
+in that step whence control moves to the next step.</p>
+</BODY>
+</HTML>

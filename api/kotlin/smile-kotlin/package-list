@@ -1,12 +1,19 @@
 $dokka.format:html
 $dokka.linkExtension:html
-
+$dokka.location:smile.nlp$bag(kotlin.String, kotlin.String, smile.nlp.stemmer.Stemmer)smile.nlp/kotlin.-string/bag.html
+$dokka.location:smile.nlp$bag2(kotlin.String, kotlin.String, smile.nlp.stemmer.Stemmer)smile.nlp/kotlin.-string/bag2.html
+$dokka.location:smile.nlp$keywords(kotlin.String, kotlin.Int)smile.nlp/kotlin.-string/keywords.html
+$dokka.location:smile.nlp$normalize(kotlin.String)smile.nlp/kotlin.-string/normalize.html
+$dokka.location:smile.nlp$postag(kotlin.String)smile.nlp/kotlin.-string/postag.html
+$dokka.location:smile.nlp$sentences(kotlin.String)smile.nlp/kotlin.-string/sentences.html
+$dokka.location:smile.nlp$words(kotlin.String, kotlin.String)smile.nlp/kotlin.-string/words.html
 smile
 smile.association
 smile.classification
 smile.clustering
 smile.manifold
 smile.mds
+smile.nlp
 smile.projection
 smile.regression
 smile.wavelet

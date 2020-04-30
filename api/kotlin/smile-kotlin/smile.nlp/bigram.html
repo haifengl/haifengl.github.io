@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>bigram - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.nlp</a>&nbsp;/&nbsp;<a href="./bigram.html">bigram</a><br/>
+<br/>
+<h1>bigram</h1>
+<a name="smile.nlp$bigram(kotlin.Int, kotlin.Int, kotlin.collections.List((kotlin.String)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">bigram</span><span class="symbol">(</span><span class="identifier" id="smile.nlp$bigram(kotlin.Int, kotlin.Int, kotlin.collections.List((kotlin.String)))/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.nlp$bigram(kotlin.Int, kotlin.Int, kotlin.collections.List((kotlin.String)))/minFreq">minFreq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.nlp$bigram(kotlin.Int, kotlin.Int, kotlin.collections.List((kotlin.String)))/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/nlp/collocation/Bigram.html"><span class="identifier">Bigram</span></a><span class="symbol">&gt;</span></code>
+<p>Identify bigram collocations (words that often appear consecutively) within
+corpora. They may also be used to find other associations between word
+occurrences.</p>
+<p>Finding collocations requires first calculating the frequencies of words
+and their appearance in the context of other words. Often the collection
+of words will then requiring filtering to only retain useful content terms.
+Each n-gram of words may then be scored according to some association measure,
+in order to determine the relative likelihood of each n-gram being a
+collocation.</p>
+<h3>Parameters</h3>
+<p><a name="k"></a>
+<code>k</code> - finds top k bigram.</p>
+<p><a name="minFreq"></a>
+<code>minFreq</code> - the minimum frequency of collocation.</p>
+<p><a name="text"></a>
+<code>text</code> - input text.</p>
+<p><strong>Return</strong><br/>
+significant bigram collocations in descending order
+    of likelihood ratio.</p>
+<a name="smile.nlp$bigram(kotlin.Double, kotlin.Int, kotlin.collections.List((kotlin.String)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">bigram</span><span class="symbol">(</span><span class="identifier" id="smile.nlp$bigram(kotlin.Double, kotlin.Int, kotlin.collections.List((kotlin.String)))/p">p</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.nlp$bigram(kotlin.Double, kotlin.Int, kotlin.collections.List((kotlin.String)))/minFreq">minFreq</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.nlp$bigram(kotlin.Double, kotlin.Int, kotlin.collections.List((kotlin.String)))/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/nlp/collocation/Bigram.html"><span class="identifier">Bigram</span></a><span class="symbol">&gt;</span></code>
+<p>Identify bigram collocations whose p-value is less than
+the given threshold.</p>
+<h3>Parameters</h3>
+<p><a name="p"></a>
+<code>p</code> - the p-value threshold</p>
+<p><a name="minFreq"></a>
+<code>minFreq</code> - the minimum frequency of collocation.</p>
+<p><a name="text"></a>
+<code>text</code> - input text.</p>
+<p><strong>Return</strong><br/>
+significant bigram collocations in descending order
+    of likelihood ratio.</p>
+</BODY>
+</HTML>
