@@ -41,6 +41,11 @@
   <link rel="stylesheet" href="css/pager.css" type="text/css" />
   <link rel="stylesheet" href="css/toc.css" type="text/css" />
 
+  <!-- Vega-Lite Embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
   <!-- Google Analytics -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -61,7 +66,7 @@
   });
   </script>
 
-  <!-- Load static page by jQuery AJAX -->
+  <!-- Sidebar and testimonial-slider -->
   <script type="text/javascript">
     $(document).ready(function(){
       // scroll/follow sidebar
@@ -117,7 +122,8 @@
           <li><a href="quickstart.html">Quick Start</a></li>
           <li><a href="overview.html">What's Machine Learning</a></li>
           <li><a href="data.html">Data</a></li>
-          <li><a href="visualization.html">Visualization</a></li>
+          <li><a href="visualization.html">Data Visualization</a></li>
+          <li><a href="vegalite.html">Declarative Data Visualization</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
@@ -161,7 +167,6 @@
           <li><a href="api/kotlin/smile-kotlin/index.html">Kotlin</a></li>
           <li><a href="api/clojure/index.html">Clojure</a></li>
           <li><a href="api/json/index.html">JSON</a></li>
-          <li><a href="api/cas/index.html">CAS</a></li>
         </ul>
       </li>
       <li><a href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fnotebook%2Findex.ipynb">Notebook</a></li>
@@ -200,7 +205,7 @@
 
 <div class="col-md-9 col-md-pull-3">
 
-    <h1 id="visualization-top" class="title">Visualization</h1>
+    <h1 id="visualization-top" class="title">Data Visualization</h1>
 
     <p>A picture is worth a thousand words. In machine learning, we usually handle
         high-dimensional data, which is impossible to draw on display directly. But
@@ -366,7 +371,7 @@
         <div class="tab-pane" id="java_4">
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
-    var canvas = PlotGroup.of(iris, "class", '*');
+    var canvas = PlotGrid.of(iris, "class", '*');
     canvas.window();
           </code></pre>
             </div>
@@ -1232,7 +1237,7 @@
     <div id="btnv">
         <span class="btn-arrow-left">&larr; &nbsp;</span>
         <a class="btn-prev-text" href="data.html" title="Previous Section: Data"><span>Data</span></a>
-        <a class="btn-next-text" href="classification.html" title="Next Section: Classification"><span>Classification</span></a>
+        <a class="btn-next-text" href="vegalite.html" title="Next Section: Declarative Visualization"><span>Declarative Visualization</span></a>
         <span class="btn-arrow-right">&nbsp;&rarr;</span>
     </div>
 </div>
