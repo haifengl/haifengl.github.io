@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>lm - smile-kotlin</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.regression</a>&nbsp;/&nbsp;<a href="./lm.html">lm</a><br/>
+<br/>
+<h1>lm</h1>
+<a name="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)"></a>
+<code><span class="keyword">fun </span><span class="identifier">lm</span><span class="symbol">(</span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/method">method</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;"qr"<span class="symbol">, </span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/stderr">stderr</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">, </span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/recursive">recursive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/LinearModel.html"><span class="identifier">LinearModel</span></a></code>
+<p>Fitting linear models (ordinary least squares). In linear regression,
+the model specification is that the dependent variable is a linear
+combination of the parameters (but need not be linear in the independent
+variables). The residual is the difference between the value of the
+dependent variable predicted by the model, and the true value of the
+dependent variable. Ordinary least squares obtains parameter estimates
+that minimize the sum of squared residuals, SSE (also denoted RSS).</p>
+<p>The OLS estimator is consistent when the independent variables are
+exogenous and there is no multicollinearity, and optimal in the class
+of linear unbiased estimators when the errors are homoscedastic and
+serially uncorrelated. Under these conditions, the method of OLS provides
+minimum-variance mean-unbiased estimation when the errors have finite
+variances.</p>
+<p>There are several different frameworks in which the linear regression
+model can be cast in order to make the OLS technique applicable. Each
+of these settings produces the same formulas and same results, the only
+difference is the interpretation and the assumptions which have to be
+imposed in order for the method to give meaningful results. The choice
+of the applicable framework depends mostly on the nature of data at hand,
+and on the inference task which has to be performed.</p>
+<p>Least squares corresponds to the maximum likelihood criterion if the
+experimental errors have a normal distribution and can also be derived
+as a method of moments estimator.</p>
+<p>Once a regression model has been constructed, it may be important to
+confirm the goodness of fit of the model and the statistical significance
+of the estimated parameters. Commonly used checks of goodness of fit
+include the R-squared, analysis of the pattern of residuals and hypothesis
+testing. Statistical significance can be checked by an F-test of the overall
+fit, followed by t-tests of individual parameters.</p>
+<p>Interpretations of these diagnostic tests rest heavily on the model
+assumptions. Although examination of the residuals can be used to
+invalidate a model, the results of a t-test or F-test are sometimes more
+difficult to interpret if the model's assumptions are violated.
+For example, if the error term does not have a normal distribution,
+in small samples the estimated parameters will not follow normal
+distributions and complicate inference. With relatively large samples,
+however, a central limit theorem can be invoked such that hypothesis
+testing may proceed using asymptotic approximations.</p>
+<h3>Parameters</h3>
+<p><a name="formula"></a>
+<code>formula</code> - a symbolic description of the model to be fitted.</p>
+<p><a name="data"></a>
+<code>data</code> - the data frame of the explanatory and response variables.</p>
+<p><a name="method"></a>
+<code>method</code> - the fitting method ("svd" or "qr").</p>
+<p><a name="recursive"></a>
+<code>recursive</code> - if true, the return model supports recursive least squares.</p>
+</BODY>
+</HTML>

@@ -14,13 +14,18 @@ smile.data.type
 smile.data.vector
 smile.feature
 smile.gap
+smile.glm
+smile.glm.model
 smile.graph
 smile.hash
 smile.imputation
 smile.interpolation
 smile.interpolation.variogram
+smile.io
 smile.manifold
 smile.math
+smile.math.blas
+smile.math.blas.openblas
 smile.math.distance
 smile.math.kernel
 smile.math.matrix
@@ -30,7 +35,6 @@ smile.math.special
 smile.mds
 smile.neighbor
 smile.neighbor.lsh
-smile.netlib
 smile.nlp
 smile.nlp.collocation
 smile.nlp.dictionary

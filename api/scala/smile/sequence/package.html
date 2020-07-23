@@ -1,0 +1,243 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>sequence - Smile - Statistical Machine Intelligence and Learning Engine - smile.sequence</title>
+          <meta name="description" content="sequence - Smile - Statistical Machine Intelligence and Learning Engine - smile.sequence" />
+          <meta name="keywords" content="sequence Smile Statistical Machine Intelligence and Learning Engine smile.sequence" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'smile.sequence.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="smile">smile</a></p>
+        <h1>sequence</h1><span class="permalink">
+      <a href="../../index.html#smile.sequence.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sequence</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Sequence labeling algorithms.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="smile.sequence"><span>sequence</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="smile.sequence.$dummy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="$dummy"></a>
+      <a id="$dummy:$dummy"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$$dummy$.html"><span class="name">$dummy</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#smile.sequence.package@$dummy" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Hacking scaladoc <a href="https://github.com/scala/bug/issues/8124" target="_blank">issue-8124</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Hacking scaladoc <a href="https://github.com/scala/bug/issues/8124" target="_blank">issue-8124</a>.
+The user should ignore this object.</p></div></div>
+    </li><li name="smile.sequence#crf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="crf(sequences:Array[Array[smile.data.Tuple]],labels:Array[Array[Int]],ntrees:Int,maxDepth:Int,maxNodes:Int,nodeSize:Int,shrinkage:Double):smile.sequence.CRF"></a>
+      <a id="crf(Array[Array[Tuple]],Array[Array[Int]],Int,Int,Int,Int,Double):CRF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">crf</span><span class="params">(<span name="sequences">sequences: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="smile.data.Tuple">Tuple</span>]]</span>, <span name="labels">labels: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Int">Int</span>]]</span>, <span name="ntrees">ntrees: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">100</span></span>, <span name="maxDepth">maxDepth: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">20</span></span>, <span name="maxNodes">maxNodes: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">100</span></span>, <span name="nodeSize">nodeSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">5</span></span>, <span name="shrinkage">shrinkage: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">1.0</span></span>)</span><span class="result">: <span class="extype" name="smile.sequence.CRF">CRF</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#smile.sequence.package@crf(sequences:Array[Array[smile.data.Tuple]],labels:Array[Array[Int]],ntrees:Int,maxDepth:Int,maxNodes:Int,nodeSize:Int,shrinkage:Double):smile.sequence.CRF" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">First-order linear conditional random field.</p><div class="fullcomment"><div class="comment cmt"><p>First-order linear conditional random field. A conditional random field is a
+type of discriminative undirected probabilistic graphical model. It is most
+often used for labeling or parsing of sequential data.</p><p>A CRF is a Markov random field that was trained discriminatively. Therefore it is not necessary
+to model the distribution over always observed variables, which makes it
+possible to include arbitrarily complicated features of the observed
+variables into the model.</p><h6>References:</h6><ul><li>J. Lafferty, A. McCallum and F. Pereira. Conditional random fields: Probabilistic models for segmenting and labeling sequence data. ICML, 2001.</li><li>Thomas G. Dietterich, Guohua Hao, and Adam Ashenfelter. Gradient Tree Boosting for Training Conditional Random Fields. JMLR, 2008.
+</li></ul></div><dl class="paramcmts block"><dt class="param">sequences</dt><dd class="cmt"><p>the observation attribute sequences.</p></dd><dt class="param">labels</dt><dd class="cmt"><p>sequence labels.</p></dd><dt class="param">ntrees</dt><dd class="cmt"><p>the number of trees/iterations.</p></dd><dt class="param">maxDepth</dt><dd class="cmt"><p>the maximum depth of the tree.</p></dd><dt class="param">maxNodes</dt><dd class="cmt"><p>the maximum number of leaf nodes in the tree.</p></dd><dt class="param">nodeSize</dt><dd class="cmt"><p>the number of instances in a node below which the tree will
+not split, setting nodeSize = 5 generally gives good results.</p></dd><dt class="param">shrinkage</dt><dd class="cmt"><p>the shrinkage parameter in (0, 1] controls the learning rate of procedure.</p></dd></dl></div>
+    </li><li name="smile.sequence#gcrf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="gcrf[T&lt;:AnyRef](sequences:Array[Array[T]],labels:Array[Array[Int]],features:java.util.function.Function[T,smile.data.Tuple],ntrees:Int,maxDepth:Int,maxNodes:Int,nodeSize:Int,shrinkage:Double):smile.sequence.CRFLabeler[T]"></a>
+      <a id="gcrf[T&lt;:AnyRef](Array[Array[T]],Array[Array[Int]],Function[T,Tuple],Int,Int,Int,Int,Double):CRFLabeler[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gcrf</span><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="scala.AnyRef">AnyRef</span></span>]</span><span class="params">(<span name="sequences">sequences: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="smile.sequence.gcrf.T">T</span>]]</span>, <span name="labels">labels: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Int">Int</span>]]</span>, <span name="features">features: <span class="extype" name="java.util.function.Function">Function</span>[<span class="extype" name="smile.sequence.gcrf.T">T</span>, <span class="extype" name="smile.data.Tuple">Tuple</span>]</span>, <span name="ntrees">ntrees: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">100</span></span>, <span name="maxDepth">maxDepth: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">20</span></span>, <span name="maxNodes">maxNodes: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">100</span></span>, <span name="nodeSize">nodeSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">5</span></span>, <span name="shrinkage">shrinkage: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">1.0</span></span>)</span><span class="result">: <span class="extype" name="smile.sequence.CRFLabeler">CRFLabeler</span>[<span class="extype" name="smile.sequence.gcrf.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#smile.sequence.package@gcrf[T&lt;:AnyRef](sequences:Array[Array[T]],labels:Array[Array[Int]],features:java.util.function.Function[T,smile.data.Tuple],ntrees:Int,maxDepth:Int,maxNodes:Int,nodeSize:Int,shrinkage:Double):smile.sequence.CRFLabeler[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">First-order linear conditional random field.</p><div class="fullcomment"><div class="comment cmt"><p>First-order linear conditional random field. A conditional random field is a
+type of discriminative undirected probabilistic graphical model. It is most
+often used for labeling or parsing of sequential data.</p><p>A CRF is a Markov random field that was trained discriminatively. Therefore it is not necessary
+to model the distribution over always observed variables, which makes it
+possible to include arbitrarily complicated features of the observed
+variables into the model.</p><h6>References:</h6><ul><li>J. Lafferty, A. McCallum and F. Pereira. Conditional random fields: Probabilistic models for segmenting and labeling sequence data. ICML, 2001.</li><li>Thomas G. Dietterich, Guohua Hao, and Adam Ashenfelter. Gradient Tree Boosting for Training Conditional Random Fields. JMLR, 2008.
+</li></ul></div><dl class="paramcmts block"><dt class="param">sequences</dt><dd class="cmt"><p>the observation attribute sequences.</p></dd><dt class="param">labels</dt><dd class="cmt"><p>sequence labels.</p></dd><dt class="param">ntrees</dt><dd class="cmt"><p>the number of trees/iterations.</p></dd><dt class="param">maxDepth</dt><dd class="cmt"><p>the maximum depth of the tree.</p></dd><dt class="param">maxNodes</dt><dd class="cmt"><p>the maximum number of leaf nodes in the tree.</p></dd><dt class="param">nodeSize</dt><dd class="cmt"><p>the number of instances in a node below which the tree will
+not split, setting nodeSize = 5 generally gives good results.</p></dd><dt class="param">shrinkage</dt><dd class="cmt"><p>the shrinkage parameter in (0, 1] controls the learning rate of procedure.</p></dd></dl></div>
+    </li><li name="smile.sequence#hmm" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hmm[T&lt;:AnyRef](observations:Array[Array[T]],labels:Array[Array[Int]],ordinal:java.util.function.ToIntFunction[T]):smile.sequence.HMMLabeler[T]"></a>
+      <a id="hmm[T&lt;:AnyRef](Array[Array[T]],Array[Array[Int]],ToIntFunction[T]):HMMLabeler[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hmm</span><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="scala.AnyRef">AnyRef</span></span>]</span><span class="params">(<span name="observations">observations: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="smile.sequence.hmm.T">T</span>]]</span>, <span name="labels">labels: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Int">Int</span>]]</span>, <span name="ordinal">ordinal: <span class="extype" name="java.util.function.ToIntFunction">ToIntFunction</span>[<span class="extype" name="smile.sequence.hmm.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="smile.sequence.HMMLabeler">HMMLabeler</span>[<span class="extype" name="smile.sequence.hmm.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#smile.sequence.package@hmm[T&lt;:AnyRef](observations:Array[Array[T]],labels:Array[Array[Int]],ordinal:java.util.function.ToIntFunction[T]):smile.sequence.HMMLabeler[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trains a first-order Hidden Markov Model.</p><div class="fullcomment"><div class="comment cmt"><p>Trains a first-order Hidden Markov Model.
+</p></div><dl class="paramcmts block"><dt class="param">observations</dt><dd class="cmt"><p>the observation sequences, of which symbols take
+                    values in [0, n), where n is the number of unique symbols.</p></dd><dt class="param">labels</dt><dd class="cmt"><p>the state labels of observations, of which states take
+              values in [0, p), where p is the number of hidden states.</p></dd></dl></div>
+    </li><li name="smile.sequence#hmm" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hmm(observations:Array[Array[Int]],labels:Array[Array[Int]]):smile.sequence.HMM"></a>
+      <a id="hmm(Array[Array[Int]],Array[Array[Int]]):HMM"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hmm</span><span class="params">(<span name="observations">observations: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Int">Int</span>]]</span>, <span name="labels">labels: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Int">Int</span>]]</span>)</span><span class="result">: <span class="extype" name="smile.sequence.HMM">HMM</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#smile.sequence.package@hmm(observations:Array[Array[Int]],labels:Array[Array[Int]]):smile.sequence.HMM" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">First-order Hidden Markov Model.</p><div class="fullcomment"><div class="comment cmt"><p>First-order Hidden Markov Model. A hidden Markov model (HMM) is a statistical
+Markov model in which the system being modeled is assumed to be a Markov
+process with unobserved (hidden) states. An HMM can be considered as the
+simplest dynamic Bayesian network.</p><p> In a regular Markov model, the state
+is directly visible to the observer, and therefore the state transition
+probabilities are the only parameters. In a hidden Markov model, the state is
+not directly visible, but output, dependent on the state, is visible. Each
+state has a probability distribution over the possible output tokens.
+Therefore the sequence of tokens generated by an HMM gives some information
+about the sequence of states.
+</p></div><dl class="paramcmts block"><dt class="param">observations</dt><dd class="cmt"><p>the observation sequences, of which symbols take
+                    values in [0, n), where n is the number of unique symbols.</p></dd><dt class="param">labels</dt><dd class="cmt"><p>the state labels of observations, of which states take
+              values in [0, p), where p is the number of hidden states.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
