@@ -91,7 +91,8 @@ counter, binary, UUID, ObjectId (as in BSON), etc.</p><p>It is very easy to pars
       }
     }
   }
-  "</span><span class="lit">""</span></pre><p>The interpolator <code>json</code> parse a string to <code>JsObject</code>. It is also okay to embed
+  "</span><span class="lit">""</span></pre><p>The interpolator <code>json</code> parse a string to <code>JsObject</code>. To parse an array, use
+the interpolator <code>jsan</code> to <code>JsArray</code>. It is also okay to embed
 variable references directly in processed string literals.</p><pre><span class="kw">val</span> x = <span class="num">1</span>
 json<span class="lit">""</span><span class="lit">"
   {
@@ -106,14 +107,13 @@ s.parseJsObject</pre><p>To serialize a JSON value (of type JsValue) in compact m
 just use <code>toString</code>. To pretty print, use the method <code>prettyPrint</code>.</p><pre>doc.toString
 doc.prettyPrint</pre><p>With a <code>JsObject</code> or <code>JsArray</code>, you can refer to the individual
 elements with a variation of array syntax, like this:</p><pre>doc(<span class="lit">"store"</span>)(<span class="lit">"bicycle"</span>)(<span class="lit">"color"</span>)
-<span class="cmt">// Use symbol instead of string</span>
-doc('store)('bicycle)(<span class="lit">'color)</span></pre><p>Note that we follow Scala's array access convention by <code>()</code> rather than
+doc(<span class="lit">"store"</span>)(<span class="lit">"book"</span>)(<span class="num">0</span>)(<span class="lit">"author"</span>)</pre><p>Note that we follow Scala's array access convention by <code>()</code> rather than
 <code>[]</code> in JavaScript.</p><p>Besides, you can use the dot notation to access its fields/elements
 just like in JavaScript:</p><pre>doc.store.bicycle.color
 doc.store.book(<span class="num">0</span>).author</pre><p>It is worth noting that we didn't define the type/schema of the document
 while Scala is a strong type language. In other words, we have both the
 type safe features of strong type language and the flexibility of dynamic
-language in this JSON library.</p><p>If you try to access a non-exist field, 1JsUndefined<code> is returned.</code></p><pre>scala&gt; doc.book
+language in this JSON library.</p><p>If you try to access a non-exist field, <code>JsUndefined</code> is returned.</p><pre>scala&gt; doc.book
 res11: unicorn.json.JsValue = undefined</pre><p>Although there are already several nice JSON libraries for Scala,
 the JSON objects are immutable by design, which is a natural choice
 for a functional language. For database, however, data mutation is necessary.
