@@ -58,6 +58,7 @@ smile.stat.hypothesis
 smile.swing
 smile.swing.table
 smile.taxonomy
+smile.timeseries
 smile.util
 smile.validation
 smile.vq
