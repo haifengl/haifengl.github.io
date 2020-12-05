@@ -1,48 +1,174 @@
-<!DOCTYPE html >
-<html>
-        <head>
-          <title>Smile - JSON</title>
-          <meta name="description" content="Smile - JSON" />
-          <meta name="keywords" content="Smile JSON" />
-          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-          
-      <link href="lib/index.css" media="screen" type="text/css" rel="stylesheet" />
-      <script type="text/javascript" src="lib/jquery.js"></script>
-      <script type="text/javascript" src="lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="lib/jquery.layout.js"></script>
-      <script type="text/javascript" src="lib/index.js"></script>
-      <script type="text/javascript" src="lib/scheduler.js"></script>
-    
-        </head>
-        <body>
-      <div id="library">
-        <img class="class icon" alt="class icon" src="lib/class.png" />
-        <img class="trait icon" alt="trait icon" src="lib/trait.png" />
-        <img class="object icon" alt="trait icon" src="lib/object.png" />
-        <img class="package icon" alt="trait icon" src="lib/package.png" />
-      </div>
-      <div id="browser" class="ui-layout-west">
-      <div class="ui-west-center">
-      <div id="filter">
-          <div id="textfilter"></div>
-          <div id="letters"><a target="template" href="index/index-_.html">#</a><a target="template" href="index/index-a.html">A</a><a target="template" href="index/index-b.html">B</a><a target="template" href="index/index-c.html">C</a><a target="template" href="index/index-d.html">D</a><a target="template" href="index/index-e.html">E</a><a target="template" href="index/index-f.html">F</a><a target="template" href="index/index-g.html">G</a><a target="template" href="index/index-h.html">H</a><a target="template" href="index/index-i.html">I</a><a target="template" href="index/index-j.html">J</a><span>K</span><a target="template" href="index/index-l.html">L</a><a target="template" href="index/index-m.html">M</a><a target="template" href="index/index-n.html">N</a><a target="template" href="index/index-o.html">O</a><a target="template" href="index/index-p.html">P</a><span>Q</span><a target="template" href="index/index-r.html">R</a><a target="template" href="index/index-s.html">S</a><a target="template" href="index/index-t.html">T</a><a target="template" href="index/index-u.html">U</a><a target="template" href="index/index-v.html">V</a><span>W</span><span>X</span><span>Y</span><a target="template" href="index/index-z.html">Z</a> – <span>deprecated</span></div>
-      </div>
-      <div class="pack" id="tpl">
-            
-            <ol class="templates"></ol>
-            <ol class="packages"> <li class="pack" title="smile">
-            <a class="tplshow" href="smile/package.html" target="template">smile</a>
-            <ol class="templates"></ol>
-            <ol class="packages"> <li class="pack" title="smile.json">
-            <a class="tplshow" href="smile/json/package.html" target="template">smile.json</a>
-            <ol class="templates"><li title="smile.json.CompactPrinter"><a class="tplshow" href="smile/json/CompactPrinter$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/CompactPrinter.html" target="template"><span class="trait">(trait)</span><span class="tplLink">CompactPrinter</span></a></li><li title="smile.json.JsArray"><a class="tplshow" href="smile/json/JsArray$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsArray.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsArray</span></a></li><li title="smile.json.JsBinary"><div class="placeholder"></div><a class="tplshow" href="smile/json/JsBinary.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsBinary</span></a></li><li title="smile.json.JsBoolean"><a class="tplshow" href="smile/json/JsBoolean$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsBoolean.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsBoolean</span></a></li><li title="smile.json.JsCounter"><a class="tplshow" href="smile/json/JsCounter$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsCounter.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsCounter</span></a></li><li title="smile.json.JsDate"><a class="tplshow" href="smile/json/JsDate$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsDate.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsDate</span></a></li><li title="smile.json.JsDateTime"><a class="tplshow" href="smile/json/JsDateTime$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsDateTime.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsDateTime</span></a></li><li title="smile.json.JsDecimal"><a class="tplshow" href="smile/json/JsDecimal$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsDecimal.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsDecimal</span></a></li><li title="smile.json.JsDouble"><a class="tplshow" href="smile/json/JsDouble$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsDouble.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsDouble</span></a></li><li title="smile.json.JsInt"><a class="tplshow" href="smile/json/JsInt$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsInt.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsInt</span></a></li><li title="smile.json.JsLong"><a class="tplshow" href="smile/json/JsLong$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsLong.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsLong</span></a></li><li title="smile.json.JsNull"><a class="tplshow" href="smile/json/JsNull$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">JsNull</span></a></li><li title="smile.json.JsObject"><a class="tplshow" href="smile/json/JsObject$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsObject.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsObject</span></a></li><li title="smile.json.JsObjectId"><a class="tplshow" href="smile/json/JsObjectId$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsObjectId.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsObjectId</span></a></li><li title="smile.json.JsonHelper"><div class="placeholder"></div><a class="tplshow" href="smile/json/package$$JsonHelper.html" target="template"><span class="class">(class)</span><span class="tplLink">JsonHelper</span></a></li><li title="smile.json.JsonParser"><a class="tplshow" href="smile/json/JsonParser$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsonParser.html" target="template"><span class="class">(class)</span><span class="tplLink">JsonParser</span></a></li><li title="smile.json.JsonPrinter"><a class="tplshow" href="smile/json/JsonPrinter$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsonPrinter.html" target="template"><span class="trait">(trait)</span><span class="tplLink">JsonPrinter</span></a></li><li title="smile.json.JsonSerializer"><a class="tplshow" href="smile/json/JsonSerializer$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsonSerializer.html" target="template"><span class="class">(class)</span><span class="tplLink">JsonSerializer</span></a></li><li title="smile.json.JsString"><a class="tplshow" href="smile/json/JsString$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsString.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsString</span></a></li><li title="smile.json.JsTime"><a class="tplshow" href="smile/json/JsTime$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsTime.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsTime</span></a></li><li title="smile.json.JsTimestamp"><a class="tplshow" href="smile/json/JsTimestamp$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsTimestamp.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsTimestamp</span></a></li><li title="smile.json.JsUndefined"><a class="tplshow" href="smile/json/JsUndefined$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">JsUndefined</span></a></li><li title="smile.json.JsUUID"><a class="tplshow" href="smile/json/JsUUID$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/JsUUID.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsUUID</span></a></li><li title="smile.json.JsValue"><div class="placeholder"></div><a class="tplshow" href="smile/json/JsValue.html" target="template"><span class="trait">(trait)</span><span class="tplLink">JsValue</span></a></li><li title="smile.json.JsValueOrdering"><a class="tplshow" href="smile/json/JsValueOrdering$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">JsValueOrdering</span></a></li><li title="smile.json.ObjectId"><a class="tplshow" href="smile/json/ObjectId$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/ObjectId.html" target="template"><span class="case class">(case class)</span><span class="tplLink">ObjectId</span></a></li><li title="smile.json.ParserInput"><a class="tplshow" href="smile/json/ParserInput$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/ParserInput.html" target="template"><span class="trait">(trait)</span><span class="tplLink">ParserInput</span></a></li><li title="smile.json.PrettyPrinter"><a class="tplshow" href="smile/json/PrettyPrinter$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="smile/json/PrettyPrinter.html" target="template"><span class="trait">(trait)</span><span class="tplLink">PrettyPrinter</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li></ol>
-          </li></ol>
-          </div></div><script src="index.js"></script>
-    </div>
-      <div id="content" class="ui-layout-center">
-        <iframe id="template" name="template" src="package.html"></iframe>
-      </div>
-    </body>
-      </html>
+<!DOCTYPE html ><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/><title>Smile - JSON </title><meta content="Smile - JSON " name="description"/><meta content="Smile JSON " name="keywords"/><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><link href="lib/index.css" media="screen" type="text/css" rel="stylesheet"/><link href="lib/template.css" media="screen" type="text/css" rel="stylesheet"/><link href="lib/print.css" media="print" type="text/css" rel="stylesheet"/><link href="lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css"/><script type="text/javascript" src="lib/jquery.min.js"></script><script type="text/javascript" src="lib/index.js"></script><script type="text/javascript" src="index.js"></script><script type="text/javascript" src="lib/scheduler.js"></script><script type="text/javascript" src="lib/template.js"></script><script type="text/javascript">/* this variable can be used by the JS to determine the path to the root document */
+var toRoot = '';</script></head><body><div id="search"><span id="doc-title">Smile - JSON<span id="doc-version"></span></span> <span class="close-results"><span class="left">&lt;</span> Back</span><div id="textfilter"><span class="input"><input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/"/><i class="clear material-icons"></i><i id="search-icon" class="material-icons"></i></span></div></div><div id="search-results"><div id="search-progress"><div id="progress-fill"></div></div><div id="results-content"><div id="entity-results"></div><div id="member-results"></div></div></div><div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;"><div id="content-container" style="-webkit-overflow-scrolling: touch;"><div id="subpackage-spacer"><div id="packages"><h1>Packages</h1><ul><li class="indented0 current" name="_root_.root" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="_root_" class="anchorToMember"></a><a id="root:_root_" class="anchorToMember"></a> <span class="permalink"><a href="index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><span class="name">root</span></span><p class="shortcomment cmt">JSON (JavaScript Object Notation) is a lightweight data-interchange format.</p><div class="fullcomment"><div class="comment cmt"><p>JSON (JavaScript Object Notation) is a lightweight data-interchange format.
+It is easy for humans to read and write. It is easy for machines to parse
+and generate. JSON is a text format that is completely language independent
+but uses conventions that are familiar to programmers of the C-family of
+languages,</p><p>JSON has only types of string, number, boolean, object, array, and null.
+This library includes additional types such as date, int, long, double,
+counter, binary, UUID, ObjectId (as in BSON), etc.</p><p>It is very easy to parse a JSON object:</p><pre><span class="kw">val</span> doc =
+  json<span class="lit">"""
+  {
+    "store": {
+      "book": [
+        {
+          "category": "reference",
+          "author": "Nigel Rees",
+          "title": "Sayings of the Century",
+          "price": 8.95
+        },
+        {
+          "category": "fiction",
+          "author": "Evelyn Waugh",
+          "title": "Sword of Honour",
+          "price": 12.99
+        },
+        {
+          "category": "fiction",
+          "author": "Herman Melville",
+          "title": "Moby Dick",
+          "isbn": "0-553-21311-3",
+          "price": 8.99
+        },
+        {
+          "category": "fiction",
+          "author": "J. R. R. Tolkien",
+          "title": "The Lord of the Rings",
+          "isbn": "0-395-19395-8",
+          "price": 22.99
+        }
+      ],
+      "bicycle": {
+        "color": "red",
+        "price": 19.95
+      }
+    }
+  }
+  """</span></pre><p>The interpolator <code>json</code> parse a string to <code>JsObject</code>. To parse an array, use
+the interpolator <code>jsan</code> to <code>JsArray</code>. It is also okay to embed
+variable references directly in processed string literals.</p><pre><span class="kw">val</span> x = <span class="num">1</span>
+json<span class="lit">"""
+  {
+    "x": $x
+  }
+"""</span></pre><p>If the string is not a JSON object but any other valid JSON expression,
+one may use parseJson method to convert the string to a <code>JsValue</code>.</p><pre><span class="lit">"1"</span>.parseJson</pre><p>The json interpolator can only be applied to string literals.
+If you want to parse a string variable, the <code>parseJson</code> method can
+always be employed. If you know the string contains a JSON object,
+you may also use the method <code>parseJsObject</code>.</p><pre><span class="kw">val</span> s = <span class="lit">"""{"x":1}"""
+s.parseJsObject</span></pre><p>To serialize a JSON value (of type JsValue) in compact mode, you can
+just use <code>toString</code>. To pretty print, use the method <code>prettyPrint</code>.</p><pre>doc.toString
+doc.prettyPrint</pre><p>With a <code>JsObject</code> or <code>JsArray</code>, you can refer to the individual
+elements with a variation of array syntax, like this:</p><pre>doc(<span class="lit">"store"</span>)(<span class="lit">"bicycle"</span>)(<span class="lit">"color"</span>)
+doc(<span class="lit">"store"</span>)(<span class="lit">"book"</span>)(<span class="num">0</span>)(<span class="lit">"author"</span>)</pre><p>Note that we follow Scala's array access convention by <code>()</code> rather than
+<code>[]</code> in JavaScript.</p><p>Besides, you can use the dot notation to access its fields/elements
+just like in JavaScript:</p><pre>doc.store.bicycle.color
+doc.store.book(<span class="num">0</span>).author</pre><p>It is worth noting that we didn't define the type/schema of the document
+while Scala is a strong type language. In other words, we have both the
+type safe features of strong type language and the flexibility of dynamic
+language in this JSON library.</p><p>If you try to access a non-exist field, <code>JsUndefined</code> is returned.</p><pre>scala&gt; doc.book
+res11: unicorn.json.JsValue = undefined</pre><p>Although there are already several nice JSON libraries for Scala,
+the JSON objects are immutable by design, which is a natural choice
+for a functional language. For database, however, data mutation is necessary.
+Therefore, <code>JsObject</code> and <code>JsArray</code> are mutable data structures. You can
+set/add a field just like in JavaScript:</p><pre>json.store.bicycle.color = <span class="lit">"green"</span></pre><p>To delete a field from <code>JsObject</code>, use remove method:</p><pre>doc.store.book(<span class="num">0</span>) remove <span class="lit">"price"</span></pre><p>It is same as setting it <code>JsUndefined</code>:</p><pre>doc.store.book(<span class="num">0</span>).price = `JsUndefined`</pre><p>To delete an element from <code>JsArray</code>, the remove method will effectively
+remove it from the array. However, setting an element to undefined
+doesn't reduce the array size.</p><pre><span class="cmt">// delete the first element and array size is smaller</span>
+doc.store.book.remove(<span class="num">0</span>)
+<span class="cmt">// set the first element to undefined but array size keeps same</span>
+doc.store.book(<span class="num">0</span>) = JsUndefined</pre><p>It is also possible to append an element or another array to <code>JsArray</code>:</p><pre><span class="kw">val</span> a = JsArray(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>)
+a += <span class="num">5</span>
+
+a ++= JsArray(<span class="num">5</span>, <span class="num">6</span>)</pre><p>Common iterative operations such as <code>foreach</code>, <code>map</code>, <code>reduce</code> can be applied
+to <code>JsArray</code> too.</p><pre>doc.store.book.asInstanceOf[JsArray].foreach { book <span class="kw">=&gt;</span>
+ println(book.price)
+}</pre><p>Because Scala is a static language, it is impossible to know
+<code>doc.store.book</code> is an array at compile time. So it is typed as
+generic <code>JsValue</code>, which is the parent type of specific JSON data types.
+Therefore, we use <code>asInstanceOf[JsArray]</code> to convert it to <code>JsArray</code>
+in order to use <code>foreach</code>.</p></div></div></li><li class="indented1 " name="_root_.smile" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="smile" class="anchorToMember"></a><a id="smile:smile" class="anchorToMember"></a> <span class="permalink"><a href="smile/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="smile/index.html" title=""><span class="name">smile</span></a></span></li></ul></div></div><div id="content"><body class="package value"><div id="definition"><div class="big-circle package">p</div><h1>root package <span class="permalink"><a href="index.html" title="Permalink"><i class="material-icons"></i></a></span></h1></div><h4 id="signature" class="signature"><span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><span class="name">root</span></span></h4><div id="comment" class="fullcommenttop"><div class="comment cmt"><p>JSON (JavaScript Object Notation) is a lightweight data-interchange format.
+It is easy for humans to read and write. It is easy for machines to parse
+and generate. JSON is a text format that is completely language independent
+but uses conventions that are familiar to programmers of the C-family of
+languages,</p><p>JSON has only types of string, number, boolean, object, array, and null.
+This library includes additional types such as date, int, long, double,
+counter, binary, UUID, ObjectId (as in BSON), etc.</p><p>It is very easy to parse a JSON object:</p><pre><span class="kw">val</span> doc =
+  json<span class="lit">"""
+  {
+    "store": {
+      "book": [
+        {
+          "category": "reference",
+          "author": "Nigel Rees",
+          "title": "Sayings of the Century",
+          "price": 8.95
+        },
+        {
+          "category": "fiction",
+          "author": "Evelyn Waugh",
+          "title": "Sword of Honour",
+          "price": 12.99
+        },
+        {
+          "category": "fiction",
+          "author": "Herman Melville",
+          "title": "Moby Dick",
+          "isbn": "0-553-21311-3",
+          "price": 8.99
+        },
+        {
+          "category": "fiction",
+          "author": "J. R. R. Tolkien",
+          "title": "The Lord of the Rings",
+          "isbn": "0-395-19395-8",
+          "price": 22.99
+        }
+      ],
+      "bicycle": {
+        "color": "red",
+        "price": 19.95
+      }
+    }
+  }
+  """</span></pre><p>The interpolator <code>json</code> parse a string to <code>JsObject</code>. To parse an array, use
+the interpolator <code>jsan</code> to <code>JsArray</code>. It is also okay to embed
+variable references directly in processed string literals.</p><pre><span class="kw">val</span> x = <span class="num">1</span>
+json<span class="lit">"""
+  {
+    "x": $x
+  }
+"""</span></pre><p>If the string is not a JSON object but any other valid JSON expression,
+one may use parseJson method to convert the string to a <code>JsValue</code>.</p><pre><span class="lit">"1"</span>.parseJson</pre><p>The json interpolator can only be applied to string literals.
+If you want to parse a string variable, the <code>parseJson</code> method can
+always be employed. If you know the string contains a JSON object,
+you may also use the method <code>parseJsObject</code>.</p><pre><span class="kw">val</span> s = <span class="lit">"""{"x":1}"""
+s.parseJsObject</span></pre><p>To serialize a JSON value (of type JsValue) in compact mode, you can
+just use <code>toString</code>. To pretty print, use the method <code>prettyPrint</code>.</p><pre>doc.toString
+doc.prettyPrint</pre><p>With a <code>JsObject</code> or <code>JsArray</code>, you can refer to the individual
+elements with a variation of array syntax, like this:</p><pre>doc(<span class="lit">"store"</span>)(<span class="lit">"bicycle"</span>)(<span class="lit">"color"</span>)
+doc(<span class="lit">"store"</span>)(<span class="lit">"book"</span>)(<span class="num">0</span>)(<span class="lit">"author"</span>)</pre><p>Note that we follow Scala's array access convention by <code>()</code> rather than
+<code>[]</code> in JavaScript.</p><p>Besides, you can use the dot notation to access its fields/elements
+just like in JavaScript:</p><pre>doc.store.bicycle.color
+doc.store.book(<span class="num">0</span>).author</pre><p>It is worth noting that we didn't define the type/schema of the document
+while Scala is a strong type language. In other words, we have both the
+type safe features of strong type language and the flexibility of dynamic
+language in this JSON library.</p><p>If you try to access a non-exist field, <code>JsUndefined</code> is returned.</p><pre>scala&gt; doc.book
+res11: unicorn.json.JsValue = undefined</pre><p>Although there are already several nice JSON libraries for Scala,
+the JSON objects are immutable by design, which is a natural choice
+for a functional language. For database, however, data mutation is necessary.
+Therefore, <code>JsObject</code> and <code>JsArray</code> are mutable data structures. You can
+set/add a field just like in JavaScript:</p><pre>json.store.bicycle.color = <span class="lit">"green"</span></pre><p>To delete a field from <code>JsObject</code>, use remove method:</p><pre>doc.store.book(<span class="num">0</span>) remove <span class="lit">"price"</span></pre><p>It is same as setting it <code>JsUndefined</code>:</p><pre>doc.store.book(<span class="num">0</span>).price = `JsUndefined`</pre><p>To delete an element from <code>JsArray</code>, the remove method will effectively
+remove it from the array. However, setting an element to undefined
+doesn't reduce the array size.</p><pre><span class="cmt">// delete the first element and array size is smaller</span>
+doc.store.book.remove(<span class="num">0</span>)
+<span class="cmt">// set the first element to undefined but array size keeps same</span>
+doc.store.book(<span class="num">0</span>) = JsUndefined</pre><p>It is also possible to append an element or another array to <code>JsArray</code>:</p><pre><span class="kw">val</span> a = JsArray(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>)
+a += <span class="num">5</span>
+
+a ++= JsArray(<span class="num">5</span>, <span class="num">6</span>)</pre><p>Common iterative operations such as <code>foreach</code>, <code>map</code>, <code>reduce</code> can be applied
+to <code>JsArray</code> too.</p><pre>doc.store.book.asInstanceOf[JsArray].foreach { book <span class="kw">=&gt;</span>
+ println(book.price)
+}</pre><p>Because Scala is a static language, it is impossible to know
+<code>doc.store.book</code> is an array at compile time. So it is typed as
+generic <code>JsValue</code>, which is the parent type of specific JSON data types.
+Therefore, we use <code>asInstanceOf[JsArray]</code> to convert it to <code>JsArray</code>
+in order to use <code>foreach</code>.</p></div></div><div id="template"><div id="allMembers"><div id="packages" class="package members"><h3>Package Members</h3><ol><li class="indented0 " name="_root_.smile" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="smile" class="anchorToMember"></a><a id="smile:smile" class="anchorToMember"></a> <span class="permalink"><a href="smile/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="smile/index.html" title=""><span class="name">smile</span></a></span></li></ol></div></div><div id="inheritedMembers"></div><div id="groupedMembers"><div name="Ungrouped" class="group"><h3>Ungrouped</h3></div></div></div><div id="tooltip"></div><div id="footer"></div></body></div></div></div></body></html>

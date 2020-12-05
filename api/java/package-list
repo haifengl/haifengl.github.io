@@ -1,5 +1,4 @@
 smile.association
-smile.base
 smile.base.cart
 smile.base.mlp
 smile.base.rbf
@@ -25,6 +24,7 @@ smile.io
 smile.manifold
 smile.math
 smile.math.blas
+smile.math.blas.mkl
 smile.math.blas.openblas
 smile.math.distance
 smile.math.kernel
@@ -49,7 +49,6 @@ smile.plot.swing
 smile.projection
 smile.projection.ica
 smile.regression
-smile.sampling
 smile.sequence
 smile.sort
 smile.stat
@@ -61,6 +60,7 @@ smile.taxonomy
 smile.timeseries
 smile.util
 smile.validation
+smile.validation.metric
 smile.vq
 smile.vq.hebb
 smile.wavelet

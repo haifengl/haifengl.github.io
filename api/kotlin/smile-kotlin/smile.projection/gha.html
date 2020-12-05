@@ -1,54 +1,65 @@
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>gha - smile-kotlin</title>
-<link rel="stylesheet" href="../../style.css">
-</HEAD>
-<BODY>
-<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.projection</a>&nbsp;/&nbsp;<a href="./gha.html">gha</a><br/>
-<br/>
-<h1>gha</h1>
-<a name="smile.projection$gha(kotlin.Array((kotlin.DoubleArray)), kotlin.Array((kotlin.DoubleArray)), kotlin.Double)"></a>
-<code><span class="keyword">fun </span><span class="identifier">gha</span><span class="symbol">(</span><span class="identifier" id="smile.projection$gha(kotlin.Array((kotlin.DoubleArray)), kotlin.Array((kotlin.DoubleArray)), kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.projection$gha(kotlin.Array((kotlin.DoubleArray)), kotlin.Array((kotlin.DoubleArray)), kotlin.Double)/w">w</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.projection$gha(kotlin.Array((kotlin.DoubleArray)), kotlin.Array((kotlin.DoubleArray)), kotlin.Double)/r">r</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/projection/GHA.html"><span class="identifier">GHA</span></a></code>
-<p>Generalized Hebbian Algorithm. GHA is a linear feed-forward neural
-network model for unsupervised learning with applications primarily in
-principal components analysis. It is single-layer process -- that is, a
-synaptic weight changes only depending on the response of the inputs and
-outputs of that layer.</p>
-<p>It guarantees that GHA finds the first k eigenvectors of the covariance matrix,
-assuming that the associated eigenvalues are distinct. The convergence theorem
-is forumulated in terms of a time-varying learning rate &eta;. In practice, the
-learning rate &eta; is chosen to be a small constant, in which case convergence is
-guaranteed with mean-squared error in synaptic weights of order &eta;.</p>
-<p>It also has a simple and predictable trade-off between learning speed and
-accuracy of convergence as set by the learning rate parameter &eta;. It was
-shown that a larger learning rate &eta; leads to faster convergence
-and larger asymptotic mean-square error, which is intuitively satisfying.</p>
-<p>Compared to regular batch PCA algorithm based on eigen decomposition, GHA is
-an adaptive method and works with an arbitrarily large sample size. The storage
-requirement is modest. Another attractive feature is that, in a nonstationary
-environment, it has an inherent ability to track gradual changes in the
-optimal solution in an inexpensive way.</p>
-<p>====References:====</p>
-<ul><li>Terence D. Sanger. Optimal unsupervised learning in a single-layer linear feedforward neural network. Neural Networks 2(6):459-473, 1989.</li>
-<li>Simon Haykin. Neural Networks: A Comprehensive Foundation (2 ed.). 1998.</li>
-</ul>
-<h3>Parameters</h3>
-<p><a name="data"></a>
-<code>data</code> - training data.</p>
-<p><a name="w"></a>
-<code>w</code> - the initial projection matrix.</p>
-<p><a name="r"></a>
-<code>r</code> - the learning rate.</p>
-<a name="smile.projection$gha(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)"></a>
-<code><span class="keyword">fun </span><span class="identifier">gha</span><span class="symbol">(</span><span class="identifier" id="smile.projection$gha(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.projection$gha(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.projection$gha(kotlin.Array((kotlin.DoubleArray)), kotlin.Int, kotlin.Double)/r">r</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/projection/GHA.html"><span class="identifier">GHA</span></a></code>
-<p>Generalized Hebbian Algorithm with random initial projection matrix.</p>
-<h3>Parameters</h3>
-<p><a name="data"></a>
-<code>data</code> - training data.</p>
-<p><a name="k"></a>
-<code>k</code> - the dimension of feature space.</p>
-<p><a name="r"></a>
-<code>r</code> - the learning rate.</p>
-</BODY>
-</HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>gha</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../../styles/style.css" rel="Stylesheet">
+    <link href="../../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
+    <link href="../../styles/main.css" rel="Stylesheet">
+    <script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/main.js" async="async"></script>
+    <script>var pathToRoot = "../../";</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="leftColumn">
+        <div id="logo"></div>
+        <div id="paneSearch"></div>
+        <div id="sideMenu"></div>
+      </div>
+      <div id="main">
+        <div id="leftToggler"><span class="icon-toggler"></span></div>
+        <div id="searchBar"></div>
+        <script type="text/javascript" src="../../scripts/pages.js"></script>
+        <script type="text/javascript" src="../../scripts/main.js"></script>
+        <div id="content" pageIds="smile.projection//gha/#kotlin.Array[kotlin.DoubleArray]#kotlin.Array[kotlin.DoubleArray]#kotlin.Double/PointingToDeclaration//-1469167018">
+          <div class="breadcrumbs"><a href="../index.html">smile-kotlin</a>/<a href="index.html">smile.projection</a>/<a href="gha.html">gha</a></div>
+          <div class="cover ">
+            <h1 class="cover"><span>gha</span></h1>
+          </div>
+<div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="gha.html">gha</a>(data: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>&gt;, w: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>&gt;, r: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a>): <a href="http://haifengl.github.io/api/java/smile/projection/GHA.html">GHA</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<p class="paragraph">Generalized Hebbian Algorithm. GHA is a linear feed-forward neural network model for unsupervised learning with applications primarily in principal components analysis. It is single-layer process -- that is, a synaptic weight changes only depending on the response of the inputs and outputs of that layer.</p><p class="paragraph">It guarantees that GHA finds the first k eigenvectors of the covariance matrix, assuming that the associated eigenvalues are distinct. The convergence theorem is forumulated in terms of a time-varying learning rate &amp;eta;. In practice, the learning rate &amp;eta; is chosen to be a small constant, in which case convergence is guaranteed with mean-squared error in synaptic weights of order &amp;eta;.</p><p class="paragraph">It also has a simple and predictable trade-off between learning speed and accuracy of convergence as set by the learning rate parameter &amp;eta;. It was shown that a larger learning rate &amp;eta; leads to faster convergence and larger asymptotic mean-square error, which is intuitively satisfying.</p><p class="paragraph">Compared to regular batch PCA algorithm based on eigen decomposition, GHA is an adaptive method and works with an arbitrarily large sample size. The storage requirement is modest. Another attractive feature is that, in a nonstationary environment, it has an inherent ability to track gradual changes in the optimal solution in an inexpensive way.</p><p class="paragraph">====References:====</p><ul><li><p class="paragraph">Terence D. Sanger. Optimal unsupervised learning in a single-layer linear feedforward neural network. Neural Networks 2(6):459-473, 1989.</p></li><li><p class="paragraph">Simon Haykin. Neural Networks: A Comprehensive Foundation (2 ed.). 1998.</p></li></ul><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">data</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">training data.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">r</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the learning rate.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">w</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the initial projection matrix.</p></div></div></div></div></div></div></div></div></div></div></div>
+<div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="gha.html">gha</a>(data: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>&gt;, k: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, r: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a>): <a href="http://haifengl.github.io/api/java/smile/projection/GHA.html">GHA</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<p class="paragraph">Generalized Hebbian Algorithm with random initial projection matrix.</p><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">data</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">training data.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">k</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the dimension of feature space.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">r</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the learning rate.</p></div></div></div></div></div></div></div></div></div></div></div>
+        </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#container"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.3337 9.66683H0.666992L6.00033 3.66683L11.3337 9.66683Z" fill="black"/>
+    <path d="M0.666992 0.333496H11.3337V1.66683H0.666992V0.333496Z" fill="black"/>
+</svg></a></span><span>© 2020 Copyright</span><span class="pull-right"><span>Sponsored and developed by dokka</span><a href="https://github.com/Kotlin/dokka"><span class="padded-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0H2.3949L4.84076 2.44586L0 7.28662L0.713376 8L5.55414 3.15924L8 5.6051V0Z" fill="black"/>
+</svg></span></a></span></div>
+      </div>
+    </div>
+  </body>
+</html>
+

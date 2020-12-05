@@ -1,75 +1,75 @@
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>knn - smile-kotlin</title>
-<link rel="stylesheet" href="../../style.css">
-</HEAD>
-<BODY>
-<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./knn.html">knn</a><br/>
-<br/>
-<h1>knn</h1>
-<a name="smile.classification$knn(smile.neighbor.KNNSearch((smile.classification.knn.T, )), kotlin.IntArray, kotlin.Int)"></a>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">knn</span><span class="symbol">(</span><span class="identifier" id="smile.classification$knn(smile.neighbor.KNNSearch((smile.classification.knn.T, )), kotlin.IntArray, kotlin.Int)/x">x</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/neighbor/KNNSearch.html"><span class="identifier">KNNSearch</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$knn(smile.neighbor.KNNSearch((smile.classification.knn.T, )), kotlin.IntArray, kotlin.Int)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$knn(smile.neighbor.KNNSearch((smile.classification.knn.T, )), kotlin.IntArray, kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/KNN.html"><span class="identifier">KNN</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>K-nearest neighbor classifier.
-The k-nearest neighbor algorithm (k-NN) is
-a method for classifying objects by a majority vote of its neighbors,
-with the object being assigned to the class most common amongst its k
-nearest neighbors (k is a positive integer, typically small).
-k-NN is a type of instance-based learning, or lazy learning where the
-function is only approximated locally and all computation
-is deferred until classification.</p>
-<p>The best choice of k depends upon the data; generally, larger values of
-k reduce the effect of noise on the classification, but make boundaries
-between classes less distinct. A good k can be selected by various
-heuristic techniques, e.g. cross-validation. In binary problems, it is
-helpful to choose k to be an odd number as this avoids tied votes.</p>
-<p>A drawback to the basic majority voting classification is that the classes
-with the more frequent instances tend to dominate the prediction of the
-new object, as they tend to come up in the k nearest neighbors when
-the neighbors are computed due to their large number. One way to overcome
-this problem is to weight the classification taking into account the
-distance from the test point to each of its k nearest neighbors.</p>
-<p>Often, the classification accuracy of k-NN can be improved significantly
-if the distance metric is learned with specialized algorithms such as
-Large Margin Nearest Neighbor or Neighborhood Components Analysis.</p>
-<p>Nearest neighbor rules in effect compute the decision boundary in an
-implicit manner. It is also possible to compute the decision boundary
-itself explicitly, and to do so in an efficient manner so that the
-computational complexity is a function of the boundary complexity.</p>
-<p>The nearest neighbor algorithm has some strong consistency results. As
-the amount of data approaches infinity, the algorithm is guaranteed to
-yield an error rate no worse than twice the Bayes error rate (the minimum
-achievable error rate given the distribution of the data). k-NN is
-guaranteed to approach the Bayes error rate, for some value of k (where k
-increases as a function of the number of data points).</p>
-<h3>Parameters</h3>
-<p><a name="x"></a>
-<code>x</code> - k-nearest neighbor search data structure of training instances.</p>
-<p><a name="y"></a>
-<code>y</code> - training labels in [0, c), where c is the number of classes.</p>
-<p><a name="k"></a>
-<code>k</code> - the number of neighbors for classification.</p>
-<a name="smile.classification$knn(kotlin.Array((smile.classification.knn.T)), kotlin.IntArray, kotlin.Int, smile.math.distance.Distance((smile.classification.knn.T)))"></a>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">knn</span><span class="symbol">(</span><span class="identifier" id="smile.classification$knn(kotlin.Array((smile.classification.knn.T)), kotlin.IntArray, kotlin.Int, smile.math.distance.Distance((smile.classification.knn.T)))/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$knn(kotlin.Array((smile.classification.knn.T)), kotlin.IntArray, kotlin.Int, smile.math.distance.Distance((smile.classification.knn.T)))/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$knn(kotlin.Array((smile.classification.knn.T)), kotlin.IntArray, kotlin.Int, smile.math.distance.Distance((smile.classification.knn.T)))/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$knn(kotlin.Array((smile.classification.knn.T)), kotlin.IntArray, kotlin.Int, smile.math.distance.Distance((smile.classification.knn.T)))/distance">distance</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/distance/Distance.html"><span class="identifier">Distance</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/KNN.html"><span class="identifier">KNN</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>K-nearest neighbor classifier.</p>
-<h3>Parameters</h3>
-<p><a name="x"></a>
-<code>x</code> - training samples.</p>
-<p><a name="y"></a>
-<code>y</code> - training labels in [0, c), where c is the number of classes.</p>
-<p><a name="distance"></a>
-<code>distance</code> - the distance measure for finding nearest neighbors.</p>
-<p><a name="k"></a>
-<code>k</code> - the number of neighbors for classification.</p>
-<a name="smile.classification$knn(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Int)"></a>
-<code><span class="keyword">fun </span><span class="identifier">knn</span><span class="symbol">(</span><span class="identifier" id="smile.classification$knn(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Int)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.classification$knn(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Int)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html"><span class="identifier">IntArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$knn(kotlin.Array((kotlin.DoubleArray)), kotlin.IntArray, kotlin.Int)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/KNN.html"><span class="identifier">KNN</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span></code>
-<p>K-nearest neighbor classifier with Euclidean distance as the similarity measure.</p>
-<h3>Parameters</h3>
-<p><a name="x"></a>
-<code>x</code> - training samples.</p>
-<p><a name="y"></a>
-<code>y</code> - training labels in [0, c), where c is the number of classes.</p>
-<p><a name="k"></a>
-<code>k</code> - the number of neighbors for classification.</p>
-</BODY>
-</HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>knn</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../../styles/style.css" rel="Stylesheet">
+    <link href="../../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
+    <link href="../../styles/main.css" rel="Stylesheet">
+    <script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/main.js" async="async"></script>
+    <script>var pathToRoot = "../../";</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="leftColumn">
+        <div id="logo"></div>
+        <div id="paneSearch"></div>
+        <div id="sideMenu"></div>
+      </div>
+      <div id="main">
+        <div id="leftToggler"><span class="icon-toggler"></span></div>
+        <div id="searchBar"></div>
+        <script type="text/javascript" src="../../scripts/pages.js"></script>
+        <script type="text/javascript" src="../../scripts/main.js"></script>
+        <div id="content" pageIds="smile.classification//knn/#smile.neighbor.KNNSearch[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#kotlin.IntArray#kotlin.Int/PointingToDeclaration//-1469167018">
+          <div class="breadcrumbs"><a href="../index.html">smile-kotlin</a>/<a href="index.html">smile.classification</a>/<a href="knn.html">knn</a></div>
+          <div class="cover ">
+            <h1 class="cover"><span>knn</span></h1>
+          </div>
+<div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun &lt;<a href="knn.html">T</a>&gt; <a href="knn.html">knn</a>(x: <a href="http://haifengl.github.io/api/java/smile/neighbor/KNNSearch.html">KNNSearch</a>&lt;<a href="knn.html">T</a>, <a href="knn.html">T</a>&gt;, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html">IntArray</a>, k: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="http://haifengl.github.io/api/java/smile/classification/KNN.html">KNN</a>&lt;<a href="knn.html">T</a>&gt;<span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<p class="paragraph">K-nearest neighbor classifier. The k-nearest neighbor algorithm (k-NN) is a method for classifying objects by a majority vote of its neighbors, with the object being assigned to the class most common amongst its k nearest neighbors (k is a positive integer, typically small). k-NN is a type of instance-based learning, or lazy learning where the function is only approximated locally and all computation is deferred until classification.</p><p class="paragraph">The best choice of k depends upon the data; generally, larger values of k reduce the effect of noise on the classification, but make boundaries between classes less distinct. A good k can be selected by various heuristic techniques, e.g. cross-validation. In binary problems, it is helpful to choose k to be an odd number as this avoids tied votes.</p><p class="paragraph">A drawback to the basic majority voting classification is that the classes with the more frequent instances tend to dominate the prediction of the new object, as they tend to come up in the k nearest neighbors when the neighbors are computed due to their large number. One way to overcome this problem is to weight the classification taking into account the distance from the test point to each of its k nearest neighbors.</p><p class="paragraph">Often, the classification accuracy of k-NN can be improved significantly if the distance metric is learned with specialized algorithms such as Large Margin Nearest Neighbor or Neighborhood Components Analysis.</p><p class="paragraph">Nearest neighbor rules in effect compute the decision boundary in an implicit manner. It is also possible to compute the decision boundary itself explicitly, and to do so in an efficient manner so that the computational complexity is a function of the boundary complexity.</p><p class="paragraph">The nearest neighbor algorithm has some strong consistency results. As the amount of data approaches infinity, the algorithm is guaranteed to yield an error rate no worse than twice the Bayes error rate (the minimum achievable error rate given the distribution of the data). k-NN is guaranteed to approach the Bayes error rate, for some value of k (where k increases as a function of the number of data points).</p><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">k</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the number of neighbors for classification.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">x</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">k-nearest neighbor search data structure of training instances.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">y</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">training labels in [0, c), where c is the number of classes.</p></div></div></div></div></div></div></div></div></div></div></div>
+<div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun &lt;<a href="knn.html">T</a>&gt; <a href="knn.html">knn</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="knn.html">T</a>&gt;, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html">IntArray</a>, k: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, distance: <a href="http://haifengl.github.io/api/java/smile/math/distance/Distance.html">Distance</a>&lt;<a href="knn.html">T</a>&gt;): <a href="http://haifengl.github.io/api/java/smile/classification/KNN.html">KNN</a>&lt;<a href="knn.html">T</a>&gt;<span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<p class="paragraph">K-nearest neighbor classifier.</p><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">distance</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the distance measure for finding nearest neighbors.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">k</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the number of neighbors for classification.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">x</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">training samples.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">y</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">training labels in [0, c), where c is the number of classes.</p></div></div></div></div></div></div></div></div></div></div></div>
+<div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="knn.html">knn</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>&gt;, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html">IntArray</a>, k: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="http://haifengl.github.io/api/java/smile/classification/KNN.html">KNN</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>&gt;<span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<p class="paragraph">K-nearest neighbor classifier with Euclidean distance as the similarity measure.</p><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">k</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the number of neighbors for classification.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">x</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">training samples.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">y</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">training labels in [0, c), where c is the number of classes.</p></div></div></div></div></div></div></div></div></div></div></div>
+        </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#container"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.3337 9.66683H0.666992L6.00033 3.66683L11.3337 9.66683Z" fill="black"/>
+    <path d="M0.666992 0.333496H11.3337V1.66683H0.666992V0.333496Z" fill="black"/>
+</svg></a></span><span>© 2020 Copyright</span><span class="pull-right"><span>Sponsored and developed by dokka</span><a href="https://github.com/Kotlin/dokka"><span class="padded-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0H2.3949L4.84076 2.44586L0 7.28662L0.713376 8L5.55414 3.15924L8 5.6051V0Z" fill="black"/>
+</svg></span></a></span></div>
+      </div>
+    </div>
+  </body>
+</html>
+

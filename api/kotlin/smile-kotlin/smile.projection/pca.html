@@ -1,49 +1,55 @@
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>pca - smile-kotlin</title>
-<link rel="stylesheet" href="../../style.css">
-</HEAD>
-<BODY>
-<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.projection</a>&nbsp;/&nbsp;<a href="./pca.html">pca</a><br/>
-<br/>
-<h1>pca</h1>
-<a name="smile.projection$pca(kotlin.Array((kotlin.DoubleArray)), kotlin.Boolean)"></a>
-<code><span class="keyword">fun </span><span class="identifier">pca</span><span class="symbol">(</span><span class="identifier" id="smile.projection$pca(kotlin.Array((kotlin.DoubleArray)), kotlin.Boolean)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.projection$pca(kotlin.Array((kotlin.DoubleArray)), kotlin.Boolean)/cor">cor</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/projection/PCA.html"><span class="identifier">PCA</span></a></code>
-<p>Principal component analysis. PCA is an orthogonal
-linear transformation that transforms a number of possibly correlated
-variables into a smaller number of uncorrelated variables called principal
-components. The first principal component accounts for as much of the
-variability in the data as possible, and each succeeding component accounts
-for as much of the remaining variability as possible. PCA is theoretically
-the optimum transform for given data in least square terms.
-PCA can be thought of as revealing the internal structure of the data in
-a way which best explains the variance in the data. If a multivariate
-dataset is visualized as a set of coordinates in a high-dimensional data
-space, PCA supplies the user with a lower-dimensional picture when viewed
-from its (in some sense) most informative viewpoint.</p>
-<p>PCA is mostly used as a tool in exploratory data analysis and for making
-predictive models. PCA involves the calculation of the eigenvalue
-decomposition of a data covariance matrix or singular value decomposition
-of a data matrix, usually after mean centering the data for each attribute.
-The results of a PCA are usually discussed in terms of component scores and
-loadings.</p>
-<p>As a linear technique, PCA is built for several purposes: first, it enables us to
-decorrelate the original variables; second, to carry out data compression,
-where we pay decreasing attention to the numerical accuracy by which we
-encode the sequence of principal components; third, to reconstruct the
-original input data using a reduced number of variables according to a
-least-squares criterion; and fourth, to identify potential clusters in the data.</p>
-<p>In certain applications, PCA can be misleading. PCA is heavily influenced
-when there are outliers in the data. In other situations, the linearity
-of PCA may be an obstacle to successful data reduction and compression.</p>
-<h3>Parameters</h3>
-<p><a name="data"></a>
-<code>data</code> - training data. If the sample size
-    is larger than the data dimension and cor = false, SVD is employed for
-    efficiency. Otherwise, eigen decomposition on covariance or correlation
-    matrix is performed.</p>
-<p><a name="cor"></a>
-<code>cor</code> - true if use correlation matrix instead of covariance matrix if ture.</p>
-</BODY>
-</HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>pca</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../../styles/style.css" rel="Stylesheet">
+    <link href="../../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
+    <link href="../../styles/main.css" rel="Stylesheet">
+    <script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/main.js" async="async"></script>
+    <script>var pathToRoot = "../../";</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="leftColumn">
+        <div id="logo"></div>
+        <div id="paneSearch"></div>
+        <div id="sideMenu"></div>
+      </div>
+      <div id="main">
+        <div id="leftToggler"><span class="icon-toggler"></span></div>
+        <div id="searchBar"></div>
+        <script type="text/javascript" src="../../scripts/pages.js"></script>
+        <script type="text/javascript" src="../../scripts/main.js"></script>
+        <div id="content" pageIds="smile.projection//pca/#kotlin.Array[kotlin.DoubleArray]#kotlin.Boolean/PointingToDeclaration//-1469167018">
+          <div class="breadcrumbs"><a href="../index.html">smile-kotlin</a>/<a href="index.html">smile.projection</a>/<a href="pca.html">pca</a></div>
+          <div class="cover ">
+            <h1 class="cover"><span>pca</span></h1>
+          </div>
+<div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="pca.html">pca</a>(data: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>&gt;, cor: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false): <a href="http://haifengl.github.io/api/java/smile/projection/PCA.html">PCA</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<p class="paragraph">Principal component analysis. PCA is an orthogonal linear transformation that transforms a number of possibly correlated variables into a smaller number of uncorrelated variables called principal components. The first principal component accounts for as much of the variability in the data as possible, and each succeeding component accounts for as much of the remaining variability as possible. PCA is theoretically the optimum transform for given data in least square terms. PCA can be thought of as revealing the internal structure of the data in a way which best explains the variance in the data. If a multivariate dataset is visualized as a set of coordinates in a high-dimensional data space, PCA supplies the user with a lower-dimensional picture when viewed from its (in some sense) most informative viewpoint.</p><p class="paragraph">PCA is mostly used as a tool in exploratory data analysis and for making predictive models. PCA involves the calculation of the eigenvalue decomposition of a data covariance matrix or singular value decomposition of a data matrix, usually after mean centering the data for each attribute. The results of a PCA are usually discussed in terms of component scores and loadings.</p><p class="paragraph">As a linear technique, PCA is built for several purposes: first, it enables us to decorrelate the original variables; second, to carry out data compression, where we pay decreasing attention to the numerical accuracy by which we encode the sequence of principal components; third, to reconstruct the original input data using a reduced number of variables according to a least-squares criterion; and fourth, to identify potential clusters in the data.</p><p class="paragraph">In certain applications, PCA can be misleading. PCA is heavily influenced when there are outliers in the data. In other situations, the linearity of PCA may be an obstacle to successful data reduction and compression.</p><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">cor</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">true if use correlation matrix instead of covariance matrix if ture.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">data</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">training data. If the sample size     is larger than the data dimension and cor = false, SVD is employed for     efficiency. Otherwise, eigen decomposition on covariance or correlation     matrix is performed.</p></div></div></div></div></div></div></div></div></div></div></div>
+        </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#container"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.3337 9.66683H0.666992L6.00033 3.66683L11.3337 9.66683Z" fill="black"/>
+    <path d="M0.666992 0.333496H11.3337V1.66683H0.666992V0.333496Z" fill="black"/>
+</svg></a></span><span>© 2020 Copyright</span><span class="pull-right"><span>Sponsored and developed by dokka</span><a href="https://github.com/Kotlin/dokka"><span class="padded-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0H2.3949L4.84076 2.44586L0 7.28662L0.713376 8L5.55414 3.15924L8 5.6051V0Z" fill="black"/>
+</svg></span></a></span></div>
+      </div>
+    </div>
+  </body>
+</html>
+

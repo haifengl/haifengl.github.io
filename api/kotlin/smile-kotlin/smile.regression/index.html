@@ -1,153 +1,325 @@
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>smile.regression - smile-kotlin</title>
-<link rel="stylesheet" href="../../style.css">
-</HEAD>
-<BODY>
-<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="./index.html">smile.regression</a><br/>
-<br/>
-<h2>Package smile.regression</h2>
-<p>Regression analysis.</p>
-<p>Regression analysis includes any
-techniques for modeling and analyzing several variables, when the focus
-is on the relationship between a dependent variable and one or more
-independent variables. Most commonly, regression analysis estimates the
-conditional expectation of the dependent variable given the independent
-variables. Therefore, the estimation target is a function of the independent
-variables called the regression function. Regression analysis is widely
-used for prediction and forecasting.</p>
-  
-<h3>Types</h3>
-<table>
-<tbody>
-<tr>
-<td>
-<h4><a href="gpr/index.html">gpr</a></h4>
-</td>
-<td>
-<p>Gaussian Process for Regression.</p>
-<code><span class="keyword">object </span><span class="identifier">gpr</span></code></td>
-</tr>
-</tbody>
-</table>
-<h3>Functions</h3>
-<table>
-<tbody>
-<tr>
-<td>
-<h4><a href="cart.html">cart</a></h4>
-</td>
-<td>
-<p>Regression tree. A classification/regression tree can be learned by
-splitting the training set into subsets based on an attribute value
-test. This process is repeated on each derived subset in a recursive
-manner called recursive partitioning. The recursion is completed when
-the subset at a node all has the same value of the target variable,
-or when splitting no longer adds value to the predictions.</p>
-<code><span class="keyword">fun </span><span class="identifier">cart</span><span class="symbol">(</span><span class="identifier" id="smile.regression$cart(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$cart(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$cart(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int)/maxDepth">maxDepth</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;20<span class="symbol">, </span><span class="identifier" id="smile.regression$cart(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int)/maxNodes">maxNodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="smile.regression$cart(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int)/nodeSize">nodeSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;5<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/RegressionTree.html"><span class="identifier">RegressionTree</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="gbm.html">gbm</a></h4>
-</td>
-<td>
-<p>Gradient boosted regression trees.</p>
-<code><span class="keyword">fun </span><span class="identifier">gbm</span><span class="symbol">(</span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/loss">loss</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/base/cart/Loss.html"><span class="identifier">Loss</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Loss.lad()<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/ntrees">ntrees</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;500<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/maxDepth">maxDepth</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;20<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/maxNodes">maxNodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;6<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/nodeSize">nodeSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;5<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/shrinkage">shrinkage</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.05<span class="symbol">, </span><span class="identifier" id="smile.regression$gbm(smile.data.formula.Formula, smile.data.DataFrame, smile.base.cart.Loss, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/subsample">subsample</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.7<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/GradientTreeBoost.html"><span class="identifier">GradientTreeBoost</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="gpr.html">gpr</a></h4>
-</td>
-<td>
-<p>Gaussian Process for Regression. A Gaussian process is a stochastic process
-whose realizations consist of random values associated with every point in
-a range of times (or of space) such that each such random variable has
-a normal distribution. Moreover, every finite collection of those random
-variables has a multivariate normal distribution.</p>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">gpr</span><span class="symbol">(</span><span class="identifier" id="smile.regression$gpr(kotlin.Array((smile.regression.gpr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.gpr.T)), kotlin.Double)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$gpr(kotlin.Array((smile.regression.gpr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.gpr.T)), kotlin.Double)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$gpr(kotlin.Array((smile.regression.gpr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.gpr.T)), kotlin.Double)/kernel">kernel</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/kernel/MercerKernel.html"><span class="identifier">MercerKernel</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$gpr(kotlin.Array((smile.regression.gpr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.gpr.T)), kotlin.Double)/lambda">lambda</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/KernelMachine.html"><span class="identifier">KernelMachine</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="lasso.html">lasso</a></h4>
-</td>
-<td>
-<p>Least absolute shrinkage and selection operator.
-The Lasso is a shrinkage and selection method for linear regression.
-It minimizes the usual sum of squared errors, with a bound on the sum
-of the absolute values of the coefficients (i.e. L1-regularized).
-It has connections to soft-thresholding of wavelet coefficients, forward
-stage-wise regression, and boosting methods.</p>
-<code><span class="keyword">fun </span><span class="identifier">lasso</span><span class="symbol">(</span><span class="identifier" id="smile.regression$lasso(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Double, kotlin.Double, kotlin.Int)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$lasso(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Double, kotlin.Double, kotlin.Int)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$lasso(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Double, kotlin.Double, kotlin.Int)/lambda">lambda</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$lasso(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Double, kotlin.Double, kotlin.Int)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1E-3<span class="symbol">, </span><span class="identifier" id="smile.regression$lasso(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Double, kotlin.Double, kotlin.Int)/maxIter">maxIter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;5000<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/LinearModel.html"><span class="identifier">LinearModel</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="lm.html">lm</a></h4>
-</td>
-<td>
-<p>Fitting linear models (ordinary least squares). In linear regression,
-the model specification is that the dependent variable is a linear
-combination of the parameters (but need not be linear in the independent
-variables). The residual is the difference between the value of the
-dependent variable predicted by the model, and the true value of the
-dependent variable. Ordinary least squares obtains parameter estimates
-that minimize the sum of squared residuals, SSE (also denoted RSS).</p>
-<code><span class="keyword">fun </span><span class="identifier">lm</span><span class="symbol">(</span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/method">method</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a>&nbsp;<span class="symbol">=</span>&nbsp;"qr"<span class="symbol">, </span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/stderr">stderr</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">, </span><span class="identifier" id="smile.regression$lm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.String, kotlin.Boolean, kotlin.Boolean)/recursive">recursive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;true<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/LinearModel.html"><span class="identifier">LinearModel</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="random-forest.html">randomForest</a></h4>
-</td>
-<td>
-<p>Random forest for regression. Random forest is an ensemble classifier
-that consists of many decision trees and outputs the majority vote of
-individual trees. The method combines bagging idea and the random
-selection of features.</p>
-<code><span class="keyword">fun </span><span class="identifier">randomForest</span><span class="symbol">(</span><span class="identifier" id="smile.regression$randomForest(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$randomForest(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$randomForest(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double)/ntrees">ntrees</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;500<span class="symbol">, </span><span class="identifier" id="smile.regression$randomForest(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double)/mtry">mtry</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0<span class="symbol">, </span><span class="identifier" id="smile.regression$randomForest(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double)/maxDepth">maxDepth</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;20<span class="symbol">, </span><span class="identifier" id="smile.regression$randomForest(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double)/maxNodes">maxNodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;500<span class="symbol">, </span><span class="identifier" id="smile.regression$randomForest(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double)/nodeSize">nodeSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;5<span class="symbol">, </span><span class="identifier" id="smile.regression$randomForest(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double)/subsample">subsample</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1.0<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/RandomForest.html"><span class="identifier">RandomForest</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="rbfnet.html">rbfnet</a></h4>
-</td>
-<td>
-<p>Radial basis function networks. A radial basis function network is an
-artificial neural network that uses radial basis functions as activation
-functions. It is a linear combination of radial basis functions. They are
-used in function approximation, time series prediction, and control.</p>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">rbfnet</span><span class="symbol">(</span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((smile.regression.rbfnet.T)), kotlin.DoubleArray, kotlin.Array((smile.base.rbf.RBF((smile.regression.rbfnet.T)))), kotlin.Boolean)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((smile.regression.rbfnet.T)), kotlin.DoubleArray, kotlin.Array((smile.base.rbf.RBF((smile.regression.rbfnet.T)))), kotlin.Boolean)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((smile.regression.rbfnet.T)), kotlin.DoubleArray, kotlin.Array((smile.base.rbf.RBF((smile.regression.rbfnet.T)))), kotlin.Boolean)/neurons">neurons</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="http://haifengl.github.io/api/java/smile/base/rbf/RBF.html"><span class="identifier">RBF</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((smile.regression.rbfnet.T)), kotlin.DoubleArray, kotlin.Array((smile.base.rbf.RBF((smile.regression.rbfnet.T)))), kotlin.Boolean)/normalized">normalized</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/RBFNetwork.html"><span class="identifier">RBFNetwork</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Trains a Gaussian RBF network with k-means.</p>
-<code><span class="keyword">fun </span><span class="identifier">rbfnet</span><span class="symbol">(</span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((kotlin.DoubleArray)), kotlin.DoubleArray, kotlin.Int, kotlin.Boolean)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((kotlin.DoubleArray)), kotlin.DoubleArray, kotlin.Int, kotlin.Boolean)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((kotlin.DoubleArray)), kotlin.DoubleArray, kotlin.Int, kotlin.Boolean)/k">k</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$rbfnet(kotlin.Array((kotlin.DoubleArray)), kotlin.DoubleArray, kotlin.Int, kotlin.Boolean)/normalized">normalized</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/RBFNetwork.html"><span class="identifier">RBFNetwork</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">&gt;</span></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="ridge.html">ridge</a></h4>
-</td>
-<td>
-<p>Ridge Regression. When the predictor variables are highly correlated amongst
-themselves, the coefficients of the resulting least squares fit may be very
-imprecise. By allowing a small amount of bias in the estimates, more
-reasonable coefficients may often be obtained. Ridge regression is one
-method to address these issues. Often, small amounts of bias lead to
-dramatic reductions in the variance of the estimated model coefficients.
-Ridge regression is such a technique which shrinks the regression
-coefficients by imposing a penalty on their size. Ridge regression was
-originally developed to overcome the singularity of the X'X matrix.
-This matrix is perturbed so as to make its determinant appreciably
-different from 0.</p>
-<code><span class="keyword">fun </span><span class="identifier">ridge</span><span class="symbol">(</span><span class="identifier" id="smile.regression$ridge(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Double)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$ridge(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$ridge(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Double)/lambda">lambda</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/LinearModel.html"><span class="identifier">LinearModel</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="svr.html">svr</a></h4>
-</td>
-<td>
-<p>Support vector regression. Like SVM for classification, the model produced
-by SVR depends only on a subset of the training data, because the cost
-function ignores any training data close to the model prediction (within
-a threshold).</p>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">svr</span><span class="symbol">(</span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/x">x</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/y">y</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html"><span class="identifier">DoubleArray</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/kernel">kernel</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/math/kernel/MercerKernel.html"><span class="identifier">MercerKernel</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/eps">eps</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/C">C</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="smile.regression$svr(kotlin.Array((smile.regression.svr.T)), kotlin.DoubleArray, smile.math.kernel.MercerKernel((smile.regression.svr.T)), kotlin.Double, kotlin.Double, kotlin.Double)/tol">tol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;1E-3<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/regression/KernelMachine.html"><span class="identifier">KernelMachine</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
-</tr>
-</tbody>
-</table>
-</BODY>
-</HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>smile.regression</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../../styles/style.css" rel="Stylesheet">
+    <link href="../../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
+    <link href="../../styles/main.css" rel="Stylesheet">
+    <script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/main.js" async="async"></script>
+    <script>var pathToRoot = "../../";</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="leftColumn">
+        <div id="logo"></div>
+        <div id="paneSearch"></div>
+        <div id="sideMenu"></div>
+      </div>
+      <div id="main">
+        <div id="leftToggler"><span class="icon-toggler"></span></div>
+        <div id="searchBar"></div>
+        <script type="text/javascript" src="../../scripts/pages.js"></script>
+        <script type="text/javascript" src="../../scripts/main.js"></script>
+        <div id="content" pageIds="smile.regression////PointingToDeclaration//-1469167018">
+          <div class="breadcrumbs"><a href="../index.html">smile-kotlin</a>/<a href="index.html">smile.regression</a></div>
+          <div class="cover ">
+            <h1 class="cover"><span>Package smile.</span><wbr></wbr><span>regression</span></h1>
+            <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><p class="paragraph">Regression analysis.</p><p class="paragraph">Regression analysis includes any techniques for modeling and analyzing several variables, when the focus is on the relationship between a dependent variable and one or more independent variables. Most commonly, regression analysis estimates the conditional expectation of the dependent variable given the independent variables. Therefore, the estimation target is a function of the independent variables called the regression function. Regression analysis is widely used for prediction and forecasting.</p></div></div>
+          </div>
+          <div class="tabbedcontent">
+            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button></div>
+            <div class="tabs-section-body">
+              <h2 class="">Types</h2>
+              <div class="table" data-togglable="Types"><a data-name="%5Bsmile.regression%2Fgpr%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-1469167018" anchor-label="gpr" id="%5Bsmile.regression%2Fgpr%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="gpr/index.html">gpr</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2Fgpr%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">object <a href="gpr/index.html">gpr</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2Fgpr%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-1469167018" anchor-label="gpr" id="%5Bsmile.regression%2Fgpr%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2Fgpr%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-1469167018" anchor-label="gpr" id="%5Bsmile.regression%2Fgpr%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Gaussian Process for Regression.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Functions</h2>
+              <div class="table" data-togglable="Functions"><a data-name="%5Bsmile.regression%2F%2Fcart%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="cart" id="%5Bsmile.regression%2F%2Fcart%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="cart.html">cart</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2F%2Fcart%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="cart.html">cart</a>(formula: <a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html">Formula</a>, data: <a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html">DataFrame</a>, maxDepth: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 20, maxNodes: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 0, nodeSize: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 5): <a href="http://haifengl.github.io/api/java/smile/regression/RegressionTree.html">RegressionTree</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2Fcart%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="cart" id="%5Bsmile.regression%2F%2Fcart%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2Fcart%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="cart" id="%5Bsmile.regression%2F%2Fcart%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Regression tree.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bsmile.regression%2F%2Fgbm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23smile.base.cart.Loss%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="gbm" id="%5Bsmile.regression%2F%2Fgbm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23smile.base.cart.Loss%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="gbm.html">gbm</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2F%2Fgbm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23smile.base.cart.Loss%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="gbm.html">gbm</a>(formula: <a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html">Formula</a>, data: <a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html">DataFrame</a>, loss: <a href="http://haifengl.github.io/api/java/smile/base/cart/Loss.html">Loss</a> = Loss.lad(), ntrees: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 500, maxDepth: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 20, maxNodes: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 6, nodeSize: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 5, shrinkage: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a> = 0.05, subsample: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a> = 0.7): <a href="http://haifengl.github.io/api/java/smile/regression/GradientTreeBoost.html">GradientTreeBoost</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2Fgbm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23smile.base.cart.Loss%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="gbm" id="%5Bsmile.regression%2F%2Fgbm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23smile.base.cart.Loss%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2Fgbm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23smile.base.cart.Loss%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="gbm" id="%5Bsmile.regression%2F%2Fgbm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23smile.base.cart.Loss%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Gradient boosted regression trees.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bsmile.regression%2F%2Fgpr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Boolean%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="gpr" id="%5Bsmile.regression%2F%2Fgpr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Boolean%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="gpr.html">gpr</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2F%2Fgpr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Boolean%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun &lt;<a href="gpr.html">T</a>&gt; <a href="gpr.html">gpr</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="gpr.html">T</a>&gt;, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>, kernel: <a href="http://haifengl.github.io/api/java/smile/math/kernel/MercerKernel.html">MercerKernel</a>&lt;<a href="gpr.html">T</a>&gt;, noise: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a>, normalize: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = true, tol: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a> = 1E-5, maxIter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 0): <a href="http://haifengl.github.io/api/java/smile/regression/GaussianProcessRegression.html">GaussianProcessRegression</a>&lt;<a href="gpr.html">T</a>&gt;<span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2Fgpr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Boolean%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="gpr" id="%5Bsmile.regression%2F%2Fgpr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Boolean%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2Fgpr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Boolean%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="gpr" id="%5Bsmile.regression%2F%2Fgpr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Boolean%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Gaussian Process for Regression.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bsmile.regression%2F%2Flasso%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="lasso" id="%5Bsmile.regression%2F%2Flasso%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="lasso.html">lasso</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2F%2Flasso%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="lasso.html">lasso</a>(formula: <a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html">Formula</a>, data: <a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html">DataFrame</a>, lambda: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a>, tol: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a> = 1E-3, maxIter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 5000): <a href="http://haifengl.github.io/api/java/smile/regression/LinearModel.html">LinearModel</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2Flasso%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="lasso" id="%5Bsmile.regression%2F%2Flasso%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2Flasso%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="lasso" id="%5Bsmile.regression%2F%2Flasso%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%23kotlin.Double%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Least absolute shrinkage and selection operator.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bsmile.regression%2F%2Flm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.String%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="lm" id="%5Bsmile.regression%2F%2Flm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.String%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="lm.html">lm</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2F%2Flm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.String%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="lm.html">lm</a>(formula: <a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html">Formula</a>, data: <a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html">DataFrame</a>, method: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a> = &quot;qr&quot;, stderr: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = true, recursive: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = true): <a href="http://haifengl.github.io/api/java/smile/regression/LinearModel.html">LinearModel</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2Flm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.String%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="lm" id="%5Bsmile.regression%2F%2Flm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.String%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2Flm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.String%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="lm" id="%5Bsmile.regression%2F%2Flm%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.String%23kotlin.Boolean%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Fitting linear models (ordinary least squares).</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bsmile.regression%2F%2FrandomForest%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="randomForest" id="%5Bsmile.regression%2F%2FrandomForest%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="random-forest.html">randomForest</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2F%2FrandomForest%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="random-forest.html">randomForest</a>(formula: <a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html">Formula</a>, data: <a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html">DataFrame</a>, ntrees: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 500, mtry: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 0, maxDepth: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 20, maxNodes: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 500, nodeSize: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 5, subsample: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a> = 1.0): <a href="http://haifengl.github.io/api/java/smile/regression/RandomForest.html">RandomForest</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2FrandomForest%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="randomForest" id="%5Bsmile.regression%2F%2FrandomForest%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2FrandomForest%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="randomForest" id="%5Bsmile.regression%2F%2FrandomForest%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Int%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Random forest for regression.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23kotlin.Array%5Bsmile.base.rbf.RBF%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%5D%23kotlin.Boolean%2FPointingToDeclaration%2F%2C+smile.regression%2F%2Frbfnet%2F%23kotlin.Array%5Bkotlin.DoubleArray%5D%23kotlin.DoubleArray%23kotlin.Int%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="rbfnet" id="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23kotlin.Array%5Bsmile.base.rbf.RBF%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%5D%23kotlin.Boolean%2FPointingToDeclaration%2F%2C+smile.regression%2F%2Frbfnet%2F%23kotlin.Array%5Bkotlin.DoubleArray%5D%23kotlin.DoubleArray%23kotlin.Int%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="rbfnet.html">rbfnet</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23kotlin.Array%5Bsmile.base.rbf.RBF%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%5D%23kotlin.Boolean%2FPointingToDeclaration%2F%2C+smile.regression%2F%2Frbfnet%2F%23kotlin.Array%5Bkotlin.DoubleArray%5D%23kotlin.DoubleArray%23kotlin.Int%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun &lt;<a href="rbfnet.html">T</a>&gt; <a href="rbfnet.html">rbfnet</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="rbfnet.html">T</a>&gt;, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>, neurons: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="http://haifengl.github.io/api/java/smile/base/rbf/RBF.html">RBF</a>&lt;<a href="rbfnet.html">T</a>&gt;&gt;, normalized: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false): <a href="http://haifengl.github.io/api/java/smile/regression/RBFNetwork.html">RBFNetwork</a>&lt;<a href="rbfnet.html">T</a>&gt;<span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23kotlin.Array%5Bsmile.base.rbf.RBF%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%5D%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="rbfnet" id="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23kotlin.Array%5Bsmile.base.rbf.RBF%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%5D%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23kotlin.Array%5Bsmile.base.rbf.RBF%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%5D%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="rbfnet" id="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23kotlin.Array%5Bsmile.base.rbf.RBF%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%5D%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Radial basis function networks.</div></div>
+<div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="rbfnet.html">rbfnet</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>&gt;, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>, k: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, normalized: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false): <a href="http://haifengl.github.io/api/java/smile/regression/RBFNetwork.html">RBFNetwork</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>&gt;<span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5Bkotlin.DoubleArray%5D%23kotlin.DoubleArray%23kotlin.Int%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="rbfnet" id="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5Bkotlin.DoubleArray%5D%23kotlin.DoubleArray%23kotlin.Int%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5Bkotlin.DoubleArray%5D%23kotlin.DoubleArray%23kotlin.Int%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="rbfnet" id="%5Bsmile.regression%2F%2Frbfnet%2F%23kotlin.Array%5Bkotlin.DoubleArray%5D%23kotlin.DoubleArray%23kotlin.Int%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Trains a Gaussian RBF network with k-means.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bsmile.regression%2F%2Fridge%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="ridge" id="%5Bsmile.regression%2F%2Fridge%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="ridge.html">ridge</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2F%2Fridge%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="ridge.html">ridge</a>(formula: <a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html">Formula</a>, data: <a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html">DataFrame</a>, lambda: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a>): <a href="http://haifengl.github.io/api/java/smile/regression/LinearModel.html">LinearModel</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2Fridge%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="ridge" id="%5Bsmile.regression%2F%2Fridge%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2Fridge%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="ridge" id="%5Bsmile.regression%2F%2Fridge%2F%23smile.data.formula.Formula%23smile.data.DataFrame%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Ridge Regression.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bsmile.regression%2F%2Fsvr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="svr" id="%5Bsmile.regression%2F%2Fsvr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="svr.html">svr</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bsmile.regression%2F%2Fsvr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.2496 5.3C20.3496 4.5 19.2496 4 18.0496 4C16.8496 4 15.6496 4.5 14.8496 5.3L10.3496 9.8L11.7496 11.2L16.2496 6.7C17.2496 5.7 18.8496 5.7 19.8496 6.7C20.8496 7.7 20.8496 9.3 19.8496 10.3L15.3496 14.8L16.7496 16.2L21.2496 11.7C22.1496 10.8 22.5496 9.7 22.5496 8.5C22.5496 7.3 22.1496 6.2 21.2496 5.3Z"/>
+    <path d="M8.35 16.7998C7.35 17.7998 5.75 17.7998 4.75 16.7998C3.75 15.7998 3.75 14.1998 4.75 13.1998L9.25 8.6998L7.85 7.2998L3.35 11.7998C1.55 13.5998 1.55 16.3998 3.35 18.1998C4.25 19.0998 5.35 19.4998 6.55 19.4998C7.75 19.4998 8.85 19.0998 9.75 18.1998L14.25 13.6998L12.85 12.2998L8.35 16.7998Z"/>
+</svg></span>
+                          <div class="copy-popup-wrapper "><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun &lt;<a href="svr.html">T</a>&gt; <a href="svr.html">svr</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a>&lt;<a href="svr.html">T</a>&gt;, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double-array/index.html">DoubleArray</a>, kernel: <a href="http://haifengl.github.io/api/java/smile/math/kernel/MercerKernel.html">MercerKernel</a>&lt;<a href="svr.html">T</a>&gt;, eps: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a>, C: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a>, tol: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a> = 1E-3): <a href="http://haifengl.github.io/api/java/smile/regression/KernelMachine.html">KernelMachine</a>&lt;<a href="svr.html">T</a>&gt;<span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<a data-name="%5Bsmile.regression%2F%2Fsvr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="svr" id="%5Bsmile.regression%2F%2Fsvr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a><div class="brief "><a data-name="%5Bsmile.regression%2F%2Fsvr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" anchor-label="svr" id="%5Bsmile.regression%2F%2Fsvr%2F%23kotlin.Array%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.DoubleArray%23smile.math.kernel.MercerKernel%5BTypeParam%28bounds%3D%5Bkotlin.Any%3F%5D%29%5D%23kotlin.Double%23kotlin.Double%23kotlin.Double%2FPointingToDeclaration%2F%5D%2FFunctions%2F-1469167018" data-filterable-set=":dokkaHtml/main"></a>Support vector regression.</div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#container"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.3337 9.66683H0.666992L6.00033 3.66683L11.3337 9.66683Z" fill="black"/>
+    <path d="M0.666992 0.333496H11.3337V1.66683H0.666992V0.333496Z" fill="black"/>
+</svg></a></span><span>© 2020 Copyright</span><span class="pull-right"><span>Sponsored and developed by dokka</span><a href="https://github.com/Kotlin/dokka"><span class="padded-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0H2.3949L4.84076 2.44586L0 7.28662L0.713376 8L5.55414 3.15924L8 5.6051V0Z" fill="black"/>
+</svg></span></a></span></div>
+      </div>
+    </div>
+  </body>
+</html>
+

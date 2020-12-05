@@ -1,89 +1,55 @@
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>gbm - smile-kotlin</title>
-<link rel="stylesheet" href="../../style.css">
-</HEAD>
-<BODY>
-<a href="../index.html">smile-kotlin</a>&nbsp;/&nbsp;<a href="index.html">smile.classification</a>&nbsp;/&nbsp;<a href="./gbm.html">gbm</a><br/>
-<br/>
-<h1>gbm</h1>
-<a name="smile.classification$gbm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)"></a>
-<code><span class="keyword">fun </span><span class="identifier">gbm</span><span class="symbol">(</span><span class="identifier" id="smile.classification$gbm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/formula">formula</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html"><span class="identifier">Formula</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$gbm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/data">data</span><span class="symbol">:</span>&nbsp;<a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html"><span class="identifier">DataFrame</span></a><span class="symbol">, </span><span class="identifier" id="smile.classification$gbm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/ntrees">ntrees</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;500<span class="symbol">, </span><span class="identifier" id="smile.classification$gbm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/maxDepth">maxDepth</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;20<span class="symbol">, </span><span class="identifier" id="smile.classification$gbm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/maxNodes">maxNodes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;6<span class="symbol">, </span><span class="identifier" id="smile.classification$gbm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/nodeSize">nodeSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;5<span class="symbol">, </span><span class="identifier" id="smile.classification$gbm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/shrinkage">shrinkage</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.05<span class="symbol">, </span><span class="identifier" id="smile.classification$gbm(smile.data.formula.Formula, smile.data.DataFrame, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Double, kotlin.Double)/subsample">subsample</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a>&nbsp;<span class="symbol">=</span>&nbsp;0.7<span class="symbol">)</span><span class="symbol">: </span><a href="http://haifengl.github.io/api/java/smile/classification/GradientTreeBoost.html"><span class="identifier">GradientTreeBoost</span></a></code>
-<p>Gradient boosted classification trees.</p>
-<p>Generic gradient boosting at the t-th step would fit a regression tree to
-pseudo-residuals. Let J be the number of its leaves. The tree partitions
-the input space into J disjoint regions and predicts a constant value in
-each region. The parameter J controls the maximum allowed
-level of interaction between variables in the model. With J = 2 (decision
-stumps), no interaction between variables is allowed. With J = 3 the model
-may include effects of the interaction between up to two variables, and
-so on. Hastie et al. comment that typically 4 &le; J &le; 8 work well
-for boosting and results are fairly insensitive to the choice of in
-this range, J = 2 is insufficient for many applications, and J &gt; 10 is
-unlikely to be required.</p>
-<p>Fitting the training set too closely can lead to degradation of the model's
-generalization ability. Several so-called regularization techniques reduce
-this over-fitting effect by constraining the fitting procedure.
-One natural regularization parameter is the number of gradient boosting
-iterations T (i.e. the number of trees in the model when the base learner
-is a decision tree). Increasing T reduces the error on training set,
-but setting it too high may lead to over-fitting. An optimal value of T
-is often selected by monitoring prediction error on a separate validation
-data set.</p>
-<p>Another regularization approach is the shrinkage which times a parameter
-&eta; (called the "learning rate") to update term.
-Empirically it has been found that using small learning rates (such as
-&eta; &lt; 0.1) yields dramatic improvements in model's generalization ability
-over gradient boosting without shrinking (&eta; = 1). However, it comes at
-the price of increasing computational time both during training and
-prediction: lower learning rate requires more iterations.</p>
-<p>Soon after the introduction of gradient boosting Friedman proposed a
-minor modification to the algorithm, motivated by Breiman's bagging method.
-Specifically, he proposed that at each iteration of the algorithm, a base
-learner should be fit on a subsample of the training set drawn at random
-without replacement. Friedman observed a substantial improvement in
-gradient boosting's accuracy with this modification.</p>
-<p>Subsample size is some constant fraction f of the size of the training set.
-When f = 1, the algorithm is deterministic and identical to the one
-described above. Smaller values of f introduce randomness into the
-algorithm and help prevent over-fitting, acting as a kind of regularization.
-The algorithm also becomes faster, because regression trees have to be fit
-to smaller datasets at each iteration. Typically, f is set to 0.5, meaning
-that one half of the training set is used to build each base learner.</p>
-<p>Also, like in bagging, sub-sampling allows one to define an out-of-bag
-estimate of the prediction performance improvement by evaluating predictions
-on those observations which were not used in the building of the next
-base learner. Out-of-bag estimates help avoid the need for an independent
-validation dataset, but often underestimate actual performance improvement
-and the optimal number of iterations.</p>
-<p>Gradient tree boosting implementations often also use regularization by
-limiting the minimum number of observations in trees' terminal nodes.
-It's used in the tree building process by ignoring any splits that lead
-to nodes containing fewer than this number of training set instances.
-Imposing this limit helps to reduce variance in predictions at leaves.</p>
-<p>====References:====</p>
-<ul><li>J. H. Friedman. Greedy Function Approximation: A Gradient Boosting Machine, 1999.</li>
-<li>J. H. Friedman. Stochastic Gradient Boosting, 1999.</li>
-</ul>
-<h3>Parameters</h3>
-<p><a name="formula"></a>
-<code>formula</code> - a symbolic description of the model to be fitted.</p>
-<p><a name="data"></a>
-<code>data</code> - the data frame of the explanatory and response variables.</p>
-<p><a name="ntrees"></a>
-<code>ntrees</code> - the number of iterations (trees).</p>
-<p><a name="maxDepth"></a>
-<code>maxDepth</code> - the maximum depth of the tree.</p>
-<p><a name="maxNodes"></a>
-<code>maxNodes</code> - the maximum number of leaf nodes in the tree.</p>
-<p><a name="nodeSize"></a>
-<code>nodeSize</code> - the minimum size of leaf nodes.</p>
-<p><a name="shrinkage"></a>
-<code>shrinkage</code> - the shrinkage parameter in (0, 1] controls the learning rate of procedure.</p>
-<p><a name="subsample"></a>
-<code>subsample</code> - the sampling fraction for stochastic tree boosting.</p>
-<p><strong>Return</strong><br/>
-Gradient boosted trees.</p>
-</BODY>
-</HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>gbm</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../../styles/style.css" rel="Stylesheet">
+    <link href="../../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
+    <link href="../../styles/main.css" rel="Stylesheet">
+    <script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../../scripts/main.js" async="async"></script>
+    <script>var pathToRoot = "../../";</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="leftColumn">
+        <div id="logo"></div>
+        <div id="paneSearch"></div>
+        <div id="sideMenu"></div>
+      </div>
+      <div id="main">
+        <div id="leftToggler"><span class="icon-toggler"></span></div>
+        <div id="searchBar"></div>
+        <script type="text/javascript" src="../../scripts/pages.js"></script>
+        <script type="text/javascript" src="../../scripts/main.js"></script>
+        <div id="content" pageIds="smile.classification//gbm/#smile.data.formula.Formula#smile.data.DataFrame#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double/PointingToDeclaration//-1469167018">
+          <div class="breadcrumbs"><a href="../index.html">smile-kotlin</a>/<a href="index.html">smile.classification</a>/<a href="gbm.html">gbm</a></div>
+          <div class="cover ">
+            <h1 class="cover"><span>gbm</span></h1>
+          </div>
+<div class="divergent-group" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace">fun <a href="gbm.html">gbm</a>(formula: <a href="http://haifengl.github.io/api/java/smile/data/formula/Formula.html">Formula</a>, data: <a href="http://haifengl.github.io/api/java/smile/data/DataFrame.html">DataFrame</a>, ntrees: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 500, maxDepth: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 20, maxNodes: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 6, nodeSize: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 5, shrinkage: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a> = 0.05, subsample: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a> = 0.7): <a href="http://haifengl.github.io/api/java/smile/classification/GradientTreeBoost.html">GradientTreeBoost</a><span class="top-right-position"><span class="copy-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H15V16H5V4ZM17 7H19V18V20H17H8V18H17V7Z" fill="black"/>
+                       </svg></span><div class="copy-popup-wrapper popup-to-left"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0C14 0 18 4 18 9ZM14.2 6.2L12.8 4.8L7.5 10.1L5.3 7.8L3.8 9.2L7.5 13L14.2 6.2Z" fill="#4DBB5F"/>
+</svg><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<p class="paragraph">Gradient boosted classification trees.</p><p class="paragraph">Generic gradient boosting at the t-th step would fit a regression tree to pseudo-residuals. Let J be the number of its leaves. The tree partitions the input space into J disjoint regions and predicts a constant value in each region. The parameter J controls the maximum allowed level of interaction between variables in the model. With J = 2 (decision stumps), no interaction between variables is allowed. With J = 3 the model may include effects of the interaction between up to two variables, and so on. Hastie et al. comment that typically 4 &amp;le; J &amp;le; 8 work well for boosting and results are fairly insensitive to the choice of in this range, J = 2 is insufficient for many applications, and J &amp;gt; 10 is unlikely to be required.</p><p class="paragraph">Fitting the training set too closely can lead to degradation of the model's generalization ability. Several so-called regularization techniques reduce this over-fitting effect by constraining the fitting procedure. One natural regularization parameter is the number of gradient boosting iterations T (i.e. the number of trees in the model when the base learner is a decision tree). Increasing T reduces the error on training set, but setting it too high may lead to over-fitting. An optimal value of T is often selected by monitoring prediction error on a separate validation data set.</p><p class="paragraph">Another regularization approach is the shrinkage which times a parameter &amp;eta; (called the &quot;learning rate&quot;) to update term. Empirically it has been found that using small learning rates (such as &amp;eta; &amp;lt; 0.1) yields dramatic improvements in model's generalization ability over gradient boosting without shrinking (&amp;eta; = 1). However, it comes at the price of increasing computational time both during training and prediction: lower learning rate requires more iterations.</p><p class="paragraph">Soon after the introduction of gradient boosting Friedman proposed a minor modification to the algorithm, motivated by Breiman's bagging method. Specifically, he proposed that at each iteration of the algorithm, a base learner should be fit on a subsample of the training set drawn at random without replacement. Friedman observed a substantial improvement in gradient boosting's accuracy with this modification.</p><p class="paragraph">Subsample size is some constant fraction f of the size of the training set. When f = 1, the algorithm is deterministic and identical to the one described above. Smaller values of f introduce randomness into the algorithm and help prevent over-fitting, acting as a kind of regularization. The algorithm also becomes faster, because regression trees have to be fit to smaller datasets at each iteration. Typically, f is set to 0.5, meaning that one half of the training set is used to build each base learner.</p><p class="paragraph">Also, like in bagging, sub-sampling allows one to define an out-of-bag estimate of the prediction performance improvement by evaluating predictions on those observations which were not used in the building of the next base learner. Out-of-bag estimates help avoid the need for an independent validation dataset, but often underestimate actual performance improvement and the optimal number of iterations.</p><p class="paragraph">Gradient tree boosting implementations often also use regularization by limiting the minimum number of observations in trees' terminal nodes. It's used in the tree building process by ignoring any splits that lead to nodes containing fewer than this number of training set instances. Imposing this limit helps to reduce variance in predictions at leaves.</p><p class="paragraph">====References:====</p><ul><li><p class="paragraph">J. H. Friedman. Greedy Function Approximation: A Gradient Boosting Machine, 1999.</p></li><li><p class="paragraph">J. H. Friedman. Stochastic Gradient Boosting, 1999.</p></li></ul><h4 class="">Return</h4><p class="paragraph">Gradient boosted trees.</p><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":dokkaHtml/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">data</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the data frame of the explanatory and response variables.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">formula</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">a symbolic description of the model to be fitted.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">maxDepth</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the maximum depth of the tree.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">maxNodes</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the maximum number of leaf nodes in the tree.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">nodeSize</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the minimum size of leaf nodes.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">ntrees</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the number of iterations (trees).</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">shrinkage</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the shrinkage parameter in (0, 1] controls the learning rate of procedure.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex">subsample</span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the sampling fraction for stochastic tree boosting.</p></div></div></div></div></div></div></div></div></div></div></div>
+        </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#container"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.3337 9.66683H0.666992L6.00033 3.66683L11.3337 9.66683Z" fill="black"/>
+    <path d="M0.666992 0.333496H11.3337V1.66683H0.666992V0.333496Z" fill="black"/>
+</svg></a></span><span>© 2020 Copyright</span><span class="pull-right"><span>Sponsored and developed by dokka</span><a href="https://github.com/Kotlin/dokka"><span class="padded-icon"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0H2.3949L4.84076 2.44586L0 7.28662L0.713376 8L5.55414 3.15924L8 5.6051V0Z" fill="black"/>
+</svg></span></a></span></div>
+      </div>
+    </div>
+  </body>
+</html>
+
