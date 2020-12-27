@@ -239,7 +239,7 @@
       Built-in Algorithms:
     </p>
     <dl>
-      <dt><a href="api/scala/index.html#smile.classification.package">Classification</a></dt>
+      <dt><a href="api/java/smile/classification/package-summary.html">Classification</a></dt>
       <dd><p>
         <a href="api/java/smile/classification/DecisionTree.html">Decision Trees</a>,
         <a href="api/java/smile/classification/AdaBoost.html">AdaBoost</a>,
@@ -262,7 +262,7 @@
         <a href="api/java/smile/classification/OneVersusRest.html">One vs. Rest</a>
       </p></dd>
 
-      <dt><dt><a href="api/scala/index.html#smile.regression.package">Regression</a></dt>
+      <dt><dt><a href="api/java/smile/regression/package-summary.html">Regression</a></dt>
       <dd><p>
         <a href="api/java/smile/regression/OLS.html">Linear Regression</a>,
         <a href="api/java/smile/regression/LASSO.html">LASSO</a>,
@@ -294,7 +294,7 @@
         <a href="api/java/smile/feature/SumSquaresRatio.html">Sum Squares ratio</a>
       </p></dd>
 
-      <dt><a href="api/scala/index.html#smile.projection.package">Dimension Reduction</a></dt>
+      <dt><a href="api/java/smile/projection/package-summary.html">Dimension Reduction</a></dt>
       <dd><p>
         <a href="api/java/smile/projection/PCA.html">PCA</a>,
         <a href="api/java/smile/projection/KPCA.html">Kernel PCA</a>,
@@ -304,7 +304,7 @@
         <a href="api/java/smile/projection/ICA.html">ICA</a>
       </p></dd>
 
-      <dt><a href="api/scala/index.html#smile.validation.package">Model Validation</a></dt>
+      <dt><a href="api/java/smile/validation/package-summary.html">Model Validation</a></dt>
       <dd><p>
         <a href="api/java/smile/validation/CrossValidation.html">Cross Validation</a>,
         <a href="api/java/smile/validation/LOOCV.html">Leave-One-Out Validation</a>,
@@ -334,7 +334,7 @@
         <a href="api/java/smile/validation/metric/MutualInformation.html">Mutual Information Score</a>,
       </p></dd>
 
-      <dt><a href="api/scala/index.html#smile.clustering.package">Clustering</a></dt>
+      <dt><a href="api/java/smile/clustering/package-summary.html">Clustering</a></dt>
       <dd><p>
         <a href="api/java/smile/clustering/HierarchicalClustering.html">Hierarchical Clustering</a>,
         <a href="api/java/smile/clustering/CLARANS.html">CLARANS</a>,
@@ -359,13 +359,13 @@
         <a href="api/java/smile/vq/NeuralMap.html">Neural Map</a>,
       </p></dd>
 
-      <dt><a href="api/scala/index.html#smile.association.package">Association Rules</a></dt>
+      <dt><a href="api/java/smile/association/package-summary.html">Association Rules</a></dt>
       <dd><p>
         <a href="api/java/smile/association/FPGrowth.html">Frequent Itemset Mining</a>,
         <a href="api/java/smile/association/ARM.html">Association Rule Mining</a>
       </p></dd>
 
-      <dt><a href="api/scala/index.html#smile.manifold.package">Manifold learning</a></dt>
+      <dt><a href="api/java/smile/manifold/package-summary.html">Manifold learning</a></dt>
       <dd><p>
         <a href="api/java/smile/manifold/IsoMap.html">IsoMap</a>,
         <a href="api/java/smile/manifold/LLE.html">LLE</a>,
@@ -388,7 +388,7 @@
         <a href="api/java/smile/hash/SimHash.html">SimHash</a>
       </p></dd>
 
-      <dt><a href="api/scala/index.html#smile.sequence.package">Sequence Learning</a></dt>
+      <dt><a href="api/java/smile/sequence/package-summary.html">Sequence Learning</a></dt>
       <dd><p>
         <a href="api/java/smile/sequence/HMM.html">Hidden Markov Model</a>,
         <a href="api/java/smile/sequence/CRF.html">Conditional Random Field</a>
@@ -403,7 +403,7 @@
         <a href="api/java/smile/timeseries/ARMA.html">ARMA</a>
       </p></dd>
 
-      <dt><a href="api/scala/index.html#smile.nlp.package">Natural Language Processing</a></dt>
+      <dt><a href="api/java/smile/nlp/package-summary.html">Natural Language Processing</a></dt>
       <dd><p>
         <a href="api/java/smile/nlp/tokenizer/SimpleSentenceSplitter.html">Sentence Splitter</a>,
         <a href="api/java/smile/nlp/tokenizer/SimpleTokenizer.html">Tokenizer</a>,
@@ -440,14 +440,14 @@
         <a href="api/java/smile/math/matrix/Matrix.SVD.html">SVD</a>,
         <a href="api/java/smile/math/matrix/BiconjugateGradient.html">Biconjugate Gradient</a>,
         <a href="api/java/smile/math/BFGS.html">BFGS</a>,
-        <a href="api/scala/index.html#smile.cas.package">Computer Algebra System</a>
+        <a href="api/scala/smile/cas/index.html">Computer Algebra System</a>
       </p></dd>
 
       <dt><a href="api/java/smile/stat/package-summary.html">Statistics</a></dt>
       <dd><p>
         <a href="api/java/smile/stat/distribution/package-summary.html">Distributions</a>,
         <a href="api/java/smile/math/random/package-summary.html">Random Number Generators</a>,
-        <a href="api/java/smile/stat/hypothesis/Hypothesis.html">Hypothesis Tests</a>
+        <a href="api/java/smile/stat/Hypothesis.html">Hypothesis Tests</a>
       </p></dd>
     </dl>
   </div>
@@ -592,7 +592,7 @@
     <div class="col-md-5 col-sm-5 col-padded-top col-center">
       <div style="width: 100%; display: inline-block; text-align: center;">
         <img src="images/benchm-ml.png" style="width: 100%;" />
-        <div class="caption" style="min-width: 272px;">Running Time (s)</div>
+        <div class="caption" style="min-width: 272px;">Training Time (seconds)</div>
       </div>
     </div>
   </div>
@@ -613,13 +613,25 @@
     </div>
     <div class="col-md-5 col-sm-5 col-padded-top col-center">
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#scala_1" data-toggle="tab">Scala</a></li>
-        <li><a href="#java_1" data-toggle="tab">Java</a></li>
+        <li class="active"><a href="#java_1" data-toggle="tab">Java</a></li>
+        <li><a href="#scala_1" data-toggle="tab">Scala</a></li>
         <li><a href="#kotlin_1" data-toggle="tab">Kotlin</a></li>
         <li><a href="#clojure_1" data-toggle="tab">Clojure</a></li>
         <li><a href="#groovy_1" data-toggle="tab">Groovy</a></li>
       </ul>
       <div class="tab-content">
+        <div class="tab-pane" id="java_1">
+          <div class="code" style="text-align: left;">
+          <pre class="prettyprint lang-java"><code>
+var iris = Read.arff("iris.arff");
+
+var model = RandomForest.fit(Formula.lhs("class"), iris);
+
+println(model.metrics());
+          </code></pre>
+          </div>
+          <div class="caption">Model Fitting</div>
+        </div>
         <div class="tab-pane active" id="scala_1">
           <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-scala"><code>
@@ -631,19 +643,7 @@ println(model.metrics)
 
           </code></pre>
           </div>
-          <div class="caption">Random Forest</div>
-        </div>
-        <div class="tab-pane" id="java_1">
-          <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
-var iris = Read.arff("iris.arff");
-
-var model = RandomForest.fit(Formula.lhs("class"), iris);
-
-println(model.metrics());
-          </code></pre>
-          </div>
-          <div class="caption">Random Forest</div>
+          <div class="caption">Model Fitting</div>
         </div>
         <div class="tab-pane" id="kotlin_1">
           <div class="code" style="text-align: left;">
@@ -655,7 +655,7 @@ val model = randomForest(Formula.lhs("class"), iris)
 println(model.metrics())
           </code></pre>
           </div>
-          <div class="caption">Random Forest</div>
+          <div class="caption">Model Fitting</div>
         </div>
         <div class="tab-pane" id="clojure_1">
           <div class="code" style="text-align: left;">
@@ -668,7 +668,7 @@ println(model.metrics())
 
           </code></pre>
           </div>
-          <div class="caption">Random Forest</div>
+          <div class="caption">Model Fitting</div>
         </div>
         <div class="tab-pane" id="groovy_1">
           <div class="code" style="text-align: left;">
@@ -680,7 +680,7 @@ var model = RandomForest.fit(Formula.lhs("class"), iris)
 println model.metrics()
           </code></pre>
           </div>
-          <div class="caption">Random Forest</div>
+          <div class="caption">Model Fitting</div>
         </div>
       </div>
     </div>
@@ -746,22 +746,24 @@ println model.metrics()
       <div class="tab-content">
         <div class="tab-pane active" id="scala_2">
           <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
-val a = randn(3, 3)
-val x = c(1.0, 2.0, 3.0)
-a \ x
-inv(a) %*% a
+          <pre class="prettyprint lang-java"><code>
+var A = Matrix.randn(3, 3);
+double[] x = {1.0, 2.0, 3.0};
+var lu = A.lu();
+lu.solve(x);
+lu.inverse().mm(A);
           </code></pre>
           </div>
           <div class="caption">Linear Algebra</div>
         </div>
         <div class="tab-pane" id="scala_3">
           <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
-val bins1 = Array(8, 13, 16, 10, 3)
-val bins2 = Array(4,  9, 14, 16, 7)
+          <pre class="prettyprint lang-java"><code>
+int[] bins1 = {8, 13, 16, 10, 3};
 
-chisqtest2(bins1, bins2)
+int[] bins2 = {4,  9, 14, 16, 7};
+
+Hypothesis.chisq.test(bins1, bins2);
           </code></pre>
           </div>
           <div class="caption">Statistics</div>
@@ -772,7 +774,8 @@ chisqtest2(bins1, bins2)
 val x = Var("x")
 val y = Var("y")
 val e = x**2 + y**3 + x**2 * cot(y**3)
-println(e.d(x))
+val dx = e.d(x)
+println(dx)
           </code></pre>
           </div>
           <div class="caption">Computer Algebra System</div>
