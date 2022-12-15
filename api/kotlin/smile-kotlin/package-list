@@ -1,14 +1,149 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
-
+$dokka.location:smile.association////PointingToDeclaration/smile-kotlin/smile.association/index.html
+$dokka.location:smile.association//arm/#kotlin.Double#smile.association.FPTree/PointingToDeclaration/smile-kotlin/smile.association/arm.html
+$dokka.location:smile.association//arm/#kotlin.Int#kotlin.Double#kotlin.Array[kotlin.IntArray]/PointingToDeclaration/smile-kotlin/smile.association/arm.html
+$dokka.location:smile.association//fpgrowth/#kotlin.Int#kotlin.Array[kotlin.IntArray]/PointingToDeclaration/smile-kotlin/smile.association/fpgrowth.html
+$dokka.location:smile.association//fpgrowth/#smile.association.FPTree/PointingToDeclaration/smile-kotlin/smile.association/fpgrowth.html
+$dokka.location:smile.association//fptree/#kotlin.Int#java.util.function.Supplier[java.util.stream.Stream[kotlin.IntArray]]/PointingToDeclaration/smile-kotlin/smile.association/fptree.html
+$dokka.location:smile.classification////PointingToDeclaration/smile-kotlin/smile.classification/index.html
+$dokka.location:smile.classification//adaboost/#smile.data.formula.Formula#smile.data.DataFrame#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.classification/adaboost.html
+$dokka.location:smile.classification//cart/#smile.data.formula.Formula#smile.data.DataFrame#smile.base.cart.SplitRule#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.classification/cart.html
+$dokka.location:smile.classification//fisher/#kotlin.Array[kotlin.DoubleArray]#kotlin.IntArray#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.classification/fisher.html
+$dokka.location:smile.classification//gbm/#smile.data.formula.Formula#smile.data.DataFrame#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.classification/gbm.html
+$dokka.location:smile.classification//knn/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.IntArray#kotlin.Int#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/smile-kotlin/smile.classification/knn.html
+$dokka.location:smile.classification//knn/#kotlin.Array[kotlin.DoubleArray]#kotlin.IntArray#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.classification/knn.html
+$dokka.location:smile.classification//knn/#smile.neighbor.KNNSearch[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#kotlin.IntArray#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.classification/knn.html
+$dokka.location:smile.classification//lda/#kotlin.Array[kotlin.DoubleArray]#kotlin.IntArray#kotlin.DoubleArray?#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.classification/lda.html
+$dokka.location:smile.classification//logit/#kotlin.Array[kotlin.DoubleArray]#kotlin.IntArray#kotlin.Double#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.classification/logit.html
+$dokka.location:smile.classification//maxent/#kotlin.Array[kotlin.IntArray]#kotlin.IntArray#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.classification/maxent.html
+$dokka.location:smile.classification//mlp/#kotlin.Array[kotlin.DoubleArray]#kotlin.IntArray#kotlin.Array[smile.base.mlp.LayerBuilder]#kotlin.Int#smile.math.TimeFunction#smile.math.TimeFunction#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.classification/mlp.html
+$dokka.location:smile.classification//naiveBayes/#kotlin.Array[kotlin.IntArray]#kotlin.IntArray#smile.classification.DiscreteNaiveBayes.Model#kotlin.DoubleArray?#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.classification/naive-bayes.html
+$dokka.location:smile.classification//naiveBayes/#kotlin.DoubleArray#kotlin.Array[kotlin.Array[smile.stat.distribution.Distribution]]/PointingToDeclaration/smile-kotlin/smile.classification/naive-bayes.html
+$dokka.location:smile.classification//ovo/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.IntArray#kotlin.Function2[kotlin.Array[TypeParam(bounds=[kotlin.Any?])],kotlin.IntArray,smile.classification.Classifier[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/smile-kotlin/smile.classification/ovo.html
+$dokka.location:smile.classification//ovr/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.IntArray#kotlin.Function2[kotlin.Array[TypeParam(bounds=[kotlin.Any?])],kotlin.IntArray,smile.classification.Classifier[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/smile-kotlin/smile.classification/ovr.html
+$dokka.location:smile.classification//qda/#kotlin.Array[kotlin.DoubleArray]#kotlin.IntArray#kotlin.DoubleArray?#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.classification/qda.html
+$dokka.location:smile.classification//randomForest/#smile.data.formula.Formula#smile.data.DataFrame#kotlin.Int#kotlin.Int#smile.base.cart.SplitRule#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.IntArray?#java.util.stream.LongStream?/PointingToDeclaration/smile-kotlin/smile.classification/random-forest.html
+$dokka.location:smile.classification//rbfnet/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.IntArray#kotlin.Array[smile.base.rbf.RBF[TypeParam(bounds=[kotlin.Any?])]]#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.classification/rbfnet.html
+$dokka.location:smile.classification//rbfnet/#kotlin.Array[kotlin.DoubleArray]#kotlin.IntArray#kotlin.Int#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.classification/rbfnet.html
+$dokka.location:smile.classification//rda/#kotlin.Array[kotlin.DoubleArray]#kotlin.IntArray#kotlin.Double#kotlin.DoubleArray?#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.classification/rda.html
+$dokka.location:smile.classification//svm/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.IntArray#smile.math.kernel.MercerKernel[TypeParam(bounds=[kotlin.Any?])]#kotlin.Double#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.classification/svm.html
+$dokka.location:smile.clustering////PointingToDeclaration/smile-kotlin/smile.clustering/index.html
+$dokka.location:smile.clustering//clarans/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/clarans.html
+$dokka.location:smile.clustering//dac/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double#kotlin.Int#kotlin.Double#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/dac.html
+$dokka.location:smile.clustering//dbscan/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/dbscan.html
+$dokka.location:smile.clustering//dbscan/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.neighbor.RNNSearch[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/dbscan.html
+$dokka.location:smile.clustering//dbscan/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/dbscan.html
+$dokka.location:smile.clustering//denclue/#kotlin.Array[kotlin.DoubleArray]#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/denclue.html
+$dokka.location:smile.clustering//gmeans/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/gmeans.html
+$dokka.location:smile.clustering//hclust/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.String/PointingToDeclaration/smile-kotlin/smile.clustering/hclust.html
+$dokka.location:smile.clustering//hclust/#kotlin.Array[kotlin.DoubleArray]#kotlin.String/PointingToDeclaration/smile-kotlin/smile.clustering/hclust.html
+$dokka.location:smile.clustering//kmeans/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/kmeans.html
+$dokka.location:smile.clustering//kmodes/#kotlin.Array[kotlin.IntArray]#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/kmodes.html
+$dokka.location:smile.clustering//mec/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/mec.html
+$dokka.location:smile.clustering//mec/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Metric[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/mec.html
+$dokka.location:smile.clustering//mec/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.neighbor.RNNSearch[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Double#kotlin.IntArray#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/mec.html
+$dokka.location:smile.clustering//mec/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/mec.html
+$dokka.location:smile.clustering//sib/#kotlin.Array[smile.util.SparseArray]#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/sib.html
+$dokka.location:smile.clustering//specc/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/specc.html
+$dokka.location:smile.clustering//specc/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/specc.html
+$dokka.location:smile.clustering//specc/#smile.math.matrix.Matrix#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/specc.html
+$dokka.location:smile.clustering//xmeans/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/xmeans.html
+$dokka.location:smile.feature.extraction////PointingToDeclaration/smile-kotlin/smile.feature.extraction/index.html
+$dokka.location:smile.feature.extraction//gha/#kotlin.Array[kotlin.DoubleArray]#kotlin.Array[kotlin.DoubleArray]#smile.math.TimeFunction/PointingToDeclaration/smile-kotlin/smile.feature.extraction/gha.html
+$dokka.location:smile.feature.extraction//gha/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#smile.math.TimeFunction/PointingToDeclaration/smile-kotlin/smile.feature.extraction/gha.html
+$dokka.location:smile.feature.extraction//kpca/#smile.data.DataFrame#smile.math.kernel.MercerKernel[kotlin.DoubleArray]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.feature.extraction/kpca.html
+$dokka.location:smile.feature.extraction//pca/#kotlin.Array[kotlin.DoubleArray]#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.feature.extraction/pca.html
+$dokka.location:smile.feature.extraction//ppca/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.feature.extraction/ppca.html
+$dokka.location:smile.manifold////PointingToDeclaration/smile-kotlin/smile.manifold/index.html
+$dokka.location:smile.manifold//isomap/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Int#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.manifold/isomap.html
+$dokka.location:smile.manifold//isomds/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.manifold/isomds.html
+$dokka.location:smile.manifold//laplacian/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.manifold/laplacian.html
+$dokka.location:smile.manifold//lle/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.manifold/lle.html
+$dokka.location:smile.manifold//mds/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.manifold/mds.html
+$dokka.location:smile.manifold//sammon/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.manifold/sammon.html
+$dokka.location:smile.manifold//tsne/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.manifold/tsne.html
+$dokka.location:smile.manifold//umap/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.manifold/umap.html
+$dokka.location:smile.manifold//umap/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.manifold/umap.html
+$dokka.location:smile.nlp////PointingToDeclaration/smile-kotlin/smile.nlp/index.html
+$dokka.location:smile.nlp//bag/kotlin.String#kotlin.String#smile.nlp.stemmer.Stemmer?/PointingToDeclaration/smile-kotlin/smile.nlp/bag.html
+$dokka.location:smile.nlp//bag2/kotlin.String#kotlin.String#smile.nlp.stemmer.Stemmer?/PointingToDeclaration/smile-kotlin/smile.nlp/bag2.html
+$dokka.location:smile.nlp//bigram/#kotlin.Double#kotlin.Int#kotlin.collections.List[kotlin.String]/PointingToDeclaration/smile-kotlin/smile.nlp/bigram.html
+$dokka.location:smile.nlp//bigram/#kotlin.Int#kotlin.Int#kotlin.collections.List[kotlin.String]/PointingToDeclaration/smile-kotlin/smile.nlp/bigram.html
+$dokka.location:smile.nlp//corpus/#kotlin.collections.List[kotlin.String]/PointingToDeclaration/smile-kotlin/smile.nlp/corpus.html
+$dokka.location:smile.nlp//df/#kotlin.collections.List[kotlin.String]#kotlin.collections.List[kotlin.collections.Map[kotlin.String,kotlin.Int]]/PointingToDeclaration/smile-kotlin/smile.nlp/df.html
+$dokka.location:smile.nlp//keywords/kotlin.String#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.nlp/keywords.html
+$dokka.location:smile.nlp//lancaster/#kotlin.String/PointingToDeclaration/smile-kotlin/smile.nlp/lancaster.html
+$dokka.location:smile.nlp//ngram/#kotlin.Int#kotlin.Int#kotlin.collections.List[kotlin.String]/PointingToDeclaration/smile-kotlin/smile.nlp/ngram.html
+$dokka.location:smile.nlp//normalize/kotlin.String#/PointingToDeclaration/smile-kotlin/smile.nlp/normalize.html
+$dokka.location:smile.nlp//porter/#kotlin.String/PointingToDeclaration/smile-kotlin/smile.nlp/porter.html
+$dokka.location:smile.nlp//postag/#kotlin.Array[kotlin.String]/PointingToDeclaration/smile-kotlin/smile.nlp/postag.html
+$dokka.location:smile.nlp//postag/kotlin.String#/PointingToDeclaration/smile-kotlin/smile.nlp/postag.html
+$dokka.location:smile.nlp//sentences/kotlin.String#/PointingToDeclaration/smile-kotlin/smile.nlp/sentences.html
+$dokka.location:smile.nlp//tfidf/#kotlin.Double#kotlin.Double#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.nlp/tfidf.html
+$dokka.location:smile.nlp//tfidf/#kotlin.DoubleArray#kotlin.Int#kotlin.IntArray/PointingToDeclaration/smile-kotlin/smile.nlp/tfidf.html
+$dokka.location:smile.nlp//tfidf/#kotlin.collections.List[kotlin.DoubleArray]/PointingToDeclaration/smile-kotlin/smile.nlp/tfidf.html
+$dokka.location:smile.nlp//vectorize/#kotlin.Array[kotlin.String]#kotlin.collections.Map[kotlin.String,kotlin.Int]/PointingToDeclaration/smile-kotlin/smile.nlp/vectorize.html
+$dokka.location:smile.nlp//vectorize/#kotlin.collections.List[kotlin.String]#kotlin.collections.Set[kotlin.String]/PointingToDeclaration/smile-kotlin/smile.nlp/vectorize.html
+$dokka.location:smile.nlp//words/kotlin.String#kotlin.String/PointingToDeclaration/smile-kotlin/smile.nlp/words.html
+$dokka.location:smile.regression////PointingToDeclaration/smile-kotlin/smile.regression/index.html
+$dokka.location:smile.regression//cart/#smile.data.formula.Formula#smile.data.DataFrame#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.regression/cart.html
+$dokka.location:smile.regression//gbm/#smile.data.formula.Formula#smile.data.DataFrame#smile.base.cart.Loss#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.regression/gbm.html
+$dokka.location:smile.regression//gpr/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.DoubleArray#smile.math.kernel.MercerKernel[TypeParam(bounds=[kotlin.Any?])]#kotlin.Double#kotlin.Boolean#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.regression/gpr.html
+$dokka.location:smile.regression//lasso/#smile.data.formula.Formula#smile.data.DataFrame#kotlin.Double#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.regression/lasso.html
+$dokka.location:smile.regression//lm/#smile.data.formula.Formula#smile.data.DataFrame#kotlin.String#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.regression/lm.html
+$dokka.location:smile.regression//randomForest/#smile.data.formula.Formula#smile.data.DataFrame#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.regression/random-forest.html
+$dokka.location:smile.regression//rbfnet/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.DoubleArray#kotlin.Array[smile.base.rbf.RBF[TypeParam(bounds=[kotlin.Any?])]]#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.regression/rbfnet.html
+$dokka.location:smile.regression//rbfnet/#kotlin.Array[kotlin.DoubleArray]#kotlin.DoubleArray#kotlin.Int#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.regression/rbfnet.html
+$dokka.location:smile.regression//ridge/#smile.data.formula.Formula#smile.data.DataFrame#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.regression/ridge.html
+$dokka.location:smile.regression//svr/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.DoubleArray#smile.math.kernel.MercerKernel[TypeParam(bounds=[kotlin.Any?])]#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.regression/svr.html
+$dokka.location:smile.regression/gpr///PointingToDeclaration/smile-kotlin/smile.regression/gpr/index.html
+$dokka.location:smile.regression/gpr/approx/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.DoubleArray#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.kernel.MercerKernel[TypeParam(bounds=[kotlin.Any?])]#kotlin.Double#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.regression/gpr/approx.html
+$dokka.location:smile.regression/gpr/nystrom/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.DoubleArray#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.kernel.MercerKernel[TypeParam(bounds=[kotlin.Any?])]#kotlin.Double#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.regression/gpr/nystrom.html
+$dokka.location:smile.wavelet////PointingToDeclaration/smile-kotlin/smile.wavelet/index.html
+$dokka.location:smile.wavelet//dwt/#kotlin.DoubleArray#kotlin.String/PointingToDeclaration/smile-kotlin/smile.wavelet/dwt.html
+$dokka.location:smile.wavelet//idwt/#kotlin.DoubleArray#kotlin.String/PointingToDeclaration/smile-kotlin/smile.wavelet/idwt.html
+$dokka.location:smile.wavelet//wavelet/#kotlin.String/PointingToDeclaration/smile-kotlin/smile.wavelet/wavelet.html
+$dokka.location:smile.wavelet//wsdenoise/#kotlin.DoubleArray#kotlin.String#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.wavelet/wsdenoise.html
+$dokka.location:smile////PointingToDeclaration/smile-kotlin/smile/index.html
+$dokka.location:smile/read///PointingToDeclaration/smile-kotlin/smile/read/index.html
+$dokka.location:smile/read/arff/#java.nio.file.Path/PointingToDeclaration/smile-kotlin/smile/read/arff.html
+$dokka.location:smile/read/arff/#kotlin.String/PointingToDeclaration/smile-kotlin/smile/read/arff.html
+$dokka.location:smile/read/arrow/#java.nio.file.Path/PointingToDeclaration/smile-kotlin/smile/read/arrow.html
+$dokka.location:smile/read/arrow/#kotlin.String/PointingToDeclaration/smile-kotlin/smile/read/arrow.html
+$dokka.location:smile/read/avro/#java.nio.file.Path#java.io.InputStream/PointingToDeclaration/smile-kotlin/smile/read/avro.html
+$dokka.location:smile/read/avro/#java.nio.file.Path#java.nio.file.Path/PointingToDeclaration/smile-kotlin/smile/read/avro.html
+$dokka.location:smile/read/avro/#kotlin.String#java.io.InputStream/PointingToDeclaration/smile-kotlin/smile/read/avro.html
+$dokka.location:smile/read/avro/#kotlin.String#kotlin.String/PointingToDeclaration/smile-kotlin/smile/read/avro.html
+$dokka.location:smile/read/csv/#java.nio.file.Path#kotlin.Char#kotlin.Boolean#kotlin.Char#kotlin.Char#smile.data.type.StructType?/PointingToDeclaration/smile-kotlin/smile/read/csv.html
+$dokka.location:smile/read/csv/#java.nio.file.Path#org.apache.commons.csv.CSVFormat#smile.data.type.StructType?/PointingToDeclaration/smile-kotlin/smile/read/csv.html
+$dokka.location:smile/read/csv/#kotlin.String#kotlin.Char#kotlin.Boolean#kotlin.Char#kotlin.Char#smile.data.type.StructType?/PointingToDeclaration/smile-kotlin/smile/read/csv.html
+$dokka.location:smile/read/csv/#kotlin.String#org.apache.commons.csv.CSVFormat#smile.data.type.StructType?/PointingToDeclaration/smile-kotlin/smile/read/csv.html
+$dokka.location:smile/read/jdbc/#java.sql.ResultSet/PointingToDeclaration/smile-kotlin/smile/read/jdbc.html
+$dokka.location:smile/read/json/#java.nio.file.Path#smile.io.JSON.Mode#smile.data.type.StructType/PointingToDeclaration/smile-kotlin/smile/read/json.html
+$dokka.location:smile/read/json/#java.nio.file.Path/PointingToDeclaration/smile-kotlin/smile/read/json.html
+$dokka.location:smile/read/json/#kotlin.String#smile.io.JSON.Mode#smile.data.type.StructType/PointingToDeclaration/smile-kotlin/smile/read/json.html
+$dokka.location:smile/read/json/#kotlin.String/PointingToDeclaration/smile-kotlin/smile/read/json.html
+$dokka.location:smile/read/libsvm/#java.nio.file.Path/PointingToDeclaration/smile-kotlin/smile/read/libsvm.html
+$dokka.location:smile/read/libsvm/#kotlin.String/PointingToDeclaration/smile-kotlin/smile/read/libsvm.html
+$dokka.location:smile/read/parquet/#java.nio.file.Path/PointingToDeclaration/smile-kotlin/smile/read/parquet.html
+$dokka.location:smile/read/parquet/#kotlin.String/PointingToDeclaration/smile-kotlin/smile/read/parquet.html
+$dokka.location:smile/read/sas/#java.nio.file.Path/PointingToDeclaration/smile-kotlin/smile/read/sas.html
+$dokka.location:smile/read/sas/#kotlin.String/PointingToDeclaration/smile-kotlin/smile/read/sas.html
+$dokka.location:smile/write///PointingToDeclaration/smile-kotlin/smile/write/index.html
+$dokka.location:smile/write/arff/#smile.data.DataFrame#java.nio.file.Path#kotlin.String/PointingToDeclaration/smile-kotlin/smile/write/arff.html
+$dokka.location:smile/write/arff/#smile.data.DataFrame#kotlin.String#kotlin.String/PointingToDeclaration/smile-kotlin/smile/write/arff.html
+$dokka.location:smile/write/arrow/#smile.data.DataFrame#java.nio.file.Path/PointingToDeclaration/smile-kotlin/smile/write/arrow.html
+$dokka.location:smile/write/arrow/#smile.data.DataFrame#kotlin.String/PointingToDeclaration/smile-kotlin/smile/write/arrow.html
+$dokka.location:smile/write/csv/#smile.data.DataFrame#java.nio.file.Path#kotlin.Char/PointingToDeclaration/smile-kotlin/smile/write/csv.html
+$dokka.location:smile/write/csv/#smile.data.DataFrame#kotlin.String#kotlin.Char/PointingToDeclaration/smile-kotlin/smile/write/csv.html
 smile
 smile.association
 smile.classification
 smile.clustering
+smile.feature.extraction
 smile.manifold
-smile.mds
 smile.nlp
-smile.projection
 smile.regression
 smile.wavelet
 

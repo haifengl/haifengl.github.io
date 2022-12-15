@@ -4,6 +4,7 @@ filteringContext = {
     activeFilters: []
 }
 let highlightedAnchor;
+let topNavbarOffset;
 
 window.addEventListener('load', () => {
     document.querySelectorAll("div[data-platform-hinted]")
@@ -18,7 +19,65 @@ window.addEventListener('load', () => {
     initTabs()
     handleAnchor()
     initHidingLeftNavigation()
+
+    document.getElementById('main').addEventListener("scroll", (e) => {
+        document.getElementsByClassName("navigation-wrapper")[0].classList.toggle("sticky-navigation", e.target.scrollTop > 0)
+    })
+    topNavbarOffset = document.getElementById('navigation-wrapper')
 })
+
+const darkModeSwitch = () => {
+    const localStorageKey = "dokka-dark-mode"
+    const storage = localStorage.getItem(localStorageKey)
+    const savedDarkMode = storage ? JSON.parse(storage) : false
+    const element = document.getElementById("theme-toggle-button")
+    initPlayground(savedDarkMode ? samplesDarkThemeName : samplesLightThemeName)
+
+    element.addEventListener('click', () => {
+        const enabledClasses = document.getElementsByTagName("html")[0].classList
+        enabledClasses.toggle("theme-dark")
+
+        //if previously we had saved dark theme then we set it to light as this is what we save in local storage
+        const darkModeEnabled = enabledClasses.contains("theme-dark")
+        if (darkModeEnabled) {
+            initPlayground(samplesDarkThemeName)
+        }
+        else {
+            initPlayground(samplesLightThemeName)
+        }
+        localStorage.setItem(localStorageKey, JSON.stringify(darkModeEnabled))
+    })
+}
+
+const initPlayground = (theme) => {
+    if(!samplesAreEnabled()) return
+    instances.forEach(instance => instance.destroy())
+    instances = []
+
+    // Manually tag code fragments as not processed by playground since we also manually destroy all of its instances
+    document.querySelectorAll('code.runnablesample').forEach(node => {
+        node.removeAttribute("data-kotlin-playground-initialized");
+    })
+
+    KotlinPlayground('code.runnablesample', {
+        getInstance: playgroundInstance => {
+            instances.push(playgroundInstance)
+        },
+        theme: theme
+    });
+}
+
+// We check if type is accessible from the current scope to determine if samples script is present
+// As an alternative we could extract this samples-specific script to new js file but then we would handle dark mode in 2 separate files which is not ideal
+const samplesAreEnabled = () => {
+    try {
+        KotlinPlayground
+        return true
+    } catch (e) {
+        return false
+    }
+}
+
 
 const initHidingLeftNavigation = () => {
     document.getElementById("leftToggler").onclick = function(event) {
@@ -37,6 +96,27 @@ const initHidingLeftNavigation = () => {
 // Hash change is needed in order to allow for linking inside the same page with anchors
 // If this is not present user is forced to refresh the site in order to use an anchor
 window.onhashchange = handleAnchor
+
+function scrollToElementInContent(element){
+    const scrollToElement = () => document.getElementById('main').scrollTo({ top: element.offsetTop - topNavbarOffset.offsetHeight, behavior: "smooth"})
+
+    const waitAndScroll = () => {
+        setTimeout(() => {
+            if(topNavbarOffset){
+                scrollToElement()
+            } else {
+                waitForScroll()
+            }
+        }, 50)
+    }
+
+    if(topNavbarOffset){
+        scrollToElement()
+    } else {
+        waitAndScroll()
+    }
+}
+
 
 function handleAnchor() {
     if(highlightedAnchor){
@@ -64,7 +144,8 @@ function handleAnchor() {
                 content.classList.add('anchor-highlight')
                 highlightedAnchor = content
             }
-            element.scrollIntoView({behavior: "smooth"})
+
+            scrollToElementInContent(element)
         }
     }
 }
@@ -85,11 +166,14 @@ function initTabs(){
     }
 }
 
-function showCorrespondingTabBody(element){
-    const key = element.querySelector("button[data-active]").getAttribute("data-togglable")
-    document.querySelector(".tabs-section-body")
-        .querySelector("div[data-togglable='" + key + "']")
-        .setAttribute("data-active", "")
+function showCorrespondingTabBody(element) {
+    const buttonWithKey = element.querySelector("button[data-active]")
+    if (buttonWithKey) {
+        const key = buttonWithKey.getAttribute("data-togglable")
+        document.querySelector(".tabs-section-body")
+            .querySelector("div[data-togglable='" + key + "']")
+            .setAttribute("data-active", "")
+    }
 }
 
 function filterButtonHandler(event) {
@@ -221,7 +305,7 @@ function refreshFiltering() {
         )
     const event = new CustomEvent('sourceset-filter-change', { detail: sourcesetList });
     window.dispatchEvent(event);
-    
+
     refreshFilterButtons()
     refreshPlatformTabs()
 }
@@ -260,4 +344,3 @@ function refreshFilterButtons() {
             }
         })
 }
-
