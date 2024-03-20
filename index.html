@@ -43,7 +43,7 @@
 
   <!-- Vega-Lite Embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
   <!-- Google Analytics -->
@@ -626,7 +626,7 @@
         <li><a href="#groovy_1" data-toggle="tab">Groovy</a></li>
       </ul>
       <div class="tab-content">
-        <div class="tab-pane" id="java_1">
+        <div class="tab-pane active" id="java_1">
           <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
 var iris = Read.arff("iris.arff");
@@ -638,7 +638,7 @@ println(model.metrics());
           </div>
           <div class="caption">DataFrame, Model Fitting, and Metrics</div>
         </div>
-        <div class="tab-pane active" id="scala_1">
+        <div class="tab-pane" id="scala_1">
           <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-scala"><code>
 val iris = read.arff("iris.arff")
