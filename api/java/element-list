@@ -13,9 +13,13 @@ smile.data.measure
 smile.data.transform
 smile.data.type
 smile.data.vector
+smile.deep
 smile.deep.activation
+smile.deep.layer
+smile.deep.metric
 smile.deep.model.bert
 smile.deep.optimizer
+smile.deep.tensor
 smile.feature.extraction
 smile.feature.importance
 smile.feature.imputation
@@ -31,6 +35,7 @@ smile.ica
 smile.interpolation
 smile.interpolation.variogram
 smile.io
+smile.llm
 smile.manifold
 smile.math
 smile.math.blas
