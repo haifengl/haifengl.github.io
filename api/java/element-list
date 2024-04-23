@@ -2,6 +2,8 @@ smile.anomaly
 smile.association
 smile.base.cart
 smile.base.mlp
+smile.base.mlp.activation
+smile.base.mlp.optimizer
 smile.base.rbf
 smile.base.svm
 smile.classification
@@ -18,7 +20,6 @@ smile.deep.activation
 smile.deep.layer
 smile.deep.metric
 smile.deep.model.bert
-smile.deep.optimizer
 smile.deep.tensor
 smile.feature.extraction
 smile.feature.importance
@@ -36,10 +37,10 @@ smile.interpolation
 smile.interpolation.variogram
 smile.io
 smile.llm
+smile.llm.tokenizer
 smile.manifold
 smile.math
 smile.math.blas
-smile.math.blas.mkl
 smile.math.blas.openblas
 smile.math.distance
 smile.math.kernel
@@ -71,6 +72,9 @@ smile.timeseries
 smile.util
 smile.validation
 smile.validation.metric
+smile.vision
+smile.vision.layer
+smile.vision.transform
 smile.vq
 smile.vq.hebb
 smile.wavelet
