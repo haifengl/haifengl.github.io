@@ -19,7 +19,6 @@ smile.deep
 smile.deep.activation
 smile.deep.layer
 smile.deep.metric
-smile.deep.model.bert
 smile.deep.tensor
 smile.feature.extraction
 smile.feature.importance
@@ -61,12 +60,16 @@ smile.nlp.pos
 smile.nlp.relevance
 smile.nlp.stemmer
 smile.nlp.tokenizer
+smile.plot.swing
+smile.plot.vega
 smile.regression
 smile.sequence
 smile.sort
 smile.stat
 smile.stat.distribution
 smile.stat.hypothesis
+smile.swing
+smile.swing.table
 smile.taxonomy
 smile.timeseries
 smile.util
