@@ -2,8 +2,6 @@ smile.anomaly
 smile.association
 smile.base.cart
 smile.base.mlp
-smile.base.mlp.activation
-smile.base.mlp.optimizer
 smile.base.rbf
 smile.base.svm
 smile.classification
@@ -36,6 +34,7 @@ smile.interpolation
 smile.interpolation.variogram
 smile.io
 smile.llm
+smile.llm.llama
 smile.llm.tokenizer
 smile.manifold
 smile.math
