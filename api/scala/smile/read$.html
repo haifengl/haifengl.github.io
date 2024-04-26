@@ -1,240 +1,928 @@
-<!DOCTYPE html ><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/><title>Smile - Statistical Machine Intelligence and Learning Engine  - smile.read</title><meta content="Smile - Statistical Machine Intelligence and Learning Engine - smile.read" name="description"/><meta content="Smile Statistical Machine Intelligence and Learning Engine smile.read" name="keywords"/><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><link href="../lib/index.css" media="screen" type="text/css" rel="stylesheet"/><link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet"/><link href="../lib/print.css" media="print" type="text/css" rel="stylesheet"/><link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css"/><script type="text/javascript" src="../lib/jquery.min.js"></script><script type="text/javascript" src="../lib/index.js"></script><script type="text/javascript" src="../index.js"></script><script type="text/javascript" src="../lib/scheduler.js"></script><script type="text/javascript" src="../lib/template.js"></script><script type="text/javascript">/* this variable can be used by the JS to determine the path to the root document */
-var toRoot = '../';</script></head><body><div id="search"><span id="doc-title">Smile - Statistical Machine Intelligence and Learning Engine<span id="doc-version"></span></span> <span class="close-results"><span class="left">&lt;</span> Back</span><div id="textfilter"><span class="input"><input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/"/><i class="clear material-icons"></i><i id="search-icon" class="material-icons"></i></span></div></div><div id="search-results"><div id="search-progress"><div id="progress-fill"></div></div><div id="results-content"><div id="entity-results"></div><div id="member-results"></div></div></div><div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;"><div id="content-container" style="-webkit-overflow-scrolling: touch;"><div id="subpackage-spacer"><div id="packages"><h1>Packages</h1><ul><li class="indented0 " name="_root_.root" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="_root_" class="anchorToMember"></a><a id="root:_root_" class="anchorToMember"></a> <span class="permalink"><a href="../index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../index.html" title="Smile (Statistical Machine Intelligence and Learning Engine) is a fast and comprehensive machine learning, NLP, linear algebra, graph, interpolation, and visualization system in Java and Scala."><span class="name">root</span></a></span><p class="shortcomment cmt">Smile (Statistical Machine Intelligence and Learning Engine) is
-a fast and comprehensive machine learning, NLP, linear algebra,
-graph, interpolation, and visualization system in Java and Scala.</p><div class="fullcomment"><div class="comment cmt"><p>Smile (Statistical Machine Intelligence and Learning Engine) is
-a fast and comprehensive machine learning, NLP, linear algebra,
-graph, interpolation, and visualization system in Java and Scala.
-With advanced data structures and algorithms,
-Smile delivers state-of-art performance.</p><p>Smile covers every aspect of machine learning, including classification,
-regression, clustering, association rule mining, feature selection,
-manifold learning, multidimensional scaling, genetic algorithms,
-missing value imputation, efficient nearest neighbor search, etc.</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="_root_" id="_root_" class="extype">root</a></dd></dl></div></li><li class="indented1 " name="_root_.smile" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="smile" class="anchorToMember"></a><a id="smile:smile" class="anchorToMember"></a> <span class="permalink"><a href="../smile/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="index.html" title=""><span class="name">smile</span></a></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="_root_" id="_root_" class="extype">root</a></dd></dl></div></li><li class="indented2 " name="smile.association" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="association" class="anchorToMember"></a><a id="association:association" class="anchorToMember"></a> <span class="permalink"><a href="../smile/association/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="association/index.html" title="Frequent item set mining and association rule mining."><span class="name">association</span></a></span><p class="shortcomment cmt">Frequent item set mining and association rule mining.</p><div class="fullcomment"><div class="comment cmt"><p>Frequent item set mining and association rule mining.
-Association rule learning is a popular and well researched method for
-discovering interesting relations between variables in large databases.
-Let I = {i<sub>1</sub>, i<sub>2</sub>,..., i<sub>n</sub>} be a set of n
-binary attributes called items. Let D = {t<sub>1</sub>, t<sub>2</sub>,..., t<sub>m</sub>}
-be a set of transactions called the database. Each transaction in D has a
-unique transaction ID and contains a subset of the items in I.
-An association rule is defined as an implication of the form X &rArr; Y
-where X, Y &sube; I and X &cap; Y = &Oslash;. The item sets X and Y are called
-antecedent (left-hand-side or LHS) and consequent (right-hand-side or RHS)
-of the rule, respectively. The support supp(X) of an item set X is defined as
-the proportion of transactions in the database which contain the item set.
-Note that the support of an association rule X &rArr; Y is supp(X &cup; Y).
-The confidence of a rule is defined conf(X &rArr; Y) = supp(X &cup; Y) / supp(X).
-Confidence can be interpreted as an estimate of the probability P(Y | X),
-the probability of finding the RHS of the rule in transactions under the
-condition that these transactions also contain the LHS.</p><p>For example, the rule {onions, potatoes} &rArr; {burger} found in the sales
-data of a supermarket would indicate that if a customer buys onions and
-potatoes together, he or she is likely to also buy burger. Such information
-can be used as the basis for decisions about marketing activities such as
-promotional pricing or product placements.</p><p>Association rules are usually required to satisfy a user-specified minimum
-support and a user-specified minimum confidence at the same time. Association
-rule generation is usually split up into two separate steps:</p><ul><li>First, minimum support is applied to find all frequent item sets
-   in a database (i.e. frequent item set mining).</li><li>Second, these frequent item sets and the minimum confidence constraint
-   are used to form rules.</li></ul><p>Finding all frequent item sets in a database is difficult since it involves
-searching all possible item sets (item combinations). The set of possible
-item sets is the power set over I (the set of items) and has size 2<sup>n</sup> - 1
-(excluding the empty set which is not a valid item set). Although the size
-of the power set grows exponentially in the number of items n in I, efficient
-search is possible using the downward-closure property of support
-(also called anti-monotonicity) which guarantees that for a frequent item set
-also all its subsets are frequent and thus for an infrequent item set, all
-its supersets must be infrequent.</p><p>In practice, we may only consider the frequent item set that has the maximum
-number of items bypassing all the sub item sets. An item set is maximal
-frequent if none of its immediate supersets is frequent.</p><p>For a maximal frequent item set, even though we know that all the sub item
-sets are frequent, we don't know the actual support of those sub item sets,
-which are very important to find the association rules within the item sets.
-If the final goal is association rule mining, we would like to discover
-closed frequent item sets. An item set is closed if none of its immediate
-supersets has the same support as the item set.</p><p>Some well known algorithms of frequent item set mining are Apriori,
-Eclat and FP-Growth. Apriori is the best-known algorithm to mine association
-rules. It uses a breadth-first search strategy to counting the support of
-item sets and uses a candidate generation function which exploits the downward
-closure property of support. Eclat is a depth-first search algorithm using
-set intersection.</p><p>FP-growth (frequent pattern growth) uses an extended prefix-tree (FP-tree)
-structure to store the database in a compressed form. FP-growth adopts a
-divide-and-conquer approach to decompose both the mining tasks and the
-databases. It uses a pattern fragment growth method to avoid the costly
-process of candidate generation and testing used by Apriori.</p><h6>References:</h6><ul><li>R. Agrawal, T. Imielinski and A. Swami. Mining Association Rules Between Sets of Items in Large Databases, SIGMOD, 207-216, 1993.</li><li>Rakesh Agrawal and Ramakrishnan Srikant. Fast algorithms for mining association rules in large databases. VLDB, 487-499, 1994.</li><li>Mohammed J. Zaki. Scalable algorithms for association mining. IEEE Transactions on Knowledge and Data Engineering, 12(3):372-390, 2000.</li><li>Jiawei Han, Jian Pei, Yiwen Yin, and Runying Mao. Mining frequent patterns without candidate generation. Data Mining and Knowledge Discovery 8:53-87, 2004.
-</li></ul></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.cas" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="cas" class="anchorToMember"></a><a id="cas:cas" class="anchorToMember"></a> <span class="permalink"><a href="../smile/cas/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="cas/index.html" title="Computer algebra system."><span class="name">cas</span></a></span><p class="shortcomment cmt">Computer algebra system.</p><div class="fullcomment"><div class="comment cmt"><p>Computer algebra system.
-A computer algebra system (CAS) has the ability to manipulate mathematical
-expressions in a way similar to the traditional manual computations of
-mathematicians and scientists.</p><p>The symbolic manipulations supported include:</p><ul><li>simplification to a smaller expression or some standard form,
-including automatic simplification with assumptions and
-simplification with constraints</li><li>substitution of symbols or numeric values for certain expressions</li><li>change of form of expressions: expanding products and powers, partial
-and full factorization, rewriting as partial fractions, constraint
-satisfaction, rewriting trigonometric functions as exponentials,
-transforming logic expressions, etc.</li><li>partial and total differentiation</li><li>matrix operations including products, inverses, etc.
-</li></ul></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.classification" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="classification" class="anchorToMember"></a><a id="classification:classification" class="anchorToMember"></a> <span class="permalink"><a href="../smile/classification/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="classification/index.html" title="Classification algorithms."><span class="name">classification</span></a></span><p class="shortcomment cmt">Classification algorithms.</p><div class="fullcomment"><div class="comment cmt"><p>Classification algorithms. In machine learning and pattern recognition,
-classification refers to an algorithmic procedure for assigning a given
-input object into one of a given number of categories. The input
-object is formally termed an instance, and the categories are termed classes.</p><p>The instance is usually described by a vector of features, which together
-constitute a description of all known characteristics of the instance.
-Typically, features are either categorical (also known as nominal, i.e.
-consisting of one of a set of unordered items, such as a gender of "male"
-or "female", or a blood type of "A", "B", "AB" or "O"), ordinal (consisting
-of one of a set of ordered items, e.g. "large", "medium" or "small"),
-integer-valued (e.g. a count of the number of occurrences of a particular
-word in an email) or real-valued (e.g. a measurement of blood pressure).</p><p>Classification normally refers to a supervised procedure, i.e. a procedure
-that produces an inferred function to predict the output value of new
-instances based on a training set of pairs consisting of an input object
-and a desired output value. The inferred function is called a classifier
-if the output is discrete or a regression function if the output is
-continuous.</p><p>The inferred function should predict the correct output value for any valid
-input object. This requires the learning algorithm to generalize from the
-training data to unseen situations in a "reasonable" way.</p><p>A wide range of supervised learning algorithms is available, each with
-its strengths and weaknesses. There is no single learning algorithm that
-works best on all supervised learning problems. The most widely used
-learning algorithms are AdaBoost and gradient boosting, support vector
-machines, linear regression, linear discriminant analysis, logistic
-regression, naive Bayes, decision trees, k-nearest neighbor algorithm,
-and neural networks (multilayer perceptron).</p><p>If the feature vectors include features of many different kinds (discrete,
-discrete ordered, counts, continuous values), some algorithms cannot be
-easily applied. Many algorithms, including linear regression, logistic
-regression, neural networks, and nearest neighbor methods, require that
-the input features be numerical and scaled to similar ranges (e.g., to
-the [-1,1] interval). Methods that employ a distance function, such as
-nearest neighbor methods and support vector machines with Gaussian kernels,
-are particularly sensitive to this. An advantage of decision trees (and
-boosting algorithms based on decision trees) is that they easily handle
-heterogeneous data.</p><p>If the input features contain redundant information (e.g., highly correlated
-features), some learning algorithms (e.g., linear regression, logistic
-regression, and distance based methods) will perform poorly because of
-numerical instabilities. These problems can often be solved by imposing
-some form of regularization.</p><p>If each of the features makes an independent contribution to the output,
-then algorithms based on linear functions (e.g., linear regression,
-logistic regression, linear support vector machines, naive Bayes) generally
-perform well. However, if there are complex interactions among features,
-then algorithms such as nonlinear support vector machines, decision trees
-and neural networks work better. Linear methods can also be applied, but
-the engineer must manually specify the interactions when using them.</p><p>There are several major issues to consider in supervised learning:</p><ul><li><b>Features:</b>
-The accuracy of the inferred function depends strongly on how the input
-object is represented. Typically, the input object is transformed into
-a feature vector, which contains a number of features that are descriptive
-of the object. The number of features should not be too large, because of
-the curse of dimensionality; but should contain enough information to
-accurately predict the output.
-There are many algorithms for feature selection that seek to identify
-the relevant features and discard the irrelevant ones. More generally,
-dimensionality reduction may seek to map the input data into a lower
-dimensional space prior to running the supervised learning algorithm.</li><li><b>Overfitting:</b>
-Overfitting occurs when a statistical model describes random error
-or noise instead of the underlying relationship. Overfitting generally
-occurs when a model is excessively complex, such as having too many
-parameters relative to the number of observations. A model which has
-been overfit will generally have poor predictive performance, as it can
-exaggerate minor fluctuations in the data.
-The potential for overfitting depends not only on the number of parameters
-and data but also the conformability of the model structure with the data
-shape, and the magnitude of model error compared to the expected level
-of noise or error in the data.
-In order to avoid overfitting, it is necessary to use additional techniques
-(e.g. cross-validation, regularization, early stopping, pruning, Bayesian
-priors on parameters or model comparison), that can indicate when further
-training is not resulting in better generalization. The basis of some
-techniques is either (1) to explicitly penalize overly complex models,
-or (2) to test the model's ability to generalize by evaluating its
-performance on a set of data not used for training, which is assumed to
-approximate the typical unseen data that a model will encounter.</li><li><b>Regularization:</b>
-Regularization involves introducing additional information in order
-to solve an ill-posed problem or to prevent over-fitting. This information
-is usually of the form of a penalty for complexity, such as restrictions
-for smoothness or bounds on the vector space norm.
-A theoretical justification for regularization is that it attempts to impose
-Occam's razor on the solution. From a Bayesian point of view, many
-regularization techniques correspond to imposing certain prior distributions
-on model parameters.</li><li><b>Bias-variance tradeoff:</b>
-Mean squared error (MSE) can be broken down into two components:
-variance and squared bias, known as the bias-variance decomposition.
-Thus in order to minimize the MSE, we need to minimize both the bias and
-the variance. However, this is not trivial. Therefore, there is a tradeoff
-between bias and variance.
-</li></ul></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.clustering" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="clustering" class="anchorToMember"></a><a id="clustering:clustering" class="anchorToMember"></a> <span class="permalink"><a href="../smile/clustering/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="clustering/index.html" title="Clustering analysis."><span class="name">clustering</span></a></span><p class="shortcomment cmt">Clustering analysis.</p><div class="fullcomment"><div class="comment cmt"><p>Clustering analysis. Clustering is the assignment of a set of observations
-into subsets (called clusters) so that observations in the same cluster are
-similar in some sense. Clustering is a method of unsupervised learning,
-and a common technique for statistical data analysis used in many fields.</p><p>Hierarchical algorithms find successive clusters using previously
-established clusters. These algorithms usually are either agglomerative
-("bottom-up") or divisive ("top-down"). Agglomerative algorithms begin
-with each element as a separate cluster and merge them into successively
-larger clusters. Divisive algorithms begin with the whole set and proceed
-to divide it into successively smaller clusters.</p><p>Partitional algorithms typically determine all clusters at once, but can
-also be used as divisive algorithms in the hierarchical clustering.
-Many partitional clustering algorithms require the specification of
-the number of clusters to produce in the input data set, prior to
-execution of the algorithm. Barring knowledge of the proper value
-beforehand, the appropriate value must be determined, a problem on
-its own for which a number of techniques have been developed.</p><p>Density-based clustering algorithms are devised to discover
-arbitrary-shaped clusters. In this approach, a cluster is regarded as
-a region in which the density of data objects exceeds a threshold.</p><p>Subspace clustering methods look for clusters that can only be seen in
-a particular projection (subspace, manifold) of the data. These methods
-thus can ignore irrelevant attributes. The general problem is also known
-as Correlation clustering while the special case of axis-parallel subspaces
-is also known as two-way clustering, co-clustering or biclustering in
-bioinformatics: in these methods not only the objects are clustered but
-also the features of the objects, i.e., if the data is represented in
-a data matrix, the rows and columns are clustered simultaneously. They
-usually do not however work with arbitrary feature combinations as in general
-subspace methods.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.data" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="data" class="anchorToMember"></a><a id="data:data" class="anchorToMember"></a> <span class="permalink"><a href="../smile/data/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="data/index.html" title="Data manipulation functions."><span class="name">data</span></a></span><p class="shortcomment cmt">Data manipulation functions.</p><div class="fullcomment"><div class="comment cmt"><p>Data manipulation functions.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.feature" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="feature" class="anchorToMember"></a><a id="feature:feature" class="anchorToMember"></a> <span class="permalink"><a href="../smile/feature/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="feature/index.html" title=""><span class="name">feature</span></a></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.manifold" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="manifold" class="anchorToMember"></a><a id="manifold:manifold" class="anchorToMember"></a> <span class="permalink"><a href="../smile/manifold/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="manifold/index.html" title="Manifold learning finds a low-dimensional basis for describing high-dimensional data."><span class="name">manifold</span></a></span><p class="shortcomment cmt">Manifold learning finds a low-dimensional basis for describing
-high-dimensional data.</p><div class="fullcomment"><div class="comment cmt"><p>Manifold learning finds a low-dimensional basis for describing
-high-dimensional data. Manifold learning is a popular approach to nonlinear
-dimensionality reduction. Algorithms for this task are based on the idea
-that the dimensionality of many data sets is only artificially high; though
-each data point consists of perhaps thousands of features, it may be
-described as a function of only a few underlying parameters. That is, the
-data points are actually samples from a low-dimensional manifold that is
-embedded in a high-dimensional space. Manifold learning algorithms attempt
-to uncover these parameters in order to find a low-dimensional representation
-of the data.</p><p>Some prominent approaches are locally linear embedding
-(LLE), Hessian LLE, Laplacian eigenmaps, and LTSA. These techniques
-construct a low-dimensional data representation using a cost function
-that retains local properties of the data, and can be viewed as defining
-a graph-based kernel for Kernel PCA. More recently, techniques have been
-proposed that, instead of defining a fixed kernel, try to learn the kernel
-using semidefinite programming. The most prominent example of such a
-technique is maximum variance unfolding (MVU). The central idea of MVU
-is to exactly preserve all pairwise distances between nearest neighbors
-(in the inner product space), while maximizing the distances between points
-that are not nearest neighbors.</p><p>An alternative approach to neighborhood preservation is through the
-minimization of a cost function that measures differences between
-distances in the input and output spaces. Important examples of such
-techniques include classical multidimensional scaling (which is identical
-to PCA), Isomap (which uses geodesic distances in the data space), diffusion
-maps (which uses diffusion distances in the data space), t-SNE (which
-minimizes the divergence between distributions over pairs of points),
-and curvilinear component analysis.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.math" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="math" class="anchorToMember"></a><a id="math:math" class="anchorToMember"></a> <span class="permalink"><a href="../smile/math/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="math/index.html" title="Mathematical and statistical functions."><span class="name">math</span></a></span><p class="shortcomment cmt">Mathematical and statistical functions.</p><div class="fullcomment"><div class="comment cmt"><p>Mathematical and statistical functions.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.nlp" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="nlp" class="anchorToMember"></a><a id="nlp:nlp" class="anchorToMember"></a> <span class="permalink"><a href="../smile/nlp/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="nlp/index.html" title="Natural language processing."><span class="name">nlp</span></a></span><p class="shortcomment cmt">Natural language processing.</p><div class="fullcomment"><div class="comment cmt"><p>Natural language processing.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.plot" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="plot" class="anchorToMember"></a><a id="plot:plot" class="anchorToMember"></a> <span class="permalink"><a href="../smile/plot/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="plot/index.html" title="Data visualization."><span class="name">plot</span></a></span><p class="shortcomment cmt">Data visualization.</p><div class="fullcomment"><div class="comment cmt"><p>Data visualization.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="current-entities indented1"><span class="separator"></span> <a href="" title="Data loading utilities." class="object"></a><a href="" title="Data loading utilities.">read</a></li><li class="current-entities indented1"><span class="separator"></span> <a href="write$.html" title="Data saving utilities." class="object"></a><a href="write$.html" title="Data saving utilities.">write</a></li><li class="indented2 " name="smile.regression" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="regression" class="anchorToMember"></a><a id="regression:regression" class="anchorToMember"></a> <span class="permalink"><a href="../smile/regression/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="regression/index.html" title="Regression analysis."><span class="name">regression</span></a></span><p class="shortcomment cmt">Regression analysis.</p><div class="fullcomment"><div class="comment cmt"><p>Regression analysis. Regression analysis includes any
-techniques for modeling and analyzing several variables, when the focus
-is on the relationship between a dependent variable and one or more
-independent variables. Most commonly, regression analysis estimates the
-conditional expectation of the dependent variable given the independent
-variables. Therefore, the estimation target is a function of the independent
-variables called the regression function. Regression analysis is widely
-used for prediction and forecasting.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.sequence" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="sequence" class="anchorToMember"></a><a id="sequence:sequence" class="anchorToMember"></a> <span class="permalink"><a href="../smile/sequence/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="sequence/index.html" title="Sequence labeling algorithms."><span class="name">sequence</span></a></span><p class="shortcomment cmt">Sequence labeling algorithms.</p><div class="fullcomment"><div class="comment cmt"><p>Sequence labeling algorithms.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.util" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="util" class="anchorToMember"></a><a id="util:util" class="anchorToMember"></a> <span class="permalink"><a href="../smile/util/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="util/index.html" title="Utility functions."><span class="name">util</span></a></span><p class="shortcomment cmt">Utility functions.</p><div class="fullcomment"><div class="comment cmt"><p>Utility functions.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.validation" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="validation" class="anchorToMember"></a><a id="validation:validation" class="anchorToMember"></a> <span class="permalink"><a href="../smile/validation/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="validation/index.html" title="Model validation."><span class="name">validation</span></a></span><p class="shortcomment cmt">Model validation.</p><div class="fullcomment"><div class="comment cmt"><p>Model validation.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li><li class="indented2 " name="smile.wavelet" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="wavelet" class="anchorToMember"></a><a id="wavelet:wavelet" class="anchorToMember"></a> <span class="permalink"><a href="../smile/wavelet/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="wavelet/index.html" title="A wavelet is a wave-like oscillation with an amplitude that starts out at zero, increases, and then decreases back to zero."><span class="name">wavelet</span></a></span><p class="shortcomment cmt">A wavelet is a wave-like oscillation with an amplitude that starts out at
-zero, increases, and then decreases back to zero.</p><div class="fullcomment"><div class="comment cmt"><p>A wavelet is a wave-like oscillation with an amplitude that starts out at
-zero, increases, and then decreases back to zero. Like the fast Fourier
-transform (FFT), the discrete wavelet transform (DWT) is a fast, linear
-operation that operates on a data vector whose length is an integer power
-of 2, transforming it into a numerically different vector of the same length.
-The wavelet transform is invertible and in fact orthogonal. Both FFT and DWT
-can be viewed as a rotation in function space.
-</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="index.html" name="smile" id="smile" class="extype">smile</a></dd></dl></div></li></ul></div></div><div id="content"><body class="object value"><div id="definition"><div class="big-circle object">o</div><p id="owner"><a href="index.html" name="smile" id="smile" class="extype">smile</a></p><h1>read<span class="permalink"><a href="../smile/read$.html" title="Permalink"><i class="material-icons"></i></a></span></h1><h3><span class="morelinks"></span></h3></div><h4 id="signature" class="signature"><span class="modifier_kind"><span class="modifier"></span> <span class="kind">object</span></span> <span class="symbol"><span class="name">read</span></span></h4><div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Data loading utilities.</p></div><div class="toggleContainer"><div class="toggle block"><span>Linear Supertypes</span><div class="superTypes hiddenContent"><a href="https://www.scala-lang.org/api/2.13.11/scala/AnyRef.html#scala.AnyRef" name="scala.AnyRef" id="scala.AnyRef" class="extype">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.13.11/scala/Any.html#scala.Any" name="scala.Any" id="scala.Any" class="extype">Any</a></div></div></div></div><div id="mbrsel"><div class="toggle"></div><div id="memberfilter"><i class="material-icons arrow"></i><span class="input"><input placeholder="Filter all members" id="mbrsel-input" type="text" accesskey="/"/></span><i class="clear material-icons"></i></div><div id="filterby"><div id="order"><span class="filtertype">Ordering</span><ol><li class="alpha in"><span>Alphabetic</span></li><li class="inherit out"><span>By Inheritance</span></li></ol></div><div class="ancestors"><span class="filtertype">Inherited<br/></span><ol id="linearization"><li class="in" name="smile.read"><span>read</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li></ol></div><div class="ancestors"><span class="filtertype"></span><ol><li class="hideall out"><span>Hide All</span></li><li class="showall in"><span>Show All</span></li></ol></div><div id="visbl"><span class="filtertype">Visibility</span><ol><li class="public in"><span>Public</span></li><li class="protected out"><span>Protected</span></li></ol></div></div></div><div id="template"><div id="allMembers"><div class="values members"><h3>Value Members</h3><ol><li class="indented0 " name="scala.AnyRef#!=" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="!=(x$1:Any):Boolean" class="anchorToMember"></a><a id="!=(Any):Boolean" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#!=(x$1:Any):Boolean" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name" title="gt4s: $bang$eq">!=</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.13.11/scala/Any.html#scala.Any" name="scala.Any" id="scala.Any" class="extype">Any</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Boolean.html#scala.Boolean" name="scala.Boolean" id="scala.Boolean" class="extype">Boolean</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div></li><li class="indented0 " name="scala.AnyRef###" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="##:Int" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html###:Int" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name" title="gt4s: $hash$hash">##</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Int.html#scala.Int" name="scala.Int" id="scala.Int" class="extype">Int</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div></li><li class="indented0 " name="scala.AnyRef#==" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="==(x$1:Any):Boolean" class="anchorToMember"></a><a id="==(Any):Boolean" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#==(x$1:Any):Boolean" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name" title="gt4s: $eq$eq">==</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.13.11/scala/Any.html#scala.Any" name="scala.Any" id="scala.Any" class="extype">Any</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Boolean.html#scala.Boolean" name="scala.Boolean" id="scala.Boolean" class="extype">Boolean</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div></li><li class="indented0 " name="smile.read#apply" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="apply(file:java.nio.file.Path):AnyRef" class="anchorToMember"></a><a id="apply(Path):AnyRef" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#apply(file:java.nio.file.Path):AnyRef" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">apply</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/AnyRef.html#scala.AnyRef" name="scala.AnyRef" id="scala.AnyRef" class="extype">AnyRef</a></span></span><p class="shortcomment cmt">Reads a serialized object from a file.</p></li><li class="indented0 " name="smile.read#apply" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="apply(file:String):AnyRef" class="anchorToMember"></a><a id="apply(String):AnyRef" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#apply(file:String):AnyRef" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">apply</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/AnyRef.html#scala.AnyRef" name="scala.AnyRef" id="scala.AnyRef" class="extype">AnyRef</a></span></span><p class="shortcomment cmt">Reads a serialized object from a file.</p></li><li class="indented0 " name="smile.read#arff" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="arff(file:java.nio.file.Path):smile.data.DataFrame" class="anchorToMember"></a><a id="arff(Path):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#arff(file:java.nio.file.Path):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">arff</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an ARFF file.</p></li><li class="indented0 " name="smile.read#arff" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="arff(file:String):smile.data.DataFrame" class="anchorToMember"></a><a id="arff(String):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#arff(file:String):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">arff</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an ARFF file.</p></li><li class="indented0 " name="smile.read#arrow" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="arrow(file:java.nio.file.Path):smile.data.DataFrame" class="anchorToMember"></a><a id="arrow(Path):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#arrow(file:java.nio.file.Path):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">arrow</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an Apache Arrow file.</p></li><li class="indented0 " name="smile.read#arrow" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="arrow(file:String):smile.data.DataFrame" class="anchorToMember"></a><a id="arrow(String):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#arrow(file:String):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">arrow</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an Apache Arrow file.</p></li><li class="indented0 " name="scala.Any#asInstanceOf" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="asInstanceOf[T0]:T0" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#asInstanceOf[T0]:T0" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span name="scala.Any.asInstanceOf.T0" class="extype">T0</span></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>Any</dd></dl></div></li><li class="indented0 " name="smile.read#avro" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="avro(file:java.nio.file.Path,schema:java.nio.file.Path):smile.data.DataFrame" class="anchorToMember"></a><a id="avro(Path,Path):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#avro(file:java.nio.file.Path,schema:java.nio.file.Path):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">avro</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>, <span name="schema">schema: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an Apache Avro file.</p></li><li class="indented0 " name="smile.read#avro" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="avro(file:java.nio.file.Path,schema:java.io.InputStream):smile.data.DataFrame" class="anchorToMember"></a><a id="avro(Path,InputStream):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#avro(file:java.nio.file.Path,schema:java.io.InputStream):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">avro</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>, <span name="schema">schema: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/io/InputStream.html#java.io.InputStream" name="java.io.InputStream" id="java.io.InputStream" class="extype">InputStream</a></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an Apache Avro file.</p></li><li class="indented0 " name="smile.read#avro" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="avro(file:String,schema:String):smile.data.DataFrame" class="anchorToMember"></a><a id="avro(String,String):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#avro(file:String,schema:String):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">avro</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>, <span name="schema">schema: <span name="scala.Predef.String" class="extype">String</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an Apache Avro file.</p></li><li class="indented0 " name="smile.read#avro" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="avro(file:String,schema:java.io.InputStream):smile.data.DataFrame" class="anchorToMember"></a><a id="avro(String,InputStream):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#avro(file:String,schema:java.io.InputStream):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">avro</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>, <span name="schema">schema: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/io/InputStream.html#java.io.InputStream" name="java.io.InputStream" id="java.io.InputStream" class="extype">InputStream</a></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an Apache Avro file.</p></li><li class="indented0 " name="scala.AnyRef#clone" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="prt"><a id="clone():Object" class="anchorToMember"></a><a id="clone():AnyRef" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#clone():Object" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">clone</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/AnyRef.html#scala.AnyRef" name="scala.AnyRef" id="scala.AnyRef" class="extype">AnyRef</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Attributes</dt><dd>protected[<span name="java.lang" class="extype">lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd><span class="name">@throws</span><span class="args">(<span><span class="defval">classOf[java.lang.CloneNotSupportedException]</span></span>)</span> <span class="name">@native</span><span class="args">()</span> </dd></dl></div></li><li class="indented0 " name="smile.read#csv" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="csv(file:java.nio.file.Path,format:org.apache.commons.csv.CSVFormat,schema:smile.data.type.StructType):smile.data.DataFrame" class="anchorToMember"></a><a id="csv(Path,CSVFormat,StructType):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#csv(file:java.nio.file.Path,format:org.apache.commons.csv.CSVFormat,schema:smile.data.type.StructType):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">csv</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>, <span name="format">format: <span name="org.apache.commons.csv.CSVFormat" class="extype">CSVFormat</span></span>, <span name="schema">schema: <span name="smile.data.type.StructType" class="extype">StructType</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a CSV file.</p></li><li class="indented0 " name="smile.read#csv" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="csv(file:String,format:org.apache.commons.csv.CSVFormat,schema:smile.data.type.StructType):smile.data.DataFrame" class="anchorToMember"></a><a id="csv(String,CSVFormat,StructType):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#csv(file:String,format:org.apache.commons.csv.CSVFormat,schema:smile.data.type.StructType):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">csv</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>, <span name="format">format: <span name="org.apache.commons.csv.CSVFormat" class="extype">CSVFormat</span></span>, <span name="schema">schema: <span name="smile.data.type.StructType" class="extype">StructType</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a CSV file.</p></li><li class="indented0 " name="smile.read#csv" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="csv(file:java.nio.file.Path,delimiter:String,header:Boolean,quote:Char,escape:Char,schema:smile.data.type.StructType):smile.data.DataFrame" class="anchorToMember"></a><a id="csv(Path,String,Boolean,Char,Char,StructType):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#csv(file:java.nio.file.Path,delimiter:String,header:Boolean,quote:Char,escape:Char,schema:smile.data.type.StructType):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">csv</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>, <span name="delimiter">delimiter: <span name="scala.Predef.String" class="extype">String</span></span>, <span name="header">header: <a href="https://www.scala-lang.org/api/2.13.11/scala/Boolean.html#scala.Boolean" name="scala.Boolean" id="scala.Boolean" class="extype">Boolean</a></span>, <span name="quote">quote: <a href="https://www.scala-lang.org/api/2.13.11/scala/Char.html#scala.Char" name="scala.Char" id="scala.Char" class="extype">Char</a></span>, <span name="escape">escape: <a href="https://www.scala-lang.org/api/2.13.11/scala/Char.html#scala.Char" name="scala.Char" id="scala.Char" class="extype">Char</a></span>, <span name="schema">schema: <span name="smile.data.type.StructType" class="extype">StructType</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a CSV file.</p></li><li class="indented0 " name="smile.read#csv" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="csv(file:String,delimiter:String,header:Boolean,quote:Char,escape:Char,schema:smile.data.type.StructType):smile.data.DataFrame" class="anchorToMember"></a><a id="csv(String,String,Boolean,Char,Char,StructType):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#csv(file:String,delimiter:String,header:Boolean,quote:Char,escape:Char,schema:smile.data.type.StructType):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">csv</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>, <span name="delimiter">delimiter: <span name="scala.Predef.String" class="extype">String</span> = <span class="symbol">","</span></span>, <span name="header">header: <a href="https://www.scala-lang.org/api/2.13.11/scala/Boolean.html#scala.Boolean" name="scala.Boolean" id="scala.Boolean" class="extype">Boolean</a> = <span class="symbol">true</span></span>, <span name="quote">quote: <a href="https://www.scala-lang.org/api/2.13.11/scala/Char.html#scala.Char" name="scala.Char" id="scala.Char" class="extype">Char</a> = <span class="symbol">'"'</span></span>, <span name="escape">escape: <a href="https://www.scala-lang.org/api/2.13.11/scala/Char.html#scala.Char" name="scala.Char" id="scala.Char" class="extype">Char</a> = <span class="symbol">'\\'</span></span>, <span name="schema">schema: <span name="smile.data.type.StructType" class="extype">StructType</span> = <span class="symbol">null</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a CSV file.</p></li><li class="indented0 " name="smile.read#data" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="data(path:String,format:String):smile.data.DataFrame" class="anchorToMember"></a><a id="data(String,String):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#data(path:String,format:String):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">data</span><span class="params">(<span name="path">path: <span name="scala.Predef.String" class="extype">String</span></span>, <span name="format">format: <span name="scala.Predef.String" class="extype">String</span> = <span class="symbol">null</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a data file.</p><div class="fullcomment"><div class="comment cmt"><p>Reads a data file. Infers the data format by the file name extension.</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>the input file path.</p></dd><dt class="param">format</dt><dd class="cmt"><p>the optional file format specification. For csv files,
-              it is such as <code>delimiter=\t,header=true,comment=#,escape=\,quote="</code>.
-              For json files, it is the file mode (single-line or
-              multi-line). For avro files, it is the path to the schema
-              file.</p></dd><dt>returns</dt><dd class="cmt"><p>the data frame.</p></dd></dl></div></li><li class="indented0 " name="scala.AnyRef#eq" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="eq(x$1:AnyRef):Boolean" class="anchorToMember"></a><a id="eq(AnyRef):Boolean" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#eq(x$1:AnyRef):Boolean" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.13.11/scala/AnyRef.html#scala.AnyRef" name="scala.AnyRef" id="scala.AnyRef" class="extype">AnyRef</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Boolean.html#scala.Boolean" name="scala.Boolean" id="scala.Boolean" class="extype">Boolean</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div></li><li class="indented0 " name="scala.AnyRef#equals" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="equals(x$1:Object):Boolean" class="anchorToMember"></a><a id="equals(AnyRef):Boolean" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#equals(x$1:Object):Boolean" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.13.11/scala/AnyRef.html#scala.AnyRef" name="scala.AnyRef" id="scala.AnyRef" class="extype">AnyRef</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Boolean.html#scala.Boolean" name="scala.Boolean" id="scala.Boolean" class="extype">Boolean</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div></li><li class="indented0 " name="scala.AnyRef#finalize" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="prt"><a id="finalize():Unit" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#finalize():Unit" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Unit.html#scala.Unit" name="scala.Unit" id="scala.Unit" class="extype">Unit</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Attributes</dt><dd>protected[<span name="java.lang" class="extype">lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd><span class="name">@throws</span><span class="args">(<span><span class="symbol">classOf[java.lang.Throwable]</span></span>)</span> </dd></dl></div></li><li class="indented0 " name="scala.AnyRef#getClass" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="getClass():Class[_]" class="anchorToMember"></a><a id="getClass():Class[_&lt;:AnyRef]" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#getClass():Class[_]" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/lang/Class.html#java.lang.Class" name="java.lang.Class" id="java.lang.Class" class="extype">Class</a>[_ &lt;: <a href="https://www.scala-lang.org/api/2.13.11/scala/AnyRef.html#scala.AnyRef" name="scala.AnyRef" id="scala.AnyRef" class="extype">AnyRef</a>]</span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd><span class="name">@native</span><span class="args">()</span> </dd></dl></div></li><li class="indented0 " name="scala.AnyRef#hashCode" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="hashCode():Int" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#hashCode():Int" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Int.html#scala.Int" name="scala.Int" id="scala.Int" class="extype">Int</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd><span class="name">@native</span><span class="args">()</span> </dd></dl></div></li><li class="indented0 " name="scala.Any#isInstanceOf" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="isInstanceOf[T0]:Boolean" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#isInstanceOf[T0]:Boolean" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Boolean.html#scala.Boolean" name="scala.Boolean" id="scala.Boolean" class="extype">Boolean</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>Any</dd></dl></div></li><li class="indented0 " name="smile.read#jdbc" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="jdbc(rs:java.sql.ResultSet):smile.data.DataFrame" class="anchorToMember"></a><a id="jdbc(ResultSet):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#jdbc(rs:java.sql.ResultSet):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">jdbc</span><span class="params">(<span name="rs">rs: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/sql/ResultSet.html#java.sql.ResultSet" name="java.sql.ResultSet" id="java.sql.ResultSet" class="extype">ResultSet</a></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a JDBC query result to a data frame.</p></li><li class="indented0 " name="smile.read#json" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="json(file:java.nio.file.Path,mode:smile.io.JSON.Mode,schema:smile.data.type.StructType):smile.data.DataFrame" class="anchorToMember"></a><a id="json(Path,Mode,StructType):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#json(file:java.nio.file.Path,mode:smile.io.JSON.Mode,schema:smile.data.type.StructType):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">json</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>, <span name="mode">mode: <span name="smile.io.JSON.Mode" class="extype">Mode</span></span>, <span name="schema">schema: <span name="smile.data.type.StructType" class="extype">StructType</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a JSON file.</p></li><li class="indented0 " name="smile.read#json" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="json(file:String,mode:smile.io.JSON.Mode,schema:smile.data.type.StructType):smile.data.DataFrame" class="anchorToMember"></a><a id="json(String,Mode,StructType):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#json(file:String,mode:smile.io.JSON.Mode,schema:smile.data.type.StructType):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">json</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>, <span name="mode">mode: <span name="smile.io.JSON.Mode" class="extype">Mode</span></span>, <span name="schema">schema: <span name="smile.data.type.StructType" class="extype">StructType</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a JSON file.</p></li><li class="indented0 " name="smile.read#json" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="json(file:java.nio.file.Path):smile.data.DataFrame" class="anchorToMember"></a><a id="json(Path):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#json(file:java.nio.file.Path):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">json</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a JSON file.</p></li><li class="indented0 " name="smile.read#json" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="json(file:String):smile.data.DataFrame" class="anchorToMember"></a><a id="json(String):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#json(file:String):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">json</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a JSON file.</p></li><li class="indented0 " name="smile.read#libsvm" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="libsvm(file:java.nio.file.Path):smile.data.Dataset[smile.data.Instance[smile.util.SparseArray]]" class="anchorToMember"></a><a id="libsvm(Path):Dataset[Instance[SparseArray]]" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#libsvm(file:java.nio.file.Path):smile.data.Dataset[smile.data.Instance[smile.util.SparseArray]]" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">libsvm</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>)</span><span class="result">: <span name="smile.data.Dataset" class="extype">Dataset</span>[<span name="smile.data.Instance" class="extype">Instance</span>[<span name="smile.util.SparseArray" class="extype">SparseArray</span>]]</span></span><p class="shortcomment cmt">Reads a LivSVM file.</p></li><li class="indented0 " name="smile.read#libsvm" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="libsvm(file:String):smile.data.Dataset[smile.data.Instance[smile.util.SparseArray]]" class="anchorToMember"></a><a id="libsvm(String):Dataset[Instance[SparseArray]]" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#libsvm(file:String):smile.data.Dataset[smile.data.Instance[smile.util.SparseArray]]" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">libsvm</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>)</span><span class="result">: <span name="smile.data.Dataset" class="extype">Dataset</span>[<span name="smile.data.Instance" class="extype">Instance</span>[<span name="smile.util.SparseArray" class="extype">SparseArray</span>]]</span></span><p class="shortcomment cmt">Reads a LivSVM file.</p></li><li class="indented0 " name="scala.AnyRef#ne" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="ne(x$1:AnyRef):Boolean" class="anchorToMember"></a><a id="ne(AnyRef):Boolean" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#ne(x$1:AnyRef):Boolean" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.13.11/scala/AnyRef.html#scala.AnyRef" name="scala.AnyRef" id="scala.AnyRef" class="extype">AnyRef</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Boolean.html#scala.Boolean" name="scala.Boolean" id="scala.Boolean" class="extype">Boolean</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div></li><li class="indented0 " name="scala.AnyRef#notify" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="notify():Unit" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#notify():Unit" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">notify</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Unit.html#scala.Unit" name="scala.Unit" id="scala.Unit" class="extype">Unit</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd><span class="name">@native</span><span class="args">()</span> </dd></dl></div></li><li class="indented0 " name="scala.AnyRef#notifyAll" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="notifyAll():Unit" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#notifyAll():Unit" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Unit.html#scala.Unit" name="scala.Unit" id="scala.Unit" class="extype">Unit</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd><span class="name">@native</span><span class="args">()</span> </dd></dl></div></li><li class="indented0 " name="smile.read#parquet" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="parquet(file:java.nio.file.Path):smile.data.DataFrame" class="anchorToMember"></a><a id="parquet(Path):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#parquet(file:java.nio.file.Path):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">parquet</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an Apache Parquet file.</p></li><li class="indented0 " name="smile.read#parquet" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="parquet(file:String):smile.data.DataFrame" class="anchorToMember"></a><a id="parquet(String):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#parquet(file:String):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">parquet</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads an Apache Parquet file.</p></li><li class="indented0 " name="smile.read#sas" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="sas(file:java.nio.file.Path):smile.data.DataFrame" class="anchorToMember"></a><a id="sas(Path):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#sas(file:java.nio.file.Path):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">sas</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a SAS7BDAT file.</p></li><li class="indented0 " name="smile.read#sas" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="sas(file:String):smile.data.DataFrame" class="anchorToMember"></a><a id="sas(String):DataFrame" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#sas(file:String):smile.data.DataFrame" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">sas</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>)</span><span class="result">: <span name="smile.data.DataFrame" class="extype">DataFrame</span></span></span><p class="shortcomment cmt">Reads a SAS7BDAT file.</p></li><li class="indented0 " name="scala.AnyRef#synchronized" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="synchronized[T0](x$1:=&gt;T0):T0" class="anchorToMember"></a><a id="synchronized[T0](=&gt;T0):T0" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: =&gt; <span name="java.lang.AnyRef.synchronized.T0" class="extype">T0</span></span>)</span><span class="result">: <span name="java.lang.AnyRef.synchronized.T0" class="extype">T0</span></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div></li><li class="indented0 " name="scala.AnyRef#toString" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="toString():String" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#toString():String" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">toString</span><span class="params">()</span><span class="result">: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/lang/String.html#java.lang.String" name="java.lang.String" id="java.lang.String" class="extype">String</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div></li><li class="indented0 " name="scala.AnyRef#wait" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="wait():Unit" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#wait():Unit" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">wait</span><span class="params">()</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Unit.html#scala.Unit" name="scala.Unit" id="scala.Unit" class="extype">Unit</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd><span class="name">@throws</span><span class="args">(<span><span class="defval">classOf[java.lang.InterruptedException]</span></span>)</span> </dd></dl></div></li><li class="indented0 " name="scala.AnyRef#wait" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="wait(x$1:Long,x$2:Int):Unit" class="anchorToMember"></a><a id="wait(Long,Int):Unit" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.13.11/scala/Long.html#scala.Long" name="scala.Long" id="scala.Long" class="extype">Long</a></span>, <span name="arg1">arg1: <a href="https://www.scala-lang.org/api/2.13.11/scala/Int.html#scala.Int" name="scala.Int" id="scala.Int" class="extype">Int</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Unit.html#scala.Unit" name="scala.Unit" id="scala.Unit" class="extype">Unit</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd><span class="name">@throws</span><span class="args">(<span><span class="defval">classOf[java.lang.InterruptedException]</span></span>)</span> </dd></dl></div></li><li class="indented0 " name="scala.AnyRef#wait" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="wait(x$1:Long):Unit" class="anchorToMember"></a><a id="wait(Long):Unit" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#wait(x$1:Long):Unit" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier">final </span> <span class="kind">def</span></span> <span class="symbol"><span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="https://www.scala-lang.org/api/2.13.11/scala/Long.html#scala.Long" name="scala.Long" id="scala.Long" class="extype">Long</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.13.11/scala/Unit.html#scala.Unit" name="scala.Unit" id="scala.Unit" class="extype">Unit</a></span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd><span class="name">@throws</span><span class="args">(<span><span class="defval">classOf[java.lang.InterruptedException]</span></span>)</span> <span class="name">@native</span><span class="args">()</span> </dd></dl></div></li><li class="indented0 " name="smile.read#wavefront" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="wavefront(file:java.nio.file.Path):(Array[Array[Double]],Array[Array[Int]])" class="anchorToMember"></a><a id="wavefront(Path):(Array[Array[Double]],Array[Array[Int]])" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#wavefront(file:java.nio.file.Path):(Array[Array[Double]],Array[Array[Int]])" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">wavefront</span><span class="params">(<span name="file">file: <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java/nio/file/Path.html#java.nio.file.Path" name="java.nio.file.Path" id="java.nio.file.Path" class="extype">Path</a></span>)</span><span class="result">: (<a href="https://www.scala-lang.org/api/2.13.11/scala/Array.html#scala.Array" name="scala.Array" id="scala.Array" class="extype">Array</a>[<a href="https://www.scala-lang.org/api/2.13.11/scala/Array.html#scala.Array" name="scala.Array" id="scala.Array" class="extype">Array</a>[<a href="https://www.scala-lang.org/api/2.13.11/scala/Double.html#scala.Double" name="scala.Double" id="scala.Double" class="extype">Double</a>]], <a href="https://www.scala-lang.org/api/2.13.11/scala/Array.html#scala.Array" name="scala.Array" id="scala.Array" class="extype">Array</a>[<a href="https://www.scala-lang.org/api/2.13.11/scala/Array.html#scala.Array" name="scala.Array" id="scala.Array" class="extype">Array</a>[<a href="https://www.scala-lang.org/api/2.13.11/scala/Int.html#scala.Int" name="scala.Int" id="scala.Int" class="extype">Int</a>]])</span></span><p class="shortcomment cmt">Reads a Wavefront OBJ file.</p><div class="fullcomment"><div class="comment cmt"><p>Reads a Wavefront OBJ file. The OBJ file format is a simple format of 3D geometry including
-the position of each vertex, the UV position of each texture coordinate vertex,
-vertex normals, and the faces that make each polygon defined as a list of vertices,
-and texture vertices. Vertices are stored in a counter-clockwise order by default,
-making explicit declaration of face normals unnecessary. OBJ coordinates have no units,
-but OBJ files can contain scale information in a human readable comment line.</p><p>Note that we parse only vertex and face elements. All other information ignored.
-</p></div><dl class="paramcmts block"><dt class="param">file</dt><dd class="cmt"><p>the file path</p></dd><dt>returns</dt><dd class="cmt"><p>a tuple of vertex array and edge array.</p></dd></dl></div></li><li class="indented0 " name="smile.read#wavefront" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="wavefront(file:String):(Array[Array[Double]],Array[Array[Int]])" class="anchorToMember"></a><a id="wavefront(String):(Array[Array[Double]],Array[Array[Int]])" class="anchorToMember"></a> <span class="permalink"><a href="../smile/read$.html#wavefront(file:String):(Array[Array[Double]],Array[Array[Int]])" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">def</span></span> <span class="symbol"><span class="name">wavefront</span><span class="params">(<span name="file">file: <span name="scala.Predef.String" class="extype">String</span></span>)</span><span class="result">: (<a href="https://www.scala-lang.org/api/2.13.11/scala/Array.html#scala.Array" name="scala.Array" id="scala.Array" class="extype">Array</a>[<a href="https://www.scala-lang.org/api/2.13.11/scala/Array.html#scala.Array" name="scala.Array" id="scala.Array" class="extype">Array</a>[<a href="https://www.scala-lang.org/api/2.13.11/scala/Double.html#scala.Double" name="scala.Double" id="scala.Double" class="extype">Double</a>]], <a href="https://www.scala-lang.org/api/2.13.11/scala/Array.html#scala.Array" name="scala.Array" id="scala.Array" class="extype">Array</a>[<a href="https://www.scala-lang.org/api/2.13.11/scala/Array.html#scala.Array" name="scala.Array" id="scala.Array" class="extype">Array</a>[<a href="https://www.scala-lang.org/api/2.13.11/scala/Int.html#scala.Int" name="scala.Int" id="scala.Int" class="extype">Int</a>]])</span></span><p class="shortcomment cmt">Reads a Wavefront OBJ file.</p></li></ol></div></div><div id="inheritedMembers"><div name="scala.AnyRef" class="parent"><h3>Inherited from <a href="https://www.scala-lang.org/api/2.13.11/scala/AnyRef.html#scala.AnyRef" name="scala.AnyRef" id="scala.AnyRef" class="extype">AnyRef</a></h3></div><div name="scala.Any" class="parent"><h3>Inherited from <a href="https://www.scala-lang.org/api/2.13.11/scala/Any.html#scala.Any" name="scala.Any" id="scala.Any" class="extype">Any</a></h3></div></div><div id="groupedMembers"><div name="Ungrouped" class="group"><h3>Ungrouped</h3></div></div></div><div id="tooltip"></div><div id="footer"></div></body></div></div></div></body></html>
+<!DOCTYPE html><html data-pathToRoot="../"><head><meta charset="utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta><title>read</title><link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"></link><script type="text/javascript" src="../scripts/theme.js"></script><script type="text/javascript" src="../scripts/searchData.js" defer="true"></script><script type="text/javascript" src="../scripts/scastieConfiguration.js" defer="true"></script><link rel="stylesheet" href="../styles/theme/bundle.css"></link><link rel="stylesheet" href="../styles/theme/components/bundle.css"></link><link rel="stylesheet" href="../styles/theme/components/button/bundle.css"></link><link rel="stylesheet" href="../styles/theme/layout/bundle.css"></link><link rel="stylesheet" href="../styles/nord-light.css"></link><link rel="stylesheet" href="../styles/dotty-icons.css"></link><link rel="stylesheet" href="../styles/filter-bar.css"></link><link rel="stylesheet" href="../styles/code-snippets.css"></link><link rel="stylesheet" href="../styles/searchbar.css"></link><link rel="stylesheet" href="../styles/social-links.css"></link><link rel="stylesheet" href="../styles/versions-dropdown.css"></link><link rel="stylesheet" href="../styles/content-contributors.css"></link><link rel="stylesheet" href="../styles/fontawesome.css"></link><script type="text/javascript" src="../hljs/highlight.pack.js" defer="true"></script><script type="text/javascript" src="../scripts/hljs-scala3.js" defer="true"></script><script type="text/javascript" src="../scripts/ux.js" defer="true"></script><script type="text/javascript" src="../scripts/common/component.js" defer="true"></script><script type="text/javascript" src="../scripts/common/utils.js" defer="true"></script><script type="text/javascript" src="../scripts/components/FilterBar.js" defer="true"></script><script type="text/javascript" src="../scripts/components/DocumentableList.js" defer="true"></script><script type="text/javascript" src="../scripts/components/Input.js" defer="true"></script><script type="text/javascript" src="../scripts/components/FilterGroup.js" defer="true"></script><script type="text/javascript" src="../scripts/components/Filter.js" defer="true"></script><script type="text/javascript" src="../scripts/scaladoc-scalajs.js" defer="true"></script><script type="text/javascript" src="../scripts/contributors.js" defer="true"></script><script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js" defer="true"></script><script type="text/javascript" src="https://d3js.org/d3.v6.min.js" defer="true"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/graphlib-dot@0.6.2/dist/graphlib-dot.min.js" defer="true"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dagre-d3/0.6.1/dagre-d3.min.js" defer="true"></script><script type="text/javascript" src="https://scastie.scala-lang.org/embedded.js" defer="true"></script><script type="text/javascript" src="../scripts/data.js" defer="true"></script><link rel="stylesheet" href="../styles/apistyles.css"></link><script>var pathToRoot = "../";</script></head><body><div id=""><div id="header" class="body-small"><div class="header-container-left"><a href="../" class="logo-container"><span id="project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span class="project-name h300">Smile</span></a><span onclick="dropdownHandler(event)" class="text-button with-arrow" id="dropdown-trigger"><a><div class="projectVersion">3.1.0</div></a></span><div id="version-dropdown" class="dropdown-menu"></div></div><div class="header-container-right"><button id="search-toggle" class="icon-button"></button><span id="theme-toggle" class="icon-button"></span><span id="mobile-menu-toggle" class="icon-button hamburger"></span></div></div><div id="mobile-menu"><div class="mobile-menu-header body-small"><span class="mobile-menu-logo"><span id="project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span class="project-name h300">Smile</span></span><button id="mobile-menu-close" class="icon-button close"></button></div><div class="mobile-menu-container body-medium"><input id="mobile-scaladoc-searchbar-input" class="scaladoc-searchbar-input" type="search" placeholder="Find anything"></input><span id="mobile-theme-toggle" class="mobile-menu-item mode"></span></div></div><span id="mobile-sidebar-toggle" class="floating-button"></span><div id="leftColumn" class="body-small"><div class="switcher-container"><a id="api-nav-button" class="switcher h100 selected" href="../index.html">API</a></div><nav id="api-nav" class="side-menu"><div class="ni n0 expanded"><span class="nh h100 expanded cs"><button class="ar icon-button expanded"></button><a href="../smile.html"><span class="micon pa"></span><span>smile</span></a></span><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="association.html"><span class="micon pa"></span><span>association</span></a></span><div class="ni n2 "><span class="nh "><a href="association/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="cas.html"><span class="micon pa"></span><span>cas</span></a></span><div class="ni n2 "><span class="nh "><a href="cas/Abs.html"><span class="micon cl"></span><span>Abs</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Add.html"><span class="micon cl"></span><span>Add</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/AddMatrix.html"><span class="micon cl"></span><span>AddMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/AddVector.html"><span class="micon cl"></span><span>AddVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcCos.html"><span class="micon cl"></span><span>ArcCos</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcCot.html"><span class="micon cl"></span><span>ArcCot</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcSin.html"><span class="micon cl"></span><span>ArcSin</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcTan.html"><span class="micon cl"></span><span>ArcTan</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Ceil.html"><span class="micon cl"></span><span>Ceil</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Const.html"><span class="micon cl"></span><span>Const</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ConstMatrix.html"><span class="micon cl"></span><span>ConstMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ConstVector.html"><span class="micon cl"></span><span>ConstVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Cos.html"><span class="micon cl"></span><span>Cos</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Cot.html"><span class="micon cl"></span><span>Cot</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/DiagonalMatrix.html"><span class="micon cl"></span><span>DiagonalMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Div.html"><span class="micon cl"></span><span>Div</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Exp.html"><span class="micon cl"></span><span>Exp</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Floor.html"><span class="micon cl"></span><span>Floor</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/GradientVector.html"><span class="micon cl"></span><span>GradientVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IdentityMatrix.html"><span class="micon cl"></span><span>IdentityMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/InnerProduct.html"><span class="micon cl"></span><span>InnerProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Int2Scalar.html"><span class="micon cl"></span><span>Int2Scalar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntAdd.html"><span class="micon cl"></span><span>IntAdd</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntConst.html"><span class="micon cl"></span><span>IntConst</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntDiv.html"><span class="micon cl"></span><span>IntDiv</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntMul.html"><span class="micon cl"></span><span>IntMul</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntNeg.html"><span class="micon cl"></span><span>IntNeg</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntPower.html"><span class="micon cl"></span><span>IntPower</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntScalar.html"><span class="micon tr"></span><span>IntScalar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntSub.html"><span class="micon cl"></span><span>IntSub</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntVal.html"><span class="micon cl"></span><span>IntVal</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntVar.html"><span class="micon cl"></span><span>IntVar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Log.html"><span class="micon cl"></span><span>Log</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Matrix.html"><span class="micon tr"></span><span>Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixInverse.html"><span class="micon cl"></span><span>MatrixInverse</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixProduct.html"><span class="micon cl"></span><span>MatrixProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixTranspose.html"><span class="micon cl"></span><span>MatrixTranspose</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixVar.html"><span class="micon cl"></span><span>MatrixVar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixVectorProduct.html"><span class="micon cl"></span><span>MatrixVectorProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Mod.html"><span class="micon cl"></span><span>Mod</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Mul.html"><span class="micon cl"></span><span>Mul</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Neg.html"><span class="micon cl"></span><span>Neg</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/NegMatrix.html"><span class="micon cl"></span><span>NegMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/NegVector.html"><span class="micon cl"></span><span>NegVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/OneMatrix.html"><span class="micon cl"></span><span>OneMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/OneVector.html"><span class="micon cl"></span><span>OneVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/OuterProduct.html"><span class="micon cl"></span><span>OuterProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Power.html"><span class="micon cl"></span><span>Power</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Round.html"><span class="micon cl"></span><span>Round</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/RowMatrix.html"><span class="micon cl"></span><span>RowMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Scalar.html"><span class="micon tr"></span><span>Scalar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ScalarMatrixProduct.html"><span class="micon cl"></span><span>ScalarMatrixProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ScalarVectorProduct.html"><span class="micon cl"></span><span>ScalarVectorProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Sin.html"><span class="micon cl"></span><span>Sin</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Sub.html"><span class="micon cl"></span><span>Sub</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Tan.html"><span class="micon cl"></span><span>Tan</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/TangentMatrix.html"><span class="micon cl"></span><span>TangentMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/TangentVector.html"><span class="micon cl"></span><span>TangentVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Tensor.html"><span class="micon tr"></span><span>Tensor</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Val.html"><span class="micon cl"></span><span>Val</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Var.html"><span class="micon cl"></span><span>Var</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Vars.html"><span class="micon cl"></span><span>Vars</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Vector.html"><span class="micon tr"></span><span>Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/VectorVal.html"><span class="micon cl"></span><span>VectorVal</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/VectorVar.html"><span class="micon cl"></span><span>VectorVar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ZeroMatrix.html"><span class="micon cl"></span><span>ZeroMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ZeroVector.html"><span class="micon cl"></span><span>ZeroVector</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="classification.html"><span class="micon pa"></span><span>classification</span></a></span><div class="ni n2 "><span class="nh "><a href="classification/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="clustering.html"><span class="micon pa"></span><span>clustering</span></a></span><div class="ni n2 "><span class="nh "><a href="clustering/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="data.html"><span class="micon pa"></span><span>data</span></a></span><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="data/formula.html"><span class="micon pa"></span><span>formula</span></a></span><div class="ni n3 "><span class="nh "><a href="data/formula/FormulaBuilder.html"><span class="micon cl"></span><span>FormulaBuilder</span></a></span></div></div><div class="ni n2 "><span class="nh "><a href="data/DataFrameOps.html"><span class="micon cl"></span><span>DataFrameOps</span></a></span></div><div class="ni n2 "><span class="nh "><a href="data/TupleOps.html"><span class="micon cl"></span><span>TupleOps</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="feature/extraction.html"><span class="micon pa"></span><span>feature.extraction</span></a></span><div class="ni n2 "><span class="nh "><a href="feature/extraction/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="manifold.html"><span class="micon pa"></span><span>manifold</span></a></span><div class="ni n2 "><span class="nh "><a href="manifold/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="math.html"><span class="micon pa"></span><span>math</span></a></span><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="math/distance.html"><span class="micon pa"></span><span>distance</span></a></span><div class="ni n3 "><span class="nh "><a href="math/distance/Hamming.html"><span class="micon cl"></span><span>Hamming</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/MeanMahanttan.html"><span class="micon cl"></span><span>MeanMahanttan</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/PatternDifference.html"><span class="micon cl"></span><span>PatternDifference</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/ShapeDifference.html"><span class="micon cl"></span><span>ShapeDifference</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/SizeDifference.html"><span class="micon cl"></span><span>SizeDifference</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/Vari.html"><span class="micon cl"></span><span>Vari</span></a></span></div></div><div class="ni n2 "><span class="nh "><a href="math/AbsMatrix.html"><span class="micon cl"></span><span>AbsMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AbsVector.html"><span class="micon cl"></span><span>AbsVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AcosMatrix.html"><span class="micon cl"></span><span>AcosMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AcosVector.html"><span class="micon cl"></span><span>AcosVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AsinMatrix.html"><span class="micon cl"></span><span>AsinMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AsinVector.html"><span class="micon cl"></span><span>AsinVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AtanMatrix.html"><span class="micon cl"></span><span>AtanMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AtanVector.html"><span class="micon cl"></span><span>AtanVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Ax.html"><span class="micon cl"></span><span>Ax</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CbrtMatrix.html"><span class="micon cl"></span><span>CbrtMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CbrtVector.html"><span class="micon cl"></span><span>CbrtVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CeilMatrix.html"><span class="micon cl"></span><span>CeilMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CeilVector.html"><span class="micon cl"></span><span>CeilVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ExpMatrix.html"><span class="micon cl"></span><span>ExpMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ExpVector.html"><span class="micon cl"></span><span>ExpVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Expm1Matrix.html"><span class="micon cl"></span><span>Expm1Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Expm1Vector.html"><span class="micon cl"></span><span>Expm1Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/FloorMatrix.html"><span class="micon cl"></span><span>FloorMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/FloorVector.html"><span class="micon cl"></span><span>FloorVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log10Matrix.html"><span class="micon cl"></span><span>Log10Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log10Vector.html"><span class="micon cl"></span><span>Log10Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log1pMatrix.html"><span class="micon cl"></span><span>Log1pMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log1pVector.html"><span class="micon cl"></span><span>Log1pVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log2Matrix.html"><span class="micon cl"></span><span>Log2Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log2Vector.html"><span class="micon cl"></span><span>Log2Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/LogMatrix.html"><span class="micon cl"></span><span>LogMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/LogVector.html"><span class="micon cl"></span><span>LogVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixAddMatrix.html"><span class="micon cl"></span><span>MatrixAddMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixAddValue.html"><span class="micon cl"></span><span>MatrixAddValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixDivMatrix.html"><span class="micon cl"></span><span>MatrixDivMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixDivValue.html"><span class="micon cl"></span><span>MatrixDivValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixExpression.html"><span class="micon tr"></span><span>MatrixExpression</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixLift.html"><span class="micon cl"></span><span>MatrixLift</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMulMatrix.html"><span class="micon cl"></span><span>MatrixMulMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMulValue.html"><span class="micon cl"></span><span>MatrixMulValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMultiplication.html"><span class="micon cl"></span><span>MatrixMultiplication</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMultiplicationChain.html"><span class="micon cl"></span><span>MatrixMultiplicationChain</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixOrderOptimization.html"><span class="micon cl"></span><span>MatrixOrderOptimization</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixSubMatrix.html"><span class="micon cl"></span><span>MatrixSubMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixSubValue.html"><span class="micon cl"></span><span>MatrixSubValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixTranspose.html"><span class="micon cl"></span><span>MatrixTranspose</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/RoundMatrix.html"><span class="micon cl"></span><span>RoundMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/RoundVector.html"><span class="micon cl"></span><span>RoundVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SinMatrix.html"><span class="micon cl"></span><span>SinMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SinVector.html"><span class="micon cl"></span><span>SinVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Slice.html"><span class="micon cl"></span><span>Slice</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SqrtMatrix.html"><span class="micon cl"></span><span>SqrtMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SqrtVector.html"><span class="micon cl"></span><span>SqrtVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanMatrix.html"><span class="micon cl"></span><span>TanMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanVector.html"><span class="micon cl"></span><span>TanVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanhMatrix.html"><span class="micon cl"></span><span>TanhMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanhVector.html"><span class="micon cl"></span><span>TanhVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueAddMatrix.html"><span class="micon cl"></span><span>ValueAddMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueAddVector.html"><span class="micon cl"></span><span>ValueAddVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueDivMatrix.html"><span class="micon cl"></span><span>ValueDivMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueDivVector.html"><span class="micon cl"></span><span>ValueDivVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueMulMatrix.html"><span class="micon cl"></span><span>ValueMulMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueMulVector.html"><span class="micon cl"></span><span>ValueMulVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueSubMatrix.html"><span class="micon cl"></span><span>ValueSubMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueSubVector.html"><span class="micon cl"></span><span>ValueSubVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorAddValue.html"><span class="micon cl"></span><span>VectorAddValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorAddVector.html"><span class="micon cl"></span><span>VectorAddVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorDivValue.html"><span class="micon cl"></span><span>VectorDivValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorDivVector.html"><span class="micon cl"></span><span>VectorDivVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorExpression.html"><span class="micon tr"></span><span>VectorExpression</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorLift.html"><span class="micon cl"></span><span>VectorLift</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorMulValue.html"><span class="micon cl"></span><span>VectorMulValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorMulVector.html"><span class="micon cl"></span><span>VectorMulVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorSubValue.html"><span class="micon cl"></span><span>VectorSubValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorSubVector.html"><span class="micon cl"></span><span>VectorSubVector</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="nlp.html"><span class="micon pa"></span><span>nlp</span></a></span><div class="ni n2 "><span class="nh "><a href="nlp/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="plot.html"><span class="micon pa"></span><span>plot</span></a></span><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="plot/swing.html"><span class="micon pa"></span><span>swing</span></a></span><div class="ni n3 "><span class="nh "><a href="plot/swing/CanvasWindow.html"><span class="micon cl"></span><span>CanvasWindow</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/Html$.html"><span class="micon ob"></span><span>Html</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/JWindow.html"><span class="micon tr"></span><span>JWindow</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/JWindow$.html"><span class="micon ob"></span><span>JWindow</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/PlotGridWindow.html"><span class="micon cl"></span><span>PlotGridWindow</span></a></span></div></div><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="plot/vega.html"><span class="micon pa"></span><span>vega</span></a></span><div class="ni n3 "><span class="nh "><a href="plot/vega/Facet.html"><span class="micon tr"></span><span>Facet</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/Facet$.html"><span class="micon ob"></span><span>Facet</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/Layer.html"><span class="micon tr"></span><span>Layer</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/VegaLite.html"><span class="micon tr"></span><span>VegaLite</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/VegaLite$.html"><span class="micon ob"></span><span>VegaLite</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/View.html"><span class="micon tr"></span><span>View</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/View$.html"><span class="micon ob"></span><span>View</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/ViewComposition.html"><span class="micon tr"></span><span>ViewComposition</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/ViewLayoutComposition.html"><span class="micon tr"></span><span>ViewLayoutComposition</span></a></span></div></div><div class="ni n2 "><span class="nh "><a href="plot/Render$.html"><span class="micon ob"></span><span>Render</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="regression.html"><span class="micon pa"></span><span>regression</span></a></span><div class="ni n2 "><span class="nh "><a href="regression/gpr$.html"><span class="micon ob"></span><span>gpr</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="sequence.html"><span class="micon pa"></span><span>sequence</span></a></span><div class="ni n2 "><span class="nh "><a href="sequence/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="util.html"><span class="micon pa"></span><span>util</span></a></span><div class="ni n2 "><span class="nh "><a href="util/time$.html"><span class="micon ob"></span><span>time</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="validation.html"><span class="micon pa"></span><span>validation</span></a></span><div class="ni n2 "><span class="nh "><a href="validation/bootstrap$.html"><span class="micon ob"></span><span>bootstrap</span></a></span></div><div class="ni n2 "><span class="nh "><a href="validation/cv$.html"><span class="micon ob"></span><span>cv</span></a></span></div><div class="ni n2 "><span class="nh "><a href="validation/loocv$.html"><span class="micon ob"></span><span>loocv</span></a></span></div><div class="ni n2 "><span class="nh "><a href="validation/validate$.html"><span class="micon ob"></span><span>validate</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="wavelet.html"><span class="micon pa"></span><span>wavelet</span></a></span><div class="ni n2 "><span class="nh "><a href="wavelet/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1 expanded"><span class="nh h100 selected"><a href="#"><span class="micon ob"></span><span>read</span></a></span></div><div class="ni n1 "><span class="nh "><a href="write$.html"><span class="micon ob"></span><span>write</span></a></span></div></div></nav></div><div id="footer" class="body-small"><div class="left-container">Generated with</div><div class="right-container"><div class="text">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
+<script type="text/javascript" src="https://haifengl.github.io/api/java/script-dir/gtag.js"></script>
+Use is subject to license terms.</div></div><div class="text-mobile">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div><div id="scaladoc-searchBar"></div><div id="main"><div class="breadcrumbs container"><a href="../index.html">Smile</a>/<a href="../smile.html">smile</a>/<a href="read$.html">read</a></div><div id="content" class="body-medium"><div><div class="cover-header">
+ <span class="icon"><span class="micon ob"></span></span>
+ <h1 class="h600 single">read</h1>
+</div>
+<div class="fqname body-large">
+ <span>smile.read</span>
+</div>
+<div class="main-signature mono-small-block">
+ <div class="signature">
+  <span class="modifiers"></span><span class="kind"><span t="k">object </span></span><a href="read$.html" t="n" class="documentableName ">read</a>
+ </div>
+</div>
+<div class="cover">
+ <div class="doc">
+  <p>Data loading utilities.</p>
+ </div>
+ <section id="attributes">
+  <h2 class="h500">Attributes</h2>
+  <dl class="attributes">
+   <dt class="body-small">
+    Graph
+   </dt>
+   <dd class="body-medium">
+    <div id="inheritance-diagram" class="diagram-class showGraph">
+     <button type="button" class="label-only-button" onclick="zoomOut()">Reset zoom</button><button type="button" class="label-only-button" onclick="hideGraph()">Hide graph</button><button type="button" class="label-only-button" onclick="showGraph()">Show graph</button>
+     <svg id="graph"></svg>
+     <script type="text/dot" id="dot"> digraph g {
+ node0 [id=node0, label="<span style=\"color: #FFFFFF;\">object <a href=\"read$.html\" t=\"n\">read</a></span>", class="object vertex"];
+node1 [id=node1, label="<span style=\"color: #FFFFFF;\">class <span data-unresolved-link=\"\" t=\"n\">Object</span></span>", class="class vertex"];
+node2 [id=node2, label="<span style=\"color: #FFFFFF;\">class <span data-unresolved-link=\"\" t=\"n\">Any</span></span>", class="class vertex"];
+node3 [id=node3, label="<span style=\"color: #FFFFFF;\">trait <span data-unresolved-link=\"\" t=\"n\">Matchable</span></span>", class="trait vertex"];
+
+
+ node0 -> node1;
+node1 -> node2;
+node1 -> node3;
+node3 -> node2;
+
+}
+</script>
+    </div>
+   </dd>
+   <dt class="body-small">
+    Supertypes
+   </dt>
+   <dd class="body-medium">
+    <div class="mono-small-block supertypes">
+     <div>
+      class <span data-unresolved-link="" t="n">Object</span>
+     </div>
+     <div>
+      trait <span data-unresolved-link="" t="n">Matchable</span>
+     </div>
+     <div>
+      class <span data-unresolved-link="" t="n">Any</span>
+     </div><span></span>
+    </div>
+   </dd>
+   <dt class="body-small">
+    Self type
+   </dt>
+   <dd class="body-medium">
+    <div class="mono-small-block supertypes">
+     <span></span>
+     <div>
+      <a href="read$.html" t="n">read</a>.<span t="k">type</span>
+     </div>
+    </div>
+   </dd>
+  </dl>
+ </section>
+</div>
+<section id="members-list">
+ <h2 class="h500">Members list</h2>
+ <div class="documentableFilter">
+  <div class="filtersContainer"></div><input class="filterableInput" placeholder="Filter by any phrase" data-test-id="filterBarInput" type="search"><button class="clearButton label-only-button" data-test-id="filterBarClearButton">Clear all</button>
+ </div>
+ <div class="membersList expand">
+  <div class="tabs">
+   <div class="contents">
+    <section id="Value-members">
+     <div data-togglable="Value members" class="tab expand">
+      <div class="member-group-header">
+       <h3 data-togglable="Value members" class="h400">Value members</h3>
+      </div>
+      <section id="Concrete-methods">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Concrete methods</h4>
+        </div>
+        <div class="documentableElement" id="apply-fffff5f8">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#apply-fffff5f8" t="n" class="documentableName ">apply</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">AnyRef</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a serialized object from a file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a serialized object from a file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="apply-fffff6e4">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#apply-fffff6e4" t="n" class="documentableName ">apply</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>): <span data-unresolved-link="" t="t">AnyRef</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a serialized object from a file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a serialized object from a file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="arff-fffff00a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#arff-fffff00a" t="n" class="documentableName ">arff</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an ARFF file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an ARFF file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="arff-af6">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#arff-af6" t="n" class="documentableName ">arff</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an ARFF file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an ARFF file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="arrow-fffff00a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#arrow-fffff00a" t="n" class="documentableName ">arrow</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an Apache Arrow file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an Apache Arrow file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="arrow-af6">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#arrow-af6" t="n" class="documentableName ">arrow</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an Apache Arrow file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an Apache Arrow file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="avro-fffff96e">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#avro-fffff96e" t="n" class="documentableName ">avro</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <span data-unresolved-link="" t="t">InputStream</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an Apache Avro file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an Apache Avro file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="avro-fffff7ef">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#avro-fffff7ef" t="n" class="documentableName ">avro</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an Apache Avro file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an Apache Avro file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="avro-f02">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#avro-f02" t="n" class="documentableName ">avro</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <span data-unresolved-link="" t="t">InputStream</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an Apache Avro file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an Apache Avro file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="avro-fffff587">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#avro-fffff587" t="n" class="documentableName ">avro</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <span data-unresolved-link="" t="t">Path</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an Apache Avro file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an Apache Avro file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="csv-19c">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#csv-19c" t="n" class="documentableName ">csv</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>, <span t="k"></span><span data-unresolved-link="" t="n">delimiter</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>, <span t="k"></span><span data-unresolved-link="" t="n">header</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Boolean.html" t="t">Boolean</a>, <span t="k"></span><span data-unresolved-link="" t="n">quote</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Char.html" t="t">Char</a>, <span t="k"></span><span data-unresolved-link="" t="n">escape</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Char.html" t="t">Char</a>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <span data-unresolved-link="" t="t">StructType</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a CSV file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a CSV file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="csv-fffffb30">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#csv-fffffb30" t="n" class="documentableName ">csv</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>, <span t="k"></span><span data-unresolved-link="" t="n">delimiter</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>, <span t="k"></span><span data-unresolved-link="" t="n">header</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Boolean.html" t="t">Boolean</a>, <span t="k"></span><span data-unresolved-link="" t="n">quote</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Char.html" t="t">Char</a>, <span t="k"></span><span data-unresolved-link="" t="n">escape</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Char.html" t="t">Char</a>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <span data-unresolved-link="" t="t">StructType</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a CSV file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a CSV file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="csv-ea8">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#csv-ea8" t="n" class="documentableName ">csv</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>, <span t="k"></span><span data-unresolved-link="" t="n">format</span>: <span data-unresolved-link="" t="t">CSVFormat</span>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <span data-unresolved-link="" t="t">StructType</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a CSV file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a CSV file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="csv-a94">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#csv-a94" t="n" class="documentableName ">csv</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>, <span t="k"></span><span data-unresolved-link="" t="n">format</span>: <span data-unresolved-link="" t="t">CSVFormat</span>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <span data-unresolved-link="" t="t">StructType</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a CSV file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a CSV file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="data-fffff7ef">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#data-fffff7ef" t="n" class="documentableName ">data</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">path</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>, <span t="k"></span><span data-unresolved-link="" t="n">format</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a data file. Infers the data format by the file name extension.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a data file. Infers the data format by the file name extension.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               format
+              </dt>
+              <dd class="body-medium">
+               <p>the optional file format specification. For csv files, it is such as <code>delimiter=\t,header=true,comment=#,escape=,quote="</code>. For json files, it is the file mode (single-line or multi-line). For avro files, it is the path to the schema file.</p>
+              </dd>
+              <dt class="body-small">
+               path
+              </dt>
+              <dd class="body-medium">
+               <p>the input file path.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Returns
+              </dt>
+              <dd class="body-medium">
+               <p>the data frame.</p>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="jdbc-fffffb9e">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#jdbc-fffffb9e" t="n" class="documentableName ">jdbc</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">rs</span>: <span data-unresolved-link="" t="t">ResultSet</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a JDBC query result to a data frame.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a JDBC query result to a data frame.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="json-fffff00a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#json-fffff00a" t="n" class="documentableName ">json</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a JSON file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a JSON file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="json-af6">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#json-af6" t="n" class="documentableName ">json</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a JSON file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a JSON file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="json-21c">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#json-21c" t="n" class="documentableName ">json</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>, <span t="k"></span><span data-unresolved-link="" t="n">mode</span>: <span data-unresolved-link="" t="t">Mode</span>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <span data-unresolved-link="" t="t">StructType</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a JSON file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a JSON file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="json-6b0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#json-6b0" t="n" class="documentableName ">json</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>, <span t="k"></span><span data-unresolved-link="" t="n">mode</span>: <span data-unresolved-link="" t="t">Mode</span>, <span t="k"></span><span data-unresolved-link="" t="n">schema</span>: <span data-unresolved-link="" t="t">StructType</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a JSON file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a JSON file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="libsvm-edf">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#libsvm-edf" t="n" class="documentableName ">libsvm</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">SparseDataset</span>[<span data-unresolved-link="" t="t">Integer</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a LivSVM file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a LivSVM file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="libsvm-fffff3cb">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#libsvm-fffff3cb" t="n" class="documentableName ">libsvm</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>): <span data-unresolved-link="" t="t">SparseDataset</span>[<span data-unresolved-link="" t="t">Integer</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a LivSVM file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a LivSVM file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="parquet-fffff00a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#parquet-fffff00a" t="n" class="documentableName ">parquet</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an Apache Parquet file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an Apache Parquet file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="parquet-af6">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#parquet-af6" t="n" class="documentableName ">parquet</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads an Apache Parquet file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads an Apache Parquet file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="sas-fffff00a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#sas-fffff00a" t="n" class="documentableName ">sas</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a SAS7BDAT file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a SAS7BDAT file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="sas-af6">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#sas-af6" t="n" class="documentableName ">sas</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>): <span data-unresolved-link="" t="t">DataFrame</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a SAS7BDAT file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a SAS7BDAT file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="wavefront-fffff617">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#wavefront-fffff617" t="n" class="documentableName ">wavefront</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): (<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>]])
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a Wavefront OBJ file.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a Wavefront OBJ file.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="wavefront-fffffd03">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="read$.html#wavefront-fffffd03" t="n" class="documentableName ">wavefront</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">file</span>: <span data-unresolved-link="" t="t">Path</span>): (<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>]])
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Reads a Wavefront OBJ file. The OBJ file format is a simple format of 3D geometry including the position of each vertex, the UV position of each texture coordinate vertex, vertex normals, and the faces that make each polygon defined as a list of vertices, and texture vertices. Vertices are stored in a counter-clockwise order by default, making explicit declaration of face normals unnecessary. OBJ coordinates have no units, but OBJ files can contain scale information in a human readable comment line.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Reads a Wavefront OBJ file. The OBJ file format is a simple format of 3D geometry including the position of each vertex, the UV position of each texture coordinate vertex, vertex normals, and the faces that make each polygon defined as a list of vertices, and texture vertices. Vertices are stored in a counter-clockwise order by default, making explicit declaration of face normals unnecessary. OBJ coordinates have no units, but OBJ files can contain scale information in a human readable comment line.</p>
+              <p>Note that we parse only vertex and face elements. All other information ignored.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               file
+              </dt>
+              <dd class="body-medium">
+               <p>the file path</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Returns
+              </dt>
+              <dd class="body-medium">
+               <p>a tuple of vertex array and edge array.</p>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+</section></div><div id="toc" class="body-small"><div id="toc-container"><span class="toc-title h200">In this article</span><nav class="toc-nav"><ul class="toc-list"><li><a href="#attributes">Attributes</a></li><li><a href="#members-list">Members list</a><ul><li><a href="#Value-members">Value members</a><ul><li><a href="#Concrete-methods">Concrete methods</a></li></ul></li></ul></li></ul></nav></div></div></div><div id="footer" class="body-small mobile-footer"><div class="left-container">Generated with</div><div class="right-container"><div class="text">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div><div class="text-mobile">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div></div></div></body></html>

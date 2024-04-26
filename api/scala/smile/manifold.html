@@ -1,0 +1,635 @@
+<!DOCTYPE html><html data-pathToRoot="../"><head><meta charset="utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta><title>smile.manifold</title><link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"></link><script type="text/javascript" src="../scripts/theme.js"></script><script type="text/javascript" src="../scripts/searchData.js" defer="true"></script><script type="text/javascript" src="../scripts/scastieConfiguration.js" defer="true"></script><link rel="stylesheet" href="../styles/theme/bundle.css"></link><link rel="stylesheet" href="../styles/theme/components/bundle.css"></link><link rel="stylesheet" href="../styles/theme/components/button/bundle.css"></link><link rel="stylesheet" href="../styles/theme/layout/bundle.css"></link><link rel="stylesheet" href="../styles/nord-light.css"></link><link rel="stylesheet" href="../styles/dotty-icons.css"></link><link rel="stylesheet" href="../styles/filter-bar.css"></link><link rel="stylesheet" href="../styles/code-snippets.css"></link><link rel="stylesheet" href="../styles/searchbar.css"></link><link rel="stylesheet" href="../styles/social-links.css"></link><link rel="stylesheet" href="../styles/versions-dropdown.css"></link><link rel="stylesheet" href="../styles/content-contributors.css"></link><link rel="stylesheet" href="../styles/fontawesome.css"></link><script type="text/javascript" src="../hljs/highlight.pack.js" defer="true"></script><script type="text/javascript" src="../scripts/hljs-scala3.js" defer="true"></script><script type="text/javascript" src="../scripts/ux.js" defer="true"></script><script type="text/javascript" src="../scripts/common/component.js" defer="true"></script><script type="text/javascript" src="../scripts/common/utils.js" defer="true"></script><script type="text/javascript" src="../scripts/components/FilterBar.js" defer="true"></script><script type="text/javascript" src="../scripts/components/DocumentableList.js" defer="true"></script><script type="text/javascript" src="../scripts/components/Input.js" defer="true"></script><script type="text/javascript" src="../scripts/components/FilterGroup.js" defer="true"></script><script type="text/javascript" src="../scripts/components/Filter.js" defer="true"></script><script type="text/javascript" src="../scripts/scaladoc-scalajs.js" defer="true"></script><script type="text/javascript" src="../scripts/contributors.js" defer="true"></script><script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js" defer="true"></script><script type="text/javascript" src="https://d3js.org/d3.v6.min.js" defer="true"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/graphlib-dot@0.6.2/dist/graphlib-dot.min.js" defer="true"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dagre-d3/0.6.1/dagre-d3.min.js" defer="true"></script><script type="text/javascript" src="https://scastie.scala-lang.org/embedded.js" defer="true"></script><script type="text/javascript" src="../scripts/data.js" defer="true"></script><link rel="stylesheet" href="../styles/apistyles.css"></link><script>var pathToRoot = "../";</script></head><body><div id=""><div id="header" class="body-small"><div class="header-container-left"><a href="../" class="logo-container"><span id="project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span class="project-name h300">Smile</span></a><span onclick="dropdownHandler(event)" class="text-button with-arrow" id="dropdown-trigger"><a><div class="projectVersion">3.1.0</div></a></span><div id="version-dropdown" class="dropdown-menu"></div></div><div class="header-container-right"><button id="search-toggle" class="icon-button"></button><span id="theme-toggle" class="icon-button"></span><span id="mobile-menu-toggle" class="icon-button hamburger"></span></div></div><div id="mobile-menu"><div class="mobile-menu-header body-small"><span class="mobile-menu-logo"><span id="project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span class="project-name h300">Smile</span></span><button id="mobile-menu-close" class="icon-button close"></button></div><div class="mobile-menu-container body-medium"><input id="mobile-scaladoc-searchbar-input" class="scaladoc-searchbar-input" type="search" placeholder="Find anything"></input><span id="mobile-theme-toggle" class="mobile-menu-item mode"></span></div></div><span id="mobile-sidebar-toggle" class="floating-button"></span><div id="leftColumn" class="body-small"><div class="switcher-container"><a id="api-nav-button" class="switcher h100 selected" href="../index.html">API</a></div><nav id="api-nav" class="side-menu"><div class="ni n0 expanded"><span class="nh h100 expanded cs"><button class="ar icon-button expanded"></button><a href="../smile.html"><span class="micon pa"></span><span>smile</span></a></span><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="association.html"><span class="micon pa"></span><span>association</span></a></span><div class="ni n2 "><span class="nh "><a href="association/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="cas.html"><span class="micon pa"></span><span>cas</span></a></span><div class="ni n2 "><span class="nh "><a href="cas/Abs.html"><span class="micon cl"></span><span>Abs</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Add.html"><span class="micon cl"></span><span>Add</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/AddMatrix.html"><span class="micon cl"></span><span>AddMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/AddVector.html"><span class="micon cl"></span><span>AddVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcCos.html"><span class="micon cl"></span><span>ArcCos</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcCot.html"><span class="micon cl"></span><span>ArcCot</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcSin.html"><span class="micon cl"></span><span>ArcSin</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcTan.html"><span class="micon cl"></span><span>ArcTan</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Ceil.html"><span class="micon cl"></span><span>Ceil</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Const.html"><span class="micon cl"></span><span>Const</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ConstMatrix.html"><span class="micon cl"></span><span>ConstMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ConstVector.html"><span class="micon cl"></span><span>ConstVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Cos.html"><span class="micon cl"></span><span>Cos</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Cot.html"><span class="micon cl"></span><span>Cot</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/DiagonalMatrix.html"><span class="micon cl"></span><span>DiagonalMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Div.html"><span class="micon cl"></span><span>Div</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Exp.html"><span class="micon cl"></span><span>Exp</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Floor.html"><span class="micon cl"></span><span>Floor</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/GradientVector.html"><span class="micon cl"></span><span>GradientVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IdentityMatrix.html"><span class="micon cl"></span><span>IdentityMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/InnerProduct.html"><span class="micon cl"></span><span>InnerProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Int2Scalar.html"><span class="micon cl"></span><span>Int2Scalar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntAdd.html"><span class="micon cl"></span><span>IntAdd</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntConst.html"><span class="micon cl"></span><span>IntConst</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntDiv.html"><span class="micon cl"></span><span>IntDiv</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntMul.html"><span class="micon cl"></span><span>IntMul</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntNeg.html"><span class="micon cl"></span><span>IntNeg</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntPower.html"><span class="micon cl"></span><span>IntPower</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntScalar.html"><span class="micon tr"></span><span>IntScalar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntSub.html"><span class="micon cl"></span><span>IntSub</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntVal.html"><span class="micon cl"></span><span>IntVal</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntVar.html"><span class="micon cl"></span><span>IntVar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Log.html"><span class="micon cl"></span><span>Log</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Matrix.html"><span class="micon tr"></span><span>Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixInverse.html"><span class="micon cl"></span><span>MatrixInverse</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixProduct.html"><span class="micon cl"></span><span>MatrixProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixTranspose.html"><span class="micon cl"></span><span>MatrixTranspose</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixVar.html"><span class="micon cl"></span><span>MatrixVar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixVectorProduct.html"><span class="micon cl"></span><span>MatrixVectorProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Mod.html"><span class="micon cl"></span><span>Mod</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Mul.html"><span class="micon cl"></span><span>Mul</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Neg.html"><span class="micon cl"></span><span>Neg</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/NegMatrix.html"><span class="micon cl"></span><span>NegMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/NegVector.html"><span class="micon cl"></span><span>NegVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/OneMatrix.html"><span class="micon cl"></span><span>OneMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/OneVector.html"><span class="micon cl"></span><span>OneVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/OuterProduct.html"><span class="micon cl"></span><span>OuterProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Power.html"><span class="micon cl"></span><span>Power</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Round.html"><span class="micon cl"></span><span>Round</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/RowMatrix.html"><span class="micon cl"></span><span>RowMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Scalar.html"><span class="micon tr"></span><span>Scalar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ScalarMatrixProduct.html"><span class="micon cl"></span><span>ScalarMatrixProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ScalarVectorProduct.html"><span class="micon cl"></span><span>ScalarVectorProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Sin.html"><span class="micon cl"></span><span>Sin</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Sub.html"><span class="micon cl"></span><span>Sub</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Tan.html"><span class="micon cl"></span><span>Tan</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/TangentMatrix.html"><span class="micon cl"></span><span>TangentMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/TangentVector.html"><span class="micon cl"></span><span>TangentVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Tensor.html"><span class="micon tr"></span><span>Tensor</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Val.html"><span class="micon cl"></span><span>Val</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Var.html"><span class="micon cl"></span><span>Var</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Vars.html"><span class="micon cl"></span><span>Vars</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Vector.html"><span class="micon tr"></span><span>Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/VectorVal.html"><span class="micon cl"></span><span>VectorVal</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/VectorVar.html"><span class="micon cl"></span><span>VectorVar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ZeroMatrix.html"><span class="micon cl"></span><span>ZeroMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ZeroVector.html"><span class="micon cl"></span><span>ZeroVector</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="classification.html"><span class="micon pa"></span><span>classification</span></a></span><div class="ni n2 "><span class="nh "><a href="classification/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="clustering.html"><span class="micon pa"></span><span>clustering</span></a></span><div class="ni n2 "><span class="nh "><a href="clustering/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="data.html"><span class="micon pa"></span><span>data</span></a></span><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="data/formula.html"><span class="micon pa"></span><span>formula</span></a></span><div class="ni n3 "><span class="nh "><a href="data/formula/FormulaBuilder.html"><span class="micon cl"></span><span>FormulaBuilder</span></a></span></div></div><div class="ni n2 "><span class="nh "><a href="data/DataFrameOps.html"><span class="micon cl"></span><span>DataFrameOps</span></a></span></div><div class="ni n2 "><span class="nh "><a href="data/TupleOps.html"><span class="micon cl"></span><span>TupleOps</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="feature/extraction.html"><span class="micon pa"></span><span>feature.extraction</span></a></span><div class="ni n2 "><span class="nh "><a href="feature/extraction/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1 expanded"><span class="nh h100 selected"><button class="ar icon-button expanded"></button><a href="#"><span class="micon pa"></span><span>manifold</span></a></span><div class="ni n2 "><span class="nh "><a href="manifold/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="math.html"><span class="micon pa"></span><span>math</span></a></span><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="math/distance.html"><span class="micon pa"></span><span>distance</span></a></span><div class="ni n3 "><span class="nh "><a href="math/distance/Hamming.html"><span class="micon cl"></span><span>Hamming</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/MeanMahanttan.html"><span class="micon cl"></span><span>MeanMahanttan</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/PatternDifference.html"><span class="micon cl"></span><span>PatternDifference</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/ShapeDifference.html"><span class="micon cl"></span><span>ShapeDifference</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/SizeDifference.html"><span class="micon cl"></span><span>SizeDifference</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/Vari.html"><span class="micon cl"></span><span>Vari</span></a></span></div></div><div class="ni n2 "><span class="nh "><a href="math/AbsMatrix.html"><span class="micon cl"></span><span>AbsMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AbsVector.html"><span class="micon cl"></span><span>AbsVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AcosMatrix.html"><span class="micon cl"></span><span>AcosMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AcosVector.html"><span class="micon cl"></span><span>AcosVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AsinMatrix.html"><span class="micon cl"></span><span>AsinMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AsinVector.html"><span class="micon cl"></span><span>AsinVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AtanMatrix.html"><span class="micon cl"></span><span>AtanMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AtanVector.html"><span class="micon cl"></span><span>AtanVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Ax.html"><span class="micon cl"></span><span>Ax</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CbrtMatrix.html"><span class="micon cl"></span><span>CbrtMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CbrtVector.html"><span class="micon cl"></span><span>CbrtVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CeilMatrix.html"><span class="micon cl"></span><span>CeilMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CeilVector.html"><span class="micon cl"></span><span>CeilVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ExpMatrix.html"><span class="micon cl"></span><span>ExpMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ExpVector.html"><span class="micon cl"></span><span>ExpVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Expm1Matrix.html"><span class="micon cl"></span><span>Expm1Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Expm1Vector.html"><span class="micon cl"></span><span>Expm1Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/FloorMatrix.html"><span class="micon cl"></span><span>FloorMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/FloorVector.html"><span class="micon cl"></span><span>FloorVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log10Matrix.html"><span class="micon cl"></span><span>Log10Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log10Vector.html"><span class="micon cl"></span><span>Log10Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log1pMatrix.html"><span class="micon cl"></span><span>Log1pMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log1pVector.html"><span class="micon cl"></span><span>Log1pVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log2Matrix.html"><span class="micon cl"></span><span>Log2Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log2Vector.html"><span class="micon cl"></span><span>Log2Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/LogMatrix.html"><span class="micon cl"></span><span>LogMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/LogVector.html"><span class="micon cl"></span><span>LogVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixAddMatrix.html"><span class="micon cl"></span><span>MatrixAddMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixAddValue.html"><span class="micon cl"></span><span>MatrixAddValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixDivMatrix.html"><span class="micon cl"></span><span>MatrixDivMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixDivValue.html"><span class="micon cl"></span><span>MatrixDivValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixExpression.html"><span class="micon tr"></span><span>MatrixExpression</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixLift.html"><span class="micon cl"></span><span>MatrixLift</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMulMatrix.html"><span class="micon cl"></span><span>MatrixMulMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMulValue.html"><span class="micon cl"></span><span>MatrixMulValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMultiplication.html"><span class="micon cl"></span><span>MatrixMultiplication</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMultiplicationChain.html"><span class="micon cl"></span><span>MatrixMultiplicationChain</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixOrderOptimization.html"><span class="micon cl"></span><span>MatrixOrderOptimization</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixSubMatrix.html"><span class="micon cl"></span><span>MatrixSubMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixSubValue.html"><span class="micon cl"></span><span>MatrixSubValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixTranspose.html"><span class="micon cl"></span><span>MatrixTranspose</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/RoundMatrix.html"><span class="micon cl"></span><span>RoundMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/RoundVector.html"><span class="micon cl"></span><span>RoundVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SinMatrix.html"><span class="micon cl"></span><span>SinMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SinVector.html"><span class="micon cl"></span><span>SinVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Slice.html"><span class="micon cl"></span><span>Slice</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SqrtMatrix.html"><span class="micon cl"></span><span>SqrtMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SqrtVector.html"><span class="micon cl"></span><span>SqrtVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanMatrix.html"><span class="micon cl"></span><span>TanMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanVector.html"><span class="micon cl"></span><span>TanVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanhMatrix.html"><span class="micon cl"></span><span>TanhMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanhVector.html"><span class="micon cl"></span><span>TanhVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueAddMatrix.html"><span class="micon cl"></span><span>ValueAddMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueAddVector.html"><span class="micon cl"></span><span>ValueAddVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueDivMatrix.html"><span class="micon cl"></span><span>ValueDivMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueDivVector.html"><span class="micon cl"></span><span>ValueDivVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueMulMatrix.html"><span class="micon cl"></span><span>ValueMulMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueMulVector.html"><span class="micon cl"></span><span>ValueMulVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueSubMatrix.html"><span class="micon cl"></span><span>ValueSubMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueSubVector.html"><span class="micon cl"></span><span>ValueSubVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorAddValue.html"><span class="micon cl"></span><span>VectorAddValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorAddVector.html"><span class="micon cl"></span><span>VectorAddVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorDivValue.html"><span class="micon cl"></span><span>VectorDivValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorDivVector.html"><span class="micon cl"></span><span>VectorDivVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorExpression.html"><span class="micon tr"></span><span>VectorExpression</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorLift.html"><span class="micon cl"></span><span>VectorLift</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorMulValue.html"><span class="micon cl"></span><span>VectorMulValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorMulVector.html"><span class="micon cl"></span><span>VectorMulVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorSubValue.html"><span class="micon cl"></span><span>VectorSubValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorSubVector.html"><span class="micon cl"></span><span>VectorSubVector</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="nlp.html"><span class="micon pa"></span><span>nlp</span></a></span><div class="ni n2 "><span class="nh "><a href="nlp/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="plot.html"><span class="micon pa"></span><span>plot</span></a></span><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="plot/swing.html"><span class="micon pa"></span><span>swing</span></a></span><div class="ni n3 "><span class="nh "><a href="plot/swing/CanvasWindow.html"><span class="micon cl"></span><span>CanvasWindow</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/Html$.html"><span class="micon ob"></span><span>Html</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/JWindow.html"><span class="micon tr"></span><span>JWindow</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/JWindow$.html"><span class="micon ob"></span><span>JWindow</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/PlotGridWindow.html"><span class="micon cl"></span><span>PlotGridWindow</span></a></span></div></div><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="plot/vega.html"><span class="micon pa"></span><span>vega</span></a></span><div class="ni n3 "><span class="nh "><a href="plot/vega/Facet.html"><span class="micon tr"></span><span>Facet</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/Facet$.html"><span class="micon ob"></span><span>Facet</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/Layer.html"><span class="micon tr"></span><span>Layer</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/VegaLite.html"><span class="micon tr"></span><span>VegaLite</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/VegaLite$.html"><span class="micon ob"></span><span>VegaLite</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/View.html"><span class="micon tr"></span><span>View</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/View$.html"><span class="micon ob"></span><span>View</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/ViewComposition.html"><span class="micon tr"></span><span>ViewComposition</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/ViewLayoutComposition.html"><span class="micon tr"></span><span>ViewLayoutComposition</span></a></span></div></div><div class="ni n2 "><span class="nh "><a href="plot/Render$.html"><span class="micon ob"></span><span>Render</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="regression.html"><span class="micon pa"></span><span>regression</span></a></span><div class="ni n2 "><span class="nh "><a href="regression/gpr$.html"><span class="micon ob"></span><span>gpr</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="sequence.html"><span class="micon pa"></span><span>sequence</span></a></span><div class="ni n2 "><span class="nh "><a href="sequence/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="util.html"><span class="micon pa"></span><span>util</span></a></span><div class="ni n2 "><span class="nh "><a href="util/time$.html"><span class="micon ob"></span><span>time</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="validation.html"><span class="micon pa"></span><span>validation</span></a></span><div class="ni n2 "><span class="nh "><a href="validation/bootstrap$.html"><span class="micon ob"></span><span>bootstrap</span></a></span></div><div class="ni n2 "><span class="nh "><a href="validation/cv$.html"><span class="micon ob"></span><span>cv</span></a></span></div><div class="ni n2 "><span class="nh "><a href="validation/loocv$.html"><span class="micon ob"></span><span>loocv</span></a></span></div><div class="ni n2 "><span class="nh "><a href="validation/validate$.html"><span class="micon ob"></span><span>validate</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="wavelet.html"><span class="micon pa"></span><span>wavelet</span></a></span><div class="ni n2 "><span class="nh "><a href="wavelet/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1 "><span class="nh "><a href="read$.html"><span class="micon ob"></span><span>read</span></a></span></div><div class="ni n1 "><span class="nh "><a href="write$.html"><span class="micon ob"></span><span>write</span></a></span></div></div></nav></div><div id="footer" class="body-small"><div class="left-container">Generated with</div><div class="right-container"><div class="text">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
+<script type="text/javascript" src="https://haifengl.github.io/api/java/script-dir/gtag.js"></script>
+Use is subject to license terms.</div></div><div class="text-mobile">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div><div id="scaladoc-searchBar"></div><div id="main"><div class="breadcrumbs container"><a href="../index.html">Smile</a>/<a href="../smile.html">smile</a>/<a href="manifold.html">smile.manifold</a></div><div id="content" class="body-medium"><div><div class="cover-header">
+ <span class="icon"><span class="micon pa"></span></span>
+ <h1 class="h600 single">smile.manifold</h1>
+</div>
+<div class="fqname body-large">
+ <span></span>
+</div>
+<div class="main-signature mono-small-block">
+ <div class="signature">
+  <span class="modifiers"></span><span class="kind"><span t="k">package </span></span><a href="manifold.html" t="n" class="documentableName ">smile.manifold</a>
+ </div>
+</div>
+<div class="cover">
+ <div class="doc">
+  <p>Manifold learning finds a low-dimensional basis for describing high-dimensional data. Manifold learning is a popular approach to nonlinear dimensionality reduction. Algorithms for this task are based on the idea that the dimensionality of many data sets is only artificially high; though each data point consists of perhaps thousands of features, it may be described as a function of only a few underlying parameters. That is, the data points are actually samples from a low-dimensional manifold that is embedded in a high-dimensional space. Manifold learning algorithms attempt to uncover these parameters in order to find a low-dimensional representation of the data.</p>
+  <p>Some prominent approaches are locally linear embedding (LLE), Hessian LLE, Laplacian eigenmaps, and LTSA. These techniques construct a low-dimensional data representation using a cost function that retains local properties of the data, and can be viewed as defining a graph-based kernel for Kernel PCA. More recently, techniques have been proposed that, instead of defining a fixed kernel, try to learn the kernel using semidefinite programming. The most prominent example of such a technique is maximum variance unfolding (MVU). The central idea of MVU is to exactly preserve all pairwise distances between nearest neighbors (in the inner product space), while maximizing the distances between points that are not nearest neighbors.</p>
+  <p>An alternative approach to neighborhood preservation is through the minimization of a cost function that measures differences between distances in the input and output spaces. Important examples of such techniques include classical multidimensional scaling (which is identical to PCA), Isomap (which uses geodesic distances in the data space), diffusion maps (which uses diffusion distances in the data space), t-SNE (which minimizes the divergence between distributions over pairs of points), and curvilinear component analysis.</p>
+ </div>
+ <section id="attributes">
+  <h2 class="h500">Attributes</h2>
+  <dl class="attributes"></dl>
+ </section>
+</div>
+<section id="members-list">
+ <h2 class="h500">Members list</h2>
+ <div class="documentableFilter">
+  <div class="filtersContainer"></div><input class="filterableInput" placeholder="Filter by any phrase" data-test-id="filterBarInput" type="search"><button class="clearButton label-only-button" data-test-id="filterBarClearButton">Clear all</button>
+ </div>
+ <div class="membersList expand">
+  <div class="tabs">
+   <div class="contents">
+    <section id="Type-members">
+     <div data-togglable="Type members" class="tab expand">
+      <div class="member-group-header">
+       <h3 data-togglable="Type members" class="h400">Type members</h3>
+      </div>
+      <section id="Classlikes">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Classlikes</h4>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">object </span></span><a href="manifold/$dummy$.html" t="n" class="documentableName ">$dummy</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Hacking scaladoc <a href="https://github.com/scala/bug/issues/8124">issue-8124</a>. The user should ignore this object.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Hacking scaladoc <a href="https://github.com/scala/bug/issues/8124">issue-8124</a>. The user should ignore this object.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Self type
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <span></span>
+                <div>
+                 <a href="manifold/$dummy$.html" t="n">$dummy</a>.<span t="k">type</span>
+                </div>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+    <section id="Value-members">
+     <div data-togglable="Value members" class="tab expand">
+      <div class="member-group-header">
+       <h3 data-togglable="Value members" class="h400">Value members</h3>
+      </div>
+      <section id="Concrete-methods">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Concrete methods</h4>
+        </div>
+        <div class="documentableElement" id="isomap-fffff00c">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="manifold.html#isomap-fffff00c" t="n" class="documentableName ">isomap</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">d</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">CIsomap</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Boolean.html" t="t">Boolean</a>): <span data-unresolved-link="" t="t">IsoMap</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Isometric feature mapping. Isomap is a widely used low-dimensional embedding methods, where geodesic distances on a weighted graph are incorporated with the classical multidimensional scaling. Isomap is used for computing a quasi-isometric, low-dimensional embedding of a set of high-dimensional data points. Isomap is highly efficient and generally applicable to a broad range of data sources and dimensionalities.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Isometric feature mapping. Isomap is a widely used low-dimensional embedding methods, where geodesic distances on a weighted graph are incorporated with the classical multidimensional scaling. Isomap is used for computing a quasi-isometric, low-dimensional embedding of a set of high-dimensional data points. Isomap is highly efficient and generally applicable to a broad range of data sources and dimensionalities.</p>
+              <p>To be specific, the classical MDS performs low-dimensional embedding based on the pairwise distance between data points, which is generally measured using straight-line Euclidean distance. Isomap is distinguished by its use of the geodesic distance induced by a neighborhood graph embedded in the classical scaling. This is done to incorporate manifold structure in the resulting embedding. Isomap defines the geodesic distance to be the sum of edge weights along the shortest path between two nodes. The top n eigenvectors of the geodesic distance matrix, represent the coordinates in the new n-dimensional Euclidean space.</p>
+              <p>The connectivity of each data point in the neighborhood graph is defined as its nearest k Euclidean neighbors in the high-dimensional space. This step is vulnerable to "short-circuit errors" if k is too large with respect to the manifold structure or if noise in the data moves the points slightly off the manifold. Even a single short-circuit error can alter many entries in the geodesic distance matrix, which in turn can lead to a drastically different (and incorrect) low-dimensional embedding. Conversely, if k is too small, the neighborhood graph may become too sparse to approximate geodesic paths accurately.</p>
+              <p>This class implements C-Isomap that involves magnifying the regions of high density and shrink the regions of low density of data points in the manifold. Edge weights that are maximized in Multi-Dimensional Scaling(MDS) are modified, with everything else remaining unaffected.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>J. B. Tenenbaum, V. de Silva and J. C. Langford A Global Geometric Framework for Nonlinear Dimensionality Reduction. Science 290(5500):2319-2323, 2000.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               CIsomap
+              </dt>
+              <dd class="body-medium">
+               <p>C-Isomap algorithm if true, otherwise standard algorithm.</p>
+              </dd>
+              <dt class="body-small">
+               d
+              </dt>
+              <dd class="body-medium">
+               <p>the dimension of the manifold.</p>
+              </dd>
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>k-nearest neighbor.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="isomds-3c0">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="manifold.html#isomds-3c0" t="n" class="documentableName ">isomds</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">proximity</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">tol</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">maxIter</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">IsotonicMDS</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Kruskal's nonmetric MDS. In non-metric MDS, only the rank order of entries in the proximity matrix (not the actual dissimilarities) is assumed to contain the significant information. Hence, the distances of the final configuration should as far as possible be in the same rank order as the original data. Note that a perfect ordinal re-scaling of the data into distances is usually not possible. The relationship is typically found using isotonic regression.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Kruskal's nonmetric MDS. In non-metric MDS, only the rank order of entries in the proximity matrix (not the actual dissimilarities) is assumed to contain the significant information. Hence, the distances of the final configuration should as far as possible be in the same rank order as the original data. Note that a perfect ordinal re-scaling of the data into distances is usually not possible. The relationship is typically found using isotonic regression.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the dimension of the projection.</p>
+              </dd>
+              <dt class="body-small">
+               maxIter
+              </dt>
+              <dd class="body-medium">
+               <p>maximum number of iterations.</p>
+              </dd>
+              <dt class="body-small">
+               proximity
+              </dt>
+              <dd class="body-medium">
+               <p>the non-negative proximity matrix of dissimilarities. The diagonal should be zero and all other elements should be positive and symmetric.</p>
+              </dd>
+              <dt class="body-small">
+               tol
+              </dt>
+              <dd class="body-medium">
+               <p>tolerance for stopping iterations.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="laplacian-d31">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="manifold.html#laplacian-d31" t="n" class="documentableName ">laplacian</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">d</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">t</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">LaplacianEigenmap</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Laplacian Eigenmap. Using the notion of the Laplacian of the nearest neighbor adjacency graph, Laplacian Eigenmap compute a low dimensional representation of the dataset that optimally preserves local neighborhood information in a certain sense. The representation map generated by the algorithm may be viewed as a discrete approximation to a continuous map that naturally arises from the geometry of the manifold.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Laplacian Eigenmap. Using the notion of the Laplacian of the nearest neighbor adjacency graph, Laplacian Eigenmap compute a low dimensional representation of the dataset that optimally preserves local neighborhood information in a certain sense. The representation map generated by the algorithm may be viewed as a discrete approximation to a continuous map that naturally arises from the geometry of the manifold.</p>
+              <p>The locality preserving character of the Laplacian Eigenmap algorithm makes it relatively insensitive to outliers and noise. It is also not prone to "short circuiting" as only the local distances are used.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>Mikhail Belkin and Partha Niyogi. Laplacian Eigenmaps and Spectral Techniques for Embedding and Clustering. NIPS, 2001.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               d
+              </dt>
+              <dd class="body-medium">
+               <p>the dimension of the manifold.</p>
+              </dd>
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>k-nearest neighbor.</p>
+              </dd>
+              <dt class="body-small">
+               t
+              </dt>
+              <dd class="body-medium">
+               <p>the smooth/width parameter of heat kernel e<sup>-||x-y||<sup>2</sup> / t</sup>. Non-positive value means discrete weights.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="lle-48a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="manifold.html#lle-48a" t="n" class="documentableName ">lle</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">d</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">LLE</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Locally Linear Embedding. It has several advantages over Isomap, including faster optimization when implemented to take advantage of sparse matrix algorithms, and better results with many problems. LLE also begins by finding a set of the nearest neighbors of each point. It then computes a set of weights for each point that best describe the point as a linear combination of its neighbors. Finally, it uses an eigenvector-based optimization technique to find the low-dimensional embedding of points, such that each point is still described with the same linear combination of its neighbors. LLE tends to handle non-uniform sample densities poorly because there is no fixed unit to prevent the weights from drifting as various regions differ in sample densities.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Locally Linear Embedding. It has several advantages over Isomap, including faster optimization when implemented to take advantage of sparse matrix algorithms, and better results with many problems. LLE also begins by finding a set of the nearest neighbors of each point. It then computes a set of weights for each point that best describe the point as a linear combination of its neighbors. Finally, it uses an eigenvector-based optimization technique to find the low-dimensional embedding of points, such that each point is still described with the same linear combination of its neighbors. LLE tends to handle non-uniform sample densities poorly because there is no fixed unit to prevent the weights from drifting as various regions differ in sample densities.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>Sam T. Roweis and Lawrence K. Saul. Nonlinear Dimensionality Reduction by Locally Linear Embedding. Science 290(5500):2323-2326, 2000.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               d
+              </dt>
+              <dd class="body-medium">
+               <p>the dimension of the manifold.</p>
+              </dd>
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>k-nearest neighbor.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="mds-85a">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="manifold.html#mds-85a" t="n" class="documentableName ">mds</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">proximity</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">positive</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Boolean.html" t="t">Boolean</a>): <span data-unresolved-link="" t="t">MDS</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Classical multidimensional scaling, also known as principal coordinates analysis. Given a matrix of dissimilarities (e.g. pairwise distances), MDS finds a set of points in low dimensional space that well-approximates the dissimilarities in A. We are not restricted to using a Euclidean distance metric. However, when Euclidean distances are used MDS is equivalent to PCA.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Classical multidimensional scaling, also known as principal coordinates analysis. Given a matrix of dissimilarities (e.g. pairwise distances), MDS finds a set of points in low dimensional space that well-approximates the dissimilarities in A. We are not restricted to using a Euclidean distance metric. However, when Euclidean distances are used MDS is equivalent to PCA.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the dimension of the projection.</p>
+              </dd>
+              <dt class="body-small">
+               positive
+              </dt>
+              <dd class="body-medium">
+               <p>if true, estimate an appropriate constant to be added to all the dissimilarities, apart from the self-dissimilarities, that makes the learning matrix positive semi-definite. The other formulation of the additive constant problem is as follows. If the proximity is measured in an interval scale, where there is no natural origin, then there is not a sympathy of the dissimilarities to the distances in the Euclidean space used to represent the objects. In this case, we can estimate a constant c such that proximity + c may be taken as ratio data, and also possibly to minimize the dimensionality of the Euclidean space required for representing the objects.</p>
+              </dd>
+              <dt class="body-small">
+               proximity
+              </dt>
+              <dd class="body-medium">
+               <p>the non-negative proximity matrix of dissimilarities. The diagonal should be zero and all other elements should be positive and symmetric. For pairwise distances matrix, it should be just the plain distance, not squared.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="sammon-fffffc3b">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="manifold.html#sammon-fffffc3b" t="n" class="documentableName ">sammon</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">proximity</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">lambda</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">tol</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">stepTol</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">maxIter</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">SammonMapping</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>The Sammon's mapping is an iterative technique for making interpoint distances in the low-dimensional projection as close as possible to the interpoint distances in the high-dimensional object. Two points close together in the high-dimensional space should appear close together in the projection, while two points far apart in the high dimensional space should appear far apart in the projection. The Sammon's mapping is a special case of metric least-square multidimensional scaling.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>The Sammon's mapping is an iterative technique for making interpoint distances in the low-dimensional projection as close as possible to the interpoint distances in the high-dimensional object. Two points close together in the high-dimensional space should appear close together in the projection, while two points far apart in the high dimensional space should appear far apart in the projection. The Sammon's mapping is a special case of metric least-square multidimensional scaling.</p>
+              <p>Ideally when we project from a high dimensional space to a low dimensional space the image would be geometrically congruent to the original figure. This is called an isometric projection. Unfortunately it is rarely possible to isometrically project objects down into lower dimensional spaces. Instead of trying to achieve equality between corresponding inter-point distances we can minimize the difference between corresponding inter-point distances. This is one goal of the Sammon's mapping algorithm. A second goal of the Sammon's mapping algorithm is to preserve the topology as best as possible by giving greater emphasize to smaller interpoint distances. The Sammon's mapping algorithm has the advantage that whenever it is possible to isometrically project an object into a lower dimensional space it will be isometrically projected into the lower dimensional space. But whenever an object cannot be projected down isometrically the Sammon's mapping projects it down to reduce the distortion in interpoint distances and to limit the change in the topology of the object.</p>
+              <p>The projection cannot be solved in a closed form and may be found by an iterative algorithm such as gradient descent suggested by Sammon. Kohonen also provides a heuristic that is simple and works reasonably well.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the dimension of the projection.</p>
+              </dd>
+              <dt class="body-small">
+               lambda
+              </dt>
+              <dd class="body-medium">
+               <p>initial value of the step size constant in diagonal Newton method.</p>
+              </dd>
+              <dt class="body-small">
+               maxIter
+              </dt>
+              <dd class="body-medium">
+               <p>maximum number of iterations.</p>
+              </dd>
+              <dt class="body-small">
+               proximity
+              </dt>
+              <dd class="body-medium">
+               <p>the non-negative proximity matrix of dissimilarities. The diagonal should be zero and all other elements should be positive and symmetric.</p>
+              </dd>
+              <dt class="body-small">
+               stepTol
+              </dt>
+              <dd class="body-medium">
+               <p>tolerance on step size.</p>
+              </dd>
+              <dt class="body-small">
+               tol
+              </dt>
+              <dd class="body-medium">
+               <p>tolerance for stopping iterations.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="tsne-403">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="manifold.html#tsne-403" t="n" class="documentableName ">tsne</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">X</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">d</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">perplexity</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">eta</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">iterations</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">TSNE</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>t-distributed stochastic neighbor embedding. t-SNE is a nonlinear dimensionality reduction technique that is particularly well suited for embedding high-dimensional data into a space of two or three dimensions, which can then be visualized in a scatter plot. Specifically, it models each high-dimensional object by a two- or three-dimensional point in such a way that similar objects are modeled by nearby points and dissimilar objects are modeled by distant points.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>t-distributed stochastic neighbor embedding. t-SNE is a nonlinear dimensionality reduction technique that is particularly well suited for embedding high-dimensional data into a space of two or three dimensions, which can then be visualized in a scatter plot. Specifically, it models each high-dimensional object by a two- or three-dimensional point in such a way that similar objects are modeled by nearby points and dissimilar objects are modeled by distant points.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>L.J.P. van der Maaten. Accelerating t-SNE using Tree-Based Algorithms. Journal of Machine Learning Research 15(Oct):3221-3245, 2014.</li>
+               <li>L.J.P. van der Maaten and G.E. Hinton. Visualizing Non-Metric Similarities in Multiple Maps. Machine Learning 87(1):33-55, 2012.</li>
+               <li>L.J.P. van der Maaten. Learning a Parametric Embedding by Preserving Local Structure. In Proceedings of the Twelfth International Conference on Artificial Intelligence &amp; Statistics (AI-STATS), JMLR W&amp;CP 5:384-391, 2009.</li>
+               <li>L.J.P. van der Maaten and G.E. Hinton. Visualizing High-Dimensional Data Using t-SNE. Journal of Machine Learning Research 9(Nov):2579-2605, 2008.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               X
+              </dt>
+              <dd class="body-medium">
+               <p>input data. If X is a square matrix, it is assumed to be the squared distance/dissimilarity matrix.</p>
+              </dd>
+              <dt class="body-small">
+               d
+              </dt>
+              <dd class="body-medium">
+               <p>the dimension of the manifold.</p>
+              </dd>
+              <dt class="body-small">
+               eta
+              </dt>
+              <dd class="body-medium">
+               <p>the learning rate.</p>
+              </dd>
+              <dt class="body-small">
+               iterations
+              </dt>
+              <dd class="body-medium">
+               <p>the number of iterations.</p>
+              </dd>
+              <dt class="body-small">
+               perplexity
+              </dt>
+              <dd class="body-medium">
+               <p>the perplexity of the conditional distribution.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="umap-fffff694">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="manifold.html#umap-fffff694" t="n" class="documentableName ">umap</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">d</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">iterations</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">learningRate</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">minDist</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">spread</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">negativeSamples</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">repulsionStrength</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">UMAP</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Uniform Manifold Approximation and Projection.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Uniform Manifold Approximation and Projection.</p>
+              <p>UMAP is a dimension reduction technique that can be used for visualization similarly to t-SNE, but also for general non-linear dimension reduction. The algorithm is founded on three assumptions about the data:</p>
+              <ul>
+               <li>The data is uniformly distributed on a Riemannian manifold;</li>
+               <li>The Riemannian metric is locally constant (or can be approximated as such);</li>
+               <li>The manifold is locally connected.</li>
+              </ul>
+              <p>From these assumptions it is possible to model the manifold with a fuzzy topological structure. The embedding is found by searching for a low dimensional projection of the data that has the closest possible equivalent fuzzy topological structure.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               d
+              </dt>
+              <dd class="body-medium">
+               <p>The target embedding dimensions. defaults to 2 to provide easy visualization, but can reasonably be set to any integer value in the range 2 to 100.</p>
+              </dd>
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the input data.</p>
+              </dd>
+              <dt class="body-small">
+               iterations
+              </dt>
+              <dd class="body-medium">
+               <p>The number of iterations to optimize the low-dimensional representation. Larger values result in more accurate embedding. Muse be greater than 10. Choose wise value based on the size of the input data, e.g, 200 for large data (1000+ samples), 500 for small.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>k-nearest neighbors. Larger values result in more global views of the manifold, while smaller values result in more local data being preserved. Generally in the range 2 to 100.</p>
+              </dd>
+              <dt class="body-small">
+               learningRate
+              </dt>
+              <dd class="body-medium">
+               <p>The initial learning rate for the embedding optimization, default 1.</p>
+              </dd>
+              <dt class="body-small">
+               minDist
+              </dt>
+              <dd class="body-medium">
+               <p>The desired separation between close points in the embedding space. Smaller values will result in a more clustered/clumped embedding where nearby points on the manifold are drawn closer together, while larger values will result on a more even disperse of points. The value should be set no-greater than and relative to the spread value, which determines the scale at which embedded points will be spread out. default 0.1.</p>
+              </dd>
+              <dt class="body-small">
+               negativeSamples
+              </dt>
+              <dd class="body-medium">
+               <p>The number of negative samples to select per positive sample in the optimization process. Increasing this value will result in greater repulsive force being applied, greater optimization cost, but slightly more accuracy, default 5.</p>
+              </dd>
+              <dt class="body-small">
+               repulsionStrength
+              </dt>
+              <dd class="body-medium">
+               <p>Weighting applied to negative samples in low dimensional embedding optimization. Values higher than one will result in greater weight being given to negative samples, default 1.0.</p>
+              </dd>
+              <dt class="body-small">
+               spread
+              </dt>
+              <dd class="body-medium">
+               <p>The effective scale of embedded points. In combination with minDist, this determines how clustered/clumped the embedded points are. default 1.0.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+</section></div><div id="toc" class="body-small"><div id="toc-container"><span class="toc-title h200">In this article</span><nav class="toc-nav"><ul class="toc-list"><li><a href="#attributes">Attributes</a></li><li><a href="#members-list">Members list</a><ul><li><a href="#Type-members">Type members</a><ul><li><a href="#Classlikes">Classlikes</a></li></ul></li><li><a href="#Value-members">Value members</a><ul><li><a href="#Concrete-methods">Concrete methods</a></li></ul></li></ul></li></ul></nav></div></div></div><div id="footer" class="body-small mobile-footer"><div class="left-container">Generated with</div><div class="right-container"><div class="text">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div><div class="text-mobile">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div></div></div></body></html>

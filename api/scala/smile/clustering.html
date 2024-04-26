@@ -1,0 +1,1238 @@
+<!DOCTYPE html><html data-pathToRoot="../"><head><meta charset="utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta><title>smile.clustering</title><link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"></link><script type="text/javascript" src="../scripts/theme.js"></script><script type="text/javascript" src="../scripts/searchData.js" defer="true"></script><script type="text/javascript" src="../scripts/scastieConfiguration.js" defer="true"></script><link rel="stylesheet" href="../styles/theme/bundle.css"></link><link rel="stylesheet" href="../styles/theme/components/bundle.css"></link><link rel="stylesheet" href="../styles/theme/components/button/bundle.css"></link><link rel="stylesheet" href="../styles/theme/layout/bundle.css"></link><link rel="stylesheet" href="../styles/nord-light.css"></link><link rel="stylesheet" href="../styles/dotty-icons.css"></link><link rel="stylesheet" href="../styles/filter-bar.css"></link><link rel="stylesheet" href="../styles/code-snippets.css"></link><link rel="stylesheet" href="../styles/searchbar.css"></link><link rel="stylesheet" href="../styles/social-links.css"></link><link rel="stylesheet" href="../styles/versions-dropdown.css"></link><link rel="stylesheet" href="../styles/content-contributors.css"></link><link rel="stylesheet" href="../styles/fontawesome.css"></link><script type="text/javascript" src="../hljs/highlight.pack.js" defer="true"></script><script type="text/javascript" src="../scripts/hljs-scala3.js" defer="true"></script><script type="text/javascript" src="../scripts/ux.js" defer="true"></script><script type="text/javascript" src="../scripts/common/component.js" defer="true"></script><script type="text/javascript" src="../scripts/common/utils.js" defer="true"></script><script type="text/javascript" src="../scripts/components/FilterBar.js" defer="true"></script><script type="text/javascript" src="../scripts/components/DocumentableList.js" defer="true"></script><script type="text/javascript" src="../scripts/components/Input.js" defer="true"></script><script type="text/javascript" src="../scripts/components/FilterGroup.js" defer="true"></script><script type="text/javascript" src="../scripts/components/Filter.js" defer="true"></script><script type="text/javascript" src="../scripts/scaladoc-scalajs.js" defer="true"></script><script type="text/javascript" src="../scripts/contributors.js" defer="true"></script><script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js" defer="true"></script><script type="text/javascript" src="https://d3js.org/d3.v6.min.js" defer="true"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/graphlib-dot@0.6.2/dist/graphlib-dot.min.js" defer="true"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dagre-d3/0.6.1/dagre-d3.min.js" defer="true"></script><script type="text/javascript" src="https://scastie.scala-lang.org/embedded.js" defer="true"></script><script type="text/javascript" src="../scripts/data.js" defer="true"></script><link rel="stylesheet" href="../styles/apistyles.css"></link><script>var pathToRoot = "../";</script></head><body><div id=""><div id="header" class="body-small"><div class="header-container-left"><a href="../" class="logo-container"><span id="project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span class="project-name h300">Smile</span></a><span onclick="dropdownHandler(event)" class="text-button with-arrow" id="dropdown-trigger"><a><div class="projectVersion">3.1.0</div></a></span><div id="version-dropdown" class="dropdown-menu"></div></div><div class="header-container-right"><button id="search-toggle" class="icon-button"></button><span id="theme-toggle" class="icon-button"></span><span id="mobile-menu-toggle" class="icon-button hamburger"></span></div></div><div id="mobile-menu"><div class="mobile-menu-header body-small"><span class="mobile-menu-logo"><span id="project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span id="dark-project-logo" class="project-logo"><img src="../project-logo/smile.jpg"></img></span><span class="project-name h300">Smile</span></span><button id="mobile-menu-close" class="icon-button close"></button></div><div class="mobile-menu-container body-medium"><input id="mobile-scaladoc-searchbar-input" class="scaladoc-searchbar-input" type="search" placeholder="Find anything"></input><span id="mobile-theme-toggle" class="mobile-menu-item mode"></span></div></div><span id="mobile-sidebar-toggle" class="floating-button"></span><div id="leftColumn" class="body-small"><div class="switcher-container"><a id="api-nav-button" class="switcher h100 selected" href="../index.html">API</a></div><nav id="api-nav" class="side-menu"><div class="ni n0 expanded"><span class="nh h100 expanded cs"><button class="ar icon-button expanded"></button><a href="../smile.html"><span class="micon pa"></span><span>smile</span></a></span><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="association.html"><span class="micon pa"></span><span>association</span></a></span><div class="ni n2 "><span class="nh "><a href="association/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="cas.html"><span class="micon pa"></span><span>cas</span></a></span><div class="ni n2 "><span class="nh "><a href="cas/Abs.html"><span class="micon cl"></span><span>Abs</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Add.html"><span class="micon cl"></span><span>Add</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/AddMatrix.html"><span class="micon cl"></span><span>AddMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/AddVector.html"><span class="micon cl"></span><span>AddVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcCos.html"><span class="micon cl"></span><span>ArcCos</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcCot.html"><span class="micon cl"></span><span>ArcCot</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcSin.html"><span class="micon cl"></span><span>ArcSin</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ArcTan.html"><span class="micon cl"></span><span>ArcTan</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Ceil.html"><span class="micon cl"></span><span>Ceil</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Const.html"><span class="micon cl"></span><span>Const</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ConstMatrix.html"><span class="micon cl"></span><span>ConstMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ConstVector.html"><span class="micon cl"></span><span>ConstVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Cos.html"><span class="micon cl"></span><span>Cos</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Cot.html"><span class="micon cl"></span><span>Cot</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/DiagonalMatrix.html"><span class="micon cl"></span><span>DiagonalMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Div.html"><span class="micon cl"></span><span>Div</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Exp.html"><span class="micon cl"></span><span>Exp</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Floor.html"><span class="micon cl"></span><span>Floor</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/GradientVector.html"><span class="micon cl"></span><span>GradientVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IdentityMatrix.html"><span class="micon cl"></span><span>IdentityMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/InnerProduct.html"><span class="micon cl"></span><span>InnerProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Int2Scalar.html"><span class="micon cl"></span><span>Int2Scalar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntAdd.html"><span class="micon cl"></span><span>IntAdd</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntConst.html"><span class="micon cl"></span><span>IntConst</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntDiv.html"><span class="micon cl"></span><span>IntDiv</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntMul.html"><span class="micon cl"></span><span>IntMul</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntNeg.html"><span class="micon cl"></span><span>IntNeg</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntPower.html"><span class="micon cl"></span><span>IntPower</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntScalar.html"><span class="micon tr"></span><span>IntScalar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntSub.html"><span class="micon cl"></span><span>IntSub</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntVal.html"><span class="micon cl"></span><span>IntVal</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/IntVar.html"><span class="micon cl"></span><span>IntVar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Log.html"><span class="micon cl"></span><span>Log</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Matrix.html"><span class="micon tr"></span><span>Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixInverse.html"><span class="micon cl"></span><span>MatrixInverse</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixProduct.html"><span class="micon cl"></span><span>MatrixProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixTranspose.html"><span class="micon cl"></span><span>MatrixTranspose</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixVar.html"><span class="micon cl"></span><span>MatrixVar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/MatrixVectorProduct.html"><span class="micon cl"></span><span>MatrixVectorProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Mod.html"><span class="micon cl"></span><span>Mod</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Mul.html"><span class="micon cl"></span><span>Mul</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Neg.html"><span class="micon cl"></span><span>Neg</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/NegMatrix.html"><span class="micon cl"></span><span>NegMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/NegVector.html"><span class="micon cl"></span><span>NegVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/OneMatrix.html"><span class="micon cl"></span><span>OneMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/OneVector.html"><span class="micon cl"></span><span>OneVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/OuterProduct.html"><span class="micon cl"></span><span>OuterProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Power.html"><span class="micon cl"></span><span>Power</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Round.html"><span class="micon cl"></span><span>Round</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/RowMatrix.html"><span class="micon cl"></span><span>RowMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Scalar.html"><span class="micon tr"></span><span>Scalar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ScalarMatrixProduct.html"><span class="micon cl"></span><span>ScalarMatrixProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ScalarVectorProduct.html"><span class="micon cl"></span><span>ScalarVectorProduct</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Sin.html"><span class="micon cl"></span><span>Sin</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Sub.html"><span class="micon cl"></span><span>Sub</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Tan.html"><span class="micon cl"></span><span>Tan</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/TangentMatrix.html"><span class="micon cl"></span><span>TangentMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/TangentVector.html"><span class="micon cl"></span><span>TangentVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Tensor.html"><span class="micon tr"></span><span>Tensor</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Val.html"><span class="micon cl"></span><span>Val</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Var.html"><span class="micon cl"></span><span>Var</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Vars.html"><span class="micon cl"></span><span>Vars</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/Vector.html"><span class="micon tr"></span><span>Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/VectorVal.html"><span class="micon cl"></span><span>VectorVal</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/VectorVar.html"><span class="micon cl"></span><span>VectorVar</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ZeroMatrix.html"><span class="micon cl"></span><span>ZeroMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="cas/ZeroVector.html"><span class="micon cl"></span><span>ZeroVector</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="classification.html"><span class="micon pa"></span><span>classification</span></a></span><div class="ni n2 "><span class="nh "><a href="classification/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1 expanded"><span class="nh h100 selected"><button class="ar icon-button expanded"></button><a href="#"><span class="micon pa"></span><span>clustering</span></a></span><div class="ni n2 "><span class="nh "><a href="clustering/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="data.html"><span class="micon pa"></span><span>data</span></a></span><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="data/formula.html"><span class="micon pa"></span><span>formula</span></a></span><div class="ni n3 "><span class="nh "><a href="data/formula/FormulaBuilder.html"><span class="micon cl"></span><span>FormulaBuilder</span></a></span></div></div><div class="ni n2 "><span class="nh "><a href="data/DataFrameOps.html"><span class="micon cl"></span><span>DataFrameOps</span></a></span></div><div class="ni n2 "><span class="nh "><a href="data/TupleOps.html"><span class="micon cl"></span><span>TupleOps</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="feature/extraction.html"><span class="micon pa"></span><span>feature.extraction</span></a></span><div class="ni n2 "><span class="nh "><a href="feature/extraction/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="manifold.html"><span class="micon pa"></span><span>manifold</span></a></span><div class="ni n2 "><span class="nh "><a href="manifold/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="math.html"><span class="micon pa"></span><span>math</span></a></span><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="math/distance.html"><span class="micon pa"></span><span>distance</span></a></span><div class="ni n3 "><span class="nh "><a href="math/distance/Hamming.html"><span class="micon cl"></span><span>Hamming</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/MeanMahanttan.html"><span class="micon cl"></span><span>MeanMahanttan</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/PatternDifference.html"><span class="micon cl"></span><span>PatternDifference</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/ShapeDifference.html"><span class="micon cl"></span><span>ShapeDifference</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/SizeDifference.html"><span class="micon cl"></span><span>SizeDifference</span></a></span></div><div class="ni n3 "><span class="nh "><a href="math/distance/Vari.html"><span class="micon cl"></span><span>Vari</span></a></span></div></div><div class="ni n2 "><span class="nh "><a href="math/AbsMatrix.html"><span class="micon cl"></span><span>AbsMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AbsVector.html"><span class="micon cl"></span><span>AbsVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AcosMatrix.html"><span class="micon cl"></span><span>AcosMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AcosVector.html"><span class="micon cl"></span><span>AcosVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AsinMatrix.html"><span class="micon cl"></span><span>AsinMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AsinVector.html"><span class="micon cl"></span><span>AsinVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AtanMatrix.html"><span class="micon cl"></span><span>AtanMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/AtanVector.html"><span class="micon cl"></span><span>AtanVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Ax.html"><span class="micon cl"></span><span>Ax</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CbrtMatrix.html"><span class="micon cl"></span><span>CbrtMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CbrtVector.html"><span class="micon cl"></span><span>CbrtVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CeilMatrix.html"><span class="micon cl"></span><span>CeilMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/CeilVector.html"><span class="micon cl"></span><span>CeilVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ExpMatrix.html"><span class="micon cl"></span><span>ExpMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ExpVector.html"><span class="micon cl"></span><span>ExpVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Expm1Matrix.html"><span class="micon cl"></span><span>Expm1Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Expm1Vector.html"><span class="micon cl"></span><span>Expm1Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/FloorMatrix.html"><span class="micon cl"></span><span>FloorMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/FloorVector.html"><span class="micon cl"></span><span>FloorVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log10Matrix.html"><span class="micon cl"></span><span>Log10Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log10Vector.html"><span class="micon cl"></span><span>Log10Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log1pMatrix.html"><span class="micon cl"></span><span>Log1pMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log1pVector.html"><span class="micon cl"></span><span>Log1pVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log2Matrix.html"><span class="micon cl"></span><span>Log2Matrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Log2Vector.html"><span class="micon cl"></span><span>Log2Vector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/LogMatrix.html"><span class="micon cl"></span><span>LogMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/LogVector.html"><span class="micon cl"></span><span>LogVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixAddMatrix.html"><span class="micon cl"></span><span>MatrixAddMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixAddValue.html"><span class="micon cl"></span><span>MatrixAddValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixDivMatrix.html"><span class="micon cl"></span><span>MatrixDivMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixDivValue.html"><span class="micon cl"></span><span>MatrixDivValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixExpression.html"><span class="micon tr"></span><span>MatrixExpression</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixLift.html"><span class="micon cl"></span><span>MatrixLift</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMulMatrix.html"><span class="micon cl"></span><span>MatrixMulMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMulValue.html"><span class="micon cl"></span><span>MatrixMulValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMultiplication.html"><span class="micon cl"></span><span>MatrixMultiplication</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixMultiplicationChain.html"><span class="micon cl"></span><span>MatrixMultiplicationChain</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixOrderOptimization.html"><span class="micon cl"></span><span>MatrixOrderOptimization</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixSubMatrix.html"><span class="micon cl"></span><span>MatrixSubMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixSubValue.html"><span class="micon cl"></span><span>MatrixSubValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/MatrixTranspose.html"><span class="micon cl"></span><span>MatrixTranspose</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/RoundMatrix.html"><span class="micon cl"></span><span>RoundMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/RoundVector.html"><span class="micon cl"></span><span>RoundVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SinMatrix.html"><span class="micon cl"></span><span>SinMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SinVector.html"><span class="micon cl"></span><span>SinVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/Slice.html"><span class="micon cl"></span><span>Slice</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SqrtMatrix.html"><span class="micon cl"></span><span>SqrtMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/SqrtVector.html"><span class="micon cl"></span><span>SqrtVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanMatrix.html"><span class="micon cl"></span><span>TanMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanVector.html"><span class="micon cl"></span><span>TanVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanhMatrix.html"><span class="micon cl"></span><span>TanhMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/TanhVector.html"><span class="micon cl"></span><span>TanhVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueAddMatrix.html"><span class="micon cl"></span><span>ValueAddMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueAddVector.html"><span class="micon cl"></span><span>ValueAddVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueDivMatrix.html"><span class="micon cl"></span><span>ValueDivMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueDivVector.html"><span class="micon cl"></span><span>ValueDivVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueMulMatrix.html"><span class="micon cl"></span><span>ValueMulMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueMulVector.html"><span class="micon cl"></span><span>ValueMulVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueSubMatrix.html"><span class="micon cl"></span><span>ValueSubMatrix</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/ValueSubVector.html"><span class="micon cl"></span><span>ValueSubVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorAddValue.html"><span class="micon cl"></span><span>VectorAddValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorAddVector.html"><span class="micon cl"></span><span>VectorAddVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorDivValue.html"><span class="micon cl"></span><span>VectorDivValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorDivVector.html"><span class="micon cl"></span><span>VectorDivVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorExpression.html"><span class="micon tr"></span><span>VectorExpression</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorLift.html"><span class="micon cl"></span><span>VectorLift</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorMulValue.html"><span class="micon cl"></span><span>VectorMulValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorMulVector.html"><span class="micon cl"></span><span>VectorMulVector</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorSubValue.html"><span class="micon cl"></span><span>VectorSubValue</span></a></span></div><div class="ni n2 "><span class="nh "><a href="math/VectorSubVector.html"><span class="micon cl"></span><span>VectorSubVector</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="nlp.html"><span class="micon pa"></span><span>nlp</span></a></span><div class="ni n2 "><span class="nh "><a href="nlp/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="plot.html"><span class="micon pa"></span><span>plot</span></a></span><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="plot/swing.html"><span class="micon pa"></span><span>swing</span></a></span><div class="ni n3 "><span class="nh "><a href="plot/swing/CanvasWindow.html"><span class="micon cl"></span><span>CanvasWindow</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/Html$.html"><span class="micon ob"></span><span>Html</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/JWindow.html"><span class="micon tr"></span><span>JWindow</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/JWindow$.html"><span class="micon ob"></span><span>JWindow</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/swing/PlotGridWindow.html"><span class="micon cl"></span><span>PlotGridWindow</span></a></span></div></div><div class="ni n2"><span class="nh "><button class="ar icon-button "></button><a href="plot/vega.html"><span class="micon pa"></span><span>vega</span></a></span><div class="ni n3 "><span class="nh "><a href="plot/vega/Facet.html"><span class="micon tr"></span><span>Facet</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/Facet$.html"><span class="micon ob"></span><span>Facet</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/Layer.html"><span class="micon tr"></span><span>Layer</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/VegaLite.html"><span class="micon tr"></span><span>VegaLite</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/VegaLite$.html"><span class="micon ob"></span><span>VegaLite</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/View.html"><span class="micon tr"></span><span>View</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/View$.html"><span class="micon ob"></span><span>View</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/ViewComposition.html"><span class="micon tr"></span><span>ViewComposition</span></a></span></div><div class="ni n3 "><span class="nh "><a href="plot/vega/ViewLayoutComposition.html"><span class="micon tr"></span><span>ViewLayoutComposition</span></a></span></div></div><div class="ni n2 "><span class="nh "><a href="plot/Render$.html"><span class="micon ob"></span><span>Render</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="regression.html"><span class="micon pa"></span><span>regression</span></a></span><div class="ni n2 "><span class="nh "><a href="regression/gpr$.html"><span class="micon ob"></span><span>gpr</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="sequence.html"><span class="micon pa"></span><span>sequence</span></a></span><div class="ni n2 "><span class="nh "><a href="sequence/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="util.html"><span class="micon pa"></span><span>util</span></a></span><div class="ni n2 "><span class="nh "><a href="util/time$.html"><span class="micon ob"></span><span>time</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="validation.html"><span class="micon pa"></span><span>validation</span></a></span><div class="ni n2 "><span class="nh "><a href="validation/bootstrap$.html"><span class="micon ob"></span><span>bootstrap</span></a></span></div><div class="ni n2 "><span class="nh "><a href="validation/cv$.html"><span class="micon ob"></span><span>cv</span></a></span></div><div class="ni n2 "><span class="nh "><a href="validation/loocv$.html"><span class="micon ob"></span><span>loocv</span></a></span></div><div class="ni n2 "><span class="nh "><a href="validation/validate$.html"><span class="micon ob"></span><span>validate</span></a></span></div></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="wavelet.html"><span class="micon pa"></span><span>wavelet</span></a></span><div class="ni n2 "><span class="nh "><a href="wavelet/$dummy$.html"><span class="micon ob"></span><span>$dummy</span></a></span></div></div><div class="ni n1 "><span class="nh "><a href="read$.html"><span class="micon ob"></span><span>read</span></a></span></div><div class="ni n1 "><span class="nh "><a href="write$.html"><span class="micon ob"></span><span>write</span></a></span></div></div></nav></div><div id="footer" class="body-small"><div class="left-container">Generated with</div><div class="right-container"><div class="text">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
+<script type="text/javascript" src="https://haifengl.github.io/api/java/script-dir/gtag.js"></script>
+Use is subject to license terms.</div></div><div class="text-mobile">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div><div id="scaladoc-searchBar"></div><div id="main"><div class="breadcrumbs container"><a href="../index.html">Smile</a>/<a href="../smile.html">smile</a>/<a href="clustering.html">smile.clustering</a></div><div id="content" class="body-medium"><div><div class="cover-header">
+ <span class="icon"><span class="micon pa"></span></span>
+ <h1 class="h600 single">smile.clustering</h1>
+</div>
+<div class="fqname body-large">
+ <span></span>
+</div>
+<div class="main-signature mono-small-block">
+ <div class="signature">
+  <span class="modifiers"></span><span class="kind"><span t="k">package </span></span><a href="clustering.html" t="n" class="documentableName ">smile.clustering</a>
+ </div>
+</div>
+<div class="cover">
+ <div class="doc">
+  <p>Clustering analysis. Clustering is the assignment of a set of observations into subsets (called clusters) so that observations in the same cluster are similar in some sense. Clustering is a method of unsupervised learning, and a common technique for statistical data analysis used in many fields.</p>
+  <p>Hierarchical algorithms find successive clusters using previously established clusters. These algorithms usually are either agglomerative ("bottom-up") or divisive ("top-down"). Agglomerative algorithms begin with each element as a separate cluster and merge them into successively larger clusters. Divisive algorithms begin with the whole set and proceed to divide it into successively smaller clusters.</p>
+  <p>Partitional algorithms typically determine all clusters at once, but can also be used as divisive algorithms in the hierarchical clustering. Many partitional clustering algorithms require the specification of the number of clusters to produce in the input data set, prior to execution of the algorithm. Barring knowledge of the proper value beforehand, the appropriate value must be determined, a problem on its own for which a number of techniques have been developed.</p>
+  <p>Density-based clustering algorithms are devised to discover arbitrary-shaped clusters. In this approach, a cluster is regarded as a region in which the density of data objects exceeds a threshold.</p>
+  <p>Subspace clustering methods look for clusters that can only be seen in a particular projection (subspace, manifold) of the data. These methods thus can ignore irrelevant attributes. The general problem is also known as Correlation clustering while the special case of axis-parallel subspaces is also known as two-way clustering, co-clustering or biclustering in bioinformatics: in these methods not only the objects are clustered but also the features of the objects, i.e., if the data is represented in a data matrix, the rows and columns are clustered simultaneously. They usually do not however work with arbitrary feature combinations as in general subspace methods.</p>
+ </div>
+ <section id="attributes">
+  <h2 class="h500">Attributes</h2>
+  <dl class="attributes"></dl>
+ </section>
+</div>
+<section id="members-list">
+ <h2 class="h500">Members list</h2>
+ <div class="documentableFilter">
+  <div class="filtersContainer"></div><input class="filterableInput" placeholder="Filter by any phrase" data-test-id="filterBarInput" type="search"><button class="clearButton label-only-button" data-test-id="filterBarClearButton">Clear all</button>
+ </div>
+ <div class="membersList expand">
+  <div class="tabs">
+   <div class="contents">
+    <section id="Type-members">
+     <div data-togglable="Type members" class="tab expand">
+      <div class="member-group-header">
+       <h3 data-togglable="Type members" class="h400">Type members</h3>
+      </div>
+      <section id="Classlikes">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Classlikes</h4>
+        </div>
+        <div class="documentableElement">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">object </span></span><a href="clustering/$dummy$.html" t="n" class="documentableName ">$dummy</a>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Hacking scaladoc <a href="https://github.com/scala/bug/issues/8124">issue-8124</a>. The user should ignore this object.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Hacking scaladoc <a href="https://github.com/scala/bug/issues/8124">issue-8124</a>. The user should ignore this object.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               Supertypes
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <div>
+                 class <span data-unresolved-link="" t="n">Object</span>
+                </div>
+                <div>
+                 trait <span data-unresolved-link="" t="n">Matchable</span>
+                </div>
+                <div>
+                 class <span data-unresolved-link="" t="n">Any</span>
+                </div><span></span>
+               </div>
+              </dd>
+              <dt class="body-small">
+               Self type
+              </dt>
+              <dd class="body-medium">
+               <div class="mono-small-block supertypes">
+                <span></span>
+                <div>
+                 <a href="clustering/$dummy$.html" t="n">$dummy</a>.<span t="k">type</span>
+                </div>
+               </div>
+              </dd>
+             </dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+    <section id="Value-members">
+     <div data-togglable="Value members" class="tab expand">
+      <div class="member-group-header">
+       <h3 data-togglable="Value members" class="h400">Value members</h3>
+      </div>
+      <section id="Concrete-methods">
+       <div class="documentableList expand">
+        <div class="documentableList-expander">
+         <button class="icon-button show-content expand"></button>
+         <h4 class="groupHeader h200">Concrete methods</h4>
+        </div>
+        <div class="documentableElement" id="clarans-fffff7ff">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#clarans-fffff7ff" t="n" class="documentableName ">clarans</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span><span t="k"> &lt;: </span><span data-unresolved-link="" t="t">AnyRef</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">distance</span>: <span data-unresolved-link="" t="t">Distance</span>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">maxNeighbor</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">numLocal</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">CLARANS</span>[<span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Clustering Large Applications based upon RANdomized Search. CLARANS is an efficient medoid-based clustering algorithm. The k-medoids algorithm is an adaptation of the k-means algorithm. Rather than calculate the mean of the items in each cluster, a representative item, or medoid, is chosen for each cluster at each iteration. In CLARANS, the process of finding k medoids from n objects is viewed abstractly as searching through a certain graph. In the graph, a node is represented by a set of k objects as selected medoids. Two nodes are neighbors if their sets differ by only one object. In each iteration, CLARANS considers a set of randomly chosen neighbor nodes as candidate of new medoids. We will move to the neighbor node if the neighbor is a better choice for medoids. Otherwise, a local optima is discovered. The entire process is repeated multiple time to find better.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Clustering Large Applications based upon RANdomized Search. CLARANS is an efficient medoid-based clustering algorithm. The k-medoids algorithm is an adaptation of the k-means algorithm. Rather than calculate the mean of the items in each cluster, a representative item, or medoid, is chosen for each cluster at each iteration. In CLARANS, the process of finding k medoids from n objects is viewed abstractly as searching through a certain graph. In the graph, a node is represented by a set of k objects as selected medoids. Two nodes are neighbors if their sets differ by only one object. In each iteration, CLARANS considers a set of randomly chosen neighbor nodes as candidate of new medoids. We will move to the neighbor node if the neighbor is a better choice for medoids. Otherwise, a local optima is discovered. The entire process is repeated multiple time to find better.</p>
+              <p>CLARANS has two parameters: the maximum number of neighbors examined (maxNeighbor) and the number of local minima obtained (numLocal). The higher the value of maxNeighbor, the closer is CLARANS to PAM, and the longer is each search of a local minima. But the quality of such a local minima is higher and fewer local minima needs to be obtained.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>R. Ng and J. Han. CLARANS: A Method for Clustering Objects for Spatial Data Mining. IEEE TRANS. KNOWLEDGE AND DATA ENGINEERING, 2002.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               distance
+              </dt>
+              <dd class="body-medium">
+               <p>the distance/dissimilarity measure.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters.</p>
+              </dd>
+              <dt class="body-small">
+               maxNeighbor
+              </dt>
+              <dd class="body-medium">
+               <p>the maximum number of neighbors examined during a random search of local minima.</p>
+              </dd>
+              <dt class="body-small">
+               numLocal
+              </dt>
+              <dd class="body-medium">
+               <p>the number of local minima to search for.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="dac-58b">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#dac-58b" t="n" class="documentableName ">dac</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">alpha</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">maxIter</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">tol</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">splitTol</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">DeterministicAnnealing</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Deterministic annealing clustering. Deterministic annealing extends soft-clustering to an annealing process. For each temperature value, the algorithm iterates between the calculation of all posteriori probabilities and the update of the centroids vectors, until convergence is reached. The annealing starts with a high temperature. Here, all centroids vectors converge to the center of the pattern distribution (independent of their initial positions). Below a critical temperature the vectors start to split. Further decreasing the temperature leads to more splittings until all centroids vectors are separate. The annealing can therefore avoid (if it is sufficiently slow) the convergence to local minima.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Deterministic annealing clustering. Deterministic annealing extends soft-clustering to an annealing process. For each temperature value, the algorithm iterates between the calculation of all posteriori probabilities and the update of the centroids vectors, until convergence is reached. The annealing starts with a high temperature. Here, all centroids vectors converge to the center of the pattern distribution (independent of their initial positions). Below a critical temperature the vectors start to split. Further decreasing the temperature leads to more splittings until all centroids vectors are separate. The annealing can therefore avoid (if it is sufficiently slow) the convergence to local minima.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>Kenneth Rose. Deterministic Annealing for Clustering, Compression, Classification, Regression, and Speech Recognition.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               alpha
+              </dt>
+              <dd class="body-medium">
+               <p>the temperature T is decreasing as T = T * alpha. alpha has to be in (0, 1).</p>
+              </dd>
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the maximum number of clusters.</p>
+              </dd>
+              <dt class="body-small">
+               splitTol
+              </dt>
+              <dd class="body-medium">
+               <p>the tolerance to split a cluster.</p>
+              </dd>
+              <dt class="body-small">
+               tol
+              </dt>
+              <dd class="body-medium">
+               <p>the tolerance of convergence test.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="dbscan-fffff505">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#dbscan-fffff505" t="n" class="documentableName ">dbscan</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span><span t="k"> &lt;: </span><span data-unresolved-link="" t="t">AnyRef</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">nns</span>: <span data-unresolved-link="" t="t">RNNSearch</span>[<span t="t">T</span>, <span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">minPts</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">radius</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">DBSCAN</span>[<span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Density-Based Spatial Clustering of Applications with Noise. DBSCAN finds a number of clusters starting from the estimated density distribution of corresponding nodes.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Density-Based Spatial Clustering of Applications with Noise. DBSCAN finds a number of clusters starting from the estimated density distribution of corresponding nodes.</p>
+              <p>DBSCAN requires two parameters: radius (i.e. neighborhood radius) and the number of minimum points required to form a cluster (minPts). It starts with an arbitrary starting point that has not been visited. This point's neighborhood is retrieved, and if it contains sufficient number of points, a cluster is started. Otherwise, the point is labeled as noise. Note that this point might later be found in a sufficiently sized radius-environment of a different point and hence be made part of a cluster.</p>
+              <p>If a point is found to be part of a cluster, its neighborhood is also part of that cluster. Hence, all points that are found within the neighborhood are added, as is their own neighborhood. This process continues until the cluster is completely found. Then, a new unvisited point is retrieved and processed, leading to the discovery of a further cluster of noise.</p>
+              <p>DBSCAN visits each point of the database, possibly multiple times (e.g., as candidates to different clusters). For practical considerations, however, the time complexity is mostly governed by the number of nearest neighbor queries. DBSCAN executes exactly one such query for each point, and if an indexing structure is used that executes such a neighborhood query in O(log n), an overall runtime complexity of O(n log n) is obtained.</p>
+              <p>DBSCAN has many advantages such as</p>
+              <ul>
+               <li>DBSCAN does not need to know the number of clusters in the data a priori, as opposed to k-means.</li>
+               <li>DBSCAN can find arbitrarily shaped clusters. It can even find clusters completely surrounded by (but not connected to) a different cluster. Due to the MinPts parameter, the so-called single-link effect (different clusters being connected by a thin line of points) is reduced.</li>
+               <li>DBSCAN has a notion of noise.</li>
+               <li>DBSCAN requires just two parameters and is mostly insensitive to the ordering of the points in the database. (Only points sitting on the edge of two different clusters might swap cluster membership if the ordering of the points is changed, and the cluster assignment is unique only up to isomorphism.)</li>
+              </ul>
+              <p>On the other hand, DBSCAN has the disadvantages of</p>
+              <ul>
+               <li>In high dimensional space, the data are sparse everywhere because of the curse of dimensionality. Therefore, DBSCAN doesn't work well on high-dimensional data in general.</li>
+               <li>DBSCAN does not respond well to data sets with varying densities.</li>
+              </ul>
+              <p>====References:====</p>
+              <ul>
+               <li>Martin Ester, Hans-Peter Kriegel, Jorg Sander, Xiaowei Xu (1996-). A density-based algorithm for discovering clusters in large spatial databases with noise". KDD, 1996.</li>
+               <li>Jorg Sander, Martin Ester, Hans-Peter Kriegel, Xiaowei Xu. (1998). Density-Based Clustering in Spatial Databases: The Algorithm GDBSCAN and Its Applications. 1998.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               minPts
+              </dt>
+              <dd class="body-medium">
+               <p>the minimum number of neighbors for a core data point.</p>
+              </dd>
+              <dt class="body-small">
+               nns
+              </dt>
+              <dd class="body-medium">
+               <p>the data structure for neighborhood search.</p>
+              </dd>
+              <dt class="body-small">
+               radius
+              </dt>
+              <dd class="body-medium">
+               <p>the neighborhood radius.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="dbscan-fffff6af">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#dbscan-fffff6af" t="n" class="documentableName ">dbscan</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span><span t="k"> &lt;: </span><span data-unresolved-link="" t="t">AnyRef</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">distance</span>: <span data-unresolved-link="" t="t">Distance</span>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">minPts</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">radius</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">DBSCAN</span>[<span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Density-Based Spatial Clustering of Applications with Noise. DBSCAN finds a number of clusters starting from the estimated density distribution of corresponding nodes.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Density-Based Spatial Clustering of Applications with Noise. DBSCAN finds a number of clusters starting from the estimated density distribution of corresponding nodes.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               distance
+              </dt>
+              <dd class="body-medium">
+               <p>the distance metric.</p>
+              </dd>
+              <dt class="body-small">
+               minPts
+              </dt>
+              <dd class="body-medium">
+               <p>the minimum number of neighbors for a core data point.</p>
+              </dd>
+              <dt class="body-small">
+               radius
+              </dt>
+              <dd class="body-medium">
+               <p>the neighborhood radius.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="dbscan-d38">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#dbscan-d38" t="n" class="documentableName ">dbscan</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">minPts</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">radius</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">DBSCAN</span>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>DBSCAN with Euclidean distance. DBSCAN finds a number of clusters starting from the estimated density distribution of corresponding nodes.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>DBSCAN with Euclidean distance. DBSCAN finds a number of clusters starting from the estimated density distribution of corresponding nodes.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               minPts
+              </dt>
+              <dd class="body-medium">
+               <p>the minimum number of neighbors for a core data point.</p>
+              </dd>
+              <dt class="body-small">
+               radius
+              </dt>
+              <dd class="body-medium">
+               <p>the neighborhood radius.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="denclue-9f7">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#denclue-9f7" t="n" class="documentableName ">denclue</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">sigma</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">m</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">DENCLUE</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>DENsity CLUstering. The DENCLUE algorithm employs a cluster model based on kernel density estimation. A cluster is defined by a local maximum of the estimated density function. Data points going to the same local maximum are put into the same cluster.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>DENsity CLUstering. The DENCLUE algorithm employs a cluster model based on kernel density estimation. A cluster is defined by a local maximum of the estimated density function. Data points going to the same local maximum are put into the same cluster.</p>
+              <p>Clearly, DENCLUE doesn't work on data with uniform distribution. In high dimensional space, the data always look like uniformly distributed because of the curse of dimensionality. Therefore, DENCLUDE doesn't work well on high-dimensional data in general.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>A. Hinneburg and D. A. Keim. A general approach to clustering in large databases with noise. Knowledge and Information Systems, 5(4):387-415, 2003.</li>
+               <li>Alexander Hinneburg and Hans-Henning Gabriel. DENCLUE 2.0: Fast Clustering based on Kernel Density Estimation. IDA, 2007.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               m
+              </dt>
+              <dd class="body-medium">
+               <p>the number of selected samples used in the iteration. This number should be much smaller than the number of data points to speed up the algorithm. It should also be large enough to capture the sufficient information of underlying distribution.</p>
+              </dd>
+              <dt class="body-small">
+               sigma
+              </dt>
+              <dd class="body-medium">
+               <p>the smooth parameter in the Gaussian kernel. The user can choose sigma such that number of density attractors is constant for a long interval of sigma.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="gmeans-fffff53d">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#gmeans-fffff53d" t="n" class="documentableName ">gmeans</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">GMeans</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>G-Means clustering algorithm, an extended K-Means which tries to automatically determine the number of clusters by normality test. The G-means algorithm is based on a statistical test for the hypothesis that a subset of data follows a Gaussian distribution. G-means runs k-means with increasing k in a hierarchical fashion until the test accepts the hypothesis that the data assigned to each k-means center are Gaussian.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>G-Means clustering algorithm, an extended K-Means which tries to automatically determine the number of clusters by normality test. The G-means algorithm is based on a statistical test for the hypothesis that a subset of data follows a Gaussian distribution. G-means runs k-means with increasing k in a hierarchical fashion until the test accepts the hypothesis that the data assigned to each k-means center are Gaussian.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>G. Hamerly and C. Elkan. Learning the k in k-means. NIPS, 2003.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the maximum number of clusters.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="hclust-dcf">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#hclust-dcf" t="n" class="documentableName ">hclust</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">method</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">HierarchicalClustering</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Agglomerative Hierarchical Clustering. This method seeks to build a hierarchy of clusters in a bottom up approach: each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy. The results of hierarchical clustering are usually presented in a dendrogram.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Agglomerative Hierarchical Clustering. This method seeks to build a hierarchy of clusters in a bottom up approach: each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy. The results of hierarchical clustering are usually presented in a dendrogram.</p>
+              <p>In general, the merges are determined in a greedy manner. In order to decide which clusters should be combined, a measure of dissimilarity between sets of observations is required. In most methods of hierarchical clustering, this is achieved by use of an appropriate metric, and a linkage criteria which specifies the dissimilarity of sets as a function of the pairwise distances of observations in the sets.</p>
+              <p>Hierarchical clustering has the distinct advantage that any valid measure of distance can be used. In fact, the observations themselves are not required: all that is used is a matrix of distances.</p>
+              <p>== References ==</p>
+              <ul>
+               <li>David Eppstein. Fast hierarchical clustering and other applications of dynamic closest pairs. SODA 1998.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>The data set.</p>
+              </dd>
+              <dt class="body-small">
+               method
+              </dt>
+              <dd class="body-medium">
+               <p>the agglomeration method to merge clusters. This should be one of "single", "complete", "upgma", "upgmc", "wpgma", "wpgmc", and "ward".</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="hclust-3f8">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#hclust-3f8" t="n" class="documentableName ">hclust</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span><span t="k"> &lt;: </span><span data-unresolved-link="" t="t">AnyRef</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">distance</span>: <span data-unresolved-link="" t="t">Distance</span>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">method</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Predef$.html#String" t="t">String</a>): <span data-unresolved-link="" t="t">HierarchicalClustering</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Agglomerative Hierarchical Clustering. This method seeks to build a hierarchy of clusters in a bottom up approach: each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy. The results of hierarchical clustering are usually presented in a dendrogram.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Agglomerative Hierarchical Clustering. This method seeks to build a hierarchy of clusters in a bottom up approach: each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy. The results of hierarchical clustering are usually presented in a dendrogram.</p>
+              <p>In general, the merges are determined in a greedy manner. In order to decide which clusters should be combined, a measure of dissimilarity between sets of observations is required. In most methods of hierarchical clustering, this is achieved by use of an appropriate metric, and a linkage criteria which specifies the dissimilarity of sets as a function of the pairwise distances of observations in the sets.</p>
+              <p>Hierarchical clustering has the distinct advantage that any valid measure of distance can be used. In fact, the observations themselves are not required: all that is used is a matrix of distances.</p>
+              <p>== References ==</p>
+              <ul>
+               <li>David Eppstein. Fast hierarchical clustering and other applications of dynamic closest pairs. SODA 1998.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>The data set.</p>
+              </dd>
+              <dt class="body-small">
+               distance
+              </dt>
+              <dd class="body-medium">
+               <p>the distance/dissimilarity measure.</p>
+              </dd>
+              <dt class="body-small">
+               method
+              </dt>
+              <dd class="body-medium">
+               <p>the agglomeration method to merge clusters. This should be one of "single", "complete", "upgma", "upgmc", "wpgma", "wpgmc", and "ward".</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="kmeans-fffff872">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#kmeans-fffff872" t="n" class="documentableName ">kmeans</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">maxIter</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">tol</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">runs</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">KMeans</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>K-Means clustering. The algorithm partitions n observations into k clusters in which each observation belongs to the cluster with the nearest mean. Although finding an exact solution to the k-means problem for arbitrary input is NP-hard, the standard approach to finding an approximate solution (often called Lloyd's algorithm or the k-means algorithm) is used widely and frequently finds reasonable solutions quickly.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>K-Means clustering. The algorithm partitions n observations into k clusters in which each observation belongs to the cluster with the nearest mean. Although finding an exact solution to the k-means problem for arbitrary input is NP-hard, the standard approach to finding an approximate solution (often called Lloyd's algorithm or the k-means algorithm) is used widely and frequently finds reasonable solutions quickly.</p>
+              <p>However, the k-means algorithm has at least two major theoretic shortcomings:</p>
+              <ul>
+               <li>First, it has been shown that the worst case running time of the algorithm is super-polynomial in the input size.</li>
+               <li>Second, the approximation found can be arbitrarily bad with respect to the objective function compared to the optimal learn.</li>
+              </ul>
+              <p>In this implementation, we use k-means++ which addresses the second of these obstacles by specifying a procedure to initialize the cluster centers before proceeding with the standard k-means optimization iterations. With the k-means++ initialization, the algorithm is guaranteed to find a solution that is O(log k) competitive to the optimal k-means solution.</p>
+              <p>We also use k-d trees to speed up each k-means step as described in the filter algorithm by Kanungo, et al.</p>
+              <p>K-means is a hard clustering method, i.e. each sample is assigned to a specific cluster. In contrast, soft clustering, e.g. the Expectation-Maximization algorithm for Gaussian mixtures, assign samples to different clusters with different probabilities.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>Tapas Kanungo, David M. Mount, Nathan S. Netanyahu, Christine D. Piatko, Ruth Silverman, and Angela Y. Wu. An Efficient k-Means Clustering Algorithm: Analysis and Implementation. IEEE TRANS. PAMI, 2002.</li>
+               <li>D. Arthur and S. Vassilvitskii. "K-means++: the advantages of careful seeding". ACM-SIAM symposium on Discrete algorithms, 1027-1035, 2007.</li>
+               <li>Anna D. Peterson, Arka P. Ghosh and Ranjan Maitra. A systematic evaluation of different methods for initializing the K-means clustering algorithm. 2010.</li>
+              </ul>
+              <p>This method runs the algorithm for given times and return the best one with smallest distortion.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters.</p>
+              </dd>
+              <dt class="body-small">
+               maxIter
+              </dt>
+              <dd class="body-medium">
+               <p>the maximum number of iterations for each running.</p>
+              </dd>
+              <dt class="body-small">
+               runs
+              </dt>
+              <dd class="body-medium">
+               <p>the number of runs of K-Means algorithm.</p>
+              </dd>
+              <dt class="body-small">
+               tol
+              </dt>
+              <dd class="body-medium">
+               <p>the tolerance of convergence test.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="kmodes-b49">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#kmodes-b49" t="n" class="documentableName ">kmodes</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">maxIter</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">runs</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">KModes</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>K-Modes clustering. K-Modes is the binary equivalent for K-Means. The mean update for centroids is replace by the mode one which is a majority vote among element of each cluster.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>K-Modes clustering. K-Modes is the binary equivalent for K-Means. The mean update for centroids is replace by the mode one which is a majority vote among element of each cluster.</p>
+             </div>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="mec-777">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#mec-777" t="n" class="documentableName ">mec</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span><span t="k"> &lt;: </span><span data-unresolved-link="" t="t">AnyRef</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">distance</span>: <span data-unresolved-link="" t="t">Distance</span>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">radius</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">MEC</span>[<span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Nonparametric Minimum Conditional Entropy Clustering. This method performs very well especially when the exact number of clusters is unknown. The method can also correctly reveal the structure of data and effectively identify outliers simultaneously.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Nonparametric Minimum Conditional Entropy Clustering. This method performs very well especially when the exact number of clusters is unknown. The method can also correctly reveal the structure of data and effectively identify outliers simultaneously.</p>
+              <p>The clustering criterion is based on the conditional entropy H(C | x), where C is the cluster label and x is an observation. According to Fano's inequality, we can estimate C with a low probability of error only if the conditional entropy H(C | X) is small. MEC also generalizes the criterion by replacing Shannon's entropy with Havrda-Charvat's structural α-entropy. Interestingly, the minimum entropy criterion based on structural &#xb;α-entropy is equal to the probability error of the nearest neighbor method when α&#xb;= 2. To estimate p(C | x), MEC employs Parzen density estimation, a nonparametric approach.</p>
+              <p>MEC is an iterative algorithm starting with an initial partition given by any other clustering methods, e.g. k-means, CLARNAS, hierarchical clustering, etc. Note that a random initialization is NOT appropriate.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>Haifeng Li. All rights reserved., Keshu Zhang, and Tao Jiang. Minimum Entropy Clustering and Applications to Gene Expression Analysis. CSB, 2004.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               distance
+              </dt>
+              <dd class="body-medium">
+               <p>the distance measure for neighborhood search.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters. Note that this is just a hint. The final number of clusters may be less.</p>
+              </dd>
+              <dt class="body-small">
+               radius
+              </dt>
+              <dd class="body-medium">
+               <p>the neighborhood radius.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="mec-85c">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#mec-85c" t="n" class="documentableName ">mec</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span><span t="k"> &lt;: </span><span data-unresolved-link="" t="t">AnyRef</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">distance</span>: <span data-unresolved-link="" t="t">Metric</span>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">radius</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">MEC</span>[<span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Nonparametric Minimum Conditional Entropy Clustering.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Nonparametric Minimum Conditional Entropy Clustering.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               distance
+              </dt>
+              <dd class="body-medium">
+               <p>the distance measure for neighborhood search.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters. Note that this is just a hint. The final number of clusters may be less.</p>
+              </dd>
+              <dt class="body-small">
+               radius
+              </dt>
+              <dd class="body-medium">
+               <p>the neighborhood radius.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="mec-58e">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#mec-58e" t="n" class="documentableName ">mec</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">radius</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">MEC</span>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Nonparametric Minimum Conditional Entropy Clustering. Assume Euclidean distance.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Nonparametric Minimum Conditional Entropy Clustering. Assume Euclidean distance.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters. Note that this is just a hint. The final number of clusters may be less.</p>
+              </dd>
+              <dt class="body-small">
+               radius
+              </dt>
+              <dd class="body-medium">
+               <p>the neighborhood radius.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="mec-e57">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#mec-e57" t="n" class="documentableName ">mec</a>[<span t="k"></span><span data-unresolved-link="" t="t">T</span><span t="k"> &lt;: </span><span data-unresolved-link="" t="t">AnyRef</span>](<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">nns</span>: <span data-unresolved-link="" t="t">RNNSearch</span>[<span t="t">T</span>, <span t="t">T</span>], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">radius</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>, <span t="k"></span><span data-unresolved-link="" t="n">y</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>], <span t="k"></span><span data-unresolved-link="" t="n">tol</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">MEC</span>[<span data-unresolved-link="" t="t">T</span>]
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Nonparametric Minimum Conditional Entropy Clustering.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Nonparametric Minimum Conditional Entropy Clustering.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters. Note that this is just a hint. The final number of clusters may be less.</p>
+              </dd>
+              <dt class="body-small">
+               nns
+              </dt>
+              <dd class="body-medium">
+               <p>the data structure for neighborhood search.</p>
+              </dd>
+              <dt class="body-small">
+               radius
+              </dt>
+              <dd class="body-medium">
+               <p>the neighborhood radius.</p>
+              </dd>
+              <dt class="body-small">
+               tol
+              </dt>
+              <dd class="body-medium">
+               <p>the tolerance of convergence test.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="sib-55e">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#sib-55e" t="n" class="documentableName ">sib</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<span data-unresolved-link="" t="t">SparseArray</span>], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">maxIter</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">runs</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">SIB</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>The Sequential Information Bottleneck algorithm. SIB clusters co-occurrence data such as text documents vs words. SIB is guaranteed to converge to a local maximum of the information. Moreover, the time and space complexity are significantly improved in contrast to the agglomerative IB algorithm.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>The Sequential Information Bottleneck algorithm. SIB clusters co-occurrence data such as text documents vs words. SIB is guaranteed to converge to a local maximum of the information. Moreover, the time and space complexity are significantly improved in contrast to the agglomerative IB algorithm.</p>
+              <p>In analogy to K-Means, SIB's update formulas are essentially same as the EM algorithm for estimating finite Gaussian mixture model by replacing regular Euclidean distance with Kullback-Leibler divergence, which is clearly a better dissimilarity measure for co-occurrence data. However, the common batch updating rule (assigning all instances to nearest centroids and then updating centroids) of K-Means won't work in SIB, which has to work in a sequential way (reassigning (if better) each instance then immediately update related centroids). It might be because K-L divergence is very sensitive and the centroids may be significantly changed in each iteration in batch updating rule.</p>
+              <p>Note that this implementation has a little difference from the original paper, in which a weighted Jensen-Shannon divergence is employed as a criterion to assign a randomly-picked sample to a different cluster. However, this doesn't work well in some cases as we experienced probably because the weighted JS divergence gives too much weight to clusters which is much larger than a single sample. In this implementation, we instead use the regular/unweighted Jensen-Shannon divergence.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>N. Tishby, F.C. Pereira, and W. Bialek. The information bottleneck method. 1999.</li>
+               <li>N. Slonim, N. Friedman, and N. Tishby. Unsupervised document classification using sequential information maximization. ACM SIGIR, 2002.</li>
+               <li>Jaakko Peltonen, Janne Sinkkonen, and Samuel Kaski. Sequential information bottleneck for finite data. ICML, 2004.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters.</p>
+              </dd>
+              <dt class="body-small">
+               maxIter
+              </dt>
+              <dd class="body-medium">
+               <p>the maximum number of iterations.</p>
+              </dd>
+              <dt class="body-small">
+               runs
+              </dt>
+              <dd class="body-medium">
+               <p>the number of runs of SIB algorithm.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="specc-fffff153">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#specc-fffff153" t="n" class="documentableName ">specc</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">W</span>: <span data-unresolved-link="" t="t">Matrix</span>, <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">SpectralClustering</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Spectral Clustering. Given a set of data points, the similarity matrix may be defined as a matrix S where S<sub>ij</sub> represents a measure of the similarity between points. Spectral clustering techniques make use of the spectrum of the similarity matrix of the data to perform dimensionality reduction for clustering in fewer dimensions. Then the clustering will be performed in the dimension-reduce space, in which clusters of non-convex shape may become tight. There are some intriguing similarities between spectral clustering methods and kernel PCA, which has been empirically observed to perform clustering.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Spectral Clustering. Given a set of data points, the similarity matrix may be defined as a matrix S where S<sub>ij</sub> represents a measure of the similarity between points. Spectral clustering techniques make use of the spectrum of the similarity matrix of the data to perform dimensionality reduction for clustering in fewer dimensions. Then the clustering will be performed in the dimension-reduce space, in which clusters of non-convex shape may become tight. There are some intriguing similarities between spectral clustering methods and kernel PCA, which has been empirically observed to perform clustering.</p>
+              <p>====References:====</p>
+              <ul>
+               <li>A.Y. Ng, M.I. Jordan, and Y. Weiss. On Spectral Clustering: Analysis and an algorithm. NIPS, 2001.</li>
+               <li>Marina Maila and Jianbo Shi. Learning segmentation by random walks. NIPS, 2000.</li>
+               <li>Deepak Verma and Marina Meila. A Comparison of Spectral Clustering Algorithms. 2003.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               W
+              </dt>
+              <dd class="body-medium">
+               <p>the adjacency matrix of graph.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="specc-fffffe09">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#specc-fffffe09" t="n" class="documentableName ">specc</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">sigma</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">SpectralClustering</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Spectral clustering.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Spectral clustering.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the dataset for clustering.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters.</p>
+              </dd>
+              <dt class="body-small">
+               sigma
+              </dt>
+              <dd class="body-medium">
+               <p>the smooth/width parameter of Gaussian kernel, which is a somewhat sensitive parameter. To search for the best setting, one may pick the value that gives the tightest clusters (smallest distortion, see { @link #distortion()}) in feature space.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="specc-fffff416">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#specc-fffff416" t="n" class="documentableName ">specc</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">l</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>, <span t="k"></span><span data-unresolved-link="" t="n">sigma</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>): <span data-unresolved-link="" t="t">SpectralClustering</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>Spectral clustering with Nystrom approximation.</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>Spectral clustering with Nystrom approximation.</p>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the dataset for clustering.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the number of clusters.</p>
+              </dd>
+              <dt class="body-small">
+               l
+              </dt>
+              <dd class="body-medium">
+               <p>the number of random samples for Nystrom approximation.</p>
+              </dd>
+              <dt class="body-small">
+               sigma
+              </dt>
+              <dd class="body-medium">
+               <p>the smooth/width parameter of Gaussian kernel, which is a somewhat sensitive parameter. To search for the best setting, one may pick the value that gives the tightest clusters (smallest distortion, see { @link #distortion()}) in feature space.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="documentableElement" id="xmeans-fffff7cc">
+         <div class="documentableElement-expander">
+          <button class="icon-button ar show-content"></button>
+          <div class="header monospace mono-medium">
+           <div class="signature">
+            <span class="modifiers"></span><span class="kind"><span t="k">def </span></span><a href="clustering.html#xmeans-fffff7cc" t="n" class="documentableName ">xmeans</a>(<span t="k"></span><span t="k"></span><span data-unresolved-link="" t="n">data</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Array.html" t="t">Array</a>[<a href="https://www.scala-lang.org/api/2.13.12/scala/Double.html" t="t">Double</a>]], <span t="k"></span><span data-unresolved-link="" t="n">k</span>: <a href="https://www.scala-lang.org/api/2.13.12/scala/Int.html" t="t">Int</a>): <span data-unresolved-link="" t="t">XMeans</span>
+           </div>
+          </div>
+         </div>
+         <div class="docs">
+          <span class="modifiers"></span>
+          <div>
+           <div class="originInfo"></div>
+           <div class="memberDocumentation">
+            <div class="documentableBrief doc">
+             <p>X-Means clustering algorithm, an extended K-Means which tries to automatically determine the number of clusters based on BIC scores. Starting with only one cluster, the X-Means algorithm goes into action after each run of K-Means, making local decisions about which subset of the current centroids should split themselves in order to better fit the data. The splitting decision is done by computing the Bayesian Information Criterion (BIC).</p>
+            </div>
+            <div class="cover">
+             <div class="doc">
+              <p>X-Means clustering algorithm, an extended K-Means which tries to automatically determine the number of clusters based on BIC scores. Starting with only one cluster, the X-Means algorithm goes into action after each run of K-Means, making local decisions about which subset of the current centroids should split themselves in order to better fit the data. The splitting decision is done by computing the Bayesian Information Criterion (BIC).</p>
+              <p>====References:====</p>
+              <ul>
+               <li>Dan Pelleg and Andrew Moore. X-means: Extending K-means with Efficient Estimation of the Number of Clusters. ICML, 2000.</li>
+              </ul>
+             </div>
+             <h2 class="h200">Value parameters</h2>
+             <dl class="attributes attributes-small">
+              <dt class="body-small">
+               data
+              </dt>
+              <dd class="body-medium">
+               <p>the data set.</p>
+              </dd>
+              <dt class="body-small">
+               k
+              </dt>
+              <dd class="body-medium">
+               <p>the maximum number of clusters.</p>
+              </dd>
+             </dl>
+             <h2 class="h200">Attributes</h2>
+             <dl class="attributes attributes-small"></dl>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+</section></div><div id="toc" class="body-small"><div id="toc-container"><span class="toc-title h200">In this article</span><nav class="toc-nav"><ul class="toc-list"><li><a href="#attributes">Attributes</a></li><li><a href="#members-list">Members list</a><ul><li><a href="#Type-members">Type members</a><ul><li><a href="#Classlikes">Classlikes</a></li></ul></li><li><a href="#Value-members">Value members</a><ul><li><a href="#Concrete-methods">Concrete methods</a></li></ul></li></ul></li></ul></nav></div></div></div><div id="footer" class="body-small mobile-footer"><div class="left-container">Generated with</div><div class="right-container"><div class="text">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div><div class="text-mobile">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div></div></div></body></html>
