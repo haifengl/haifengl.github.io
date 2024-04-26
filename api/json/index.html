@@ -1,174 +1,205 @@
-<!DOCTYPE html ><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/><title>Smile - JSON </title><meta content="Smile - JSON " name="description"/><meta content="Smile JSON " name="keywords"/><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><link href="lib/index.css" media="screen" type="text/css" rel="stylesheet"/><link href="lib/template.css" media="screen" type="text/css" rel="stylesheet"/><link href="lib/print.css" media="print" type="text/css" rel="stylesheet"/><link href="lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css"/><script type="text/javascript" src="lib/jquery.min.js"></script><script type="text/javascript" src="lib/index.js"></script><script type="text/javascript" src="index.js"></script><script type="text/javascript" src="lib/scheduler.js"></script><script type="text/javascript" src="lib/template.js"></script><script type="text/javascript">/* this variable can be used by the JS to determine the path to the root document */
-var toRoot = '';</script></head><body><div id="search"><span id="doc-title">Smile - JSON<span id="doc-version"></span></span> <span class="close-results"><span class="left">&lt;</span> Back</span><div id="textfilter"><span class="input"><input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/"/><i class="clear material-icons"></i><i id="search-icon" class="material-icons"></i></span></div></div><div id="search-results"><div id="search-progress"><div id="progress-fill"></div></div><div id="results-content"><div id="entity-results"></div><div id="member-results"></div></div></div><div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;"><div id="content-container" style="-webkit-overflow-scrolling: touch;"><div id="subpackage-spacer"><div id="packages"><h1>Packages</h1><ul><li class="indented0 current" name="_root_.root" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="_root_" class="anchorToMember"></a><a id="root:_root_" class="anchorToMember"></a> <span class="permalink"><a href="index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><span class="name">root</span></span><p class="shortcomment cmt">JSON (JavaScript Object Notation) is a lightweight data-interchange format.</p><div class="fullcomment"><div class="comment cmt"><p>JSON (JavaScript Object Notation) is a lightweight data-interchange format.
-It is easy for humans to read and write. It is easy for machines to parse
-and generate. JSON is a text format that is completely language independent
-but uses conventions that are familiar to programmers of the C-family of
-languages,</p><p>JSON has only types of string, number, boolean, object, array, and null.
-This library includes additional types such as date, int, long, double,
-counter, binary, UUID, ObjectId (as in BSON), etc.</p><p>It is very easy to parse a JSON object:</p><pre><span class="kw">val</span> doc =
-  json<span class="lit">"""
-  {
-    "store": {
-      "book": [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      "bicycle": {
-        "color": "red",
-        "price": 19.95
-      }
-    }
-  }
-  """</span></pre><p>The interpolator <code>json</code> parse a string to <code>JsObject</code>. To parse an array, use
-the interpolator <code>jsan</code> to <code>JsArray</code>. It is also okay to embed
-variable references directly in processed string literals.</p><pre><span class="kw">val</span> x = <span class="num">1</span>
-json<span class="lit">"""
-  {
-    "x": $x
-  }
-"""</span></pre><p>If the string is not a JSON object but any other valid JSON expression,
-one may use parseJson method to convert the string to a <code>JsValue</code>.</p><pre><span class="lit">"1"</span>.parseJson</pre><p>The json interpolator can only be applied to string literals.
-If you want to parse a string variable, the <code>parseJson</code> method can
-always be employed. If you know the string contains a JSON object,
-you may also use the method <code>parseJsObject</code>.</p><pre><span class="kw">val</span> s = <span class="lit">"""{"x":1}"""
-s.parseJsObject</span></pre><p>To serialize a JSON value (of type JsValue) in compact mode, you can
-just use <code>toString</code>. To pretty print, use the method <code>prettyPrint</code>.</p><pre>doc.toString
-doc.prettyPrint</pre><p>With a <code>JsObject</code> or <code>JsArray</code>, you can refer to the individual
-elements with a variation of array syntax, like this:</p><pre>doc(<span class="lit">"store"</span>)(<span class="lit">"bicycle"</span>)(<span class="lit">"color"</span>)
-doc(<span class="lit">"store"</span>)(<span class="lit">"book"</span>)(<span class="num">0</span>)(<span class="lit">"author"</span>)</pre><p>Note that we follow Scala's array access convention by <code>()</code> rather than
-<code>[]</code> in JavaScript.</p><p>Besides, you can use the dot notation to access its fields/elements
-just like in JavaScript:</p><pre>doc.store.bicycle.color
-doc.store.book(<span class="num">0</span>).author</pre><p>It is worth noting that we didn't define the type/schema of the document
-while Scala is a strong type language. In other words, we have both the
-type safe features of strong type language and the flexibility of dynamic
-language in this JSON library.</p><p>If you try to access a non-exist field, <code>JsUndefined</code> is returned.</p><pre>scala&gt; doc.book
-res11: unicorn.json.JsValue = undefined</pre><p>Although there are already several nice JSON libraries for Scala,
-the JSON objects are immutable by design, which is a natural choice
-for a functional language. For database, however, data mutation is necessary.
-Therefore, <code>JsObject</code> and <code>JsArray</code> are mutable data structures. You can
-set/add a field just like in JavaScript:</p><pre>json.store.bicycle.color = <span class="lit">"green"</span></pre><p>To delete a field from <code>JsObject</code>, use remove method:</p><pre>doc.store.book(<span class="num">0</span>) remove <span class="lit">"price"</span></pre><p>It is same as setting it <code>JsUndefined</code>:</p><pre>doc.store.book(<span class="num">0</span>).price = `JsUndefined`</pre><p>To delete an element from <code>JsArray</code>, the remove method will effectively
-remove it from the array. However, setting an element to undefined
-doesn't reduce the array size.</p><pre><span class="cmt">// delete the first element and array size is smaller</span>
-doc.store.book.remove(<span class="num">0</span>)
-<span class="cmt">// set the first element to undefined but array size keeps same</span>
-doc.store.book(<span class="num">0</span>) = JsUndefined</pre><p>It is also possible to append an element or another array to <code>JsArray</code>:</p><pre><span class="kw">val</span> a = JsArray(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>)
-a += <span class="num">5</span>
-
-a ++= JsArray(<span class="num">5</span>, <span class="num">6</span>)</pre><p>Common iterative operations such as <code>foreach</code>, <code>map</code>, <code>reduce</code> can be applied
-to <code>JsArray</code> too.</p><pre>doc.store.book.asInstanceOf[JsArray].foreach { book <span class="kw">=&gt;</span>
- println(book.price)
-}</pre><p>Because Scala is a static language, it is impossible to know
-<code>doc.store.book</code> is an array at compile time. So it is typed as
-generic <code>JsValue</code>, which is the parent type of specific JSON data types.
-Therefore, we use <code>asInstanceOf[JsArray]</code> to convert it to <code>JsArray</code>
-in order to use <code>foreach</code>.</p></div></div></li><li class="indented1 " name="_root_.smile" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="smile" class="anchorToMember"></a><a id="smile:smile" class="anchorToMember"></a> <span class="permalink"><a href="smile/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="smile/index.html" title=""><span class="name">smile</span></a></span></li></ul></div></div><div id="content"><body class="package value"><div id="definition"><div class="big-circle package">p</div><h1>root package <span class="permalink"><a href="index.html" title="Permalink"><i class="material-icons"></i></a></span></h1></div><h4 id="signature" class="signature"><span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><span class="name">root</span></span></h4><div id="comment" class="fullcommenttop"><div class="comment cmt"><p>JSON (JavaScript Object Notation) is a lightweight data-interchange format.
-It is easy for humans to read and write. It is easy for machines to parse
-and generate. JSON is a text format that is completely language independent
-but uses conventions that are familiar to programmers of the C-family of
-languages,</p><p>JSON has only types of string, number, boolean, object, array, and null.
-This library includes additional types such as date, int, long, double,
-counter, binary, UUID, ObjectId (as in BSON), etc.</p><p>It is very easy to parse a JSON object:</p><pre><span class="kw">val</span> doc =
-  json<span class="lit">"""
-  {
-    "store": {
-      "book": [
-        {
-          "category": "reference",
-          "author": "Nigel Rees",
-          "title": "Sayings of the Century",
-          "price": 8.95
-        },
-        {
-          "category": "fiction",
-          "author": "Evelyn Waugh",
-          "title": "Sword of Honour",
-          "price": 12.99
-        },
-        {
-          "category": "fiction",
-          "author": "Herman Melville",
-          "title": "Moby Dick",
-          "isbn": "0-553-21311-3",
-          "price": 8.99
-        },
-        {
-          "category": "fiction",
-          "author": "J. R. R. Tolkien",
-          "title": "The Lord of the Rings",
-          "isbn": "0-395-19395-8",
-          "price": 22.99
-        }
-      ],
-      "bicycle": {
-        "color": "red",
-        "price": 19.95
-      }
-    }
-  }
-  """</span></pre><p>The interpolator <code>json</code> parse a string to <code>JsObject</code>. To parse an array, use
-the interpolator <code>jsan</code> to <code>JsArray</code>. It is also okay to embed
-variable references directly in processed string literals.</p><pre><span class="kw">val</span> x = <span class="num">1</span>
-json<span class="lit">"""
-  {
-    "x": $x
-  }
-"""</span></pre><p>If the string is not a JSON object but any other valid JSON expression,
-one may use parseJson method to convert the string to a <code>JsValue</code>.</p><pre><span class="lit">"1"</span>.parseJson</pre><p>The json interpolator can only be applied to string literals.
-If you want to parse a string variable, the <code>parseJson</code> method can
-always be employed. If you know the string contains a JSON object,
-you may also use the method <code>parseJsObject</code>.</p><pre><span class="kw">val</span> s = <span class="lit">"""{"x":1}"""
-s.parseJsObject</span></pre><p>To serialize a JSON value (of type JsValue) in compact mode, you can
-just use <code>toString</code>. To pretty print, use the method <code>prettyPrint</code>.</p><pre>doc.toString
-doc.prettyPrint</pre><p>With a <code>JsObject</code> or <code>JsArray</code>, you can refer to the individual
-elements with a variation of array syntax, like this:</p><pre>doc(<span class="lit">"store"</span>)(<span class="lit">"bicycle"</span>)(<span class="lit">"color"</span>)
-doc(<span class="lit">"store"</span>)(<span class="lit">"book"</span>)(<span class="num">0</span>)(<span class="lit">"author"</span>)</pre><p>Note that we follow Scala's array access convention by <code>()</code> rather than
-<code>[]</code> in JavaScript.</p><p>Besides, you can use the dot notation to access its fields/elements
-just like in JavaScript:</p><pre>doc.store.bicycle.color
-doc.store.book(<span class="num">0</span>).author</pre><p>It is worth noting that we didn't define the type/schema of the document
-while Scala is a strong type language. In other words, we have both the
-type safe features of strong type language and the flexibility of dynamic
-language in this JSON library.</p><p>If you try to access a non-exist field, <code>JsUndefined</code> is returned.</p><pre>scala&gt; doc.book
-res11: unicorn.json.JsValue = undefined</pre><p>Although there are already several nice JSON libraries for Scala,
-the JSON objects are immutable by design, which is a natural choice
-for a functional language. For database, however, data mutation is necessary.
-Therefore, <code>JsObject</code> and <code>JsArray</code> are mutable data structures. You can
-set/add a field just like in JavaScript:</p><pre>json.store.bicycle.color = <span class="lit">"green"</span></pre><p>To delete a field from <code>JsObject</code>, use remove method:</p><pre>doc.store.book(<span class="num">0</span>) remove <span class="lit">"price"</span></pre><p>It is same as setting it <code>JsUndefined</code>:</p><pre>doc.store.book(<span class="num">0</span>).price = `JsUndefined`</pre><p>To delete an element from <code>JsArray</code>, the remove method will effectively
-remove it from the array. However, setting an element to undefined
-doesn't reduce the array size.</p><pre><span class="cmt">// delete the first element and array size is smaller</span>
-doc.store.book.remove(<span class="num">0</span>)
-<span class="cmt">// set the first element to undefined but array size keeps same</span>
-doc.store.book(<span class="num">0</span>) = JsUndefined</pre><p>It is also possible to append an element or another array to <code>JsArray</code>:</p><pre><span class="kw">val</span> a = JsArray(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>)
-a += <span class="num">5</span>
-
-a ++= JsArray(<span class="num">5</span>, <span class="num">6</span>)</pre><p>Common iterative operations such as <code>foreach</code>, <code>map</code>, <code>reduce</code> can be applied
-to <code>JsArray</code> too.</p><pre>doc.store.book.asInstanceOf[JsArray].foreach { book <span class="kw">=&gt;</span>
- println(book.price)
-}</pre><p>Because Scala is a static language, it is impossible to know
-<code>doc.store.book</code> is an array at compile time. So it is typed as
-generic <code>JsValue</code>, which is the parent type of specific JSON data types.
-Therefore, we use <code>asInstanceOf[JsArray]</code> to convert it to <code>JsArray</code>
-in order to use <code>foreach</code>.</p></div></div><div id="template"><div id="allMembers"><div id="packages" class="package members"><h3>Package Members</h3><ol><li class="indented0 " name="_root_.smile" group="Ungrouped" fullComment="no" data-isabs="false" visbl="pub"><a id="smile" class="anchorToMember"></a><a id="smile:smile" class="anchorToMember"></a> <span class="permalink"><a href="smile/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="smile/index.html" title=""><span class="name">smile</span></a></span></li></ol></div></div><div id="inheritedMembers"></div><div id="groupedMembers"><div name="Ungrouped" class="group"><h3>Ungrouped</h3></div></div></div><div id="tooltip"></div><div id="footer"></div></body></div></div></div></body></html>
+<!DOCTYPE html><html data-pathToRoot=""><head><meta charset="utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta><title>Smile - JSON</title><link rel="shortcut icon" type="image/x-icon" href="favicon.ico"></link><script type="text/javascript" src="scripts/theme.js"></script><script type="text/javascript" src="scripts/searchData.js" defer="true"></script><script type="text/javascript" src="scripts/scastieConfiguration.js" defer="true"></script><link rel="stylesheet" href="styles/theme/bundle.css"></link><link rel="stylesheet" href="styles/theme/components/bundle.css"></link><link rel="stylesheet" href="styles/theme/components/button/bundle.css"></link><link rel="stylesheet" href="styles/theme/layout/bundle.css"></link><link rel="stylesheet" href="styles/nord-light.css"></link><link rel="stylesheet" href="styles/dotty-icons.css"></link><link rel="stylesheet" href="styles/filter-bar.css"></link><link rel="stylesheet" href="styles/code-snippets.css"></link><link rel="stylesheet" href="styles/searchbar.css"></link><link rel="stylesheet" href="styles/social-links.css"></link><link rel="stylesheet" href="styles/versions-dropdown.css"></link><link rel="stylesheet" href="styles/content-contributors.css"></link><link rel="stylesheet" href="styles/fontawesome.css"></link><script type="text/javascript" src="hljs/highlight.pack.js" defer="true"></script><script type="text/javascript" src="scripts/hljs-scala3.js" defer="true"></script><script type="text/javascript" src="scripts/ux.js" defer="true"></script><script type="text/javascript" src="scripts/common/component.js" defer="true"></script><script type="text/javascript" src="scripts/common/utils.js" defer="true"></script><script type="text/javascript" src="scripts/components/FilterBar.js" defer="true"></script><script type="text/javascript" src="scripts/components/DocumentableList.js" defer="true"></script><script type="text/javascript" src="scripts/components/Input.js" defer="true"></script><script type="text/javascript" src="scripts/components/FilterGroup.js" defer="true"></script><script type="text/javascript" src="scripts/components/Filter.js" defer="true"></script><script type="text/javascript" src="scripts/scaladoc-scalajs.js" defer="true"></script><script type="text/javascript" src="scripts/contributors.js" defer="true"></script><script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js" defer="true"></script><script type="text/javascript" src="https://d3js.org/d3.v6.min.js" defer="true"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/graphlib-dot@0.6.2/dist/graphlib-dot.min.js" defer="true"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dagre-d3/0.6.1/dagre-d3.min.js" defer="true"></script><script type="text/javascript" src="https://scastie.scala-lang.org/embedded.js" defer="true"></script><script type="text/javascript" src="scripts/data.js" defer="true"></script><link rel="stylesheet" href="styles/apistyles.css"></link><script>var pathToRoot = "";</script></head><body><div id=""><div id="header" class="body-small"><div class="header-container-left"><a href="" class="logo-container"><span id="project-logo" class="project-logo"><img src="project-logo/smile.jpg"></img></span><span id="dark-project-logo" class="project-logo"><img src="project-logo/smile.jpg"></img></span><span class="project-name h300">Smile - JSON</span></a><span onclick="dropdownHandler(event)" class="text-button with-arrow" id="dropdown-trigger"><a><div class="projectVersion">3.1.0</div></a></span><div id="version-dropdown" class="dropdown-menu"></div></div><div class="header-container-right"><button id="search-toggle" class="icon-button"></button><span id="theme-toggle" class="icon-button"></span><span id="mobile-menu-toggle" class="icon-button hamburger"></span></div></div><div id="mobile-menu"><div class="mobile-menu-header body-small"><span class="mobile-menu-logo"><span id="project-logo" class="project-logo"><img src="project-logo/smile.jpg"></img></span><span id="dark-project-logo" class="project-logo"><img src="project-logo/smile.jpg"></img></span><span class="project-name h300">Smile - JSON</span></span><button id="mobile-menu-close" class="icon-button close"></button></div><div class="mobile-menu-container body-medium"><input id="mobile-scaladoc-searchbar-input" class="scaladoc-searchbar-input" type="search" placeholder="Find anything"></input><span id="mobile-theme-toggle" class="mobile-menu-item mode"></span></div></div><span id="mobile-sidebar-toggle" class="floating-button"></span><div id="leftColumn" class="body-small"><div class="switcher-container"><a id="api-nav-button" class="switcher h100 selected" href="index.html">API</a></div><nav id="api-nav" class="side-menu"><div class="ni n0"><span class="nh "><button class="ar icon-button "></button><a href="smile/json.html"><span class="micon pa"></span><span>smile.json</span></a></span><div class="ni n1 "><span class="nh "><a href="smile/json/CompactPrinter.html"><span class="micon tr"></span><span>CompactPrinter</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/CompactPrinter$.html"><span class="micon ob"></span><span>CompactPrinter</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsArray.html"><span class="micon cl"></span><span>JsArray</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsArray$.html"><span class="micon ob"></span><span>JsArray</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsBinary.html"><span class="micon cl"></span><span>JsBinary</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsBoolean.html"><span class="micon cl"></span><span>JsBoolean</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsBoolean$.html"><span class="micon ob"></span><span>JsBoolean</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsCounter.html"><span class="micon cl"></span><span>JsCounter</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsCounter$.html"><span class="micon ob"></span><span>JsCounter</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsDate.html"><span class="micon cl"></span><span>JsDate</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsDate$.html"><span class="micon ob"></span><span>JsDate</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsDecimal.html"><span class="micon cl"></span><span>JsDecimal</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsDecimal$.html"><span class="micon ob"></span><span>JsDecimal</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsDouble.html"><span class="micon cl"></span><span>JsDouble</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsDouble$.html"><span class="micon ob"></span><span>JsDouble</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsInt.html"><span class="micon cl"></span><span>JsInt</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsInt$.html"><span class="micon ob"></span><span>JsInt</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsLocalDate.html"><span class="micon cl"></span><span>JsLocalDate</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsLocalDate$.html"><span class="micon ob"></span><span>JsLocalDate</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsLocalDateTime.html"><span class="micon cl"></span><span>JsLocalDateTime</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsLocalDateTime$.html"><span class="micon ob"></span><span>JsLocalDateTime</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsLocalTime.html"><span class="micon cl"></span><span>JsLocalTime</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsLocalTime$.html"><span class="micon ob"></span><span>JsLocalTime</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsLong.html"><span class="micon cl"></span><span>JsLong</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsLong$.html"><span class="micon ob"></span><span>JsLong</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsNull$.html"><span class="micon ob"></span><span>JsNull</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsObject.html"><span class="micon cl"></span><span>JsObject</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsObject$.html"><span class="micon ob"></span><span>JsObject</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsObjectId.html"><span class="micon cl"></span><span>JsObjectId</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsObjectId$.html"><span class="micon ob"></span><span>JsObjectId</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsString.html"><span class="micon cl"></span><span>JsString</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsString$.html"><span class="micon ob"></span><span>JsString</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsTimestamp.html"><span class="micon cl"></span><span>JsTimestamp</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsTimestamp$.html"><span class="micon ob"></span><span>JsTimestamp</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsUUID.html"><span class="micon cl"></span><span>JsUUID</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsUUID$.html"><span class="micon ob"></span><span>JsUUID</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsUndefined$.html"><span class="micon ob"></span><span>JsUndefined</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsValue.html"><span class="micon tr"></span><span>JsValue</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsValueOrdering$.html"><span class="micon ob"></span><span>JsValueOrdering</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsonHelper.html"><span class="micon cl"></span><span>JsonHelper</span></a></span></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="smile/json/JsonParser$.html"><span class="micon ob"></span><span>JsonParser</span></a></span><div class="ni n2 "><span class="nh "><a href="smile/json/JsonParser$$ParsingException.html"><span class="micon cl"></span><span>ParsingException</span></a></span></div></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsonParser.html"><span class="micon cl"></span><span>JsonParser</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsonPrinter.html"><span class="micon tr"></span><span>JsonPrinter</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsonPrinter$.html"><span class="micon ob"></span><span>JsonPrinter</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsonSerializer.html"><span class="micon cl"></span><span>JsonSerializer</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/JsonSerializer$.html"><span class="micon ob"></span><span>JsonSerializer</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/ObjectId.html"><span class="micon cl"></span><span>ObjectId</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/ObjectId$.html"><span class="micon ob"></span><span>ObjectId</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/ParserInput.html"><span class="micon tr"></span><span>ParserInput</span></a></span></div><div class="ni n1"><span class="nh "><button class="ar icon-button "></button><a href="smile/json/ParserInput$.html"><span class="micon ob"></span><span>ParserInput</span></a></span><div class="ni n2 "><span class="nh "><a href="smile/json/ParserInput$$ByteArrayBasedParserInput.html"><span class="micon cl"></span><span>ByteArrayBasedParserInput</span></a></span></div><div class="ni n2 "><span class="nh "><a href="smile/json/ParserInput$$CharArrayBasedParserInput.html"><span class="micon cl"></span><span>CharArrayBasedParserInput</span></a></span></div><div class="ni n2 "><span class="nh "><a href="smile/json/ParserInput$$DefaultParserInput.html"><span class="micon cl"></span><span>DefaultParserInput</span></a></span></div><div class="ni n2 "><span class="nh "><a href="smile/json/ParserInput$$Line.html"><span class="micon cl"></span><span>Line</span></a></span></div><div class="ni n2 "><span class="nh "><a href="smile/json/ParserInput$$StringBasedParserInput.html"><span class="micon cl"></span><span>StringBasedParserInput</span></a></span></div></div><div class="ni n1 "><span class="nh "><a href="smile/json/PrettyPrinter.html"><span class="micon tr"></span><span>PrettyPrinter</span></a></span></div><div class="ni n1 "><span class="nh "><a href="smile/json/PrettyPrinter$.html"><span class="micon ob"></span><span>PrettyPrinter</span></a></span></div></div></nav></div><div id="footer" class="body-small"><div class="left-container">Generated with</div><div class="right-container"><div class="text">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
+<script type="text/javascript" src="https://haifengl.github.io/api/java/script-dir/gtag.js"></script>
+Use is subject to license terms.</div></div><div class="text-mobile">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div><div id="scaladoc-searchBar"></div><div id="main"><div class="breadcrumbs container"><a href="index.html">Smile - JSON</a></div><div id="content" class="body-medium"><div><h1 class="h600">Smile - JSON</h1>
+<div class="cover">
+ <div class="doc">
+  <p>JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages,</p>
+  <p>JSON has only types of string, number, boolean, object, array, and null. This library includes additional types such as date, int, long, double, counter, binary, UUID, ObjectId (as in BSON), etc.</p>
+  <p>It is very easy to parse a JSON object:</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>val doc =
+</span><span line-number="2" class=""><span class="tooltip-container"></span>  json"""
+</span><span line-number="3" class=""><span class="tooltip-container"></span>  {
+</span><span line-number="4" class=""><span class="tooltip-container"></span>    "store": {
+</span><span line-number="5" class=""><span class="tooltip-container"></span>      "book": [
+</span><span line-number="6" class=""><span class="tooltip-container"></span>        {
+</span><span line-number="7" class=""><span class="tooltip-container"></span>          "category": "reference",
+</span><span line-number="8" class=""><span class="tooltip-container"></span>          "author": "Nigel Rees",
+</span><span line-number="9" class=""><span class="tooltip-container"></span>          "title": "Sayings of the Century",
+</span><span line-number="10" class=""><span class="tooltip-container"></span>          "price": 8.95
+</span><span line-number="11" class=""><span class="tooltip-container"></span>        },
+</span><span line-number="12" class=""><span class="tooltip-container"></span>        {
+</span><span line-number="13" class=""><span class="tooltip-container"></span>          "category": "fiction",
+</span><span line-number="14" class=""><span class="tooltip-container"></span>          "author": "Evelyn Waugh",
+</span><span line-number="15" class=""><span class="tooltip-container"></span>          "title": "Sword of Honour",
+</span><span line-number="16" class=""><span class="tooltip-container"></span>          "price": 12.99
+</span><span line-number="17" class=""><span class="tooltip-container"></span>        },
+</span><span line-number="18" class=""><span class="tooltip-container"></span>        {
+</span><span line-number="19" class=""><span class="tooltip-container"></span>          "category": "fiction",
+</span><span line-number="20" class=""><span class="tooltip-container"></span>          "author": "Herman Melville",
+</span><span line-number="21" class=""><span class="tooltip-container"></span>          "title": "Moby Dick",
+</span><span line-number="22" class=""><span class="tooltip-container"></span>          "isbn": "0-553-21311-3",
+</span><span line-number="23" class=""><span class="tooltip-container"></span>          "price": 8.99
+</span><span line-number="24" class=""><span class="tooltip-container"></span>        },
+</span><span line-number="25" class=""><span class="tooltip-container"></span>        {
+</span><span line-number="26" class=""><span class="tooltip-container"></span>          "category": "fiction",
+</span><span line-number="27" class=""><span class="tooltip-container"></span>          "author": "J. R. R. Tolkien",
+</span><span line-number="28" class=""><span class="tooltip-container"></span>          "title": "The Lord of the Rings",
+</span><span line-number="29" class=""><span class="tooltip-container"></span>          "isbn": "0-395-19395-8",
+</span><span line-number="30" class=""><span class="tooltip-container"></span>          "price": 22.99
+</span><span line-number="31" class=""><span class="tooltip-container"></span>        }
+</span><span line-number="32" class=""><span class="tooltip-container"></span>      ],
+</span><span line-number="33" class=""><span class="tooltip-container"></span>      "bicycle": {
+</span><span line-number="34" class=""><span class="tooltip-container"></span>        "color": "red",
+</span><span line-number="35" class=""><span class="tooltip-container"></span>        "price": 19.95
+</span><span line-number="36" class=""><span class="tooltip-container"></span>      }
+</span><span line-number="37" class=""><span class="tooltip-container"></span>    }
+</span><span line-number="38" class=""><span class="tooltip-container"></span>  }
+</span><span line-number="39" class=""><span class="tooltip-container"></span>  """
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>The interpolator <code>json</code> parse a string to <code>JsObject</code>. To parse an array, use the interpolator <code>jsan</code> to <code>JsArray</code>. It is also okay to embed variable references directly in processed string literals.</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>val x = 1
+</span><span line-number="2" class=""><span class="tooltip-container"></span>json"""
+</span><span line-number="3" class=""><span class="tooltip-container"></span>  {
+</span><span line-number="4" class=""><span class="tooltip-container"></span>    "x": $x
+</span><span line-number="5" class=""><span class="tooltip-container"></span>  }
+</span><span line-number="6" class=""><span class="tooltip-container"></span>"""
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>If the string is not a JSON object but any other valid JSON expression, one may use parseJson method to convert the string to a <code>JsValue</code>.</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>"1".parseJson
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>The json interpolator can only be applied to string literals. If you want to parse a string variable, the <code>parseJson</code> method can always be employed. If you know the string contains a JSON object, you may also use the method <code>parseJsObject</code>.</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>val s = """{"x":1}"""
+</span><span line-number="2" class=""><span class="tooltip-container"></span>s.parseJsObject
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>To serialize a JSON value (of type JsValue) in compact mode, you can just use <code>toString</code>. To pretty print, use the method <code>prettyPrint</code>.</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>doc.toString
+</span><span line-number="2" class=""><span class="tooltip-container"></span>doc.prettyPrint
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>With a <code>JsObject</code> or <code>JsArray</code>, you can refer to the individual elements with a variation of array syntax, like this:</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>doc("store")("bicycle")("color")
+</span><span line-number="2" class=""><span class="tooltip-container"></span>doc("store")("book")(0)("author")
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>Note that we follow Scala's array access convention by <code>()</code> rather than <code>[]</code> in JavaScript.</p>
+  <p>Besides, you can use the dot notation to access its fields/elements just like in JavaScript:</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>doc.store.bicycle.color
+</span><span line-number="2" class=""><span class="tooltip-container"></span>doc.store.book(0).author
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>It is worth noting that we didn't define the type/schema of the document while Scala is a strong type language. In other words, we have both the type safe features of strong type language and the flexibility of dynamic language in this JSON library.</p>
+  <p>If you try to access a non-exist field, <code>JsUndefined</code> is returned.</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>scala&gt; doc.book
+</span><span line-number="2" class=""><span class="tooltip-container"></span>res11: unicorn.json.JsValue = undefined
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>Although there are already several nice JSON libraries for Scala, the JSON objects are immutable by design, which is a natural choice for a functional language. For database, however, data mutation is necessary. Therefore, <code>JsObject</code> and <code>JsArray</code> are mutable data structures. You can set/add a field just like in JavaScript:</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>json.store.bicycle.color = "green"
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>To delete a field from <code>JsObject</code>, use remove method:</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>doc.store.book(0) remove "price"
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>It is same as setting it <code>JsUndefined</code>:</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>doc.store.book(0).price = `JsUndefined`
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>To delete an element from <code>JsArray</code>, the remove method will effectively remove it from the array. However, setting an element to undefined doesn't reduce the array size.</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>// delete the first element and array size is smaller
+</span><span line-number="2" class=""><span class="tooltip-container"></span>doc.store.book.remove(0)
+</span><span line-number="3" class=""><span class="tooltip-container"></span>// set the first element to undefined but array size keeps same
+</span><span line-number="4" class=""><span class="tooltip-container"></span>doc.store.book(0) = JsUndefined
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>It is also possible to append an element or another array to <code>JsArray</code>:</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>val a = JsArray(1, 2, 3, 4)
+</span><span line-number="2" class=""><span class="tooltip-container"></span>a += 5
+</span><span line-number="3" class=""><span class="tooltip-container"></span>
+</span><span line-number="4" class=""><span class="tooltip-container"></span>a ++= JsArray(5, 6)
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>Common iterative operations such as <code>foreach</code>, <code>map</code>, <code>reduce</code> can be applied to <code>JsArray</code> too.</p>
+  <div class="snippet mono-small-block">
+   <pre><code class="language-"><span line-number="1" class=""><span class="tooltip-container"></span>doc.store.book.asInstanceOf[JsArray].foreach { book =&gt;
+</span><span line-number="2" class=""><span class="tooltip-container"></span> println(book.price)
+</span><span line-number="3" class=""><span class="tooltip-container"></span>}
+</span></code></pre>
+   <div class="buttons"></div>
+  </div>
+  <p>Because Scala is a static language, it is impossible to know <code>doc.store.book</code> is an array at compile time. So it is typed as generic <code>JsValue</code>, which is the parent type of specific JSON data types. Therefore, we use <code>asInstanceOf[JsArray]</code> to convert it to <code>JsArray</code> in order to use <code>foreach</code>.</p>
+ </div>
+ <section id="attributes">
+  <h2 class="h500">Attributes</h2>
+  <dl class="attributes"></dl>
+ </section>
+</div>
+<section id="members-list">
+ <h2 class="h500">Members list</h2>
+ <div class="documentableFilter">
+  <div class="filtersContainer"></div><input class="filterableInput" placeholder="Filter by any phrase" data-test-id="filterBarInput" type="search"><button class="clearButton label-only-button" data-test-id="filterBarClearButton">Clear all</button>
+ </div>
+ <div class="membersList expand">
+  <div class="tabs">
+   <div class="contents">
+    <section id="Packages">
+     <div data-togglable="packages" class="tab expand">
+      <div class="documentableList expand">
+       <div class="documentableList-expander">
+        <button class="icon-button show-content expand"></button>
+        <h3 class="groupHeader h400">Packages</h3>
+       </div>
+       <div class="documentableElement">
+        <div class="documentableElement-expander">
+         <button class="icon-button ar show-content"></button>
+         <div class="header monospace mono-medium">
+          <div class="signature">
+           <span class="modifiers"></span><span class="kind"><span t="k">package </span></span><a href="smile/json.html" t="n" class="documentableName ">smile.json</a>
+          </div>
+         </div>
+        </div>
+        <div class="docs">
+         <span class="modifiers"></span>
+         <div>
+          <div class="originInfo"></div>
+          <div class="memberDocumentation">
+           <div class="cover">
+            <div class="doc"></div>
+            <h2 class="h200">Attributes</h2>
+            <dl class="attributes attributes-small"></dl>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+</section></div><div id="toc" class="body-small"><div id="toc-container"><span class="toc-title h200">In this article</span><nav class="toc-nav"><ul class="toc-list"><li><a href="#attributes">Attributes</a></li><li><a href="#members-list">Members list</a><ul><li><a href="#Packages">Packages</a></li></ul></li></ul></nav></div></div></div><div id="footer" class="body-small mobile-footer"><div class="left-container">Generated with</div><div class="right-container"><div class="text">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div><div class="text-mobile">Copyright © 2010-2024 Haifeng Li. All rights reserved.
+Use is subject to license terms.</div></div></div></div></body></html>
