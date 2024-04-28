@@ -1,4 +1,4 @@
-pages = [{"l":"index.html#","e":false,"i":"","n":"Smile","t":"Smile","d":"","k":"static","x":""},
+pages = [{"l":"index.html#","e":false,"i":"","n":"Smile - Scala","t":"Smile - Scala","d":"","k":"static","x":""},
 {"l":"smile.html#","e":false,"i":"","n":"smile","t":"smile","d":"","k":"package","x":""},
 {"l":"smile/association.html#","e":false,"i":"","n":"smile.association","t":"smile.association","d":"","k":"package","x":""},
 {"l":"smile/association.html#arm-fffff423","e":false,"i":"","n":"arm","t":"arm(minSupport: Int, confidence: Double, itemsets: Array[Array[Int]]): Stream[AssociationRule]","d":"smile.association","k":"def","x":""},
