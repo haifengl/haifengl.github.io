@@ -409,7 +409,7 @@ smile&gt;
                 option <code>-R-Xmx</code>. For example,</p>
 
             <pre class="prettyprint lang-sh"><code>
-    $ ./bin/jshell.sh -R-Xmx30G
+    $ bin/jshell.sh -R-Xmx30G
     </code></pre>
 
             <h3 id="basics_java">Basics</h3>
@@ -465,7 +465,7 @@ smile&gt;
 
     var formula = Formula.lhs("class");
     var rf = RandomForest.fit(formula, data);
-    System.out.format("OOB error = %.2f%%%n", 100 * rf.error());
+    System.out.println(rf.metrics());
     </code></pre>
 
             <p>It can be run directly from the shell:</p>
@@ -499,7 +499,7 @@ smile&gt;
                 option <code>-J-Xmx</code>. For example,</p>
 
             <pre class="prettyprint lang-sh"><code>
-    $ ./bin/kotlin.sh -J-Xmx30G
+    $ bin/kotlin.sh -J-Xmx30G
     </code></pre>
 
             <h3 id="basics_kotlin">Basics</h3>
@@ -552,7 +552,7 @@ smile&gt;
 
     val formula = Formula.lhs("class")
     val rf = randomForest(formula, data)
-    println("OOB error = ${rf.error()}")
+    println(rf.metrics())
     </code></pre>
 
             <p>It can be run directly from the shell:</p>
@@ -701,8 +701,8 @@ smile&gt;
         <div class="tab-pane" id="scala_3">
             <div class="code" style="text-align: left;">
                 <pre class="prettyprint lang-scala"><code>
-    val zipTrain = read.csv("data/usps/zip.train", delimiter = ' ', header = false)
-    val zipTest = read.csv("data/usps/zip.test", delimiter = ' ', header = false)
+    val zipTrain = read.csv("data/usps/zip.train", delimiter = " ", header = false)
+    val zipTest = read.csv("data/usps/zip.test", delimiter = " ", header = false)
     </code></pre>
             </div>
         </div>
@@ -734,7 +734,7 @@ smile&gt;
     var prop = new java.util.Properties();
     prop.setProperty("smile.random.forest.trees", "200");
     var forest = RandomForest.fit(formula, zipTrain, prop);
-    System.out.format("OOB error rate = %.2f%%%n", (100.0 * forest.error()));
+    System.out.println(forest.metrics());
           </code></pre>
             </div>
         </div>
@@ -744,7 +744,7 @@ smile&gt;
     val formula: Formula = "V1" ~ "."
 
     val forest = randomForest(formula, zipTrain, ntrees = 200)
-    println("OOB error rate = %.2f%%" format (100.0 * forest.error()))
+    println(forest.metrics())
     </code></pre>
             </div>
         </div>
@@ -789,10 +789,10 @@ smile&gt;
         <div class="tab-pane" id="scala_5">
             <div class="code" style="text-align: left;">
                 <pre class="prettyprint lang-scala"><code>
-    val x = formula.x(zipTrain).toArray
-    val y = formula.y(zipTrain).toIntArray
-    val testx = formula.x(zipTest).toArray
-    val testy = formula.y(zipTest).toIntArray
+    val x = formula.x(zipTrain).toArray()
+    val y = formula.y(zipTrain).toIntArray()
+    val testx = formula.x(zipTest).toArray()
+    val testy = formula.y(zipTest).toIntArray()
     </code></pre>
             </div>
         </div>
@@ -817,7 +817,7 @@ smile&gt;
 
     var kernel = new GaussianKernel(8.0);
     var svm = OneVersusOne.fit(x, y, (x, y) -> SVM.fit(x, y, kernel, 5, 1E-3));
-    var pred = Validation.test(svm, testx);
+    var pred = svm.predict(testx);
     System.out.format("Accuracy = %.2f%%%n", (100.0 * Accuracy.of(testy, pred)));
     System.out.format("Confusion Matrix: %s%n", ConfusionMatrix.of(testy, pred));
           </code></pre>
@@ -827,10 +827,8 @@ smile&gt;
             <div class="code" style="text-align: left;">
                 <pre class="prettyprint lang-scala"><code>
     val kernel = new GaussianKernel(8.0)
-    val svm = test(x, y, testx, testy) { (x, y) =>
-      ovo(x, y) { (x, y) =>
-        SVM.fit(x, y, kernel, 5, 1E-3)
-      }
+    val svm = ovo(x, y) { (x, y) =>
+      SVM.fit(x, y, kernel, 5, 1E-3)
     }
     </code></pre>
             </div>
@@ -853,28 +851,24 @@ smile&gt;
                 <pre class="prettyprint lang-java"><code>
     import smile.base.mlp.Layer;
     import smile.base.mlp.OutputFunction;
-    import smile.feature.Standardizer;
+    import smile.classification.MLP;
     import smile.math.MathEx;
-
-    var scaler = Standardizer.fit(x);
-    var scaledX = scaler.transform(x);
-    var scaledTestX = scaler.transform(testx);
     
-    var net = new MLP(256,
+    var net = new MLP(Layer.input(256),
       Layer.sigmoid(768),
       Layer.sigmoid(192),
       Layer.sigmoid(30),
       Layer.mle(10, OutputFunction.SIGMOID)
     );
-    net.setLearningRate(0.1);
-    net.setMomentum(0.0);
+
+    net.setLearningRate(TimeFunction.linear(0.01, 20000, 0.001));
     
     for (int epoch = 0; epoch < 10; epoch++) {
       System.out.format("----- epoch %d -----%n", epoch);
       for (int i : MathEx.permutate(x.length)) {
-        net.update(scaledX[i], y[i]);
+        net.update(x[i], y[i]);
       }
-      var prediction = Validation.test(net, scaledTestX);
+      var prediction = net.predict(testx);
       System.out.format("Accuracy = %.2f%%%n", (100.0 * Accuracy.of(testy, prediction)));
     }
           </code></pre>
@@ -883,25 +877,21 @@ smile&gt;
         <div class="tab-pane" id="scala_7">
             <div class="code" style="text-align: left;">
                 <pre class="prettyprint lang-scala"><code>
-    val scaler = Standardizer.fit(x)
-    val scaledX = scaler.transform(x)
-    val scaledTestX = scaler.transform(testx)
-    
-    val net = new MLP(256,
+    val net = new MLP(Layer.input(256),
       Layer.sigmoid(768),
       Layer.sigmoid(192),
       Layer.sigmoid(30),
       Layer.mle(10, OutputFunction.SIGMOID)
     )
-    net.setLearningRate(0.1)
-    net.setMomentum(0.0)
+
+    net.setLearningRate(TimeFunction.linear(0.01, 20000, 0.001));
     
     (0 until 10).foreach(epoch => {
       println("----- epoch %d -----" format epoch)
       MathEx.permutate(x.length).foreach(i =>
-        net.update(scaledX(i), y(i))
+        net.update(x(i), y(i))
       )
-      val prediction = Validation.test(net, scaledTestX)
+      val prediction = net.predict(testx)
       println("Accuracy = %.2f%%" format (100.0 * Accuracy.of(testy, prediction)))
     })
     </code></pre>
@@ -925,7 +915,7 @@ smile&gt;
     var posteriori = new double[10];
     forest.predict(zipTest.get(0), posteriori);
     svm.predict(testx[0]);
-    net.predict(scaledTestX[0], posteriori);
+    net.predict(testx[0], posteriori);
           </code></pre>
             </div>
         </div>
@@ -935,7 +925,7 @@ smile&gt;
     val posteriori = new Array[Double](10)
     forest.predict(zipTest.get(0), posteriori)
     svm.predict(testx(0))
-    net.predict(scaledTestX(0), posteriori)
+    net.predict(testx(0), posteriori)
     </code></pre>
             </div>
         </div>
