@@ -286,7 +286,7 @@
 
   Welcome to Smile Shell; enter 'help&lt;RETURN&gt;' for list of supported commands.
   Type "exit&lt;RETURN&gt;" to leave the Smile Shell
-  Version 2.1.0, Scala 2.13.1, SBT 1.2.8, Built at 2019-11-20 20:04:41.868
+  Version 4.0.0, Scala 2.13.14, SBT 1.9.9 built at 2024-07-03 09:52:24.404-0400
 ===============================================================================
 smile&gt;
     </code></pre>
@@ -414,10 +414,21 @@ smile&gt;
 
             <p>When the shell starts, we should see something like the following:</p>
             <pre class="prettyprint lang-java"><code>
-    |  Welcome to JShell -- Version 11.0.6
-    |  For an introduction type: /help intro
+                                                       ..::''''::..
+                                                     .;''        ``;.
+     ....                                           ::    ::  ::    ::
+   ,;' .;:                ()  ..:                  ::     ::  ::     ::
+   ::.      ..:,:;.,:;.    .   ::   .::::.         :: .:' ::  :: `:. ::
+    '''::,   ::  ::  ::  `::   ::  ;:   .::        ::  :          :  ::
+  ,:';  ::;  ::  ::  ::   ::   ::  ::,::''.         :: `:.      .:' ::
+  `:,,,,;;' ,;; ,;;, ;;, ,;;, ,;;, `:,,,,:'          `;..``::::''..;'
+                                                       ``::,,,,::''
+|  Welcome to Smile  -- Version  4.0.0
+===============================================================================
+|  Welcome to JShell -- Version 21.0.3
+|  For an introduction type: /help intro
 
-    jshell>
+smile>
     </code></pre>
             <p>We pre-import Smile's definitions in JShell. To exit the shell, type <code>/exit</code>.</p>
 
@@ -426,23 +437,23 @@ smile&gt;
             <p>With local variable type inference, it is easy to use JShell as a calculator.</p>
 
             <pre class="prettyprint lang-java"><code>
-    jshell> "Hello, World"
+    smile> "Hello, World"
     $2 ==> "Hello, World"
 
-    jshell> 2
+    smile> 2
     $3 ==> 2
 
-    jshell> 2+3
+    smile> 2+3
     $4 ==> 5
     </code></pre>
 
             <p>We can also define variables and reuse them.</p>
 
             <pre class="prettyprint lang-java"><code>
-    jshell> var x = 2 + 3
+    smile> var x = 2 + 3
     x ==> 5
 
-    jshell> var y = 2 * (x + 1)
+    smile> var y = 2 * (x + 1)
     y ==> 12
     </code></pre>
 
@@ -487,7 +498,7 @@ smile&gt;
                 In the home directory of Smile, type</p>
 
             <pre class="prettyprint lang-sh"><code>
-    $ bin/kotlin.sh
+    $ bin/kshell.sh
     </code></pre>
 
             <p>to enter the Kotlin REPL with Smile libraries in the class path.
@@ -497,14 +508,14 @@ smile&gt;
                 option <code>-J-Xmx</code>. For example,</p>
 
             <pre class="prettyprint lang-sh"><code>
-    $ bin/kotlin.sh -J-Xmx30G
+    $ bin/kshell.sh -J-Xmx30G
     </code></pre>
 
             <h3 id="basics_kotlin">Basics</h3>
 
             <p>When the shell starts, we should see something like the following:</p>
             <pre class="prettyprint lang-kotlin"><code>
-    Welcome to Kotlin version 1.3.70 (JRE 1.8.0_241-b07)
+    Welcome to Kotlin version 2.0.0 (JRE 21.0.3+7-LTS-152)
     Type :help for help, :quit for quit
     >>>
     </code></pre>
@@ -556,7 +567,7 @@ smile&gt;
             <p>It can be run directly from the shell:</p>
 
             <pre class="prettyprint lang-sh"><code>
-    $ bin/kotlin.sh examples/iris.kts
+    $ bin/kshell.sh -Xuse-fir-lt=false -script examples/iris.kts
     </code></pre>
 
             <p>In this example, we use Fisher's Iris data in the <code>data</code> directory
