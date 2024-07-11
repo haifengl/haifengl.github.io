@@ -273,7 +273,7 @@
         <div class="tab-pane" id="scala_1">
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-scala"><code>
-    val x = read.csv("data/clustering/chameleon/t4.8k.txt", header=false, delimiter=' ').toArray
+    val x = read.csv("data/clustering/chameleon/t4.8k.txt", header=false, delimiter=" ").toArray
 
     val epochs = 20
     val lattice = SOM.lattice(20, 20, x)
@@ -310,7 +310,7 @@
         }
     }
 
-    Hexmap.plot(som.umatrix(), Palette.jet(256)).window();
+    Hexmap.of(som.umatrix(), Palette.jet(256)).canvas().window();
           </code></pre>
             </div>
         </div>
@@ -345,7 +345,7 @@
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-scala"><code>
     val dist = som.umatrix.flatten
-    val canvas = hist(dist, 100)
+    val canvas = hist(dist, 100, true)
 
     val mixture = GaussianMixture.fit(dist)
 
@@ -357,7 +357,8 @@
       Array(x, y)
     }.toArray
 
-    canvas.line(pdf, RED)
+    canvas.add(LinePlot.of(pdf, Color.RED))
+    show(canvas)
     </code></pre>
             </div>
         </div>
@@ -365,7 +366,7 @@
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
     var dist = Arrays.stream(som.umatrix()).flatMapToDouble(r -> Arrays.stream(r)).toArray();
-    var canvas = smile.plot.swing.Histogram.plot(dist, 100);
+    var canvas = smile.plot.swing.Histogram.of(dist, 100, true).canvas();
 
     var mixture = GaussianMixture.fit(dist);
 
@@ -377,7 +378,7 @@
       pdf[i][1] = mixture.p(pdf[i][0]) * w;
     }
 
-    canvas.line(pdf, Color.RED);
+    canvas.add(LinePlot.of(pdf, Color.RED));
     canvas.window();
           </code></pre>
             </div>
@@ -401,11 +402,11 @@
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-scala"><code>
     val codebook = som.neurons.flatten
-    val codebook2d = sammon(pdist(codebook, false), 2).coordinates
+    val codebook2d = sammon(pdist(codebook, false).toArray(), 2).coordinates
 
     val nodes = 20
     val neurons = (0 until nodes).map { i => codebook2d.slice(nodes*i, nodes*(i+1)) }.toArray
-    grid(neurons)
+    show(grid(neurons))
     </code></pre>
             </div>
         </div>
@@ -413,7 +414,7 @@
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
     var codebook = Arrays.stream(som.neurons()).flatMap(r -> Arrays.stream(r)).toArray(double[][]::new);
-    var codebook2d = SammonMapping.of(MathEx.pdist(codebook, false), 2).coordinates;
+    var codebook2d = SammonMapping.of(MathEx.pdist(codebook, false).toArray(), 2).coordinates;
 
     var nodes = 20;
     var neurons = new double[nodes][nodes][];
@@ -422,7 +423,7 @@
             neurons[i][j] = codebook2d[k];
         }
     }
-    Grid.plot(neurons).window();
+    Grid.of(neurons).canvas().window();
           </code></pre>
             </div>
         </div>
@@ -473,7 +474,7 @@
     val gas = new NeuralGas(NeuralGas.seed(400, x),
                 TimeFunction.exp(0.3, x.length * epochs / 2),
                 TimeFunction.exp(30, x.length * epochs / 8),
-                x.length * 2)
+                TimeFunction.constant(x.length * 2))
 
     (1 to epochs).foreach { _ =>
         MathEx.permutate(x.length).foreach { i =>
@@ -482,7 +483,7 @@
     }
 
     val canvas = plot(x, '.')
-    canvas.points(gas.neurons, '#', BLUE)
+    canvas.add(ScatterPlot.of(gas.neurons, '#', BLUE))
     show(canvas)
     </code></pre>
             </div>
@@ -494,7 +495,7 @@
     var gas = new NeuralGas(NeuralGas.seed(400, x),
                 TimeFunction.exp(0.3, x.length * epochs / 2),
                 TimeFunction.exp(30, x.length * epochs / 8),
-                x.length * 2);
+                TimeFunction.constant(x.length * 2));
 
     for (int e = 0; e < epochs; e++) {
         for (int i : MathEx.permutate(x.length)) {
@@ -502,8 +503,8 @@
         }
     }
 
-    var canvas = ScatterPlot.plot(x, '.');
-    canvas.points(gas.neurons(), '#', Color.BLUE);
+    var canvas = ScatterPlot.of(x, '.').canvas();
+    canvas.add(ScatterPlot.of(gas.neurons(), '#', Color.BLUE));
     canvas.window();
           </code></pre>
             </div>
@@ -556,13 +557,13 @@
     }
 
     val neurons = gng.neurons
-    val win = plot(x, '.')
-    win.canvas.points(neurons.map(_.w).toArray, '@', BLUE)
+    val canvas = plot(x, '.')
+    canvas.add(ScatterPlot.of(neurons.map(_.w).toArray, '@', BLUE))
 
     import scala.jdk.CollectionConverters._
     neurons.foreach { neuron =>
       neuron.edges.asScala.foreach { edge =>
-        win.canvas.line(Array(neuron.w, edge.neighbor.w), BLUE)
+        canvas.add(LinePlot.of(Array(neuron.w, edge.neighbor.w), BLUE))
       }
     }
     show(canvas)
@@ -581,13 +582,13 @@
     }
 
     var neurons = gng.neurons();
-    var canvas = ScatterPlot.plot(x, '.');
-    canvas.points(Arrays.stream(neurons).map(n -> n.w).toArray(double[][]::new), '@', Color.BLUE);
+    var canvas = ScatterPlot.of(x, '.').canvas();
+    canvas.add(ScatterPlot.of(Arrays.stream(neurons).map(n -> n.w).toArray(double[][]::new), '@', Color.BLUE));
 
     Arrays.stream(neurons).forEach(neuron -> {
         neuron.edges.stream().forEach(edge -> {
             double[][] e = {neuron.w, edge.neighbor.w};
-            canvas.line(e, Color.BLUE);
+            canvas.add(LinePlot.of(e, Color.BLUE));
         });
     });
     canvas.window();
@@ -637,12 +638,12 @@
 
     val neurons = cortex.neurons
     val canvas = plot(x, '.')
-    canvas.points(neurons.map(_.w).toArray, '@', BLUE)
+    canvas.add(ScatterPlot.of(neurons.map(_.w).toArray, '@', BLUE))
 
     import scala.jdk.CollectionConverters._
     neurons.foreach { neuron =>
       neuron.edges.asScala.foreach { edge =>
-        win.canvas.line(Array(neuron.w, edge.neighbor.w), BLUE)
+        canvas.add(LinePlot.of(Array(neuron.w, edge.neighbor.w), BLUE))
       }
     }
     show(canvas)
@@ -664,13 +665,13 @@
     }
 
     var neurons = cortex.neurons();
-    var canvas = ScatterPlot.plot(x, '.');
-    canvas.points(Arrays.stream(neurons).map(n -> n.w).toArray(double[][]::new), '@', Color.BLUE);
+    var canvas = ScatterPlot.of(x, '.').canvas();
+    canvas.add(ScatterPlot.of(Arrays.stream(neurons).map(n -> n.w).toArray(double[][]::new), '@', Color.BLUE));
 
     Arrays.stream(neurons).forEach(neuron -> {
         neuron.edges.stream().forEach(edge -> {
             double[][] e = {neuron.w, edge.neighbor.w};
-            canvas.line(e, Color.BLUE);
+            canvas.add(LinePlot.of(e, Color.BLUE));
         });
     });
     canvas.window();
@@ -727,7 +728,7 @@
     }
 
     val canvas = plot(x, '.')
-    canvas.points(birch.centroids, '#', BLUE)
+    canvas.add(ScatterPlot.of(birch.centroids, '#', BLUE))
     show(canvas)
     </code></pre>
             </div>
@@ -740,8 +741,8 @@
         birch.update(xi);
     }
 
-    var canvas = ScatterPlot.plot(x, '.');
-    canvas.points(birch.centroids(), '#', Color.BLUE);
+    var canvas = ScatterPlot.of(x, '.').canvas();
+    canvas.add(ScatterPlot.of(birch.centroids(), '#', Color.BLUE));
     canvas.window();
           </code></pre>
             </div>
