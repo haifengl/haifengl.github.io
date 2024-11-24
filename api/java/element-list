@@ -69,6 +69,7 @@ smile.stat.distribution
 smile.stat.hypothesis
 smile.swing
 smile.swing.table
+smile.swing.text
 smile.taxonomy
 smile.timeseries
 smile.util
