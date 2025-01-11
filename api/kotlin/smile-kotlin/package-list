@@ -63,8 +63,8 @@ $dokka.location:smile.manifold//lle/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int
 $dokka.location:smile.manifold//mds/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Boolean/PointingToDeclaration/smile-kotlin/smile.manifold/mds.html
 $dokka.location:smile.manifold//sammon/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.manifold/sammon.html
 $dokka.location:smile.manifold//tsne/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.manifold/tsne.html
-$dokka.location:smile.manifold//umap/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.manifold/umap.html
-$dokka.location:smile.manifold//umap/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.manifold/umap.html
+$dokka.location:smile.manifold//umap/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Metric[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Int#kotlin.Double#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.manifold/umap.html
+$dokka.location:smile.manifold//umap/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Int#kotlin.Double#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.manifold/umap.html
 $dokka.location:smile.nlp////PointingToDeclaration/smile-kotlin/smile.nlp/index.html
 $dokka.location:smile.nlp//bag/kotlin.String#kotlin.String#smile.nlp.stemmer.Stemmer?/PointingToDeclaration/smile-kotlin/smile.nlp/bag.html
 $dokka.location:smile.nlp//bag2/kotlin.String#kotlin.String#smile.nlp.stemmer.Stemmer?/PointingToDeclaration/smile-kotlin/smile.nlp/bag2.html
