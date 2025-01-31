@@ -263,10 +263,225 @@
 
     <h2 id="DataFrame">DataFrame</h2>
 
-    <p>Many Smile algorithms take simple <code>double[]</code> as input. But we also use
+    <p>While some Smile algorithms take simple <code>double[]</code> as input, we often use
         the encapsulation class <a href="api/java/smile/data/DataFrame.html">DataFrame</a>.
-        In fact, the output of most Smile data parsers is a DataFrame object that contains
-        a number of named columns.</p>
+        DataFrame is a two-dimensional data structure like a table with rows
+        and columns. Each column is a <a href="api/java/smile/data/vector/ValueVector.html">ValueVector</a>
+        that is a one-dimensional labeled abstraction to store a sequence of values having the same type.
+        Columns in a DataFrame may have different data types. There are concrete subclasses of ValueVector
+        for each primitive data type and generic object types. Creating a ValueVector by passing a list of values.</p>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_0" data-toggle="tab">Java</a></li>
+        <li><a href="#scala_0" data-toggle="tab">Scala</a></li>
+        <li><a href="#kotlin_0" data-toggle="tab">Kotlin</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane" id="scala_0">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-scala"><code>
+    smile> import java.time._
+           import smile.data._
+           import smile.data.vector._
+
+    smile> ValueVector.of("A", 1.0, 2.0, 3.0)
+    $val res0: smile.data.vector.DoubleVector = A[1, 2, 3]
+
+    smile> ValueVector.of("B", Instant.now())
+    val res1: smile.data.vector.ObjectVector[java.time.Instant] = B[2025-01-19T01:58:06.813727400Z]
+
+    smile> ValueVector.nominal("C", "test", "train", "test", "train")
+    val res2: smile.data.vector.ValueVector = C[test, train, test, train]
+
+    smile> ValueVector.of("D",
+               "this is a string vector",
+               "Nominal/ordinal vectors store data as integers internally")
+    val res3: smile.data.vector.StringVector = D[this is a string vector, Nominal/ordinal vectors store data as integers internally]
+
+    smile> ObjectVector.of("E", Index.range(0, 4).toArray(), Array(3, 3, 3, 3))
+    val res4: smile.data.vector.ObjectVector[Array[Int]] = E[[0, 1, 2, 3], [3, 3, 3, 3]]
+    </code></pre>
+            </div>
+        </div>
+        <div class="tab-pane active" id="java_0">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> import java.time.*
+           import smile.data.*
+           import smile.data.vector.*
+
+    smile> ValueVector.of("A", 1.0, 2.0, 3.0)
+    $2 ==> A[1, 2, 3]
+
+    smile> ValueVector.of("B", Instant.now())
+    $3 ==> B[2025-01-18T23:08:54.375073600Z]
+
+    smile> ValueVector.nominal("C", "test", "train", "test", "train")
+    $4 ==> C[test, train, test, train]
+
+    smile> ValueVector.of("D",
+               "this is a string vector",
+               "Nominal/ordinal vectors store data as integers internally")
+    $5 ==> D[this is a string vector, Nominal/ordinal vectors store data as integers internally]
+
+    smile> ObjectVector.of("E", Index.range(0, 4).toArray(), new int[]{3, 3, 3, 3})
+    $6 ==> E[[0, 1, 2, 3], [3, 3, 3, 3]]
+    </code></pre>
+            </div>
+        </div>
+        <div class="tab-pane" id="kotlin_0">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-kotlin"><code>
+    >>> import java.time.*
+        import smile.data.*
+        import smile.data.vector.*
+        import smile.util.*
+
+    >>> ValueVector.of("A", 1.0, 2.0, 3.0)
+    res4: smile.data.vector.DoubleVector = A[1, 2, 3]
+
+    >>> ValueVector.of("B", Instant.now())
+    res5: smile.data.vector.ObjectVector&lt;java.time.Instant?&gt; = B[2025-01-19T01:58:06.813727400Z]
+
+    >>> ValueVector.nominal("C", "test", "train", "test", "train")
+    res6: smile.data.vector.ValueVector = C[test, train, test, train]
+
+    >>> ValueVector.of("D",
+               "this is a string vector",
+               "Nominal/ordinal vectors store data as integers internally")
+    res7: smile.data.vector.StringVector = D[this is a string vector, Nominal/ordinal vectors store data as integers internally]
+
+    >>> ObjectVector.of("E", Index.range(0, 4).toArray(), intArrayOf(3, 3, 3, 3))
+    res8: smile.data.vector.ObjectVector&lt;kotlin.IntArray?&gt; = E[[0, 1, 2, 3], [3, 3, 3, 3]]
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <p>Note that the <code>nominal</code> and <code>ordinal</code> methods
+        factorize string values and store them as integral values internally,
+        which are more efficient, compact, and friendly for machine learning
+        algorithm. In contrast, the <code>ValueVector.of(String...)</code>
+        method returns a <code>StringVector</code> that store string values
+        as is, which is useful for text processing.</p>
+
+    <h3 id="DataFrame_Creation">Creation</h3>
+    <p>For illustration, we create a DataFrame with a 2-dimensional array in below example.
+        If no optional column names are passed, the default column names will be
+        V1, V2, etc. It is also easy to create a DataFrame by passing a list of
+        columns. The columns of the second DataFrame have different data types.
+        The method <code>schema()</code> will describe the column names,
+        data types, whether they can be null.</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_0.1" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_0.1">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> var df = DataFrame.of(MathEx.randn(6, 4))
+    df ==>
+    +---+---------+---------+---------+---------+
+    |   |       V1|       V2|       V3|       V4|
+    +---+---------+---------+---------+---------+
+    |  0|-0.201469| 0.970363| 2.726932|-0.146014|
+    |  1| 1.872161| 0.495932| 0.553859|-0.028237|
+    |  2|-0.504866|-0.179409| 0.201377| 0.281267|
+    |  3| 0.894446| 0.791521| 0.053346| 0.213519|
+    |  4| 0.200011|-0.203736|-0.349196|-1.193759|
+    |  5|  1.52529|-1.407597|  1.16758| -1.78291|
+    +---+---------+---------+---------+---------+
+
+    smile> var df = new DataFrame(
+                   ValueVector.of("A", 1.0),
+                   ValueVector.of("B", LocalDate.parse("2013-01-02")),
+                   ValueVector.of("C", "foo"),
+                   ObjectVector.of("D", Index.range(0, 4).toArray()),
+                   ObjectVector.of("E", new int[]{3, 3, 3, 3})
+           )
+    df ==>
+    +---+---+----------+---+------------+------------+
+    |   |  A|         B|  C|           D|           E|
+    +---+---+----------+---+------------+------------+
+    |  0|  1|2013-01-02|foo|[0, 1, 2, 3]|[3, 3, 3, 3]|
+    +---+---+----------+---+------------+------------+
+
+    smile> df.schema()
+    $4 ==> {
+      A: double NOT NULL,
+      B: Date,
+      C: String,
+      D: int[],
+      E: int[]
+    }
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <p>We can create a DataFrame with a collection of records or beans.</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_0.2" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_0.2">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+    smile> enum Gender {Male, Female}
+           record Person(String name, Gender gender, String state, LocalDate birthday, int age, Double salary) { }
+           List&lt;Person&gt; persons = new ArrayList<>();
+           persons.add(new Person("Alex", Gender.Male, "NY", LocalDate.of(1980, 10, 1), 38, 10000.));
+           persons.add(new Person("Bob", Gender.Male, "AZ", LocalDate.of(1995, 3, 4), 23, null));
+           persons.add(new Person("Jane", Gender.Female, "CA", LocalDate.of(1970, 3, 1), 48, 230000.));
+           persons.add(new Person("Amy", Gender.Female, "NY", LocalDate.of(2005, 12, 10), 13, null));
+           var df = DataFrame.of(Person.class, persons);
+    df ==>
+    +---+----+------+-----+----------+---+------+
+    |   |name|gender|state|  birthday|age|salary|
+    +---+----+------+-----+----------+---+------+
+    |  0|Alex|  Male|   NY|1980-10-01| 38| 10000|
+    |  1| Bob|  Male|   AZ|1995-03-04| 23|  null|
+    |  2|Jane|Female|   CA|1970-03-01| 48|230000|
+    |  3| Amy|Female|   NY|2005-12-10| 13|  null|
+    +---+----+------+-----+----------+---+------+
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <p>In above example, the column 'state' is of string type. Apparently, it is a categorical variable.
+        We can factorize such string columns to categorical values:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_0.3" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_0.3">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> var df2 = df.factorize("state");
+    df2 ==>
+    +---+----+------+-----+----------+---+------+
+    |   |name|gender|state|  birthday|age|salary|
+    +---+----+------+-----+----------+---+------+
+    |  0|Alex|  Male|   NY|1980-10-01| 38| 10000|
+    |  1| Bob|  Male|   AZ|1995-03-04| 23|  null|
+    |  2|Jane|Female|   CA|1970-03-01| 48|230000|
+    |  3| Amy|Female|   NY|2005-12-10| 13|  null|
+    +---+----+------+-----+----------+---+------+
+
+    smile> df.get(0, 2)
+    $25 ==> "NY"
+    smile> df2.get(0, 2)
+    $27 ==> 2
+    </code></pre>
+            </div>
+        </div>
+    </div>
+    <p>On the surface, everything seems same. But the column 'state' is actually converted
+    to integral values under the hood.</p>
+
+    <p>Smile provides many parsers for popular data formats. In fact, the output of most Smile
+        data parsers is a DataFrame.</p>
 
     <ul class="nav nav-tabs">
         <li class="active"><a href="#java_1" data-toggle="tab">Java</a></li>
@@ -280,116 +495,249 @@
     smile> val iris = read.arff("data/weka/iris.arff")
     [main] INFO smile.io.Arff - Read ARFF relation iris
     iris: DataFrame =
-    +-----------+----------+-----------+----------+-----------+
-    |sepallength|sepalwidth|petallength|petalwidth|      class|
-    +-----------+----------+-----------+----------+-----------+
-    |        5.1|       3.5|        1.4|       0.2|Iris-setosa|
-    |        4.9|         3|        1.4|       0.2|Iris-setosa|
-    |        4.7|       3.2|        1.3|       0.2|Iris-setosa|
-    |        4.6|       3.1|        1.5|       0.2|Iris-setosa|
-    |          5|       3.6|        1.4|       0.2|Iris-setosa|
-    |        5.4|       3.9|        1.7|       0.4|Iris-setosa|
-    |        4.6|       3.4|        1.4|       0.3|Iris-setosa|
-    |          5|       3.4|        1.5|       0.2|Iris-setosa|
-    |        4.4|       2.9|        1.4|       0.2|Iris-setosa|
-    |        4.9|       3.1|        1.5|       0.1|Iris-setosa|
-    +-----------+----------+-----------+----------+-----------+
+    +---+-----------+----------+-----------+----------+-----------+
+    |   |sepallength|sepalwidth|petallength|petalwidth|      class|
+    +---+-----------+----------+-----------+----------+-----------+
+    |  0|        5.1|       3.5|        1.4|       0.2|Iris-setosa|
+    |  1|        4.9|         3|        1.4|       0.2|Iris-setosa|
+    |  2|        4.7|       3.2|        1.3|       0.2|Iris-setosa|
+    |  3|        4.6|       3.1|        1.5|       0.2|Iris-setosa|
+    |  4|          5|       3.6|        1.4|       0.2|Iris-setosa|
+    |  5|        5.4|       3.9|        1.7|       0.4|Iris-setosa|
+    |  6|        4.6|       3.4|        1.4|       0.3|Iris-setosa|
+    |  7|          5|       3.4|        1.5|       0.2|Iris-setosa|
+    |  8|        4.4|       2.9|        1.4|       0.2|Iris-setosa|
+    |  9|        4.9|       3.1|        1.5|       0.1|Iris-setosa|
+    +---+-----------+----------+-----------+----------+-----------+
     140 more rows...
-
-    smile> iris.summary
-    res1: DataFrame =
-    +-----------+-----+---+--------+---+
-    |     column|count|min|     avg|max|
-    +-----------+-----+---+--------+---+
-    |sepallength|  150|4.3|5.843333|7.9|
-    | sepalwidth|  150|  2|   3.054|4.4|
-    |petallength|  150|  1|3.758667|6.9|
-    | petalwidth|  150|0.1|1.198667|2.5|
-    +-----------+-----+---+--------+---+
     </code></pre>
+            </div>
         </div>
-    </div>
         <div class="tab-pane active" id="java_1">
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-java"><code>
     smile> import smile.data.*
-
-    smile> import smile.io.*
-
-    smile> var iris = Read.arff("data/weka/iris.arff")
+           import smile.datasets.*
+           import smile.io.*
+           var iris = Read.arff("data/weka/iris.arff")
     [main] INFO smile.io.Arff - Read ARFF relation iris
-    $3 ==> [sepallength: float, sepalwidth: float, petallength: float, petalwidth: float, class: byte nominal[Iris-setosa, Iris-versicolor, Iris-virginica]]
-    +-----------+----------+-----------+----------+-----------+
-    |sepallength|sepalwidth|petallength|petalwidth|      class|
-    +-----------+----------+-----------+----------+-----------+
-    |        5.1|       3.5|        1.4|       0.2|Iris-setosa|
-    |        4.9|         3|        1.4|       0.2|Iris-setosa|
-    |        4.7|       3.2|        1.3|       0.2|Iris-setosa|
-    |        4.6|       3.1|        1.5|       0.2|Iris-setosa|
-    |          5|       3.6|        1.4|       0.2|Iris-setosa|
-    |        5.4|       3.9|        1.7|       0.4|Iris-setosa|
-    |        4.6|       3.4|        1.4|       0.3|Iris-setosa|
-    |          5|       3.4|        1.5|       0.2|Iris-setosa|
-    |        4.4|       2.9|        1.4|       0.2|Iris-setosa|
-    |        4.9|       3.1|        1.5|       0.1|Iris-setosa|
-    +-----------+----------+-----------+----------+-----------+
+    $3 ==>
+    +---+-----------+----------+-----------+----------+-----------+
+    |   |sepallength|sepalwidth|petallength|petalwidth|      class|
+    +---+-----------+----------+-----------+----------+-----------+
+    |  0|        5.1|       3.5|        1.4|       0.2|Iris-setosa|
+    |  1|        4.9|         3|        1.4|       0.2|Iris-setosa|
+    |  2|        4.7|       3.2|        1.3|       0.2|Iris-setosa|
+    |  3|        4.6|       3.1|        1.5|       0.2|Iris-setosa|
+    |  4|          5|       3.6|        1.4|       0.2|Iris-setosa|
+    |  5|        5.4|       3.9|        1.7|       0.4|Iris-setosa|
+    |  6|        4.6|       3.4|        1.4|       0.3|Iris-setosa|
+    |  7|          5|       3.4|        1.5|       0.2|Iris-setosa|
+    |  8|        4.4|       2.9|        1.4|       0.2|Iris-setosa|
+    |  9|        4.9|       3.1|        1.5|       0.1|Iris-setosa|
+    +---+-----------+----------+-----------+----------+-----------+
     140 more rows...
-
-    smile> iris.summary()
-    $5 ==> [column: String, count: long, min: double, avg: double, max: double]
-    +-----------+-----+---+--------+---+
-    |     column|count|min|     avg|max|
-    +-----------+-----+---+--------+---+
-    |sepallength|  150|4.3|5.843333|7.9|
-    | sepalwidth|  150|  2|   3.054|4.4|
-    |petallength|  150|  1|3.758667|6.9|
-    | petalwidth|  150|0.1|1.198667|2.5|
-    +-----------+-----+---+--------+---+
     </code></pre>
-        </div>
+            </div>
         </div>
         <div class="tab-pane" id="kotlin_1">
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-kotlin"><code>
     >>> import smile.*
-    >>> import smile.data.*
-    >>> import smile.io.*
-    >>> val iris = Read.arff("data/weka/iris.arff")
+        import smile.data.*
+        import smile.io.*
+        val iris = Read.arff("data/weka/iris.arff")
     [main] INFO smile.io.Arff - Read ARFF relation iris
     >>> iris
-    res3: smile.data.DataFrame! = [sepallength: float, sepalwidth: float, petallength: float, petalwidth: float, class: byte nominal[Iris-setosa, Iris-versicolor, Iris-virginica]]
-    +-----------+----------+-----------+----------+-----------+
-    |sepallength|sepalwidth|petallength|petalwidth|      class|
-    +-----------+----------+-----------+----------+-----------+
-    |        5.1|       3.5|        1.4|       0.2|Iris-setosa|
-    |        4.9|         3|        1.4|       0.2|Iris-setosa|
-    |        4.7|       3.2|        1.3|       0.2|Iris-setosa|
-    |        4.6|       3.1|        1.5|       0.2|Iris-setosa|
-    |          5|       3.6|        1.4|       0.2|Iris-setosa|
-    |        5.4|       3.9|        1.7|       0.4|Iris-setosa|
-    |        4.6|       3.4|        1.4|       0.3|Iris-setosa|
-    |          5|       3.4|        1.5|       0.2|Iris-setosa|
-    |        4.4|       2.9|        1.4|       0.2|Iris-setosa|
-    |        4.9|       3.1|        1.5|       0.1|Iris-setosa|
-    +-----------+----------+-----------+----------+-----------+
+    res3: smile.data.DataFrame! =
+    +---+-----------+----------+-----------+----------+-----------+
+    |   |sepallength|sepalwidth|petallength|petalwidth|      class|
+    +---+-----------+----------+-----------+----------+-----------+
+    |  0|        5.1|       3.5|        1.4|       0.2|Iris-setosa|
+    |  1|        4.9|         3|        1.4|       0.2|Iris-setosa|
+    |  2|        4.7|       3.2|        1.3|       0.2|Iris-setosa|
+    |  3|        4.6|       3.1|        1.5|       0.2|Iris-setosa|
+    |  4|          5|       3.6|        1.4|       0.2|Iris-setosa|
+    |  5|        5.4|       3.9|        1.7|       0.4|Iris-setosa|
+    |  6|        4.6|       3.4|        1.4|       0.3|Iris-setosa|
+    |  7|          5|       3.4|        1.5|       0.2|Iris-setosa|
+    |  8|        4.4|       2.9|        1.4|       0.2|Iris-setosa|
+    |  9|        4.9|       3.1|        1.5|       0.1|Iris-setosa|
+    +---+-----------+----------+-----------+----------+-----------+
     140 more rows...
-
-    >>> iris.summary()
-    res4: smile.data.DataFrame! = [column: String, count: long, min: double, avg: double, max: double]
-    +-----------+-----+---+--------+---+
-    |     column|count|min|     avg|max|
-    +-----------+-----+---+--------+---+
-    |sepallength|  150|4.3|5.843333|7.9|
-    | sepalwidth|  150|  2|   3.054|4.4|
-    |petallength|  150|  1|3.758667|6.9|
-    | petalwidth|  150|0.1|1.198667|2.5|
-    +-----------+-----+---+--------+---+
     </code></pre>
-        </div>
+            </div>
         </div>
     </div>
 
-    <p>We can get a row with the array syntax or refer a column by its name.</p>
+    <p>The <code>smile.datasets</code> package also provide many public datasets.</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_1.1" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_1.1">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+
+    smile> var iris = new Iris().data() // use built-in dataset object
+    [main] INFO smile.io.Arff - Read ARFF relation iris
+    iris ==>
+    +---+-----------+----------+-----------+----------+-----------+
+    |   |sepallength|sepalwidth|petallength|petalwidth|      class|
+    +---+-----------+----------+-----------+----------+-----------+
+    |  0|        5.1|       3.5|        1.4|       0.2|Iris-setosa|
+    |  1|        4.9|         3|        1.4|       0.2|Iris-setosa|
+    |  2|        4.7|       3.2|        1.3|       0.2|Iris-setosa|
+    |  3|        4.6|       3.1|        1.5|       0.2|Iris-setosa|
+    |  4|          5|       3.6|        1.4|       0.2|Iris-setosa|
+    |  5|        5.4|       3.9|        1.7|       0.4|Iris-setosa|
+    |  6|        4.6|       3.4|        1.4|       0.3|Iris-setosa|
+    |  7|          5|       3.4|        1.5|       0.2|Iris-setosa|
+    |  8|        4.4|       2.9|        1.4|       0.2|Iris-setosa|
+    |  9|        4.9|       3.1|        1.5|       0.1|Iris-setosa|
+    +---+-----------+----------+-----------+----------+-----------+
+    140 more rows...
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="DataFrame_Index">Indexing</h3>
+    <p>We can set a row index to the data frames that must be of length the number
+        of rows with no duplicates nor missing values. The row index serves as a
+        unique identifier for each row in a DataFrame. It allows you to access and
+        rows efficiently with the <code>loc()</code> method. Compared with the normal
+        ordinal index, the object-based row index often contains certain semantic
+        meaning.</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.1" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.1">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> var df = DataFrame.of(MathEx.randn(6, 4))
+           var dates = Dates.range(LocalDate.of(2025,2,1), 6)
+           df = df.setIndex(dates)
+    +----------+---------+---------+---------+---------+
+    |          |       V1|       V2|       V3|       V4|
+    +----------+---------+---------+---------+---------+
+    |2025-02-01|-0.201469| 0.970363| 2.726932|-0.146014|
+    |2025-02-02| 1.872161| 0.495932| 0.553859|-0.028237|
+    |2025-02-03|-0.504866|-0.179409| 0.201377| 0.281267|
+    |2025-02-04| 0.894446| 0.791521| 0.053346| 0.213519|
+    |2025-02-05| 0.200011|-0.203736|-0.349196|-1.193759|
+    |2025-02-06|  1.52529|-1.407597|  1.16758| -1.78291|
+    +----------+---------+---------+---------+---------+
+    smile> df.loc(dates[1])
+    $8 ==> {
+      V1: -0.133296,
+      V2: -2.461161,
+      V3: 0.25011,
+      V4: 1.132062
+    }
+
+    smile> df.loc(dates[1], dates[2])
+    $9 ==>
+    +----------+---------+---------+---------+--------+
+    |          |       V1|       V2|       V3|      V4|
+    +----------+---------+---------+---------+--------+
+    |2025-02-02|-0.133296|-2.461161|  0.25011|1.132062|
+    |2025-02-03|  0.25248|-0.063054|-1.128157| 0.37634|
+    +----------+---------+---------+---------+--------+
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <p>The row index may be an existing column, which will be removed in the
+        resulting data frame.</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.2" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.2">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> var df = new DataFrame(
+                   ValueVector.of("A", 1.0),
+                   ValueVector.of("B", LocalDate.parse("2013-01-02")),
+                   ValueVector.of("C", "foo"),
+                   ObjectVector.of("D", Index.range(0, 4).toArray()),
+                   ObjectVector.of("E", new int[]{3, 3, 3, 3})
+           )
+           df = df.setIndex("B")
+    df ==>
+    +----------+---+---+------------+------------+
+    |          |  A|  C|           D|           E|
+    +----------+---+---+------------+------------+
+    |2013-01-02|  1|foo|[0, 1, 2, 3]|[3, 3, 3, 3]|
+    +----------+---+---+------------+------------+
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="DataFrame_Viewing">Viewing Data</h3>
+    <p>By default, <code>DataFrame.toString()</code> returns a pretty print of
+        top 10 rows. You may also use <code>DataFrame.head()</code> and
+        <code>DataFrame.tail()</code> with a specified number to view the top
+        and bottom rows of the frame respectively.</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_0.4" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_0.4">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> println(df.head(3))
+    +----------+---------+---------+---------+---------+
+    |          |       V1|       V2|       V3|       V4|
+    +----------+---------+---------+---------+---------+
+    |2025-02-01|-0.189794| 0.609897|-0.289189|-0.636956|
+    |2025-02-02|-0.133296|-2.461161|  0.25011| 1.132062|
+    |2025-02-03|  0.25248|-0.063054|-1.128157|  0.37634|
+    +----------+---------+---------+---------+---------+
+    3 more rows...
+
+    smile> println(df.tail(3))
+    +----------+---------+---------+---------+--------+
+    |          |       V1|       V2|       V3|      V4|
+    +----------+---------+---------+---------+--------+
+    |2025-02-04|-1.391481| 1.398828| 0.294973|1.353308|
+    |2025-02-05| 2.812277|  0.82762|-0.294806|1.836631|
+    |2025-02-06| 1.091213|-0.190432| 1.963064|0.725228|
+    +----------+---------+---------+---------+--------+
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <p>The method <code>describe()</code> shows the data structure and statistic summary:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_0.5" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_0.5">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> iris.describe()
+    +---+-----------+-----+--------------------+-----+--------+--------+---+---+---+---+---+
+    |   |     column| type|             measure|count|    mean|     std|min|25%|50%|75%|max|
+    +---+-----------+-----+--------------------+-----+--------+--------+---+---+---+---+---+
+    |  0|sepallength|float|                null|  150|5.843333|0.828066|4.3|5.1|5.8|6.4|7.9|
+    |  1| sepalwidth|float|                null|  150|   3.054|0.433594|  2|2.8|  3|3.3|4.4|
+    |  2|petallength|float|                null|  150|3.758667| 1.76442|  1|1.6|4.4|5.1|6.9|
+    |  3| petalwidth|float|                null|  150|1.198667|0.763161|0.1|0.3|1.3|1.8|2.5|
+    |  4|      class| byte|nominal[Iris-seto...|  150|     NaN|     NaN|  0|  0|  1|  2|  2|
+    +---+-----------+-----+--------------------+-----+--------+--------+---+---+---+---+---+
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="DataFrame_Selection">Selection</h3>
+    <p>We can get a row with the array syntax or slice a subset of rows.</p>
     <ul class="nav nav-tabs">
         <li class="active"><a href="#java_2" data-toggle="tab">Java</a></li>
         <li><a href="#scala_2" data-toggle="tab">Scala</a></li>
@@ -408,8 +756,22 @@
       class: Iris-setosa
     }
 
-    smile> iris("sepallength")
-    res6: vector.BaseVector[T, TS, S] = [5.099999904632568, 4.900000095367432, 4.699999809265137, 4.599999904632568, 5.0, 5.400000095367432, 4.599999904632568, 5.0, 4.400000095367432, 4.900000095367432, ... 140 more]
+    smile> iris(Index.range(10, 20))
+    res6: DataFrame =
+    +---+-----------+----------+-----------+----------+-----------+
+    |   |sepallength|sepalwidth|petallength|petalwidth|      class|
+    +---+-----------+----------+-----------+----------+-----------+
+    |  0|        5.4|       3.7|        1.5|       0.2|Iris-setosa|
+    |  1|        4.8|       3.4|        1.6|       0.2|Iris-setosa|
+    |  2|        4.8|         3|        1.4|       0.1|Iris-setosa|
+    |  3|        4.3|         3|        1.1|       0.1|Iris-setosa|
+    |  4|        5.8|         4|        1.2|       0.2|Iris-setosa|
+    |  5|        5.7|       4.4|        1.5|       0.4|Iris-setosa|
+    |  6|        5.4|       3.9|        1.3|       0.4|Iris-setosa|
+    |  7|        5.1|       3.5|        1.4|       0.3|Iris-setosa|
+    |  8|        5.7|       3.8|        1.7|       0.3|Iris-setosa|
+    |  9|        5.1|       3.8|        1.5|       0.3|Iris-setosa|
+    +---+-----------+----------+-----------+----------+-----------+
     </code></pre>
             </div>
         </div>
@@ -425,8 +787,22 @@
       class: Iris-setosa
     }
 
-    smile> iris.column("sepallength")
-    $8 ==> [5.1, 4.9, 4.7, 4.6, 5, 5.4, 4.6, 5, 4.4, 4.9, ... 140 more]
+    smile> iris.get(Index.range(10, 20))
+    $8 ==>
+    +---+-----------+----------+-----------+----------+-----------+
+    |   |sepallength|sepalwidth|petallength|petalwidth|      class|
+    +---+-----------+----------+-----------+----------+-----------+
+    |  0|        5.4|       3.7|        1.5|       0.2|Iris-setosa|
+    |  1|        4.8|       3.4|        1.6|       0.2|Iris-setosa|
+    |  2|        4.8|         3|        1.4|       0.1|Iris-setosa|
+    |  3|        4.3|         3|        1.1|       0.1|Iris-setosa|
+    |  4|        5.8|         4|        1.2|       0.2|Iris-setosa|
+    |  5|        5.7|       4.4|        1.5|       0.4|Iris-setosa|
+    |  6|        5.4|       3.9|        1.3|       0.4|Iris-setosa|
+    |  7|        5.1|       3.5|        1.4|       0.3|Iris-setosa|
+    |  8|        5.7|       3.8|        1.7|       0.3|Iris-setosa|
+    |  9|        5.1|       3.8|        1.5|       0.3|Iris-setosa|
+    +---+-----------+----------+-----------+----------+-----------+
           </code></pre>
             </div>
         </div>
@@ -441,14 +817,29 @@
       petalwidth: 0.2,
       class: Iris-setosa
     }
-    >>> iris.column("sepallength")
-    res7: smile.data.vector.BaseVector<(raw) kotlin.Any!, (raw) kotlin.Any!, (raw) java.util.stream.BaseStream<*, *>!>! = [5.099999904632568, 4.900000095367432, 4.699999809265137, 4.599999904632568, 5.0, 5.400000095367432, 4.599999904632568, 5.0, 4.400000095367432, 4.900000095367432, ... 140 more]
+
+    >>> iris.get(Index.range(10, 20))
+    res7: smile.data.DataFrame! =
+    +---+-----------+----------+-----------+----------+-----------+
+    |   |sepallength|sepalwidth|petallength|petalwidth|      class|
+    +---+-----------+----------+-----------+----------+-----------+
+    |  0|        5.4|       3.7|        1.5|       0.2|Iris-setosa|
+    |  1|        4.8|       3.4|        1.6|       0.2|Iris-setosa|
+    |  2|        4.8|         3|        1.4|       0.1|Iris-setosa|
+    |  3|        4.3|         3|        1.1|       0.1|Iris-setosa|
+    |  4|        5.8|         4|        1.2|       0.2|Iris-setosa|
+    |  5|        5.7|       4.4|        1.5|       0.4|Iris-setosa|
+    |  6|        5.4|       3.9|        1.3|       0.4|Iris-setosa|
+    |  7|        5.1|       3.5|        1.4|       0.3|Iris-setosa|
+    |  8|        5.7|       3.8|        1.7|       0.3|Iris-setosa|
+    |  9|        5.1|       3.8|        1.5|       0.3|Iris-setosa|
+    +---+-----------+----------+-----------+----------+-----------+
     </code></pre>
     </div>
     </div>
     </div>
 
-    <p>Similarly, we can select a few columns to create a new data frame. </p>
+    <p>Similarly, we can refer a column by its name or select a few columns to create a new data frame.</p>
     <ul class="nav nav-tabs">
         <li class="active"><a href="#java_3" data-toggle="tab">Java</a></li>
         <li><a href="#scala_3" data-toggle="tab">Scala</a></li>
@@ -458,22 +849,25 @@
         <div class="tab-pane" id="scala_3">
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-scala"><code>
-    smile> iris.select("sepallength", "sepalwidth")
+    smile> iris("sepallength")
+    res6: vector.ValueVector = sepallength[5.1, 4.9, 4.7, 4.6, 5, 5.4, 4.6, 5, 4.4, 4.9, ..., 140 more]
+
+    smile> iris("sepallength", "sepalwidth")
     res8: DataFrame =
-    +-----------+----------+
-    |sepallength|sepalwidth|
-    +-----------+----------+
-    |        5.1|       3.5|
-    |        4.9|         3|
-    |        4.7|       3.2|
-    |        4.6|       3.1|
-    |          5|       3.6|
-    |        5.4|       3.9|
-    |        4.6|       3.4|
-    |          5|       3.4|
-    |        4.4|       2.9|
-    |        4.9|       3.1|
-    +-----------+----------+
+    +---+-----------+----------+
+    |   |sepallength|sepalwidth|
+    +---+-----------+----------+
+    |  0|        5.1|       3.5|
+    |  1|        4.9|         3|
+    |  2|        4.7|       3.2|
+    |  3|        4.6|       3.1|
+    |  4|          5|       3.6|
+    |  5|        5.4|       3.9|
+    |  6|        4.6|       3.4|
+    |  7|          5|       3.4|
+    |  8|        4.4|       2.9|
+    |  9|        4.9|       3.1|
+    +---+-----------+----------+
     140 more rows...
     </code></pre>
             </div>
@@ -481,22 +875,25 @@
         <div class="tab-pane active" id="java_3">
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
+    smile> iris.column("sepallength")
+    $8 ==> sepallength[5.1, 4.9, 4.7, 4.6, 5, 5.4, 4.6, 5, 4.4, 4.9, ..., 140 more]
+
     smile> iris.select("sepallength", "sepalwidth")
-    $9 ==> [sepallength: float, sepalwidth: float]
-    +-----------+----------+
-    |sepallength|sepalwidth|
-    +-----------+----------+
-    |        5.1|       3.5|
-    |        4.9|         3|
-    |        4.7|       3.2|
-    |        4.6|       3.1|
-    |          5|       3.6|
-    |        5.4|       3.9|
-    |        4.6|       3.4|
-    |          5|       3.4|
-    |        4.4|       2.9|
-    |        4.9|       3.1|
-    +-----------+----------+
+    $9 ==>
+    +---+-----------+----------+
+    |   |sepallength|sepalwidth|
+    +---+-----------+----------+
+    |  0|        5.1|       3.5|
+    |  1|        4.9|         3|
+    |  2|        4.7|       3.2|
+    |  3|        4.6|       3.1|
+    |  4|          5|       3.6|
+    |  5|        5.4|       3.9|
+    |  6|        4.6|       3.4|
+    |  7|          5|       3.4|
+    |  8|        4.4|       2.9|
+    |  9|        4.9|       3.1|
+    +---+-----------+----------+
     140 more rows...
           </code></pre>
             </div>
@@ -504,28 +901,208 @@
         <div class="tab-pane" id="kotlin_3">
     <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-kotlin"><code>
+    >>> iris.column("sepallength")
+    res7: smile.data.vector.ValueVecotr! = sepallength[5.1, 4.9, 4.7, 4.6, 5, 5.4, 4.6, 5, 4.4, 4.9, ..., 140 more]
+
     >>> iris.select("sepallength", "sepalwidth")
-    res8: smile.data.DataFrame! = [sepallength: float, sepalwidth: float]
-    +-----------+----------+
-    |sepallength|sepalwidth|
-    +-----------+----------+
-    |        5.1|       3.5|
-    |        4.9|         3|
-    |        4.7|       3.2|
-    |        4.6|       3.1|
-    |          5|       3.6|
-    |        5.4|       3.9|
-    |        4.6|       3.4|
-    |          5|       3.4|
-    |        4.4|       2.9|
-    |        4.9|       3.1|
-    +-----------+----------+
+    res8: smile.data.DataFrame! =
+    +---+-----------+----------+
+    |   |sepallength|sepalwidth|
+    +---+-----------+----------+
+    |  0|        5.1|       3.5|
+    |  1|        4.9|         3|
+    |  2|        4.7|       3.2|
+    |  3|        4.6|       3.1|
+    |  4|          5|       3.6|
+    |  5|        5.4|       3.9|
+    |  6|        4.6|       3.4|
+    |  7|          5|       3.4|
+    |  8|        4.4|       2.9|
+    |  9|        4.9|       3.1|
+    +---+-----------+----------+
     140 more rows...
     </code></pre>
     </div>
     </div>
     </div>
 
+    <p>We can also select rows with boolean indexing. The below example uses
+        <code>isin()</code> method for filtering:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.3" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.3">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> iris.get(iris.column("class").isin("Iris-setosa", "Iris-virginica"))
+    $10 ==>
+    +---+-----------+----------+-----------+----------+-----------+
+    |   |sepallength|sepalwidth|petallength|petalwidth|      class|
+    +---+-----------+----------+-----------+----------+-----------+
+    |  0|        5.1|       3.5|        1.4|       0.2|Iris-setosa|
+    |  1|        4.9|         3|        1.4|       0.2|Iris-setosa|
+    |  2|        4.7|       3.2|        1.3|       0.2|Iris-setosa|
+    |  3|        4.6|       3.1|        1.5|       0.2|Iris-setosa|
+    |  4|          5|       3.6|        1.4|       0.2|Iris-setosa|
+    |  5|        5.4|       3.9|        1.7|       0.4|Iris-setosa|
+    |  6|        4.6|       3.4|        1.4|       0.3|Iris-setosa|
+    |  7|          5|       3.4|        1.5|       0.2|Iris-setosa|
+    |  8|        4.4|       2.9|        1.4|       0.2|Iris-setosa|
+    |  9|        4.9|       3.1|        1.5|       0.1|Iris-setosa|
+    +---+-----------+----------+-----------+----------+-----------+
+    90 more rows...
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="DataFrame_Setting">Setting</h3>
+    <p>Setting values by position:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.4" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.4">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> iris.set(0, 0, 1.5)
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <p>Adding columns:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.5" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.5">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> var df = DataFrame.of(MathEx.randn(150, 3))
+           iris.add(df.column("V1"), df.column("V3"))
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <p>Setting a column:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.6" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.6">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> iris.set("V1", df.column("V3"))
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="DataFrame_Merge">Merge</h3>
+    <p>The <code>merge()</code> method can combine data frames horizontally:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.7" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.7">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> var df3 = iris.merge(df)
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <p>To concatenate data frames vertically, use <code>concat()</code>:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.8" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.8">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> var iris2 = iris.concat(iris)
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <p>To join two data frames on their index:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.9" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.9">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    var dates = Dates.range(LocalDate.of(2025,2,1), 6);
+    var df1 = DataFrame.of(MathEx.randn(6, 4)).setIndex(dates);
+    var df2 = DataFrame.of(MathEx.randn(6, 4)).setIndex(dates);
+    var df = df1.join(df2);
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="DataFrame_Missing">Missing Data</h3>
+    <p>For object column, <code>null</code> indicates missing data. For primitive
+        columns, Smile maintains a bit mask to indicate missing values. However,
+        it is conventional that users use <code>NaN</code> to represent missing data
+        for floating numeric types. One may use <code>DataFrame.isNullAt(i, j)</code>
+        to check if a cell is null or NaN.</p>
+
+    <p><code>DataFrame.dropna()</code> drops any rows that have null or missing value:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.11" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.11">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> var df = DataFrame.of(MathEx.randn(6, 4))
+           df.set(0, 0, Double.NaN)
+           df.set(1, 3, Double.NaN)
+           df.dropna()
+    +---+---------+---------+---------+---------+
+    |   |       V1|       V2|       V3|       V4|
+    +---+---------+---------+---------+---------+
+    |  0|-0.504866|-0.179409| 0.201377| 0.281267|
+    |  1| 0.894446| 0.791521| 0.053346| 0.213519|
+    |  2| 0.200011|-0.203736|-0.349196|-1.193759|
+    |  3|  1.52529|-1.407597|  1.16758| -1.78291|
+    +---+---------+---------+---------+---------+
+    </code></pre>
+            </div>
+        </div>
+    </div>
+    <p><code>DataFrame.fillna()</code> fills missing data in numeric columns:</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#java_2.10" data-toggle="tab">Java</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="java_2.10">
+            <div class="code" style="text-align: left;">
+    <pre class="prettyprint lang-java"><code>
+    smile> df.fillna(100)
+    +---+---------+---------+---------+---------+
+    |   |       V1|       V2|       V3|       V4|
+    +---+---------+---------+---------+---------+
+    |  0|      100| 0.970363| 2.726932|-0.146014|
+    |  1| 1.872161| 0.495932| 0.553859|      100|
+    |  2|-0.504866|-0.179409| 0.201377| 0.281267|
+    |  3| 0.894446| 0.791521| 0.053346| 0.213519|
+    |  4| 0.200011|-0.203736|-0.349196|-1.193759|
+    |  5|  1.52529|-1.407597|  1.16758| -1.78291|
+    +---+---------+---------+---------+---------+
+    </code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="DataFrame_Operations">Operations</h3>
     <p>Advanced operations such as <code>exists</code>, <code>forall</code>,
         <code>find</code>, <code>filter</code> are also supported. In Java API,
         all these operations are on <code>Stream</code>. The corresponding methods
@@ -613,8 +1190,9 @@
       class: Iris-versicolor
     }]
 
-    smile> DataFrame.of(iris.stream().filter(row -> row.getDouble(1) > 3 && row.getByte("class") != 0))
-    $20 ==> [sepallength: float, sepalwidth: float, petallength: float, petalwidth: float, class: byte nominal[Iris-setosa, Iris-versicolor, Iris-virginica]]
+    smile> var stream = iris.stream().filter(row -> row.getDouble(1) > 3 && row.getByte("class") != 0)
+           DataFrame.of(iris.schema(), stream)
+    $20 ==>
     +-----------+----------+-----------+----------+---------------+
     |sepallength|sepalwidth|petallength|petalwidth|          class|
     +-----------+----------+-----------+----------+---------------+
@@ -656,7 +1234,7 @@
       class: Iris-versicolor
     }]
     >>> DataFrame.of(iris.stream().filter({row -> row.getDouble(1) > 3 && row.getByte("class") != 0.toByte()}))
-    res22: smile.data.DataFrame! = [sepallength: float, sepalwidth: float, petallength: float, petalwidth: float, class: byte nominal[Iris-setosa, Iris-versicolor, Iris-virginica]]
+    res22: smile.data.DataFrame! =
     +-----------+----------+-----------+----------+---------------+
     |sepallength|sepalwidth|petallength|petalwidth|          class|
     +-----------+----------+-----------+----------+---------------+
@@ -672,112 +1250,6 @@
     |        7.2|       3.6|        6.1|       2.5| Iris-virginica|
     +-----------+----------+-----------+----------+---------------+
     15 more rows...
-    </code></pre>
-    </div>
-    </div>
-    </div>
-
-    <p>Besides numeric and nominal values, many other data types
-        are also supported.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_5" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_5" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_5" data-toggle="tab">Kotlin</a></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane" id="scala_5">
-            <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
-    smile> val strings = read.arff("data/weka/string.arff")
-    [main] INFO smile.io.Arff - Read ARFF relation LCCvsLCSH
-    strings: DataFrame =
-    +-----+--------------------------------------+
-    |  LCC|                                  LCSH|
-    +-----+--------------------------------------+
-    |  AG5|Encyclopedias and dictionaries.;Twe...|
-    |AS262|   Science -- Soviet Union -- History.|
-    |  AE5|       Encyclopedias and dictionaries.|
-    |AS281|Astronomy, Assyro-Babylonian.;Moon ...|
-    |AS281|Astronomy, Assyro-Babylonian.;Moon ...|
-    +-----+--------------------------------------+
-
-    smile> strings.filter(_.getString(0).startsWith("AS"))
-    res21: DataFrame =
-    +-----+--------------------------------------+
-    |  LCC|                                  LCSH|
-    +-----+--------------------------------------+
-    |AS262|   Science -- Soviet Union -- History.|
-    |AS281|Astronomy, Assyro-Babylonian.;Moon ...|
-    |AS281|Astronomy, Assyro-Babylonian.;Moon ...|
-    +-----+--------------------------------------+
-
-    smile> val dates = read.arff("data/weka/date.arff")
-    [main] INFO smile.io.Arff - Read ARFF relation Timestamps
-    dates: DataFrame =
-    +-------------------+
-    |          timestamp|
-    +-------------------+
-    |2001-04-03 12:12:12|
-    |2001-05-03 12:59:55|
-    +-------------------+
-    </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane active" id="java_5">
-            <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
-    smile> var strings = Read.arff("data/weka/string.arff")
-    [main] INFO smile.io.Arff - Read ARFF relation LCCvsLCSH
-    strings ==> [LCC: String, LCSH: String]
-    +-----+--------------------------------------+
-    |  LCC|                                  LCSH|
-    +-----+--------------------------------------+
-    |  AG5|Encyclopedias and dictionaries.;Twe...|
-    |AS262|   Science -- Soviet Union -- History.|
-    |  AE5|       Encyclopedias and dictionaries.|
-    |AS281|Astronomy, Assyro-Babylonian.;Moon ...|
-    |AS281|Astronomy, Assyro-Babylonian.;Moon ...|
-    +-----+--------------------------------------+
-
-    smile> var dates = Read.arff("data/weka/date.arff")
-    [main] INFO smile.io.Arff - Read ARFF relation Timestamps
-    dates ==> [timestamp: DateTime]
-    +-------------------+
-    |          timestamp|
-    +-------------------+
-    |2001-04-03 12:12:12|
-    |2001-05-03 12:59:55|
-    +-------------------+
-          </code></pre>
-            </div>
-        </div>
-            <div class="tab-pane" id="kotlin_5">
-    <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
-    >>> val strings = read.arff("data/weka/string.arff")
-    [main] INFO smile.io.Arff - Read ARFF relation LCCvsLCSH
-    >>> strings
-    res26: smile.data.DataFrame = [LCC: String, LCSH: String]
-    +-----+--------------------------------------+
-    |  LCC|                                  LCSH|
-    +-----+--------------------------------------+
-    |  AG5|Encyclopedias and dictionaries.;Twe...|
-    |AS262|   Science -- Soviet Union -- History.|
-    |  AE5|       Encyclopedias and dictionaries.|
-    |AS281|Astronomy, Assyro-Babylonian.;Moon ...|
-    |AS281|Astronomy, Assyro-Babylonian.;Moon ...|
-    +-----+--------------------------------------+
-
-    >>> val dates = read.arff("data/weka/date.arff") 
-    [main] INFO smile.io.Arff - Read ARFF relation Timestamps
-    >>> dates
-    res28: smile.data.DataFrame = [timestamp: DateTime]
-    +-------------------+
-    |          timestamp|
-    +-------------------+
-    |2001-04-03 12:12:12|
-    |2001-05-03 12:59:55|
-    +-------------------+
     </code></pre>
     </div>
     </div>
@@ -833,14 +1305,14 @@
         </div>
         <div class="tab-pane active" id="java_6">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
     smile> var x6 = iris.stream().map(row -> {
-       ...>     var x = new double[6];
-       ...>     for (int i = 0; i < 4; i++) x[i] = row.getDouble(i);
-       ...>     x[4] = x[0] * x[1];
-       ...>     x[5] = x[2] * x[3];
-       ...>     return x;
-       ...> })
+               var x = new double[6];
+               for (int i = 0; i < 4; i++) x[i] = row.getDouble(i);
+               x[4] = x[0] * x[1];
+               x[5] = x[2] * x[3];
+               return x;
+           })
     x6 ==> java.util.stream.ReferencePipeline$3@32eff876
 
     smile> x6.forEach(xi -> System.out.println(Arrays.toString(xi)))
@@ -877,7 +1349,7 @@
         </div>
             <div class="tab-pane" id="kotlin_6">
     <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="prettyprint lang-kotlin"><code style="white-space: preserve nowrap;">
     >>>  val x6 = iris.stream().map({row ->
     ...            val x = DoubleArray(6)
     ...            for (i in 0..3) x[i] = row.getDouble(i)
@@ -1106,13 +1578,13 @@
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-java"><code>
     smile> SQL sql = new SQL();
-      ...> sql.parquet("user", "data/kylo/userdata1.parquet");
-      ...> sql.json("books", "data/kylo/books_array.json");
-      ...> sql.csv("gdp", "data/regression/gdp.csv");
-      ...> sql.csv("diabetes", "data/regression/diabetes.csv");
+           sql.parquet("user", "data/kylo/userdata1.parquet");
+           sql.json("books", "data/kylo/books_array.json");
+           sql.csv("gdp", "data/regression/gdp.csv");
+           sql.csv("diabetes", "data/regression/diabetes.csv");
 
-    smile> var tables = sql.tables();
-    tables ==> [TABLE_NAME: String, REMARKS: String]
+           var tables = sql.tables();
+    tables ==>
     +----------+-------+
     |TABLE_NAME|REMARKS|
     +----------+-------+
@@ -1123,7 +1595,7 @@
     +----------+-------+
 
     smile> var columns = sql.describe("user");
-    columns ==> [COLUMN_NAME: String, TYPE_NAME: String, IS_NULLABLE: String]
+    columns ==>
     +-----------------+---------+-----------+
     |      COLUMN_NAME|TYPE_NAME|IS_NULLABLE|
     +-----------------+---------+-----------+
@@ -1154,10 +1626,10 @@
     <div class="tab-content">
         <div class="tab-pane active" id="java_27">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-java"><code>
+    <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
 smile> var user = sql.query("SELECT * FROM user WHERE country = 'China'");
 [main] INFO smile.data.SQL - SELECT * FROM user WHERE country = 'China'
-user ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String]
+user ==>
 +-------------------+---+----------+----------+--------------------+------+---------------+-------------------+-------+---------+---------+--------------------+--------+
 |  registration_dttm| id|first_name| last_name|               email|gender|     ip_address|                 cc|country|birthdate|   salary|               title|comments|
 +-------------------+---+----------+----------+--------------------+------+---------------+-------------------+-------+---------+---------+--------------------+--------+
@@ -1187,10 +1659,10 @@ user ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_nam
     <div class="tab-content">
         <div class="tab-pane active" id="java_28">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-java"><code>
+    <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
 smile> var gdp = sql.query("SELECT * FROM user LEFT JOIN gdp ON user.country = gdp.Country");
 [main] INFO smile.data.SQL - SELECT * FROM user LEFT JOIN gdp ON user.country = gdp.Country
-gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String, Country: String, GDP Growth: Double, Debt: Double, Interest: Double]
+gdp ==>
 +-------------------+---+----------+---------+--------------------+------+---------------+------------------+---------+----------+---------+--------------------+--------------------+---------+----------+-----+--------+
 |  registration_dttm| id|first_name|last_name|               email|gender|     ip_address|                cc|  country| birthdate|   salary|               title|            comments|  Country|GDP Growth| Debt|Interest|
 +-------------------+---+----------+---------+--------------------+------+---------------+------------------+---------+----------+---------+--------------------+--------------------+---------+----------+-----+--------+
@@ -1246,9 +1718,9 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     <div class="tab-content">
         <div class="tab-pane" id="scala_8">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
     smile> val df = read.parquet("data/kylo/userdata1.parquet")
-    df: DataFrame = [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String]
+    df: DataFrame =
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     |  registration_dttm| id|first_name|last_name|               email|gender|    ip_address|              cc|             country| birthdate|   salary|               title|comments|
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
@@ -1260,15 +1732,16 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     |2016-02-03T07:22:34|  6|   Kathryn|    White|  kwhite5@google.com|Female|195.131.81.179|3583136326049310|           Indonesia| 2/25/1983| 69227.11|   Account Executive|        |
     |2016-02-03T08:33:08|  7|    Samuel|   Holmes|sholmes6@foxnews.com|  Male|232.234.81.197|3582641366974690|            Portugal|12/18/1987| 14247.62|Senior Financial ...|        |
     |2016-02-03T06:47:06|  8|     Harry|   Howell| hhowell7@eepurl.com|  Male|  91.235.51.73|                |Bosnia and Herzeg...|  3/1/1962|186469.43|    Web Developer IV|        |
-    ...
+    +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
+    990 more rows...
     </code></pre>
             </div>
         </div>
         <div class="tab-pane active" id="java_8">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
     smile> var df = Read.parquet("data/kylo/userdata1.parquet")
-    df ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String]
+    df ==>
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     |  registration_dttm| id|first_name|last_name|               email|gender|    ip_address|              cc|             country| birthdate|   salary|               title|comments|
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
@@ -1280,16 +1753,17 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     |2016-02-03T07:22:34|  6|   Kathryn|    White|  kwhite5@google.com|Female|195.131.81.179|3583136326049310|           Indonesia| 2/25/1983| 69227.11|   Account Executive|        |
     |2016-02-03T08:33:08|  7|    Samuel|   Holmes|sholmes6@foxnews.com|  Male|232.234.81.197|3582641366974690|            Portugal|12/18/1987| 14247.62|Senior Financial ...|        |
     |2016-02-03T06:47:06|  8|     Harry|   Howell| hhowell7@eepurl.com|  Male|  91.235.51.73|                |Bosnia and Herzeg...|  3/1/1962|186469.43|    Web Developer IV|        |
-    ...
+    +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
+    990 more rows...
           </code></pre>
             </div>
         </div>
             <div class="tab-pane" id="kotlin_8">
     <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="prettyprint lang-kotlin"><code style="white-space: preserve nowrap;">
     >>> val df = read.parquet("data/kylo/userdata1.parquet")
     >>> df
-    res100: smile.data.DataFrame = [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String]
+    res100: smile.data.DataFrame =
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     |  registration_dttm| id|first_name|last_name|               email|gender|    ip_address|              cc|             country| birthdate|   salary|               title|comments|
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
@@ -1305,7 +1779,6 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     |2016-02-03T18:29:47| 10|     Emily|  Stewart|estewart9@opensou...|Female|143.28.251.245|3574254110301671|             Nigeria| 1/28/1997| 27234.28|     Health Coach IV|        |
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     990 more rows...
-
     </code></pre>
     </div>
     </div>
@@ -1327,9 +1800,9 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     <div class="tab-content">
         <div class="tab-pane" id="scala_9">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
     smile> val df = read.avro(Paths.getTestData("kylo/userdata1.avro"), Paths.getTestData("avro/userdata.avsc"))
-    df: DataFrame = [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String]
+    df: DataFrame =
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     |  registration_dttm| id|first_name|last_name|               email|gender|    ip_address|              cc|             country| birthdate|   salary|               title|comments|
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
@@ -1341,15 +1814,16 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     |2016-02-03T07:22:34|  6|   Kathryn|    White|  kwhite5@google.com|Female|195.131.81.179|3583136326049310|           Indonesia| 2/25/1983| 69227.11|   Account Executive|        |
     |2016-02-03T08:33:08|  7|    Samuel|   Holmes|sholmes6@foxnews.com|  Male|232.234.81.197|3582641366974690|            Portugal|12/18/1987| 14247.62|Senior Financial ...|        |
     |2016-02-03T06:47:06|  8|     Harry|   Howell| hhowell7@eepurl.com|  Male|  91.235.51.73|                |Bosnia and Herzeg...|  3/1/1962|186469.43|    Web Developer IV|        |
-    ...
+    +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
+    990 more rows...
     </code></pre>
             </div>
         </div>
         <div class="tab-pane active" id="java_9">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
     smile> var avrodf = Read.avro(smile.util.Paths.getTestData("kylo/userdata1.avro"), smile.util.Paths.getTestData("kylo/userdata.avsc"))
-    avrodf ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String]
+    avrodf ==>
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     |  registration_dttm| id|first_name|last_name|               email|gender|    ip_address|              cc|             country| birthdate|   salary|               title|comments|
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
@@ -1361,16 +1835,17 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     |2016-02-03T07:22:34|  6|   Kathryn|    White|  kwhite5@google.com|Female|195.131.81.179|3583136326049310|           Indonesia| 2/25/1983| 69227.11|   Account Executive|        |
     |2016-02-03T08:33:08|  7|    Samuel|   Holmes|sholmes6@foxnews.com|  Male|232.234.81.197|3582641366974690|            Portugal|12/18/1987| 14247.62|Senior Financial ...|        |
     |2016-02-03T06:47:06|  8|     Harry|   Howell| hhowell7@eepurl.com|  Male|  91.235.51.73|                |Bosnia and Herzeg...|  3/1/1962|186469.43|    Web Developer IV|        |
-    ...
+    +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
+    990 more rows...
           </code></pre>
             </div>
         </div>
             <div class="tab-pane" id="kotlin_9">
     <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="prettyprint lang-kotlin"><code style="white-space: preserve nowrap;">
     >>> val avrodf = read.avro(smile.util.Paths.getTestData("kylo/userdata1.avro"), smile.util.Paths.getTestData("kylo/userdata.avsc"))
     >>> avrodf
-    res104: smile.data.DataFrame = [registration_dttm: String, id: long, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: Long, country: String, birthdate: String, salary: Double, title: String, comments: String]
+    res104: smile.data.DataFrame =
     +--------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     |   registration_dttm| id|first_name|last_name|               email|gender|    ip_address|              cc|             country| birthdate|   salary|               title|comments|
     +--------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
@@ -1415,7 +1890,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     <div class="tab-content">
         <div class="tab-pane" id="scala_10">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
     smile> val temp = java.io.File.createTempFile("chinook", "arrow")
     temp: java.io.File = /var/folders/cb/577dvd4n2db0ghdn3gn7ss0h0000gn/T/chinook5413820941564790310arrow
 
@@ -1426,7 +1901,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     [main] INFO smile.io.Arrow - write 1000 rows
 
     smile> val df = read.arrow(path)
-    df: DataFrame = [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String]
+    df: DataFrame =
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     |  registration_dttm| id|first_name|last_name|               email|gender|    ip_address|              cc|             country| birthdate|   salary|               title|comments|
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
@@ -1438,13 +1913,14 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     |2016-02-03T07:22:34|  6|   Kathryn|    White|  kwhite5@google.com|Female|195.131.81.179|3583136326049310|           Indonesia| 2/25/1983| 69227.11|   Account Executive|        |
     |2016-02-03T08:33:08|  7|    Samuel|   Holmes|sholmes6@foxnews.com|  Male|232.234.81.197|3582641366974690|            Portugal|12/18/1987| 14247.62|Senior Financial ...|        |
     |2016-02-03T06:47:06|  8|     Harry|   Howell| hhowell7@eepurl.com|  Male|  91.235.51.73|                |Bosnia and Herzeg...|  3/1/1962|186469.43|    Web Developer IV|        |
-    ...
+    +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
+    990 more rows...
     </code></pre>
             </div>
         </div>
         <div class="tab-pane active" id="java_10">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
     smile> var temp = java.io.File.createTempFile("chinook", "arrow")
     temp ==> /var/folders/cb/577dvd4n2db0ghdn3gn7ss0h0000gn/T/chinook5430879887643149276arrow
 
@@ -1456,7 +1932,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
 
     smile> var arrowdf = Read.arrow(path)
     [main] INFO smile.io.Arrow - read 1000 rows and 13 columns
-    arrowdf ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String]
+    arrowdf ==>
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     |  registration_dttm| id|first_name|last_name|               email|gender|    ip_address|              cc|             country| birthdate|   salary|               title|comments|
     +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
@@ -1468,13 +1944,14 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     |2016-02-03T07:22:34|  6|   Kathryn|    White|  kwhite5@google.com|Female|195.131.81.179|3583136326049310|           Indonesia| 2/25/1983| 69227.11|   Account Executive|        |
     |2016-02-03T08:33:08|  7|    Samuel|   Holmes|sholmes6@foxnews.com|  Male|232.234.81.197|3582641366974690|            Portugal|12/18/1987| 14247.62|Senior Financial ...|        |
     |2016-02-03T06:47:06|  8|     Harry|   Howell| hhowell7@eepurl.com|  Male|  91.235.51.73|                |Bosnia and Herzeg...|  3/1/1962|186469.43|    Web Developer IV|        |
-    ...
+    +-------------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
+    990 more rows...
           </code></pre>
             </div>
         </div>
             <div class="tab-pane" id="kotlin_10">
     <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="prettyprint lang-kotlin"><code style="white-space: preserve nowrap;">
     >>> val temp = java.io.File.createTempFile("chinook", "arrow")
     >>> val path = temp.toPath()
     >>> write.arrow(df, path)
@@ -1482,7 +1959,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     >>> val df = read.arrow(path)
     [main] INFO smile.io.Arrow - read 1000 rows and 13 columns
     >>> df
-    res109: smile.data.DataFrame = [registration_dttm: DateTime, id: Integer, first_name: String, last_name: String, email: String, gender: String, ip_address: String, cc: String, country: String, birthdate: String, salary: Double, title: String, comments: String]
+    res109: smile.data.DataFrame =
     +-----------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
     |registration_dttm| id|first_name|last_name|               email|gender|    ip_address|              cc|             country| birthdate|   salary|               title|comments|
     +-----------------+---+----------+---------+--------------------+------+--------------+----------------+--------------------+----------+---------+--------------------+--------+
@@ -1517,7 +1994,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-scala"><code>
     smile> val df = read.sas(Paths.getTestData("sas/airline.sas7bdat"))
-    df: DataFrame = [YEAR: double, Y: double, W: double, R: double, L: double, K: double]
+    df: DataFrame =
     +----+-----+-----+------+-----+-----+
     |YEAR|    Y|    W|     R|    L|    K|
     +----+-----+-----+------+-----+-----+
@@ -1540,7 +2017,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
     smile> var sasdf = Read.sas("data/sas/airline.sas7bdat")
-    sasdf ==> [YEAR: double, Y: double, W: double, R: double, L: double, K: double]
+    sasdf ==>
     +----+-----+-----+------+-----+-----+
     |YEAR|    Y|    W|     R|    L|    K|
     +----+-----+-----+------+-----+-----+
@@ -1564,7 +2041,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     <pre class="prettyprint lang-kotlin"><code>
     >>> val df = read.sas("data/sas/airline.sas7bdat")
     >>> df
-    res112: smile.data.DataFrame = [YEAR: double, Y: double, W: double, R: double, L: double, K: double]
+    res112: smile.data.DataFrame =
     +----+-----+-----+------+-----+-----+
     |YEAR|    Y|    W|     R|    L|    K|
     +----+-----+-----+------+-----+-----+
@@ -1595,7 +2072,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     <div class="tab-content">
         <div class="tab-pane" id="scala_12">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
     smile> import $ivy.`org.xerial:sqlite-jdbc:3.28.0`
     import $ivy.$
 
@@ -1625,7 +2102,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     rs: java.sql.ResultSet = org.sqlite.jdbc4.JDBC4ResultSet@5a524a19
 
     smile> val df = DataFrame.of(rs)
-    df: DataFrame = [Employee First: String, Employee Last: String, Customer First: String, Customer Last: String, Country: String, Total: Double]
+    df: DataFrame =
     +--------------+-------------+--------------+-------------+-------+-----+
     |Employee First|Employee Last|Customer First|Customer Last|Country|Total|
     +--------------+-------------+--------------+-------------+-------+-----+
@@ -1646,18 +2123,19 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
         </div>
         <div class="tab-pane active" id="java_12">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
     smile> Class.forName("org.sqlite.JDBC")
     $1 ==> class org.sqlite.JDBC
 
     smile> var url = String.format("jdbc:sqlite:%s", smile.util.Paths.getTestData("sqlite/chinook.db").toAbsolutePath())
     url ==> "jdbc:sqlite:/Users/hli/github/smile/shell/target ... ../data/sqlite/chinook.db"
 
-    smile> var sql = "select e.firstname as 'Employee First', e.lastname as 'Employee Last', c.firstname as 'Customer First', c.lastname as 'Customer Last', c.country, i.total " +
-                     "from employees as e " +
-                     "join customers as c on e.employeeid = c.supportrepid " +
-                     "join invoices as i on c.customerid = i.customerid "
-    sql ==> "select e.firstname as 'Employee First', e.lastna ... ustomerid = i.customerid "
+    smile> var sql = """
+              select e.firstname as 'Employee First', e.lastname as 'Employee Last', c.firstname as 'Customer First', c.lastname as 'Customer Last', c.country, i.total
+              from employees as e
+              join customers as c on e.employeeid = c.supportrepid
+              join invoices as i on c.customerid = i.customerid"""
+    sql ==> "select e.firstname as 'Employee First', e.lastna ... ustomerid = i.customerid"
 
     smile> var conn = java.sql.DriverManager.getConnection(url)
     conn ==> org.sqlite.jdbc4.JDBC4Connection@1df82230
@@ -1669,7 +2147,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     rs ==> org.sqlite.jdbc4.JDBC4ResultSet@48aaecc3
 
     smile> var sqldf = DataFrame.of(rs)
-    sqldf ==> [Employee First: String, Employee Last: String, Customer First: String, Customer Last: String, Country: String, Total: Double]
+    sqldf ==>
     +--------------+-------------+--------------+-------------+-------+-----+
     |Employee First|Employee Last|Customer First|Customer Last|Country|Total|
     +--------------+-------------+--------------+-------------+-------+-----+
@@ -1723,7 +2201,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     <pre class="prettyprint lang-scala"><code>
     smile> val df = read.arff("https://github.com/haifengl/smile/blob/master/shell/src/universal/data/weka/cpu.arff?raw=true")
     [main] INFO smile.io.Arff - Read ARFF relation cpu
-    df: DataFrame = [MYCT: float, MMIN: float, MMAX: float, CACH: float, CHMIN: float, CHMAX: float, class: float]
+    df: DataFrame =
     +----+-----+-----+----+-----+-----+-----+
     |MYCT| MMIN| MMAX|CACH|CHMIN|CHMAX|class|
     +----+-----+-----+----+-----+-----+-----+
@@ -1747,7 +2225,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
           <pre class="prettyprint lang-java"><code>
     smile> var cpu = Read.arff("https://github.com/haifengl/smile/blob/master/shell/src/universal/data/weka/cpu.arff?raw=true")
     [main] INFO smile.io.Arff - Read ARFF relation cpu
-    cpu ==> [MYCT: float, MMIN: float, MMAX: float, CACH: float, CHMIN: float, CHMAX: float, class: float]
+    cpu ==>
     +----+-----+-----+----+-----+-----+-----+
     |MYCT| MMIN| MMAX|CACH|CHMIN|CHMAX|class|
     +----+-----+-----+----+-----+-----+-----+
@@ -1772,7 +2250,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     >>> val df = read.arff("https://github.com/haifengl/smile/blob/master/shell/src/universal/data/weka/cpu.arff?raw=true")
     [main] INFO smile.io.Arff - Read ARFF relation cpu
     >>> df
-    res114: smile.data.DataFrame = [MYCT: float, MMIN: float, MMAX: float, CACH: float, CHMIN: float, CHMAX: float, class: float]
+    res114: smile.data.DataFrame =
     +----+-----+-----+----+-----+-----+-----+
     |MYCT| MMIN| MMAX|CACH|CHMIN|CHMAX|class|
     +----+-----+-----+----+-----+-----+-----+
@@ -1860,32 +2338,23 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
         <div class="tab-pane" id="scala_15">
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-scala"><code>
-    smile> val zip = read.csv("data/usps/zip.train", delimiter = ' ', header = false)
-    zip: DataFrame = [V1: int, V2: double, V3: double, V4: double, V5: double, V6: double, V7: double, V8: double, V9: double, V10: double, V11: double, V12: double, V13: double, V14: double, V15: double, V16: double, V17: double, V18: double, V19: double, V20: double, V21: double, V22: double, V23: double, V24: double, V25: double, V26: double, V27: double, V28: double, V29: double, V30: double, V31: double, V32: double, V33: double, V34: double, V35: double, V36: double, V37: double, V38: double, V39: double, V40: double, V41: double, V42: double, V43: double, V44: double, V45: double, V46: double, V47: double, V48: double, V49: double, V50: double, V51: double, V52: double, V53: double, V54: double, V55: double, V56: double, V57: double, V58: double, V59: double, V60: double, V61: double, V62: double, V63: double, V64: double, V65: double, V66: double, V67: double, V68: double, V69: double, V70: double, V71: double, V72: double, V73: double, V74: double, V75: double, V76: double, V77: double, V78: double, V79: double, V80: double, V81: double, V82: double, V83: double, V84: double, V85: double, V86: double, V87: double, V88: double, V89: double, V90: double, V91: double, V92: double, V93: double, V94: double, V95: double, V96: double, V97: double, V98: double, V99: double, V100: double, V101: double, V102: double, V103: double, V104: double, V105: double, V106: double, V107: double, V108: double, V109: double, V110: double, V111: double, V112: double, V113: double, V114: double, V115: double, V116: double, V117: double, V118: double, V119: double, V120: double, V121: double, V122: double, V123: double, V124: double, V125: double, V126: double, V127: double, V128: double, V129: double, V130: double, V131: double, V132: double, V133: double, V134: double, V135: double, V136: double, V137: double, V138: double, V139: double, V140: double, V141: double, V142: double, V143: double, V144: double, V145: double, V146: double, V147: double, V148: double, V149: double, V150: double, V151: double, V152: double, V153: double, V154: double, V155: double, V156: double, V157: double, V158: double, V159: double, V160: double, V161: double, V162: double, V163: double, V164: double, V165: double, V166: double, V167: double, V168: double, V169: double, V170: double, V171: double, V172: double, V173: double, V174: double, V175: double, V176: double, V177: double, V178: double, V179: double, V180: double, V181: double, V182: double, V183: double, V184: double, V185: double, V186: double, V187: double, V188: double, V189: double, V190: double, V191: double, V192: double, V193: double, V194: double, V195: double, V196: double, V197: double, V198: double, V199: double, V200: double, V201: double, V202: double, V203: double, V204: double, V205: double, V206: double, V207: double, V208: double, V209: double, V210: double, V211: double, V212: double, V213: double, V214: double, V215: double, V216: double, V217: double, V218: double, V219: double, V220: double, V221: double, V222: double, V223: double, V224: double, V225: double, V226: double, V227: double, V228: double, V229: double, V230: double, V231: double, V232: double, V233: double, V234: double, V235: double, V236: double, V237: double, V238: double, V239: double, V240: double, V241: double, V242: double, V243: double, V244: double, V245: double, V246: double, V247: double, V248: double, V249: double, V250: double, V251: double, V252: double, V253: double, V254: double, V255: double, V256: double, V257: double]    </code></pre>
+    val zip = read.csv("data/usps/zip.train", delimiter = ' ', header = false)
                 </code></pre>
             </div>
         </div>
         <div class="tab-pane active" id="java_15">
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
-    smile> import org.apache.commons.csv.CSVFormat
-
-    smile> var format = CSVFormat.DEFAULT.withDelimiter(' ')
-    format ==> Delimiter=< > QuoteChar=<"> RecordSeparator=<
-    >  ... red SkipHeaderRecord:false
-
-    smile> var zip = Read.csv("data/usps/zip.train", format)
-    zip ==> [V1: int, V2: double, V3: double, V4: double, V5: ...   -1|-0.454| 0.879|-0.745|
+    import org.apache.commons.csv.CSVFormat
+    var format = CSVFormat.DEFAULT.withDelimiter(' ')
+    var zip = Read.csv("data/usps/zip.train", format)
           </code></pre>
             </div>
         </div>
             <div class="tab-pane" id="kotlin_15">
     <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-kotlin"><code>
-    >>> val zip = read.csv("data/usps/zip.train", delimiter = ' ', header = false)
-    >>> zip
-    res116: smile.data.DataFrame = [V1: int, V2: double, V3: double, V4: double, V5: double, V6: double, V7: double, V8: double, V9: double, V10: double, V11: double, V12: double, V13: double, V14: double, V15: double, V16: double, V17: double, V18: double, V19: double, V20: double, V21: double, V22: double, V23: double, V24: double, V25: double, V26: double, V27: double, V28: double, V29: double, V30: double, V31: double, V32: double, V33: double, V34: double, V35: double, V36: double, V37: double, V38: double, V39: double, V40: double, V41: double, V42: double, V43: double, V44: double, V45: double, V46: double, V47: double, V48: double, V49: double, V50: double, V51: double, V52: double, V53: double, V54: double, V55: double, V56: double, V57: double, V58: double, V59: double, V60: double, V61: double, V62: double, V63: double, V64: double, V65: double, V66: double, V67: double, V68: double, V69: double, V70: double, V71: double, V72: double, V73: double, V74: double, V75: double, V76: double, V77: double, V78: double, V79: double, V80: double, V81: double, V82: double, V83: double, V84: double, V85: double, V86: double, V87: double, V88: double, V89: double, V90: double, V91: double, V92: double, V93: double, V94: double, V95: double, V96: double, V97: double, V98: double, V99: double, V100: double, V101: double, V102: double, V103: double, V104: double, V105: double, V106: double, V107: double, V108: double, V109: double, V110: double, V111: double, V112: double, V113: double, V114: double, V115: double, V116: double, V117: double, V118: double, V119: double, V120: double, V121: double, V122: double, V123: double, V124: double, V125: double, V126: double, V127: double, V128: double, V129: double, V130: double, V131: double, V132: double, V133: double, V134: double, V135: double, V136: double, V137: double, V138: double, V139: double, V140: double, V141: double, V142: double, V143: double, V144: double, V145: double, V146: double, V147: double, V148: double, V149: double, V150: double, V151: double, V152: double, V153: double, V154: double, V155: double, V156: double, V157: double, V158: double, V159: double, V160: double, V161: double, V162: double, V163: double, V164: double, V165: double, V166: double, V167: double, V168: double, V169: double, V170: double, V171: double, V172: double, V173: double, V174: double, V175: double, V176: double, V177: double, V178: double, V179: double, V180: double, V181: double, V182: double, V183: double, V184: double, V185: double, V186: double, V187: double, V188: double, V189: double, V190: double, V191: double, V192: double, V193: double, V194: double, V195: double, V196: double, V197: double, V198: double, V199: double, V200: double, V201: double, V202: double, V203: double, V204: double, V205: double, V206: double, V207: double, V208: double, V209: double, V210: double, V211: double, V212: double, V213: double, V214: double, V215: double, V216: double, V217: double, V218: double, V219: double, V220: double, V221: double, V222: double, V223: double, V224: double, V225: double, V226: double, V227: double, V228: double, V229: double, V230: double, V231: double, V232: double, V233: double, V234: double, V235: double, V236: double, V237: double, V238: double, V239: double, V240: double, V241: double, V242: double, V243: double, V244: double, V245: double, V246: double, V247: double, V248: double, V249: double, V250: double, V251: double, V252: double, V253: double, V254: double, V255: double, V256: double, V257: double]
-    ...
+    val zip = read.csv("data/usps/zip.train", delimiter = ' ', header = false)
     </code></pre>
     </div>
     </div>
@@ -1900,7 +2369,7 @@ gdp ==> [registration_dttm: DateTime, id: Integer, first_name: String, last_name
     <div class="tab-content">
         <div class="tab-pane" id="scala_16">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
 smile> val airport = new NominalScale("ABE", "ABI", "ABQ", "ABY", "ACK", "ACT",
          "ACV", "ACY", "ADK", "ADQ", "AEX", "AGS", "AKN", "ALB", "ALO", "AMA", "ANC",
          "APF", "ASE", "ATL", "ATW", "AUS", "AVL", "AVP", "AZO", "BDL", "BET", "BFL",
@@ -1933,7 +2402,7 @@ smile> val airport = new NominalScale("ABE", "ABI", "ABQ", "ABY", "ACK", "ACT",
          "YKM", "YUM")
 airport: NominalScale = nominal[ABE, ABI, ABQ, ABY, ACK, ACT, ACV, ACY, ADK, ADQ, AEX, AGS, AKN, ALB, ALO, AMA, ANC, APF, ASE, ATL, ATW, AUS, AVL, AVP, AZO, BDL, BET, BFL, BGM, BGR, BHM, BIL, BIS, BJI, BLI, BMI, BNA, BOI, BOS, BPT, BQK, BQN, BRO, BRW, BTM, BTR, BTV, BUF, BUR, BWI, BZN, CAE, CAK, CDC, CDV, CEC, CHA, CHO, CHS, CIC, CID, CKB, CLD, CLE, CLL, CLT, CMH, CMI, CMX, COD, COS, CPR, CRP, CRW, CSG, CVG, CWA, CYS, DAB, DAL, DAY, DBQ, DCA, DEN, DFW, DHN, DLG, DLH, DRO, DSM, DTW, EAU, EGE, EKO, ELM, ELP, ERI, EUG, EVV, EWN, EWR, EYW, FAI, FAR, FAT, FAY, FCA, FLG, FLL, FLO, FMN, FNT, FSD, FSM, FWA, GEG, GFK, GGG, GJT, GNV, GPT, GRB, GRK, GRR, GSO, GSP, GST, GTF, GTR, GUC, HDN, HHH, HKY, HLN, HNL, HOU, HPN, HRL, HSV, HTS, HVN, IAD, IAH, ICT, IDA, ILG, ILM, IND, INL, IPL, ISO, ISP, ITO, IYK, JAC, JAN, JAX, JFK, JNU, KOA, KTN, LAN, LAR, LAS, LAW, LAX, LBB, LBF, LCH, LEX, LFT, LGA, LGB, LIH, LIT, LNK, LRD, LSE, LWB, LWS, LYH, MAF, MBS, MCI, MCN, MCO, MDT, MDW, MEI, MEM, MFE, MFR, MGM, MHT, MIA, MKE, MLB, MLI, MLU, MOB, MOD, MOT, MQT, MRY, MSN, MSO, MSP, MSY, MTH, MTJ, MYR, OAJ, OAK, OGD, OGG, OKC, OMA, OME, ONT, ORD, ORF, OTZ, OXR, PBI, PDX, PFN, PHF, PHL, PHX, PIA, PIE, PIH, PIT, PLN, PMD, PNS, PSC, PSE, PSG, PSP, PUB, PVD, PVU, PWM, RAP, RCA, RDD, RDM, RDU, RFD, RHI, RIC, RNO, ROA, ROC, ROW, RST, RSW, SAN, SAT, SAV, SBA, SBN, SBP, SCC, SCE, SDF, SEA, SFO, SGF, SGU, SHV, SIT, SJC, SJT, SJU, SLC, SLE, SMF, SMX, SNA, SOP, SPI, SPS, SRQ, STL, STT, STX, SUN, SUX, SWF, SYR, TEX, TLH, TOL, TPA, TRI, TTN, TUL, TUP, TUS, TVC, TWF, TXK, TYR, TYS, VCT, VIS, VLD, VPS, WRG, WYS, XNA, YAK, YKM, YUM]
 
-smile> val schema = DataTypes.struct(
+smile> val schema = new StructType(
          new StructField("Month", DataTypes.ByteType, new NominalScale("c-1", "c-2", "c-3", "c-4",
            "c-5", "c-6", "c-7", "c-8", "c-9", "c-10", "c-11", "c-12")),
          new StructField("DayofMonth", DataTypes.ByteType, new NominalScale("c-1", "c-2", "c-3", "c-4",
@@ -1941,12 +2410,12 @@ smile> val schema = DataTypes.struct(
            "c-19", "c-20", "c-21", "c-22", "c-23", "c-24", "c-25", "c-26", "c-27", "c-28", "c-29", "c-30", "c-31")),
          new StructField("DayOfWeek", DataTypes.ByteType, new NominalScale("c-1", "c-2", "c-3", "c-4",
            "c-5", "c-6", "c-7")),
-         new StructField("DepTime", DataTypes.IntegerType),
+         new StructField("DepTime", DataTypes.IntType),
          new StructField("UniqueCarrier", DataTypes.ByteType, new NominalScale("9E", "AA", "AQ", "AS",
            "B6", "CO", "DH", "DL", "EV", "F9", "FL", "HA", "HP", "MQ", "NW", "OH", "OO", "TZ", "UA", "US", "WN", "XE", "YV")),
          new StructField("Origin", DataTypes.ShortType, airport),
          new StructField("Dest", DataTypes.ShortType, airport),
-         new StructField("Distance", DataTypes.IntegerType),
+         new StructField("Distance", DataTypes.IntType),
          new StructField("dep_delayed_15min", DataTypes.ByteType, new NominalScale("N", "Y"))
        )
 schema: StructType = [Month: byte nominal[c-1, c-2, c-3, c-4, c-5, c-6, c-7, c-8, c-9, c-10, c-11, c-12], DayofMonth: byte nominal[c-1, c-2, c-3, c-4, c-5, c-6, c-7, c-8, c-9, c-10, c-11, c-12, c-13, c-14, c-15, c-16, c-17, c-18, c-19, c-20, c-21, c-22, c-23, c-24, c-25, c-26, c-27, c-28, c-29, c-30, c-31], DayOfWeek: byte nominal[c-1, c-2, c-3, c-4, c-5, c-6, c-7], DepTime: int, UniqueCarrier: byte nominal[9E, AA, AQ, AS, B6, CO, DH, DL, EV, F9, FL, HA, HP, MQ, NW, OH, OO, TZ, UA, US, WN, XE, YV], Origin: short nominal[ABE, ABI, ABQ, ABY, ACK, ACT, ACV, ACY, ADK, ADQ, AEX, AGS, AKN, ALB, ALO, AMA, ANC, APF, ASE, ATL, ATW, AUS, AVL, AVP, AZO, BDL, BET, BFL, BGM, BGR, BHM, BIL, BIS, BJI, BLI, BMI, BNA, BOI, BOS, BPT, BQK, BQN, BRO, BRW, BTM, BTR, BTV, BUF, BUR, BWI, BZN, CAE, CAK, CDC, CDV, CEC, CHA, CHO, CHS, CIC, CID, CKB, CLD, CLE, CLL, CLT, CMH, CMI, CMX, COD, COS, CPR, CRP, CRW, CSG, CVG, CWA, CYS, DAB, DAL, DAY, DBQ, DCA, DEN, DFW, DHN, DLG, DLH, DRO, DSM, DTW, EAU, EGE, EKO, ELM, ELP, ERI, EUG, EVV, EWN, EWR, EYW, FAI, FAR, FAT, FAY, FCA, FLG, FLL, FLO, FMN, FNT, FSD, FSM, FWA, GEG, GFK, GGG, GJT, GNV, GPT, GRB, GRK, GRR, GSO, GSP, GST, GTF, GTR, GUC, HDN, HHH, HKY, HLN, HNL, HOU, HPN, HRL, HSV, HTS, HVN, IAD, IAH, ICT, IDA, ILG, ILM, IND, INL, IPL, ISO, ISP, ITO, IYK, JAC, JAN, JAX, JFK, JNU, KOA, KTN, LAN, LAR, LAS, LAW, LAX, LBB, LBF, LCH, LEX, LFT, LGA, LGB, LIH, LIT, LNK, LRD, LSE, LWB, LWS, LYH, MAF, MBS, MCI, MCN, MCO, MDT, MDW, MEI, MEM, MFE, MFR, MGM, MHT, MIA, MKE, MLB, MLI, MLU, MOB, MOD, MOT, MQT, MRY, MSN, MSO, MSP, MSY, MTH, MTJ, MYR, OAJ, OAK, OGD, OGG, OKC, OMA, OME, ONT, ORD, ORF, OTZ, OXR, PBI, PDX, PFN, PHF, PHL, PHX, PIA, PIE, PIH, PIT, PLN, PMD, PNS, PSC, PSE, PSG, PSP, PUB, PVD, PVU, PWM, RAP, RCA, RDD, RDM, RDU, RFD, RHI, RIC, RNO, ROA, ROC, ROW, RST, RSW, SAN, SAT, SAV, SBA, SBN, SBP, SCC, SCE, SDF, SEA, SFO, SGF, SGU, SHV, SIT, SJC, SJT, SJU, SLC, SLE, SMF, SMX, SNA, SOP, SPI, SPS, SRQ, STL, STT, STX, SUN, SUX, SWF, SYR, TEX, TLH, TOL, TPA, TRI, TTN, TUL, TUP, TUS, TVC, TWF, TXK, TYR, TYS, VCT, VIS, VLD, VPS, WRG, WYS, XNA, YAK, YKM, YUM], Dest: short nominal[ABE, ABI, ABQ, ABY, ACK, ACT, ACV, ACY, ADK, ADQ, AEX, AGS, AKN, ALB, ALO, AMA, ANC, APF, ASE, ATL, ATW, AUS, AVL, AVP, AZO, BDL, BET, BFL, BGM, BGR, BHM, BIL, BIS, BJI, BLI, BMI, BNA, BOI, BOS, BPT, BQK, BQN, BRO, BRW, BTM, BTR, BTV, BUF, BUR, BWI, BZN, CAE, CAK, CDC, CDV, CEC, CHA, CHO, CHS, CIC, CID, CKB, CLD, CLE, CLL, CLT, CMH, CMI, CMX, COD, COS, CPR, CRP, CRW, CSG, CVG, CWA, CYS, DAB, DAL, DAY, DBQ, DCA, DEN, DFW, DHN, DLG, DLH, DRO, DSM, DTW, EAU, EGE, EKO, ELM, ELP, ERI, EUG, EVV, EWN, EWR, EYW, FAI, FAR, FAT, FAY, FCA, FLG, FLL, FLO, FMN, FNT, FSD, FSM, FWA, GEG, GFK, GGG, GJT, GNV, GPT, GRB, GRK, GRR, GSO, GSP, GST, GTF, GTR, GUC, HDN, HHH, HKY, HLN, HNL, HOU, HPN, HRL, HSV, HTS, HVN, IAD, IAH, ICT, IDA, ILG, ILM, IND, INL, IPL, ISO, ISP, ITO, IYK, JAC, JAN, JAX, JFK, JNU, KOA, KTN, LAN, LAR, LAS, LAW, LAX, LBB, LBF, LCH, LEX, LFT, LGA, LGB, LIH, LIT, LNK, LRD, LSE, LWB, LWS, LYH, MAF, MBS, MCI, MCN, MCO, MDT, MDW, MEI, MEM, MFE, MFR, MGM, MHT, MIA, MKE, MLB, MLI, MLU, MOB, MOD, MOT, MQT, MRY, MSN, MSO, MSP, MSY, MTH, MTJ, MYR, OAJ, OAK, OGD, OGG, OKC, OMA, OME, ONT, ORD, ORF, OTZ, OXR, PBI, PDX, PFN, PHF, PHL, PHX, PIA, PIE, PIH, PIT, PLN, PMD, PNS, PSC, PSE, PSG, PSP, PUB, PVD, PVU, PWM, RAP, RCA, RDD, RDM, RDU, RFD, RHI, RIC, RNO, ROA, ROC, ROW, RST, RSW, SAN, SAT, SAV, SBA, SBN, SBP, SCC, SCE, SDF, SEA, SFO, SGF, SGU, SHV, SIT, SJC, SJT, SJU, SLC, SLE, SMF, SMX, SNA, SOP, SPI, SPS, SRQ, STL, STT, STX, SUN, SUX, SWF, SYR, TEX, TLH, TOL, TPA, TRI, TTN, TUL, TUP, TUS, TVC, TWF, TXK, TYR, TYS, VCT, VIS, VLD, VPS, WRG, WYS, XNA, YAK, YKM, YUM], Distance: int, dep_delayed_15min: byte nominal[N, Y]]
@@ -1961,59 +2430,57 @@ airline: DataFrame = [Month: byte nominal[c-1, c-2, c-3, c-4, c-5, c-6, c-7, c-8
         </div>
         <div class="tab-pane active" id="java_16">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
 smile> import smile.data.type.*
-
-smile> import smile.data.measure.*
-
-smile> var airport = new NominalScale("ABE", "ABI", "ABQ", "ABY", "ACK", "ACT",
-   ...>   "ACV", "ACY", "ADK", "ADQ", "AEX", "AGS", "AKN", "ALB", "ALO", "AMA", "ANC",
-   ...>   "APF", "ASE", "ATL", "ATW", "AUS", "AVL", "AVP", "AZO", "BDL", "BET", "BFL",
-   ...>   "BGM", "BGR", "BHM", "BIL", "BIS", "BJI", "BLI", "BMI", "BNA", "BOI", "BOS",
-   ...>   "BPT", "BQK", "BQN", "BRO", "BRW", "BTM", "BTR", "BTV", "BUF", "BUR", "BWI",
-   ...>   "BZN", "CAE", "CAK", "CDC", "CDV", "CEC", "CHA", "CHO", "CHS", "CIC", "CID",
-   ...>   "CKB", "CLD", "CLE", "CLL", "CLT", "CMH", "CMI", "CMX", "COD", "COS", "CPR",
-   ...>   "CRP", "CRW", "CSG", "CVG", "CWA", "CYS", "DAB", "DAL", "DAY", "DBQ", "DCA",
-   ...>   "DEN", "DFW", "DHN", "DLG", "DLH", "DRO", "DSM", "DTW", "EAU", "EGE", "EKO",
-   ...>   "ELM", "ELP", "ERI", "EUG", "EVV", "EWN", "EWR", "EYW", "FAI", "FAR", "FAT",
-   ...>   "FAY", "FCA", "FLG", "FLL", "FLO", "FMN", "FNT", "FSD", "FSM", "FWA", "GEG",
-   ...>   "GFK", "GGG", "GJT", "GNV", "GPT", "GRB", "GRK", "GRR", "GSO", "GSP", "GST",
-   ...>   "GTF", "GTR", "GUC", "HDN", "HHH", "HKY", "HLN", "HNL", "HOU", "HPN", "HRL",
-   ...>   "HSV", "HTS", "HVN", "IAD", "IAH", "ICT", "IDA", "ILG", "ILM", "IND", "INL",
-   ...>   "IPL", "ISO", "ISP", "ITO", "IYK", "JAC", "JAN", "JAX", "JFK", "JNU", "KOA",
-   ...>   "KTN", "LAN", "LAR", "LAS", "LAW", "LAX", "LBB", "LBF", "LCH", "LEX", "LFT",
-   ...>   "LGA", "LGB", "LIH", "LIT", "LNK", "LRD", "LSE", "LWB", "LWS", "LYH", "MAF",
-   ...>   "MBS", "MCI", "MCN", "MCO", "MDT", "MDW", "MEI", "MEM", "MFE", "MFR", "MGM",
-   ...>   "MHT", "MIA", "MKE", "MLB", "MLI", "MLU", "MOB", "MOD", "MOT", "MQT", "MRY",
-   ...>   "MSN", "MSO", "MSP", "MSY", "MTH", "MTJ", "MYR", "OAJ", "OAK", "OGD", "OGG",
-   ...>   "OKC", "OMA", "OME", "ONT", "ORD", "ORF", "OTZ", "OXR", "PBI", "PDX", "PFN",
-   ...>   "PHF", "PHL", "PHX", "PIA", "PIE", "PIH", "PIT", "PLN", "PMD", "PNS", "PSC",
-   ...>   "PSE", "PSG", "PSP", "PUB", "PVD", "PVU", "PWM", "RAP", "RCA", "RDD", "RDM",
-   ...>   "RDU", "RFD", "RHI", "RIC", "RNO", "ROA", "ROC", "ROW", "RST", "RSW", "SAN",
-   ...>   "SAT", "SAV", "SBA", "SBN", "SBP", "SCC", "SCE", "SDF", "SEA", "SFO", "SGF",
-   ...>   "SGU", "SHV", "SIT", "SJC", "SJT", "SJU", "SLC", "SLE", "SMF", "SMX", "SNA",
-   ...>   "SOP", "SPI", "SPS", "SRQ", "STL", "STT", "STX", "SUN", "SUX", "SWF", "SYR",
-   ...>   "TEX", "TLH", "TOL", "TPA", "TRI", "TTN", "TUL", "TUP", "TUS", "TVC", "TWF",
-   ...>   "TXK", "TYR", "TYS", "VCT", "VIS", "VLD", "VPS", "WRG", "WYS", "XNA", "YAK",
-   ...>   "YKM", "YUM")
+       import smile.data.measure.*
+       var airport = new NominalScale("ABE", "ABI", "ABQ", "ABY", "ACK", "ACT",
+          "ACV", "ACY", "ADK", "ADQ", "AEX", "AGS", "AKN", "ALB", "ALO", "AMA", "ANC",
+          "APF", "ASE", "ATL", "ATW", "AUS", "AVL", "AVP", "AZO", "BDL", "BET", "BFL",
+          "BGM", "BGR", "BHM", "BIL", "BIS", "BJI", "BLI", "BMI", "BNA", "BOI", "BOS",
+          "BPT", "BQK", "BQN", "BRO", "BRW", "BTM", "BTR", "BTV", "BUF", "BUR", "BWI",
+          "BZN", "CAE", "CAK", "CDC", "CDV", "CEC", "CHA", "CHO", "CHS", "CIC", "CID",
+          "CKB", "CLD", "CLE", "CLL", "CLT", "CMH", "CMI", "CMX", "COD", "COS", "CPR",
+          "CRP", "CRW", "CSG", "CVG", "CWA", "CYS", "DAB", "DAL", "DAY", "DBQ", "DCA",
+          "DEN", "DFW", "DHN", "DLG", "DLH", "DRO", "DSM", "DTW", "EAU", "EGE", "EKO",
+          "ELM", "ELP", "ERI", "EUG", "EVV", "EWN", "EWR", "EYW", "FAI", "FAR", "FAT",
+          "FAY", "FCA", "FLG", "FLL", "FLO", "FMN", "FNT", "FSD", "FSM", "FWA", "GEG",
+          "GFK", "GGG", "GJT", "GNV", "GPT", "GRB", "GRK", "GRR", "GSO", "GSP", "GST",
+          "GTF", "GTR", "GUC", "HDN", "HHH", "HKY", "HLN", "HNL", "HOU", "HPN", "HRL",
+          "HSV", "HTS", "HVN", "IAD", "IAH", "ICT", "IDA", "ILG", "ILM", "IND", "INL",
+          "IPL", "ISO", "ISP", "ITO", "IYK", "JAC", "JAN", "JAX", "JFK", "JNU", "KOA",
+          "KTN", "LAN", "LAR", "LAS", "LAW", "LAX", "LBB", "LBF", "LCH", "LEX", "LFT",
+          "LGA", "LGB", "LIH", "LIT", "LNK", "LRD", "LSE", "LWB", "LWS", "LYH", "MAF",
+          "MBS", "MCI", "MCN", "MCO", "MDT", "MDW", "MEI", "MEM", "MFE", "MFR", "MGM",
+          "MHT", "MIA", "MKE", "MLB", "MLI", "MLU", "MOB", "MOD", "MOT", "MQT", "MRY",
+          "MSN", "MSO", "MSP", "MSY", "MTH", "MTJ", "MYR", "OAJ", "OAK", "OGD", "OGG",
+          "OKC", "OMA", "OME", "ONT", "ORD", "ORF", "OTZ", "OXR", "PBI", "PDX", "PFN",
+          "PHF", "PHL", "PHX", "PIA", "PIE", "PIH", "PIT", "PLN", "PMD", "PNS", "PSC",
+          "PSE", "PSG", "PSP", "PUB", "PVD", "PVU", "PWM", "RAP", "RCA", "RDD", "RDM",
+          "RDU", "RFD", "RHI", "RIC", "RNO", "ROA", "ROC", "ROW", "RST", "RSW", "SAN",
+          "SAT", "SAV", "SBA", "SBN", "SBP", "SCC", "SCE", "SDF", "SEA", "SFO", "SGF",
+          "SGU", "SHV", "SIT", "SJC", "SJT", "SJU", "SLC", "SLE", "SMF", "SMX", "SNA",
+          "SOP", "SPI", "SPS", "SRQ", "STL", "STT", "STX", "SUN", "SUX", "SWF", "SYR",
+          "TEX", "TLH", "TOL", "TPA", "TRI", "TTN", "TUL", "TUP", "TUS", "TVC", "TWF",
+          "TXK", "TYR", "TYS", "VCT", "VIS", "VLD", "VPS", "WRG", "WYS", "XNA", "YAK",
+          "YKM", "YUM")
 airport ==> nominal[ABE, ABI, ABQ, ABY, ACK, ACT, ACV, ACY, A ... , WYS, XNA, YAK, YKM, YUM]
 
-smile> var schema = DataTypes.struct(
-   ...>   new StructField("Month", DataTypes.ByteType, new NominalScale("c-1", "c-2", "c-3", "c-4",
-   ...>     "c-5", "c-6", "c-7", "c-8", "c-9", "c-10", "c-11", "c-12")),
-   ...>   new StructField("DayofMonth", DataTypes.ByteType, new NominalScale("c-1", "c-2", "c-3", "c-4",
-   ...>     "c-5", "c-6", "c-7", "c-8", "c-9", "c-10", "c-11", "c-12", "c-13", "c-14", "c-15", "c-16", "c-17", "c-18",
-   ...>     "c-19", "c-20", "c-21", "c-22", "c-23", "c-24", "c-25", "c-26", "c-27", "c-28", "c-29", "c-30", "c-31")),
-   ...>   new StructField("DayOfWeek", DataTypes.ByteType, new NominalScale("c-1", "c-2", "c-3", "c-4",
-   ...>     "c-5", "c-6", "c-7")),
-   ...>   new StructField("DepTime", DataTypes.IntegerType),
-   ...>   new StructField("UniqueCarrier", DataTypes.ByteType, new NominalScale("9E", "AA", "AQ", "AS",
-   ...>     "B6", "CO", "DH", "DL", "EV", "F9", "FL", "HA", "HP", "MQ", "NW", "OH", "OO", "TZ", "UA", "US", "WN", "XE", "YV")),
-   ...>   new StructField("Origin", DataTypes.ShortType, airport),
-   ...>   new StructField("Dest", DataTypes.ShortType, airport),
-   ...>   new StructField("Distance", DataTypes.IntegerType),
-   ...>   new StructField("dep_delayed_15min", DataTypes.ByteType, new NominalScale("N", "Y"))
-   ...> )
+smile> var schema = new StructType(
+          new StructField("Month", DataTypes.ByteType, new NominalScale("c-1", "c-2", "c-3", "c-4",
+            "c-5", "c-6", "c-7", "c-8", "c-9", "c-10", "c-11", "c-12")),
+          new StructField("DayofMonth", DataTypes.ByteType, new NominalScale("c-1", "c-2", "c-3", "c-4",
+            "c-5", "c-6", "c-7", "c-8", "c-9", "c-10", "c-11", "c-12", "c-13", "c-14", "c-15", "c-16", "c-17", "c-18",
+            "c-19", "c-20", "c-21", "c-22", "c-23", "c-24", "c-25", "c-26", "c-27", "c-28", "c-29", "c-30", "c-31")),
+          new StructField("DayOfWeek", DataTypes.ByteType, new NominalScale("c-1", "c-2", "c-3", "c-4",
+            "c-5", "c-6", "c-7")),
+          new StructField("DepTime", DataTypes.IntType),
+          new StructField("UniqueCarrier", DataTypes.ByteType, new NominalScale("9E", "AA", "AQ", "AS",
+            "B6", "CO", "DH", "DL", "EV", "F9", "FL", "HA", "HP", "MQ", "NW", "OH", "OO", "TZ", "UA", "US", "WN", "XE", "YV")),
+          new StructField("Origin", DataTypes.ShortType, airport),
+          new StructField("Dest", DataTypes.ShortType, airport),
+          new StructField("Distance", DataTypes.IntType),
+          new StructField("dep_delayed_15min", DataTypes.ByteType, new NominalScale("N", "Y"))
+       )
 schema ==> [Month: byte nominal[c-1, c-2, c-3, c-4, c-5, c-6 ... 15min: byte nominal[N, Y]]
 
 smile> var format = CSVFormat.DEFAULT.withFirstRecordAsHeader();
@@ -2270,7 +2737,7 @@ airline ==> [Month: byte nominal[c-1, c-2, c-3, c-4, c-5, c-6 ... ----+
     <div class="tab-content">
         <div class="tab-pane" id="scala_21">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
 smile> val five = SparseMatrix.harwell(java.nio.file.Paths.get("data/matrix/5by5_rua.hb"))
 [main] INFO smile.math.matrix.SparseMatrix - Reads sparse matrix file '/Users/hli/github/smile/shell/target/universal/stage/data/matrix/5by5_rua.hb'
 [main] INFO smile.math.matrix.SparseMatrix - Title                                                                   Key
@@ -2283,7 +2750,7 @@ five: SparseMatrix = smile.math.matrix.SparseMatrix@1761de10
         </div>
         <div class="tab-pane active" id="java_21">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
 smile> var five = SparseMatrix.harwell(java.nio.file.Paths.get("data/matrix/5by5_rua.hb"))
 [main] INFO smile.math.matrix.SparseMatrix - Reads sparse matrix file '/Users/hli/github/smile/shell/target/universal/stage/data/matrix/5by5_rua.hb'
 [main] INFO smile.math.matrix.SparseMatrix - Title                                                                   Key
@@ -2296,7 +2763,7 @@ five ==> smile.math.matrix.SparseMatrix@6b4a4e18
         </div>
             <div class="tab-pane" id="kotlin_21">
     <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="prettyprint lang-kotlin"><code style="white-space: preserve nowrap;">
 >>> SparseMatrix.harwell(java.nio.file.Paths.get("data/matrix/5by5_rua.hb"))
 [main] INFO smile.math.matrix.SparseMatrix - Reads sparse matrix file '/Users/hli/github/smile/shell/target/universal/stage/data/matrix/5by5_rua.hb'
 [main] INFO smile.math.matrix.SparseMatrix - Title                                                                   Key

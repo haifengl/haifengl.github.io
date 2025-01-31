@@ -273,7 +273,7 @@ pages = [{"l":"index.html#","e":false,"i":"","n":"Smile - Scala","t":"Smile - Sc
 {"l":"smile/data/DataFrameOps.html#drop-fffff3ae","e":false,"i":"","n":"drop","t":"drop(range: Range): DataFrame","d":"smile.data.DataFrameOps","k":"def","x":""},
 {"l":"smile/data/DataFrameOps.html#exists-fffff66f","e":false,"i":"","n":"exists","t":"exists(p: Tuple => Boolean): Boolean","d":"smile.data.DataFrameOps","k":"def","x":""},
 {"l":"smile/data/DataFrameOps.html#filter-fffff036","e":false,"i":"","n":"filter","t":"filter(p: Tuple => Boolean): DataFrame","d":"smile.data.DataFrameOps","k":"def","x":""},
-{"l":"smile/data/DataFrameOps.html#find-771","e":false,"i":"","n":"find","t":"find(p: Tuple => Boolean): Optional[Tuple]","d":"smile.data.DataFrameOps","k":"def","x":""},
+{"l":"smile/data/DataFrameOps.html#find-771","e":false,"i":"","n":"find","t":"find(p: Tuple => Boolean): Optional[Row]","d":"smile.data.DataFrameOps","k":"def","x":""},
 {"l":"smile/data/DataFrameOps.html#forall-fffff66f","e":false,"i":"","n":"forall","t":"forall(p: Tuple => Boolean): Boolean","d":"smile.data.DataFrameOps","k":"def","x":""},
 {"l":"smile/data/DataFrameOps.html#foreach-58c","e":false,"i":"","n":"foreach","t":"foreach[U](p: Tuple => U): Unit","d":"smile.data.DataFrameOps","k":"def","x":""},
 {"l":"smile/data/DataFrameOps.html#groupBy-f68","e":false,"i":"","n":"groupBy","t":"groupBy[K](f: Tuple => K): Map[K, DataFrame]","d":"smile.data.DataFrameOps","k":"def","x":""},

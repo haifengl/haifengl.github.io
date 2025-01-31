@@ -13,6 +13,7 @@ smile.data.measure
 smile.data.transform
 smile.data.type
 smile.data.vector
+smile.datasets
 smile.deep
 smile.deep.activation
 smile.deep.layer
