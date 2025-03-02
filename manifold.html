@@ -266,8 +266,8 @@
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
     public class IsoMap {
-        public static double[][] of(double[][] data, int k, int d, boolean conformal);
-        public static double[][] of(NearestNeighborGraph nng, int d, boolean conformal);
+        public static double[][] fit(double[][] data, Options options);
+        public static double[][] fit(NearestNeighborGraph nng, Options options);
     }
           </code></pre>
             </div>
@@ -336,7 +336,7 @@
 
     var data = Arrays.copyOf(swissroll, 2000);
     var nng = NearestNeighborGraph.descent(data, MathEx::distance, 7).largest(false);
-    var map = IsoMap.of(nng, 2, false);
+    var map = IsoMap.fit(nng, 2, false);
     var graph = nng.graph(false);
     var edges = IntStream.range(0, data.length)
             .mapToObj(graph::getEdges)
@@ -408,8 +408,8 @@
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
     public class LLE {
-        public static double[][] of(double[][] data, int k, int d);
-        public static double[][] of(double[][] data, NearestNeighborGraph nng, int d);
+        public static double[][] fit(double[][] data, Options options);
+        public static double[][] fit(double[][] data, NearestNeighborGraph nng, Options options);
     }
           </code></pre>
             </div>
@@ -441,7 +441,7 @@
         <div class="tab-pane active" id="java_4">
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
-    var map = LLE.of(data, nng, 2);
+    var map = LLE.fit(data, nng, 2);
           </code></pre>
             </div>
         </div>
@@ -485,8 +485,8 @@
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
     public class LaplacianEigenmap {
-        public static double[][] of(double[][] data, int k, int d, double t);
-        public static double[][] of(NearestNeighborGraph nng, int d, double t);
+        public static double[][] fit(double[][] data, Options options);
+        public static double[][] fit(NearestNeighborGraph nng, Options options);
     }
           </code></pre>
             </div>
@@ -526,7 +526,7 @@
         <div class="tab-pane active" id="java_6">
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
-    var map = LaplacianEigenmap.of(nng, 2, 25.0);
+    var map = LaplacianEigenmap.fit(nng, 2, 25.0);
           </code></pre>
             </div>
         </div>
@@ -575,7 +575,7 @@
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-java"><code>
     public class TSNE {
-        public TSNE(double[][] X, int d, double perplexity, double eta, int iterations);
+        public static TSNE fit(double[][] X, Options options);
     }
     </code></pre>
             </div>
@@ -632,7 +632,7 @@
     var perplexity = 20;
     var tsne = new TSNE(X, 2, perplexity, 200, 1000);
 
-    var canvas = ScatterPlot.of(tsne.coordinates, label, '@').canvas();
+    var canvas = ScatterPlot.of(tsne.coordinates(), label, '@').canvas();
     canvas.setTitle("t-SNE of MNIST");
     canvas.window();
           </code></pre>
@@ -705,17 +705,11 @@
             <div class="code" style="text-align: left;">
     <pre class="prettyprint lang-java"><code>
     public class UAMP {
-        public double[][] of(double[][] data, int k, int d, int epochs,
-                  double learningRate, double minDist, double spread,
-                  int negativeSamples, double repulsionStrength, double localConnectivity);
+        public double[][] fit(double[][] data, Options options);
 
-        public double[][] of(T[] data, Metric&gt;T&lt; distance, int k, int d, int epochs,
-                  double learningRate, double minDist, double spread,
-                  int negativeSamples, double repulsionStrength, double localConnectivity);
+        public double[][] fit(T[] data, Metric&gt;T&lt; distance, Options options);
 
-        public double[][] of(T[] data, NearestNeighborGraph nng, int d, int epochs,
-                  double learningRate, double minDist, double spread,
-                  int negativeSamples, double repulsionStrength, double localConnectivity);
+        public double[][] fit(T[] data, NearestNeighborGraph nng, Options options);
     }
     </code></pre>
             </div>
@@ -786,7 +780,7 @@
         <div class="tab-pane active" id="java_10">
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
-    var map = UMAP.of(mnist, 15);
+    var map = UMAP.fit(mnist, 15);
     ScatterPlot.of(map, label, '@').canvas().window();
           </code></pre>
             </div>

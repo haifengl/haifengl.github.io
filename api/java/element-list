@@ -74,6 +74,7 @@ smile.swing.text
 smile.taxonomy
 smile.timeseries
 smile.util
+smile.util.function
 smile.validation
 smile.validation.metric
 smile.vision
