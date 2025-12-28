@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
 <script type="text/javascript" src="/api/java/script-dir/gtag.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>smile.classification</title>
     <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
-    <script>var pathToRoot = "../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+        <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
 <script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
 <script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
@@ -27,20 +27,18 @@
 <link href="../../styles/main.css" rel="Stylesheet">
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
 <script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
-<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 </head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-            <a class="library-name--link" href="../../index.html">
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../index.html" tabindex="1">
                     smile-kotlin
             </a>
         <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
@@ -48,10 +46,10 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-4.4.0        </div>
+5.0.2        </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active=""
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
                         data-filter=":kotlin/main">jvm</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
@@ -61,9 +59,9 @@
                         aria-expanded="false"
                         aria-label="Toggle source sets"
                 ></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
@@ -78,7 +76,7 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
                     type="button">Switch theme
             </button>
@@ -86,26 +84,28 @@
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
-                        data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
                                     smile-kotlin
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
 <div class="main-content" data-page-type="package" id="content" pageIds="smile-kotlin::smile.classification////PointingToDeclaration//-1360140095">
   <div class="breadcrumbs"><a href="../../index.html">smile-kotlin</a><span class="delimiter">/</span><span class="current">smile.classification</span></div>
   <div class="cover ">
@@ -116,9 +116,9 @@
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
     <div class="tabs-section-body">
       <div data-togglable="FUNCTION">
-        <h2 class="">Functions</h2>
+        <h2 class="tableheader">Functions</h2>
         <div class="table"><a data-name="-1916890450%2FFunctions%2F-1360140095" anchor-label="adaboost" id="-1916890450%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="adaboost.html"><span><span>adaboost</span></span></a></div>
@@ -133,7 +133,7 @@
             </div>
           </div>
 <a data-name="1855762992%2FFunctions%2F-1360140095" anchor-label="cart" id="1855762992%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="cart.html"><span><span>cart</span></span></a></div>
@@ -148,7 +148,7 @@
             </div>
           </div>
 <a data-name="-154661507%2FFunctions%2F-1360140095" anchor-label="fisher" id="-154661507%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="fisher.html"><span><span>fisher</span></span></a></div>
@@ -163,7 +163,7 @@
             </div>
           </div>
 <a data-name="-691913203%2FFunctions%2F-1360140095" anchor-label="gbm" id="-691913203%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gbm.html"><span><span>gbm</span></span></a></div>
@@ -178,7 +178,7 @@
             </div>
           </div>
 <a data-name="1047650592%2FFunctions%2F-1360140095" anchor-label="knn" id="1047650592%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="knn.html"><span><span>knn</span></span></a></div>
@@ -193,7 +193,7 @@
             </div>
           </div>
 <a data-name="933875901%2FFunctions%2F-1360140095" anchor-label="lda" id="933875901%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="lda.html"><span><span>lda</span></span></a></div>
@@ -208,7 +208,7 @@
             </div>
           </div>
 <a data-name="558819872%2FFunctions%2F-1360140095" anchor-label="logit" id="558819872%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="logit.html"><span><span>logit</span></span></a></div>
@@ -223,7 +223,7 @@
             </div>
           </div>
 <a data-name="-548844987%2FFunctions%2F-1360140095" anchor-label="maxent" id="-548844987%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="maxent.html"><span><span>maxent</span></span></a></div>
@@ -238,7 +238,7 @@
             </div>
           </div>
 <a data-name="-163917530%2FFunctions%2F-1360140095" anchor-label="mlp" id="-163917530%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="mlp.html"><span><span>mlp</span></span></a></div>
@@ -253,7 +253,7 @@
             </div>
           </div>
 <a data-name="-961010945%2FFunctions%2F-1360140095" anchor-label="naiveBayes" id="-961010945%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="naive-bayes.html"><span>naive</span><wbr></wbr><span><span>Bayes</span></span></a></div>
@@ -268,7 +268,7 @@
             </div>
           </div>
 <a data-name="-1676854315%2FFunctions%2F-1360140095" anchor-label="ovo" id="-1676854315%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="ovo.html"><span><span>ovo</span></span></a></div>
@@ -283,7 +283,7 @@
             </div>
           </div>
 <a data-name="1941755506%2FFunctions%2F-1360140095" anchor-label="ovr" id="1941755506%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="ovr.html"><span><span>ovr</span></span></a></div>
@@ -298,7 +298,7 @@
             </div>
           </div>
 <a data-name="2047950040%2FFunctions%2F-1360140095" anchor-label="qda" id="2047950040%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="qda.html"><span><span>qda</span></span></a></div>
@@ -313,7 +313,7 @@
             </div>
           </div>
 <a data-name="-213345098%2FFunctions%2F-1360140095" anchor-label="randomForest" id="-213345098%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="random-forest.html"><span>random</span><wbr></wbr><span><span>Forest</span></span></a></div>
@@ -328,7 +328,7 @@
             </div>
           </div>
 <a data-name="-7451086%2FFunctions%2F-1360140095" anchor-label="rbfnet" id="-7451086%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="rbfnet.html"><span><span>rbfnet</span></span></a></div>
@@ -343,7 +343,7 @@
             </div>
           </div>
 <a data-name="-569210596%2FFunctions%2F-1360140095" anchor-label="rda" id="-569210596%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="rda.html"><span><span>rda</span></span></a></div>
@@ -358,7 +358,7 @@
             </div>
           </div>
 <a data-name="-861558023%2FFunctions%2F-1360140095" anchor-label="svm" id="-861558023%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="svm.html"><span><span>svm</span></span></a></div>
@@ -378,17 +378,21 @@
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>Copyright © 2010-2025 Haifeng Li. All rights reserved. Use is subject to license terms.</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright © 2010-2025 Haifeng Li. All rights reserved. Use is subject to license terms.</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
