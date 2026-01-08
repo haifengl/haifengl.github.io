@@ -393,7 +393,7 @@
     graph.addEdge(4, 2, 0.32);
     graph.addEdge(5, 1, 0.29);
     
-    List<Graph.Edge> mst = new ArrayList<>();
+    List&lt;Graph.Edge&gt; mst = new ArrayList<>();
     double cost = graph.prim(mst);
     mst.forEach(edge -> println(edge))
             </code></pre>
@@ -518,7 +518,7 @@
         </div>
     </div>
 
-    <p>For tigher bound, Smile also implements the Christofides-Serdyukov algorithm yields a solution
+    <p>For tighter bound, Smile also implements the Christofides-Serdyukov algorithm to yield a solution
         that is at most 1.5 times longer than the optimal solution in the worst case. However, it has
         a cubic time complexity.
     </p>

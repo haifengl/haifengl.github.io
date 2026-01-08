@@ -1,9 +1,5 @@
 smile.anomaly
 smile.association
-smile.base.cart
-smile.base.mlp
-smile.base.rbf
-smile.base.svm
 smile.classification
 smile.clustering
 smile.clustering.linkage
@@ -48,6 +44,11 @@ smile.math.kernel
 smile.math.random
 smile.math.rbf
 smile.math.special
+smile.model
+smile.model.cart
+smile.model.mlp
+smile.model.rbf
+smile.model.svm
 smile.neighbor
 smile.neighbor.lsh
 smile.nlp
