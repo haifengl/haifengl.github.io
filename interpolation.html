@@ -247,6 +247,13 @@
         <div class="tab-pane active" id="java_1">
             <div class="code" style="text-align: left;">
           <pre class="prettyprint lang-java"><code>
+    import java.awt.Color;
+    import smile.interpolation.*;
+    import smile.math.rbf.*;
+    import smile.plot.swing.*;
+    import static java.awt.Color.*;
+    import static smile.swing.SmileUtilities.*;
+
     double[] x = {0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
     double[] y = {0.0, 0.8415, 0.9093, 0.1411, -0.7568, -0.9589, -0.2794};
     double[][] points = new double[x.length][2];
@@ -262,9 +269,9 @@
       data[i][1] = linear.interpolate(data[i][0]);
     }
 
-    var canvas = ScatterPlot.of(points, '@', Color.BLACK).canvas();
-    canvas.add(LinePlot.of(data, Color.RED));
-    canvas.window();
+    var figure = ScatterPlot.of(points, '@', Color.BLACK).figure();
+    figure.add(LinePlot.of(data, Color.RED));
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -327,9 +334,9 @@
       data[i][1] = cubic.interpolate(data[i][0]);
     }
 
-    var canvas = ScatterPlot.of(points, '@', Color.BLACK).canvas();
-    canvas.add(LinePlot.of(data, Color.BLUE));
-    canvas.window();
+    var figure = ScatterPlot.of(points, '@', Color.BLACK).figure();
+    figure.add(LinePlot.of(data, Color.BLUE));
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -412,9 +419,9 @@
             {249.633, 120.281, 598.243}
         };
 
-    var canvas = Heatmap.of(y, Palette.jet(256)).canvas();
-    canvas.setTitle("Original");
-    canvas.window();
+    var figure = Heatmap.of(y2d, Palette.jet(256)).figure();
+    figure.setTitle("Original");
+    show(figure);
 
     var cubic = new CubicSplineInterpolation2D(x1, x2, y);
 
@@ -425,9 +432,9 @@
         }
     }
 
-    var cubicPlot = Heatmap.of(data, Palette.jet(256)).canvas();
+    var cubicPlot = Heatmap.of(data, Palette.jet(256)).figure();
     cubicPlot.setTitle("Cubic");
-    cubicPlot.window();
+    show(cubicPlot);
 
     var bicubic = new BicubicInterpolation(x1, x2, y);
 
@@ -437,9 +444,9 @@
         }
     }
 
-    var bicubicPlot = Heatmap.of(data, Palette.jet(256)).canvas();
+    var bicubicPlot = Heatmap.of(data, Palette.jet(256)).figure();
     bicubicPlot.setTitle("Bicubic");
-    bicubicPlot.window();
+    show(bicubicPlot);
           </code></pre>
             </div>
         </div>
@@ -485,9 +492,9 @@
       data[i][1] = kriging.interpolate(data[i][0]);
     }
 
-    var canvas = ScatterPlot.of(points, '@', Color.BLACK).canvas();
-    canvas.add(LinePlot.of(data, Color.CYAN));
-    canvas.window();
+    var figure = ScatterPlot.of(points, '@', Color.BLACK).figure();
+    figure.add(LinePlot.of(data, Color.CYAN));
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -569,9 +576,9 @@
       data[i][1] = rbf.interpolate(data[i][0]);
     }
 
-    var canvas = ScatterPlot.of(points, '@', Color.BLACK).canvas();
-    canvas.add(LinePlot.of(data, Color.GREEN));
-    canvas.window();
+    var figure = ScatterPlot.of(points, '@', Color.BLACK).figure();
+    figure.add(LinePlot.of(data, Color.GREEN));
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -622,9 +629,9 @@
       data[i][1] = shepard.interpolate(data[i][0]);
     }
 
-    var canvas = ScatterPlot.of(points, '@', Color.BLACK).canvas();
-    canvas.add(LinePlot.of(data, Color.PINK));
-    canvas.window();
+    var figure = ScatterPlot.of(points, '@', Color.BLACK).figure();
+    figure.add(LinePlot.of(data, Color.PINK));
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -687,14 +694,14 @@
         }
     }
 
-    var canvas = Heatmap.of(ww, Palette.jet(256)).canvas();
-    canvas.setTitle("Missing Values");
-    canvas.window();
+    var figure = Heatmap.of(ww, Palette.jet(256)).figure();
+    figure.setTitle("Missing Values");
+    show(figure);
 
     LaplaceInterpolation.interpolate(zz);
-    var canvas = Heatmap.of(zz, Palette.jet(256)).canvas();
-    canvas.setTitle("Laplace");
-    canvas.window();
+    var figure = Heatmap.of(zz, Palette.jet(256)).figure();
+    figure.setTitle("Laplace");
+    show(figure);
           </code></pre>
             </div>
         </div>

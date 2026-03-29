@@ -298,12 +298,12 @@
     import smile.math.matrix.*;
     import smile.util.function.*;
     import smile.interpolation.BicubicInterpolation;
+    import static smile.swing.SmileUtilities.*;
 
     var iris = Read.arff("data/weka/iris.arff");
     var figure = ScatterPlot.of(iris, "sepallength", "sepalwidth", "class", '*').figure();
     figure.setAxisLabels("sepallength", "sepalwidth");
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -338,8 +338,7 @@
           <pre class="prettyprint lang-java"><code>
     var figure = ScatterPlot.of(iris, "sepallength", "sepalwidth", "petallength", "class", '*').figure();
     figure.setAxisLabels("sepallength", "sepalwidth", "petallength");
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -439,8 +438,7 @@
         heart[i][1] = 13 * cos(t) - 5 * cos(2*t) - 2 * cos(3*t) - cos(4*t);
     }
     var figure = LinePlot.of(heart, Color.RED).figure();
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -523,8 +521,7 @@
     }
     var figure = new BoxPlot(data, labels).figure();
     figure.setAxisLabels("", "sepallength");
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -602,8 +599,7 @@
     var cow = Read.csv("data/stat/cow.txt").column("V1").toDoubleArray();
     var figure = Histogram.of(cow, 50, true).figure();
     figure.setAxisLabels("Weight", "Probability");
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -635,8 +631,7 @@
           <pre class="prettyprint lang-java"><code>
     var figure = Histogram.of(Arrays.stream(cow).filter(w -> w <= 3500).toArray(), 50, true).figure();
     figure.setAxisLabels("Weight", "Probability");
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -695,11 +690,10 @@
           <pre class="prettyprint lang-java"><code>
     double[] mu = {0.0, 0.0};
     double[][] v = { {1.0, 0.6}, {0.6, 2.0} };
-    var gauss = new MultivariateGaussianDistribution(mu, Matrix.of(v));
+    var gauss = new MultivariateGaussianDistribution(mu, DenseMatrix.of(v));
     var data = Stream.generate(gauss::rand).limit(10000).toArray(double[][]::new);
     var figure = Histogram3D.of(data, 50, false).figure();
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -776,8 +770,7 @@
     var gauss = new GaussianDistribution(0.0, 1.0);
     var data = DoubleStream.generate(gauss::rand).limit(1000).toArray();
     var figure = QQPlot.of(data).figure();
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -887,8 +880,7 @@
     }
 
     var figure = Heatmap.of(Z, Palette.jet(256)).figure();
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -948,8 +940,7 @@
     var sparse = SparseMatrix.text(java.nio.file.Paths.get("data/matrix/mesh2em5.txt"));
     var figure = SparseMatrixPlot.of(sparse).figure();
     figure.setTitle("mesh2em5");
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
@@ -1117,8 +1108,7 @@
           <pre class="prettyprint lang-java"><code>
     var figure = Heatmap.of(Z, 256).figure();
     figure.add(Contour.of(Z));
-    var pane = new FigurePane(figure);
-    pane.window();
+    show(figure);
           </code></pre>
             </div>
         </div>
