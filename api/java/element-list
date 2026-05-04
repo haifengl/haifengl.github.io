@@ -1,6 +1,7 @@
 smile.anomaly
 smile.association
 smile.classification
+smile.classification.resampling
 smile.clustering
 smile.clustering.linkage
 smile.cs
