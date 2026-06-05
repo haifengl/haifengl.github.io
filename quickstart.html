@@ -220,28 +220,28 @@
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-core&lt;/artifactId&gt;
-  &lt;version&gt;6.1.0&lt;/version&gt;
+  &lt;version&gt;6.1.1&lt;/version&gt;
 &lt;/dependency&gt;
 
 &lt;!-- Deep learning + LLMs (requires LibTorch native libraries) --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-deep&lt;/artifactId&gt;
-  &lt;version&gt;6.1.0&lt;/version&gt;
+  &lt;version&gt;6.1.1&lt;/version&gt;
 &lt;/dependency&gt;
 
 &lt;!-- Natural language processing --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-nlp&lt;/artifactId&gt;
-  &lt;version&gt;6.1.0&lt;/version&gt;
+  &lt;version&gt;6.1.1&lt;/version&gt;
 &lt;/dependency&gt;
 
 &lt;!-- Swing + Vega-Lite data visualization --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-plot&lt;/artifactId&gt;
-  &lt;version&gt;6.1.0&lt;/version&gt;
+  &lt;version&gt;6.1.1&lt;/version&gt;
 &lt;/dependency&gt;
             </code></pre>
         </div>
@@ -249,29 +249,29 @@
             <pre class="prettyprint lang-kotlin"><code>
 dependencies {
     // Core ML algorithms
-    implementation("com.github.haifengl:smile-core:6.1.0")
+    implementation("com.github.haifengl:smile-core:6.1.1")
 
     // Idiomatic Kotlin API (wraps smile-core)
-    implementation("com.github.haifengl:smile-kotlin:6.1.0")
+    implementation("com.github.haifengl:smile-kotlin:6.1.1")
 
     // Deep learning + LLMs
-    implementation("com.github.haifengl:smile-deep:6.1.0")
+    implementation("com.github.haifengl:smile-deep:6.1.1")
 
     // NLP
-    implementation("com.github.haifengl:smile-nlp:6.1.0")
+    implementation("com.github.haifengl:smile-nlp:6.1.1")
 
     // Visualization
-    implementation("com.github.haifengl:smile-plot:6.1.0")
+    implementation("com.github.haifengl:smile-plot:6.1.1")
 }
             </code></pre>
         </div>
         <div class="tab-pane" id="dep_sbt">
             <pre class="prettyprint lang-scala"><code>
 // Idiomatic Scala API (pulls in smile-core transitively)
-libraryDependencies += "com.github.haifengl" %% "smile-scala" % "6.1.0"
+libraryDependencies += "com.github.haifengl" %% "smile-scala" % "6.1.1"
 
 // Deep learning
-libraryDependencies += "com.github.haifengl" % "smile-deep" % "6.1.0"
+libraryDependencies += "com.github.haifengl" % "smile-deep" % "6.1.1"
             </code></pre>
         </div>
     </div>
@@ -367,7 +367,7 @@ $ ./smile shell -R-Xmx30G
             <p>When the shell starts you will see the SMILE banner followed by the JShell prompt:</p>
 
             <pre class="prettyprint lang-java"><code>
-|  Welcome to Smile  -- Version  6.1.0
+|  Welcome to Smile  -- Version  6.1.1
 ===============================================================================
 |  Welcome to JShell -- Version 25
 |  For an introduction type: /help intro
@@ -933,13 +933,13 @@ import java.io.*;
 
 // Save
 try (var out = new ObjectOutputStream(
-        new FileOutputStream("forest.ser"))) {
+        new FileOutputStream("forest.sml"))) {
     out.writeObject(forest);
 }
 
 // Load
 try (var in = new ObjectInputStream(
-        new FileInputStream("forest.ser"))) {
+        new FileInputStream("forest.sml"))) {
     var loaded = (RandomForest) in.readObject();
     System.out.println(loaded.predict(zipTest.get(0)));
 }
@@ -950,11 +950,11 @@ try (var in = new ObjectInputStream(
 import java.io._
 
 // Save
-val out = new ObjectOutputStream(new FileOutputStream("forest.ser"))
+val out = new ObjectOutputStream(new FileOutputStream("forest.sml"))
 out.writeObject(forest); out.close()
 
 // Load
-val in = new ObjectInputStream(new FileInputStream("forest.ser"))
+val in = new ObjectInputStream(new FileInputStream("forest.sml"))
 val loaded = in.readObject().asInstanceOf[RandomForest]
 in.close()
             </code></pre>
