@@ -77,6 +77,7 @@ smile.swing.text
 smile.swing.tree
 smile.tensor
 smile.timeseries
+smile.torch
 smile.util
 smile.util.function
 smile.util.ipynb
