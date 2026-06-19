@@ -45,7 +45,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-6.2.0        </div>
+6.2.2        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
@@ -116,22 +116,7 @@
     <div class="tabs-section-body">
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="1012527525%2FFunctions%2F-1360140095" anchor-label="clarans" id="1012527525%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
-          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="clarans.html"><span><span>clarans</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1012527525%2FFunctions%2F-1360140095"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="clarans.html">T</a><span class="token operator">&gt; </span><a href="clarans.html"><span class="token function">clarans</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="clarans.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">distance<span class="token operator">: </span><span data-unresolved-link="smile.math.distance/Distance///PointingToDeclaration/">Distance</span><span class="token operator">&lt;</span><a href="clarans.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">k<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.clustering/CentroidClustering///PointingToDeclaration/">CentroidClustering</span><span class="token operator">&lt;</span><a href="clarans.html">T</a><span class="token punctuation">, </span><a href="clarans.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Clustering Large Applications based upon RANdomized Search. CLARANS is an efficient medoid-based clustering algorithm. The k-medoids algorithm is an adaptation of the k-means algorithm. Rather than calculate the mean of the items in each cluster, a representative item, or medoid, is chosen for each cluster at each iteration. In CLARANS, the process of finding k medoids from n objects is viewed abstractly as searching through a certain graph. In the graph, a node is represented by a set of k objects as selected medoids. Two nodes are neighbors if their sets differ by only one object. In each iteration, CLARANS considers a set of randomly chosen neighbor nodes as candidate of new medoids. We will move to the neighbor node if the neighbor is a better choice for medoids. Otherwise, a local optima is discovered. The entire process is repeated multiple time to find better.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1667820439%2FFunctions%2F-1360140095" anchor-label="dac" id="1667820439%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+        <div class="table"><a data-name="1667820439%2FFunctions%2F-1360140095" anchor-label="dac" id="1667820439%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
           <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -217,6 +202,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="kmeans.html"><span class="token function">kmeans</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">k<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">maxIter<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">100</span><span class="token punctuation">, </span></span><span class="parameter ">runs<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.clustering/CentroidClustering///PointingToDeclaration/">CentroidClustering</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">K-Means clustering. The algorithm partitions n observations into k clusters in which each observation belongs to the cluster with the nearest mean. Although finding an exact solution to the k-means problem for arbitrary input is NP-hard, the standard approach to finding an approximate solution (often called Lloyd's algorithm or the k-means algorithm) is used widely and frequently finds reasonable solutions quickly.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1010732971%2FFunctions%2F-1360140095" anchor-label="kmedoids" id="1010732971%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="kmedoids.html"><span><span>kmedoids</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1010732971%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="kmedoids.html">T</a><span class="token operator">&gt; </span><a href="kmedoids.html"><span class="token function">kmedoids</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="kmedoids.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">distance<span class="token operator">: </span><span data-unresolved-link="smile.math.distance/Distance///PointingToDeclaration/">Distance</span><span class="token operator">&lt;</span><a href="kmedoids.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">k<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.clustering/CentroidClustering///PointingToDeclaration/">CentroidClustering</span><span class="token operator">&lt;</span><a href="kmedoids.html">T</a><span class="token punctuation">, </span><a href="kmedoids.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Clustering Large Applications based upon RANdomized Search. CLARANS is an efficient medoid-based clustering algorithm. The k-medoids algorithm is an adaptation of the k-means algorithm. Rather than calculate the mean of the items in each cluster, a representative item, or medoid, is chosen for each cluster at each iteration. In CLARANS, the process of finding k medoids from n objects is viewed abstractly as searching through a certain graph. In the graph, a node is represented by a set of k objects as selected medoids. Two nodes are neighbors if their sets differ by only one object. In each iteration, CLARANS considers a set of randomly chosen neighbor nodes as candidate of new medoids. We will move to the neighbor node if the neighbor is a better choice for medoids. Otherwise, a local optima is discovered. The entire process is repeated multiple time to find better.</p></div></div></div>
                 </div>
               </div>
             </div>

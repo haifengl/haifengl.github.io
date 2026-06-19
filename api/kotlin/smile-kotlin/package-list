@@ -29,7 +29,6 @@ $dokka.location:smile.classification//rbfnet/#kotlin.Array[kotlin.DoubleArray]#k
 $dokka.location:smile.classification//rda/#kotlin.Array[kotlin.DoubleArray]#kotlin.IntArray#kotlin.Double#kotlin.DoubleArray?#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.classification/rda.html
 $dokka.location:smile.classification//svm/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#kotlin.IntArray#smile.math.kernel.MercerKernel[TypeParam(bounds=[kotlin.Any?])]#kotlin.Double#kotlin.Double#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.classification/svm.html
 $dokka.location:smile.clustering////PointingToDeclaration/smile-kotlin/smile.clustering/index.html
-$dokka.location:smile.clustering//clarans/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/clarans.html
 $dokka.location:smile.clustering//dac/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double#kotlin.Int#kotlin.Double#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/dac.html
 $dokka.location:smile.clustering//dbscan/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/dbscan.html
 $dokka.location:smile.clustering//dbscan/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.neighbor.RNNSearch[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/dbscan.html
@@ -39,6 +38,7 @@ $dokka.location:smile.clustering//gmeans/#kotlin.Array[kotlin.DoubleArray]#kotli
 $dokka.location:smile.clustering//hclust/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.String/PointingToDeclaration/smile-kotlin/smile.clustering/hclust.html
 $dokka.location:smile.clustering//hclust/#kotlin.Array[kotlin.DoubleArray]#kotlin.String/PointingToDeclaration/smile-kotlin/smile.clustering/hclust.html
 $dokka.location:smile.clustering//kmeans/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/kmeans.html
+$dokka.location:smile.clustering//kmedoids/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/kmedoids.html
 $dokka.location:smile.clustering//kmodes/#kotlin.Array[kotlin.IntArray]#kotlin.Int#kotlin.Int#kotlin.Int/PointingToDeclaration/smile-kotlin/smile.clustering/kmodes.html
 $dokka.location:smile.clustering//mec/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Distance[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/mec.html
 $dokka.location:smile.clustering//mec/#kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#smile.math.distance.Metric[TypeParam(bounds=[kotlin.Any?])]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.clustering/mec.html
