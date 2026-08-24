@@ -6,31 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Smile - Feature Engineering</title>
-  
+
   <meta name="description" content="Statistical Machine Intelligence and Learning Engine">
 
-  <!-- prettify js and CSS -->
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=scala&lang=kotlin&lang=clj"></script>
-  <style>
-      .prettyprint ol.linenums > li { list-style-type: decimal; }
-  </style>
-
-  <!-- Bootstrap core CSS -->
-  <link href="css/cerulean.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 + Bootswatch Cerulean -->
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cerulean/bootstrap.min.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- Prism syntax highlighting (vendored for offline / file:// viewing) -->
+  <link href="css/prism.min.css" rel="stylesheet">
 
-  <!-- slider -->
-  <script src="js/owl.carousel.min.js"></script>
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-  <!-- table of contents auto generator -->
-  <script src="js/toc.js" type="text/javascript"></script>
-
-  <!-- styles for pager and table of contents -->
+  <!-- Table of contents -->
   <link rel="stylesheet" href="css/pager.css" type="text/css" />
   <link rel="stylesheet" href="css/toc.css" type="text/css" />
 
@@ -45,128 +31,106 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-57GD08QCML');
-  </script>
-
-  <!-- Sidebar and testimonial-slider -->
-  <script type="text/javascript">
-    $(document).ready(function(){
-      // scroll/follow sidebar
-      // #sidebar is defined in the content snippet
-      // This script has to be executed after the snippet loaded.
-      // $.getScript("js/follow-sidebar.js");
-
-      $(".owl-carousel").owlCarousel({
-        loop: true,           // Infinite loop
-        margin: 10,           // Margin between items
-        dots: true,           // Show next/prev buttons
-        responsive: {         // Responsiveness settings
-          0: { items: 1 },    // 1 item for mobile
-          600: { items: 1 },  // 1 items for tablets
-          1000: { items: 1 }  // 1 items for desktop
-        }
-      });
-    });
   </script>
 </head>
 
 <body>
 
-<div class="container" style="max-width: 1200px;">
-<header>
+<div class="container site-container">
+<header class="site-header">
 <div class="masthead">
-  <p class="lead">
-    <a href="index.html">
-    <img src="images/smile.jpg" style="height:100px; width:auto; vertical-align: bottom; margin-top: 20px; margin-right: 20px;">
+  <p class="lead mb-0">
+    <a href="index.html" class="masthead-link">
+    <img src="images/smile.jpg" alt="SMILE logo" class="masthead-logo">
     <span class="tagline">SMILE &mdash; Statistical Machine Intelligence and Learning Engine</span>
     </a>
   </p>
 </div>
 
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<nav class="navbar navbar-expand-lg navbar-dark site-navbar">
+  <div class="container-fluid px-0">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
+            aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-  </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="quickstart.html">Quick Start</a></li>
-          <li><a href="overview.html">What's Machine Learning</a></li>
-          <li><a href="data.html">Data Processing</a></li>
-          <li><a href="visualization.html">Data Visualization</a></li>
-          <li><a href="vegalite.html">Declarative Visualization</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Supervised Learning <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="classification.html">Classification</a></li>
-          <li><a href="regression.html">Regression</a></li>
-          <li><a href="deep-learning.html">Deep Learning</a></li>
-          <li><a href="feature.html">Feature Engineering</a></li>
-          <li><a href="validation.html">Model Validation</a></li>
-          <li><a href="missing-value-imputation.html">Missing Value Imputation</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unsupervised Learning <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="clustering.html">Clustering</a></li>
-          <li><a href="vector-quantization.html">Vector Quantization</a></li>
-          <li><a href="association-rule.html">Association Rule Mining</a></li>
-          <li><a href="mds.html">Multi-Dimensional Scaling</a></li>
-          <li><a href="manifold.html">Manifold Learning</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">LLM & NLP <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="llm.html">Large Language Model (LLM)</a></li>
-          <li><a href="nlp.html">Natural Language Processing (NLP)</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Math <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="linear-algebra.html">Linear Algebra</a></li>
-          <li><a href="statistics.html">Statistics</a></li>
-          <li><a href="wavelet.html">Wavelet</a></li>
-          <li><a href="interpolation.html">Interpolation</a></li>
-          <li><a href="graph.html">Graph Data Structure</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="api/java/index.html" target="_blank">Java</a></li>
-          <li><a href="api/scala/index.html" target="_blank">Scala</a></li>
-          <li><a href="api/kotlin/index.html" target="_blank">Kotlin</a></li>
-          <li><a href="api/json/index.html" target="_blank">JSON</a></li>
-          <li><a href="api/clojure/index.html" target="_blank">Clojure</a></li>
-        </ul>
-      </li>
-      <li><a href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fshell%2Fsrc%2Funiversal%2Fnotebooks%2Findex.ipynb" target="_blank">Try It Online</a></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Overview</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="quickstart.html">Quick Start</a></li>
+            <li><a class="dropdown-item" href="overview.html">What's Machine Learning</a></li>
+            <li><a class="dropdown-item" href="data.html">Data Processing</a></li>
+            <li><a class="dropdown-item" href="visualization.html">Data Visualization</a></li>
+            <li><a class="dropdown-item" href="vegalite.html">Declarative Visualization</a></li>
+            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Supervised Learning</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="classification.html">Classification</a></li>
+            <li><a class="dropdown-item" href="regression.html">Regression</a></li>
+            <li><a class="dropdown-item" href="deep-learning.html">Deep Learning</a></li>
+            <li><a class="dropdown-item" href="feature.html">Feature Engineering</a></li>
+            <li><a class="dropdown-item" href="validation.html">Model Validation</a></li>
+            <li><a class="dropdown-item" href="missing-value-imputation.html">Missing Value Imputation</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Unsupervised Learning</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="clustering.html">Clustering</a></li>
+            <li><a class="dropdown-item" href="vector-quantization.html">Vector Quantization</a></li>
+            <li><a class="dropdown-item" href="association-rule.html">Association Rule Mining</a></li>
+            <li><a class="dropdown-item" href="mds.html">Multi-Dimensional Scaling</a></li>
+            <li><a class="dropdown-item" href="manifold.html">Manifold Learning</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">LLM &amp; NLP</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="llm.html">Large Language Model (LLM)</a></li>
+            <li><a class="dropdown-item" href="nlp.html">Natural Language Processing (NLP)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="linear-algebra.html">Linear Algebra</a></li>
+            <li><a class="dropdown-item" href="statistics.html">Statistics</a></li>
+            <li><a class="dropdown-item" href="wavelet.html">Wavelet</a></li>
+            <li><a class="dropdown-item" href="interpolation.html">Interpolation</a></li>
+            <li><a class="dropdown-item" href="graph.html">Graph Data Structure</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">API</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
+            <li><a class="dropdown-item" href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
+            <li><a class="dropdown-item" href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
+            <li><a class="dropdown-item" href="api/json/index.html" target="_blank" rel="noopener">JSON</a></li>
+            <li><a class="dropdown-item" href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fshell%2Fsrc%2Funiversal%2Fnotebooks%2Findex.ipynb" target="_blank" rel="noopener">Try It Online</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/haifengl/smile" target="_blank" rel="noopener">GitHub</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <!-- /.navbar-collapse -->
 </nav>
 </header>
 
-<div id="content" class="row">
-  <div class="col-md-3 col-md-push-9 hidden-xs hidden-sm">
+<div id="content" class="row g-4 site-content">
+  <div class="col-md-3 order-md-last d-none d-md-block">
     <div id="sidebar">
         <div class="sidebar-toc" style="margin-bottom: 20px;">
             <p class="toc-header">Contents</p>
@@ -192,7 +156,7 @@
 </div>
 
 
-<div class="col-md-9 col-md-pull-3">
+<div class="col-md-9 order-md-first">
     <h1 id="feature-top" class="title">Feature Engineering</h1>
 
     <p>We have gone through the classification and regression algorithms. In the examples,
@@ -253,13 +217,13 @@
         of each feature in the training set will be 1.0. It does not shift/center
         the data, and thus does not destroy any sparsity.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_1" data-toggle="tab">Java</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_1" type="button" role="tab">Java</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="java_1">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_1">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-java"><code>
+    <pre class="language-java"><code class="language-java">
     import smile.base.mlp.Layer;
     var pendigits = Read.csv("data/classification/pendigits.txt", CSVFormat.DEFAULT.withDelimiter('\t'));
     var df = pendigits.drop(16);
@@ -292,13 +256,13 @@
         A robust alternative is to subtract the median and divide by the IQR, which
         is implemented <code>RobustStandardizer</code>.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_2" data-toggle="tab">Java</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_2" type="button" role="tab">Java</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="java_2">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_2">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-java"><code>
+    <pre class="language-java"><code class="language-java">
     var zip = Read.csv("data/usps/zip.train", CSVFormat.DEFAULT.withDelimiter(' '));
     var df = zip.drop(0);
     var y = zip.column(0).toIntArray();
@@ -391,7 +355,7 @@
         which can be used as a feature selection criterion for binary classification
         problems. S2N is defined as</p>
 
-    <pre class="prettyprint lang-html"><code>
+    <pre class="language-markup"><code class="language-markup">
     |&mu;<sub>1</sub> - &mu;<sub>2</sub>| / (&sigma;<sub>1</sub> + &sigma;<sub>2</sub>)
     </code></pre>
 
@@ -408,7 +372,7 @@
         feature ranking metric, which can be used as a feature selection criterion
         for multi-class classification problems. For each variable j, this ratio is</p>
 
-    <pre class="prettyprint lang-html"><code>
+    <pre class="language-markup"><code class="language-markup">
     BSS(j) / WSS(j) = &Sigma;I(y<sub>i</sub> = k)(x<sub>kj</sub> - x<sub>&middot;j</sub>)<sup>2</sup> / &Sigma;I(y<sub>i</sub> = k)(x<sub>ij</sub> - x<sub>kj</sub>)<sup>2</sup>
     </code></pre>
 
@@ -420,13 +384,13 @@
     <p>Applying it to Iris data, we can find that the last two variables have much higher
         sum squares ratios (about 16 and 13 in contrast to 1.6 and 0.6 of the first two variables).</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_3" data-toggle="tab">Java</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_3" type="button" role="tab">Java</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="java_3">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_3">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     var iris = Read.arff("data/weka/iris.arff");
     SumSquaresRatio.fit(iris, "class");
 
@@ -461,23 +425,23 @@
     <p>For these algorithms, there is a method <code>importance</code> returning
         the scores for feature selection (higher is better).</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_4" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_4" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_4" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_4" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_4">
+        <div class="tab-pane fade" role="tabpanel" id="scala_4">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     val iris = read.arff("data/weka/iris.arff")
     val model = smile.classification.randomForest("class" ~ ".", iris)
     println(iris.names.slice(0, 4).zip(model.importance).mkString("\n"))
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_4">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_4">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     var model = smile.classification.RandomForest.fit(Formula.lhs("class"), iris);
     for (int i = 0; i < 4; i++) {
         System.out.format("%s\t%.2f\n", iris.names()[i], model.importance()[i]);
@@ -519,14 +483,14 @@
         tree models and ensembles of trees, under several different possible
         assumptions about feature dependence. </p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_14" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_14" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_14" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_14" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_14">
+        <div class="tab-pane fade" role="tabpanel" id="scala_14">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
 smile&gt; val housing = read.arff("data/weka/regression/housing.arff")
 [main] INFO smile.io.Arff - Read ARFF relation housing
 housing: DataFrame = [CRIM: float, ZN: float, INDUS: float, CHAS: byte nominal[0, 1], NOX: float, RM: float, AGE: float, DIS: float, RAD: float, TAX: float, PTRATIO: float, B: float, LSTAT: float, class: float]
@@ -582,9 +546,9 @@ LSTAT                 2.6838
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_14">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_14">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
 smile&gt; import smile.io.*
 
 smile&gt; import smile.data.formula.*
@@ -686,13 +650,13 @@ LSTAT                 2.6772
     <p>In the below example, we use gradient boosted trees (100 tress)
         as the classifier, the accuracy of 5-fold cross validation as the fitness measure.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_5" data-toggle="tab">Java</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_5" type="button" role="tab">Java</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="java_5">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_5">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-java"><code>
+    <pre class="language-java"><code class="language-java">
     var train = Read.csv("data/usps/zip.train", CSVFormat.DEFAULT.withDelimiter(' '));
     var test = Read.csv("data/usps/zip.test", CSVFormat.DEFAULT.withDelimiter(' '));
     var x = train.drop("V1").toArray();
@@ -713,14 +677,14 @@ LSTAT                 2.6772
         </div>
     </div>
 <!-- GAFE deadlock on scala
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_5" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_5" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_5" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_5" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_5">
+        <div class="tab-pane fade" role="tabpanel" id="scala_5">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-java"><code>
+    <pre class="language-java"><code class="language-java">
     val train = read.csv("data/usps/zip.train", header=false, delimiter=' ')
     val test = read.csv("data/usps/zip.test", header=false, delimiter=' ')
     val x = train.drop("V1").toArray
@@ -740,9 +704,9 @@ LSTAT                 2.6772
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_5">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_5">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-java"><code>
+    <pre class="language-java"><code class="language-java">
     var train = Read.csv("data/usps/zip.train", CSVFormat.DEFAULT.withDelimiter(' '));
     var test = Read.csv("data/usps/zip.test", CSVFormat.DEFAULT.withDelimiter(' '));
     var x = train.drop("V1").toArray();
@@ -793,21 +757,21 @@ LSTAT                 2.6772
         retaining the most important variance) to the space spanned by a few
         eigenvectors.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_6" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_6" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_6" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_6" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_6">
+        <div class="tab-pane fade" role="tabpanel" id="scala_6">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     def pca(data: Array[Array[Double]], cor: Boolean = false): PCA
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_6">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_6">
             <div class="code" style="text-align: left;">
-              <pre class="prettyprint lang-java"><code>
+              <pre class="language-java"><code class="language-java">
     public class PCA {
         public static PCA fit(double[][] data);
         public static PCA cor(double[][] data);
@@ -823,14 +787,14 @@ LSTAT                 2.6772
         as the correlation matrix will lose information when standardizing the variance.
         The correlation matrix is recommended when variables are measured in different scales.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_7" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_7" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_7" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_7" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_7">
+        <div class="tab-pane fade" role="tabpanel" id="scala_7">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     val pendigits = read.csv("data/classification/pendigits.txt", delimiter="\t", header = false)
     val formula: Formula = "V17" ~ "."
     val df = formula.x(pendigits)
@@ -845,9 +809,9 @@ LSTAT                 2.6772
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_7">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_7">
             <div class="code" style="text-align: left;">
-                  <pre class="prettyprint lang-java"><code>
+                  <pre class="language-java"><code class="language-java">
     var pendigits = Read.csv("data/classification/pendigits.txt", CSVFormat.DEFAULT.withDelimiter('\t'));
     var formula = Formula.lhs("V17");
     var x = formula.x(pendigits).toArray();
@@ -889,7 +853,7 @@ LSTAT                 2.6772
     <p>Probabilistic principal component analysis is a simplified factor analysis
         that employs a latent variable model with linear relationship:
 
-    <pre class="prettyprint lang-html"><code>
+    <pre class="language-markup"><code class="language-markup">
     y &sim; W * x + &mu; + &epsilon;
     </code></pre>
 
@@ -899,21 +863,21 @@ LSTAT                 2.6772
         A close form of estimation of above parameters can be obtained
         by maximum likelihood method.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_8" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_8" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_8" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_8" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_8">
+        <div class="tab-pane fade" role="tabpanel" id="scala_8">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     def ppca(data: Array[Array[Double]], k: Int): PPCA
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_8">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_8">
             <div class="code" style="text-align: left;">
-                  <pre class="prettyprint lang-java"><code>
+                  <pre class="language-java"><code class="language-java">
     public class PPCA {
         public static PPCA fit(double[][] data, int k);
     }
@@ -924,23 +888,23 @@ LSTAT                 2.6772
 
     <p>Similar to PCA example, we apply probabilistic PCA to the pen-digits data.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_9" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_9" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_9" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_9" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_9">
+        <div class="tab-pane fade" role="tabpanel" id="scala_9">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     val pc = ppca(df, 3)
     val x2 = pc(x)
     show(plot(x2, y, '.'))
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_9">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_9">
             <div class="code" style="text-align: left;">
-                  <pre class="prettyprint lang-java"><code>
+                  <pre class="language-java"><code class="language-java">
     var pca = ProbabilisticPCA.fit(x, 3);
     var x2 = pca.apply(x);
     ScatterPlot.of(x2, y, '.').canvas().window();
@@ -972,21 +936,21 @@ LSTAT                 2.6772
         of those clusters. Since even this method may yield a relatively large K,
         it is common to compute only the top P eigenvalues and eigenvectors of <code>K</code>.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_10" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_10" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_10" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_10" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_10">
+        <div class="tab-pane fade" role="tabpanel" id="scala_10">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     def kpca[T](data: Array[T], kernel: MercerKernel[T], k: Int, threshold: Double = 0.0001): KPCA[T]
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_10">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_10">
             <div class="code" style="text-align: left;">
-                  <pre class="prettyprint lang-java"><code>
+                  <pre class="language-java"><code class="language-java">
     public class KPCA {
         public static KPCA&lt;T&gt; fit(T[] data, MercerKernel&lt;T&gt; kernel, int k, double threshold);
     }
@@ -997,23 +961,23 @@ LSTAT                 2.6772
 
     <p>Here we apply kernel PCA to the pen-digits data.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_11" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_11" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_11" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_11" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_11">
+        <div class="tab-pane fade" role="tabpanel" id="scala_11">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     val pc = kpca(df, new GaussianKernel(45), 3)
     val x2 = pc(x)
     show(plot(x2, y, '.'))
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_11">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_11">
             <div class="code" style="text-align: left;">
-                  <pre class="prettyprint lang-java"><code>
+                  <pre class="language-java"><code class="language-java">
     var pca = KernelPCA.fit(pendigits.drop("V17"), new GaussianKernel(45), 3);
     var x2 = pca.apply(x);
     ScatterPlot.of(x2, y, '.').canvas().window();
@@ -1050,23 +1014,23 @@ LSTAT                 2.6772
         shown that a larger learning rate &eta; leads to faster convergence
         and larger asymptotic mean-square error, which is intuitively satisfying.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_12" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_12" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_12" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_12" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_12">
+        <div class="tab-pane fade" role="tabpanel" id="scala_12">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     def gha(data: Array[Array[Double]], k: Int, r: Double): GHA
 
     def gha(data: Array[Array[Double]], w: Array[Array[Double]], r: Double): GHA
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_12">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_12">
             <div class="code" style="text-align: left;">
-                  <pre class="prettyprint lang-java"><code>
+                  <pre class="language-java"><code class="language-java">
     public class GHA {
         public GHA(int n, int p, double r);
         public double update(double[] x);
@@ -1079,23 +1043,23 @@ LSTAT                 2.6772
     <p>The first method starts with random initial projection matrix, while the second one
         starts with a given projection matrix.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_13" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_13" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_13" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_13" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_13">
+        <div class="tab-pane fade" role="tabpanel" id="scala_13">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     val pc = gha(x, 3, TimeFunction.constant(0.00001))
     val x2 = pc(x)
     show(plot(x2, y, '.'))
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_13">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_13">
             <div class="code" style="text-align: left;">
-                  <pre class="prettyprint lang-java"><code>
+                  <pre class="language-java"><code class="language-java">
     var gha = new GHA(x[0].length, 3, TimeFunction.constant(0.00001));
     Arrays.stream(x).forEach(xi -> gha.update(xi));
     var x2 = gha.apply(x);
@@ -1120,16 +1084,20 @@ LSTAT                 2.6772
     </div>
 </div>
 
-<script type="text/javascript">
-    $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
-</script>
-
 </div>
 </div>
 
-<a href=https://github.com/haifengl/smile><img style="position: fixed; top: 0; right: 0; border: 0" src=/images/forkme_right_orange.png alt="Fork me on GitHub"></a>
-
-<!-- Place this tag right after the last button or just before your close body tag. -->
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/vendor/prism/prism.min.js"></script>
+<script src="js/vendor/prism/prism-clike.min.js"></script>
+<script src="js/vendor/prism/prism-java.min.js"></script>
+<script src="js/vendor/prism/prism-scala.min.js"></script>
+<script src="js/vendor/prism/prism-kotlin.min.js"></script>
+<script src="js/vendor/prism/prism-groovy.min.js"></script>
+<script src="js/vendor/prism/prism-clojure.min.js"></script>
+<script src="js/vendor/prism/prism-bash.min.js"></script>
+<script src="js/vendor/prism/prism-markup.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

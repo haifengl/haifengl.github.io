@@ -6,31 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Smile - Statistics</title>
-  
+
   <meta name="description" content="Statistical Machine Intelligence and Learning Engine">
 
-  <!-- prettify js and CSS -->
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=scala&lang=kotlin&lang=clj"></script>
-  <style>
-      .prettyprint ol.linenums > li { list-style-type: decimal; }
-  </style>
-
-  <!-- Bootstrap core CSS -->
-  <link href="css/cerulean.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 + Bootswatch Cerulean -->
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cerulean/bootstrap.min.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- Prism syntax highlighting (vendored for offline / file:// viewing) -->
+  <link href="css/prism.min.css" rel="stylesheet">
 
-  <!-- slider -->
-  <script src="js/owl.carousel.min.js"></script>
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-  <!-- table of contents auto generator -->
-  <script src="js/toc.js" type="text/javascript"></script>
-
-  <!-- styles for pager and table of contents -->
+  <!-- Table of contents -->
   <link rel="stylesheet" href="css/pager.css" type="text/css" />
   <link rel="stylesheet" href="css/toc.css" type="text/css" />
 
@@ -45,128 +31,106 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-57GD08QCML');
-  </script>
-
-  <!-- Sidebar and testimonial-slider -->
-  <script type="text/javascript">
-    $(document).ready(function(){
-      // scroll/follow sidebar
-      // #sidebar is defined in the content snippet
-      // This script has to be executed after the snippet loaded.
-      // $.getScript("js/follow-sidebar.js");
-
-      $(".owl-carousel").owlCarousel({
-        loop: true,           // Infinite loop
-        margin: 10,           // Margin between items
-        dots: true,           // Show next/prev buttons
-        responsive: {         // Responsiveness settings
-          0: { items: 1 },    // 1 item for mobile
-          600: { items: 1 },  // 1 items for tablets
-          1000: { items: 1 }  // 1 items for desktop
-        }
-      });
-    });
   </script>
 </head>
 
 <body>
 
-<div class="container" style="max-width: 1200px;">
-<header>
+<div class="container site-container">
+<header class="site-header">
 <div class="masthead">
-  <p class="lead">
-    <a href="index.html">
-    <img src="images/smile.jpg" style="height:100px; width:auto; vertical-align: bottom; margin-top: 20px; margin-right: 20px;">
+  <p class="lead mb-0">
+    <a href="index.html" class="masthead-link">
+    <img src="images/smile.jpg" alt="SMILE logo" class="masthead-logo">
     <span class="tagline">SMILE &mdash; Statistical Machine Intelligence and Learning Engine</span>
     </a>
   </p>
 </div>
 
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<nav class="navbar navbar-expand-lg navbar-dark site-navbar">
+  <div class="container-fluid px-0">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
+            aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-  </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="quickstart.html">Quick Start</a></li>
-          <li><a href="overview.html">What's Machine Learning</a></li>
-          <li><a href="data.html">Data Processing</a></li>
-          <li><a href="visualization.html">Data Visualization</a></li>
-          <li><a href="vegalite.html">Declarative Visualization</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Supervised Learning <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="classification.html">Classification</a></li>
-          <li><a href="regression.html">Regression</a></li>
-          <li><a href="deep-learning.html">Deep Learning</a></li>
-          <li><a href="feature.html">Feature Engineering</a></li>
-          <li><a href="validation.html">Model Validation</a></li>
-          <li><a href="missing-value-imputation.html">Missing Value Imputation</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unsupervised Learning <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="clustering.html">Clustering</a></li>
-          <li><a href="vector-quantization.html">Vector Quantization</a></li>
-          <li><a href="association-rule.html">Association Rule Mining</a></li>
-          <li><a href="mds.html">Multi-Dimensional Scaling</a></li>
-          <li><a href="manifold.html">Manifold Learning</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">LLM & NLP <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="llm.html">Large Language Model (LLM)</a></li>
-          <li><a href="nlp.html">Natural Language Processing (NLP)</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Math <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="linear-algebra.html">Linear Algebra</a></li>
-          <li><a href="statistics.html">Statistics</a></li>
-          <li><a href="wavelet.html">Wavelet</a></li>
-          <li><a href="interpolation.html">Interpolation</a></li>
-          <li><a href="graph.html">Graph Data Structure</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="api/java/index.html" target="_blank">Java</a></li>
-          <li><a href="api/scala/index.html" target="_blank">Scala</a></li>
-          <li><a href="api/kotlin/index.html" target="_blank">Kotlin</a></li>
-          <li><a href="api/json/index.html" target="_blank">JSON</a></li>
-          <li><a href="api/clojure/index.html" target="_blank">Clojure</a></li>
-        </ul>
-      </li>
-      <li><a href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fshell%2Fsrc%2Funiversal%2Fnotebooks%2Findex.ipynb" target="_blank">Try It Online</a></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Overview</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="quickstart.html">Quick Start</a></li>
+            <li><a class="dropdown-item" href="overview.html">What's Machine Learning</a></li>
+            <li><a class="dropdown-item" href="data.html">Data Processing</a></li>
+            <li><a class="dropdown-item" href="visualization.html">Data Visualization</a></li>
+            <li><a class="dropdown-item" href="vegalite.html">Declarative Visualization</a></li>
+            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Supervised Learning</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="classification.html">Classification</a></li>
+            <li><a class="dropdown-item" href="regression.html">Regression</a></li>
+            <li><a class="dropdown-item" href="deep-learning.html">Deep Learning</a></li>
+            <li><a class="dropdown-item" href="feature.html">Feature Engineering</a></li>
+            <li><a class="dropdown-item" href="validation.html">Model Validation</a></li>
+            <li><a class="dropdown-item" href="missing-value-imputation.html">Missing Value Imputation</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Unsupervised Learning</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="clustering.html">Clustering</a></li>
+            <li><a class="dropdown-item" href="vector-quantization.html">Vector Quantization</a></li>
+            <li><a class="dropdown-item" href="association-rule.html">Association Rule Mining</a></li>
+            <li><a class="dropdown-item" href="mds.html">Multi-Dimensional Scaling</a></li>
+            <li><a class="dropdown-item" href="manifold.html">Manifold Learning</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">LLM &amp; NLP</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="llm.html">Large Language Model (LLM)</a></li>
+            <li><a class="dropdown-item" href="nlp.html">Natural Language Processing (NLP)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="linear-algebra.html">Linear Algebra</a></li>
+            <li><a class="dropdown-item" href="statistics.html">Statistics</a></li>
+            <li><a class="dropdown-item" href="wavelet.html">Wavelet</a></li>
+            <li><a class="dropdown-item" href="interpolation.html">Interpolation</a></li>
+            <li><a class="dropdown-item" href="graph.html">Graph Data Structure</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">API</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
+            <li><a class="dropdown-item" href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
+            <li><a class="dropdown-item" href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
+            <li><a class="dropdown-item" href="api/json/index.html" target="_blank" rel="noopener">JSON</a></li>
+            <li><a class="dropdown-item" href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fshell%2Fsrc%2Funiversal%2Fnotebooks%2Findex.ipynb" target="_blank" rel="noopener">Try It Online</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/haifengl/smile" target="_blank" rel="noopener">GitHub</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <!-- /.navbar-collapse -->
 </nav>
 </header>
 
-<div id="content" class="row">
-  <div class="col-md-3 col-md-push-9 hidden-xs hidden-sm">
+<div id="content" class="row g-4 site-content">
+  <div class="col-md-3 order-md-last d-none d-md-block">
     <div id="sidebar">
         <div class="sidebar-toc" style="margin-bottom: 20px;">
             <p class="toc-header">Contents</p>
@@ -192,7 +156,7 @@
 </div>
 
 
-<div class="col-md-9 col-md-pull-3">
+<div class="col-md-9 order-md-first">
 
     <h1 id="statistics-top" class="title">Statistics</h1>
 
@@ -205,14 +169,14 @@
         <code>median</code>, <code>q1</code>, <code>q3</code>,
         <code>variance</code>, <code>sd</code>, <code>mad</code> (median absolute deviation),
         <code>min</code>, <code>max</code>, <code>whichMin</code>, <code>whichMax</code>, etc.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_1" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_1" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_1" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_1" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_1">
+        <div class="tab-pane fade" role="tabpanel" id="scala_1">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     smile> val x = Array(1.0, 2.0, 3.0, 4.0)
     x: Array[Double] = Array(1.0, 2.0, 3.0, 4.0)
 
@@ -224,9 +188,9 @@
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_1">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_1">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> import static smile.math.MathEx.*
 
     smile> import smile.stat.*
@@ -264,14 +228,14 @@
         The reverse function of <code>cdf</code> is <code>quantile</code>. We can also calculate the likelihood or
         log likelihood of a sample set.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_2" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_2" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_2" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_2" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_2">
+        <div class="tab-pane fade" role="tabpanel" id="scala_2">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     smile&gt; val e = new ExponentialDistribution(1.0)
     e: smile.stat.distribution.ExponentialDistribution = Exponential Distribution(1.0000)
 
@@ -310,9 +274,9 @@
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_2">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_2">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> import smile.stat.distribution.*
 
     smile> var e = new ExponentialDistribution(1.0)
@@ -360,14 +324,14 @@
 
     <p>The below is a more advanced example of estimating a mixture model of Gaussian, exponential and gamma distribution.
         The result is quite accurate for this complicated case.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_3" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_3" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_3" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_3" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_3">
+        <div class="tab-pane fade" role="tabpanel" id="scala_3">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
     smile&gt; val gaussian = new GaussianDistribution(-2.0, 1.0)
     smile&gt; val exp = new ExponentialDistribution(0.8)
     smile&gt; val gamma = new GammaDistribution(2.0, 3.0)
@@ -386,9 +350,9 @@
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_3">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_3">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
     smile> var gaussian = new GaussianDistribution(-2.0, 1.0)
     gaussian ==> Gaussian Distribution(-2.0000, 1.0000)
 
@@ -429,14 +393,14 @@
         are made, based on a finite data sample. It is also known as the
         Parzen window method.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_4" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_4" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_4" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_4" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_4">
+        <div class="tab-pane fade" role="tabpanel" id="scala_4">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     smile&gt; val k = new KernelDensity(data)
     k: smile.stat.distribution.KernelDensity = smile.stat.distribution.KernelDensity@69724abb
 
@@ -448,9 +412,9 @@
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_4">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_4">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> var k = new KernelDensity(data)
     k ==> smile.stat.distribution.KernelDensity@146044d7
 
@@ -480,14 +444,14 @@
         the number of constraints (normally one), a small value of p-value
         indicates a significant difference between the distributions.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_5" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_5" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_5" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_5" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_5">
+        <div class="tab-pane fade" role="tabpanel" id="scala_5">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     smile> val bins = Array(20, 22, 13, 22, 10, 13)
     bins: Array[Int] = Array(20, 22, 13, 22, 10, 13)
 
@@ -499,9 +463,9 @@
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_5">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_5">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> import smile.stat.hypothesis.*
 
     smile> int[] bins = {20, 22, 13, 22, 10, 13}
@@ -521,14 +485,14 @@
     <p>Two-sample chisq test. Given the arrays x and y, containing two
         sets of binned data, and given one constraint, a small value of
         p-value indicates a significant difference between two distributions.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_6" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_6" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_6" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_6" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_6">
+        <div class="tab-pane fade" role="tabpanel" id="scala_6">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> val bins1 = Array(8, 13, 16, 10, 3)
     bins1: Array[Int] = Array(8, 13, 16, 10, 3)
 
@@ -540,9 +504,9 @@
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_6">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_6">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> int[] bins1 = {8, 13, 16, 10, 3}
     bins1 ==> int[5] { 8, 13, 16, 10, 3 }
 
@@ -568,14 +532,14 @@
         is subtracted from all |O-E| differences. The correlation coefficient is
         calculated as Cramer's V.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_7" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_7" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_7" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_7" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_7">
+        <div class="tab-pane fade" role="tabpanel" id="scala_7">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> val count = Array(Array(12, 7), Array(5, 7))
     count: Array[Array[Int]] = Array(Array(12, 7), Array(5, 7))
 
@@ -584,9 +548,9 @@
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_7">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_7">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> int[][] count = { {12, 7}, {5, 7} }
     count ==> int[2][] { int[2] { 12, 7 }, int[2] { 5, 7 } }
 
@@ -602,14 +566,14 @@
     <p>Test if the arrays x and y have significantly different variances.
         Small values of p-value indicate that the two arrays have significantly
         different variances.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_8" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_8" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_8" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_8" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_8">
+        <div class="tab-pane fade" role="tabpanel" id="scala_8">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> val x = Array(0.48074284, -0.52975023, 1.28590721, 0.63456079, -0.41761197, 2.76072411,
                    1.30321095, -1.16454533, 2.27210509, 1.46394553, -0.31713164, 1.26247543,
                    2.65886430, 0.40773450, 1.18055440, -0.39611251, 2.13557687, 0.40878860,
@@ -693,9 +657,9 @@
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_8">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_8">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> double[] x = {0.48074284, -0.52975023, 1.28590721, 0.63456079, -0.41761197, 2.76072411,
                     1.30321095, -1.16454533, 2.27210509, 1.46394553, -0.31713164, 1.26247543,
                     2.65886430, 0.40773450, 1.18055440, -0.39611251, 2.13557687, 0.40878860,
@@ -728,14 +692,14 @@
     <p>Independent one-sample t-test whether the mean of a normally distributed
         population has a value specified in a null hypothesis. Small values of
         p-value indicate that the array has significantly different mean.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_9" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_9" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_9" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_9" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_9">
+        <div class="tab-pane fade" role="tabpanel" id="scala_9">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> ttest(x, 1.0)
     res19: stat.hypothesis.TTest = One Sample t-test(t = -0.6641, df = 19.000, p-value = 0.514609)
 
@@ -744,9 +708,9 @@
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_9">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_9">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> TTest.test(x, 1.0)
     $48 ==> One Sample t-test(t = -0.6641, df = 19.000, p-value = 0.514609)
 
@@ -761,22 +725,22 @@
     <p>Given the paired arrays x and y, test if they have significantly
         different means. Small values of p-value indicate that the two arrays
         have significantly different means.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_10" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_10" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_10" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_10" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_10">
+        <div class="tab-pane fade" role="tabpanel" id="scala_10">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> ttest(y, z)
     res21: stat.hypothesis.TTest = Paired t-test(t = -0.1502, df = 17.000, p-value = 0.882382)
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_10">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_10">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> TTest.testPaired(y, z)
     $53 ==> Paired t-test(t = -0.1502, df = 17.000, p-value = 0.882382)
           </code></pre>
@@ -790,14 +754,14 @@
       different means. If the parameter equalVariance is true, the data arrays are assumed to be
       drawn from populations with the same true variance. Otherwise, The data
       arrays are allowed to be drawn from populations with unequal variances.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_11" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_11" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_11" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_11" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_11">
+        <div class="tab-pane fade" role="tabpanel" id="scala_11">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> ttest2(x, y)
     res22: stat.hypothesis.TTest = Unequal Variance Two Sample t-test(t = -1.1219, df = 35.167, p-value = 0.269491)
 
@@ -812,9 +776,9 @@
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_11">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_11">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> TTest.test(x, y, false)
     $54 ==> Unequal Variance Two Sample t-test(t = -1.1219, df = 35.167, p-value = 0.269491)
 
@@ -839,14 +803,14 @@
         the cumulative distribution function of x is significantly different from
         the given distribution. The array x is modified by being sorted into
         ascending order.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_12" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_12" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_12" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_12" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_12">
+        <div class="tab-pane fade" role="tabpanel" id="scala_12">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> val x = Array(
                    0.53236606, -1.36750258, -1.47239199, -0.12517888, -1.24040594, 1.90357309,
                    -0.54429527, 2.22084140, -1.17209146, -0.68824211, -1.75068914, 0.48505896,
@@ -889,9 +853,9 @@
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_12">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_12">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> double[] x = {0.53236606, -1.36750258, -1.47239199, -0.12517888, -1.24040594, 1.90357309,
                     -0.54429527, 2.22084140, -1.17209146, -0.68824211, -1.75068914, 0.48505896,
                     2.75342248, -0.90675303, -1.05971929, 0.49922388, -1.23214498, 0.79284888,
@@ -917,14 +881,14 @@
         that of y. The arrays x and y are modified by being sorted into
         ascending order.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_13" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_13" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_13" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_13" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_13">
+        <div class="tab-pane fade" role="tabpanel" id="scala_13">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> val y = Array(
                    0.95791391, 0.16203847, 0.56622013, 0.39252941, 0.99126354, 0.65639108,
                    0.07903248, 0.84124582, 0.76718719, 0.80756577, 0.12263981, 0.84733360,
@@ -963,9 +927,9 @@
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_13">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_13">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> double[] y = {0.95791391, 0.16203847, 0.56622013, 0.39252941, 0.99126354, 0.65639108,
                       0.07903248, 0.84124582, 0.76718719, 0.80756577, 0.12263981, 0.84733360,
                       0.85190907, 0.77896244, 0.84915723, 0.78225903, 0.95788055, 0.01849366,
@@ -990,14 +954,14 @@
         underlying assumption that the data is from a normal distribution
         sampled randomly. If this is not true, then it is better to use
         Spearman's coefficient of rank correlation (for non-parametric variables).</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_14" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_14" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_14" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_14" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_14">
+        <div class="tab-pane fade" role="tabpanel" id="scala_14">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> val x = Array(44.4, 45.9, 41.9, 53.3, 44.7, 44.1, 50.7, 45.2, 60.1)
     x: Array[Double] = Array(44.4, 45.9, 41.9, 53.3, 44.7, 44.1, 50.7, 45.2, 60.1)
 
@@ -1009,9 +973,9 @@
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_14">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_14">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> double[] x = {44.4, 45.9, 41.9, 53.3, 44.7, 44.1, 50.7, 45.2, 60.1}
     x ==> double[9] { 44.4, 45.9, 41.9, 53.3, 44.7, 44.1, 50.7, 45.2, 60.1 }
 
@@ -1037,22 +1001,22 @@
 
     <p>The p-value is calculated by approximation, which is good for n &gt; 10.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_15" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_15" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_15" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_15" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_15">
+        <div class="tab-pane fade" role="tabpanel" id="scala_15">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> spearmantest(x, y)
     res33: stat.hypothesis.CorTest = Spearman Correlation Test(cor = 0.60, t = 1.9843, df = 7.000, p-value = 0.0876228)
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_15">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_15">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> CorTest.spearman(x, y)
     $65 ==> Spearman Correlation Test(cor = 0.60, t = 1.9843, df = 7.000, p-value = 0.0876228)
           </code></pre>
@@ -1068,22 +1032,22 @@
         It is used with non-parametric data. The p-value is calculated by
         approximation, which is good for n &gt; 10.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_16" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_16" data-toggle="tab">Scala</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_16" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_16" type="button" role="tab">Scala</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_16">
+        <div class="tab-pane fade" role="tabpanel" id="scala_16">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-scala"><code>
+          <pre class="language-scala"><code class="language-scala">
     smile> kendalltest(x, y)
     res34: stat.hypothesis.CorTest = Kendall Correlation Test(cor = 0.44, t = 1.6681, df = 0.000, p-value = 0.0952928)
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_16">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_16">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
     smile> CorTest.kendall(x, y)
     $66 ==> Kendall Correlation Test(cor = 0.44, t = 1.6681, df = 0.000, p-value = 0.0952928)
           </code></pre>
@@ -1099,16 +1063,20 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
-</script>
-
 </div>
 </div>
 
-<a href=https://github.com/haifengl/smile><img style="position: fixed; top: 0; right: 0; border: 0" src=/images/forkme_right_orange.png alt="Fork me on GitHub"></a>
-
-<!-- Place this tag right after the last button or just before your close body tag. -->
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/vendor/prism/prism.min.js"></script>
+<script src="js/vendor/prism/prism-clike.min.js"></script>
+<script src="js/vendor/prism/prism-java.min.js"></script>
+<script src="js/vendor/prism/prism-scala.min.js"></script>
+<script src="js/vendor/prism/prism-kotlin.min.js"></script>
+<script src="js/vendor/prism/prism-groovy.min.js"></script>
+<script src="js/vendor/prism/prism-clojure.min.js"></script>
+<script src="js/vendor/prism/prism-bash.min.js"></script>
+<script src="js/vendor/prism/prism-markup.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

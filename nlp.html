@@ -6,31 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Smile - NLP</title>
-  
+
   <meta name="description" content="Statistical Machine Intelligence and Learning Engine">
 
-  <!-- prettify js and CSS -->
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=scala&lang=kotlin&lang=clj"></script>
-  <style>
-      .prettyprint ol.linenums > li { list-style-type: decimal; }
-  </style>
-
-  <!-- Bootstrap core CSS -->
-  <link href="css/cerulean.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 + Bootswatch Cerulean -->
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cerulean/bootstrap.min.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- Prism syntax highlighting (vendored for offline / file:// viewing) -->
+  <link href="css/prism.min.css" rel="stylesheet">
 
-  <!-- slider -->
-  <script src="js/owl.carousel.min.js"></script>
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-  <!-- table of contents auto generator -->
-  <script src="js/toc.js" type="text/javascript"></script>
-
-  <!-- styles for pager and table of contents -->
+  <!-- Table of contents -->
   <link rel="stylesheet" href="css/pager.css" type="text/css" />
   <link rel="stylesheet" href="css/toc.css" type="text/css" />
 
@@ -45,128 +31,106 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-57GD08QCML');
-  </script>
-
-  <!-- Sidebar and testimonial-slider -->
-  <script type="text/javascript">
-    $(document).ready(function(){
-      // scroll/follow sidebar
-      // #sidebar is defined in the content snippet
-      // This script has to be executed after the snippet loaded.
-      // $.getScript("js/follow-sidebar.js");
-
-      $(".owl-carousel").owlCarousel({
-        loop: true,           // Infinite loop
-        margin: 10,           // Margin between items
-        dots: true,           // Show next/prev buttons
-        responsive: {         // Responsiveness settings
-          0: { items: 1 },    // 1 item for mobile
-          600: { items: 1 },  // 1 items for tablets
-          1000: { items: 1 }  // 1 items for desktop
-        }
-      });
-    });
   </script>
 </head>
 
 <body>
 
-<div class="container" style="max-width: 1200px;">
-<header>
+<div class="container site-container">
+<header class="site-header">
 <div class="masthead">
-  <p class="lead">
-    <a href="index.html">
-    <img src="images/smile.jpg" style="height:100px; width:auto; vertical-align: bottom; margin-top: 20px; margin-right: 20px;">
+  <p class="lead mb-0">
+    <a href="index.html" class="masthead-link">
+    <img src="images/smile.jpg" alt="SMILE logo" class="masthead-logo">
     <span class="tagline">SMILE &mdash; Statistical Machine Intelligence and Learning Engine</span>
     </a>
   </p>
 </div>
 
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<nav class="navbar navbar-expand-lg navbar-dark site-navbar">
+  <div class="container-fluid px-0">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
+            aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-  </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="quickstart.html">Quick Start</a></li>
-          <li><a href="overview.html">What's Machine Learning</a></li>
-          <li><a href="data.html">Data Processing</a></li>
-          <li><a href="visualization.html">Data Visualization</a></li>
-          <li><a href="vegalite.html">Declarative Visualization</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Supervised Learning <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="classification.html">Classification</a></li>
-          <li><a href="regression.html">Regression</a></li>
-          <li><a href="deep-learning.html">Deep Learning</a></li>
-          <li><a href="feature.html">Feature Engineering</a></li>
-          <li><a href="validation.html">Model Validation</a></li>
-          <li><a href="missing-value-imputation.html">Missing Value Imputation</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unsupervised Learning <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="clustering.html">Clustering</a></li>
-          <li><a href="vector-quantization.html">Vector Quantization</a></li>
-          <li><a href="association-rule.html">Association Rule Mining</a></li>
-          <li><a href="mds.html">Multi-Dimensional Scaling</a></li>
-          <li><a href="manifold.html">Manifold Learning</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">LLM & NLP <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="llm.html">Large Language Model (LLM)</a></li>
-          <li><a href="nlp.html">Natural Language Processing (NLP)</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Math <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="linear-algebra.html">Linear Algebra</a></li>
-          <li><a href="statistics.html">Statistics</a></li>
-          <li><a href="wavelet.html">Wavelet</a></li>
-          <li><a href="interpolation.html">Interpolation</a></li>
-          <li><a href="graph.html">Graph Data Structure</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="api/java/index.html" target="_blank">Java</a></li>
-          <li><a href="api/scala/index.html" target="_blank">Scala</a></li>
-          <li><a href="api/kotlin/index.html" target="_blank">Kotlin</a></li>
-          <li><a href="api/json/index.html" target="_blank">JSON</a></li>
-          <li><a href="api/clojure/index.html" target="_blank">Clojure</a></li>
-        </ul>
-      </li>
-      <li><a href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fshell%2Fsrc%2Funiversal%2Fnotebooks%2Findex.ipynb" target="_blank">Try It Online</a></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Overview</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="quickstart.html">Quick Start</a></li>
+            <li><a class="dropdown-item" href="overview.html">What's Machine Learning</a></li>
+            <li><a class="dropdown-item" href="data.html">Data Processing</a></li>
+            <li><a class="dropdown-item" href="visualization.html">Data Visualization</a></li>
+            <li><a class="dropdown-item" href="vegalite.html">Declarative Visualization</a></li>
+            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Supervised Learning</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="classification.html">Classification</a></li>
+            <li><a class="dropdown-item" href="regression.html">Regression</a></li>
+            <li><a class="dropdown-item" href="deep-learning.html">Deep Learning</a></li>
+            <li><a class="dropdown-item" href="feature.html">Feature Engineering</a></li>
+            <li><a class="dropdown-item" href="validation.html">Model Validation</a></li>
+            <li><a class="dropdown-item" href="missing-value-imputation.html">Missing Value Imputation</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Unsupervised Learning</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="clustering.html">Clustering</a></li>
+            <li><a class="dropdown-item" href="vector-quantization.html">Vector Quantization</a></li>
+            <li><a class="dropdown-item" href="association-rule.html">Association Rule Mining</a></li>
+            <li><a class="dropdown-item" href="mds.html">Multi-Dimensional Scaling</a></li>
+            <li><a class="dropdown-item" href="manifold.html">Manifold Learning</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">LLM &amp; NLP</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="llm.html">Large Language Model (LLM)</a></li>
+            <li><a class="dropdown-item" href="nlp.html">Natural Language Processing (NLP)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="linear-algebra.html">Linear Algebra</a></li>
+            <li><a class="dropdown-item" href="statistics.html">Statistics</a></li>
+            <li><a class="dropdown-item" href="wavelet.html">Wavelet</a></li>
+            <li><a class="dropdown-item" href="interpolation.html">Interpolation</a></li>
+            <li><a class="dropdown-item" href="graph.html">Graph Data Structure</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">API</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
+            <li><a class="dropdown-item" href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
+            <li><a class="dropdown-item" href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
+            <li><a class="dropdown-item" href="api/json/index.html" target="_blank" rel="noopener">JSON</a></li>
+            <li><a class="dropdown-item" href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fshell%2Fsrc%2Funiversal%2Fnotebooks%2Findex.ipynb" target="_blank" rel="noopener">Try It Online</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/haifengl/smile" target="_blank" rel="noopener">GitHub</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <!-- /.navbar-collapse -->
 </nav>
 </header>
 
-<div id="content" class="row">
-  <div class="col-md-3 col-md-push-9 hidden-xs hidden-sm">
+<div id="content" class="row g-4 site-content">
+  <div class="col-md-3 order-md-last d-none d-md-block">
     <div id="sidebar">
         <div class="sidebar-toc" style="margin-bottom: 20px;">
             <p class="toc-header">Contents</p>
@@ -192,7 +156,7 @@
 </div>
 
 
-<div class="col-md-9 col-md-pull-3">
+<div class="col-md-9 order-md-first">
 
     <h1 id="nlp-top" class="title">Natural Language Processing</h1>
 
@@ -225,15 +189,15 @@
         <li>Normalize dash, double and single quotes.</li>
     </ul>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_1" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_1" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_1" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_1" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_1" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_1" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_1">
+        <div class="tab-pane fade" role="tabpanel" id="scala_1">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
 val unicode = """When airport foreman Scott Babcock went out onto the runway at Wiley Post-Will Rogers Memorial Airport in Utqiagvik, Alaska, on Monday to clear some snow, he was surprised to find a visitor waiting for him on the asphalt: a 450-pound bearded seal chilling in the milky sunshine.
 
 “It was very strange to see the seal. I’ve seen a lot of things on runways, but never a seal,” Babcock told ABC News. His footage of the hefty mammal went viral after he posted it on Facebook.
@@ -252,9 +216,9 @@ val text = unicode.normalize
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_1">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_1">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
 import smile.math.MathEx;
 import smile.nlp.*;
 import smile.nlp.tokenizer.*;
@@ -277,9 +241,9 @@ var text = SimpleNormalizer.getInstance().normalize(unicode);
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_1">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_1">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code style="white-space: preserve nowrap;">
+    <pre class="language-kotlin"><code class="language-kotlin">
 import smile.nlp.*;
 
 val unicode = """When airport foreman Scott Babcock went out onto the runway at Wiley Post-Will Rogers Memorial Airport in Utqiagvik, Alaska, on Monday to clear some snow, he was surprised to find a visitor waiting for him on the asphalt: a 450-pound bearded seal chilling in the milky sunshine.
@@ -319,15 +283,15 @@ val text = unicode.normalize()
         In Smile shell, simply call <code>sentences</code> on a string
         to return an array of sentences. Any carriage returns
         in the text will be replaced by whitespace.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_2" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_2" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_2" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_2" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_2" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_2" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_2">
+        <div class="tab-pane fade" role="tabpanel" id="scala_2">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
 smile&gt; val sentences = text.sentences
 sentences: Array[String] = Array(
   "When airport foreman Scott Babcock went out onto the runway at Wiley Post-Will Rogers Memorial Airport in Utqiagvik, Alaska, on Monday to clear some snow, he was surprised to find a visitor waiting for him on the asphalt: a 450-pound bearded seal chilling in the milky sunshine.",
@@ -345,9 +309,9 @@ sentences: Array[String] = Array(
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_2">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_2">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
 smile> var sentences = SimpleSentenceSplitter.getInstance().split(text)
 sentences ==> String[10] { "When airport foreman Scott Babcock  ... mmal strikes are rare\"" }
 
@@ -374,9 +338,9 @@ Though this was the first seal sighting on the runway at the airport, the depart
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_2">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_2">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="language-kotlin"><code class="language-kotlin">
     val sentences = text.sentences()
     </code></pre>
             </div>
@@ -405,23 +369,23 @@ Though this was the first seal sighting on the runway at the airport, the depart
         and each morpheme is tagged separately. The below example
         splits a set of sentences and flat out the results into one
         array.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_3" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_3" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_3" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_3" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_3" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_3" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_3">
+        <div class="tab-pane fade" role="tabpanel" id="scala_3">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
 smile&gt; sentences.flatMap(_.words())
 res6: Array[String] = Array(airport, foreman, Scott, Babcock, went, runway, Wiley, Post-Will, Rogers, Memorial, Airport, Utqiagvik, Alaska, Monday, clear, snow, surprised, visitor, waiting, asphalt, 450-pound, bearded, seal, chilling, milky, sunshine, strange, seal, seen, lot, things, runways, seal, Babcock, told, ABC, News, footage, hefty, mammal, went, viral, posted, Facebook, According, local, TV, station, KTVA, animal, control, called, eventually, moved, seal, help, sled., Normal, air, traffic, soon, resumed, station, said, Poking, fun, seal, surprise, appearance, Alaska, Department, Transportation, warned, pilots, Tuesday, low, sealings, North, Slope, region, pun, low, ceilings, term, used, low, clouds, poor, visibility, seal, sighting, runway, airport...
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_3">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_3">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
 smile> var tokenizer = new SimpleTokenizer(true)
 tokenizer ==> smile.nlp.tokenizer.SimpleTokenizer@6b53e23f
 
@@ -433,9 +397,9 @@ words ==> String[133] { "airport", "foreman", "Scott", "Babcock", "went", "runwa
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_3">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_3">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code style="white-space: preserve nowrap;">
+    <pre class="language-kotlin"><code class="language-kotlin">
 >>> sentences.flatMap{ it.words().asIterable() }
 res6: kotlin.collections.List&lt;kotlin.String&gt; = [airport, foreman, Scott, Babcock, went, runway, Wiley, Post-Will, Rogers, Memorial, Airport, Utqiagvik, Alaska, Monday, clear, snow, surprised, visitor, waiting, asphalt, 450-pound, bearded, seal, chilling, milky, sunshine, strange, seal, seen, lot, things, runways, seal, Babcock, told, ABC, News, footage, hefty, mammal, went, viral, posted, Facebook, According, local, TV, station, KTVA, animal, control, called, eventually, moved, seal, help, sled., Normal, air, traffic, soon, resumed, station, said, Poking, fun, seal, surprise, appearance, Alaska, Department, Transportation, warned, pilots, Tuesday, low, sealings, North, Slope, region, pun, low, ceilings, term, used, low, clouds, poor, visibility, seal, sighting, runway, airport, department, said, animals, including, birds, caribou, polar, bears, spotted, past, Wildlife, strikes, aircraft, pose, significant, safety, hazard, cost, aviation, industry, hundreds, millions, dollars, year, department, spokeswoman, Meadow, Bailey, told, Associated, Press, Birds, make, 90, percent, strikes, U.S., mammal, strikes, rare.]
     </code></pre>
@@ -497,15 +461,15 @@ res6: kotlin.collections.List&lt;kotlin.String&gt; = [airport, foreman, Scott, B
         the removal or replacement of an ending. The implementation
         <code>LancasterStemmer</code> allows the user to load customized rules.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_4" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_4" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_4" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_4" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_4" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_4" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_4">
+        <div class="tab-pane fade" role="tabpanel" id="scala_4">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     smile&gt; porter.stem("democratization")
     res10: String = "democrat"
     smile&gt; lancaster.stem("democratization")
@@ -513,9 +477,9 @@ res6: kotlin.collections.List&lt;kotlin.String&gt; = [airport, foreman, Scott, B
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_4">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_4">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code>
+          <pre class="language-java"><code class="language-java">
 smile> var porter = new PorterStemmer()
 porter ==> smile.nlp.stemmer.PorterStemmer@5ea434c8
 
@@ -530,9 +494,9 @@ $43 ==> "democr"
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_4">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_4">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="language-kotlin"><code class="language-kotlin">
     >>> porter("democratization")
     res18: kotlin.String = democrat
     >>> lancaster("democratization")
@@ -560,23 +524,23 @@ $43 ==> "democr"
         a binary bag of words (<code>Set[String]</code>). That is, presence/absence
         is used instead of frequencies.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_5" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_5" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_5" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_5" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_5" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_5" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_5">
+        <div class="tab-pane fade" role="tabpanel" id="scala_5">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
 smile&gt; text.bag()
 res12: Map[String, Int] = Map(move -> 1, 90 -> 1, call -> 1, spokeswoman -> 1, snow -> 1, anim -> 2, post -> 1, footag -> 1, wait -> 1, carib -> 1, industri -> 1, sunshin -> 1, seen -> 1, abc -> 1, said -> 2, pun -> 1, polar -> 1, bear -> 1, soon -> 1, warn -> 1, sight -> 1, babcock -> 2, u.s. -> 1, clear -> 1, normal -> 1, appear -> 1, sled. -> 1, strike -> 3, foreman -> 1, milki -> 1, resum -> 1, meadow -> 1, bailei -> 1, bird -> 2, us -> 1, dollar -> 1, poke -> 1, mondai -> 1, local -> 1, term -> 1, thing -> 1, scott -> 1, year -> 1, associat -> 1, ktva -> 1, tv -> 1, told -> 2, visibl -> 1, eventu -> 1, seal -> 7, hundr -> 1, surpris -> 2, aircraft -> 1, runwai -> 3, ceil -> 1, includ -> 1, asphalt -> 1, visitor -> 1, help -> 1, hazard -> 1, transport -> ...
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_5">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_5">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
 smile> var map = Arrays.stream(words).
          map(porter::stem).
          map(String::toLowerCase).
@@ -585,9 +549,9 @@ map ==> {spokeswoman=1, u.s.=1, bailei=1, year=1, told=2, ... l=1, transport=1, 
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_5">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_5">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code style="white-space: preserve nowrap;">
+    <pre class="language-kotlin"><code class="language-kotlin">
 >>> text.bag()
 res20: kotlin.collections.Map&lt;kotlin.String, kotlin.Int&gt; = {airport=3, foreman=1, scott=1, babcock=2, went=2, runwai=3, wilei=1, post-wil=1, roger=1, memori=1, utqiagvik=1, alaska=2, mondai=1, clear=1, snow=1, surpris=2, visitor=1, wait=1, asphalt=1, 450-pound=1, beard=1, seal=7, chill=1, milki=1, sunshin=1, strang=1, seen=1, lot=1, thing=1, told=2, abc=1, new=1, footag=1, hefti=1, mammal=2, viral=1, post=1, facebook=1, accord=1, local=1, tv=1, station=2, ktva=1, anim=2, control=1, call=1, eventu=1, move=1, help=1, sled.=1, normal=1, air=1, traffic=1, soon=1, resum=1, said=2, poke=1, fun=1, appear=1, depart=3, transport=1, warn=1, pilot=1, tuesdai=1, low=3, north=1, slope=1, region=1, pun=1, ceil=1, term=1, us=1, cloud=1, poor=1, visibl=1, sight=1, includ=1, bird=2, carib=1, polar=1, bear=1, spot=1, past=1, wildlif=1, strike=3, aircraft=1, pose=1, signific=1, safeti=1, hazard=1, cost=1, aviat=1, industri=1, hundr=1, million=1, dollar=1, year=1, spokeswoman=1, meadow=1, bailei=1, associat=1, press=1, make=1, 90=1, percent=1, u.s.=1, rare.=1}
     </code></pre>
@@ -619,15 +583,15 @@ res20: kotlin.collections.Map&lt;kotlin.String, kotlin.Int&gt; = {airport=3, for
         by the inverse of document frequency, i.e. tf-idf (term
         frequency-inverse document frequency).</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_6" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_6" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_6" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_6" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_6" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_6" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_6">
+        <div class="tab-pane fade" role="tabpanel" id="scala_6">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     val lines = scala.io.Source.fromFile("data/text/movie.txt").getLines().toSeq
     val corpus = lines.map(_.bag())
 
@@ -637,9 +601,9 @@ res20: kotlin.collections.Map&lt;kotlin.String, kotlin.Int&gt; = {airport=3, for
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_6">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_6">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
     var lines = Files.lines(java.nio.file.Paths.get("data/text/movie.txt"));
     var corpus = lines.map(line -> {
               var sentences = SimpleSentenceSplitter.getInstance().split(SimpleNormalizer.getInstance().normalize(line));
@@ -686,9 +650,9 @@ res20: kotlin.collections.Map&lt;kotlin.String, kotlin.Int&gt; = {airport=3, for
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_6">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_6">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="language-kotlin"><code class="language-kotlin">
     import java.io.File
     val lines = File("data/text/movie.txt").readLines()
     val corpus = lines.map{ it.bag() }
@@ -739,15 +703,15 @@ res20: kotlin.collections.Map&lt;kotlin.String, kotlin.Int&gt; = {airport=3, for
         to specify the p-value threshold. The parameter <code>minFreq</code> is the minimum
         frequency of collocation in the corpus.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_7" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_7" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_7" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_7" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_7" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_7" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_7">
+        <div class="tab-pane fade" role="tabpanel" id="scala_7">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
 smile&gt; bigram(10, 5, lines: _*)
 [main] INFO smile.util.package$ - runtime: 255287.678705 ms
 res16: Array[collocation.BigramCollocation] = Array(
@@ -765,9 +729,9 @@ res16: Array[collocation.BigramCollocation] = Array(
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_7">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_7">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
 smile> var corpus = new SimpleCorpus()
 corpus ==> smile.nlp.SimpleCorpus@59309333
 
@@ -780,9 +744,9 @@ $119 ==> Bigram[10] { (special effects, 381, 4849.22), (new york, 248, 3038.85),
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_7">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_7">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="language-kotlin"><code class="language-kotlin">
 >>> bigram(10, 5, lines)
     </code></pre>
             </div>
@@ -798,15 +762,15 @@ $119 ==> Bigram[10] { (special effects, 381, 4849.22), (new york, 248, 3038.85),
         extract n-gram phrases. It takes a collection of texts and generates all n-grams of
         length at most maxNGramSize that occur at least minFreq times in the
         text.</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_8" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_8" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_8" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_8" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_8" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_8" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_8">
+        <div class="tab-pane fade" role="tabpanel" id="scala_8">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
 smile&gt; val turing = scala.io.Source.fromFile("data/text/turing.txt").getLines.mkString
 smile&gt; val phrase = ngram(4, 4, turing)
 smile&gt; phrase(2)
@@ -842,9 +806,9 @@ res20: Seq[NGram] = Buffer(
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_8">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_8">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
 smile> var turing = Files.lines(java.nio.file.Paths.get("data/text/turing.txt")).collect(Collectors.joining(" "))
 turing ==> "COMPUTING MACHINERY AND INTELLIGENCE  1. The Imi ... e imitation game, the part
 
@@ -871,9 +835,9 @@ $136 ==> NGram[8] { ([number, of, state], 5), ([law, of, behaviour], 5), ([winte
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_8">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_8">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="language-kotlin"><code class="language-kotlin">
 >>> val turing = File("data/text/turing.txt").readLines()
 >>> val phrase = ngram(4, 4, turing)
     </code></pre>
@@ -900,15 +864,15 @@ $136 ==> NGram[8] { ([number, of, state], 5), ([law, of, behaviour], 5), ([winte
         many important concepts in the paper such as "storage capacity", "machine",
         "digital computer", "discrete-state machine", etc.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_9" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_9" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_9" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_9" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_9" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_9" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_9">
+        <div class="tab-pane fade" role="tabpanel" id="scala_9">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
 smile&gt; turing.keywords(10)
 res21: Seq[NGram] = Buffer(
   ([storage, capacity], 11),
@@ -925,17 +889,17 @@ res21: Seq[NGram] = Buffer(
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_9">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_9">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
 smile> smile.nlp.keyword.CooccurrenceKeywords.of(turing, 10)
 $137 ==> NGram[10] { ([storage, capacity], 11), ([machine], 198), ([think], 46), ([teach], 11), ([process], 17), ([digital, computer], 34), ([discrete-state, machine], 17), ([imitation, game], 15), ([child], 15), ([view], 20) }
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_9">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_9">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code>
+    <pre class="language-kotlin"><code class="language-kotlin">
 >>> turing.joinToString("\n").keywords(10)
     </code></pre>
             </div>
@@ -971,15 +935,15 @@ $137 ==> NGram[10] { ([storage, capacity], 11), ([machine], 198), ([think], 46),
         already split into words. In this case, just call <code>postag(words)</code>
         on an array of words.</p>
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#java_10" data-toggle="tab">Java</a></li>
-        <li><a href="#scala_10" data-toggle="tab">Scala</a></li>
-        <li><a href="#kotlin_10" data-toggle="tab">Kotlin</a></li>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_10" type="button" role="tab">Java</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_10" type="button" role="tab">Scala</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_10" type="button" role="tab">Kotlin</button></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" id="scala_10">
+        <div class="tab-pane fade" role="tabpanel" id="scala_10">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
 smile&gt; val sentence = """When airport foreman Scott Babcock went out onto the runway at Wiley Post-Will Rogers Memorial Airport in Utqiagvik, Alaska, on Monday to clear some snow, he was surprised to find a visitor waiting for him on the asphalt: a 450-pound bearded seal chilling in the milky sunshine."""
 sentence: String = "When airport foreman Scott Babcock went out onto the runway at Wiley Post-Will Rogers Memorial Airport in Utqiagvik, Alaska, on Monday to clear some snow, he was surprised to find a visitor waiting for him on the asphalt: a 450-pound bearded seal chilling in the milky sunshine."
 
@@ -1042,9 +1006,9 @@ res2: Array[pos.PennTreebankPOS] = Array(
     </code></pre>
             </div>
         </div>
-        <div class="tab-pane active" id="java_10">
+        <div class="tab-pane fade show active" role="tabpanel" id="java_10">
             <div class="code" style="text-align: left;">
-          <pre class="prettyprint lang-java"><code style="white-space: preserve nowrap;">
+          <pre class="language-java"><code class="language-java">
 smile> var sentence = "When airport foreman Scott Babcock went out onto the runway at Wiley Post-Will Rogers Memorial Airport in Utqiagvik, Alaska, on Monday to clear some snow, he was surprised to find a visitor waiting for him on the asphalt: a 450-pound bearded seal chilling in the milky sunshine.";
 sentence ==> "When airport foreman Scott Babcock went out onto ... ng in the milky sunshine."
 
@@ -1059,9 +1023,9 @@ $141 ==> PennTreebankPOS[52] { WRB, NN, NN, NNP, NNP, VBD, RP, IN, DT, NN, IN, P
           </code></pre>
             </div>
         </div>
-        <div class="tab-pane" id="kotlin_10">
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_10">
             <div class="code" style="text-align: left;">
-    <pre class="prettyprint lang-kotlin"><code style="white-space: preserve nowrap;">
+    <pre class="language-kotlin"><code class="language-kotlin">
 >>> val sentence = """When airport foreman Scott Babcock went out onto the runway at Wiley Post-Will Rogers Memorial Airport in Utqiagvik, Alaska, on Monday to clear some snow, he was surprised to find a visitor waiting for him on the asphalt: a 450-pound bearded seal chilling in the milky sunshine."""
 
 >>> sentence.postag()
@@ -1096,7 +1060,7 @@ $141 ==> PennTreebankPOS[52] { WRB, NN, NN, NNP, NNP, VBD, RP, IN, DT, NN, IN, P
         the users are free to use any discrete distributions to model categorical or
         ordinal random variables.</p>
 
-    <pre class="prettyprint lang-scala"><code>
+    <pre class="language-scala"><code class="language-scala">
     def naiveBayes(priori: Array[Double], condprob: Array[Array[Distribution]]): NaiveBayes
     </code></pre>
 
@@ -1110,7 +1074,7 @@ $141 ==> PennTreebankPOS[52] { WRB, NN, NN, NNP, NNP, VBD, RP, IN, DT, NN, IN, P
         features. A Bernoulli naive Bayes classifier requires some form of feature
         selection or else its accuracy will be low.</p>
 
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
     def naiveBayes(x: Array[Array[Int]], y: Array[Int], model: DiscreteNaiveBayes.Model, priori: Array[Double] = null, sigma: Double = 1.0): DiscreteNaiveBayes
     </code></pre>
 
@@ -1147,7 +1111,7 @@ $141 ==> PennTreebankPOS[52] { WRB, NN, NN, NNP, NNP, VBD, RP, IN, DT, NN, IN, P
         which assumes that binary features are stored in a sparse array, of which
         entries are the indices of nonzero features.</p>
 
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
     def maxent(x: Array[Array[Int]], y: Array[Int], p: Int, lambda: Double = 0.1, tol: Double = 1E-5, maxIter: Int = 500): Maxent
     </code></pre>
 
@@ -1188,7 +1152,7 @@ $141 ==> PennTreebankPOS[52] { WRB, NN, NN, NNP, NNP, VBD, RP, IN, DT, NN, IN, P
 
     <p>The below function trains a first-order hidden Markov model.</p>
 
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
     def hmm(observations: Array[Array[Int]], labels: Array[Array[Int]]): HMM[Int]
 
     def hmm[T](observations: Array[Array[T]], labels: Array[Array[Int]], ordinal: ToIntFunction[T]): HMMLabeler[T]
@@ -1234,7 +1198,7 @@ $141 ==> PennTreebankPOS[52] { WRB, NN, NN, NNP, NNP, VBD, RP, IN, DT, NN, IN, P
         the order of the feature interactions, rather than exponentially as
         in previous algorithms based on iterative scaling and gradient descent.</p>
 
-    <pre class="prettyprint lang-scala"><code style="white-space: preserve nowrap;">
+    <pre class="language-scala"><code class="language-scala">
     def crf(sequences: Array[Array[Tuple]], labels: Array[Array[Int]], ntrees: Int = 100, maxDepth: Int = 20, maxNodes: Int = 100, nodeSize: Int = 5, shrinkage: Double = 1.0): CRF
     </code></pre>
 
@@ -1254,16 +1218,20 @@ $141 ==> PennTreebankPOS[52] { WRB, NN, NN, NNP, NNP, VBD, RP, IN, DT, NN, IN, P
     </div>
 </div>
 
-<script type="text/javascript">
-    $('#toc').toc({exclude: 'h1, h5, h6', context: '', autoId: true, numerate: false});
-</script>
-
 </div>
 </div>
 
-<a href=https://github.com/haifengl/smile><img style="position: fixed; top: 0; right: 0; border: 0" src=/images/forkme_right_orange.png alt="Fork me on GitHub"></a>
-
-<!-- Place this tag right after the last button or just before your close body tag. -->
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/vendor/prism/prism.min.js"></script>
+<script src="js/vendor/prism/prism-clike.min.js"></script>
+<script src="js/vendor/prism/prism-java.min.js"></script>
+<script src="js/vendor/prism/prism-scala.min.js"></script>
+<script src="js/vendor/prism/prism-kotlin.min.js"></script>
+<script src="js/vendor/prism/prism-groovy.min.js"></script>
+<script src="js/vendor/prism/prism-clojure.min.js"></script>
+<script src="js/vendor/prism/prism-bash.min.js"></script>
+<script src="js/vendor/prism/prism-markup.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>
