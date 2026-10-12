@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Smile - Gallery</title>
-
+  <title>SMILE - Gallery</title>
   <meta name="description" content="Statistical Machine Intelligence and Learning Engine">
-
-  <!-- Bootstrap 5 + Bootswatch Cerulean -->
-  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cerulean/bootstrap.min.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
-
-  <!-- Prism syntax highlighting (vendored for offline / file:// viewing) -->
-  <link href="css/prism.min.css" rel="stylesheet">
-
-  <!-- Table of contents -->
-  <link rel="stylesheet" href="css/pager.css" type="text/css" />
-  <link rel="stylesheet" href="css/toc.css" type="text/css" />
-
-  <!-- Vega-Lite Embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
-
-  <!-- Google tag (gtag.js) -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('smile-theme');
+        var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/prism.min.css" id="prism-light">
+  <link rel="stylesheet" href="css/prism-tomorrow.min.css" id="prism-dark" disabled>
+  <script>
+    (function () {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var lightSheet = document.getElementById('prism-light');
+      var darkSheet = document.getElementById('prism-dark');
+      if (lightSheet && darkSheet) {
+        lightSheet.disabled = dark;
+        darkSheet.disabled = !dark;
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      var queued = [];
+      function stub() { queued.push(arguments); }
+      stub._smileQueue = true;
+      window.vegaEmbed = stub;
+      document.addEventListener('DOMContentLoaded', function () {
+        var embed = window.vegaEmbed;
+        if (typeof embed !== 'function' || embed._smileQueue) return;
+        queued.forEach(function (args) { embed.apply(window, args); });
+      });
+    })();
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -34,103 +53,177 @@
     gtag('config', 'G-57GD08QCML');
   </script>
 </head>
-
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header" id="site-header">
+  <nav class="nav-bar" aria-label="Primary">
+    <a class="nav-word" href="index.html">SMILE</a>
+    <ul class="nav-links">
+      <li>
+        <button type="button" aria-expanded="false" aria-haspopup="true">Products</button>
+        <ul class="nav-dropdown">
+          <li><a href="core-engine.html">Core Engine</a></li>
+          <li><a href="serve-engine.html">Serve Engine</a></li>
+          <li><a href="agent-studio.html">Agent Studio</a></li>
+        </ul>
+      </li>
+      <li class="nav-resources">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Resources</button>
+        <ul class="nav-dropdown">
+          <li class="nav-docs">
+            <button type="button" aria-expanded="false" aria-haspopup="true">Docs</button>
+            <div class="nav-panel">
+              <div>
+                <p>Start</p>
+                <a href="quickstart.html">Quick Start</a>
+                <a href="studio.html">SMILE Studio</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="data.html">Data Processing</a>
+                <a href="data-io.html">Data Import and Export</a>
+                <a href="visualization.html">Data Visualization</a>
+                <a href="vegalite.html">Declarative Visualization</a>
+              </div>
+              <div>
+                <p>Supervised</p>
+                <a href="classification.html">Classification</a>
+                <a href="regression.html">Regression</a>
+                <a href="deep-learning.html">Deep Learning</a>
+                <a href="time-series.html">Time Series</a>
+                <a href="sequence-labeling.html">Sequence Labeling</a>
+                <a href="nlp.html">Natural Language Processing</a>
+                <a href="feature-engineering.html">Feature Engineering</a>
+                <a href="model-validation.html">Model Validation</a>
+                <a href="hpo.html">Hyperparameter Optimization</a>
+                <a href="training.html">Unified Training Interface</a>
+              </div>
+              <div>
+                <p>Unsupervised</p>
+                <a href="clustering.html">Clustering</a>
+                <a href="vector-quantization.html">Vector Quantization</a>
+                <a href="anomaly-detection.html">Anomaly Detection</a>
+                <a href="association-rule.html">Association Rule Mining</a>
+                <a href="mds.html">Multi-Dimensional Scaling</a>
+                <a href="manifold.html">Manifold Learning</a>
+              </div>
+              <div>
+                <p>GenAI</p>
+                <a href="llm.html">Large Language Models</a>
+                <a href="computer-vision.html">Computer Vision</a>
+                <a href="onnx.html">ONNX</a>
+                <a href="onnx-genai.html">ONNX GenAI</a>
+                <a href="serve.html">SMILE Serve</a>
+                <p>Math</p>
+                <a href="linear-algebra.html">Linear Algebra</a>
+                <a href="statistics.html">Statistics</a>
+                <a href="interpolation.html">Interpolation</a>
+                <a href="wavelet.html">Wavelet</a>
+                <a href="compressed-sensing.html">Compressed Sensing</a>
+                <a href="graph.html">Graph Data Structure</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-api">
+            <button type="button" aria-expanded="false" aria-haspopup="true">API</button>
+            <ul class="nav-dropdown nav-flyout">
+              <li><a href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
+              <li><a href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
+              <li><a href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
+              <li><a href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
+            </ul>
+          </li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </li>
+      <li><a href="enterprise.html">Enterprise</a></li>
+      <li><a href="licensing.html">Licensing</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-quiet nav-start" href="quickstart.html">Start</a>
+      <button type="button" class="btn btn-accent nav-demo" data-contact-open>Get a demo</button>
+      <button type="button" class="icon-btn" id="search-toggle" aria-label="Open search" title="Search (⌘K)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" hidden>
+    <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/>
+  </svg>
+</button>
 
-<div class="container site-container">
-<header class="site-header">
-<div class="masthead">
-  <p class="lead mb-0">
-    <a href="index.html" class="masthead-link">
-    <img src="images/smile.jpg" alt="SMILE logo" class="masthead-logo">
-    <span class="tagline">SMILE &mdash; Statistical Machine Intelligence and Learning Engine</span>
-    </a>
-  </p>
-</div>
-
-<nav class="navbar navbar-expand-lg navbar-dark site-navbar">
-  <div class="container-fluid px-0">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
-            aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Overview</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="quickstart.html">Quick Start</a></li>
-            <li><a class="dropdown-item" href="overview.html">What's Machine Learning</a></li>
-            <li><a class="dropdown-item" href="data.html">Data Processing</a></li>
-            <li><a class="dropdown-item" href="visualization.html">Data Visualization</a></li>
-            <li><a class="dropdown-item" href="vegalite.html">Declarative Visualization</a></li>
-            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
-            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Supervised Learning</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="classification.html">Classification</a></li>
-            <li><a class="dropdown-item" href="regression.html">Regression</a></li>
-            <li><a class="dropdown-item" href="deep-learning.html">Deep Learning</a></li>
-            <li><a class="dropdown-item" href="feature.html">Feature Engineering</a></li>
-            <li><a class="dropdown-item" href="validation.html">Model Validation</a></li>
-            <li><a class="dropdown-item" href="missing-value-imputation.html">Missing Value Imputation</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Unsupervised Learning</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="clustering.html">Clustering</a></li>
-            <li><a class="dropdown-item" href="vector-quantization.html">Vector Quantization</a></li>
-            <li><a class="dropdown-item" href="association-rule.html">Association Rule Mining</a></li>
-            <li><a class="dropdown-item" href="mds.html">Multi-Dimensional Scaling</a></li>
-            <li><a class="dropdown-item" href="manifold.html">Manifold Learning</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">LLM &amp; NLP</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="llm.html">Large Language Model (LLM)</a></li>
-            <li><a class="dropdown-item" href="nlp.html">Natural Language Processing (NLP)</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="linear-algebra.html">Linear Algebra</a></li>
-            <li><a class="dropdown-item" href="statistics.html">Statistics</a></li>
-            <li><a class="dropdown-item" href="wavelet.html">Wavelet</a></li>
-            <li><a class="dropdown-item" href="interpolation.html">Interpolation</a></li>
-            <li><a class="dropdown-item" href="graph.html">Graph Data Structure</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">API</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
-            <li><a class="dropdown-item" href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
-            <li><a class="dropdown-item" href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
-            <li><a class="dropdown-item" href="api/json/index.html" target="_blank" rel="noopener">JSON</a></li>
-            <li><a class="dropdown-item" href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fshell%2Fsrc%2Funiversal%2Fnotebooks%2Findex.ipynb" target="_blank" rel="noopener">Try It Online</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/haifengl/smile" target="_blank" rel="noopener">GitHub</a>
-        </li>
-      </ul>
+      <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
+  </nav>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <button type="button" class="btn btn-accent mobile-contact" data-contact-open>Get a demo</button>
+    <a class="btn btn-quiet mobile-start" href="quickstart.html">Start</a>
+    <details><summary>Products</summary>
+      <a href="core-engine.html">Core Engine</a>
+      <a href="serve-engine.html">Serve Engine</a>
+      <a href="agent-studio.html">Agent Studio</a>
+    </details>
+    <details><summary>Resources</summary>
+      <details><summary>Docs</summary>
+      <p class="drawer-label">Start</p>
+      <a href="quickstart.html">Quick Start</a>
+      <a href="studio.html">SMILE Studio</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="data.html">Data Processing</a>
+      <a href="data-io.html">Data Import and Export</a>
+      <a href="visualization.html">Data Visualization</a>
+      <a href="vegalite.html">Declarative Visualization</a>
+      <p class="drawer-label">Supervised</p>
+      <a href="classification.html">Classification</a>
+      <a href="regression.html">Regression</a>
+      <a href="deep-learning.html">Deep Learning</a>
+      <a href="time-series.html">Time Series</a>
+      <a href="sequence-labeling.html">Sequence Labeling</a>
+      <a href="nlp.html">Natural Language Processing</a>
+      <a href="feature-engineering.html">Feature Engineering</a>
+      <a href="model-validation.html">Model Validation</a>
+      <a href="hpo.html">Hyperparameter Optimization</a>
+      <a href="training.html">Unified Training Interface</a>
+      <p class="drawer-label">Unsupervised</p>
+      <a href="clustering.html">Clustering</a>
+      <a href="vector-quantization.html">Vector Quantization</a>
+      <a href="anomaly-detection.html">Anomaly Detection</a>
+      <a href="association-rule.html">Association Rule Mining</a>
+      <a href="mds.html">Multi-Dimensional Scaling</a>
+      <a href="manifold.html">Manifold Learning</a>
+      <p class="drawer-label">GenAI</p>
+      <a href="llm.html">Large Language Models</a>
+      <a href="computer-vision.html">Computer Vision</a>
+      <a href="onnx.html">ONNX</a>
+      <a href="onnx-genai.html">ONNX GenAI</a>
+      <a href="serve.html">SMILE Serve</a>
+      <p class="drawer-label">Math</p>
+      <a href="linear-algebra.html">Linear Algebra</a>
+      <a href="statistics.html">Statistics</a>
+      <a href="interpolation.html">Interpolation</a>
+      <a href="wavelet.html">Wavelet</a>
+      <a href="compressed-sensing.html">Compressed Sensing</a>
+      <a href="graph.html">Graph Data Structure</a>
+      </details>
+      <details><summary>API</summary>
+      <a href="api/java/index.html" target="_blank" rel="noopener">Java</a>
+      <a href="api/scala/index.html" target="_blank" rel="noopener">Scala</a>
+      <a href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a>
+      <a href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a>
+      </details>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </details>
+    <a href="enterprise.html">Enterprise</a>
+    <a href="licensing.html">Licensing</a>
   </div>
-</nav>
 </header>
 
-<div id="content" class="row g-4 site-content">
-  <div class="col-md-12">
+  <div class="site-shell" id="content">
+    <div class="col-md-12">
     <h1 class="gallery-top">Gallery</h1>
 
     <table class="center" width="100%">
@@ -221,20 +314,42 @@
     </table>
 </div>
 
-</div>
+
+  </div>
+  <div class="palette-backdrop" id="command-palette" hidden>
+  <div class="palette glass" role="dialog" aria-modal="true" aria-label="Search documentation">
+    <input type="search" id="palette-input" placeholder="Search pages and headings…" autocomplete="off" aria-label="Search">
+    <ul class="palette-results" id="palette-results"></ul>
+    <p class="palette-empty" id="palette-empty" hidden>No matches.</p>
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/vendor/prism/prism.min.js"></script>
-<script src="js/vendor/prism/prism-clike.min.js"></script>
-<script src="js/vendor/prism/prism-java.min.js"></script>
-<script src="js/vendor/prism/prism-scala.min.js"></script>
-<script src="js/vendor/prism/prism-kotlin.min.js"></script>
-<script src="js/vendor/prism/prism-groovy.min.js"></script>
-<script src="js/vendor/prism/prism-clojure.min.js"></script>
-<script src="js/vendor/prism/prism-bash.min.js"></script>
-<script src="js/vendor/prism/prism-markup.min.js"></script>
-<script src="js/toc.js"></script>
-<script src="js/site.js"></script>
+  <div id="contact-modal" class="contact-modal" hidden>
+    <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <div class="contact-modal-bar">
+        <p id="contact-modal-title" class="contact-modal-title">Contact Us</p>
+        <button type="button" class="icon-btn" data-contact-close aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="contact-modal-frame-clip">
+        <iframe class="contact-modal-frame" title="Contact form" data-src="https://docs.google.com/forms/d/e/1FAIpQLSe-r5s7DrzXchPUagg5_6mEp_p78zpWQk6A9Z9JxAikKIGxIQ/viewform?embedded=true">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+  <script defer src="js/vendor/prism/prism.min.js"></script>
+  <script defer src="js/vendor/prism/prism-clike.min.js"></script>
+  <script defer src="js/vendor/prism/prism-java.min.js"></script>
+  <script defer src="js/vendor/prism/prism-scala.min.js"></script>
+  <script defer src="js/vendor/prism/prism-kotlin.min.js"></script>
+  <script defer src="js/vendor/prism/prism-groovy.min.js"></script>
+  <script defer src="js/vendor/prism/prism-clojure.min.js"></script>
+  <script defer src="js/vendor/prism/prism-bash.min.js"></script>
+  <script defer src="js/vendor/prism/prism-markup.min.js"></script>
+  <script src="js/dedent.js"></script>
+  <script src="js/toc.js"></script>
+  <script src="js/site.js"></script>
+  <script defer src="js/search.js"></script>
+  <script src="js/playground.js"></script>
 </body>
 </html>

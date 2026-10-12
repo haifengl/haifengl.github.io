@@ -35,8 +35,18 @@ smile.linalg.arpack
 smile.linalg.blas
 smile.linalg.lapack
 smile.llm
-smile.llm.llama
+smile.llm.attention
+smile.llm.cache
+smile.llm.checkpoint
+smile.llm.engine
+smile.llm.model.llama
+smile.llm.model.qwen
+smile.llm.parallel
+smile.llm.quant
+smile.llm.template
 smile.llm.tokenizer
+smile.llm.tool
+smile.llm.transformer
 smile.manifold
 smile.math
 smile.math.distance
@@ -53,7 +63,6 @@ smile.neighbor
 smile.neighbor.lsh
 smile.nlp
 smile.nlp.dictionary
-smile.nlp.normalizer
 smile.nlp.pos
 smile.nlp.relevance
 smile.nlp.stemmer
@@ -61,6 +70,8 @@ smile.nlp.taxonomy
 smile.nlp.tokenizer
 smile.onnx
 smile.onnx.foreign
+smile.onnx.genai
+smile.onnx.genai.foreign
 smile.plot.swing
 smile.plot.vega
 smile.regression
@@ -68,6 +79,7 @@ smile.regression.gam
 smile.regression.glm
 smile.sequence
 smile.sort
+smile.spark
 smile.stat
 smile.stat.distribution
 smile.stat.hypothesis

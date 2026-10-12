@@ -1,0 +1,3596 @@
+[
+  {
+    "title": "SMILE - About",
+    "url": "about.html",
+    "headings": [
+      {
+        "id": "hold",
+        "text": "A smaller footprint, a wider reach.",
+        "level": 2
+      },
+      {
+        "id": "company",
+        "text": "HALO.AI LLC, New York.",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Agent Studio",
+    "url": "agent-studio.html",
+    "headings": [
+      {
+        "id": "what-you-work-with",
+        "text": "What you work with",
+        "level": 2
+      },
+      {
+        "id": "the-model",
+        "text": "A workplace that builds the model",
+        "level": 2
+      },
+      {
+        "id": "your-stack",
+        "text": "Your provider and your language",
+        "level": 2
+      },
+      {
+        "id": "the-company",
+        "text": "Seven agents for the company",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Anomaly Detection",
+    "url": "anomaly-detection.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "when-to-use",
+        "text": "When to Use Which Method",
+        "level": 2
+      },
+      {
+        "id": "isolation-forest",
+        "text": "Isolation Forest",
+        "level": 2
+      },
+      {
+        "id": "if-quick-start",
+        "text": "Quick Start",
+        "level": 3
+      },
+      {
+        "id": "if-options",
+        "text": "Options",
+        "level": 3
+      },
+      {
+        "id": "if-extension",
+        "text": "Extension Level Semantics",
+        "level": 3
+      },
+      {
+        "id": "if-batch",
+        "text": "Batch Scoring and Prediction",
+        "level": 3
+      },
+      {
+        "id": "if-persistence",
+        "text": "Persistence",
+        "level": 3
+      },
+      {
+        "id": "lof",
+        "text": "Local Outlier Factor (LOF)",
+        "level": 2
+      },
+      {
+        "id": "one-class-svm",
+        "text": "One-Class SVM",
+        "level": 2
+      },
+      {
+        "id": "svm-quick-start",
+        "text": "Quick Start",
+        "level": 3
+      },
+      {
+        "id": "svm-options",
+        "text": "Options",
+        "level": 3
+      },
+      {
+        "id": "svm-batch",
+        "text": "Batch Scoring and Prediction",
+        "level": 3
+      },
+      {
+        "id": "svm-persistence",
+        "text": "Persistence",
+        "level": 3
+      },
+      {
+        "id": "score-conventions",
+        "text": "Score Conventions and Thresholding",
+        "level": 2
+      },
+      {
+        "id": "data-driven-threshold",
+        "text": "Data-Driven Threshold",
+        "level": 3
+      },
+      {
+        "id": "validation",
+        "text": "Validation and Error Handling",
+        "level": 2
+      },
+      {
+        "id": "if-fit-errors",
+        "text": "IsolationForest.fit",
+        "level": 3
+      },
+      {
+        "id": "if-score-errors",
+        "text": "IsolationForest.score",
+        "level": 3
+      },
+      {
+        "id": "svm-fit-errors",
+        "text": "SVM.fit",
+        "level": 3
+      },
+      {
+        "id": "examples",
+        "text": "End-to-End Examples",
+        "level": 2
+      },
+      {
+        "id": "example-extended-if",
+        "text": "Isolation Forest with Extended Splits",
+        "level": 3
+      },
+      {
+        "id": "example-gaussian-svm",
+        "text": "One-Class SVM with a Gaussian Kernel",
+        "level": 3
+      },
+      {
+        "id": "example-threshold",
+        "text": "Unsupervised Threshold Selection",
+        "level": 3
+      },
+      {
+        "id": "api-reference",
+        "text": "API Quick Reference",
+        "level": 2
+      },
+      {
+        "id": "api-isolation-forest",
+        "text": "IsolationForest",
+        "level": 3
+      },
+      {
+        "id": "api-svm",
+        "text": "SVM (One-Class)",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Association Rule Mining",
+    "url": "association-rule.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "core-concepts",
+        "text": "Core Concepts",
+        "level": 2
+      },
+      {
+        "id": "data-format",
+        "text": "Data Format",
+        "level": 2
+      },
+      {
+        "id": "fptree",
+        "text": "Build an FP-Tree",
+        "level": 2
+      },
+      {
+        "id": "fptree-memory",
+        "text": "In-Memory Construction",
+        "level": 3
+      },
+      {
+        "id": "fptree-streaming",
+        "text": "Streaming Construction",
+        "level": 3
+      },
+      {
+        "id": "fptree-validation",
+        "text": "Input Validation",
+        "level": 3
+      },
+      {
+        "id": "fpgrowth",
+        "text": "Mine Frequent Item Sets (FP-Growth)",
+        "level": 2
+      },
+      {
+        "id": "arm",
+        "text": "Mine Association Rules (ARM)",
+        "level": 2
+      },
+      {
+        "id": "arm-confidence",
+        "text": "Confidence Threshold",
+        "level": 3
+      },
+      {
+        "id": "arm-validation",
+        "text": "Input Validation",
+        "level": 3
+      },
+      {
+        "id": "metrics",
+        "text": "Interpret Rule Metrics",
+        "level": 2
+      },
+      {
+        "id": "examples",
+        "text": "End-to-End Examples",
+        "level": 2
+      },
+      {
+        "id": "example-memory",
+        "text": "In-Memory Transactions",
+        "level": 3
+      },
+      {
+        "id": "example-supplier",
+        "text": "Supplier-Based Large File Mining",
+        "level": 3
+      },
+      {
+        "id": "example-lift",
+        "text": "Filter by Lift",
+        "level": 3
+      },
+      {
+        "id": "edge-cases",
+        "text": "Validation and Edge Cases",
+        "level": 2
+      },
+      {
+        "id": "empty-tree",
+        "text": "Empty tree (minSupport too high)",
+        "level": 3
+      },
+      {
+        "id": "duplicates",
+        "text": "Duplicate items in one transaction",
+        "level": 3
+      },
+      {
+        "id": "iterator-contract",
+        "text": "Iterator contract",
+        "level": 3
+      },
+      {
+        "id": "rule-equality",
+        "text": "AssociationRule equality",
+        "level": 3
+      },
+      {
+        "id": "performance",
+        "text": "Performance Tips",
+        "level": 2
+      },
+      {
+        "id": "api",
+        "text": "API Quick Reference",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Classification",
+    "url": "classification.html",
+    "headings": [
+      {
+        "id": "intro",
+        "text": "Core Abstractions",
+        "level": 2
+      },
+      {
+        "id": "dataframe-classifier",
+        "text": "DataFrameClassifier",
+        "level": 3
+      },
+      {
+        "id": "class-labels",
+        "text": "ClassLabels",
+        "level": 3
+      },
+      {
+        "id": "options",
+        "text": "Options and Properties",
+        "level": 3
+      },
+      {
+        "id": "datasets",
+        "text": "Datasets and Visualization",
+        "level": 2
+      },
+      {
+        "id": "algorithm-selection",
+        "text": "Algorithm Selection Guide",
+        "level": 2
+      },
+      {
+        "id": "knn",
+        "text": "K-Nearest Neighbors",
+        "level": 2
+      },
+      {
+        "id": "lda",
+        "text": "Linear Discriminant Analysis",
+        "level": 2
+      },
+      {
+        "id": "fld",
+        "text": "Fisher's Linear Discriminant",
+        "level": 2
+      },
+      {
+        "id": "qda",
+        "text": "Quadratic Discriminant Analysis",
+        "level": 2
+      },
+      {
+        "id": "rda",
+        "text": "Regularized Discriminant Analysis",
+        "level": 2
+      },
+      {
+        "id": "naive-bayes",
+        "text": "Naive Bayes",
+        "level": 2
+      },
+      {
+        "id": "discrete-naive-bayes",
+        "text": "Discrete Naive Bayes",
+        "level": 2
+      },
+      {
+        "id": "maxent",
+        "text": "Maximum Entropy",
+        "level": 2
+      },
+      {
+        "id": "logit",
+        "text": "Logistic Regression",
+        "level": 2
+      },
+      {
+        "id": "sparse-logit",
+        "text": "Sparse Logistic Regression",
+        "level": 2
+      },
+      {
+        "id": "mlp",
+        "text": "Multilayer Perceptron",
+        "level": 2
+      },
+      {
+        "id": "rbf-network",
+        "text": "Radial Basis Function Network",
+        "level": 2
+      },
+      {
+        "id": "svm",
+        "text": "Support Vector Machines",
+        "level": 2
+      },
+      {
+        "id": "linear-svm",
+        "text": "Linear SVM and Sparse Variants",
+        "level": 2
+      },
+      {
+        "id": "ovr-ovo",
+        "text": "One-Versus-Rest and One-Versus-One",
+        "level": 2
+      },
+      {
+        "id": "calibration",
+        "text": "Probability Calibration",
+        "level": 2
+      },
+      {
+        "id": "cart",
+        "text": "Decision Trees",
+        "level": 2
+      },
+      {
+        "id": "random-forest",
+        "text": "Random Forest",
+        "level": 2
+      },
+      {
+        "id": "gbt",
+        "text": "Gradient Tree Boost",
+        "level": 2
+      },
+      {
+        "id": "adaboost",
+        "text": "AdaBoost",
+        "level": 2
+      },
+      {
+        "id": "tips",
+        "text": "Practical Tips",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Clustering",
+    "url": "clustering.html",
+    "headings": [
+      {
+        "id": "core-abstractions",
+        "text": "Core Abstractions",
+        "level": 2
+      },
+      {
+        "id": "clustering-interface",
+        "text": "Clustering Interface and Options",
+        "level": 3
+      },
+      {
+        "id": "partitioning",
+        "text": "Partitioning",
+        "level": 3
+      },
+      {
+        "id": "centroid-clustering",
+        "text": "CentroidClustering",
+        "level": 3
+      },
+      {
+        "id": "kmeans",
+        "text": "K-Means",
+        "level": 2
+      },
+      {
+        "id": "kmedoids",
+        "text": "K-Medoids (CLARANS)",
+        "level": 2
+      },
+      {
+        "id": "kmodes",
+        "text": "K-Modes",
+        "level": 2
+      },
+      {
+        "id": "xmeans",
+        "text": "X-Means",
+        "level": 2
+      },
+      {
+        "id": "gmeans",
+        "text": "G-Means",
+        "level": 2
+      },
+      {
+        "id": "deterministic-annealing",
+        "text": "Deterministic Annealing",
+        "level": 2
+      },
+      {
+        "id": "dbscan",
+        "text": "DBSCAN",
+        "level": 2
+      },
+      {
+        "id": "hdbscan",
+        "text": "HDBSCAN",
+        "level": 2
+      },
+      {
+        "id": "denclue",
+        "text": "DENCLUE",
+        "level": 2
+      },
+      {
+        "id": "mec",
+        "text": "MEC",
+        "level": 2
+      },
+      {
+        "id": "sib",
+        "text": "SIB",
+        "level": 2
+      },
+      {
+        "id": "spectral",
+        "text": "Spectral Clustering",
+        "level": 2
+      },
+      {
+        "id": "hierarchical",
+        "text": "Hierarchical Clustering",
+        "level": 2
+      },
+      {
+        "id": "linkage-methods",
+        "text": "Linkage Methods",
+        "level": 3
+      },
+      {
+        "id": "linkage-chooser",
+        "text": "Linkage Selection",
+        "level": 3
+      },
+      {
+        "id": "multiple-trials",
+        "text": "Running Multiple Trials",
+        "level": 2
+      },
+      {
+        "id": "comparison",
+        "text": "Algorithm Comparison",
+        "level": 2
+      },
+      {
+        "id": "patterns",
+        "text": "Common Patterns",
+        "level": 2
+      },
+      {
+        "id": "choosing-k",
+        "text": "Choosing k",
+        "level": 3
+      },
+      {
+        "id": "outliers",
+        "text": "Handling Outliers",
+        "level": 3
+      },
+      {
+        "id": "reproducibility",
+        "text": "Reproducibility",
+        "level": 3
+      },
+      {
+        "id": "serialization",
+        "text": "Serialization",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Compressed Sensing",
+    "url": "compressed-sensing.html",
+    "headings": [
+      {
+        "id": "quickstart",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "sensing",
+        "text": "Measurement Matrix",
+        "level": 2
+      },
+      {
+        "id": "omp",
+        "text": "Orthogonal Matching Pursuit",
+        "level": 2
+      },
+      {
+        "id": "cosamp",
+        "text": "CoSaMP",
+        "level": 2
+      },
+      {
+        "id": "bp",
+        "text": "Basis Pursuit / BPDN",
+        "level": 2
+      },
+      {
+        "id": "compare",
+        "text": "Choosing an Algorithm",
+        "level": 2
+      },
+      {
+        "id": "wavelet",
+        "text": "Wavelet-Domain Sparsity",
+        "level": 2
+      },
+      {
+        "id": "options",
+        "text": "Options Persistence",
+        "level": 2
+      },
+      {
+        "id": "refs",
+        "text": "References",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Computer Vision",
+    "url": "computer-vision.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "package-map",
+        "text": "Package Map",
+        "level": 2
+      },
+      {
+        "id": "transforms",
+        "text": "Image Transforms",
+        "level": 2
+      },
+      {
+        "id": "dataset",
+        "text": "Image Dataset",
+        "level": 2
+      },
+      {
+        "id": "efficientnet",
+        "text": "EfficientNet",
+        "level": 2
+      },
+      {
+        "id": "custom-arch",
+        "text": "Custom Architecture",
+        "level": 3
+      },
+      {
+        "id": "imagenet",
+        "text": "ImageNet Labels",
+        "level": 2
+      },
+      {
+        "id": "see-also",
+        "text": "See Also",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Core Engine",
+    "url": "core-engine.html",
+    "headings": [
+      {
+        "id": "what-you-embed",
+        "text": "What you embed",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Data Import and Export",
+    "url": "data-io.html",
+    "headings": [
+      {
+        "id": "import",
+        "text": "Importing Data",
+        "level": 2
+      },
+      {
+        "id": "read.parquet",
+        "text": "Apache Parquet",
+        "level": 3
+      },
+      {
+        "id": "read.avro",
+        "text": "Apache Avro",
+        "level": 3
+      },
+      {
+        "id": "read.arrow",
+        "text": "Apache Arrow",
+        "level": 3
+      },
+      {
+        "id": "read.sas",
+        "text": "SAS7BDAT",
+        "level": 3
+      },
+      {
+        "id": "read.jdbc",
+        "text": "Relational Database",
+        "level": 3
+      },
+      {
+        "id": "read.arff",
+        "text": "Weka ARFF",
+        "level": 3
+      },
+      {
+        "id": "read.csv",
+        "text": "Delimited Text and CSV",
+        "level": 3
+      },
+      {
+        "id": "read.json",
+        "text": "JSON",
+        "level": 3
+      },
+      {
+        "id": "read.libsvm",
+        "text": "LibSVM",
+        "level": 3
+      },
+      {
+        "id": "sparse-format",
+        "text": "Coordinate Triple Tuple List",
+        "level": 3
+      },
+      {
+        "id": "Harwell-Boeing",
+        "text": "Harwell-Boeing Column-Compressed Sparse Matrix",
+        "level": 3
+      },
+      {
+        "id": "wireframe",
+        "text": "Wireframe",
+        "level": 3
+      },
+      {
+        "id": "export",
+        "text": "Exporting Data",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Data Processing",
+    "url": "data.html",
+    "headings": [
+      {
+        "id": "features",
+        "text": "Features",
+        "level": 2
+      },
+      {
+        "id": "data-type",
+        "text": "Data Type",
+        "level": 2
+      },
+      {
+        "id": "DataFrame",
+        "text": "DataFrame",
+        "level": 2
+      },
+      {
+        "id": "DataFrame_Creation",
+        "text": "Creation",
+        "level": 3
+      },
+      {
+        "id": "DataFrame_Index",
+        "text": "Indexing",
+        "level": 3
+      },
+      {
+        "id": "DataFrame_Viewing",
+        "text": "Viewing Data",
+        "level": 3
+      },
+      {
+        "id": "DataFrame_Selection",
+        "text": "Selection",
+        "level": 3
+      },
+      {
+        "id": "DataFrame_Setting",
+        "text": "Setting",
+        "level": 3
+      },
+      {
+        "id": "DataFrame_Merge",
+        "text": "Merge",
+        "level": 3
+      },
+      {
+        "id": "DataFrame_Missing",
+        "text": "Missing Data",
+        "level": 3
+      },
+      {
+        "id": "DataFrame_Operations",
+        "text": "Operations",
+        "level": 3
+      },
+      {
+        "id": "SQL",
+        "text": "SQL",
+        "level": 2
+      },
+      {
+        "id": "sparse",
+        "text": "Sparse Dataset",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Deep Learning",
+    "url": "deep-learning.html",
+    "headings": [
+      {
+        "id": "prerequisites",
+        "text": "Prerequisites",
+        "level": 2
+      },
+      {
+        "id": "module-structure",
+        "text": "Module Structure",
+        "level": 2
+      },
+      {
+        "id": "tensors",
+        "text": "Tensors",
+        "level": 2
+      },
+      {
+        "id": "tensor-factories",
+        "text": "Factory Methods",
+        "level": 3
+      },
+      {
+        "id": "tensor-indexing",
+        "text": "Indexing",
+        "level": 3
+      },
+      {
+        "id": "tensor-arithmetic",
+        "text": "Arithmetic &amp; Math",
+        "level": 3
+      },
+      {
+        "id": "tensor-scope",
+        "text": "AutoScope &amp; noGradGuard",
+        "level": 3
+      },
+      {
+        "id": "tensor-options",
+        "text": "Options: dtype &amp; device",
+        "level": 3
+      },
+      {
+        "id": "layers",
+        "text": "Layers",
+        "level": 2
+      },
+      {
+        "id": "layers-dense",
+        "text": "Dense Shortcuts",
+        "level": 3
+      },
+      {
+        "id": "layers-conv",
+        "text": "Convolution &amp; Pooling",
+        "level": 3
+      },
+      {
+        "id": "layers-norm-drop",
+        "text": "Norms, Dropout &amp; Embedding",
+        "level": 3
+      },
+      {
+        "id": "layers-sequential",
+        "text": "SequentialBlock",
+        "level": 3
+      },
+      {
+        "id": "activations",
+        "text": "Activations",
+        "level": 2
+      },
+      {
+        "id": "loss-optimizers",
+        "text": "Loss &amp; Optimizers",
+        "level": 2
+      },
+      {
+        "id": "loss",
+        "text": "Loss Factories",
+        "level": 3
+      },
+      {
+        "id": "optimizers",
+        "text": "Optimizers",
+        "level": 3
+      },
+      {
+        "id": "model-api",
+        "text": "Model API",
+        "level": 2
+      },
+      {
+        "id": "metrics-data",
+        "text": "Metrics &amp; Data",
+        "level": 2
+      },
+      {
+        "id": "metrics",
+        "text": "Metrics",
+        "level": 3
+      },
+      {
+        "id": "datasets",
+        "text": "Datasets &amp; Sampling",
+        "level": 3
+      },
+      {
+        "id": "cuda",
+        "text": "CUDA",
+        "level": 2
+      },
+      {
+        "id": "vision",
+        "text": "Computer Vision",
+        "level": 2
+      },
+      {
+        "id": "vision-transforms",
+        "text": "Transforms",
+        "level": 3
+      },
+      {
+        "id": "vision-dataset",
+        "text": "ImageDataset",
+        "level": 3
+      },
+      {
+        "id": "vision-imagenet",
+        "text": "ImageNet Labels",
+        "level": 3
+      },
+      {
+        "id": "vision-efficientnet",
+        "text": "EfficientNet-V2",
+        "level": 3
+      },
+      {
+        "id": "examples",
+        "text": "End-to-End Examples",
+        "level": 2
+      },
+      {
+        "id": "example-mnist-mlp",
+        "text": "Gentle MNIST MLP",
+        "level": 3
+      },
+      {
+        "id": "example-manual-loop",
+        "text": "Manual Training Loop",
+        "level": 3
+      },
+      {
+        "id": "example-lenet",
+        "text": "LeNet with Model.train",
+        "level": 3
+      },
+      {
+        "id": "example-efficientnet",
+        "text": "EfficientNet Pretrained Inference",
+        "level": 3
+      },
+      {
+        "id": "onnx",
+        "text": "ONNX Runtime",
+        "level": 2
+      },
+      {
+        "id": "onnx-overview",
+        "text": "Overview",
+        "level": 3
+      },
+      {
+        "id": "onnx-prereqs",
+        "text": "Prerequisites",
+        "level": 3
+      },
+      {
+        "id": "onnx-packages",
+        "text": "Package Structure",
+        "level": 3
+      },
+      {
+        "id": "onnx-quickstart",
+        "text": "Quick Start",
+        "level": 3
+      },
+      {
+        "id": "onnx-session",
+        "text": "InferenceSession",
+        "level": 3
+      },
+      {
+        "id": "onnx-ortvalue",
+        "text": "OrtValue",
+        "level": 3
+      },
+      {
+        "id": "onnx-options",
+        "text": "SessionOptions &amp; Environment",
+        "level": 3
+      },
+      {
+        "id": "onnx-eps",
+        "text": "Execution Providers",
+        "level": 3
+      },
+      {
+        "id": "onnx-resources",
+        "text": "Resource Management",
+        "level": 3
+      },
+      {
+        "id": "onnx-resnet",
+        "text": "Tutorial: ResNet-50",
+        "level": 3
+      },
+      {
+        "id": "onnx-shared-env",
+        "text": "Tutorial: Shared Environment",
+        "level": 3
+      },
+      {
+        "id": "onnx-cuda-ep",
+        "text": "Tutorial: CUDA Execution Provider",
+        "level": 3
+      },
+      {
+        "id": "onnx-api-tables",
+        "text": "API Quick Reference",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Enterprise",
+    "url": "enterprise.html",
+    "headings": [
+      {
+        "id": "who",
+        "text": "The people who already run the edge.",
+        "level": 2
+      },
+      {
+        "id": "node",
+        "text": "A workload, not another platform to operate.",
+        "level": 2
+      },
+      {
+        "id": "pilot",
+        "text": "A few of your nodes, your models, your network.",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - FAQ",
+    "url": "faq.html",
+    "headings": [
+      {
+        "id": "java-version",
+        "text": "Which Java version do I need?",
+        "level": 2
+      },
+      {
+        "id": "link-with-smile",
+        "text": "How do I add SMILE to my project?",
+        "level": 2
+      },
+      {
+        "id": "pom",
+        "text": "Building from source",
+        "level": 2
+      },
+      {
+        "id": "studio",
+        "text": "What is Agent Studio?",
+        "level": 2
+      },
+      {
+        "id": "serve",
+        "text": "What is Serve Engine?",
+        "level": 2
+      },
+      {
+        "id": "libtorch-ffm",
+        "text": "LibTorch, GPU, and java.library.path",
+        "level": 2
+      },
+      {
+        "id": "data-format",
+        "text": "Data format",
+        "level": 2
+      },
+      {
+        "id": "model-serialization",
+        "text": "Model serialization",
+        "level": 2
+      },
+      {
+        "id": "headless-plot",
+        "text": "Headless plot",
+        "level": 2
+      },
+      {
+        "id": "seed",
+        "text": "How can I set the random number generator seed for random forest?",
+        "level": 2
+      },
+      {
+        "id": "cite",
+        "text": "How should I cite SMILE?",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Feature Engineering",
+    "url": "feature-engineering.html",
+    "headings": [
+      {
+        "id": "transform",
+        "text": "Feature Transformation",
+        "level": 2
+      },
+      {
+        "id": "scaler",
+        "text": "Scaler",
+        "level": 3
+      },
+      {
+        "id": "winsor-scaler",
+        "text": "WinsorScaler",
+        "level": 3
+      },
+      {
+        "id": "maxabs-scaler",
+        "text": "MaxAbsScaler",
+        "level": 3
+      },
+      {
+        "id": "standardizer",
+        "text": "Standardizer",
+        "level": 3
+      },
+      {
+        "id": "robust-standardizer",
+        "text": "RobustStandardizer",
+        "level": 3
+      },
+      {
+        "id": "normalizer",
+        "text": "Normalizer",
+        "level": 3
+      },
+      {
+        "id": "pipeline",
+        "text": "Transform Pipelines",
+        "level": 3
+      },
+      {
+        "id": "extraction",
+        "text": "Feature Extraction",
+        "level": 2
+      },
+      {
+        "id": "pca",
+        "text": "Principal Component Analysis",
+        "level": 3
+      },
+      {
+        "id": "ppca",
+        "text": "Probabilistic PCA",
+        "level": 3
+      },
+      {
+        "id": "kpca",
+        "text": "Kernel PCA",
+        "level": 3
+      },
+      {
+        "id": "gha",
+        "text": "Generalized Hebbian Algorithm",
+        "level": 3
+      },
+      {
+        "id": "random-projection",
+        "text": "Random Projection",
+        "level": 3
+      },
+      {
+        "id": "bag-of-words",
+        "text": "BagOfWords",
+        "level": 3
+      },
+      {
+        "id": "encoders",
+        "text": "BinaryEncoder, SparseEncoder, HashEncoder",
+        "level": 3
+      },
+      {
+        "id": "date-feature",
+        "text": "DateFeature",
+        "level": 3
+      },
+      {
+        "id": "imputation",
+        "text": "Missing Value Imputation",
+        "level": 2
+      },
+      {
+        "id": "simple-imputer",
+        "text": "SimpleImputer",
+        "level": 3
+      },
+      {
+        "id": "knn-imputer",
+        "text": "KNNImputer",
+        "level": 3
+      },
+      {
+        "id": "kmedoids-imputer",
+        "text": "KMedoidsImputer",
+        "level": 3
+      },
+      {
+        "id": "svd-imputer",
+        "text": "SVDImputer",
+        "level": 3
+      },
+      {
+        "id": "selection",
+        "text": "Feature Selection",
+        "level": 2
+      },
+      {
+        "id": "signal-noise-ratio",
+        "text": "SignalNoiseRatio",
+        "level": 3
+      },
+      {
+        "id": "sum-squares-ratio",
+        "text": "SumSquaresRatio",
+        "level": 3
+      },
+      {
+        "id": "f-regression",
+        "text": "FRegression",
+        "level": 3
+      },
+      {
+        "id": "information-value",
+        "text": "InformationValue",
+        "level": 3
+      },
+      {
+        "id": "gafe",
+        "text": "GAFE",
+        "level": 3
+      },
+      {
+        "id": "importance",
+        "text": "Feature Importance",
+        "level": 2
+      },
+      {
+        "id": "impurity-importance",
+        "text": "Ensemble Impurity Importance",
+        "level": 3
+      },
+      {
+        "id": "treeshap",
+        "text": "TreeSHAP",
+        "level": 3
+      },
+      {
+        "id": "guide",
+        "text": "Choosing the Right Technique",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Gallery",
+    "url": "gallery.html",
+    "headings": []
+  },
+  {
+    "title": "SMILE - Graph Data Structure",
+    "url": "graph.html",
+    "headings": [
+      {
+        "id": "traversal",
+        "text": "Graph Traversal",
+        "level": 2
+      },
+      {
+        "id": "connected_components",
+        "text": "Connected Components",
+        "level": 2
+      },
+      {
+        "id": "topological_sort",
+        "text": "Topological Sort",
+        "level": 2
+      },
+      {
+        "id": "mst",
+        "text": "Minimum Spanning Tree",
+        "level": 2
+      },
+      {
+        "id": "Dijkstra",
+        "text": "Shortest Path",
+        "level": 2
+      },
+      {
+        "id": "TSP",
+        "text": "Travelling Salesman Problem",
+        "level": 2
+      },
+      {
+        "id": "max_flow",
+        "text": "Maximum Flow",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Hyperparameter Optimization",
+    "url": "hpo.html",
+    "headings": [
+      {
+        "id": "registering",
+        "text": "Registering Parameters",
+        "level": 2
+      },
+      {
+        "id": "grid-search",
+        "text": "Grid Search",
+        "level": 2
+      },
+      {
+        "id": "random-search",
+        "text": "Random Search",
+        "level": 2
+      },
+      {
+        "id": "managing",
+        "text": "Managing a Search Space",
+        "level": 2
+      },
+      {
+        "id": "integration",
+        "text": "Model Integration",
+        "level": 2
+      },
+      {
+        "id": "cross-validation",
+        "text": "Cross-Validation Inside the Loop",
+        "level": 2
+      },
+      {
+        "id": "bayesian-optimization",
+        "text": "Bayesian Optimization",
+        "level": 2
+      },
+      {
+        "id": "best-practices",
+        "text": "Best Practices",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Statistical Machine Intelligence & Learning Engine",
+    "url": "",
+    "headings": []
+  },
+  {
+    "title": "SMILE - Interpolation",
+    "url": "interpolation.html",
+    "headings": [
+      {
+        "id": "linear",
+        "text": "Piecewise Linear Interpolation",
+        "level": 2
+      },
+      {
+        "id": "cubic",
+        "text": "Cubic Spline Interpolation",
+        "level": 2
+      },
+      {
+        "id": "kriging",
+        "text": "Kriging Interpolation",
+        "level": 2
+      },
+      {
+        "id": "rbf",
+        "text": "RBF Interpolation",
+        "level": 2
+      },
+      {
+        "id": "shepard",
+        "text": "Shepard Interpolation",
+        "level": 2
+      },
+      {
+        "id": "laplace",
+        "text": "Laplace Interpolation",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Core Engine Commercial License",
+    "url": "license-core.html",
+    "headings": [
+      {
+        "id": "parties",
+        "text": "1. Parties",
+        "level": 2
+      },
+      {
+        "id": "definitions",
+        "text": "2. Definitions",
+        "level": 2
+      },
+      {
+        "id": "grant-of-license",
+        "text": "3. Grant of License",
+        "level": 2
+      },
+      {
+        "id": "ownership",
+        "text": "4. Ownership",
+        "level": 2
+      },
+      {
+        "id": "term-maintenance-and-support",
+        "text": "5. Term; Maintenance and Support",
+        "level": 2
+      },
+      {
+        "id": "updates-support-and-cve-windows",
+        "text": "6. Updates, Support, and CVE Windows",
+        "level": 2
+      },
+      {
+        "id": "fees-and-payment",
+        "text": "7. Fees and Payment",
+        "level": 2
+      },
+      {
+        "id": "warranties",
+        "text": "8. Warranties",
+        "level": 2
+      },
+      {
+        "id": "intellectual-property-indemnity",
+        "text": "9. Intellectual Property Indemnity",
+        "level": 2
+      },
+      {
+        "id": "limitation-of-liability",
+        "text": "10. Limitation of Liability",
+        "level": 2
+      },
+      {
+        "id": "termination",
+        "text": "11. Termination",
+        "level": 2
+      },
+      {
+        "id": "confidentiality-audit",
+        "text": "12. Confidentiality; Audit",
+        "level": 2
+      },
+      {
+        "id": "general",
+        "text": "13. General",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Serve Engine Commercial License",
+    "url": "license-serve.html",
+    "headings": [
+      {
+        "id": "parties",
+        "text": "1. Parties",
+        "level": 2
+      },
+      {
+        "id": "definitions",
+        "text": "2. Definitions",
+        "level": 2
+      },
+      {
+        "id": "grant-of-license",
+        "text": "3. Grant of License",
+        "level": 2
+      },
+      {
+        "id": "ownership",
+        "text": "4. Ownership",
+        "level": 2
+      },
+      {
+        "id": "term-renewal-support",
+        "text": "5. Term; Renewal; Support",
+        "level": 2
+      },
+      {
+        "id": "updates-support-and-cve-windows",
+        "text": "6. Updates, Support, and CVE Windows",
+        "level": 2
+      },
+      {
+        "id": "fees-and-payment",
+        "text": "7. Fees and Payment",
+        "level": 2
+      },
+      {
+        "id": "warranties",
+        "text": "8. Warranties",
+        "level": 2
+      },
+      {
+        "id": "intellectual-property-indemnity",
+        "text": "9. Intellectual Property Indemnity",
+        "level": 2
+      },
+      {
+        "id": "limitation-of-liability",
+        "text": "10. Limitation of Liability",
+        "level": 2
+      },
+      {
+        "id": "termination",
+        "text": "11. Termination",
+        "level": 2
+      },
+      {
+        "id": "confidentiality-audit",
+        "text": "12. Confidentiality; Audit",
+        "level": 2
+      },
+      {
+        "id": "general",
+        "text": "13. General",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Agent Studio Commercial License",
+    "url": "license-studio.html",
+    "headings": [
+      {
+        "id": "parties",
+        "text": "1. Parties",
+        "level": 2
+      },
+      {
+        "id": "definitions",
+        "text": "2. Definitions",
+        "level": 2
+      },
+      {
+        "id": "grant-of-license",
+        "text": "3. Grant of License",
+        "level": 2
+      },
+      {
+        "id": "ownership",
+        "text": "4. Ownership",
+        "level": 2
+      },
+      {
+        "id": "term-renewal-support",
+        "text": "5. Term; Renewal; Support",
+        "level": 2
+      },
+      {
+        "id": "updates-support-and-cve-windows",
+        "text": "6. Updates, Support, and CVE Windows",
+        "level": 2
+      },
+      {
+        "id": "fees-and-payment",
+        "text": "7. Fees and Payment",
+        "level": 2
+      },
+      {
+        "id": "warranties",
+        "text": "8. Warranties",
+        "level": 2
+      },
+      {
+        "id": "intellectual-property-indemnity",
+        "text": "9. Intellectual Property Indemnity",
+        "level": 2
+      },
+      {
+        "id": "limitation-of-liability",
+        "text": "10. Limitation of Liability",
+        "level": 2
+      },
+      {
+        "id": "termination",
+        "text": "11. Termination",
+        "level": 2
+      },
+      {
+        "id": "confidentiality-audit",
+        "text": "12. Confidentiality; Audit",
+        "level": 2
+      },
+      {
+        "id": "general",
+        "text": "13. General",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Commercial Licensing",
+    "url": "licensing.html",
+    "headings": [
+      {
+        "id": "libraries",
+        "text": "SMILE Core Engine",
+        "level": 2
+      },
+      {
+        "id": "serve",
+        "text": "SMILE Serve Engine",
+        "level": 2
+      },
+      {
+        "id": "studio",
+        "text": "SMILE Agent Studio",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Linear Algebra",
+    "url": "linear-algebra.html",
+    "headings": [
+      {
+        "id": "functions",
+        "text": "Math Functions",
+        "level": 2
+      },
+      {
+        "id": "special",
+        "text": "Special Functions",
+        "level": 2
+      },
+      {
+        "id": "vector",
+        "text": "Vectors",
+        "level": 2
+      },
+      {
+        "id": "matrix",
+        "text": "Matrices",
+        "level": 2
+      },
+      {
+        "id": "decomposition",
+        "text": "Matrix Decomposition",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Large Language Models",
+    "url": "llm.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "prerequisites",
+        "text": "Prerequisites",
+        "level": 2
+      },
+      {
+        "id": "package-map",
+        "text": "Package Map",
+        "level": 2
+      },
+      {
+        "id": "core-types",
+        "text": "Core Types",
+        "level": 2
+      },
+      {
+        "id": "tokenizer",
+        "text": "Tokenizer",
+        "level": 2
+      },
+      {
+        "id": "positional",
+        "text": "Positional Encodings",
+        "level": 2
+      },
+      {
+        "id": "transformer",
+        "text": "Transformer Primitives",
+        "level": 2
+      },
+      {
+        "id": "llama",
+        "text": "LLaMA",
+        "level": 2
+      },
+      {
+        "id": "llama-load",
+        "text": "Loading a Checkpoint",
+        "level": 3
+      },
+      {
+        "id": "llama-generate",
+        "text": "Generation and Chat",
+        "level": 3
+      },
+      {
+        "id": "llama-stream",
+        "text": "Streaming",
+        "level": 3
+      },
+      {
+        "id": "qwen",
+        "text": "Qwen3.5",
+        "level": 2
+      },
+      {
+        "id": "engine",
+        "text": "Inference Engine",
+        "level": 2
+      },
+      {
+        "id": "kv-cache",
+        "text": "KV Cache &amp; Radix Prefix Reuse",
+        "level": 2
+      },
+      {
+        "id": "attention",
+        "text": "Attention Backends",
+        "level": 2
+      },
+      {
+        "id": "quantization",
+        "text": "Quantization",
+        "level": 2
+      },
+      {
+        "id": "tensor-parallel",
+        "text": "Tensor Parallelism",
+        "level": 2
+      },
+      {
+        "id": "tools",
+        "text": "Tool Calling &amp; Chat Templates",
+        "level": 2
+      },
+      {
+        "id": "serving",
+        "text": "Serving",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Manifold Learning",
+    "url": "manifold.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "when-to-use",
+        "text": "When to Use",
+        "level": 3
+      },
+      {
+        "id": "comparison",
+        "text": "Algorithm Comparison",
+        "level": 3
+      },
+      {
+        "id": "isomap",
+        "text": "Isomap",
+        "level": 2
+      },
+      {
+        "id": "lle",
+        "text": "Locally Linear Embedding (LLE)",
+        "level": 2
+      },
+      {
+        "id": "laplacian",
+        "text": "Laplacian Eigenmap",
+        "level": 2
+      },
+      {
+        "id": "kpca",
+        "text": "Kernel PCA (KPCA)",
+        "level": 2
+      },
+      {
+        "id": "t-sne",
+        "text": "t-SNE",
+        "level": 2
+      },
+      {
+        "id": "umap",
+        "text": "UMAP",
+        "level": 2
+      },
+      {
+        "id": "tips",
+        "text": "Tips and Best Practices",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Multi-Dimensional Scaling",
+    "url": "mds.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "classical",
+        "text": "Classical Multi-dimensional Scaling",
+        "level": 2
+      },
+      {
+        "id": "kruskal",
+        "text": "Kruskal's Nonmetric MDS",
+        "level": 2
+      },
+      {
+        "id": "sammon",
+        "text": "Sammon's Mapping",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Model Validation",
+    "url": "model-validation.html",
+    "headings": [
+      {
+        "id": "classification-metrics",
+        "text": "Classification Metrics",
+        "level": 2
+      },
+      {
+        "id": "accuracy-error",
+        "text": "Accuracy and Error",
+        "level": 3
+      },
+      {
+        "id": "binary-rates",
+        "text": "Precision, Recall, F-Score, and Rates",
+        "level": 3
+      },
+      {
+        "id": "mcc-confusion",
+        "text": "MCC and Confusion Matrix",
+        "level": 3
+      },
+      {
+        "id": "classification-fields",
+        "text": "ClassificationMetrics Fields",
+        "level": 3
+      },
+      {
+        "id": "probabilistic-metrics",
+        "text": "Probabilistic Classification Metrics",
+        "level": 2
+      },
+      {
+        "id": "regression-metrics",
+        "text": "Regression Metrics",
+        "level": 2
+      },
+      {
+        "id": "data-splitting",
+        "text": "Data Splitting",
+        "level": 2
+      },
+      {
+        "id": "holdout",
+        "text": "Hold-out Validation",
+        "level": 2
+      },
+      {
+        "id": "out-of-bag",
+        "text": "Out-of-Bag Estimates",
+        "level": 2
+      },
+      {
+        "id": "cross-validation",
+        "text": "Cross-Validation Runners",
+        "level": 2
+      },
+      {
+        "id": "loocv",
+        "text": "Leave-One-Out Cross-Validation",
+        "level": 2
+      },
+      {
+        "id": "bootstrap",
+        "text": "Bootstrap Validation",
+        "level": 2
+      },
+      {
+        "id": "regression-cv",
+        "text": "Regression Cross-Validation",
+        "level": 2
+      },
+      {
+        "id": "model-selection",
+        "text": "AIC and BIC",
+        "level": 2
+      },
+      {
+        "id": "pitfalls",
+        "text": "Validation Pitfalls",
+        "level": 2
+      },
+      {
+        "id": "clustering",
+        "text": "Clustering Metrics",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Natural Language Processing",
+    "url": "nlp.html",
+    "headings": [
+      {
+        "id": "module-contents",
+        "text": "Module Contents",
+        "level": 2
+      },
+      {
+        "id": "quick-start",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "core-types",
+        "text": "Core Types",
+        "level": 2
+      },
+      {
+        "id": "text",
+        "text": "Text",
+        "level": 3
+      },
+      {
+        "id": "bigram-ngram",
+        "text": "Bigram and NGram",
+        "level": 3
+      },
+      {
+        "id": "simple-corpus",
+        "text": "SimpleCorpus",
+        "level": 3
+      },
+      {
+        "id": "word2vec",
+        "text": "Word2Vec",
+        "level": 3
+      },
+      {
+        "id": "normalizer",
+        "text": "Normalizer",
+        "level": 2
+      },
+      {
+        "id": "tokenizers",
+        "text": "Tokenizers",
+        "level": 2
+      },
+      {
+        "id": "choosing-tokenizers",
+        "text": "Choosing an Implementation",
+        "level": 3
+      },
+      {
+        "id": "tokenizer-thread-safety",
+        "text": "Thread Safety",
+        "level": 3
+      },
+      {
+        "id": "ptb-vs-simple",
+        "text": "Penn Treebank vs SimpleTokenizer",
+        "level": 3
+      },
+      {
+        "id": "stemmers",
+        "text": "Stemmers",
+        "level": 2
+      },
+      {
+        "id": "choosing-stemmers",
+        "text": "Porter vs Lancaster",
+        "level": 3
+      },
+      {
+        "id": "strip-plural-participle",
+        "text": "stripPluralParticiple",
+        "level": 3
+      },
+      {
+        "id": "lancaster-prefix",
+        "text": "Lancaster Prefix Stripping",
+        "level": 3
+      },
+      {
+        "id": "pos",
+        "text": "Part-of-Speech Tagging",
+        "level": 2
+      },
+      {
+        "id": "open-closed-pos",
+        "text": "Open vs Closed Class",
+        "level": 3
+      },
+      {
+        "id": "regex-pos",
+        "text": "RegexPOSTagger (internal OOV rules)",
+        "level": 3
+      },
+      {
+        "id": "english-pos-lexicon",
+        "text": "EnglishPOSLexicon",
+        "level": 3
+      },
+      {
+        "id": "custom-hmm-pos",
+        "text": "Custom HMM POS Model",
+        "level": 3
+      },
+      {
+        "id": "dictionaries",
+        "text": "Dictionaries",
+        "level": 2
+      },
+      {
+        "id": "stop-words",
+        "text": "EnglishStopWords",
+        "level": 3
+      },
+      {
+        "id": "punctuations",
+        "text": "EnglishPunctuations",
+        "level": 3
+      },
+      {
+        "id": "english-dictionary",
+        "text": "EnglishDictionary",
+        "level": 3
+      },
+      {
+        "id": "collocations",
+        "text": "Collocations",
+        "level": 2
+      },
+      {
+        "id": "collocation-tuning",
+        "text": "Parameter Tuning",
+        "level": 3
+      },
+      {
+        "id": "keywords",
+        "text": "Keywords",
+        "level": 2
+      },
+      {
+        "id": "relevance",
+        "text": "Relevance Ranking",
+        "level": 2
+      },
+      {
+        "id": "tfidf-vs-bm25",
+        "text": "TF-IDF Side by Side",
+        "level": 3
+      },
+      {
+        "id": "taxonomy",
+        "text": "Taxonomy",
+        "level": 2
+      },
+      {
+        "id": "taxonomy-of",
+        "text": "Parsing with Taxonomy.of",
+        "level": 3
+      },
+      {
+        "id": "taxonomy-queries",
+        "text": "Depth, LCA, and Ancestors",
+        "level": 3
+      },
+      {
+        "id": "taxonomic-distance",
+        "text": "TaxonomicDistance Measures",
+        "level": 3
+      },
+      {
+        "id": "package-map",
+        "text": "Package Map",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - ONNX GenAI",
+    "url": "onnx-genai.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "supported-models",
+        "text": "Supported Models",
+        "level": 2
+      },
+      {
+        "id": "prerequisites",
+        "text": "Prerequisites",
+        "level": 2
+      },
+      {
+        "id": "native-libraries",
+        "text": "Native libraries",
+        "level": 3
+      },
+      {
+        "id": "package-map",
+        "text": "Package Map",
+        "level": 2
+      },
+      {
+        "id": "quick-start",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "chat-serve",
+        "text": "Chat / Serve Seam (GenAiChatModel)",
+        "level": 2
+      },
+      {
+        "id": "serve-oga",
+        "text": "smile-serve OGA fallback",
+        "level": 3
+      },
+      {
+        "id": "providers",
+        "text": "CUDA / NPU Providers",
+        "level": 2
+      },
+      {
+        "id": "tests",
+        "text": "Tests",
+        "level": 2
+      },
+      {
+        "id": "shutdown",
+        "text": "Shutdown",
+        "level": 2
+      },
+      {
+        "id": "see-also",
+        "text": "See Also",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - ONNX",
+    "url": "onnx.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "prerequisites",
+        "text": "Prerequisites",
+        "level": 2
+      },
+      {
+        "id": "package-structure",
+        "text": "Package Structure",
+        "level": 2
+      },
+      {
+        "id": "quick-start",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "inference-session",
+        "text": "InferenceSession",
+        "level": 2
+      },
+      {
+        "id": "ortvalue",
+        "text": "OrtValue — Tensors",
+        "level": 2
+      },
+      {
+        "id": "session-options",
+        "text": "SessionOptions",
+        "level": 2
+      },
+      {
+        "id": "run-options",
+        "text": "RunOptions",
+        "level": 2
+      },
+      {
+        "id": "environment",
+        "text": "Environment",
+        "level": 2
+      },
+      {
+        "id": "introspection",
+        "text": "Model Introspection",
+        "level": 2
+      },
+      {
+        "id": "data-types",
+        "text": "Data Types",
+        "level": 2
+      },
+      {
+        "id": "execution-providers",
+        "text": "Execution Providers",
+        "level": 2
+      },
+      {
+        "id": "errors-resources",
+        "text": "Errors, Resources &amp; Logging",
+        "level": 2
+      },
+      {
+        "id": "performance",
+        "text": "Performance Tuning",
+        "level": 2
+      },
+      {
+        "id": "tutorials",
+        "text": "Tutorials",
+        "level": 2
+      },
+      {
+        "id": "tutorial-resnet",
+        "text": "Image Classification with ResNet-50",
+        "level": 3
+      },
+      {
+        "id": "tutorial-bert",
+        "text": "NLP with a BERT Tokenizer Model",
+        "level": 3
+      },
+      {
+        "id": "tutorial-env",
+        "text": "Sharing an Environment across Sessions",
+        "level": 3
+      },
+      {
+        "id": "tutorial-cuda",
+        "text": "GPU Inference with CUDA",
+        "level": 3
+      },
+      {
+        "id": "serving",
+        "text": "Serving",
+        "level": 2
+      },
+      {
+        "id": "see-also",
+        "text": "See Also",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Quick Start",
+    "url": "quickstart.html",
+    "headings": [
+      {
+        "id": "installation",
+        "text": "Installation",
+        "level": 2
+      },
+      {
+        "id": "native-blas",
+        "text": "Native BLAS / LAPACK (optional)",
+        "level": 3
+      },
+      {
+        "id": "gpu-libtorch",
+        "text": "GPU / LibTorch (for Deep Learning &amp; LLMs)",
+        "level": 3
+      },
+      {
+        "id": "build-from-source",
+        "text": "Build from Source",
+        "level": 2
+      },
+      {
+        "id": "download",
+        "text": "Download the Release Package",
+        "level": 2
+      },
+      {
+        "id": "shell",
+        "text": "Interactive Shell",
+        "level": 2
+      },
+      {
+        "id": "running-a-script",
+        "text": "Running a Script",
+        "level": 3
+      },
+      {
+        "id": "cli",
+        "text": "Training &amp; Inference CLI",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Regression",
+    "url": "regression.html",
+    "headings": [
+      {
+        "id": "intro",
+        "text": "Core Abstractions",
+        "level": 2
+      },
+      {
+        "id": "dataframe-regression",
+        "text": "DataFrameRegression",
+        "level": 3
+      },
+      {
+        "id": "linear-model",
+        "text": "LinearModel",
+        "level": 3
+      },
+      {
+        "id": "options",
+        "text": "Options and Properties",
+        "level": 2
+      },
+      {
+        "id": "datasets",
+        "text": "Datasets and Visualization",
+        "level": 2
+      },
+      {
+        "id": "synthetic",
+        "text": "Synthetic generators",
+        "level": 3
+      },
+      {
+        "id": "visualize1d",
+        "text": "visualize1d",
+        "level": 3
+      },
+      {
+        "id": "compare1d",
+        "text": "compare1d",
+        "level": 3
+      },
+      {
+        "id": "visualize2d",
+        "text": "visualize2d",
+        "level": 3
+      },
+      {
+        "id": "abalone",
+        "text": "Abalone",
+        "level": 3
+      },
+      {
+        "id": "algorithm-selection",
+        "text": "Algorithm Selection Guide",
+        "level": 2
+      },
+      {
+        "id": "ols",
+        "text": "Ordinary Least Squares",
+        "level": 2
+      },
+      {
+        "id": "ridge",
+        "text": "Ridge Regression",
+        "level": 2
+      },
+      {
+        "id": "lasso",
+        "text": "LASSO",
+        "level": 2
+      },
+      {
+        "id": "elastic-net",
+        "text": "Elastic Net",
+        "level": 2
+      },
+      {
+        "id": "glm",
+        "text": "Generalized Linear Models",
+        "level": 2
+      },
+      {
+        "id": "gam",
+        "text": "Generalized Additive Models",
+        "level": 2
+      },
+      {
+        "id": "rbf",
+        "text": "RBF Network",
+        "level": 2
+      },
+      {
+        "id": "svm",
+        "text": "Support Vector Regression (ε-SVR)",
+        "level": 2
+      },
+      {
+        "id": "linear-svm",
+        "text": "Linear SVM",
+        "level": 2
+      },
+      {
+        "id": "gpr",
+        "text": "Gaussian Process Regression",
+        "level": 2
+      },
+      {
+        "id": "mlp",
+        "text": "Multilayer Perceptron",
+        "level": 2
+      },
+      {
+        "id": "regression-tree",
+        "text": "Regression Tree",
+        "level": 2
+      },
+      {
+        "id": "random-forest",
+        "text": "Random Forest",
+        "level": 2
+      },
+      {
+        "id": "gbt",
+        "text": "Gradient Tree Boost",
+        "level": 2
+      },
+      {
+        "id": "tips",
+        "text": "Practical Tips",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Sequence Labeling",
+    "url": "sequence-labeling.html",
+    "headings": [
+      {
+        "id": "sequence-labeler",
+        "text": "SequenceLabeler",
+        "level": 2
+      },
+      {
+        "id": "hmm",
+        "text": "Hidden Markov Model",
+        "level": 2
+      },
+      {
+        "id": "hmm-labeler",
+        "text": "HMMLabeler",
+        "level": 3
+      },
+      {
+        "id": "crf",
+        "text": "Conditional Random Field",
+        "level": 2
+      },
+      {
+        "id": "crf-options",
+        "text": "CRF Options",
+        "level": 3
+      },
+      {
+        "id": "crf-labeler",
+        "text": "CRFLabeler",
+        "level": 3
+      },
+      {
+        "id": "comparison",
+        "text": "HMM vs CRF",
+        "level": 2
+      },
+      {
+        "id": "tips",
+        "text": "Practical Tips",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Serve",
+    "url": "serve-engine.html",
+    "headings": [
+      {
+        "id": "what-you-run",
+        "text": "What you run",
+        "level": 2
+      },
+      {
+        "id": "agent-loops",
+        "text": "For agent loops",
+        "level": 2
+      },
+      {
+        "id": "how-it-compares",
+        "text": "How it compares",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Serve",
+    "url": "serve.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "quick-start",
+        "text": "Quick Start with Docker",
+        "level": 2
+      },
+      {
+        "id": "gpu-build-run",
+        "text": "GPU Build &amp; Run",
+        "level": 3
+      },
+      {
+        "id": "benchmarks",
+        "text": "LLM Decode Benchmarks",
+        "level": 2
+      },
+      {
+        "id": "llama-31-8b",
+        "text": "Llama 3.1 8B Instruct",
+        "level": 3
+      },
+      {
+        "id": "qwen38-27b",
+        "text": "Qwen3.8 27B",
+        "level": 3
+      },
+      {
+        "id": "mtp-speculative",
+        "text": "Qwen3.8 27B with MTP speculative decoding",
+        "level": 3
+      },
+      {
+        "id": "building",
+        "text": "Building and Running",
+        "level": 2
+      },
+      {
+        "id": "dev-mode",
+        "text": "Dev Mode",
+        "level": 3
+      },
+      {
+        "id": "packaging-as-a-jar",
+        "text": "Packaging as a JAR",
+        "level": 3
+      },
+      {
+        "id": "uber-jar",
+        "text": "Uber-JAR",
+        "level": 3
+      },
+      {
+        "id": "native-executable",
+        "text": "Native Executable",
+        "level": 3
+      },
+      {
+        "id": "configuration",
+        "text": "Configuration Reference",
+        "level": 2
+      },
+      {
+        "id": "classic-ml",
+        "text": "Classic ML Inference API",
+        "level": 2
+      },
+      {
+        "id": "model-format",
+        "text": "Model Format",
+        "level": 3
+      },
+      {
+        "id": "get-metadata",
+        "text": "Get Model Metadata",
+        "level": 3
+      },
+      {
+        "id": "single-inference",
+        "text": "Single Inference (JSON)",
+        "level": 3
+      },
+      {
+        "id": "explanations",
+        "text": "Explanations (TreeSHAP)",
+        "level": 3
+      },
+      {
+        "id": "streaming-inference",
+        "text": "Streaming Inference (CSV / JSON-lines)",
+        "level": 3
+      },
+      {
+        "id": "csv-mode",
+        "text": "CSV mode (text/plain)",
+        "level": 3
+      },
+      {
+        "id": "json-lines-mode",
+        "text": "JSON-lines mode (application/json)",
+        "level": 3
+      },
+      {
+        "id": "model-ids",
+        "text": "Model IDs",
+        "level": 3
+      },
+      {
+        "id": "onnx-api",
+        "text": "ONNX Inference API",
+        "level": 2
+      },
+      {
+        "id": "onnx-model-format",
+        "text": "Model Format",
+        "level": 3
+      },
+      {
+        "id": "onnx-get-info",
+        "text": "Get ONNX Model Info",
+        "level": 3
+      },
+      {
+        "id": "onnx-single-inference",
+        "text": "Single Inference (JSON)",
+        "level": 3
+      },
+      {
+        "id": "onnx-streaming",
+        "text": "Streaming Inference",
+        "level": 3
+      },
+      {
+        "id": "shape-resolution",
+        "text": "Tensor Types and Shape Resolution",
+        "level": 3
+      },
+      {
+        "id": "llm-chat",
+        "text": "LLM Chat API",
+        "level": 2
+      },
+      {
+        "id": "supported-models",
+        "text": "Supported Models",
+        "level": 3
+      },
+      {
+        "id": "list-models",
+        "text": "List models",
+        "level": 3
+      },
+      {
+        "id": "retrieve-model",
+        "text": "Retrieve model",
+        "level": 3
+      },
+      {
+        "id": "chat-completions",
+        "text": "Chat Completions",
+        "level": 3
+      },
+      {
+        "id": "tool-calling",
+        "text": "Tool calling (Qwen3 / Qwen3.5 / Qwen3.8)",
+        "level": 3
+      },
+      {
+        "id": "conversation-history",
+        "text": "Conversation History API",
+        "level": 3
+      },
+      {
+        "id": "authentication",
+        "text": "Authentication",
+        "level": 3
+      },
+      {
+        "id": "list-conversations",
+        "text": "List conversations (SMILE extension, requires login)",
+        "level": 3
+      },
+      {
+        "id": "create-conversation",
+        "text": "Create a conversation",
+        "level": 3
+      },
+      {
+        "id": "retrieve-conversation",
+        "text": "Retrieve a conversation",
+        "level": 3
+      },
+      {
+        "id": "update-conversation",
+        "text": "Update a conversation",
+        "level": 3
+      },
+      {
+        "id": "patch-conversation",
+        "text": "Patch sidebar fields (SMILE extension, requires ownership)",
+        "level": 3
+      },
+      {
+        "id": "delete-conversation",
+        "text": "Delete a conversation",
+        "level": 3
+      },
+      {
+        "id": "get-items",
+        "text": "Get conversation messages (SMILE extension)",
+        "level": 3
+      },
+      {
+        "id": "web-ui",
+        "text": "Web UI",
+        "level": 2
+      },
+      {
+        "id": "database",
+        "text": "Database",
+        "level": 2
+      },
+      {
+        "id": "testing",
+        "text": "Testing",
+        "level": 2
+      },
+      {
+        "id": "api-quick-reference",
+        "text": "API Quick Reference",
+        "level": 2
+      },
+      {
+        "id": "classic-ml-endpoints",
+        "text": "Classic ML — /api/v1/smile",
+        "level": 3
+      },
+      {
+        "id": "onnx-endpoints",
+        "text": "ONNX — /api/v1/onnx",
+        "level": 3
+      },
+      {
+        "id": "chat-endpoints",
+        "text": "Chat — /api/v1/models, /api/v1/chat, /api/v1/conversations",
+        "level": 3
+      },
+      {
+        "id": "see-also",
+        "text": "See Also",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Statistics",
+    "url": "statistics.html",
+    "headings": [
+      {
+        "id": "basic",
+        "text": "Descriptive Statistics",
+        "level": 2
+      },
+      {
+        "id": "distribution",
+        "text": "Distributions",
+        "level": 2
+      },
+      {
+        "id": "mixture",
+        "text": "Mixture Models",
+        "level": 3
+      },
+      {
+        "id": "test",
+        "text": "Hypothesis Tests",
+        "level": 2
+      },
+      {
+        "id": "chisq-test",
+        "text": "&chi;2 Test",
+        "level": 3
+      },
+      {
+        "id": "f-test",
+        "text": "F Test and t Test",
+        "level": 3
+      },
+      {
+        "id": "ks-test",
+        "text": "Kolmogorov–Smirnov Test",
+        "level": 3
+      },
+      {
+        "id": "correlation-test",
+        "text": "Correlation Tests",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Studio",
+    "url": "studio.html",
+    "headings": [
+      {
+        "id": "studio-first",
+        "text": "Your First Session",
+        "level": 2
+      },
+      {
+        "id": "studio-layout",
+        "text": "Application Layout",
+        "level": 2
+      },
+      {
+        "id": "studio-notebook",
+        "text": "Using the Notebook",
+        "level": 2
+      },
+      {
+        "id": "studio-explorers",
+        "text": "Project and Kernel Explorers",
+        "level": 2
+      },
+      {
+        "id": "studio-kernels",
+        "text": "Execution Kernels",
+        "level": 2
+      },
+      {
+        "id": "studio-shortcuts",
+        "text": "Key Shortcuts",
+        "level": 2
+      },
+      {
+        "id": "studio-magic",
+        "text": "Magic Commands",
+        "level": 2
+      },
+      {
+        "id": "studio-ai",
+        "text": "AI Agents",
+        "level": 2
+      },
+      {
+        "id": "studio-prompts",
+        "text": "Prompts",
+        "level": 3
+      },
+      {
+        "id": "studio-slash",
+        "text": "Slash Commands",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Time Series Analysis",
+    "url": "time-series.html",
+    "headings": [
+      {
+        "id": "foundations",
+        "text": "Foundations",
+        "level": 2
+      },
+      {
+        "id": "stationarity",
+        "text": "Stationarity",
+        "level": 3
+      },
+      {
+        "id": "taxonomy",
+        "text": "AR, MA, and ARMA",
+        "level": 3
+      },
+      {
+        "id": "utilities",
+        "text": "TimeSeries Utilities",
+        "level": 2
+      },
+      {
+        "id": "box-test",
+        "text": "BoxTest: Residual Diagnostics",
+        "level": 2
+      },
+      {
+        "id": "ar",
+        "text": "AR: Autoregressive Models",
+        "level": 2
+      },
+      {
+        "id": "ar-fitting",
+        "text": "Yule–Walker vs OLS",
+        "level": 3
+      },
+      {
+        "id": "ar-bitcoin",
+        "text": "Bitcoin Log Returns",
+        "level": 3
+      },
+      {
+        "id": "arma",
+        "text": "ARMA: Autoregressive Moving-Average Models",
+        "level": 2
+      },
+      {
+        "id": "workflow",
+        "text": "Modeling Workflow",
+        "level": 2
+      },
+      {
+        "id": "pitfalls",
+        "text": "Common Pitfalls",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Unified Training Interface",
+    "url": "training.html",
+    "headings": [
+      {
+        "id": "quick-start",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "core-concepts",
+        "text": "Core Concepts",
+        "level": 2
+      },
+      {
+        "id": "classification",
+        "text": "Training Classification Models",
+        "level": 2
+      },
+      {
+        "id": "regression",
+        "text": "Training Regression Models",
+        "level": 2
+      },
+      {
+        "id": "cross-validation",
+        "text": "Cross-Validation and Ensembles",
+        "level": 2
+      },
+      {
+        "id": "evaluation",
+        "text": "Evaluating Models",
+        "level": 2
+      },
+      {
+        "id": "predictions",
+        "text": "Making Predictions",
+        "level": 2
+      },
+      {
+        "id": "metadata",
+        "text": "Metadata Tags",
+        "level": 2
+      },
+      {
+        "id": "algorithms",
+        "text": "Algorithm Reference",
+        "level": 2
+      },
+      {
+        "id": "classification-algorithms",
+        "text": "Classification",
+        "level": 3
+      },
+      {
+        "id": "regression-algorithms",
+        "text": "Regression",
+        "level": 3
+      },
+      {
+        "id": "kernels",
+        "text": "Kernel Specification Strings",
+        "level": 2
+      },
+      {
+        "id": "serialization",
+        "text": "Serialization",
+        "level": 2
+      },
+      {
+        "id": "end-to-end",
+        "text": "Complete End-to-End Example",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Tutorial",
+    "url": "tutorial.html",
+    "headings": [
+      {
+        "id": "how-to-follow",
+        "text": "How to Follow This Tutorial",
+        "level": 2
+      },
+      {
+        "id": "learning-paradigms",
+        "text": "Learning Paradigms",
+        "level": 2
+      },
+      {
+        "id": "ml-workflow",
+        "text": "Typical ML Workflow",
+        "level": 2
+      },
+      {
+        "id": "loading-data",
+        "text": "Loading Data",
+        "level": 2
+      },
+      {
+        "id": "formula",
+        "text": "The Formula API",
+        "level": 2
+      },
+      {
+        "id": "features",
+        "text": "Features",
+        "level": 2
+      },
+      {
+        "id": "classification",
+        "text": "Supervised Classification",
+        "level": 2
+      },
+      {
+        "id": "svm",
+        "text": "Kernel methods (SVM)",
+        "level": 3
+      },
+      {
+        "id": "regression",
+        "text": "Regression",
+        "level": 2
+      },
+      {
+        "id": "validation",
+        "text": "Validation",
+        "level": 2
+      },
+      {
+        "id": "unsupervised",
+        "text": "Unsupervised Learning",
+        "level": 2
+      },
+      {
+        "id": "neural-network",
+        "text": "Neural Nets and Deep Learning",
+        "level": 2
+      },
+      {
+        "id": "llm",
+        "text": "Large Language Models",
+        "level": 2
+      },
+      {
+        "id": "prediction",
+        "text": "Making Predictions",
+        "level": 2
+      },
+      {
+        "id": "serialization",
+        "text": "Saving and Loading Models",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Vector Quantization",
+    "url": "vector-quantization.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "vector-quantizer",
+        "text": "The VectorQuantizer Interface",
+        "level": 2
+      },
+      {
+        "id": "birch",
+        "text": "BIRCH — CF-Tree Quantizer",
+        "level": 2
+      },
+      {
+        "id": "birch-construction",
+        "text": "Construction",
+        "level": 3
+      },
+      {
+        "id": "birch-usage",
+        "text": "Usage",
+        "level": 3
+      },
+      {
+        "id": "neural-gas",
+        "text": "Neural Gas",
+        "level": 2
+      },
+      {
+        "id": "neural-gas-construction",
+        "text": "Construction",
+        "level": 3
+      },
+      {
+        "id": "neural-gas-usage",
+        "text": "Usage",
+        "level": 3
+      },
+      {
+        "id": "growing-neural-gas",
+        "text": "Growing Neural Gas",
+        "level": 2
+      },
+      {
+        "id": "gng-construction",
+        "text": "Construction",
+        "level": 3
+      },
+      {
+        "id": "gng-usage",
+        "text": "Usage",
+        "level": 3
+      },
+      {
+        "id": "neural-map",
+        "text": "NeuralMap",
+        "level": 2
+      },
+      {
+        "id": "som",
+        "text": "Self-Organizing Map (SOM)",
+        "level": 2
+      },
+      {
+        "id": "hebb",
+        "text": "The smile.vq.hebb Package",
+        "level": 2
+      },
+      {
+        "id": "neuron",
+        "text": "Neuron",
+        "level": 3
+      },
+      {
+        "id": "edge",
+        "text": "Edge",
+        "level": 3
+      },
+      {
+        "id": "neighborhood",
+        "text": "Neighborhood Functions",
+        "level": 2
+      },
+      {
+        "id": "bubble",
+        "text": "Bubble neighborhood",
+        "level": 3
+      },
+      {
+        "id": "gaussian",
+        "text": "Gaussian neighborhood",
+        "level": 3
+      },
+      {
+        "id": "comparison",
+        "text": "Algorithm Comparison and Selection Guide",
+        "level": 2
+      },
+      {
+        "id": "decision-guide",
+        "text": "Decision guide",
+        "level": 3
+      },
+      {
+        "id": "patterns",
+        "text": "Common Patterns and Tips",
+        "level": 2
+      },
+      {
+        "id": "multi-epoch",
+        "text": "Multi-epoch training with random shuffling",
+        "level": 3
+      },
+      {
+        "id": "quantization-error",
+        "text": "Computing mean quantization error",
+        "level": 3
+      },
+      {
+        "id": "do-not-mutate",
+        "text": "Do not modify the returned prototype",
+        "level": 3
+      },
+      {
+        "id": "seeding",
+        "text": "Seeding prototypes intelligently",
+        "level": 3
+      },
+      {
+        "id": "schedules",
+        "text": "Learning-rate schedules",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Declarative Data Visualization",
+    "url": "vegalite.html",
+    "headings": [
+      {
+        "id": "bar",
+        "text": "Bar Charts",
+        "level": 2
+      },
+      {
+        "id": "simple_bar",
+        "text": "Simple Bar Chart",
+        "level": 3
+      },
+      {
+        "id": "aggregate_bar",
+        "text": "Aggregate Bar Chart",
+        "level": 3
+      },
+      {
+        "id": "sorted_aggregate_bar",
+        "text": "Aggregate Bar Chart (Sorted)",
+        "level": 3
+      },
+      {
+        "id": "grouped_bar",
+        "text": "Grouped Bar Chart",
+        "level": 3
+      },
+      {
+        "id": "stacked_bar",
+        "text": "Stacked Bar Chart",
+        "level": 3
+      },
+      {
+        "id": "stacked_round_bar",
+        "text": "Stacked Bar Chart with Rounded Corners",
+        "level": 3
+      },
+      {
+        "id": "horizontal_stacked_bar",
+        "text": "Horizontal Stacked Bar Chart",
+        "level": 3
+      },
+      {
+        "id": "layered_bar",
+        "text": "Layered Bar Chart",
+        "level": 3
+      },
+      {
+        "id": "normalized_stacked_bar",
+        "text": "Normalized (Percentage) Stacked Bar Chart",
+        "level": 3
+      },
+      {
+        "id": "gantt_chart",
+        "text": "Gantt Chart",
+        "level": 3
+      },
+      {
+        "id": "color_bar",
+        "text": "A Bar Chart Encoding Color Names in the Data",
+        "level": 3
+      },
+      {
+        "id": "histogram_density",
+        "text": "Histograms and Density Plots",
+        "level": 2
+      },
+      {
+        "id": "histogram",
+        "text": "Histogram",
+        "level": 3
+      },
+      {
+        "id": "relative_frequency_histogram",
+        "text": "Relative Frequency Histogram",
+        "level": 3
+      },
+      {
+        "id": "2d_histogram_heatmap",
+        "text": "2D Histogram Heatmap",
+        "level": 3
+      },
+      {
+        "id": "density_plot",
+        "text": "Density Plot",
+        "level": 3
+      },
+      {
+        "id": "cumulative_frequency_distribution",
+        "text": "Cumulative Frequency Distribution",
+        "level": 3
+      },
+      {
+        "id": "scatterplots",
+        "text": "Scatterplots",
+        "level": 2
+      },
+      {
+        "id": "scatterplot",
+        "text": "Scatterplot",
+        "level": 3
+      },
+      {
+        "id": "bubble_plot",
+        "text": "Bubble Plot",
+        "level": 3
+      },
+      {
+        "id": "natural_disasters",
+        "text": "Natural Disasters",
+        "level": 3
+      },
+      {
+        "id": "text_plot",
+        "text": "Text Plot",
+        "level": 3
+      },
+      {
+        "id": "line_area_charts",
+        "text": "Line & Area Charts",
+        "level": 2
+      },
+      {
+        "id": "line_chart",
+        "text": "Line Chart",
+        "level": 3
+      },
+      {
+        "id": "line_point_chart",
+        "text": "Line Chart with Point Markers",
+        "level": 3
+      },
+      {
+        "id": "confidence_interval",
+        "text": "Line Chart with Confidence Interval Band",
+        "level": 3
+      },
+      {
+        "id": "rolling_averages",
+        "text": "Rolling Averages over Raw Values",
+        "level": 3
+      },
+      {
+        "id": "area_chart",
+        "text": "Area Chart with Overlaying Lines and Point Markers",
+        "level": 3
+      },
+      {
+        "id": "advanced_charts",
+        "text": "Advanced Charts",
+        "level": 2
+      },
+      {
+        "id": "weather_heatmap",
+        "text": "Annual Weather Heatmap",
+        "level": 3
+      },
+      {
+        "id": "donut_chart",
+        "text": "Donut Chart",
+        "level": 3
+      },
+      {
+        "id": "radial_chart",
+        "text": "Radial Chart",
+        "level": 3
+      },
+      {
+        "id": "boxplot",
+        "text": "Box Plot",
+        "level": 3
+      },
+      {
+        "id": "vertical_concatenation",
+        "text": "Vertical Concatenation",
+        "level": 3
+      },
+      {
+        "id": "SPLOM",
+        "text": "Scatterplot Matrix (SPLOM)",
+        "level": 3
+      },
+      {
+        "id": "geo_choropleth",
+        "text": "Choropleth of Unemployment Rate per County",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Data Visualization",
+    "url": "visualization.html",
+    "headings": [
+      {
+        "id": "scatter",
+        "text": "Scatter Plot",
+        "level": 2
+      },
+      {
+        "id": "line",
+        "text": "Line Chart",
+        "level": 2
+      },
+      {
+        "id": "box",
+        "text": "Box Plot",
+        "level": 2
+      },
+      {
+        "id": "histogram",
+        "text": "Histogram",
+        "level": 2
+      },
+      {
+        "id": "qq",
+        "text": "Q-Q Plot",
+        "level": 2
+      },
+      {
+        "id": "heatmap",
+        "text": "Heatmap",
+        "level": 2
+      },
+      {
+        "id": "spy",
+        "text": "Sparse Matrix Spy",
+        "level": 3
+      },
+      {
+        "id": "hexmap",
+        "text": "Hexmap",
+        "level": 3
+      },
+      {
+        "id": "contour",
+        "text": "Contour",
+        "level": 2
+      },
+      {
+        "id": "surface",
+        "text": "Surface",
+        "level": 2
+      },
+      {
+        "id": "wireframe",
+        "text": "Wireframe",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Wavelet",
+    "url": "wavelet.html",
+    "headings": [
+      {
+        "id": "filter",
+        "text": "Wavelet Filters",
+        "level": 2
+      },
+      {
+        "id": "dwt",
+        "text": "Discrete Wavelet Transform",
+        "level": 2
+      },
+      {
+        "id": "shrinkage",
+        "text": "Wavelet Shrinkage",
+        "level": 2
+      }
+    ]
+  }
+]

@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Smile - FAQ</title>
-
+  <title>SMILE - FAQ</title>
   <meta name="description" content="Statistical Machine Intelligence and Learning Engine">
-
-  <!-- Bootstrap 5 + Bootswatch Cerulean -->
-  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cerulean/bootstrap.min.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
-
-  <!-- Prism syntax highlighting (vendored for offline / file:// viewing) -->
-  <link href="css/prism.min.css" rel="stylesheet">
-
-  <!-- Table of contents -->
-  <link rel="stylesheet" href="css/pager.css" type="text/css" />
-  <link rel="stylesheet" href="css/toc.css" type="text/css" />
-
-  <!-- Vega-Lite Embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
-
-  <!-- Google tag (gtag.js) -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('smile-theme');
+        var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/prism.min.css" id="prism-light">
+  <link rel="stylesheet" href="css/prism-tomorrow.min.css" id="prism-dark" disabled>
+  <script>
+    (function () {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var lightSheet = document.getElementById('prism-light');
+      var darkSheet = document.getElementById('prism-dark');
+      if (lightSheet && darkSheet) {
+        lightSheet.disabled = dark;
+        darkSheet.disabled = !dark;
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      var queued = [];
+      function stub() { queued.push(arguments); }
+      stub._smileQueue = true;
+      window.vegaEmbed = stub;
+      document.addEventListener('DOMContentLoaded', function () {
+        var embed = window.vegaEmbed;
+        if (typeof embed !== 'function' || embed._smileQueue) return;
+        queued.forEach(function (args) { embed.apply(window, args); });
+      });
+    })();
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -34,440 +53,539 @@
     gtag('config', 'G-57GD08QCML');
   </script>
 </head>
-
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header" id="site-header">
+  <nav class="nav-bar" aria-label="Primary">
+    <a class="nav-word" href="index.html">SMILE</a>
+    <ul class="nav-links">
+      <li>
+        <button type="button" aria-expanded="false" aria-haspopup="true">Products</button>
+        <ul class="nav-dropdown">
+          <li><a href="core-engine.html">Core Engine</a></li>
+          <li><a href="serve-engine.html">Serve Engine</a></li>
+          <li><a href="agent-studio.html">Agent Studio</a></li>
+        </ul>
+      </li>
+      <li class="nav-resources">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Resources</button>
+        <ul class="nav-dropdown">
+          <li class="nav-docs">
+            <button type="button" aria-expanded="false" aria-haspopup="true">Docs</button>
+            <div class="nav-panel">
+              <div>
+                <p>Start</p>
+                <a href="quickstart.html">Quick Start</a>
+                <a href="studio.html">SMILE Studio</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="data.html">Data Processing</a>
+                <a href="data-io.html">Data Import and Export</a>
+                <a href="visualization.html">Data Visualization</a>
+                <a href="vegalite.html">Declarative Visualization</a>
+              </div>
+              <div>
+                <p>Supervised</p>
+                <a href="classification.html">Classification</a>
+                <a href="regression.html">Regression</a>
+                <a href="deep-learning.html">Deep Learning</a>
+                <a href="time-series.html">Time Series</a>
+                <a href="sequence-labeling.html">Sequence Labeling</a>
+                <a href="nlp.html">Natural Language Processing</a>
+                <a href="feature-engineering.html">Feature Engineering</a>
+                <a href="model-validation.html">Model Validation</a>
+                <a href="hpo.html">Hyperparameter Optimization</a>
+                <a href="training.html">Unified Training Interface</a>
+              </div>
+              <div>
+                <p>Unsupervised</p>
+                <a href="clustering.html">Clustering</a>
+                <a href="vector-quantization.html">Vector Quantization</a>
+                <a href="anomaly-detection.html">Anomaly Detection</a>
+                <a href="association-rule.html">Association Rule Mining</a>
+                <a href="mds.html">Multi-Dimensional Scaling</a>
+                <a href="manifold.html">Manifold Learning</a>
+              </div>
+              <div>
+                <p>GenAI</p>
+                <a href="llm.html">Large Language Models</a>
+                <a href="computer-vision.html">Computer Vision</a>
+                <a href="onnx.html">ONNX</a>
+                <a href="onnx-genai.html">ONNX GenAI</a>
+                <a href="serve.html">SMILE Serve</a>
+                <p>Math</p>
+                <a href="linear-algebra.html">Linear Algebra</a>
+                <a href="statistics.html">Statistics</a>
+                <a href="interpolation.html">Interpolation</a>
+                <a href="wavelet.html">Wavelet</a>
+                <a href="compressed-sensing.html">Compressed Sensing</a>
+                <a href="graph.html">Graph Data Structure</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-api">
+            <button type="button" aria-expanded="false" aria-haspopup="true">API</button>
+            <ul class="nav-dropdown nav-flyout">
+              <li><a href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
+              <li><a href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
+              <li><a href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
+              <li><a href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
+            </ul>
+          </li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </li>
+      <li><a href="enterprise.html">Enterprise</a></li>
+      <li><a href="licensing.html">Licensing</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-quiet nav-start" href="quickstart.html">Start</a>
+      <button type="button" class="btn btn-accent nav-demo" data-contact-open>Get a demo</button>
+      <button type="button" class="icon-btn" id="search-toggle" aria-label="Open search" title="Search (⌘K)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" hidden>
+    <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/>
+  </svg>
+</button>
 
-<div class="container site-container">
-<header class="site-header">
-<div class="masthead">
-  <p class="lead mb-0">
-    <a href="index.html" class="masthead-link">
-    <img src="images/smile.jpg" alt="SMILE logo" class="masthead-logo">
-    <span class="tagline">SMILE &mdash; Statistical Machine Intelligence and Learning Engine</span>
-    </a>
-  </p>
-</div>
-
-<nav class="navbar navbar-expand-lg navbar-dark site-navbar">
-  <div class="container-fluid px-0">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
-            aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Overview</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="quickstart.html">Quick Start</a></li>
-            <li><a class="dropdown-item" href="overview.html">What's Machine Learning</a></li>
-            <li><a class="dropdown-item" href="data.html">Data Processing</a></li>
-            <li><a class="dropdown-item" href="visualization.html">Data Visualization</a></li>
-            <li><a class="dropdown-item" href="vegalite.html">Declarative Visualization</a></li>
-            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
-            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Supervised Learning</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="classification.html">Classification</a></li>
-            <li><a class="dropdown-item" href="regression.html">Regression</a></li>
-            <li><a class="dropdown-item" href="deep-learning.html">Deep Learning</a></li>
-            <li><a class="dropdown-item" href="feature.html">Feature Engineering</a></li>
-            <li><a class="dropdown-item" href="validation.html">Model Validation</a></li>
-            <li><a class="dropdown-item" href="missing-value-imputation.html">Missing Value Imputation</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Unsupervised Learning</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="clustering.html">Clustering</a></li>
-            <li><a class="dropdown-item" href="vector-quantization.html">Vector Quantization</a></li>
-            <li><a class="dropdown-item" href="association-rule.html">Association Rule Mining</a></li>
-            <li><a class="dropdown-item" href="mds.html">Multi-Dimensional Scaling</a></li>
-            <li><a class="dropdown-item" href="manifold.html">Manifold Learning</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">LLM &amp; NLP</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="llm.html">Large Language Model (LLM)</a></li>
-            <li><a class="dropdown-item" href="nlp.html">Natural Language Processing (NLP)</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="linear-algebra.html">Linear Algebra</a></li>
-            <li><a class="dropdown-item" href="statistics.html">Statistics</a></li>
-            <li><a class="dropdown-item" href="wavelet.html">Wavelet</a></li>
-            <li><a class="dropdown-item" href="interpolation.html">Interpolation</a></li>
-            <li><a class="dropdown-item" href="graph.html">Graph Data Structure</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">API</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
-            <li><a class="dropdown-item" href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
-            <li><a class="dropdown-item" href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
-            <li><a class="dropdown-item" href="api/json/index.html" target="_blank" rel="noopener">JSON</a></li>
-            <li><a class="dropdown-item" href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fshell%2Fsrc%2Funiversal%2Fnotebooks%2Findex.ipynb" target="_blank" rel="noopener">Try It Online</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/haifengl/smile" target="_blank" rel="noopener">GitHub</a>
-        </li>
-      </ul>
+      <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
+  </nav>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <button type="button" class="btn btn-accent mobile-contact" data-contact-open>Get a demo</button>
+    <a class="btn btn-quiet mobile-start" href="quickstart.html">Start</a>
+    <details><summary>Products</summary>
+      <a href="core-engine.html">Core Engine</a>
+      <a href="serve-engine.html">Serve Engine</a>
+      <a href="agent-studio.html">Agent Studio</a>
+    </details>
+    <details><summary>Resources</summary>
+      <details><summary>Docs</summary>
+      <p class="drawer-label">Start</p>
+      <a href="quickstart.html">Quick Start</a>
+      <a href="studio.html">SMILE Studio</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="data.html">Data Processing</a>
+      <a href="data-io.html">Data Import and Export</a>
+      <a href="visualization.html">Data Visualization</a>
+      <a href="vegalite.html">Declarative Visualization</a>
+      <p class="drawer-label">Supervised</p>
+      <a href="classification.html">Classification</a>
+      <a href="regression.html">Regression</a>
+      <a href="deep-learning.html">Deep Learning</a>
+      <a href="time-series.html">Time Series</a>
+      <a href="sequence-labeling.html">Sequence Labeling</a>
+      <a href="nlp.html">Natural Language Processing</a>
+      <a href="feature-engineering.html">Feature Engineering</a>
+      <a href="model-validation.html">Model Validation</a>
+      <a href="hpo.html">Hyperparameter Optimization</a>
+      <a href="training.html">Unified Training Interface</a>
+      <p class="drawer-label">Unsupervised</p>
+      <a href="clustering.html">Clustering</a>
+      <a href="vector-quantization.html">Vector Quantization</a>
+      <a href="anomaly-detection.html">Anomaly Detection</a>
+      <a href="association-rule.html">Association Rule Mining</a>
+      <a href="mds.html">Multi-Dimensional Scaling</a>
+      <a href="manifold.html">Manifold Learning</a>
+      <p class="drawer-label">GenAI</p>
+      <a href="llm.html">Large Language Models</a>
+      <a href="computer-vision.html">Computer Vision</a>
+      <a href="onnx.html">ONNX</a>
+      <a href="onnx-genai.html">ONNX GenAI</a>
+      <a href="serve.html">SMILE Serve</a>
+      <p class="drawer-label">Math</p>
+      <a href="linear-algebra.html">Linear Algebra</a>
+      <a href="statistics.html">Statistics</a>
+      <a href="interpolation.html">Interpolation</a>
+      <a href="wavelet.html">Wavelet</a>
+      <a href="compressed-sensing.html">Compressed Sensing</a>
+      <a href="graph.html">Graph Data Structure</a>
+      </details>
+      <details><summary>API</summary>
+      <a href="api/java/index.html" target="_blank" rel="noopener">Java</a>
+      <a href="api/scala/index.html" target="_blank" rel="noopener">Scala</a>
+      <a href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a>
+      <a href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a>
+      </details>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </details>
+    <a href="enterprise.html">Enterprise</a>
+    <a href="licensing.html">Licensing</a>
   </div>
-</nav>
 </header>
 
-<div id="content" class="row g-4 site-content">
-  <div class="col-md-3 order-md-last d-none d-md-block">
-    <div id="sidebar">
-        <div class="sidebar-toc" style="margin-bottom: 20px;">
-            <p class="toc-header">Contents</p>
-            <div id="toc"></div>
-        </div>
-
-        <div id="search">
-            <script>
-                (function() {
-                    var cx = '010264411143030149390:ajvee_ckdzs';
-                    var gcse = document.createElement('script');
-                    gcse.type = 'text/javascript';
-                    gcse.async = true;
-                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                            '//cse.google.com/cse.js?cx=' + cx;
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(gcse, s);
-                })();
-            </script>
-            <gcse:searchbox-only></gcse:searchbox-only>
-        </div>
-    </div>
+  <div class="site-shell" id="content">
+    <div class="col-md-3 order-md-last d-none d-md-block">
+  <aside class="sidebar-toc glass" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <div id="toc"></div>
+  </aside>
 </div>
 
 
 <div class="col-md-9 order-md-first">
     <h1 id="faq-top" class="title">FAQ</h1>
 
-    <h2 class="question" id="cite">How should I cite Smile?</h2>
-    <p class="answer">Please cite Smile in your publications if it helps your research. Here is an example BibTeX entry:</p>
-    <pre><code>
-    @misc{Li2014Smile,
-      title={Smile},
-      author={Haifeng Li},
-      year={2014},
-      howpublished={\url{https://haifengl.github.io}},
-    }
-    </code></pre>
-
-    <h2 class="question" id="link-with-smile">Link with Smile</h2>
+    <h2 class="question" id="java-version">Which Java version do I need?</h2>
     <p class="answer">
-        Smile artifacts are hosted in <a href="https://oss.sonatype.org/#nexus-search;quick~smile-core">Sonatype Nexus</a>.
-        You can add the following dependency into your pom.xml:</p>
+        SMILE v5, v6, and v7 require <strong>Java 25</strong>.
+        SMILE v4.x requires <strong>Java 21</strong>. Stay on a 4.x release when the
+        project is still on Java 21.
+        Releases before v4 require <strong>Java 8</strong>.
+        See <a href="quickstart.html">Quick Start</a> for install and build steps.
+    </p>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#maven_1" type="button" role="tab">Maven</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#gradle_1" type="button" role="tab">Gradle (Kotlin)</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#sbt_1" type="button" role="tab">SBT</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="maven_1">
-            <div class="code" style="text-align: left;">
-                <pre class="language-markup"><code class="language-markup">
-    &lt;dependency&gt;
-        &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
-        &lt;artifactId&gt;smile-core&lt;/artifactId&gt;
-        &lt;version&gt;6.3.0&lt;/version&gt;
-    &lt;/dependency&gt;
-                </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="gradle_1">
-            <div class="code" style="text-align: left;">
-            <pre class="language-markup"><code class="language-markup">
-    implementation("com.github.haifengl:smile-core:6.3.0")
+    <h2 class="question" id="link-with-smile">How do I add SMILE to my project?</h2>
+    <p class="answer">
+        Artifacts are published to
+        <a href="https://central.sonatype.com/artifact/com.github.haifengl/smile-core">Maven Central</a>.
+        Start with <code>smile-core</code>; add other modules as needed
+        (<code>smile-deep</code>, <code>smile-nlp</code>, <code>smile-plot</code>,
+        <code>smile-kotlin</code>, <code>smile-scala</code>).
+    </p>
+
+    <div class="code-playground glass" data-lang="markup">
+  <div class="playground-toolbar">
+    <button type="button" class="lang-tab is-active" data-lang="markup" data-pane="pg-1-0">Maven</button>
+    <button type="button" class="lang-tab" data-lang="kotlin" data-pane="pg-1-1">Gradle (Kotlin)</button>
+    <button type="button" class="lang-tab" data-lang="scala" data-pane="pg-1-2">SBT</button>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+    <div id="pg-1-0" class="hero-pane">
+      <pre class="playground-source language-markup"><code class="language-markup">
+&lt;dependency&gt;
+  &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
+  &lt;artifactId&gt;smile-core&lt;/artifactId&gt;
+  &lt;version&gt;7.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- Deep learning + LLMs (requires LibTorch; see FAQ below) --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
+  &lt;artifactId&gt;smile-deep&lt;/artifactId&gt;
+  &lt;version&gt;7.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
+  &lt;artifactId&gt;smile-nlp&lt;/artifactId&gt;
+  &lt;version&gt;7.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
+  &lt;artifactId&gt;smile-plot&lt;/artifactId&gt;
+  &lt;version&gt;7.0.0&lt;/version&gt;
+&lt;/dependency&gt;
             </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="sbt_1">
-            <div class="code" style="text-align: left;">
-            <pre class="language-markup"><code class="language-markup">
-    libraryDependencies += "com.github.haifengl" % "smile-core" % "6.3.0"
-            </code></pre>
-            </div>
-        </div>
     </div>
-
-    <p>To leverage GPU and deep learning, add</p>
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#maven_2" type="button" role="tab">Maven</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#gradle_2" type="button" role="tab">Gradle (Kotlin)</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#sbt_2" type="button" role="tab">SBT</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="maven_2">
-            <div class="code" style="text-align: left;">
-                <pre class="language-markup"><code class="language-markup">
-    &lt;dependency&gt;
-        &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
-        &lt;artifactId&gt;smile-deep&lt;/artifactId&gt;
-        &lt;version&gt;6.3.0&lt;/version&gt;
-    &lt;/dependency&gt;
-                </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="gradle_2">
-            <div class="code" style="text-align: left;">
-            <pre class="language-markup"><code class="language-markup">
-    implementation("com.github.haifengl:smile-deep:6.3.0")
+    <div id="pg-1-1" class="hero-pane" hidden>
+      <pre class="playground-source language-kotlin"><code class="language-kotlin">
+dependencies {
+    implementation("com.github.haifengl:smile-core:7.0.0")
+    implementation("com.github.haifengl:smile-kotlin:7.0.0")
+    implementation("com.github.haifengl:smile-deep:7.0.0")
+    implementation("com.github.haifengl:smile-nlp:7.0.0")
+    implementation("com.github.haifengl:smile-plot:7.0.0")
+}
             </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="sbt_2">
-            <div class="code" style="text-align: left;">
-            <pre class="language-markup"><code class="language-markup">
-    libraryDependencies += "com.github.haifengl" %% "smile-deep" % "6.3.0"
-            </code></pre>
-            </div>
-        </div>
     </div>
+    <div id="pg-1-2" class="hero-pane" hidden>
+      <pre class="playground-source language-scala"><code class="language-scala">
+// Idiomatic Scala API (pulls in smile-core transitively)
+libraryDependencies += "com.github.haifengl" %% "smile-scala" % "7.0.0"
 
-    <p>For Scala API, add</p>
-    <div class="code" style="text-align: left;">
-    <pre class="language-markup"><code class="language-markup">
-    libraryDependencies += "com.github.haifengl" %% "smile-scala" % "6.3.0"
+// Java modules use a single %
+libraryDependencies += "com.github.haifengl" % "smile-deep" % "7.0.0"
+libraryDependencies += "com.github.haifengl" % "smile-plot" % "7.0.0"
+            </code></pre>
+    </div>
+  <div class="playground-editor" hidden></div>
+</div>
+
+    <p>Some algorithms (manifold learning, Gaussian Process, MLP, …) use native BLAS/LAPACK
+        through Java FFM. Install system libraries such as OpenBLAS and ARPACK
+        (Linux packages, Homebrew <code>arpack</code>, or the release package
+        <code>bin/</code> on <code>PATH</code> for Windows). Details are in
+        <a href="quickstart.html#native-blas">Quick Start</a>.</p>
+
+    <p>To pick a specific BLAS shared library name, set
+        <code>-Dsmile.lib.blas=...</code> (for example <code>mkl_rt</code> for Intel MKL,
+        or <code>blas</code> for Accelerate on macOS). Deep learning native loading is
+        separate — see <a href="#libtorch-ffm">LibTorch / FFM</a> below.</p>
+
+    <h2 class="question" id="pom">Building from source</h2>
+    <p class="answer">
+        The multi-module build uses <strong>Gradle</strong> (Java 25 required):
+    </p>
+    <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
+./gradlew build -x test
     </code></pre>
-    </div>
+  <div class="playground-editor" hidden></div>
+</div>
+    <p>SBT remains available for some Scala packaging workflows, but the documented
+        path for contributors is Gradle. See
+        <a href="quickstart.html#build-from-source">Build from Source</a>.</p>
 
-    <p>Some algorithms rely on BLAS and LAPACK (e.g. manifold learning,
-        some clustering algorithms, Gaussian Process regression, MLP, etc.).
-        By default, Smile includes OpenBLAS for macOS, Windows, and Linux:</p>
-    <div class="code" style="text-align: left;">
-    <pre class="language-markup"><code class="language-markup" style="white-space: preserve nowrap;">
-    libraryDependencies ++= Seq(
-      "org.bytedeco" % "javacpp"   % "1.5.11"        classifier "macosx-arm64" classifier "macosx-x86_64" classifier "windows-x86_64" classifier "linux-x86_64",
-      "org.bytedeco" % "openblas"  % "0.3.28-1.5.11" classifier "macosx-arm64" classifier "macosx-x86_64" classifier "windows-x86_64" classifier "linux-x86_64",
-      "org.bytedeco" % "arpack-ng" % "3.9.1-1.5.11"  classifier "macosx-x86_64" classifier "windows-x86_64" classifier "linux-x86_64" classifier ""
-    )
-    </code></pre>
-    </div>
+    <h2 class="question" id="studio">What is Agent Studio?</h2>
+    <p class="answer">
+        <a href="agent-studio.html">Agent Studio</a> is a coding agent on your machine,
+        an AutoML workplace that builds the models for <a href="serve-engine.html">Serve Engine</a>,
+        and an operating system for startups.
+        A notebook, an agent panel, and the project sit in one window.
+        Java, Kotlin, Scala, and Python notebooks share one editor, and you can write the cells yourself.
+        Seven agents cover the model, the code, the product, the design, coordination, and the desktop.
+        Clair can take a data file through profiling, features, model selection, tuning, and
+        evaluation. A fitted model leaves as a <code>.sml</code> file, or you can start
+        a REST inference service for it from the kernel explorer.
+    </p>
+    <p>
+        It ships in the release package. Launch with <code>./smile</code> after
+        <code>bin/setup</code>. Free to evaluate. Annual seats cover production use.
+        See <a href="agent-studio.html">Agent Studio</a> for the product, and
+        <a href="studio.html">SMILE Studio</a> for the manual.
+    </p>
 
-    <p>For mobile platform, you may need add <code>classifier "android-arm64"</code>
-        or <code>classifier "ios-arm64"</code>. In general, you should include only
-        the needed platforms to save spaces.</p>
+    <h2 class="question" id="serve">What is Serve Engine?</h2>
+    <p class="answer">
+        <a href="serve-engine.html">Serve Engine</a> is the inference runtime for classic
+        machine learning, computer vision, and LLMs. Serialized SMILE models
+        (<code>.sml</code>), ONNX graphs, and OpenAI-compatible chat run in the same
+        process, on your machines and your network. A web UI for chat, SMILE, and ONNX
+        is served from that process. Agent loops get a fast first token, a fast tool
+        round trip, and a memory budget reserved when the model loads.
+    </p>
+    <p>
+        Commercial licensing removes the AGPL restriction for production use.
+        See <a href="serve-engine.html">Serve Engine</a> for the product, and
+        <a href="serve.html">SMILE Serve</a> for the manual.
+    </p>
 
-    <p>If you prefer other BLAS implementations, you can use any library found
-        on the "java.library.path" or on the class path, by specifying it with
-        the "org.bytedeco.openblas.load" system property. For example, to use
-        the BLAS library from the Accelerate framework on Mac OS X, we can pass
-        options such as `-Djava.library.path=/usr/lib/ -Dorg.bytedeco.openblas.load=blas`.</p>
+    <h2 class="question" id="libtorch-ffm">LibTorch, GPU, and <code>java.library.path</code></h2>
+    <p class="answer">
+        <code>smile-deep</code> calls LibTorch through Java’s Foreign Function &amp; Memory
+        (FFM) API — not JNI. Native libraries are resolved by the
+        <strong>platform loader</strong> (<code>LD_LIBRARY_PATH</code> on Linux,
+        <code>PATH</code> on Windows), not <code>java.library.path</code>.
+        On macOS, SIP often strips <code>DYLD_LIBRARY_PATH</code>; prefer copying or
+        symlinking required <code>.dylib</code> files as described in
+        <a href="quickstart.html#gpu-libtorch">Quick Start — GPU / LibTorch</a>.
+        The release package bundles <code>libsmile_torch</code> and LibTorch under
+        <code>bin/</code> and <code>libtorch/</code>.
+    </p>
 
-    <p>For a default installation of MKL that would be `-Dorg.bytedeco.openblas.load=mkl_rt`.
-        Or you may add the following dependencies to your project, which
-        includes MKL binaries. Smile will automatically switch to MKL.</p>
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#maven_3" type="button" role="tab">Maven</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#gradle_3" type="button" role="tab">Gradle (Kotlin)</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#sbt_3" type="button" role="tab">SBT</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="maven_3">
-            <div class="code" style="text-align: left;">
-                <pre class="language-markup"><code class="language-markup">
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.bytedeco&lt;/groupId&gt;
-        &lt;artifactId&gt;mkl-platform&lt;/artifactId&gt;
-        &lt;version&gt;2024.0-1.5.10&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.bytedeco&lt;/groupId&gt;
-        &lt;artifactId&gt;mkl-platform-redist&lt;/artifactId&gt;
-        &lt;version&gt;2024.0-1.5.10&lt;/version&gt;
-    &lt;/dependency&gt;
-                </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="gradle_3">
-            <div class="code" style="text-align: left;">
-            <pre class="language-markup"><code class="language-markup">
-    implementation("org.bytedeco:mkl-platform:2024.0-1.5.10")
-    implementation("org.bytedeco:mkl-platform-redist:2024.0-1.5.10")
-            </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="sbt_3">
-            <div class="code" style="text-align: left;">
-            <pre class="language-markup"><code class="language-markup">
-    libraryDependencies ++= {
-      val version = "2024.0-1.5.10"
-      Seq(
-        "org.bytedeco" % "mkl-platform"        % version,
-        "org.bytedeco" % "mkl-platform-redist" % version
-      )
-    }
-            </code></pre>
-            </div>
-        </div>
-    </div>
+    <h2 class="question" id="data-format">Data format</h2>
+    <p class="answer">
+        Most algorithms take <code>double[]</code> / <code>double[][]</code> or a
+        <a href="api/java/smile/data/DataFrame.html"><code>DataFrame</code></a>.
+        Read and write CSV, Parquet, Arrow, ARFF, JSON, LibSVM, and more with
+        <code>smile.io.Read</code> / <code>Write</code>. See
+        <a href="data.html">Data Processing</a> and
+        <a href="data-io.html">Data Import and Export</a>.
+    </p>
 
     <h2 class="question" id="model-serialization">Model serialization</h2>
-    <p class="answer">To serialize a model, you may use</p>
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_3" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_3" type="button" role="tab">Scala</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade" role="tabpanel" id="scala_3">
-            <div class="code" style="text-align: left;">
-    <pre class="language-scala"><code class="language-scala">
-    import smile._
-    write(model, file)
-    </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane fade show active" role="tabpanel" id="java_3">
-            <div class="code" style="text-align: left;">
-    <pre class="language-java"><code class="language-java">
-    import smile.io.Write;
-    Write.object(model, file)
-    </code></pre>
-            </div>
-        </div>
+    <p class="answer">To save and load a serializable model object:</p>
+    <div class="code-playground glass" data-lang="java">
+  <div class="playground-toolbar">
+    <button type="button" class="lang-tab is-active" data-lang="java" data-pane="pg-4-0">Java</button>
+    <button type="button" class="lang-tab" data-lang="scala" data-pane="pg-4-1">Scala</button>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+    <div id="pg-4-0" class="hero-pane">
+      <pre class="playground-source language-java"><code class="language-java">
+import java.nio.file.Path;
+import smile.io.Read;
+import smile.io.Write;
+
+Write.object(model, Path.of("model.sml"));
+var loaded = Read.object(Path.of("model.sml"));
+            </code></pre>
     </div>
+    <div id="pg-4-1" class="hero-pane" hidden>
+      <pre class="playground-source language-scala"><code class="language-scala">
+import java.nio.file.Path
+import smile.{read, write}
 
-    <p>This method serializes the model in Java serialization format. This is handy
-        if you want to use a model in Spark.</p>
+write(model, Path.of("model.sml"))
+val loaded = read(Path.of("model.sml"))
+            </code></pre>
+    </div>
+  <div class="playground-editor" hidden></div>
+</div>
 
-    <h2 class="question" id="data-format">Data Format</h2>
+    <p>This uses Java serialization. For SMILE Serve, prefer a boxed
+        <code>smile.model.Model</code> as shown in the
+        <a href="tutorial.html#serialization">Tutorial</a>.
+        ONNX export is covered in the core ONNX docs and Serve.</p>
+
+    <h2 class="question" id="headless-plot">Headless plot</h2>
     <p class="answer">
-        Most Smile algorithms take simple <code>double[]</code> or <code>DataFrame</code>as input.
-        <code>DataFrame</code> can be easily constructed from <code>double[][]</code> too.
-        So you can use your favorite methods
-        or library to import the data as long as the samples are in double arrays. Meanwhile, Smile provides
-        a couple of parsers in <code>smile.io</code> for popular data formats, such as CSV, Weka's ARFF files,
-        LibSVM's file format, delimited text files, SAS, Parquet, Avro, Arrow, JSON, and binary sparse data.
+        To generate plots without a display, enable AWT headless mode. With the release
+        shell:
     </p>
 
-    <h2 class="question" id="pom">Cannot build Smile with maven</h2>
-    <p class="answer">
-        We have moved to SBT to build packages. The maven pom.xml files were deprecated and were removed in v1.2.0.
-    </p>
+    <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
 
-    <h2 class="question" id="headless-plot">Headless Plot</h2>
-    <p class="answer">
-        In case that your environment does not have a display, or you need to generate and save
-        a lot of plots without showing them on the screen, you may run Smile in headless model.
-    </p>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_1" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_1" type="button" role="tab">Scala</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade" role="tabpanel" id="scala_1">
-            <div class="code" style="text-align: left;">
-    <pre class="language-bash"><code class="language-bash">
-    bin/smile -Djava.awt.headless=true
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
+smile shell -R-Djava.awt.headless=true
     </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane fade show active" role="tabpanel" id="java_1">
-            <div class="code" style="text-align: left;">
-    <pre class="language-bash"><code class="language-bash">
-    bin/jshell.sh -R-Djava.awt.headless=true
-    </code></pre>
-            </div>
-        </div>
+  <div class="playground-editor" hidden></div>
+</div>
+
+    <p>Save a Swing figure to PNG without showing a window:</p>
+
+    <div class="code-playground glass" data-lang="java">
+  <div class="playground-toolbar">
+    <button type="button" class="lang-tab is-active" data-lang="java" data-pane="pg-6-0">Java</button>
+    <button type="button" class="lang-tab" data-lang="scala" data-pane="pg-6-1">Scala</button>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+    <div id="pg-6-0" class="hero-pane">
+      <pre class="playground-source language-java"><code class="language-java">
+import java.nio.file.Path;
+import javax.imageio.ImageIO;
+import org.apache.commons.csv.CSVFormat;
+import smile.io.Read;
+import smile.plot.swing.ScatterPlot;
+
+var format = CSVFormat.Builder.create().setDelimiter('\t').get();
+var toy = Read.csv("data/classification/toy200.txt", format);
+var figure = ScatterPlot.of(toy, "V2", "V3", "V1", '.').figure();
+var image = figure.toBufferedImage(400, 400);
+ImageIO.write(image, "png", Path.of("headless.png").toFile());
+            </code></pre>
     </div>
+    <div id="pg-6-1" class="hero-pane" hidden>
+      <pre class="playground-source language-scala"><code class="language-scala">
+import java.nio.file.Path
+import javax.imageio.ImageIO
+import smile.plot.swing.*
+import smile.read
 
-    <p>The following example shows how to save a plot in the headless mode.</p>
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_2" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_2" type="button" role="tab">Scala</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade" role="tabpanel" id="scala_2">
-            <div class="code" style="text-align: left;">
-    <pre class="language-scala"><code class="language-scala">
-    val toy = read.csv("data/classification/toy200.txt", delimiter="\t", header=false)
-    val canvas = plot(toy, "V2", "V3", "V1", '.')
-    val image = canvas.toBufferedImage(400, 400)
-    javax.imageio.ImageIO.write(image, "png", new java.io.File("headless.png"))
-    </code></pre>
-            </div>
-        </div>
-        <div class="tab-pane fade show active" role="tabpanel" id="java_2">
-            <div class="code" style="text-align: left;">
-          <pre class="language-java"><code class="language-java">
-    import java.awt.Color;
-    import smile.io.*;
-    import smile.plot.swing.*;
-    import org.apache.commons.csv.CSVFormat;
-
-    var toy = Read.csv("data/classification/toy200.txt", CSVFormat.DEFAULT.withDelimiter('\t'));
-    var canvas = ScatterPlot.of(toy, "V2", "V3", "V1", '.').canvas();
-    var image = canvas.toBufferedImage(400, 400);
-    javax.imageio.ImageIO.write(image, "png", new java.io.File("headless.png"));
-          </code></pre>
-            </div>
-        </div>
+val toy = read.csv("data/classification/toy200.txt", delimiter = "\t", header = false)
+val canvas = plot(toy, "V2", "V3", "V1", '.')
+val image = canvas.figure().toBufferedImage(400, 400)
+ImageIO.write(image, "png", Path.of("headless.png").toFile())
+            </code></pre>
     </div>
+  <div class="playground-editor" hidden></div>
+</div>
+
+    <p>See <a href="visualization.html">Data Visualization</a>. For declarative charts without
+        Swing, use <a href="vegalite.html">Vega-Lite</a>.</p>
 
     <h2 class="question" id="seed">How can I set the random number generator seed for random forest?</h2>
     <p class="answer">
         This is a common question for stochastic algorithms like random forest.
-        In general, this is discouraged because people often choose bad seed due to the lack
-        of sufficient knowledge of random number generation. However, one may want the repeatable
-        result for testing purpose. In this case, call <code>smile.math.MathEx.setSeed</code> before
-        training the model.
+        In general, setting a seed is discouraged because people often choose a bad
+        seed without enough knowledge of random number generation. For repeatable
+        tests, call <code>smile.math.MathEx.setSeed</code> before training.
     </p>
 
     <p>
-        Note that we don't provide a method to set the seed for a particular algorithm.
-        Many algorithms are multithreaded and each thread has their own random number
-        generator. We choose this design because each random number generator maintains
-        an internal state so that it is not multithread-safe. If multithreads share a
-        random number generator, we have to use locks, which significant reduce the
-        performance.
+        There is no per-algorithm <code>setSeed()</code>. Many algorithms are
+        multithreaded and each thread has its own generator. Sharing one generator
+        would require locks and hurt performance. Seeding every thread identically
+        (for example in a random forest) would also destroy the intended randomness.
     </p>
 
-    <p>
-        A method <code>setSeed()</code> in the algorithm is also troublesome.
-        For algorithms like random forest, it is not right to initialize every thread
-        with the same seed. Otherwise, same decision trees will be created,
-        and we lose the randomness of "random" forest. It is also complicated
-        to pass a sequence of random numbers because it is not clear
-        how many random number generators are needed for many algorithms. Even worse, it breaks
-        the encapsulation as the caller has to know the details of algorithms.
-    </p>
+    <h2 class="question" id="cite">How should I cite SMILE?</h2>
+    <p class="answer">Please cite SMILE in your publications if it helps your research. Here is an example BibTeX entry:</p>
+    <div class="code-playground glass" data-lang="bibtex">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">BibTeX</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
 
+
+  </div>
+  <pre class="playground-source language-bibtex"><code class="language-bibtex">
+    @misc{Li2014SMILE,
+      title={SMILE: Statistical Machine Intelligence and Learning Engine},
+      author={Haifeng Li},
+      year={2014},
+      howpublished={\url{https://www.aihalo.dev/}},
+    }
+    </code></pre>
+  <div class="playground-editor" hidden></div>
 </div>
 
 </div>
+
+
+  </div>
+  <div class="palette-backdrop" id="command-palette" hidden>
+  <div class="palette glass" role="dialog" aria-modal="true" aria-label="Search documentation">
+    <input type="search" id="palette-input" placeholder="Search pages and headings…" autocomplete="off" aria-label="Search">
+    <ul class="palette-results" id="palette-results"></ul>
+    <p class="palette-empty" id="palette-empty" hidden>No matches.</p>
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/vendor/prism/prism.min.js"></script>
-<script src="js/vendor/prism/prism-clike.min.js"></script>
-<script src="js/vendor/prism/prism-java.min.js"></script>
-<script src="js/vendor/prism/prism-scala.min.js"></script>
-<script src="js/vendor/prism/prism-kotlin.min.js"></script>
-<script src="js/vendor/prism/prism-groovy.min.js"></script>
-<script src="js/vendor/prism/prism-clojure.min.js"></script>
-<script src="js/vendor/prism/prism-bash.min.js"></script>
-<script src="js/vendor/prism/prism-markup.min.js"></script>
-<script src="js/toc.js"></script>
-<script src="js/site.js"></script>
+  <div id="contact-modal" class="contact-modal" hidden>
+    <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <div class="contact-modal-bar">
+        <p id="contact-modal-title" class="contact-modal-title">Contact Us</p>
+        <button type="button" class="icon-btn" data-contact-close aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="contact-modal-frame-clip">
+        <iframe class="contact-modal-frame" title="Contact form" data-src="https://docs.google.com/forms/d/e/1FAIpQLSe-r5s7DrzXchPUagg5_6mEp_p78zpWQk6A9Z9JxAikKIGxIQ/viewform?embedded=true">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+  <script defer src="js/vendor/prism/prism.min.js"></script>
+  <script defer src="js/vendor/prism/prism-clike.min.js"></script>
+  <script defer src="js/vendor/prism/prism-java.min.js"></script>
+  <script defer src="js/vendor/prism/prism-scala.min.js"></script>
+  <script defer src="js/vendor/prism/prism-kotlin.min.js"></script>
+  <script defer src="js/vendor/prism/prism-groovy.min.js"></script>
+  <script defer src="js/vendor/prism/prism-clojure.min.js"></script>
+  <script defer src="js/vendor/prism/prism-bash.min.js"></script>
+  <script defer src="js/vendor/prism/prism-markup.min.js"></script>
+  <script src="js/dedent.js"></script>
+  <script src="js/toc.js"></script>
+  <script src="js/site.js"></script>
+  <script defer src="js/search.js"></script>
+  <script src="js/playground.js"></script>
 </body>
 </html>

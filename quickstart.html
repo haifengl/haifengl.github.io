@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>SMILE - Quick Start</title>
-
   <meta name="description" content="Statistical Machine Intelligence and Learning Engine">
-
-  <!-- Bootstrap 5 + Bootswatch Cerulean -->
-  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cerulean/bootstrap.min.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
-
-  <!-- Prism syntax highlighting (vendored for offline / file:// viewing) -->
-  <link href="css/prism.min.css" rel="stylesheet">
-
-  <!-- Table of contents -->
-  <link rel="stylesheet" href="css/pager.css" type="text/css" />
-  <link rel="stylesheet" href="css/toc.css" type="text/css" />
-
-  <!-- Vega-Lite Embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
-
-  <!-- Google tag (gtag.js) -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('smile-theme');
+        var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/prism.min.css" id="prism-light">
+  <link rel="stylesheet" href="css/prism-tomorrow.min.css" id="prism-dark" disabled>
+  <script>
+    (function () {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var lightSheet = document.getElementById('prism-light');
+      var darkSheet = document.getElementById('prism-dark');
+      if (lightSheet && darkSheet) {
+        lightSheet.disabled = dark;
+        darkSheet.disabled = !dark;
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      var queued = [];
+      function stub() { queued.push(arguments); }
+      stub._smileQueue = true;
+      window.vegaEmbed = stub;
+      document.addEventListener('DOMContentLoaded', function () {
+        var embed = window.vegaEmbed;
+        if (typeof embed !== 'function' || embed._smileQueue) return;
+        queued.forEach(function (args) { embed.apply(window, args); });
+      });
+    })();
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -34,125 +53,181 @@
     gtag('config', 'G-57GD08QCML');
   </script>
 </head>
-
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header" id="site-header">
+  <nav class="nav-bar" aria-label="Primary">
+    <a class="nav-word" href="index.html">SMILE</a>
+    <ul class="nav-links">
+      <li>
+        <button type="button" aria-expanded="false" aria-haspopup="true">Products</button>
+        <ul class="nav-dropdown">
+          <li><a href="core-engine.html">Core Engine</a></li>
+          <li><a href="serve-engine.html">Serve Engine</a></li>
+          <li><a href="agent-studio.html">Agent Studio</a></li>
+        </ul>
+      </li>
+      <li class="nav-resources">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Resources</button>
+        <ul class="nav-dropdown">
+          <li class="nav-docs">
+            <button type="button" aria-expanded="false" aria-haspopup="true">Docs</button>
+            <div class="nav-panel">
+              <div>
+                <p>Start</p>
+                <a href="quickstart.html">Quick Start</a>
+                <a href="studio.html">SMILE Studio</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="data.html">Data Processing</a>
+                <a href="data-io.html">Data Import and Export</a>
+                <a href="visualization.html">Data Visualization</a>
+                <a href="vegalite.html">Declarative Visualization</a>
+              </div>
+              <div>
+                <p>Supervised</p>
+                <a href="classification.html">Classification</a>
+                <a href="regression.html">Regression</a>
+                <a href="deep-learning.html">Deep Learning</a>
+                <a href="time-series.html">Time Series</a>
+                <a href="sequence-labeling.html">Sequence Labeling</a>
+                <a href="nlp.html">Natural Language Processing</a>
+                <a href="feature-engineering.html">Feature Engineering</a>
+                <a href="model-validation.html">Model Validation</a>
+                <a href="hpo.html">Hyperparameter Optimization</a>
+                <a href="training.html">Unified Training Interface</a>
+              </div>
+              <div>
+                <p>Unsupervised</p>
+                <a href="clustering.html">Clustering</a>
+                <a href="vector-quantization.html">Vector Quantization</a>
+                <a href="anomaly-detection.html">Anomaly Detection</a>
+                <a href="association-rule.html">Association Rule Mining</a>
+                <a href="mds.html">Multi-Dimensional Scaling</a>
+                <a href="manifold.html">Manifold Learning</a>
+              </div>
+              <div>
+                <p>GenAI</p>
+                <a href="llm.html">Large Language Models</a>
+                <a href="computer-vision.html">Computer Vision</a>
+                <a href="onnx.html">ONNX</a>
+                <a href="onnx-genai.html">ONNX GenAI</a>
+                <a href="serve.html">SMILE Serve</a>
+                <p>Math</p>
+                <a href="linear-algebra.html">Linear Algebra</a>
+                <a href="statistics.html">Statistics</a>
+                <a href="interpolation.html">Interpolation</a>
+                <a href="wavelet.html">Wavelet</a>
+                <a href="compressed-sensing.html">Compressed Sensing</a>
+                <a href="graph.html">Graph Data Structure</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-api">
+            <button type="button" aria-expanded="false" aria-haspopup="true">API</button>
+            <ul class="nav-dropdown nav-flyout">
+              <li><a href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
+              <li><a href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
+              <li><a href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
+              <li><a href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
+            </ul>
+          </li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </li>
+      <li><a href="enterprise.html">Enterprise</a></li>
+      <li><a href="licensing.html">Licensing</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-quiet nav-start" href="quickstart.html">Start</a>
+      <button type="button" class="btn btn-accent nav-demo" data-contact-open>Get a demo</button>
+      <button type="button" class="icon-btn" id="search-toggle" aria-label="Open search" title="Search (⌘K)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" hidden>
+    <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/>
+  </svg>
+</button>
 
-<div class="container site-container">
-<header class="site-header">
-<div class="masthead">
-  <p class="lead mb-0">
-    <a href="index.html" class="masthead-link">
-    <img src="images/smile.jpg" alt="SMILE logo" class="masthead-logo">
-    <span class="tagline">SMILE &mdash; Statistical Machine Intelligence and Learning Engine</span>
-    </a>
-  </p>
-</div>
-
-<nav class="navbar navbar-expand-lg navbar-dark site-navbar">
-  <div class="container-fluid px-0">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
-            aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Overview</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="quickstart.html">Quick Start</a></li>
-            <li><a class="dropdown-item" href="overview.html">What's Machine Learning</a></li>
-            <li><a class="dropdown-item" href="data.html">Data Processing</a></li>
-            <li><a class="dropdown-item" href="visualization.html">Data Visualization</a></li>
-            <li><a class="dropdown-item" href="vegalite.html">Declarative Visualization</a></li>
-            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
-            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Supervised Learning</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="classification.html">Classification</a></li>
-            <li><a class="dropdown-item" href="regression.html">Regression</a></li>
-            <li><a class="dropdown-item" href="deep-learning.html">Deep Learning</a></li>
-            <li><a class="dropdown-item" href="feature.html">Feature Engineering</a></li>
-            <li><a class="dropdown-item" href="validation.html">Model Validation</a></li>
-            <li><a class="dropdown-item" href="missing-value-imputation.html">Missing Value Imputation</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Unsupervised Learning</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="clustering.html">Clustering</a></li>
-            <li><a class="dropdown-item" href="vector-quantization.html">Vector Quantization</a></li>
-            <li><a class="dropdown-item" href="association-rule.html">Association Rule Mining</a></li>
-            <li><a class="dropdown-item" href="mds.html">Multi-Dimensional Scaling</a></li>
-            <li><a class="dropdown-item" href="manifold.html">Manifold Learning</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">LLM &amp; NLP</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="llm.html">Large Language Model (LLM)</a></li>
-            <li><a class="dropdown-item" href="nlp.html">Natural Language Processing (NLP)</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Math</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="linear-algebra.html">Linear Algebra</a></li>
-            <li><a class="dropdown-item" href="statistics.html">Statistics</a></li>
-            <li><a class="dropdown-item" href="wavelet.html">Wavelet</a></li>
-            <li><a class="dropdown-item" href="interpolation.html">Interpolation</a></li>
-            <li><a class="dropdown-item" href="graph.html">Graph Data Structure</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">API</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
-            <li><a class="dropdown-item" href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
-            <li><a class="dropdown-item" href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
-            <li><a class="dropdown-item" href="api/json/index.html" target="_blank" rel="noopener">JSON</a></li>
-            <li><a class="dropdown-item" href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://mybinder.org/v2/gh/haifengl/smile/notebook?urlpath=lab%2Ftree%2Fshell%2Fsrc%2Funiversal%2Fnotebooks%2Findex.ipynb" target="_blank" rel="noopener">Try It Online</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/haifengl/smile" target="_blank" rel="noopener">GitHub</a>
-        </li>
-      </ul>
+      <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
+  </nav>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <button type="button" class="btn btn-accent mobile-contact" data-contact-open>Get a demo</button>
+    <a class="btn btn-quiet mobile-start" href="quickstart.html">Start</a>
+    <details><summary>Products</summary>
+      <a href="core-engine.html">Core Engine</a>
+      <a href="serve-engine.html">Serve Engine</a>
+      <a href="agent-studio.html">Agent Studio</a>
+    </details>
+    <details><summary>Resources</summary>
+      <details><summary>Docs</summary>
+      <p class="drawer-label">Start</p>
+      <a href="quickstart.html">Quick Start</a>
+      <a href="studio.html">SMILE Studio</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="data.html">Data Processing</a>
+      <a href="data-io.html">Data Import and Export</a>
+      <a href="visualization.html">Data Visualization</a>
+      <a href="vegalite.html">Declarative Visualization</a>
+      <p class="drawer-label">Supervised</p>
+      <a href="classification.html">Classification</a>
+      <a href="regression.html">Regression</a>
+      <a href="deep-learning.html">Deep Learning</a>
+      <a href="time-series.html">Time Series</a>
+      <a href="sequence-labeling.html">Sequence Labeling</a>
+      <a href="nlp.html">Natural Language Processing</a>
+      <a href="feature-engineering.html">Feature Engineering</a>
+      <a href="model-validation.html">Model Validation</a>
+      <a href="hpo.html">Hyperparameter Optimization</a>
+      <a href="training.html">Unified Training Interface</a>
+      <p class="drawer-label">Unsupervised</p>
+      <a href="clustering.html">Clustering</a>
+      <a href="vector-quantization.html">Vector Quantization</a>
+      <a href="anomaly-detection.html">Anomaly Detection</a>
+      <a href="association-rule.html">Association Rule Mining</a>
+      <a href="mds.html">Multi-Dimensional Scaling</a>
+      <a href="manifold.html">Manifold Learning</a>
+      <p class="drawer-label">GenAI</p>
+      <a href="llm.html">Large Language Models</a>
+      <a href="computer-vision.html">Computer Vision</a>
+      <a href="onnx.html">ONNX</a>
+      <a href="onnx-genai.html">ONNX GenAI</a>
+      <a href="serve.html">SMILE Serve</a>
+      <p class="drawer-label">Math</p>
+      <a href="linear-algebra.html">Linear Algebra</a>
+      <a href="statistics.html">Statistics</a>
+      <a href="interpolation.html">Interpolation</a>
+      <a href="wavelet.html">Wavelet</a>
+      <a href="compressed-sensing.html">Compressed Sensing</a>
+      <a href="graph.html">Graph Data Structure</a>
+      </details>
+      <details><summary>API</summary>
+      <a href="api/java/index.html" target="_blank" rel="noopener">Java</a>
+      <a href="api/scala/index.html" target="_blank" rel="noopener">Scala</a>
+      <a href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a>
+      <a href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a>
+      </details>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </details>
+    <a href="enterprise.html">Enterprise</a>
+    <a href="licensing.html">Licensing</a>
   </div>
-</nav>
 </header>
 
-<div id="content" class="row g-4 site-content">
-  <div class="col-md-3 order-md-last d-none d-md-block">
-    <div id="sidebar">
-        <div class="sidebar-toc" style="margin-bottom: 20px;">
-            <p class="toc-header">Contents</p>
-            <div id="toc"></div>
-        </div>
-
-        <div id="search">
-            <script>
-                (function() {
-                    var cx = '010264411143030149390:ajvee_ckdzs';
-                    var gcse = document.createElement('script');
-                    gcse.type = 'text/javascript';
-                    gcse.async = true;
-                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                            '//cse.google.com/cse.js?cx=' + cx;
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(gcse, s);
-                })();
-            </script>
-            <gcse:searchbox-only></gcse:searchbox-only>
-        </div>
-    </div>
+  <div class="site-shell" id="content">
+    <div class="col-md-3 order-md-last d-none d-md-block">
+  <aside class="sidebar-toc glass" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <div id="toc"></div>
+  </aside>
 </div>
 
 
@@ -160,85 +235,125 @@
     <h1 id="quickstart-top" class="title">Quick Start</h1>
 
     <p>SMILE is a comprehensive, high-performance machine learning engine for the JVM.
-        SMILE v6 requires <strong>Java 25</strong>.
+        SMILE v7 requires <strong>Java 25</strong>.
         Besides Java, SMILE also provides idiomatic APIs for Scala and Kotlin.
         The core module is self-contained (no native dependencies required for most algorithms).
         Optionally, native BLAS/LAPACK libraries can be used for accelerated linear algebra,
         and LibTorch (PyTorch C++) enables GPU-accelerated deep learning and LLM inference.
     </p>
 
+    <p>Copy the snippet below to try SMILE in your own JVM project.</p>
+
+    <div class="bento-playground bento-card glass">
+      <div class="code-playground" data-lang="java">
+        <div class="playground-toolbar">
+          <button type="button" class="lang-tab is-active" data-lang="java" data-pane="qs-java">Java</button>
+          <button type="button" class="lang-tab" data-lang="scala" data-pane="qs-scala">Scala</button>
+          <button type="button" class="lang-tab" data-lang="kotlin" data-pane="qs-kotlin">Kotlin</button>
+          <span class="toolbar-spacer"></span>
+          <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+          
+
+
+        </div>
+        <div id="qs-java" class="hero-pane">
+          <pre class="playground-source language-java"><code class="language-java">var iris = Read.arff("data/weka/iris.arff");
+var formula = Formula.lhs("class");
+var rf = RandomForest.fit(formula, iris);
+System.out.println(rf.metrics());</code></pre>
+        </div>
+        <div id="qs-scala" class="hero-pane" hidden>
+          <pre class="playground-source language-scala"><code class="language-scala">val iris = read.arff("data/weka/iris.arff")
+val rf = randomForest("class" ~, iris)
+println(rf.metrics)</code></pre>
+        </div>
+        <div id="qs-kotlin" class="hero-pane" hidden>
+          <pre class="playground-source language-kotlin"><code class="language-kotlin">val iris = read.arff("data/weka/iris.arff")
+val rf = randomForest(Formula.lhs("class"), iris)
+println(rf.metrics())</code></pre>
+        </div>
+        <div class="playground-editor" hidden></div>
+      </div>
+    </div>
+
     <h2 id="installation">Installation</h2>
 
     <p>Add the relevant artifact(s) to your build tool. All artifacts are published to
         <a href="https://central.sonatype.com/artifact/com.github.haifengl/smile-core">Maven Central</a>.</p>
 
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#dep_maven" type="button" role="tab">Maven</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#dep_gradle" type="button" role="tab">Gradle (Kotlin DSL)</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#dep_sbt" type="button" role="tab">SBT (Scala)</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="dep_maven">
-            <pre class="language-markup"><code class="language-markup">
+    <div class="code-playground glass" data-lang="markup">
+  <div class="playground-toolbar">
+    <button type="button" class="lang-tab is-active" data-lang="markup" data-pane="pg-1-0">Maven</button>
+    <button type="button" class="lang-tab" data-lang="kotlin" data-pane="pg-1-1">Gradle (Kotlin DSL)</button>
+    <button type="button" class="lang-tab" data-lang="scala" data-pane="pg-1-2">SBT (Scala)</button>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+    <div id="pg-1-0" class="hero-pane">
+      <pre class="playground-source language-markup"><code class="language-markup">
 &lt;!-- Core ML algorithms (classification, regression, clustering, …) --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-core&lt;/artifactId&gt;
-  &lt;version&gt;6.3.0&lt;/version&gt;
+  &lt;version&gt;7.0.0&lt;/version&gt;
 &lt;/dependency&gt;
 
 &lt;!-- Deep learning + LLMs (requires LibTorch native libraries) --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-deep&lt;/artifactId&gt;
-  &lt;version&gt;6.3.0&lt;/version&gt;
+  &lt;version&gt;7.0.0&lt;/version&gt;
 &lt;/dependency&gt;
 
 &lt;!-- Natural language processing --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-nlp&lt;/artifactId&gt;
-  &lt;version&gt;6.3.0&lt;/version&gt;
+  &lt;version&gt;7.0.0&lt;/version&gt;
 &lt;/dependency&gt;
 
 &lt;!-- Swing + Vega-Lite data visualization --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-plot&lt;/artifactId&gt;
-  &lt;version&gt;6.3.0&lt;/version&gt;
+  &lt;version&gt;7.0.0&lt;/version&gt;
 &lt;/dependency&gt;
             </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="dep_gradle">
-            <pre class="language-kotlin"><code class="language-kotlin">
+    </div>
+    <div id="pg-1-1" class="hero-pane" hidden>
+      <pre class="playground-source language-kotlin"><code class="language-kotlin">
 dependencies {
     // Core ML algorithms
-    implementation("com.github.haifengl:smile-core:6.3.0")
+    implementation("com.github.haifengl:smile-core:7.0.0")
 
     // Idiomatic Kotlin API (wraps smile-core)
-    implementation("com.github.haifengl:smile-kotlin:6.3.0")
+    implementation("com.github.haifengl:smile-kotlin:7.0.0")
 
     // Deep learning + LLMs
-    implementation("com.github.haifengl:smile-deep:6.3.0")
+    implementation("com.github.haifengl:smile-deep:7.0.0")
 
     // NLP
-    implementation("com.github.haifengl:smile-nlp:6.3.0")
+    implementation("com.github.haifengl:smile-nlp:7.0.0")
 
     // Visualization
-    implementation("com.github.haifengl:smile-plot:6.3.0")
+    implementation("com.github.haifengl:smile-plot:7.0.0")
 }
             </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="dep_sbt">
-            <pre class="language-scala"><code class="language-scala">
+    </div>
+    <div id="pg-1-2" class="hero-pane" hidden>
+      <pre class="playground-source language-scala"><code class="language-scala">
 // Idiomatic Scala API (pulls in smile-core transitively)
-libraryDependencies += "com.github.haifengl" %% "smile-scala" % "6.3.0"
+libraryDependencies += "com.github.haifengl" %% "smile-scala" % "7.0.0"
 
 // Deep learning
-libraryDependencies += "com.github.haifengl" % "smile-deep" % "6.3.0"
+libraryDependencies += "com.github.haifengl" % "smile-deep" % "7.0.0"
             </code></pre>
-        </div>
     </div>
+  <div class="playground-editor" hidden></div>
+</div>
 
     <h3 id="native-blas">Native BLAS / LAPACK (optional)</h3>
     <p>Several algorithms (manifold learning, Gaussian Process, MLP) benefit significantly
@@ -251,17 +366,39 @@ libraryDependencies += "com.github.haifengl" % "smile-deep" % "6.3.0"
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade show active" role="tabpanel" id="blas_linux">
-            <pre class="language-bash"><code class="language-bash">
+            <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
 sudo apt update
 sudo apt install libopenblas-dev libarpack2
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
         </div>
         <div class="tab-pane fade" role="tabpanel" id="blas_mac">
-            <pre class="language-bash"><code class="language-bash">
+            <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
 brew install arpack
 # If macOS SIP strips DYLD_LIBRARY_PATH, copy the dylib to your working directory:
 cp /opt/homebrew/lib/libarpack.dylib .
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
         </div>
         <div class="tab-pane fade" role="tabpanel" id="blas_win">
             <p>Pre-built DLLs are included in the <code>bin/</code> directory of the
@@ -271,10 +408,60 @@ cp /opt/homebrew/lib/libarpack.dylib .
     </div>
 
     <h3 id="gpu-libtorch">GPU / LibTorch (for Deep Learning &amp; LLMs)</h3>
-    <p>To use <code>smile-deep</code>, the LibTorch native libraries must be on
-       <code>java.library.path</code>. For GPU support, make sure your Bytedeco
-       <code>pytorch</code> classifier matches your CUDA version, e.g.
-       <code>linux-x86_64-gpu-cuda12.4</code>. CPU-only inference works out of the box.</p>
+    <p>The <code>smile-deep</code> module calls LibTorch through Java's Foreign Function
+       &amp; Memory (FFM) API — not JNI — so native libraries are resolved via the
+       <strong>platform loader</strong> (<code>LD_LIBRARY_PATH</code> on Linux,
+       <code>PATH</code> on Windows), not <code>java.library.path</code>.
+       On <strong>macOS</strong>, System Integrity Protection (SIP) strips
+       <code>DYLD_LIBRARY_PATH</code> from most child processes; copy or symlink
+       required <code>.dylib</code> files into your working directory or
+       <code>/usr/local/lib</code> instead.</p>
+
+    <p>The release package bundles <code>libsmile_torch</code> and LibTorch under
+       <code>bin/</code> and <code>libtorch/</code>. GPU builds link LibTorch against a
+       specific CUDA version — make sure your machine has a compatible
+       <strong>NVIDIA driver</strong> and CUDA runtime libraries (cuDNN, etc.) before
+       running GPU workloads. CPU-only inference works without a GPU.</p>
+      
+      
+    <h2 id="build-from-source">Build from Source</h2>
+
+    <p>Clone the repository and build with the Gradle wrapper (requires Java 25):</p>
+
+    <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
+git clone https://github.com/haifengl/smile.git
+cd smile
+./gradlew build -x test        # build all modules, skip tests
+./gradlew :core:build -x test  # build only the core module
+    </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
+
+    <p>To run the tests (requires LibTorch on the library path for <code>smile-deep</code>):</p>
+    <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
+./gradlew :core:test
+./gradlew :deep:test -DexcludeTags=integration
+    </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
 
     <h2 id="download">Download the Release Package</h2>
 
@@ -282,29 +469,37 @@ cp /opt/homebrew/lib/libarpack.dylib .
         <a href="https://github.com/haifengl/smile/releases">releases page</a>.
         It works on macOS, Linux, and Windows.</p>
 
-    <pre class="language-bash"><code class="language-bash">
-# Extract and set up native dependencies
+    <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
+# Extract and run first-time setup (BLAS/LAPACK, Python venv — see GPU / LibTorch above)
 cd bin
-./setup        # installs required native libraries
+./setup        # once: native libs + Python environment
 ./smile        # launches SMILE Studio (desktop notebook IDE)
     </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
 
-    <h3 id="build-from-source">Build from Source</h3>
-
-    <p>Clone the repository and build with the Gradle wrapper (requires Java 25):</p>
-
-    <pre class="language-bash"><code class="language-bash">
-git clone https://github.com/haifengl/smile.git
-cd smile
-./gradlew build -x test        # build all modules, skip tests
-./gradlew :core:build -x test  # build only the core module
-    </code></pre>
-
-    <p>To run the tests (requires LibTorch on the library path for <code>smile-deep</code>):</p>
-    <pre class="language-bash"><code class="language-bash">
-./gradlew :core:test
-./gradlew :deep:test -DexcludeTags=integration
-    </code></pre>
+<p>Run <code>bin/setup</code> once after unzipping the release package. It installs
+  optional native dependencies via your system package manager:</p>
+<ul>
+   <li><strong>Linux (apt):</strong> <code>libopenblas-dev</code>, <code>libarpack2</code></li>
+   <li><strong>macOS (Homebrew):</strong> <code>arpack</code></li>
+   <li><strong>RHEL/Fedora (yum):</strong> <code>openblas-devel</code>, <code>arpack-devel</code></li>
+   <li><strong>Arch (pacman):</strong> <code>openblas</code>, <code>arpack</code></li>
+</ul>
+<p>It also installs <code>ripgrep</code>, creates a Python virtual environment, and
+  pulls packages from <code>conf/requirements.txt</code> (including ONNX Runtime).
+  LibTorch and CUDA are <em>not</em> installed by <code>setup</code> — they ship with
+  the release bundle (GPU builds) or must match your build environment when compiling
+  from source.</p>
 
     <h2 id="shell">Interactive Shell</h2>
 
@@ -318,31 +513,73 @@ cd smile
             <p>SMILE integrates with <strong>JShell</strong> (available since Java 9).
                In the home directory of the release package, run:</p>
 
-            <pre class="language-bash"><code class="language-bash">
+            <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
 $ ./smile shell
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
 
             <p>All SMILE classes are pre-imported. To pass more heap memory:</p>
 
-            <pre class="language-bash"><code class="language-bash">
+            <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
 $ ./smile shell -R-Xmx30G
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
 
             <p>When the shell starts you will see the SMILE banner followed by the JShell prompt:</p>
 
-            <pre class="language-java"><code class="language-java">
-|  Welcome to Smile  -- Version  6.3.0
+            <div class="code-playground glass" data-lang="java">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Java</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-java"><code class="language-java">
+|  Welcome to SMILE  -- Version 7.0.0
 ===============================================================================
 |  Welcome to JShell -- Version 25
 |  For an introduction type: /help intro
 
 smile>
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
 
-            <p>All SMILE definitions are pre-imported. Type <code>/exit</code> to leave.
-               You can run any valid Java expression:</p>
+            <p>All SMILE definitions are pre-imported. You can run any valid Java
+               expression. Type <code>/exit</code> to leave:</p>
 
-            <pre class="language-java"><code class="language-java">
+            <div class="code-playground glass" data-lang="java">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Java</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-java"><code class="language-java">
 smile> 2 + 3
 $1 ==> 5
 
@@ -352,9 +589,91 @@ iris ==> [...]
 smile> var rf = RandomForest.fit(Formula.lhs("class"), iris)
 smile> System.out.println(rf.metrics())
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
+        </div>
 
-            <h4>Running a Script</h4>
-            <pre class="language-java"><code class="language-java">
+        <div class="tab-pane fade" role="tabpanel" id="scala_1">
+            <p>The Scala REPL has all high-level SMILE operators pre-imported:</p>
+
+            <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
+$ ./smile scala
+$ ./smile scala -J-Xmx30G   # with extra heap
+            </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
+
+            <div class="code-playground glass" data-lang="scala">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Scala</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-scala"><code class="language-scala">
+smile> val iris = read.arff("data/weka/iris.arff")
+smile> val rf   = randomForest("class" ~, iris)
+smile> println(rf.metrics)
+
+// Tab-completion shows available classifiers:
+smile> smile.classification.r
+randomForest   rbfnet   rda
+            </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
+        </div>
+
+        <div class="tab-pane fade" role="tabpanel" id="kotlin_shell">
+            <p>There is no <code>./smile kotlin</code> CLI REPL. For interactive Kotlin,
+               use <strong>SMILE Studio</strong> (<code>./smile</code>) and open a
+               <code>.kts</code> notebook — the release package includes
+               <code>notebooks/kotlin.ipynb</code> as a starter. The idiomatic API
+               comes from the <code>smile-kotlin</code> artifact:</p>
+            <div class="code-playground glass" data-lang="kotlin">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Kotlin</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-kotlin"><code class="language-kotlin">
+val iris = read.arff("data/weka/iris.arff")
+val rf   = randomForest(Formula.lhs("class"), iris)
+println(rf.metrics())
+            </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
+        </div>
+    </div>
+
+    <h3 id="running-a-script">Running a Script</h3>
+    <p>Save a snippet and run it non-interactively with the matching shell:</p>
+
+    <div class="code-playground glass" data-lang="java">
+  <div class="playground-toolbar">
+    <button type="button" class="lang-tab is-active" data-lang="java" data-pane="pg-script-0">Java</button>
+    <button type="button" class="lang-tab" data-lang="scala" data-pane="pg-script-1">Scala</button>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+    <div id="pg-script-0" class="hero-pane">
+      <pre class="playground-source language-java"><code class="language-java">
 // examples/iris.jsh
 import smile.classification.RandomForest;
 import smile.data.formula.Formula;
@@ -365,54 +684,41 @@ var formula = Formula.lhs("class");
 var rf      = RandomForest.fit(formula, data);
 System.out.println(rf.metrics());
             </code></pre>
-            <pre class="language-bash"><code class="language-bash">
-$ ./smile shell examples/iris.jsh
-            </code></pre>
-        </div>
-
-        <div class="tab-pane fade" role="tabpanel" id="scala_1">
-            <p>The Scala REPL has all high-level SMILE operators pre-imported:</p>
-
-            <pre class="language-bash"><code class="language-bash">
-$ ./smile scala
-$ ./smile scala -J-Xmx30G   # with extra heap
-            </code></pre>
-
-            <pre class="language-scala"><code class="language-scala">
-smile> val iris = read.arff("data/weka/iris.arff")
-smile> val rf   = randomForest("class" ~, iris)
-smile> println(rf.metrics)
-
-// Tab-completion shows available classifiers:
-smile> smile.classification.r
-randomForest   rbfnet   rda
-            </code></pre>
-
-            <h4>Running a Script</h4>
-            <pre class="language-scala"><code class="language-scala">
+    </div>
+    <div id="pg-script-1" class="hero-pane" hidden>
+      <pre class="playground-source language-scala"><code class="language-scala">
 // examples/iris.sc
 val data    = read.arff("data/weka/iris.arff")
 val formula = "class" ~ "."
 val rf      = smile.classification.randomForest(formula, data)
 println(s"OOB error = %.2f%%" format 100 * rf.error)
             </code></pre>
-            <pre class="language-bash"><code class="language-bash">
+    </div>
+  <div class="playground-editor" hidden></div>
+</div>
+
+    <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <button type="button" class="lang-tab is-active" data-lang="bash" data-pane="pg-script-run-0">Java</button>
+    <button type="button" class="lang-tab" data-lang="bash" data-pane="pg-script-run-1">Scala</button>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+    <div id="pg-script-run-0" class="hero-pane">
+      <pre class="playground-source language-bash"><code class="language-bash">
+$ ./smile shell examples/iris.jsh
+            </code></pre>
+    </div>
+    <div id="pg-script-run-1" class="hero-pane" hidden>
+      <pre class="playground-source language-bash"><code class="language-bash">
 $ ./smile scala examples/iris.sc
             </code></pre>
-        </div>
-
-        <div class="tab-pane fade" role="tabpanel" id="kotlin_shell">
-            <p>A Kotlin REPL is also available:</p>
-            <pre class="language-bash"><code class="language-bash">
-$ ./smile kotlin
-            </code></pre>
-            <pre class="language-kotlin"><code class="language-kotlin">
-smile> val iris = read.arff("data/weka/iris.arff")
-smile> val rf   = randomForest(Formula.lhs("class"), iris)
-smile> println(rf.metrics())
-            </code></pre>
-        </div>
     </div>
+  <div class="playground-editor" hidden></div>
+</div>
 
     <h2 id="cli">Training &amp; Inference CLI</h2>
 
@@ -428,7 +734,16 @@ smile> println(rf.metrics())
     <div class="tab-content">
         <div class="tab-pane fade show active" role="tabpanel" id="training_1">
             <p>Train a Random Forest on the Iris dataset and save the model:</p>
-            <pre class="language-bash"><code class="language-bash">
+            <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
 $ ./smile train \
     --data  data/weka/iris.arff \
     --formula "class ~ ." \
@@ -444,6 +759,8 @@ Training metrics: {
   cross entropy: 0.1316
 }
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
             <p>Run <code>./smile train -h</code> for a full list of supported algorithms
                (ada-boost, cart, gradient-boost, lasso, lda, logistic, mlp, ols, qda,
                random-forest, rbf, rda, ridge, svm, …) and
@@ -451,7 +768,16 @@ Training metrics: {
         </div>
         <div class="tab-pane fade" role="tabpanel" id="predict_1">
             <p>Run batch inference on a file using a saved model:</p>
-            <pre class="language-bash"><code class="language-bash">
+            <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
 $ ./smile predict \
     --model iris_rf.sml \
     --probability \
@@ -461,12 +787,23 @@ $ ./smile predict \
 0 0.9599 0.0206 0.0195
 ...
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
             <p>The optional <code>--probability</code> flag outputs posterior class probabilities
                alongside the predicted label.</p>
         </div>
         <div class="tab-pane fade" role="tabpanel" id="serve_1">
             <p>Start an HTTP inference server (powered by Quarkus):</p>
-            <pre class="language-bash"><code class="language-bash">
+            <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
 $ ./smile serve --model iris_rf.sml
 INFO  Listening on: http://0.0.0.0:8080
 
@@ -477,6 +814,8 @@ $ curl -X POST http://localhost:8080/api/v1/models/iris_rf-1 \
 
 {"class":0,"probability":[0.9599,0.0207,0.0194]}
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
             <p>If <code>--model</code> points to a directory, every <code>.sml</code> file is
                loaded automatically.  Discover available endpoints with
                <code>GET /api/v1/models</code>.</p>
@@ -485,7 +824,16 @@ $ curl -X POST http://localhost:8080/api/v1/models/iris_rf-1 \
             <p>The <code>/stream</code> endpoint processes a JSON-lines or CSV request body
                element-by-element with full back-pressure, making it safe to send very large
                payloads (multi-GB):</p>
-            <pre class="language-bash"><code class="language-bash">
+            <div class="code-playground glass" data-lang="bash">
+  <div class="playground-toolbar">
+    <span class="lang-tab is-active">Bash</span>
+    <span class="toolbar-spacer"></span>
+    <button type="button" class="btn btn-ghost btn-sm playground-copy">Copy</button>
+    
+
+
+  </div>
+  <pre class="playground-source language-bash"><code class="language-bash">
 # Generate 150,000 rows (iris × 1000) and stream them through the server
 $ for i in {1..1000}; do
     tail -n 153 data/weka/iris.arff | head -n 150
@@ -493,540 +841,58 @@ $ for i in {1..1000}; do
               -X POST --data-binary @- \
               http://localhost:8080/api/v1/models/iris_rf-1/stream
             </code></pre>
+  <div class="playground-editor" hidden></div>
+</div>
             <p>This completes end-to-end (including HTTP transfer and printing) in under 4 seconds
                for 150,000 samples.</p>
         </div>
     </div>
 
-    <h2 id="studio">SMILE Studio</h2>
-
-    <p><strong>SMILE Studio</strong> is an integrated desktop IDE for machine learning and data science.
-       It combines an interactive multi-language notebook, an AI-powered agent panel, a file explorer,
-       and a kernel explorer in a single window.
-       Launch it from the release package:</p>
-
-    <pre class="language-bash"><code class="language-bash">
-cd bin
-./setup    # first-time: installs native libraries
-./smile    # launches SMILE Studio
-    </code></pre>
-
-    <p>SMILE Studio requires <strong>Java 25</strong> and a graphical (non-headless) environment.
-       At least 4 GB RAM; 8 GB recommended for large datasets.</p>
-
-    <h3 id="studio-layout">Application Layout</h3>
-
-    <div class="table-responsive">
-    <table class="table table-striped table-bordered">
-      <thead><tr><th>Panel</th><th>Description</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Notebook</strong> (center)</td>
-            <td>Multi-cell editor supporting Java (JShell), Scala, and Python kernels.
-                Supports <code>.java</code>, <code>.jsh</code>, <code>.scala</code>,
-                <code>.sc</code>, <code>.py</code>, and <code>.ipynb</code> files.</td></tr>
-        <tr><td><strong>AI Agent Panel</strong> (right)</td>
-            <td>Three built-in agents: <em>Clair the Analyst</em> (end-to-end ML),
-                <em>James the Java Guru</em> (Java/SMILE), and
-                <em>Guido the Pythonista</em> (Python). Supports slash commands,
-                shell execution, and long-term memory via <code>SMILE.md</code>.</td></tr>
-        <tr><td><strong>Project Explorer</strong> (left)</td>
-            <td>File tree of the current working directory.
-                Double-click any supported source file to open it in the notebook.</td></tr>
-        <tr><td><strong>Kernel Explorer</strong> (left)</td>
-            <td>Live view of runtime variables grouped by type (DataFrames, Matrices, Models, Services).
-                Double-click a Model node to save it as a <code>.sml</code> file and register
-                it as an inference service.</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <h3 id="studio-kernels">Execution Kernels</h3>
-
-    <div class="table-responsive">
-    <table class="table table-striped table-bordered">
-      <thead><tr><th>Kernel</th><th>How to use</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Java (JShell)</strong></td>
-            <td>Open or create a <code>.java</code> / <code>.jsh</code> notebook</td>
-            <td>Runs in a separate JVM; ZGC, 75% max RAM. New notebooks are
-                pre-populated with all SMILE imports.</td></tr>
-        <tr><td><strong>Scala</strong></td>
-            <td>Open a <code>.scala</code> / <code>.sc</code> notebook</td>
-            <td>JSR-223 script engine; all SMILE Scala operators available.</td></tr>
-        <tr><td><strong>Python (iPython)</strong></td>
-            <td>Open a <code>.py</code> / <code>.ipynb</code> notebook</td>
-            <td>Requires <code>pip install ipython</code>.</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <h3 id="studio-shortcuts">Key Shortcuts</h3>
-
-    <div class="table-responsive">
-    <table class="table table-condensed table-bordered">
-      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
-      <tbody>
-        <tr><td><code>Ctrl + Enter</code></td><td>Run cell, stay in current cell</td></tr>
-        <tr><td><code>Shift + Enter</code></td><td>Run cell, move to next cell (creates one if needed)</td></tr>
-        <tr><td><code>Alt + Enter</code></td><td>Run cell, insert new cell below</td></tr>
-        <tr><td><code>Tab</code></td><td>AI-powered line completion (requires AI service configured)</td></tr>
-        <tr><td><code>Ctrl + =</code> / <code>Ctrl + -</code></td><td>Increase / decrease font size globally</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <h3 id="studio-ai">AI Agents &amp; Magic Commands</h3>
-
-    <p>Each cell has a <strong>Prompt</strong> field: type a natural language description and press
-       <kbd>Enter</kbd> to have the AI generate code directly into the editor.
-       The Java kernel also supports Maven dependency magic commands:</p>
-
-    <pre class="language-java"><code class="language-java">
-//!mvn org.apache.commons:commons-math3:3.6.1
-// ↑ resolves the artifact transitively and adds it to the JShell classpath
-    </code></pre>
-
-    <p>In the Agent Panel, use slash commands to drive the full ML workflow without writing code:</p>
-
-    <div class="table-responsive">
-    <table class="table table-condensed table-bordered">
-      <thead><tr><th>Command</th><th>Description</th></tr></thead>
-      <tbody>
-        <tr><td><code>/train</code></td><td>Train a model via <code>smile train</code></td></tr>
-        <tr><td><code>/predict</code></td><td>Run batch inference via <code>smile predict</code></td></tr>
-        <tr><td><code>/serve</code></td><td>Start an inference server via <code>smile serve</code></td></tr>
-        <tr><td><code>/plan &lt;goal&gt;</code></td><td>Enter planning mode for multi-step tasks</td></tr>
-        <tr><td><code>/memory add &lt;text&gt;</code></td><td>Persist project context to <code>SMILE.md</code></td></tr>
-        <tr><td><code>/compact</code></td><td>Summarize the conversation to free context window space</td></tr>
-        <tr><td><code>/clear</code></td><td>Clear the current agent conversation</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <p>Configure the AI provider (OpenAI, Anthropic, Google Gemini, Azure OpenAI, or Vertex AI)
-       and API key under <strong>File &gt; Settings…</strong>.
-       MCP (Model Context Protocol) servers can be wired in via
-       <code>.smile/mcp.json</code> for extended tool access.</p>
-
-    <h2 id="tutorial">A Gentle Tutorial</h2>
-
-    <p>This example demonstrates the end-to-end machine learning workflow in SMILE:
-       loading data, training multiple models, evaluating performance, and making predictions.</p>
-
-    <h3 id="loading-data">1. Loading Data</h3>
-
-    <p>SMILE supports many data formats: Parquet, Avro, Arrow, CSV, ARFF, LibSVM, JSON, and more.
-       All parsers return a <a href="api/java/smile/data/DataFrame.html">DataFrame</a>.
-    </p>
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_2" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_2" type="button" role="tab">Scala</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#kotlin_2" type="button" role="tab">Kotlin</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="java_2">
-            <pre class="language-java"><code class="language-java">
-import smile.io.*;
-import org.apache.commons.csv.CSVFormat;
-
-// ARFF file (e.g. Weka datasets)
-var weather  = Read.arff("data/weka/weather.nominal.arff");
-
-// CSV with a space delimiter and no header row
-var format   = CSVFormat.DEFAULT.withDelimiter(' ');
-var zipTrain = Read.csv("data/usps/zip.train", format);
-var zipTest  = Read.csv("data/usps/zip.test",  format);
-            </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="scala_2">
-            <pre class="language-scala"><code class="language-scala">
-import smile.io._
-
-val weather  = read.arff("data/weka/weather.nominal.arff")
-val zipTrain = read.csv("data/usps/zip.train", delimiter = " ", header = false)
-val zipTest  = read.csv("data/usps/zip.test",  delimiter = " ", header = false)
-            </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="kotlin_2">
-            <pre class="language-kotlin"><code class="language-kotlin">
-import smile.io.*
-
-val weather  = Read.arff("data/weka/weather.nominal.arff")
-val zipTrain = Read.csv("data/usps/zip.train")
-            </code></pre>
-        </div>
-    </div>
-
-    <p>Because the USPS data has no header, the parser names columns V1, V2, …  The first
-       column (V1) is the class label.</p>
-
-    <h3 id="formula">2. The Formula API</h3>
-
-    <p>A <a href="api/java/smile/data/formula/Formula.html">Formula</a> specifies the model in
-       a symbolic, R-style way.  The left-hand side (LHS) names the response variable;
-       the right-hand side (RHS) lists predictors.  When the RHS is omitted, all remaining
-       columns are used.  Terms can also include functions and interaction terms.</p>
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_formula" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_formula" type="button" role="tab">Scala</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="java_formula">
-            <pre class="language-java"><code class="language-java">
-import smile.data.formula.Formula;
-
-// Predict "V1" from all other columns
-var formula = Formula.lhs("V1");
-
-// Extract feature matrix and label array
-var x = formula.x(zipTrain).toArray();
-var y = formula.y(zipTrain).toIntArray();
-            </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="scala_formula">
-            <pre class="language-scala"><code class="language-scala">
-val formula: Formula = "V1" ~ "."
-
-val x = formula.x(zipTrain).toArray()
-val y = formula.y(zipTrain).toIntArray()
-            </code></pre>
-        </div>
-    </div>
-
-    <h3 id="random-forest">3. Random Forest</h3>
-
-    <p>Random Forest is an ensemble of decision trees trained on bootstrap samples of the data.
-       It estimates accuracy via out-of-bag (OOB) samples, so a separate validation set is
-       not strictly required.</p>
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_4" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_4" type="button" role="tab">Scala</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="java_4">
-            <pre class="language-java"><code class="language-java">
-import smile.classification.*;
-import smile.data.formula.Formula;
-
-var formula = Formula.lhs("V1");
-
-var prop = new java.util.Properties();
-prop.setProperty("smile.random.forest.trees", "200");
-
-var forest = RandomForest.fit(formula, zipTrain, prop);
-System.out.println(forest.metrics());
-// Training metrics: {accuracy: 97.28%, ...}
-            </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="scala_4">
-            <pre class="language-scala"><code class="language-scala">
-val formula: Formula = "V1" ~ "."
-val forest = randomForest(formula, zipTrain, ntrees = 200)
-println(forest.metrics)
-            </code></pre>
-        </div>
-    </div>
-
-    <h3 id="svm">4. Support Vector Machine</h3>
-
-    <p>SVM is a kernel-based classifier.  It operates on raw arrays rather than DataFrames,
-       so we extract arrays from the formula first.  For multi-class problems, use one-vs-one
-       or one-vs-rest strategies.</p>
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_6" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_6" type="button" role="tab">Scala</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="java_6">
-            <pre class="language-java"><code class="language-java">
-import smile.math.kernel.GaussianKernel;
-import smile.validation.*;
-
-var testx  = formula.x(zipTest).toArray();
-var testy  = formula.y(zipTest).toIntArray();
-
-var kernel = new GaussianKernel(8.0);
-var svm    = OneVersusOne.fit(x, y,
-                 (xi, yi) -> SVM.fit(xi, yi, kernel, 5, 1E-3));
-
-var pred = svm.predict(testx);
-System.out.format("Accuracy = %.2f%%%n",
-    100.0 * Accuracy.of(testy, pred));
-System.out.format("Confusion Matrix:%n%s%n",
-    ConfusionMatrix.of(testy, pred));
-            </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="scala_6">
-            <pre class="language-scala"><code class="language-scala">
-val testx  = formula.x(zipTest).toArray()
-val testy  = formula.y(zipTest).toIntArray()
-val kernel = new GaussianKernel(8.0)
-
-val svm = ovo(x, y) { (xi, yi) =>
-  SVM.fit(xi, yi, kernel, 5, 1E-3)
-}
-
-val pred = svm.predict(testx)
-println("Accuracy = %.2f%%" format (100.0 * Accuracy.of(testy, pred)))
-            </code></pre>
-        </div>
-    </div>
-
-    <h3 id="neural-network">5. Neural Network (MLP)</h3>
-
-    <p>The classic SMILE MLP is a lightweight CPU-only network suitable for
-       tabular data.  Always standardize features before training a neural network.</p>
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_7" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_7" type="button" role="tab">Scala</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="java_7">
-            <pre class="language-java"><code class="language-java">
-import smile.base.mlp.*;
-import smile.classification.MLP;
-import smile.math.MathEx;
-import smile.math.TimeFunction;
-import smile.validation.metric.Accuracy;
-
-// Standardize features
-var scaler = smile.feature.Standardizer.fit(x);
-var xn     = scaler.transform(x);
-var testxn = scaler.transform(testx);
-
-var net = new MLP(
-    Layer.input(256),
-    Layer.sigmoid(768),
-    Layer.sigmoid(192),
-    Layer.sigmoid(30),
-    Layer.mle(10, OutputFunction.SIGMOID)
-);
-net.setLearningRate(TimeFunction.linear(0.01, 20000, 0.001));
-
-for (int epoch = 0; epoch < 10; epoch++) {
-    for (int i : MathEx.permutate(xn.length)) {
-        net.update(xn[i], y[i]);
-    }
-    var pred = net.predict(testxn);
-    System.out.format("Epoch %d  Accuracy = %.2f%%%n",
-        epoch, 100.0 * Accuracy.of(testy, pred));
-}
-            </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="scala_7">
-            <pre class="language-scala"><code class="language-scala">
-import smile.base.mlp._
-import smile.math.TimeFunction
-
-val scaler = smile.feature.Standardizer.fit(x)
-val xn     = scaler.transform(x)
-val testxn = scaler.transform(testx)
-
-val net = new MLP(
-  Layer.input(256),
-  Layer.sigmoid(768),
-  Layer.sigmoid(192),
-  Layer.sigmoid(30),
-  Layer.mle(10, OutputFunction.SIGMOID)
-)
-net.setLearningRate(TimeFunction.linear(0.01, 20000, 0.001))
-
-(0 until 10).foreach { epoch =>
-  MathEx.permutate(xn.length).foreach(i => net.update(xn(i), y(i)))
-  val pred = net.predict(testxn)
-  println(s"Epoch $epoch  Accuracy = %.2f%%" format
-      (100.0 * Accuracy.of(testy, pred)))
-}
-            </code></pre>
-        </div>
-    </div>
-
-    <h3 id="prediction">6. Making Predictions</h3>
-
-    <p>Call <code>predict</code> on a single sample or an array.
-       Soft classifiers (neural networks, random forest, logistic regression)
-       can also return posterior class probabilities.</p>
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_8" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_8" type="button" role="tab">Scala</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="java_8">
-            <pre class="language-java"><code class="language-java">
-// Hard prediction (class label only)
-int label = forest.predict(zipTest.get(0));
-int svmLabel = svm.predict(testx[0]);
-
-// Soft prediction (class label + posterior probabilities)
-var proba = new double[10];
-forest.predict(zipTest.get(0), proba);
-net.predict(testxn[0], proba);
-            </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="scala_8">
-            <pre class="language-scala"><code class="language-scala">
-val label    = forest.predict(zipTest.get(0))
-val svmLabel = svm.predict(testx(0))
-
-val proba = new Array[Double](10)
-forest.predict(zipTest.get(0), proba)
-net.predict(testxn(0), proba)
-            </code></pre>
-        </div>
-    </div>
-
-    <h3 id="serialization">7. Saving &amp; Loading Models</h3>
-
-    <p>Most SMILE models implement <code>java.io.Serializable</code>.
-       Serialize them to disk for production deployment or Spark scoring.</p>
-
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#java_ser" type="button" role="tab">Java</button></li>
-        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#scala_ser" type="button" role="tab">Scala</button></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" role="tabpanel" id="java_ser">
-            <pre class="language-java"><code class="language-java">
-import java.io.*;
-
-// Save
-try (var out = new ObjectOutputStream(
-        new FileOutputStream("forest.sml"))) {
-    out.writeObject(forest);
-}
-
-// Load
-try (var in = new ObjectInputStream(
-        new FileInputStream("forest.sml"))) {
-    var loaded = (RandomForest) in.readObject();
-    System.out.println(loaded.predict(zipTest.get(0)));
-}
-            </code></pre>
-        </div>
-        <div class="tab-pane fade" role="tabpanel" id="scala_ser">
-            <pre class="language-scala"><code class="language-scala">
-import java.io._
-
-// Save
-val out = new ObjectOutputStream(new FileOutputStream("forest.sml"))
-out.writeObject(forest); out.close()
-
-// Load
-val in = new ObjectInputStream(new FileInputStream("forest.sml"))
-val loaded = in.readObject().asInstanceOf[RandomForest]
-in.close()
-            </code></pre>
-        </div>
-    </div>
-
-    <h2 id="deep-learning-quickstart">Deep Learning &amp; LLM Quickstart</h2>
-
-    <p>The <code>smile-deep</code> module wraps LibTorch (PyTorch C++) and provides
-       GPU-accelerated tensors, neural network layers, pretrained vision models, and a
-       complete LLaMA-3 inference stack.
-       See <a href="deep-learning.html">Deep Learning</a> and <a href="llm.html">LLM</a>
-       for full documentation.</p>
-
-    <h3 id="dl-image">Image Classification with EfficientNet-V2</h3>
-
-    <pre class="language-java"><code class="language-java">
-import smile.vision.EfficientNet;
-import smile.vision.ImageNet;
-import javax.imageio.ImageIO;
-import java.io.File;
-
-// Load pretrained EfficientNet-V2-S (21 M parameters, ImageNet top-1 ~84%)
-var model = EfficientNet.V2S();
-
-// The model's built-in Transform automatically resizes and normalises the image
-var img = ImageIO.read(new File("dog.jpg"));
-
-try (var logits = model.forward(img)) {          // shape [1, 1000]
-    var probs    = logits.softmax(1);
-    int classIdx = probs.argmax(1, false).intValue();
-    System.out.println(ImageNet.INSTANCE.labelOf(classIdx));
-}
-    </code></pre>
-
-    <h3 id="dl-train">Training a Custom MLP with LibTorch</h3>
-
-    <pre class="language-java"><code class="language-java">
-import smile.deep.*;
-import smile.deep.layer.*;
-import smile.deep.tensor.Tensor;
-
-var mlp = new SequentialBlock(
-    Layer.relu(784, 256),
-    Layer.relu(256, 128),
-    Layer.logSoftmax(128, 10)
-);
-
-var optimizer = Optimizer.adam(mlp.asTorch().parameters(), 1e-3);
-var criterion = Loss.nll();
-
-mlp.train(10, trainDataset, criterion, optimizer,
-          new smile.deep.metric.Accuracy(), testDataset);
-    </code></pre>
-
-    <h3 id="llm-chat">LLaMA-3 Chat Completion</h3>
-
-    <pre class="language-java"><code class="language-java">
-import smile.llm.llama.Llama;
-import smile.llm.Message;
-
-var llama = Llama.build(
-    "model/Meta-Llama-3-8B-Instruct",        // checkpoint directory
-    "model/Meta-Llama-3-8B-Instruct/tokenizer.model",
-    /*maxBatchSize=*/ 4,
-    /*maxSeqLen=*/    2048,
-    /*deviceId=*/     (byte) 0               // CUDA:0; -1 for CPU
-);
-
-var reply = llama.chat(
-    new Message[]{
-        Message.system("You are a helpful assistant."),
-        Message.user("Explain gradient descent in one paragraph.")
-    },
-    /*maxGenLen=*/ 256, /*temperature=*/ 0.7,
-    /*topp=*/ 0.9, /*logprobs=*/ false, /*seed=*/ 0L, /*publisher=*/ null
-);
-
-System.out.println(reply.content());
-    </code></pre>
-
-    <p>For streaming output, pass a <code>SubmissionPublisher&lt;String&gt;</code> as the
-       last argument.  See <a href="llm.html">Large Language Models</a> for full examples
-       including raw token generation and the OpenAI-compatible REST server.</p>
-
     <div id="btnv">
-        <a class="btn-next-text" href="overview.html"
-           title="Next Section: What's Machine Learning">
-            <span>What's Machine Learning</span>
+        <a class="btn-next-text" href="studio.html"
+           title="Next Section: SMILE Studio">
+            <span>SMILE Studio</span>
         </a>
         <span class="btn-arrow-right">&nbsp;&rarr;</span>
     </div>
 </div>
 
-</div>
+
+  </div>
+  <div class="palette-backdrop" id="command-palette" hidden>
+  <div class="palette glass" role="dialog" aria-modal="true" aria-label="Search documentation">
+    <input type="search" id="palette-input" placeholder="Search pages and headings…" autocomplete="off" aria-label="Search">
+    <ul class="palette-results" id="palette-results"></ul>
+    <p class="palette-empty" id="palette-empty" hidden>No matches.</p>
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/vendor/prism/prism.min.js"></script>
-<script src="js/vendor/prism/prism-clike.min.js"></script>
-<script src="js/vendor/prism/prism-java.min.js"></script>
-<script src="js/vendor/prism/prism-scala.min.js"></script>
-<script src="js/vendor/prism/prism-kotlin.min.js"></script>
-<script src="js/vendor/prism/prism-groovy.min.js"></script>
-<script src="js/vendor/prism/prism-clojure.min.js"></script>
-<script src="js/vendor/prism/prism-bash.min.js"></script>
-<script src="js/vendor/prism/prism-markup.min.js"></script>
-<script src="js/toc.js"></script>
-<script src="js/site.js"></script>
+  <div id="contact-modal" class="contact-modal" hidden>
+    <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <div class="contact-modal-bar">
+        <p id="contact-modal-title" class="contact-modal-title">Contact Us</p>
+        <button type="button" class="icon-btn" data-contact-close aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="contact-modal-frame-clip">
+        <iframe class="contact-modal-frame" title="Contact form" data-src="https://docs.google.com/forms/d/e/1FAIpQLSe-r5s7DrzXchPUagg5_6mEp_p78zpWQk6A9Z9JxAikKIGxIQ/viewform?embedded=true">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+  <script defer src="js/vendor/prism/prism.min.js"></script>
+  <script defer src="js/vendor/prism/prism-clike.min.js"></script>
+  <script defer src="js/vendor/prism/prism-java.min.js"></script>
+  <script defer src="js/vendor/prism/prism-scala.min.js"></script>
+  <script defer src="js/vendor/prism/prism-kotlin.min.js"></script>
+  <script defer src="js/vendor/prism/prism-groovy.min.js"></script>
+  <script defer src="js/vendor/prism/prism-clojure.min.js"></script>
+  <script defer src="js/vendor/prism/prism-bash.min.js"></script>
+  <script defer src="js/vendor/prism/prism-markup.min.js"></script>
+  <script src="js/dedent.js"></script>
+  <script src="js/toc.js"></script>
+  <script src="js/site.js"></script>
+  <script defer src="js/search.js"></script>
+  <script src="js/playground.js"></script>
 </body>
 </html>

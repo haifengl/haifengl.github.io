@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
+<script type="text/javascript" src="/api/java/script-dir/gtag.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>smile.plot.swing</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../index.html" tabindex="1">
+                    smile-kotlin
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+7.0.0        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":kotlin/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":kotlin/main"
+                                       data-filter=":kotlin/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    smile-kotlin
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="smile-kotlin::smile.plot.swing////PointingToDeclaration//-1360140095">
+  <div class="breadcrumbs"><a href="../../index.html">smile-kotlin</a><span class="delimiter">/</span><span class="current">smile.plot.swing</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><p class="paragraph">Mathematical and statistical Swing plots.</p><p class="paragraph">Swing based data visualization provides interactive charts and graphs including scatter plots, line plots, bar charts, box plots, histograms, QQ plots, heatmaps, contour plots, 3D surface and wireframe plots, and dendrograms.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="-1820329487%2FClasslikes%2F-1360140095" anchor-label="CanvasWindow" id="-1820329487%2FClasslikes%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-canvas-window/index.html"><span>Canvas</span><wbr></wbr><span><span>Window</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1820329487%2FClasslikes%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-canvas-window/index.html">CanvasWindow</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>frame<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JFrame.html">JFrame</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>canvas<span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></span></span><span class="token punctuation">)</span> : <a href="-j-window/index.html">JWindow</a></div><div class="brief "><p class="paragraph">Plot canvas window.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1345173262%2FClasslikes%2F-1360140095" anchor-label="Html" id="1345173262%2FClasslikes%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-html/index.html"><span><span>Html</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1345173262%2FClasslikes%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-html/index.html">Html</a></div><div class="brief "><p class="paragraph">HTML <code class="lang-kotlin">&lt;img&gt;</code> tag generator for Figure and JComponent.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1097785521%2FClasslikes%2F-1360140095" anchor-label="JWindow" id="-1097785521%2FClasslikes%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-j-window/index.html"><span><span>JWindow</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1097785521%2FClasslikes%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-j-window/index.html">JWindow</a></div><div class="brief "><p class="paragraph">JFrame window wrapper.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1539068380%2FClasslikes%2F-1360140095" anchor-label="MultiFigureWindow" id="1539068380%2FClasslikes%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-multi-figure-window/index.html"><span>Multi</span><wbr></wbr><span>Figure</span><wbr></wbr><span><span>Window</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1539068380%2FClasslikes%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-multi-figure-window/index.html">MultiFigureWindow</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>frame<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JFrame.html">JFrame</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>canvas<span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/MultiFigurePane///PointingToDeclaration/">MultiFigurePane</span></span></span><span class="token punctuation">)</span> : <a href="-j-window/index.html">JWindow</a></div><div class="brief "><p class="paragraph">Multi-figure plot window.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-113602788%2FFunctions%2F-1360140095" anchor-label="barplot" id="-113602788%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="barplot.html"><span><span>barplot</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-113602788%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="barplot.html"><span class="token function">barplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="barplot.html"><span class="token function">barplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int-array/index.html">IntArray</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Bar plot.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="barplot.html"><span class="token function">barplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">labels<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Grouped bar plot.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-84975769%2FFunctions%2F-1360140095" anchor-label="boxplot" id="-84975769%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="boxplot.html"><span><span>boxplot</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-84975769%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="boxplot.html"><span class="token function">boxplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">vararg </span>data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Box plot from variable arrays.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="boxplot.html"><span class="token function">boxplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">labels<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Box plot with labels.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="boxplot.html"><span class="token function">boxplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><span data-unresolved-link="smile.data/DataFrame///PointingToDeclaration/">DataFrame</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">vararg </span>labels<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Box plot from a data frame.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="784339347%2FFunctions%2F-1360140095" anchor-label="contour" id="784339347%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="contour.html"><span><span>contour</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="784339347%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="contour.html"><span class="token function">contour</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Contour plot.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="contour.html"><span class="token function">contour</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">levels<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Contour plot with specified levels.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="contour.html"><span class="token function">contour</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Contour plot with grid coordinates.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="378237692%2FFunctions%2F-1360140095" anchor-label="dendrogram" id="378237692%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dendrogram.html"><span><span>dendrogram</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="378237692%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="dendrogram.html"><span class="token function">dendrogram</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">hc<span class="token operator">: </span><span data-unresolved-link="smile.clustering/HierarchicalClustering///PointingToDeclaration/">HierarchicalClustering</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Dendrogram for hierarchical clustering.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="dendrogram.html"><span class="token function">dendrogram</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">merge<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int-array/index.html">IntArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">height<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Dendrogram for hierarchical clustering tree and heights.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1756452549%2FFunctions%2F-1360140095" anchor-label="grid" id="1756452549%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="grid.html"><span><span>grid</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1756452549%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="grid.html"><span class="token function">grid</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">2D grid plot.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1131265433%2FFunctions%2F-1360140095" anchor-label="heatmap" id="1131265433%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="heatmap.html"><span><span>heatmap</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1131265433%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="heatmap.html"><span class="token function">heatmap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">palette<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator">&gt;</span><span class="token operator"> = </span>Palette.jet(16)</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Pseudo heatmap plot.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="heatmap.html"><span class="token function">heatmap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">rowLabels<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">columnLabels<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">palette<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator">&gt;</span><span class="token operator"> = </span>Palette.jet(16)</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Pseudo heatmap plot with row and column labels.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="heatmap.html"><span class="token function">heatmap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">palette<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator">&gt;</span><span class="token operator"> = </span>Palette.jet(16)</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Pseudo heatmap plot with coordinate axes.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="126297382%2FFunctions%2F-1360140095" anchor-label="hexmap" id="126297382%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hexmap.html"><span><span>hexmap</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="126297382%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="hexmap.html"><span class="token function">hexmap</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">palette<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator">&gt;</span><span class="token operator"> = </span>Palette.jet(16)</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Heatmap with hex shape.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="743301323%2FFunctions%2F-1360140095" anchor-label="hist" id="743301323%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hist.html"><span><span>hist</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="743301323%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="hist.html"><span class="token function">hist</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">breaks<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">prob<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">color<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator"> = </span>Color.BLUE</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Histogram plot with custom breaks.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="hist.html"><span class="token function">hist</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">k<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10</span><span class="token punctuation">, </span></span><span class="parameter ">prob<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">color<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator"> = </span>Color.BLUE</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Histogram plot.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1092209980%2FFunctions%2F-1360140095" anchor-label="hist3" id="-1092209980%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hist3.html"><span><span>hist3</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1092209980%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="hist3.html"><span class="token function">hist3</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">xbins<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10</span><span class="token punctuation">, </span></span><span class="parameter ">ybins<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10</span><span class="token punctuation">, </span></span><span class="parameter ">prob<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">palette<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator">&gt;</span><span class="token operator"> = </span>Palette.jet(16)</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">3D histogram plot.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1485710586%2FFunctions%2F-1360140095" anchor-label="line" id="1485710586%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="line.html"><span><span>line</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1485710586%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="line.html"><span class="token function">line</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">style<span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Line.Style///PointingToDeclaration/">Line.Style</span><span class="token operator"> = </span>Line.Style.SOLID<span class="token punctuation">, </span></span><span class="parameter ">color<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator"> = </span>Color.BLACK<span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>' '<span class="token punctuation">, </span></span><span class="parameter ">label<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Line plot.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1580881203%2FFunctions%2F-1360140095" anchor-label="plot" id="-1580881203%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="plot.html"><span><span>plot</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1580881203%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="plot.html"><span class="token function">plot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>'*'</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Scatter plot with string group labels.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="plot.html"><span class="token function">plot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>'*'<span class="token punctuation">, </span></span><span class="parameter ">color<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator"> = </span>Color.BLACK</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Scatter plot.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="plot.html"><span class="token function">plot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int-array/index.html">IntArray</a><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>'*'</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Scatter plot with integer class labels.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="plot.html"><span class="token function">plot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><span data-unresolved-link="smile.data/DataFrame///PointingToDeclaration/">DataFrame</span><span class="token punctuation">, </span></span><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>'*'<span class="token punctuation">, </span></span><span class="parameter ">color<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator"> = </span>Color.BLACK</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Scatter plot from a data frame.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="plot.html"><span class="token function">plot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><span data-unresolved-link="smile.data/DataFrame///PointingToDeclaration/">DataFrame</span><span class="token punctuation">, </span></span><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">category<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>'*'</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Scatter plot from a data frame with color by category.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="plot.html"><span class="token function">plot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><span data-unresolved-link="smile.data/DataFrame///PointingToDeclaration/">DataFrame</span><span class="token punctuation">, </span></span><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>'*'<span class="token punctuation">, </span></span><span class="parameter ">color<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator"> = </span>Color.BLACK</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">3D Scatter plot from a data frame.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="plot.html"><span class="token function">plot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><span data-unresolved-link="smile.data/DataFrame///PointingToDeclaration/">DataFrame</span><span class="token punctuation">, </span></span><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">category<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>'*'</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">3D Scatter plot from a data frame with color by category.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1560010369%2FFunctions%2F-1360140095" anchor-label="qqplot" id="-1560010369%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="qqplot.html"><span><span>qqplot</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1560010369%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="qqplot.html"><span class="token function">qqplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">QQ plot of samples to standard normal distribution.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="qqplot.html"><span class="token function">qqplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">QQ plot of two continuous sample sets.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="qqplot.html"><span class="token function">qqplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">d<span class="token operator">: </span><span data-unresolved-link="smile.stat.distribution/Distribution///PointingToDeclaration/">Distribution</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">QQ plot of samples to given distribution.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="qqplot.html"><span class="token function">qqplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int-array/index.html">IntArray</a><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int-array/index.html">IntArray</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">QQ plot of two discrete sample sets.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="qqplot.html"><span class="token function">qqplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int-array/index.html">IntArray</a><span class="token punctuation">, </span></span><span class="parameter ">d<span class="token operator">: </span><span data-unresolved-link="smile.stat.distribution/DiscreteDistribution///PointingToDeclaration/">DiscreteDistribution</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">QQ plot of samples to given discrete distribution.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1912761302%2FFunctions%2F-1360140095" anchor-label="screeplot" id="1912761302%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="screeplot.html"><span><span>screeplot</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1912761302%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="screeplot.html"><span class="token function">screeplot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">varianceProportion<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Scree plot for principal component analysis.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1079497580%2FFunctions%2F-1360140095" anchor-label="show" id="-1079497580%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show.html"><span><span>show</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1079497580%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="show.html"><span class="token function">show</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scene<span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Scene///PointingToDeclaration/">Scene</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JFrame.html">JFrame</a></div><div class="brief "><p class="paragraph">Shows a scene in a new window.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1317302988%2FFunctions%2F-1360140095" anchor-label="splom" id="1317302988%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="splom.html"><span><span>splom</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1317302988%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="splom.html"><span class="token function">splom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><span data-unresolved-link="smile.data/DataFrame///PointingToDeclaration/">DataFrame</span><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>'*'<span class="token punctuation">, </span></span><span class="parameter ">color<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator"> = </span>Color.BLACK</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/MultiFigurePane///PointingToDeclaration/">MultiFigurePane</span></div><div class="brief "><p class="paragraph">Scatterplot Matrix (SPLOM).</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="splom.html"><span class="token function">splom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><span data-unresolved-link="smile.data/DataFrame///PointingToDeclaration/">DataFrame</span><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token punctuation">, </span></span><span class="parameter ">category<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/MultiFigurePane///PointingToDeclaration/">MultiFigurePane</span></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="splom.html"><span class="token function">splom</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><span data-unresolved-link="smile.data/DataFrame///PointingToDeclaration/">DataFrame</span><span class="token punctuation">, </span></span><span class="parameter ">category<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">mark<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char/index.html">Char</a><span class="token operator"> = </span>'*'</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/MultiFigurePane///PointingToDeclaration/">MultiFigurePane</span></div><div class="brief "><p class="paragraph">Scatterplot Matrix (SPLOM) with color by category.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1009380797%2FFunctions%2F-1360140095" anchor-label="spy" id="-1009380797%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="spy.html"><span><span>spy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1009380797%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="spy.html"><span class="token function">spy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">matrix<span class="token operator">: </span><span data-unresolved-link="smile.tensor/SparseMatrix///PointingToDeclaration/">SparseMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">k<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Visualize sparsity pattern.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="790836526%2FFunctions%2F-1360140095" anchor-label="staircase" id="790836526%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="staircase.html"><span><span>staircase</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="790836526%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="staircase.html"><span class="token function">staircase</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">color<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator"> = </span>Color.BLACK<span class="token punctuation">, </span></span><span class="parameter ">label<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Staircase line plot.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="146488844%2FFunctions%2F-1360140095" anchor-label="surface" id="146488844%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="surface.html"><span><span>surface</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="146488844%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="surface.html"><span class="token function">surface</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">palette<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator">&gt;</span><span class="token operator"> = </span>Palette.jet(16)</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">3D surface plot.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="surface.html"><span class="token function">surface</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token punctuation">, </span></span><span class="parameter ">z<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">palette<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Color.html">Color</a><span class="token operator">&gt;</span><span class="token operator"> = </span>Palette.jet(16)</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">3D surface plot with coordinate grid.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-997771503%2FFunctions%2F-1360140095" anchor-label="text" id="-997771503%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="text.html"><span><span>text</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-997771503%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="text.html"><span class="token function">text</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">texts<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">coordinates<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Text plot.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1535763449%2FFunctions%2F-1360140095" anchor-label="wireframe" id="-1535763449%2FFunctions%2F-1360140095" data-filterable-set=":kotlin/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":kotlin/main" data-filterable-set=":kotlin/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="wireframe.html"><span><span>wireframe</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1535763449%2FFunctions%2F-1360140095"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlin/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="wireframe.html"><span class="token function">wireframe</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">vertices<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double-array/index.html">DoubleArray</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">edges<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int-array/index.html">IntArray</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="smile.plot.swing/Canvas///PointingToDeclaration/">Canvas</span></div><div class="brief "><p class="paragraph">Wireframe plot.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright © 2010-2026 Haifeng Li. All rights reserved. Use is subject to license terms.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

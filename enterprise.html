@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMILE - Enterprise</title>
+  <meta name="description" content="Statistical Machine Intelligence and Learning Engine">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('smile-theme');
+        var theme = (stored === 'dark' || stored === 'light') ? stored : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/prism.min.css" id="prism-light">
+  <link rel="stylesheet" href="css/prism-tomorrow.min.css" id="prism-dark" disabled>
+  <script>
+    (function () {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var lightSheet = document.getElementById('prism-light');
+      var darkSheet = document.getElementById('prism-dark');
+      if (lightSheet && darkSheet) {
+        lightSheet.disabled = dark;
+        darkSheet.disabled = !dark;
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      var queued = [];
+      function stub() { queued.push(arguments); }
+      stub._smileQueue = true;
+      window.vegaEmbed = stub;
+      document.addEventListener('DOMContentLoaded', function () {
+        var embed = window.vegaEmbed;
+        if (typeof embed !== 'function' || embed._smileQueue) return;
+        queued.forEach(function (args) { embed.apply(window, args); });
+      });
+    })();
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-57GD08QCML"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-57GD08QCML');
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header" id="site-header">
+  <nav class="nav-bar" aria-label="Primary">
+    <a class="nav-word" href="index.html">SMILE</a>
+    <ul class="nav-links">
+      <li>
+        <button type="button" aria-expanded="false" aria-haspopup="true">Products</button>
+        <ul class="nav-dropdown">
+          <li><a href="core-engine.html">Core Engine</a></li>
+          <li><a href="serve-engine.html">Serve Engine</a></li>
+          <li><a href="agent-studio.html">Agent Studio</a></li>
+        </ul>
+      </li>
+      <li class="nav-resources">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Resources</button>
+        <ul class="nav-dropdown">
+          <li class="nav-docs">
+            <button type="button" aria-expanded="false" aria-haspopup="true">Docs</button>
+            <div class="nav-panel">
+              <div>
+                <p>Start</p>
+                <a href="quickstart.html">Quick Start</a>
+                <a href="studio.html">SMILE Studio</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="data.html">Data Processing</a>
+                <a href="data-io.html">Data Import and Export</a>
+                <a href="visualization.html">Data Visualization</a>
+                <a href="vegalite.html">Declarative Visualization</a>
+              </div>
+              <div>
+                <p>Supervised</p>
+                <a href="classification.html">Classification</a>
+                <a href="regression.html">Regression</a>
+                <a href="deep-learning.html">Deep Learning</a>
+                <a href="time-series.html">Time Series</a>
+                <a href="sequence-labeling.html">Sequence Labeling</a>
+                <a href="nlp.html">Natural Language Processing</a>
+                <a href="feature-engineering.html">Feature Engineering</a>
+                <a href="model-validation.html">Model Validation</a>
+                <a href="hpo.html">Hyperparameter Optimization</a>
+                <a href="training.html">Unified Training Interface</a>
+              </div>
+              <div>
+                <p>Unsupervised</p>
+                <a href="clustering.html">Clustering</a>
+                <a href="vector-quantization.html">Vector Quantization</a>
+                <a href="anomaly-detection.html">Anomaly Detection</a>
+                <a href="association-rule.html">Association Rule Mining</a>
+                <a href="mds.html">Multi-Dimensional Scaling</a>
+                <a href="manifold.html">Manifold Learning</a>
+              </div>
+              <div>
+                <p>GenAI</p>
+                <a href="llm.html">Large Language Models</a>
+                <a href="computer-vision.html">Computer Vision</a>
+                <a href="onnx.html">ONNX</a>
+                <a href="onnx-genai.html">ONNX GenAI</a>
+                <a href="serve.html">SMILE Serve</a>
+                <p>Math</p>
+                <a href="linear-algebra.html">Linear Algebra</a>
+                <a href="statistics.html">Statistics</a>
+                <a href="interpolation.html">Interpolation</a>
+                <a href="wavelet.html">Wavelet</a>
+                <a href="compressed-sensing.html">Compressed Sensing</a>
+                <a href="graph.html">Graph Data Structure</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-api">
+            <button type="button" aria-expanded="false" aria-haspopup="true">API</button>
+            <ul class="nav-dropdown nav-flyout">
+              <li><a href="api/java/index.html" target="_blank" rel="noopener">Java</a></li>
+              <li><a href="api/scala/index.html" target="_blank" rel="noopener">Scala</a></li>
+              <li><a href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a></li>
+              <li><a href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a></li>
+            </ul>
+          </li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </li>
+      <li><a href="enterprise.html">Enterprise</a></li>
+      <li><a href="licensing.html">Licensing</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-quiet nav-start" href="quickstart.html">Start</a>
+      <button type="button" class="btn btn-accent nav-demo" data-contact-open>Get a demo</button>
+      <button type="button" class="icon-btn" id="search-toggle" aria-label="Open search" title="Search (⌘K)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+  </svg>
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" hidden>
+    <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/>
+  </svg>
+</button>
+
+      <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <button type="button" class="btn btn-accent mobile-contact" data-contact-open>Get a demo</button>
+    <a class="btn btn-quiet mobile-start" href="quickstart.html">Start</a>
+    <details><summary>Products</summary>
+      <a href="core-engine.html">Core Engine</a>
+      <a href="serve-engine.html">Serve Engine</a>
+      <a href="agent-studio.html">Agent Studio</a>
+    </details>
+    <details><summary>Resources</summary>
+      <details><summary>Docs</summary>
+      <p class="drawer-label">Start</p>
+      <a href="quickstart.html">Quick Start</a>
+      <a href="studio.html">SMILE Studio</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="data.html">Data Processing</a>
+      <a href="data-io.html">Data Import and Export</a>
+      <a href="visualization.html">Data Visualization</a>
+      <a href="vegalite.html">Declarative Visualization</a>
+      <p class="drawer-label">Supervised</p>
+      <a href="classification.html">Classification</a>
+      <a href="regression.html">Regression</a>
+      <a href="deep-learning.html">Deep Learning</a>
+      <a href="time-series.html">Time Series</a>
+      <a href="sequence-labeling.html">Sequence Labeling</a>
+      <a href="nlp.html">Natural Language Processing</a>
+      <a href="feature-engineering.html">Feature Engineering</a>
+      <a href="model-validation.html">Model Validation</a>
+      <a href="hpo.html">Hyperparameter Optimization</a>
+      <a href="training.html">Unified Training Interface</a>
+      <p class="drawer-label">Unsupervised</p>
+      <a href="clustering.html">Clustering</a>
+      <a href="vector-quantization.html">Vector Quantization</a>
+      <a href="anomaly-detection.html">Anomaly Detection</a>
+      <a href="association-rule.html">Association Rule Mining</a>
+      <a href="mds.html">Multi-Dimensional Scaling</a>
+      <a href="manifold.html">Manifold Learning</a>
+      <p class="drawer-label">GenAI</p>
+      <a href="llm.html">Large Language Models</a>
+      <a href="computer-vision.html">Computer Vision</a>
+      <a href="onnx.html">ONNX</a>
+      <a href="onnx-genai.html">ONNX GenAI</a>
+      <a href="serve.html">SMILE Serve</a>
+      <p class="drawer-label">Math</p>
+      <a href="linear-algebra.html">Linear Algebra</a>
+      <a href="statistics.html">Statistics</a>
+      <a href="interpolation.html">Interpolation</a>
+      <a href="wavelet.html">Wavelet</a>
+      <a href="compressed-sensing.html">Compressed Sensing</a>
+      <a href="graph.html">Graph Data Structure</a>
+      </details>
+      <details><summary>API</summary>
+      <a href="api/java/index.html" target="_blank" rel="noopener">Java</a>
+      <a href="api/scala/index.html" target="_blank" rel="noopener">Scala</a>
+      <a href="api/kotlin/index.html" target="_blank" rel="noopener">Kotlin</a>
+      <a href="api/clojure/index.html" target="_blank" rel="noopener">Clojure</a>
+      </details>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </details>
+    <a href="enterprise.html">Enterprise</a>
+    <a href="licensing.html">Licensing</a>
+  </div>
+</header>
+
+  <div class="site-shell" id="content">
+    <div class="home ent">
+  <div class="ent-hero">
+    <h1>Edge AI<br>for Enterprise</h1>
+    <div>
+      <p class="ent-lead">HALO runs the model on the branch server, the payment terminal, the vehicle gateway, and the air-gapped node. The data stays where the decision is made.</p>
+      <div class="ent-actions">
+        <button type="button" class="btn btn-accent" data-contact-open>Request a pilot</button>
+        <a class="btn btn-quiet" href="serve-engine.html">See Serve Engine</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-proof">
+    <span>Java</span><span>ONNX</span><span>CPU</span><span>Air-gapped</span><span>Self-hosted</span>
+  </div>
+
+  <section class="ent-section" aria-labelledby="who">
+    <p class="ent-kicker">Who it is for</p>
+    <h2 id="who">The people who already run the edge.</h2>
+    <div class="ent-personas">
+      <article>
+        <h3>Payments and branches</h3>
+        <p>Authorization is already on a short clock. Score the transaction on the server that holds it, before cardholder data leaves the network that is allowed to see it.</p>
+      </article>
+      <article>
+        <h3>Fleet and telematics</h3>
+        <p>Driver and vehicle signals are scored in the cab. A summary comes back when the link is up. The raw stream does not ride the cellular bill.</p>
+      </article>
+      <article>
+        <h3>Sovereign systems</h3>
+        <p>The node keeps working with the network unplugged. The package is small enough to review, and the runtime does not fetch a model or a library from outside.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="ent-section" aria-labelledby="node">
+    <p class="ent-kicker">On the node</p>
+    <h2 id="node">A workload, not another platform to operate.</h2>
+    <ul class="ent-points">
+      <li>
+        <strong>One package</strong>
+        <span>JVM and ONNX in a runtime sized for a branch server or a gateway, on the CPU you already have. A GPU or an NPU is optional.</span>
+      </li>
+      <li>
+        <strong>Scored in place</strong>
+        <span>Tabular models and vision run next to the event. A cloud round trip is no longer part of the decision.</span>
+      </li>
+      <li>
+        <strong>Explained where it ran</strong>
+        <span>A decision can carry a local explanation. The audit stays with the event, on the node.</span>
+      </li>
+      <li>
+        <strong>Still running when the link is down</strong>
+        <span>Inference continues. The log waits, encrypted, until the network returns. A new model can replace the old one without restarting the process.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="ent-section" aria-labelledby="pilot">
+    <div class="ent-close">
+      <div>
+        <p class="ent-kicker">A 30-day pilot</p>
+        <h2 id="pilot">A few of your nodes, your models, your network.</h2>
+        <p>The operating system, the firmware, and the disk stay with what you already have. HALO is the inference runtime on top. We package the models you already have, put the runtime next to the traffic, and measure a live score, a local explanation, a model swap, and a run with the network unplugged. Tell us where the nodes sit and what you score today.</p>
+      </div>
+      <button type="button" class="btn btn-accent" data-contact-open>Request a pilot</button>
+    </div>
+  </section>
+</div>
+
+
+  </div>
+  <div class="palette-backdrop" id="command-palette" hidden>
+  <div class="palette glass" role="dialog" aria-modal="true" aria-label="Search documentation">
+    <input type="search" id="palette-input" placeholder="Search pages and headings…" autocomplete="off" aria-label="Search">
+    <ul class="palette-results" id="palette-results"></ul>
+    <p class="palette-empty" id="palette-empty" hidden>No matches.</p>
+  </div>
+</div>
+
+  <div id="contact-modal" class="contact-modal" hidden>
+    <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <div class="contact-modal-bar">
+        <p id="contact-modal-title" class="contact-modal-title">Contact Us</p>
+        <button type="button" class="icon-btn" data-contact-close aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="contact-modal-frame-clip">
+        <iframe class="contact-modal-frame" title="Contact form" data-src="https://docs.google.com/forms/d/e/1FAIpQLSe-r5s7DrzXchPUagg5_6mEp_p78zpWQk6A9Z9JxAikKIGxIQ/viewform?embedded=true">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+  <script defer src="js/vendor/prism/prism.min.js"></script>
+  <script defer src="js/vendor/prism/prism-clike.min.js"></script>
+  <script defer src="js/vendor/prism/prism-java.min.js"></script>
+  <script defer src="js/vendor/prism/prism-scala.min.js"></script>
+  <script defer src="js/vendor/prism/prism-kotlin.min.js"></script>
+  <script defer src="js/vendor/prism/prism-groovy.min.js"></script>
+  <script defer src="js/vendor/prism/prism-clojure.min.js"></script>
+  <script defer src="js/vendor/prism/prism-bash.min.js"></script>
+  <script defer src="js/vendor/prism/prism-markup.min.js"></script>
+  <script src="js/dedent.js"></script>
+  <script src="js/toc.js"></script>
+  <script src="js/site.js"></script>
+  <script defer src="js/search.js"></script>
+  <script src="js/playground.js"></script>
+</body>
+</html>
