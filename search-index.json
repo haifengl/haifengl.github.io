@@ -1077,17 +1077,27 @@
     "headings": [
       {
         "id": "who",
-        "text": "The people who already run the edge.",
+        "text": "The people who already run the edge",
         "level": 2
       },
       {
         "id": "node",
-        "text": "A workload, not another platform to operate.",
+        "text": "A complete AI engine—train, score, and explain in place",
+        "level": 2
+      },
+      {
+        "id": "flavors",
+        "text": "From 80 MiB gateways to GPU clusters",
+        "level": 2
+      },
+      {
+        "id": "strategy",
+        "text": "SMILE vs. ONNX Runtime / LiteRT",
         "level": 2
       },
       {
         "id": "pilot",
-        "text": "A few of your nodes, your models, your network.",
+        "text": "A few of your nodes, your models, your network",
         "level": 2
       }
     ]
@@ -1320,11 +1330,6 @@
     ]
   },
   {
-    "title": "SMILE - Gallery",
-    "url": "gallery.html",
-    "headings": []
-  },
-  {
     "title": "SMILE - Graph Data Structure",
     "url": "graph.html",
     "headings": [
@@ -1364,6 +1369,11 @@
         "level": 2
       }
     ]
+  },
+  {
+    "title": "SMILE - Gallery",
+    "url": "gallery.html",
+    "headings": []
   },
   {
     "title": "SMILE - Hyperparameter Optimization",
@@ -1415,42 +1425,6 @@
     "title": "SMILE - Statistical Machine Intelligence & Learning Engine",
     "url": "",
     "headings": []
-  },
-  {
-    "title": "SMILE - Interpolation",
-    "url": "interpolation.html",
-    "headings": [
-      {
-        "id": "linear",
-        "text": "Piecewise Linear Interpolation",
-        "level": 2
-      },
-      {
-        "id": "cubic",
-        "text": "Cubic Spline Interpolation",
-        "level": 2
-      },
-      {
-        "id": "kriging",
-        "text": "Kriging Interpolation",
-        "level": 2
-      },
-      {
-        "id": "rbf",
-        "text": "RBF Interpolation",
-        "level": 2
-      },
-      {
-        "id": "shepard",
-        "text": "Shepard Interpolation",
-        "level": 2
-      },
-      {
-        "id": "laplace",
-        "text": "Laplace Interpolation",
-        "level": 2
-      }
-    ]
   },
   {
     "title": "SMILE - Core Engine Commercial License",
@@ -1519,6 +1493,42 @@
       {
         "id": "general",
         "text": "13. General",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Interpolation",
+    "url": "interpolation.html",
+    "headings": [
+      {
+        "id": "linear",
+        "text": "Piecewise Linear Interpolation",
+        "level": 2
+      },
+      {
+        "id": "cubic",
+        "text": "Cubic Spline Interpolation",
+        "level": 2
+      },
+      {
+        "id": "kriging",
+        "text": "Kriging Interpolation",
+        "level": 2
+      },
+      {
+        "id": "rbf",
+        "text": "RBF Interpolation",
+        "level": 2
+      },
+      {
+        "id": "shepard",
+        "text": "Shepard Interpolation",
+        "level": 2
+      },
+      {
+        "id": "laplace",
+        "text": "Laplace Interpolation",
         "level": 2
       }
     ]
