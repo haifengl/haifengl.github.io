@@ -36,7 +36,7 @@
       },
       {
         "id": "the-company",
-        "text": "Seven agents for the company",
+        "text": "Nine agents for the company",
         "level": 2
       }
     ]
@@ -1323,6 +1323,11 @@
         "level": 3
       },
       {
+        "id": "kernelshap",
+        "text": "KernelSHAP",
+        "level": 3
+      },
+      {
         "id": "guide",
         "text": "Choosing the Right Technique",
         "level": 2
@@ -1422,6 +1427,42 @@
     ]
   },
   {
+    "title": "SMILE - Interpolation",
+    "url": "interpolation.html",
+    "headings": [
+      {
+        "id": "linear",
+        "text": "Piecewise Linear Interpolation",
+        "level": 2
+      },
+      {
+        "id": "cubic",
+        "text": "Cubic Spline Interpolation",
+        "level": 2
+      },
+      {
+        "id": "kriging",
+        "text": "Kriging Interpolation",
+        "level": 2
+      },
+      {
+        "id": "rbf",
+        "text": "RBF Interpolation",
+        "level": 2
+      },
+      {
+        "id": "shepard",
+        "text": "Shepard Interpolation",
+        "level": 2
+      },
+      {
+        "id": "laplace",
+        "text": "Laplace Interpolation",
+        "level": 2
+      }
+    ]
+  },
+  {
     "title": "SMILE - Statistical Machine Intelligence & Learning Engine",
     "url": "",
     "headings": []
@@ -1498,115 +1539,8 @@
     ]
   },
   {
-    "title": "SMILE - Interpolation",
-    "url": "interpolation.html",
-    "headings": [
-      {
-        "id": "linear",
-        "text": "Piecewise Linear Interpolation",
-        "level": 2
-      },
-      {
-        "id": "cubic",
-        "text": "Cubic Spline Interpolation",
-        "level": 2
-      },
-      {
-        "id": "kriging",
-        "text": "Kriging Interpolation",
-        "level": 2
-      },
-      {
-        "id": "rbf",
-        "text": "RBF Interpolation",
-        "level": 2
-      },
-      {
-        "id": "shepard",
-        "text": "Shepard Interpolation",
-        "level": 2
-      },
-      {
-        "id": "laplace",
-        "text": "Laplace Interpolation",
-        "level": 2
-      }
-    ]
-  },
-  {
     "title": "SMILE - Serve Engine Commercial License",
     "url": "license-serve.html",
-    "headings": [
-      {
-        "id": "parties",
-        "text": "1. Parties",
-        "level": 2
-      },
-      {
-        "id": "definitions",
-        "text": "2. Definitions",
-        "level": 2
-      },
-      {
-        "id": "grant-of-license",
-        "text": "3. Grant of License",
-        "level": 2
-      },
-      {
-        "id": "ownership",
-        "text": "4. Ownership",
-        "level": 2
-      },
-      {
-        "id": "term-renewal-support",
-        "text": "5. Term; Renewal; Support",
-        "level": 2
-      },
-      {
-        "id": "updates-support-and-cve-windows",
-        "text": "6. Updates, Support, and CVE Windows",
-        "level": 2
-      },
-      {
-        "id": "fees-and-payment",
-        "text": "7. Fees and Payment",
-        "level": 2
-      },
-      {
-        "id": "warranties",
-        "text": "8. Warranties",
-        "level": 2
-      },
-      {
-        "id": "intellectual-property-indemnity",
-        "text": "9. Intellectual Property Indemnity",
-        "level": 2
-      },
-      {
-        "id": "limitation-of-liability",
-        "text": "10. Limitation of Liability",
-        "level": 2
-      },
-      {
-        "id": "termination",
-        "text": "11. Termination",
-        "level": 2
-      },
-      {
-        "id": "confidentiality-audit",
-        "text": "12. Confidentiality; Audit",
-        "level": 2
-      },
-      {
-        "id": "general",
-        "text": "13. General",
-        "level": 2
-      }
-    ]
-  },
-  {
-    "title": "SMILE - Agent Studio Commercial License",
-    "url": "license-studio.html",
     "headings": [
       {
         "id": "parties",
@@ -1692,6 +1626,77 @@
       {
         "id": "studio",
         "text": "SMILE Agent Studio",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Agent Studio Commercial License",
+    "url": "license-studio.html",
+    "headings": [
+      {
+        "id": "parties",
+        "text": "1. Parties",
+        "level": 2
+      },
+      {
+        "id": "definitions",
+        "text": "2. Definitions",
+        "level": 2
+      },
+      {
+        "id": "grant-of-license",
+        "text": "3. Grant of License",
+        "level": 2
+      },
+      {
+        "id": "ownership",
+        "text": "4. Ownership",
+        "level": 2
+      },
+      {
+        "id": "term-renewal-support",
+        "text": "5. Term; Renewal; Support",
+        "level": 2
+      },
+      {
+        "id": "updates-support-and-cve-windows",
+        "text": "6. Updates, Support, and CVE Windows",
+        "level": 2
+      },
+      {
+        "id": "fees-and-payment",
+        "text": "7. Fees and Payment",
+        "level": 2
+      },
+      {
+        "id": "warranties",
+        "text": "8. Warranties",
+        "level": 2
+      },
+      {
+        "id": "intellectual-property-indemnity",
+        "text": "9. Intellectual Property Indemnity",
+        "level": 2
+      },
+      {
+        "id": "limitation-of-liability",
+        "text": "10. Limitation of Liability",
+        "level": 2
+      },
+      {
+        "id": "termination",
+        "text": "11. Termination",
+        "level": 2
+      },
+      {
+        "id": "confidentiality-audit",
+        "text": "12. Confidentiality; Audit",
+        "level": 2
+      },
+      {
+        "id": "general",
+        "text": "13. General",
         "level": 2
       }
     ]
@@ -2002,6 +2007,183 @@
     ]
   },
   {
+    "title": "SMILE - ONNX GenAI",
+    "url": "onnx-genai.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "supported-models",
+        "text": "Supported Models",
+        "level": 2
+      },
+      {
+        "id": "prerequisites",
+        "text": "Prerequisites",
+        "level": 2
+      },
+      {
+        "id": "native-libraries",
+        "text": "Native libraries",
+        "level": 3
+      },
+      {
+        "id": "package-map",
+        "text": "Package Map",
+        "level": 2
+      },
+      {
+        "id": "quick-start",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "chat-serve",
+        "text": "Chat / Serve Seam (GenAiChatModel)",
+        "level": 2
+      },
+      {
+        "id": "serve-oga",
+        "text": "smile-serve OGA fallback",
+        "level": 3
+      },
+      {
+        "id": "providers",
+        "text": "CUDA / NPU Providers",
+        "level": 2
+      },
+      {
+        "id": "tests",
+        "text": "Tests",
+        "level": 2
+      },
+      {
+        "id": "shutdown",
+        "text": "Shutdown",
+        "level": 2
+      },
+      {
+        "id": "see-also",
+        "text": "See Also",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - ONNX",
+    "url": "onnx.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "prerequisites",
+        "text": "Prerequisites",
+        "level": 2
+      },
+      {
+        "id": "package-structure",
+        "text": "Package Structure",
+        "level": 2
+      },
+      {
+        "id": "quick-start",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "inference-session",
+        "text": "InferenceSession",
+        "level": 2
+      },
+      {
+        "id": "ortvalue",
+        "text": "OrtValue — Tensors",
+        "level": 2
+      },
+      {
+        "id": "session-options",
+        "text": "SessionOptions",
+        "level": 2
+      },
+      {
+        "id": "run-options",
+        "text": "RunOptions",
+        "level": 2
+      },
+      {
+        "id": "environment",
+        "text": "Environment",
+        "level": 2
+      },
+      {
+        "id": "introspection",
+        "text": "Model Introspection",
+        "level": 2
+      },
+      {
+        "id": "data-types",
+        "text": "Data Types",
+        "level": 2
+      },
+      {
+        "id": "execution-providers",
+        "text": "Execution Providers",
+        "level": 2
+      },
+      {
+        "id": "errors-resources",
+        "text": "Errors, Resources &amp; Logging",
+        "level": 2
+      },
+      {
+        "id": "performance",
+        "text": "Performance Tuning",
+        "level": 2
+      },
+      {
+        "id": "tutorials",
+        "text": "Tutorials",
+        "level": 2
+      },
+      {
+        "id": "tutorial-resnet",
+        "text": "Image Classification with ResNet-50",
+        "level": 3
+      },
+      {
+        "id": "tutorial-bert",
+        "text": "NLP with a BERT Tokenizer Model",
+        "level": 3
+      },
+      {
+        "id": "tutorial-env",
+        "text": "Sharing an Environment across Sessions",
+        "level": 3
+      },
+      {
+        "id": "tutorial-cuda",
+        "text": "GPU Inference with CUDA",
+        "level": 3
+      },
+      {
+        "id": "serving",
+        "text": "Serving",
+        "level": 2
+      },
+      {
+        "id": "see-also",
+        "text": "See Also",
+        "level": 2
+      }
+    ]
+  },
+  {
     "title": "SMILE - Natural Language Processing",
     "url": "nlp.html",
     "headings": [
@@ -2178,183 +2360,6 @@
       {
         "id": "package-map",
         "text": "Package Map",
-        "level": 2
-      }
-    ]
-  },
-  {
-    "title": "SMILE - ONNX GenAI",
-    "url": "onnx-genai.html",
-    "headings": [
-      {
-        "id": "overview",
-        "text": "Overview",
-        "level": 2
-      },
-      {
-        "id": "supported-models",
-        "text": "Supported Models",
-        "level": 2
-      },
-      {
-        "id": "prerequisites",
-        "text": "Prerequisites",
-        "level": 2
-      },
-      {
-        "id": "native-libraries",
-        "text": "Native libraries",
-        "level": 3
-      },
-      {
-        "id": "package-map",
-        "text": "Package Map",
-        "level": 2
-      },
-      {
-        "id": "quick-start",
-        "text": "Quick Start",
-        "level": 2
-      },
-      {
-        "id": "chat-serve",
-        "text": "Chat / Serve Seam (GenAiChatModel)",
-        "level": 2
-      },
-      {
-        "id": "serve-oga",
-        "text": "smile-serve OGA fallback",
-        "level": 3
-      },
-      {
-        "id": "providers",
-        "text": "CUDA / NPU Providers",
-        "level": 2
-      },
-      {
-        "id": "tests",
-        "text": "Tests",
-        "level": 2
-      },
-      {
-        "id": "shutdown",
-        "text": "Shutdown",
-        "level": 2
-      },
-      {
-        "id": "see-also",
-        "text": "See Also",
-        "level": 2
-      }
-    ]
-  },
-  {
-    "title": "SMILE - ONNX",
-    "url": "onnx.html",
-    "headings": [
-      {
-        "id": "overview",
-        "text": "Overview",
-        "level": 2
-      },
-      {
-        "id": "prerequisites",
-        "text": "Prerequisites",
-        "level": 2
-      },
-      {
-        "id": "package-structure",
-        "text": "Package Structure",
-        "level": 2
-      },
-      {
-        "id": "quick-start",
-        "text": "Quick Start",
-        "level": 2
-      },
-      {
-        "id": "inference-session",
-        "text": "InferenceSession",
-        "level": 2
-      },
-      {
-        "id": "ortvalue",
-        "text": "OrtValue — Tensors",
-        "level": 2
-      },
-      {
-        "id": "session-options",
-        "text": "SessionOptions",
-        "level": 2
-      },
-      {
-        "id": "run-options",
-        "text": "RunOptions",
-        "level": 2
-      },
-      {
-        "id": "environment",
-        "text": "Environment",
-        "level": 2
-      },
-      {
-        "id": "introspection",
-        "text": "Model Introspection",
-        "level": 2
-      },
-      {
-        "id": "data-types",
-        "text": "Data Types",
-        "level": 2
-      },
-      {
-        "id": "execution-providers",
-        "text": "Execution Providers",
-        "level": 2
-      },
-      {
-        "id": "errors-resources",
-        "text": "Errors, Resources &amp; Logging",
-        "level": 2
-      },
-      {
-        "id": "performance",
-        "text": "Performance Tuning",
-        "level": 2
-      },
-      {
-        "id": "tutorials",
-        "text": "Tutorials",
-        "level": 2
-      },
-      {
-        "id": "tutorial-resnet",
-        "text": "Image Classification with ResNet-50",
-        "level": 3
-      },
-      {
-        "id": "tutorial-bert",
-        "text": "NLP with a BERT Tokenizer Model",
-        "level": 3
-      },
-      {
-        "id": "tutorial-env",
-        "text": "Sharing an Environment across Sessions",
-        "level": 3
-      },
-      {
-        "id": "tutorial-cuda",
-        "text": "GPU Inference with CUDA",
-        "level": 3
-      },
-      {
-        "id": "serving",
-        "text": "Serving",
-        "level": 2
-      },
-      {
-        "id": "see-also",
-        "text": "See Also",
         "level": 2
       }
     ]
@@ -2623,6 +2628,11 @@
         "level": 2
       },
       {
+        "id": "image-flavors",
+        "text": "Image Flavors",
+        "level": 3
+      },
+      {
         "id": "gpu-build-run",
         "text": "GPU Build &amp; Run",
         "level": 3
@@ -2673,6 +2683,11 @@
         "level": 3
       },
       {
+        "id": "native-variants",
+        "text": "Native Image Variants &amp; Plugins",
+        "level": 3
+      },
+      {
         "id": "configuration",
         "text": "Configuration Reference",
         "level": 2
@@ -2699,7 +2714,7 @@
       },
       {
         "id": "explanations",
-        "text": "Explanations (TreeSHAP)",
+        "text": "Explanations (TreeSHAP &amp; KernelSHAP)",
         "level": 3
       },
       {
@@ -2972,67 +2987,6 @@
     ]
   },
   {
-    "title": "SMILE - Time Series Analysis",
-    "url": "time-series.html",
-    "headings": [
-      {
-        "id": "foundations",
-        "text": "Foundations",
-        "level": 2
-      },
-      {
-        "id": "stationarity",
-        "text": "Stationarity",
-        "level": 3
-      },
-      {
-        "id": "taxonomy",
-        "text": "AR, MA, and ARMA",
-        "level": 3
-      },
-      {
-        "id": "utilities",
-        "text": "TimeSeries Utilities",
-        "level": 2
-      },
-      {
-        "id": "box-test",
-        "text": "BoxTest: Residual Diagnostics",
-        "level": 2
-      },
-      {
-        "id": "ar",
-        "text": "AR: Autoregressive Models",
-        "level": 2
-      },
-      {
-        "id": "ar-fitting",
-        "text": "Yule–Walker vs OLS",
-        "level": 3
-      },
-      {
-        "id": "ar-bitcoin",
-        "text": "Bitcoin Log Returns",
-        "level": 3
-      },
-      {
-        "id": "arma",
-        "text": "ARMA: Autoregressive Moving-Average Models",
-        "level": 2
-      },
-      {
-        "id": "workflow",
-        "text": "Modeling Workflow",
-        "level": 2
-      },
-      {
-        "id": "pitfalls",
-        "text": "Common Pitfalls",
-        "level": 2
-      }
-    ]
-  },
-  {
     "title": "SMILE - Unified Training Interface",
     "url": "training.html",
     "headings": [
@@ -3104,6 +3058,67 @@
       {
         "id": "end-to-end",
         "text": "Complete End-to-End Example",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Time Series Analysis",
+    "url": "time-series.html",
+    "headings": [
+      {
+        "id": "foundations",
+        "text": "Foundations",
+        "level": 2
+      },
+      {
+        "id": "stationarity",
+        "text": "Stationarity",
+        "level": 3
+      },
+      {
+        "id": "taxonomy",
+        "text": "AR, MA, and ARMA",
+        "level": 3
+      },
+      {
+        "id": "utilities",
+        "text": "TimeSeries Utilities",
+        "level": 2
+      },
+      {
+        "id": "box-test",
+        "text": "BoxTest: Residual Diagnostics",
+        "level": 2
+      },
+      {
+        "id": "ar",
+        "text": "AR: Autoregressive Models",
+        "level": 2
+      },
+      {
+        "id": "ar-fitting",
+        "text": "Yule–Walker vs OLS",
+        "level": 3
+      },
+      {
+        "id": "ar-bitcoin",
+        "text": "Bitcoin Log Returns",
+        "level": 3
+      },
+      {
+        "id": "arma",
+        "text": "ARMA: Autoregressive Moving-Average Models",
+        "level": 2
+      },
+      {
+        "id": "workflow",
+        "text": "Modeling Workflow",
+        "level": 2
+      },
+      {
+        "id": "pitfalls",
+        "text": "Common Pitfalls",
         "level": 2
       }
     ]

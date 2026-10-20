@@ -298,28 +298,28 @@ println(rf.metrics())</code></pre>
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-core&lt;/artifactId&gt;
-  &lt;version&gt;7.0.0&lt;/version&gt;
+  &lt;version&gt;7.1.0&lt;/version&gt;
 &lt;/dependency&gt;
 
 &lt;!-- Deep learning + LLMs (requires LibTorch native libraries) --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-deep&lt;/artifactId&gt;
-  &lt;version&gt;7.0.0&lt;/version&gt;
+  &lt;version&gt;7.1.0&lt;/version&gt;
 &lt;/dependency&gt;
 
 &lt;!-- Natural language processing --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-nlp&lt;/artifactId&gt;
-  &lt;version&gt;7.0.0&lt;/version&gt;
+  &lt;version&gt;7.1.0&lt;/version&gt;
 &lt;/dependency&gt;
 
 &lt;!-- Swing + Vega-Lite data visualization --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;com.github.haifengl&lt;/groupId&gt;
   &lt;artifactId&gt;smile-plot&lt;/artifactId&gt;
-  &lt;version&gt;7.0.0&lt;/version&gt;
+  &lt;version&gt;7.1.0&lt;/version&gt;
 &lt;/dependency&gt;
             </code></pre>
     </div>
@@ -327,37 +327,42 @@ println(rf.metrics())</code></pre>
       <pre class="playground-source language-kotlin"><code class="language-kotlin">
 dependencies {
     // Core ML algorithms
-    implementation("com.github.haifengl:smile-core:7.0.0")
+    implementation("com.github.haifengl:smile-core:7.1.0")
 
     // Idiomatic Kotlin API (wraps smile-core)
-    implementation("com.github.haifengl:smile-kotlin:7.0.0")
+    implementation("com.github.haifengl:smile-kotlin:7.1.0")
 
     // Deep learning + LLMs
-    implementation("com.github.haifengl:smile-deep:7.0.0")
+    implementation("com.github.haifengl:smile-deep:7.1.0")
 
     // NLP
-    implementation("com.github.haifengl:smile-nlp:7.0.0")
+    implementation("com.github.haifengl:smile-nlp:7.1.0")
 
     // Visualization
-    implementation("com.github.haifengl:smile-plot:7.0.0")
+    implementation("com.github.haifengl:smile-plot:7.1.0")
 }
             </code></pre>
     </div>
     <div id="pg-1-2" class="hero-pane" hidden>
       <pre class="playground-source language-scala"><code class="language-scala">
 // Idiomatic Scala API (pulls in smile-core transitively)
-libraryDependencies += "com.github.haifengl" %% "smile-scala" % "7.0.0"
+libraryDependencies += "com.github.haifengl" %% "smile-scala" % "7.1.0"
 
 // Deep learning
-libraryDependencies += "com.github.haifengl" % "smile-deep" % "7.0.0"
+libraryDependencies += "com.github.haifengl" % "smile-deep" % "7.1.0"
             </code></pre>
     </div>
   <div class="playground-editor" hidden></div>
 </div>
 
     <h3 id="native-blas">Native BLAS / LAPACK (optional)</h3>
-    <p>Several algorithms (manifold learning, Gaussian Process, MLP) benefit significantly
-       from native BLAS/LAPACK. Install the system libraries:</p>
+    <p><code>smile.tensor</code> includes a pure-Java BLAS and LAPACK implementation
+       (<code>JBlas</code> and <code>JLapack</code>), so all linear algebra operations and
+       machine learning algorithms work out of the box with zero native dependencies.
+       When native BLAS/LAPACK libraries are present on the system, SMILE uses them
+       automatically via Java FFM for hardware-accelerated linear algebra (controllable via
+       <code>-Dsmile.linalg.backend=auto|native|java</code> or <code>SMILE_LINALG_BACKEND</code>).
+       To install optional native BLAS/LAPACK and ARPACK libraries:</p>
 
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#blas_linux" type="button" role="tab">Linux</button></li>
@@ -557,7 +562,7 @@ $ ./smile shell -R-Xmx30G
 
   </div>
   <pre class="playground-source language-java"><code class="language-java">
-|  Welcome to SMILE  -- Version 7.0.0
+|  Welcome to SMILE  -- Version 7.1.0
 ===============================================================================
 |  Welcome to JShell -- Version 25
 |  For an introduction type: /help intro

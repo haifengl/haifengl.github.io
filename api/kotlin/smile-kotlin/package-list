@@ -125,6 +125,13 @@ $dokka.location:smile.feature.extraction//ppca/#smile.data.DataFrame#kotlin.Int#
 $dokka.location:smile.feature.extraction//randomProjection/#kotlin.Int#kotlin.Int#kotlin.Boolean#vararg(kotlin.String)/PointingToDeclaration/smile-kotlin/smile.feature.extraction/random-projection.html
 $dokka.location:smile.feature.extraction//sparseEncoder/#smile.data.type.StructType#vararg(kotlin.String)/PointingToDeclaration/smile-kotlin/smile.feature.extraction/sparse-encoder.html
 $dokka.location:smile.feature.extraction//sparseEncoder/smile.data.DataFrame#vararg(kotlin.String)/PointingToDeclaration/smile-kotlin/smile.feature.extraction/sparse-encoder.html
+$dokka.location:smile.feature.importance////PointingToDeclaration/smile-kotlin/smile.feature.importance/index.html
+$dokka.location:smile.feature.importance//kernelShap/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double#java.util.function.ToDoubleFunction[kotlin.DoubleArray]/PointingToDeclaration/smile-kotlin/smile.feature.importance/kernel-shap.html
+$dokka.location:smile.feature.importance//kernelShap/#kotlin.Array[kotlin.DoubleArray]#smile.classification.Classifier[kotlin.DoubleArray]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.feature.importance/kernel-shap.html
+$dokka.location:smile.feature.importance//kernelShap/#kotlin.Array[kotlin.DoubleArray]#smile.regression.Regression[kotlin.DoubleArray]#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.feature.importance/kernel-shap.html
+$dokka.location:smile.feature.importance//kernelShap/#smile.data.DataFrame#smile.classification.DataFrameClassifier#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.feature.importance/kernel-shap.html
+$dokka.location:smile.feature.importance//kernelShap/#smile.data.DataFrame#smile.regression.DataFrameRegression#kotlin.Int#kotlin.Double/PointingToDeclaration/smile-kotlin/smile.feature.importance/kernel-shap.html
+$dokka.location:smile.feature.importance//kernelShapVector/#kotlin.Array[kotlin.DoubleArray]#kotlin.Int#kotlin.Double#java.util.function.Function[kotlin.DoubleArray,kotlin.DoubleArray]/PointingToDeclaration/smile-kotlin/smile.feature.importance/kernel-shap-vector.html
 $dokka.location:smile.hpo////PointingToDeclaration/smile-kotlin/smile.hpo/index.html
 $dokka.location:smile.hpo//bayes/smile.hpo.Hyperparameters#kotlin.Int#kotlin.Int#kotlin.Boolean#smile.hpo.BayesianOptimization.Acquisition#kotlin.Double#smile.math.kernel.MercerKernel[kotlin.DoubleArray]#kotlin.Function1[java.util.Properties,kotlin.Double]/PointingToDeclaration/smile-kotlin/smile.hpo/bayes.html
 $dokka.location:smile.hpo//gridSequence/smile.hpo.Hyperparameters#/PointingToDeclaration/smile-kotlin/smile.hpo/grid-sequence.html
@@ -390,6 +397,7 @@ smile.classification
 smile.clustering
 smile.data
 smile.feature.extraction
+smile.feature.importance
 smile.hpo
 smile.manifold
 smile.nlp
