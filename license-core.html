@@ -140,7 +140,7 @@
     </ul>
     <div class="nav-actions">
       <a class="btn btn-quiet nav-start" href="quickstart.html">Start</a>
-      <button type="button" class="btn btn-accent nav-demo" data-contact-open>Get a demo</button>
+      <button type="button" class="btn btn-accent nav-demo" data-contact-open data-contact-mode="demo">Get a demo</button>
       <button type="button" class="icon-btn" id="search-toggle" aria-label="Open search" title="Search (⌘K)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
       </button>
@@ -159,7 +159,7 @@
     </div>
   </nav>
   <div class="mobile-drawer" id="mobile-drawer">
-    <button type="button" class="btn btn-accent mobile-contact" data-contact-open>Get a demo</button>
+    <button type="button" class="btn btn-accent mobile-contact" data-contact-open data-contact-mode="demo">Get a demo</button>
     <a class="btn btn-quiet mobile-start" href="quickstart.html">Start</a>
     <details><summary>Products</summary>
       <a href="core-engine.html">Core Engine</a>
@@ -234,7 +234,7 @@
 <div class="col-md-9 order-md-first">
 <h1 id="smile-libraries-commercial-license-agreement">SMILE Core Engine — Commercial License Agreement</h1>
 <p><strong>Version 1.0 · 8 October 2026</strong></p>
-<p>This is the standard form of the OEM and embedding license for the SMILE Core Engine.
+<p>This is the standard form of the OEM and embedding license for the <strong>SMILE Core Engine</strong>.
 It becomes binding when an Order Form that names this version is signed. The Order
 Form states the Customer, the Licensed Product, scope, fees, and term, and is
 incorporated into this Agreement.</p>
@@ -252,36 +252,42 @@ authorized licensing agent and reseller (the &quot;<strong>Commercial Agent</str
 <ul>
 <li><strong>&quot;Order Form&quot;</strong> — the ordering document (or online checkout) that references
 this Agreement and states the Customer, the Licensed Product, licensed
-quantities/scope, fees, and term.</li>
-<li><strong>&quot;Licensed Product&quot;</strong> — the SMILE Core Engine module(s) identified on the Order
-Form (<code>base</code>, <code>core</code>, <code>nlp</code>, <code>deep</code>, <code>plot</code>, <code>kotlin</code>, and related modules),
-including the accompanying documentation, in the version/build listed there.</li>
+quantities/scope (including the covered Application product line(s), developer
+build seats, and any bundled SMILE Agent Studio seats), fees, and Maintenance term.</li>
+<li><strong>&quot;Licensed Product&quot;</strong> — the <strong>SMILE Core Engine</strong> module(s) identified on the Order
+Form (<code>base</code>, <code>core</code>, <code>nlp</code>, <code>deep</code>, <code>plot</code>, <code>kotlin</code>, <code>scala</code>, and related modules),
+including the accompanying documentation, in the version/build listed there (and,
+during an active Maintenance period where specified on the Order Form pursuant to
+Section 5.4, the bundled <strong>SMILE Agent Studio</strong> software).</li>
 <li><strong>&quot;Licensed Materials&quot;</strong> — all copies of the Licensed Product made by the
 Customer under this Agreement.</li>
 <li><strong>&quot;Application&quot;</strong> — a software product of the Customer that incorporates the
 Licensed Product and which the Customer distributes to its own end users.</li>
 <li><strong>&quot;End User&quot;</strong> — a third party to whom the Customer distributes an Application.</li>
 <li><strong>&quot;Open Source Version&quot;</strong> — the SMILE Core Engine as distributed by the Licensor
-under the GNU General Public License v3. This Agreement does not govern the Open
-Source Version; the GPL does.</li>
+under the GNU General Public License v3 (and, as to SMILE Agent Studio, under the
+Business Source License 1.1). This Agreement does not govern the Open
+Source Version; the GPLv3 (or BSL 1.1, as applicable) does.</li>
 </ul>
 <h2 id="grant-of-license">3. Grant of License</h2>
 <p>3.1 <strong>Grant.</strong> Subject to the terms of this Agreement and payment of the Fees, the
 Licensor grants the Customer a <strong>worldwide, non-exclusive, non-transferable</strong>
 license, for the Term, to:</p>
 <ul class="legal-clauses">
-<li>(a) reproduce, install, and use the Licensed Product internally to develop and test Applications;</li>
+<li>(a) reproduce, install, and use the Licensed Product internally, by up to the number of developer build seats stated on the Order Form, to develop and test Applications;</li>
 <li>(b) <strong>modify</strong> the Licensed Product to create derivative works, solely to incorporate it into Applications; and</li>
 <li>(c) <strong>distribute</strong> the Licensed Product as incorporated in Applications, in object-code form, to End Users and through the Customer's distribution channels, <strong>free of the GPLv3's source-disclosure obligations</strong>.</li>
 </ul>
-<p>3.2 <strong>Scope.</strong> The grant is limited to the quantities and use described on the
-Order Form. Rights not expressly granted are reserved by the Licensor.</p>
+<p>3.2 <strong>Scope.</strong> The grant is limited to the Application product line(s), developer
+build seats, quantities, and use described on the Order Form. Rights not expressly
+granted are reserved by the Licensor.</p>
 <p>3.3 <strong>Affiliates and contractors.</strong> The Customer's Affiliates and contractors may
 use the Licensed Product for the Customer's benefit under this Agreement, provided
-the Customer is responsible for their compliance.</p>
+the Customer is responsible for their compliance and their use counts toward the
+licensed scope.</p>
 <p>3.4 <strong>The Open Source route remains available.</strong> Nothing in this Agreement
 restricts the Customer's rights under the Open Source Version, which the Customer
-may use instead under GPLv3.</p>
+may use instead under GPLv3 (or BSL 1.1, as applicable).</p>
 <h2 id="ownership">4. Ownership</h2>
 <p>4.1 <strong>Reserved to the Licensor.</strong> The Licensed Product is licensed, not sold. All
 intellectual property rights in the Licensed Product are and remain the exclusive
@@ -300,15 +306,28 @@ attribution notices in the Licensed Product.</p>
 does not expire, subject to termination for breach under Section 11. The Customer's
 right to continue using and distributing Applications it developed under this
 Agreement is not conditioned on continued payment.</p>
-<p>5.2 <strong>Annual Maintenance.</strong> Updates, upgrades, technical support, and the
-guaranteed CVE-resolution windows described in Section 6 are provided under a
+<p>5.2 <strong>Annual Maintenance.</strong> Updates, upgrades, technical support, the
+guaranteed CVE-resolution windows described in Section 6, and any bundled SMILE
+Agent Studio seats described in Section 5.4 are provided under a
 separately renewable <strong>annual Maintenance subscription</strong>, as stated on the Order
 Form. If Maintenance lapses, the perpetual license in Section 5.1 continues, but
-the Licensor has no further obligation to provide Updates, Support, or CVE windows
-until Maintenance is reinstated.</p>
+any bundled SMILE Agent Studio seat licenses expire and the Licensor has no
+further obligation to provide Updates, Support, or CVE windows until Maintenance
+is reinstated.</p>
 <p>5.3 <strong>Maintenance renewal.</strong> Maintenance renews annually unless either party gives
 written notice of non-renewal at least <strong>sixty (60) days</strong> before the end of the
 then-current period.</p>
+<p>5.4 <strong>Bundled Agent Studio seats during Maintenance.</strong> Where the Order Form
+includes bundled <strong>SMILE Agent Studio</strong> seats, the Customer may, during an active
+Maintenance period, install and use SMILE Agent Studio for Commercial Production
+Use by up to the number of Authorized Users stated on the Order Form. Such use is
+governed by the seat, model-ownership, and no-source-disclosure terms (Sections
+3.1(a)–(b), 3.2, 3.6, and 4.2) and disclaimers (Sections 8.4 and 10.2–10.3) of
+the <strong>SMILE Agent Studio Commercial License Agreement (Version 1.0)</strong>, which are
+incorporated by reference as to such seats. If Maintenance expires or is
+terminated, the Customer's right to Commercial Production Use of SMILE Agent
+Studio under those bundled seats ends (without affecting the Customer's perpetual
+OEM license in Section 5.1 or the Customer's ownership of exported model packages).</p>
 <h2 id="updates-support-and-cve-windows">6. Updates, Support, and CVE Windows</h2>
 <p>6.1 <strong>Updates and Upgrades.</strong> During an active Maintenance period, the Customer
 receives Updates (bug fixes, correctness fixes) and Upgrades (new features) to the
@@ -433,7 +452,7 @@ electronic signature.</p>
 Section 4, this Agreement confers no rights on any third party.</p>
 
 <p><a href="licensing.html">Commercial licensing</a></p>
-<p><button type="button" class="btn btn-primary" data-contact-open>Request a Demo</button></p>
+<p><button type="button" class="btn btn-primary" data-contact-open data-contact-tier="OEM">Request an Order Form</button></p>
 </div>
 
 
@@ -449,13 +468,191 @@ Section 4, this Agreement confers no rights on any third party.</p>
   <div id="contact-modal" class="contact-modal" hidden>
     <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
       <div class="contact-modal-bar">
-        <p id="contact-modal-title" class="contact-modal-title">Contact Us</p>
+        <div>
+          <p id="contact-modal-title" class="contact-modal-title">Contact Us</p>
+          <p id="contact-modal-sub" class="contact-modal-sub">Administered by HALO.AI LLC · Direct engineering &amp; commercial licensing support</p>
+        </div>
         <button type="button" class="icon-btn" data-contact-close aria-label="Close">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
       </div>
-      <div class="contact-modal-frame-clip">
-        <iframe class="contact-modal-frame" title="Contact form" data-src="https://docs.google.com/forms/d/e/1FAIpQLSe-r5s7DrzXchPUagg5_6mEp_p78zpWQk6A9Z9JxAikKIGxIQ/viewform?embedded=true">Loading…</iframe>
+      <div class="contact-modal-tabs" role="tablist" aria-label="Request type">
+        <button type="button" class="contact-tab" role="tab" data-contact-tab="contact" aria-selected="false">Contact Us</button>
+        <button type="button" class="contact-tab" role="tab" data-contact-tab="demo" aria-selected="false">Get a Demo</button>
+        <button type="button" class="contact-tab" role="tab" data-contact-tab="pilot" aria-selected="false">Request a Pilot</button>
+        <button type="button" class="contact-tab is-active" role="tab" data-contact-tab="order" aria-selected="true">Order Form</button>
+      </div>
+      <div class="contact-modal-body">
+        <form id="order-request-form" class="order-form" data-endpoint="https://halo-order-worker.aihalo.workers.dev/v1/orders" novalidate>
+          <input type="text" name="website_url" class="order-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" id="order-mode" name="requestType" value="order">
+
+          <div class="order-grid">
+            <!-- General Information (All Modes) -->
+            <div class="order-field">
+              <label for="order-first-name">First Name <span aria-hidden="true">*</span></label>
+              <input id="order-first-name" name="firstName" type="text" required placeholder="Jane">
+            </div>
+
+            <div class="order-field">
+              <label for="order-last-name">Last Name <span aria-hidden="true">*</span></label>
+              <input id="order-last-name" name="lastName" type="text" required placeholder="Doe">
+            </div>
+
+            <div class="order-field">
+              <label for="order-email">Work Email <span aria-hidden="true">*</span></label>
+              <input id="order-email" name="email" type="email" required placeholder="jane.doe@company.com">
+            </div>
+
+            <div class="order-field">
+              <label for="order-customer">Company / Organization Name <span aria-hidden="true">*</span></label>
+              <input id="order-customer" name="customer" type="text" required placeholder="e.g., Acme Financial Corp.">
+            </div>
+
+            <div class="order-field">
+              <label for="order-role">Job Title / Role <span aria-hidden="true">*</span></label>
+              <input id="order-role" name="jobTitle" type="text" required placeholder="e.g., VP Platform Engineering">
+            </div>
+
+            <div class="order-field">
+              <label for="order-company-size">Company Size (Employees) <span aria-hidden="true">*</span></label>
+              <select id="order-company-size" name="companySize" required>
+                <option value="1 - 50">1 - 50</option>
+                <option value="51 - 200">51 - 200</option>
+                <option value="201 - 1,000">201 - 1,000</option>
+                <option value="1,000+" selected>1,000+</option>
+              </select>
+            </div>
+
+            <div class="order-field">
+              <label for="order-org-type">Organization Type <span aria-hidden="true">*</span></label>
+              <select id="order-org-type" name="organizationType" required>
+                <option value="Enterprise Technology / Software Vendor (ISV)">Enterprise Technology / Software Vendor (ISV)</option>
+                <option value="Financial Services / Fintech">Financial Services / Fintech</option>
+                <option value="System Integrator / IT Consulting">System Integrator / IT Consulting</option>
+                <option value="Cloud Service Provider / Data Center / Managed Infrastructure">Cloud Service Provider / Data Center / Managed Infrastructure</option>
+                <option value="Research Institution / Higher Education">Research Institution / Higher Education</option>
+                <option value="AI / Tech Startup">AI / Tech Startup</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="order-field">
+              <label for="order-interest">Primary Interest / Inquiries <span aria-hidden="true">*</span></label>
+              <select id="order-interest" name="primaryInterest" required>
+                <option value="AI Framework Integration & Open-Source Tooling">AI Framework Integration &amp; Open-Source Tooling</option>
+                <option value="High-Performance Model Serving & Inference Infrastructure">High-Performance Model Serving &amp; Inference Infrastructure</option>
+                <option value="Agentic Systems & IDE / Developer Workflow Integration">Agentic Systems &amp; IDE / Developer Workflow Integration</option>
+                <option value="Enterprise Platform Architecture & Managed AI Services">Enterprise Platform Architecture &amp; Managed AI Services</option>
+                <option value="Custom Model Fine-Tuning, Benchmarking & Optimization">Custom Model Fine-Tuning, Benchmarking &amp; Optimization</option>
+                <option value="On-Premises / Hybrid Cloud Private AI Deployment">On-Premises / Hybrid Cloud Private AI Deployment</option>
+                <option value="Commercial Licensing & Enterprise Pricing Models">Commercial Licensing &amp; Enterprise Pricing Models</option>
+              </select>
+            </div>
+
+            <!-- Specific Fields: Get a Demo -->
+            <div class="order-field order-field-full" id="demo-specific-fields" hidden>
+              <label for="demo-product">Product Focus for Demo</label>
+              <select id="demo-product" name="demoProduct">
+                <option value="Full Stack (Core Engine + Serve Engine + Agent Studio)">Full Stack (Core Engine + Serve Engine + Agent Studio)</option>
+                <option value="SMILE Serve Engine (ML, ONNX & Local LLM Serving)">SMILE Serve Engine (ML, ONNX &amp; Local LLM Serving)</option>
+                <option value="SMILE Core Engine (In-Process Low-Latency JVM ML)">SMILE Core Engine (In-Process Low-Latency JVM ML)</option>
+                <option value="SMILE Agent Studio (Agentic Data Science IDE & AutoML)">SMILE Agent Studio (Agentic Data Science IDE &amp; AutoML)</option>
+                <option value="Edge AI & Air-Gapped Fleet Deployment">Edge AI &amp; Air-Gapped Fleet Deployment</option>
+              </select>
+            </div>
+
+            <!-- Specific Fields: Request a Pilot -->
+            <div class="order-field" id="pilot-env-wrap" hidden>
+              <label for="pilot-env">Target Pilot Environment</label>
+              <select id="pilot-env" name="pilotEnvironment">
+                <option value="On-Premises / Private Data Center">On-Premises / Private Data Center</option>
+                <option value="Edge Gateways (Branch / POS / ATM / Telematics)">Edge Gateways (Branch / POS / ATM / Telematics)</option>
+                <option value="Air-Gapped / Sovereign Network">Air-Gapped / Sovereign Network</option>
+                <option value="Private Cloud VPC (AWS / Azure / GCP)">Private Cloud VPC (AWS / Azure / GCP)</option>
+              </select>
+            </div>
+
+            <div class="order-field" id="pilot-scale-wrap" hidden>
+              <label for="pilot-scale">Target Pilot Scale &amp; Program</label>
+              <select id="pilot-scale" name="pilotScale">
+                <option value="$15,000 30-Day Turnkey Edge Pilot (100% credited to annual contract)">$15,000 30-Day Turnkey Edge Pilot (100% credited to annual contract)</option>
+                <option value="30-Day Self-Hosted Commercial Evaluation Key">30-Day Self-Hosted Commercial Evaluation Key</option>
+                <option value="100 - 1,000+ Edge Nodes Fleet Scoping">100 - 1,000+ Edge Nodes Fleet Scoping</option>
+              </select>
+            </div>
+
+            <!-- Specific Fields: Commercial Order Form -->
+            <div class="order-field order-field-full" id="order-tier-wrap">
+              <label for="order-tier">Commercial Licensing Tier <span aria-hidden="true">*</span></label>
+              <select id="order-tier" name="tier">
+                <option value="PRODUCTION_RUNTIME">Production Runtime — $12,000 / year (up to 4 server nodes + 5 Agent Studio seats)</option>
+                <option value="OEM">OEM &amp; Embedded Distribution — $25,000 one-time (1 App line, 10 dev seats + 10 Studio seats)</option>
+                <option value="ENTERPRISE">Enterprise &amp; Edge Fleet — From $50,000 / year (100–5,000+ edge nodes + 25 Studio seats)</option>
+                <option value="STUDIO_TEAM">SMILE Agent Studio Team — $995 / seat / year (5-seat standalone minimum, or add-on seats)</option>
+                <option value="EVALUATION_PILOT">30-Day Commercial Trial Key / $15,000 Turnkey Edge Pilot</option>
+              </select>
+            </div>
+
+            <div class="order-field" id="order-nodes-wrap">
+              <label for="order-nodes" id="order-nodes-label">Production Server Nodes</label>
+              <input id="order-nodes" name="nodes" type="number" min="1" max="100000" value="4">
+              <small id="order-nodes-hint" class="order-hint">4 nodes included in base pack (+$250/node/mo above 4)</small>
+            </div>
+
+            <div class="order-field" id="order-seats-wrap">
+              <label for="order-seats" id="order-seats-label">Agent Studio Authorized User Seats</label>
+              <input id="order-seats" name="seats" type="number" min="1" max="10000" value="5">
+              <small id="order-seats-hint" class="order-hint">5 seats bundled free (+$995/seat/yr for extra seats)</small>
+            </div>
+
+            <div class="order-field order-field-full" id="order-billing-wrap">
+              <label for="order-billing-email">Billing / Accounts Payable Email (Optional)</label>
+              <input id="order-billing-email" name="billingEmail" type="email" placeholder="ap@company.com">
+            </div>
+
+            <!-- Message / Scope (All Modes) -->
+            <div class="order-field order-field-full">
+              <label for="order-notes" id="order-notes-label">Tell us about your technical requirements, licensing inquiries, or project scope:</label>
+              <textarea id="order-notes" name="notes" rows="3" placeholder="Share your workload, latency targets, model formats (.sml, .onnx, LLM), or procurement requirements..."></textarea>
+            </div>
+          </div>
+
+          <div class="order-summary" id="order-summary" aria-live="polite">
+            <div>
+              <span class="order-summary-kicker">Estimated Order Summary</span>
+              <strong id="order-summary-title">Production Runtime (Serve + Core + 5 Studio Seats)</strong>
+              <span id="order-summary-agreement" class="order-summary-meta">Governing Agreement: Serve Engine Commercial License 1.0</span>
+            </div>
+            <div class="order-summary-price" id="order-summary-price">$12,000 <span>/ year</span></div>
+          </div>
+
+          <p class="order-error" id="order-error" hidden role="alert"></p>
+
+          <div class="order-actions">
+            <span class="order-direct-mail">Prefer email? <a href="mailto:sales@aihalo.dev">sales@aihalo.dev</a></span>
+            <div class="order-actions-right">
+              <button type="button" class="btn btn-quiet" data-contact-close>Cancel</button>
+              <button type="submit" class="btn btn-accent" id="order-submit-btn">Submit Request</button>
+            </div>
+          </div>
+        </form>
+
+        <div id="order-result" class="order-result" hidden>
+          <div class="order-result-head">
+            <span class="order-result-badge" id="order-result-badge">Request Ready</span>
+            <h3 id="order-result-title">Your Request Has Been Prepared</h3>
+            <p id="order-result-message"></p>
+          </div>
+          <pre class="order-result-payload"><code id="order-result-code"></code></pre>
+          <div class="order-actions">
+            <button type="button" class="btn btn-quiet btn-sm" id="order-copy-btn">Copy Summary</button>
+            <div class="order-actions-right">
+              <a class="btn btn-accent" id="order-mailto-btn" href="mailto:sales@aihalo.dev">Send via Email Client →</a>
+              <button type="button" class="btn btn-quiet" data-contact-close>Done</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -12,6 +12,11 @@
         "id": "company",
         "text": "HALO.AI LLC, New York.",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -36,8 +41,13 @@
       },
       {
         "id": "the-company",
-        "text": "Nine agents for the company",
+        "text": "Seven agents for the company",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -179,6 +189,11 @@
         "id": "api-svm",
         "text": "SVM (One-Class)",
         "level": 3
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -300,6 +315,11 @@
         "id": "api",
         "text": "API Quick Reference",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -441,6 +461,11 @@
         "id": "tips",
         "text": "Practical Tips",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -577,6 +602,11 @@
         "id": "serialization",
         "text": "Serialization",
         "level": 3
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -628,6 +658,11 @@
         "id": "refs",
         "text": "References",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -674,6 +709,11 @@
         "id": "see-also",
         "text": "See Also",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -685,6 +725,11 @@
         "id": "what-you-embed",
         "text": "What you embed",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -761,6 +806,11 @@
         "id": "export",
         "text": "Exporting Data",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -832,6 +882,11 @@
         "id": "sparse",
         "text": "Sparse Dataset",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1068,6 +1123,11 @@
         "id": "onnx-api-tables",
         "text": "API Quick Reference",
         "level": 3
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1099,6 +1159,11 @@
         "id": "pilot",
         "text": "A few of your nodes, your models, your network",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1160,6 +1225,11 @@
         "id": "cite",
         "text": "How should I cite SMILE?",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1323,14 +1393,25 @@
         "level": 3
       },
       {
-        "id": "kernelshap",
-        "text": "KernelSHAP",
-        "level": 3
-      },
-      {
         "id": "guide",
         "text": "Choosing the Right Technique",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Gallery",
+    "url": "gallery.html",
+    "headings": [
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1372,13 +1453,13 @@
         "id": "max_flow",
         "text": "Maximum Flow",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
-  },
-  {
-    "title": "SMILE - Gallery",
-    "url": "gallery.html",
-    "headings": []
   },
   {
     "title": "SMILE - Hyperparameter Optimization",
@@ -1423,6 +1504,22 @@
         "id": "best-practices",
         "text": "Best Practices",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Statistical Machine Intelligence & Learning Engine",
+    "url": "",
+    "headings": [
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1459,13 +1556,13 @@
         "id": "laplace",
         "text": "Laplace Interpolation",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
-  },
-  {
-    "title": "SMILE - Statistical Machine Intelligence & Learning Engine",
-    "url": "",
-    "headings": []
   },
   {
     "title": "SMILE - Core Engine Commercial License",
@@ -1535,6 +1632,11 @@
         "id": "general",
         "text": "13. General",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1606,27 +1708,11 @@
         "id": "general",
         "text": "13. General",
         "level": 2
-      }
-    ]
-  },
-  {
-    "title": "SMILE - Commercial Licensing",
-    "url": "licensing.html",
-    "headings": [
-      {
-        "id": "libraries",
-        "text": "SMILE Core Engine",
-        "level": 2
       },
       {
-        "id": "serve",
-        "text": "SMILE Serve Engine",
-        "level": 2
-      },
-      {
-        "id": "studio",
-        "text": "SMILE Agent Studio",
-        "level": 2
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1698,6 +1784,42 @@
         "id": "general",
         "text": "13. General",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Licensing & Pricing",
+    "url": "licensing.html",
+    "headings": [
+      {
+        "id": "tiers",
+        "text": "Commercial licensing tiers",
+        "level": 2
+      },
+      {
+        "id": "when-to-buy",
+        "text": "Which tier matches your architecture?",
+        "level": 2
+      },
+      {
+        "id": "agreements",
+        "text": "Read the exact contracts before you talk to us",
+        "level": 2
+      },
+      {
+        "id": "order",
+        "text": "Ready to license or scope a deployment?",
+        "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1729,6 +1851,11 @@
         "id": "decomposition",
         "text": "Matrix Decomposition",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1830,6 +1957,11 @@
         "id": "serving",
         "text": "Serving",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1886,6 +2018,11 @@
         "id": "tips",
         "text": "Tips and Best Practices",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -1912,6 +2049,11 @@
         "id": "sammon",
         "text": "Sammon's Mapping",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -2003,183 +2145,11 @@
         "id": "clustering",
         "text": "Clustering Metrics",
         "level": 2
-      }
-    ]
-  },
-  {
-    "title": "SMILE - ONNX GenAI",
-    "url": "onnx-genai.html",
-    "headings": [
-      {
-        "id": "overview",
-        "text": "Overview",
-        "level": 2
       },
       {
-        "id": "supported-models",
-        "text": "Supported Models",
-        "level": 2
-      },
-      {
-        "id": "prerequisites",
-        "text": "Prerequisites",
-        "level": 2
-      },
-      {
-        "id": "native-libraries",
-        "text": "Native libraries",
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
         "level": 3
-      },
-      {
-        "id": "package-map",
-        "text": "Package Map",
-        "level": 2
-      },
-      {
-        "id": "quick-start",
-        "text": "Quick Start",
-        "level": 2
-      },
-      {
-        "id": "chat-serve",
-        "text": "Chat / Serve Seam (GenAiChatModel)",
-        "level": 2
-      },
-      {
-        "id": "serve-oga",
-        "text": "smile-serve OGA fallback",
-        "level": 3
-      },
-      {
-        "id": "providers",
-        "text": "CUDA / NPU Providers",
-        "level": 2
-      },
-      {
-        "id": "tests",
-        "text": "Tests",
-        "level": 2
-      },
-      {
-        "id": "shutdown",
-        "text": "Shutdown",
-        "level": 2
-      },
-      {
-        "id": "see-also",
-        "text": "See Also",
-        "level": 2
-      }
-    ]
-  },
-  {
-    "title": "SMILE - ONNX",
-    "url": "onnx.html",
-    "headings": [
-      {
-        "id": "overview",
-        "text": "Overview",
-        "level": 2
-      },
-      {
-        "id": "prerequisites",
-        "text": "Prerequisites",
-        "level": 2
-      },
-      {
-        "id": "package-structure",
-        "text": "Package Structure",
-        "level": 2
-      },
-      {
-        "id": "quick-start",
-        "text": "Quick Start",
-        "level": 2
-      },
-      {
-        "id": "inference-session",
-        "text": "InferenceSession",
-        "level": 2
-      },
-      {
-        "id": "ortvalue",
-        "text": "OrtValue — Tensors",
-        "level": 2
-      },
-      {
-        "id": "session-options",
-        "text": "SessionOptions",
-        "level": 2
-      },
-      {
-        "id": "run-options",
-        "text": "RunOptions",
-        "level": 2
-      },
-      {
-        "id": "environment",
-        "text": "Environment",
-        "level": 2
-      },
-      {
-        "id": "introspection",
-        "text": "Model Introspection",
-        "level": 2
-      },
-      {
-        "id": "data-types",
-        "text": "Data Types",
-        "level": 2
-      },
-      {
-        "id": "execution-providers",
-        "text": "Execution Providers",
-        "level": 2
-      },
-      {
-        "id": "errors-resources",
-        "text": "Errors, Resources &amp; Logging",
-        "level": 2
-      },
-      {
-        "id": "performance",
-        "text": "Performance Tuning",
-        "level": 2
-      },
-      {
-        "id": "tutorials",
-        "text": "Tutorials",
-        "level": 2
-      },
-      {
-        "id": "tutorial-resnet",
-        "text": "Image Classification with ResNet-50",
-        "level": 3
-      },
-      {
-        "id": "tutorial-bert",
-        "text": "NLP with a BERT Tokenizer Model",
-        "level": 3
-      },
-      {
-        "id": "tutorial-env",
-        "text": "Sharing an Environment across Sessions",
-        "level": 3
-      },
-      {
-        "id": "tutorial-cuda",
-        "text": "GPU Inference with CUDA",
-        "level": 3
-      },
-      {
-        "id": "serving",
-        "text": "Serving",
-        "level": 2
-      },
-      {
-        "id": "see-also",
-        "text": "See Also",
-        "level": 2
       }
     ]
   },
@@ -2361,6 +2331,198 @@
         "id": "package-map",
         "text": "Package Map",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - ONNX",
+    "url": "onnx.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "prerequisites",
+        "text": "Prerequisites",
+        "level": 2
+      },
+      {
+        "id": "package-structure",
+        "text": "Package Structure",
+        "level": 2
+      },
+      {
+        "id": "quick-start",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "inference-session",
+        "text": "InferenceSession",
+        "level": 2
+      },
+      {
+        "id": "ortvalue",
+        "text": "OrtValue — Tensors",
+        "level": 2
+      },
+      {
+        "id": "session-options",
+        "text": "SessionOptions",
+        "level": 2
+      },
+      {
+        "id": "run-options",
+        "text": "RunOptions",
+        "level": 2
+      },
+      {
+        "id": "environment",
+        "text": "Environment",
+        "level": 2
+      },
+      {
+        "id": "introspection",
+        "text": "Model Introspection",
+        "level": 2
+      },
+      {
+        "id": "data-types",
+        "text": "Data Types",
+        "level": 2
+      },
+      {
+        "id": "execution-providers",
+        "text": "Execution Providers",
+        "level": 2
+      },
+      {
+        "id": "errors-resources",
+        "text": "Errors, Resources &amp; Logging",
+        "level": 2
+      },
+      {
+        "id": "performance",
+        "text": "Performance Tuning",
+        "level": 2
+      },
+      {
+        "id": "tutorials",
+        "text": "Tutorials",
+        "level": 2
+      },
+      {
+        "id": "tutorial-resnet",
+        "text": "Image Classification with ResNet-50",
+        "level": 3
+      },
+      {
+        "id": "tutorial-bert",
+        "text": "NLP with a BERT Tokenizer Model",
+        "level": 3
+      },
+      {
+        "id": "tutorial-env",
+        "text": "Sharing an Environment across Sessions",
+        "level": 3
+      },
+      {
+        "id": "tutorial-cuda",
+        "text": "GPU Inference with CUDA",
+        "level": 3
+      },
+      {
+        "id": "serving",
+        "text": "Serving",
+        "level": 2
+      },
+      {
+        "id": "see-also",
+        "text": "See Also",
+        "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - ONNX GenAI",
+    "url": "onnx-genai.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "supported-models",
+        "text": "Supported Models",
+        "level": 2
+      },
+      {
+        "id": "prerequisites",
+        "text": "Prerequisites",
+        "level": 2
+      },
+      {
+        "id": "native-libraries",
+        "text": "Native libraries",
+        "level": 3
+      },
+      {
+        "id": "package-map",
+        "text": "Package Map",
+        "level": 2
+      },
+      {
+        "id": "quick-start",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "chat-serve",
+        "text": "Chat / Serve Seam (GenAiChatModel)",
+        "level": 2
+      },
+      {
+        "id": "serve-oga",
+        "text": "smile-serve OGA fallback",
+        "level": 3
+      },
+      {
+        "id": "providers",
+        "text": "CUDA / NPU Providers",
+        "level": 2
+      },
+      {
+        "id": "tests",
+        "text": "Tests",
+        "level": 2
+      },
+      {
+        "id": "shutdown",
+        "text": "Shutdown",
+        "level": 2
+      },
+      {
+        "id": "see-also",
+        "text": "See Also",
+        "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -2407,6 +2569,11 @@
         "id": "cli",
         "text": "Training &amp; Inference CLI",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -2543,6 +2710,37 @@
         "id": "tips",
         "text": "Practical Tips",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Serve",
+    "url": "serve-engine.html",
+    "headings": [
+      {
+        "id": "what-you-run",
+        "text": "What you run",
+        "level": 2
+      },
+      {
+        "id": "agent-loops",
+        "text": "For agent loops",
+        "level": 2
+      },
+      {
+        "id": "how-it-compares",
+        "text": "How it compares",
+        "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -2589,27 +2787,11 @@
         "id": "tips",
         "text": "Practical Tips",
         "level": 2
-      }
-    ]
-  },
-  {
-    "title": "SMILE - Serve",
-    "url": "serve-engine.html",
-    "headings": [
-      {
-        "id": "what-you-run",
-        "text": "What you run",
-        "level": 2
       },
       {
-        "id": "agent-loops",
-        "text": "For agent loops",
-        "level": 2
-      },
-      {
-        "id": "how-it-compares",
-        "text": "How it compares",
-        "level": 2
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -2626,11 +2808,6 @@
         "id": "quick-start",
         "text": "Quick Start with Docker",
         "level": 2
-      },
-      {
-        "id": "image-flavors",
-        "text": "Image Flavors",
-        "level": 3
       },
       {
         "id": "gpu-build-run",
@@ -2680,11 +2857,6 @@
       {
         "id": "native-executable",
         "text": "Native Executable",
-        "level": 3
-      },
-      {
-        "id": "native-variants",
-        "text": "Native Image Variants &amp; Plugins",
         "level": 3
       },
       {
@@ -2881,6 +3053,11 @@
         "id": "see-also",
         "text": "See Also",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -2926,6 +3103,11 @@
       {
         "id": "correlation-test",
         "text": "Correlation Tests",
+        "level": 3
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
         "level": 3
       }
     ]
@@ -2982,6 +3164,77 @@
       {
         "id": "studio-slash",
         "text": "Slash Commands",
+        "level": 3
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Time Series Analysis",
+    "url": "time-series.html",
+    "headings": [
+      {
+        "id": "foundations",
+        "text": "Foundations",
+        "level": 2
+      },
+      {
+        "id": "stationarity",
+        "text": "Stationarity",
+        "level": 3
+      },
+      {
+        "id": "taxonomy",
+        "text": "AR, MA, and ARMA",
+        "level": 3
+      },
+      {
+        "id": "utilities",
+        "text": "TimeSeries Utilities",
+        "level": 2
+      },
+      {
+        "id": "box-test",
+        "text": "BoxTest: Residual Diagnostics",
+        "level": 2
+      },
+      {
+        "id": "ar",
+        "text": "AR: Autoregressive Models",
+        "level": 2
+      },
+      {
+        "id": "ar-fitting",
+        "text": "Yule–Walker vs OLS",
+        "level": 3
+      },
+      {
+        "id": "ar-bitcoin",
+        "text": "Bitcoin Log Returns",
+        "level": 3
+      },
+      {
+        "id": "arma",
+        "text": "ARMA: Autoregressive Moving-Average Models",
+        "level": 2
+      },
+      {
+        "id": "workflow",
+        "text": "Modeling Workflow",
+        "level": 2
+      },
+      {
+        "id": "pitfalls",
+        "text": "Common Pitfalls",
+        "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
         "level": 3
       }
     ]
@@ -3059,67 +3312,11 @@
         "id": "end-to-end",
         "text": "Complete End-to-End Example",
         "level": 2
-      }
-    ]
-  },
-  {
-    "title": "SMILE - Time Series Analysis",
-    "url": "time-series.html",
-    "headings": [
-      {
-        "id": "foundations",
-        "text": "Foundations",
-        "level": 2
       },
       {
-        "id": "stationarity",
-        "text": "Stationarity",
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
         "level": 3
-      },
-      {
-        "id": "taxonomy",
-        "text": "AR, MA, and ARMA",
-        "level": 3
-      },
-      {
-        "id": "utilities",
-        "text": "TimeSeries Utilities",
-        "level": 2
-      },
-      {
-        "id": "box-test",
-        "text": "BoxTest: Residual Diagnostics",
-        "level": 2
-      },
-      {
-        "id": "ar",
-        "text": "AR: Autoregressive Models",
-        "level": 2
-      },
-      {
-        "id": "ar-fitting",
-        "text": "Yule–Walker vs OLS",
-        "level": 3
-      },
-      {
-        "id": "ar-bitcoin",
-        "text": "Bitcoin Log Returns",
-        "level": 3
-      },
-      {
-        "id": "arma",
-        "text": "ARMA: Autoregressive Moving-Average Models",
-        "level": 2
-      },
-      {
-        "id": "workflow",
-        "text": "Modeling Workflow",
-        "level": 2
-      },
-      {
-        "id": "pitfalls",
-        "text": "Common Pitfalls",
-        "level": 2
       }
     ]
   },
@@ -3201,6 +3398,11 @@
         "id": "serialization",
         "text": "Saving and Loading Models",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -3341,6 +3543,11 @@
       {
         "id": "schedules",
         "text": "Learning-rate schedules",
+        "level": 3
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
         "level": 3
       }
     ]
@@ -3533,6 +3740,11 @@
         "id": "geo_choropleth",
         "text": "Choropleth of Unemployment Rate per County",
         "level": 3
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -3594,6 +3806,11 @@
         "id": "wireframe",
         "text": "Wireframe",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   },
@@ -3615,6 +3832,11 @@
         "id": "shrinkage",
         "text": "Wavelet Shrinkage",
         "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
       }
     ]
   }
