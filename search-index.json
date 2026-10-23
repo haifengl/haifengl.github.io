@@ -41,7 +41,7 @@
       },
       {
         "id": "the-company",
-        "text": "Seven agents for the company",
+        "text": "Nine agents for the company",
         "level": 2
       },
       {
@@ -1393,6 +1393,11 @@
         "level": 3
       },
       {
+        "id": "kernelshap",
+        "text": "KernelSHAP",
+        "level": 3
+      },
+      {
         "id": "guide",
         "text": "Choosing the Right Technique",
         "level": 2
@@ -2340,6 +2345,77 @@
     ]
   },
   {
+    "title": "SMILE - ONNX GenAI",
+    "url": "onnx-genai.html",
+    "headings": [
+      {
+        "id": "overview",
+        "text": "Overview",
+        "level": 2
+      },
+      {
+        "id": "supported-models",
+        "text": "Supported Models",
+        "level": 2
+      },
+      {
+        "id": "prerequisites",
+        "text": "Prerequisites",
+        "level": 2
+      },
+      {
+        "id": "native-libraries",
+        "text": "Native libraries",
+        "level": 3
+      },
+      {
+        "id": "package-map",
+        "text": "Package Map",
+        "level": 2
+      },
+      {
+        "id": "quick-start",
+        "text": "Quick Start",
+        "level": 2
+      },
+      {
+        "id": "chat-serve",
+        "text": "Chat / Serve Seam (GenAiChatModel)",
+        "level": 2
+      },
+      {
+        "id": "serve-oga",
+        "text": "smile-serve OGA fallback",
+        "level": 3
+      },
+      {
+        "id": "providers",
+        "text": "CUDA / NPU Providers",
+        "level": 2
+      },
+      {
+        "id": "tests",
+        "text": "Tests",
+        "level": 2
+      },
+      {
+        "id": "shutdown",
+        "text": "Shutdown",
+        "level": 2
+      },
+      {
+        "id": "see-also",
+        "text": "See Also",
+        "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
+      }
+    ]
+  },
+  {
     "title": "SMILE - ONNX",
     "url": "onnx.html",
     "headings": [
@@ -2441,77 +2517,6 @@
       {
         "id": "serving",
         "text": "Serving",
-        "level": 2
-      },
-      {
-        "id": "see-also",
-        "text": "See Also",
-        "level": 2
-      },
-      {
-        "id": "order-result-title",
-        "text": "Your Request Has Been Prepared",
-        "level": 3
-      }
-    ]
-  },
-  {
-    "title": "SMILE - ONNX GenAI",
-    "url": "onnx-genai.html",
-    "headings": [
-      {
-        "id": "overview",
-        "text": "Overview",
-        "level": 2
-      },
-      {
-        "id": "supported-models",
-        "text": "Supported Models",
-        "level": 2
-      },
-      {
-        "id": "prerequisites",
-        "text": "Prerequisites",
-        "level": 2
-      },
-      {
-        "id": "native-libraries",
-        "text": "Native libraries",
-        "level": 3
-      },
-      {
-        "id": "package-map",
-        "text": "Package Map",
-        "level": 2
-      },
-      {
-        "id": "quick-start",
-        "text": "Quick Start",
-        "level": 2
-      },
-      {
-        "id": "chat-serve",
-        "text": "Chat / Serve Seam (GenAiChatModel)",
-        "level": 2
-      },
-      {
-        "id": "serve-oga",
-        "text": "smile-serve OGA fallback",
-        "level": 3
-      },
-      {
-        "id": "providers",
-        "text": "CUDA / NPU Providers",
-        "level": 2
-      },
-      {
-        "id": "tests",
-        "text": "Tests",
-        "level": 2
-      },
-      {
-        "id": "shutdown",
-        "text": "Shutdown",
         "level": 2
       },
       {
@@ -2719,32 +2724,6 @@
     ]
   },
   {
-    "title": "SMILE - Serve",
-    "url": "serve-engine.html",
-    "headings": [
-      {
-        "id": "what-you-run",
-        "text": "What you run",
-        "level": 2
-      },
-      {
-        "id": "agent-loops",
-        "text": "For agent loops",
-        "level": 2
-      },
-      {
-        "id": "how-it-compares",
-        "text": "How it compares",
-        "level": 2
-      },
-      {
-        "id": "order-result-title",
-        "text": "Your Request Has Been Prepared",
-        "level": 3
-      }
-    ]
-  },
-  {
     "title": "SMILE - Sequence Labeling",
     "url": "sequence-labeling.html",
     "headings": [
@@ -2797,6 +2776,32 @@
   },
   {
     "title": "SMILE - Serve",
+    "url": "serve-engine.html",
+    "headings": [
+      {
+        "id": "what-you-run",
+        "text": "What you run",
+        "level": 2
+      },
+      {
+        "id": "agent-loops",
+        "text": "For agent loops",
+        "level": 2
+      },
+      {
+        "id": "how-it-compares",
+        "text": "How it compares",
+        "level": 2
+      },
+      {
+        "id": "order-result-title",
+        "text": "Your Request Has Been Prepared",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "SMILE - Serve",
     "url": "serve.html",
     "headings": [
       {
@@ -2808,6 +2813,11 @@
         "id": "quick-start",
         "text": "Quick Start with Docker",
         "level": 2
+      },
+      {
+        "id": "image-flavors",
+        "text": "Image Flavors",
+        "level": 3
       },
       {
         "id": "gpu-build-run",
@@ -2857,6 +2867,11 @@
       {
         "id": "native-executable",
         "text": "Native Executable",
+        "level": 3
+      },
+      {
+        "id": "native-variants",
+        "text": "Native Image Variants &amp; Plugins",
         "level": 3
       },
       {
